@@ -101,9 +101,21 @@ Token refresh is fully automatic from that point on.
 ## Important content files
 
 - `src/pages/index.astro` — homepage sections
+- `src/pages/products.astro` — products page
+- `src/pages/privacy.astro` — privacy policy
 - `src/styles/global.css` — styling
 - `src/layouts/Layout.astro` — metadata / SEO shell
-- `public/resume/*.pdf` — downloadable resume
+- `public/resume/*.pdf` — downloadable resumes
+
+## Certifications
+
+Claude Partner Network — Anthropic (all completed June 2026):
+- Building with the Claude API
+- Claude Code in Action
+- Introduction to Agent Skills
+- Introduction to Model Context Protocol
+
+Coursera (2018–2019): ML Strategy, Deep Learning, TensorFlow, Big Data/Hadoop.
 
 ## Future ideas
 

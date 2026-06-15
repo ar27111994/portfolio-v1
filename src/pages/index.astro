@@ -631,22 +631,46 @@ const ventureProof = [
 
 const certificationLinks = [
   {
+    label: "Anthropic — Building with the Claude API (Jun 2026)",
+    href: "https://anthropic-partners.skilljar.com/certificates/",
+    issuer: "Anthropic",
+  },
+  {
+    label: "Anthropic — Claude Code in Action (Jun 2026)",
+    href: "https://anthropic-partners.skilljar.com/certificates/",
+    issuer: "Anthropic",
+  },
+  {
+    label: "Anthropic — Introduction to Agent Skills (May 2026)",
+    href: "https://anthropic-partners.skilljar.com/certificates/",
+    issuer: "Anthropic",
+  },
+  {
+    label: "Anthropic — Introduction to Model Context Protocol (Jun 2026)",
+    href: "https://anthropic-partners.skilljar.com/certificates/",
+    issuer: "Anthropic",
+  },
+  {
     label: "Coursera Certificate (12/05/2019) — ML Strategy & Error Analysis",
     href: "https://www.coursera.org/account/accomplishments/verify/HQ3883739EQ7",
+    issuer: "Coursera",
   },
   {
     label:
       "Coursera Certificate (07/04/2019) — Deep Learning Best Practices & Optimization",
     href: "https://www.coursera.org/account/accomplishments/verify/U4QYCQLM9WUH",
+    issuer: "Coursera",
   },
   {
     label:
       "Coursera Certificate (20/08/2018) — Deep Learning Foundations + TensorFlow",
     href: "https://www.coursera.org/account/accomplishments/verify/TDDMYNV57A99",
+    issuer: "Coursera",
   },
   {
     label: "Coursera Certificate (29/10/2018) — Big Data Fundamentals + Hadoop",
     href: "https://www.coursera.org/account/accomplishments/verify/HHVS4SJNXDR8",
+    issuer: "Coursera",
   },
 ];
 
@@ -725,6 +749,8 @@ const sponsorLinks = [
       <a href="#upwork-title">Upwork</a>
       <a href="#proof-title">Proof</a>
       <a href="#contact-title">Contact</a>
+      <a href="/products">Products</a>
+      <a href="/privacy">Privacy</a>
     </nav>
 
     <section class="hero panel">
@@ -1259,15 +1285,27 @@ const sponsorLinks = [
             <li>
               <strong>Anthropic Partner:</strong> associated with {contactEmail}
             </li>
-            <li><strong>Anthropic certifications:</strong> in progress</li>
             {
-              certificationLinks.map((item) => (
-                <li>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {item.label}
-                  </a>
-                </li>
-              ))
+              certificationLinks
+                .filter((item) => item.issuer === "Anthropic")
+                .map((item) => (
+                  <li>
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.label}
+                    </a>
+                  </li>
+                ))
+            }
+            {
+              certificationLinks
+                .filter((item) => item.issuer !== "Anthropic")
+                .map((item) => (
+                  <li>
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.label}
+                    </a>
+                  </li>
+                ))
             }
           </ul>
         </article>
