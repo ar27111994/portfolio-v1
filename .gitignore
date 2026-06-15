@@ -28,3 +28,7 @@ pnpm-debug.log*
 .idea/
 
 .vercel
+
+# Local verification screenshots
+verification-shots/
+debug-screenshot.png
