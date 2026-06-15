@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="AR minimal monogram">
+  <rect x="20" y="20" width="216" height="216" rx="52" fill="#0f1b33"/>
+  <rect x="24" y="24" width="208" height="208" rx="48" fill="none" stroke="#5f8ec4" stroke-opacity="0.58"/>
+  <path d="M64 184 101 72h23l37 112h-21l-8-25H93l-8 25H64Zm34-43h29l-13-44h-2l-14 44Z" fill="#f5faff"/>
+  <path d="M170 72h23c17 0 29 11 29 27 0 12-7 20-17 24l20 61h-22l-17-56h-16v56h-20V72Zm20 18v22h9c9 0 14-4 14-11 0-7-5-11-14-11h-9Z" fill="#f5faff"/>
+</svg>

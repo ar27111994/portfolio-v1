@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" role="img" aria-labelledby="title desc">
+  <title id="title">ARLabs Wordmark</title>
+  <desc id="desc">ARLabs wordmark with AR monogram and subtitle.</desc>
+  <defs>
+    <linearGradient id="wbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f2342" />
+      <stop offset="100%" stop-color="#1d467c" />
+    </linearGradient>
+    <linearGradient id="wglow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6fd5ff" />
+      <stop offset="100%" stop-color="#7cf5d4" />
+    </linearGradient>
+  </defs>
+
+  <rect x="10" y="10" width="200" height="200" rx="48" fill="url(#wbg)" />
+  <rect x="14" y="14" width="192" height="192" rx="44" fill="none" stroke="url(#wglow)" stroke-opacity="0.8" />
+
+  <path d="M44 168L78 56h21l34 112h-20l-7-26H70l-7 26H44Zm31-43h26L89 80h-2l-12 45Z" fill="#f7fbff" />
+  <path d="M142 56h21c16 0 27 10 27 26 0 12-6 19-15 22l18 64h-20l-16-58h-15v58h-18V56Zm18 16v23h8c9 0 14-4 14-11 0-7-4-12-13-12h-9Z" fill="#f7fbff" />
+
+  <text x="244" y="112" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="-1.6" fill="#eaf4ff">ARLabs</text>
+  <text x="246" y="152" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="2" fill="#9ec4ff">DEVTOOLS · AUTOMATION · SYSTEMS</text>
+</svg>

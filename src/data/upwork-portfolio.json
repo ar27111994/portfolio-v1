@@ -1,0 +1,748 @@
+{
+  "profileUrl": "https://www.upwork.com/freelancers/~0188baee67e8f543e7",
+  "lastUpdated": "2026-06-15",
+  "source": "upwork-official-graphql-api",
+  "sourceNote": "Fetched via official Upwork talentProfile GraphQL query.",
+  "extractedAt": "2026-06-15T11:29:29.385Z",
+  "items": [
+    {
+      "id": "ar27111994-dev",
+      "title": "ar27111994.dev",
+      "description": "Consolidated public portfolio, resume downloads, project proof links, public work feed, and client-facing contact surface for freelance/client acquisition.\n\nI built and refined the site as a developer-lab proof surface: fast static Astro deployment, responsive layout, SEO metadata, structured proof sections, live-enhanced public metrics, and polished resume/contact paths. The project is relevant for trust-building, proof packaging, technical portfolio design, performance-conscious frontend work, and accessibility-minded implementation.\n\nProof: https://www.ar27111994.dev",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "embeddedLink",
+          "url": "https://www.ar27111994.dev",
+          "title": null,
+          "description": null,
+          "fileName": null,
+          "fileSize": 0,
+          "imageSmall": null,
+          "imageMiddle": null,
+          "imageLarge": null
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/08393c05-200b-4b6c-b18f-01c61d1d87f0",
+          "title": null,
+          "description": null,
+          "fileName": "android-chrome-512x512.png",
+          "fileSize": 153106,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ebffd578-a3f7-416c-b85e-3d5633af378e",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/87a19cb1-1ef1-4e47-baba-aa0682ba9997",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e2b4a073-22fe-49d5-900b-d988420405d8"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/df53b6d0-3f98-4321-b748-1147620f044c",
+          "title": null,
+          "description": null,
+          "fileName": "og-cover.png",
+          "fileSize": 133424,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/17f854e3-9c2d-4f6c-98aa-82a768e046db",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/3c5b71d7-bbd2-493d-93b6-3ea00a91a140",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e66820ba-2d5e-4f2d-9102-24b833014110"
+        }
+      ]
+    },
+    {
+      "id": "penpot-mcp",
+      "title": "penpot-mcp",
+      "description": "Agent workflow support for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows.\n\nI packaged the workflow as reusable agent support for product-surface quality, design-system maintenance, and MCP-style design-to-code collaboration. The project is relevant for frontend implementation, design systems, prototype maintenance, and AI-assisted product workflows.\n\nProof: https://github.com/ar27111994/penpot-mcp",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "embeddedLink",
+          "url": "https://github.com/ar27111994/penpot-mcp",
+          "title": "GitHub - ar27111994/penpot-mcp: AI-agent skill for creating, auditing,",
+          "description": "AI-agent skill for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows via the official Penpot MCP Server. - ar27111994/penpot-mcp",
+          "fileName": null,
+          "fileSize": 0,
+          "imageSmall": "https://opengraph.githubassets.com/98ea7425bcc0b74f4c6d9765071542f1b6cd8acfab1e856c29f62fd175ba66c5/ar27111994/penpot-mcp",
+          "imageMiddle": null,
+          "imageLarge": null
+        },
+        {
+          "type": "image",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/384aa839-2faf-42d3-9747-6c3817e8033b",
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/384aa839-2faf-42d3-9747-6c3817e8033b"
+        }
+      ]
+    },
+    {
+      "id": "agent-harness",
+      "title": "agent-harness",
+      "description": "TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across multiple coding hosts.\n\nI built the lifecycle workflow around reusable skills, host-aware activation, practical developer productivity, and structured documentation.\n\nRelevant for AI-agent tooling, developer automation, CLI design, reusable workflow assets, and host-aware workflows.\n\nProof: https://github.com/ar27111994/agent-harness",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "embeddedLink",
+          "url": "https://github.com/ar27111994/agent-harness",
+          "title": "GitHub - ar27111994/agent-harness: Node.js TypeScript CLI for discover",
+          "description": "Node.js TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across VS Code/Copilot, OpenCode, Cursor, Zed, Claude Code, and Pi. - ar27111994/agent-harness",
+          "fileName": null,
+          "fileSize": 0,
+          "imageSmall": "https://opengraph.githubassets.com/9530279156148a79b4765091e30f5cbf856007a9d80c99bb7e093ce669aef90a/ar27111994/agent-harness",
+          "imageMiddle": null,
+          "imageLarge": null
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "videoId": "u1OmcS97iOg",
+          "url": "https://youtu.be/u1OmcS97iOg?si=TrbAmSPrH52Vb6OC",
+          "embeddedUrl": "https://www.youtube.com/embed/u1OmcS97iOg"
+        },
+        {
+          "type": "image",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d8fc328d-e303-444f-a7be-0a07f6e41ac3",
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d8fc328d-e303-444f-a7be-0a07f6e41ac3"
+        }
+      ]
+    },
+    {
+      "id": "webhook-debugger-and-logger",
+      "title": "Webhook Debugger and Logger",
+      "description": "Open-source webhook testing and debugging suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic in real time.\n\nI designed and built the product surface, backend workflow, replay/debugging loop, and developer-facing documentation around practical integration reliability.\n\nRelevant for webhook receivers, API integrations, incident debugging, replay safety, and developer-tool UX.\n\nProof: https://github.com/ar27111994/webhook-debugger-logger",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "embeddedLink",
+          "url": "https://github.com/ar27111994/webhook-debugger-logger",
+          "title": "GitHub - ar27111994/webhook-debugger-logger: Enterprise-grade webhook ",
+          "description": "Enterprise-grade webhook testing suite for developers. Capture, inspect, replay, forward, validate, and mock webhook traffic in real time without tunnels. Includes SSE live streaming, JSON Schema v...",
+          "fileName": null,
+          "fileSize": 0,
+          "imageSmall": "https://repository-images.githubusercontent.com/1120109772/76387148-2839-4951-9b40-0ffd5458abe7",
+          "imageMiddle": null,
+          "imageLarge": null
+        },
+        {
+          "type": "image",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d27227c2-dbdb-42fc-892e-9b4f7708148c",
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d27227c2-dbdb-42fc-892e-9b4f7708148c"
+        }
+      ]
+    },
+    {
+      "id": "eagle-6",
+      "title": "Eagle 6",
+      "description": "Eagle 6 is a cybersecurity product that secures large enterprises by detecting unknown vulnerabilities before they expose systems to risk. My primary role included the implementation of the frontend portion of different features and modules of the product using Angular and a host of other related premium and open source libraries in an Agile-driven environment.\n\n- Implemented Frontend for Cloud Storage and Organization Chart Modeling Modules of the flagship enterprise product of the company alongside the integration of various rich text document editing tools and their customization via angular-ized plugins.\n- Implemented frontend for file and folder management including role-based permissions assignment for each file/folder, ability to preview and edit contents of each file/folder based on the type of file, and user's permission.\n- Implemented complex plugin-based online editors for opening both short and full-featured documents with the ability to view/edit Microsoft Office files and support for comments, concurrent editing, permission-based content viewing/editing, and pdf export.\n- Implemented frontend for chunked file and folder upload using TUS protocol for scalability and support for uploading large files.\n- Implemented a new iteration of the Organization Chart Modeling tool in GOJS architecting the data access and state management of this module using Akita (Redux, Flux based State Management Library) for scalability and robust maintenance.\n- Implemented and Maintained different types of graphs and maps of Network Monitoring tools module using d3, Highcharts, leaflet, and OSM Tiles server.\n- Implemented different components of the app from concept through deployment.\n- Interviewed and facilitated the hiring of multiple Frontend developers for the team I was assigned to.\n- Facilitated in driving code quality and scalability by restructuring and implementing Redux, Flux based data flow & state management for different modules & components alongside reviewing, providing feedback to fellow UI developers on their code contributions.\n- Standardized all output with a new responsive & accessible UI using Google material design standards.\n- Assessed UX and UI designs for technical feasibility and provided estimates for their implementation.\n- Collaborated with product team members to implement new feature developments.\n- Worked in an Agile-driven environment to effectively maintain project timelines and utilize available resources.\n- Stack used: Angular 2+, Angular Material, TUS, RxJS, Akita (Redux, Flux based State Management library), GoJS, D3, Highcharts, leaflet, OSM, Typescript, BEM, Jest & SCSS.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/12eabbd2-c0e5-4fa6-b713-f66ae2a9b2f2",
+          "title": null,
+          "description": null,
+          "fileName": "Screenshot 2022-06-28 001209.png",
+          "fileSize": 571637,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4bb247a-8467-465f-a025-1fea3aeda2c0",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b26a21d7-aa05-444f-b50e-a330d6c8afab",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/92a71e74-26fc-4808-b11b-54b15e8a520b"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/60732087-96e3-47cc-9a6f-2fa294241bf0",
+          "title": null,
+          "description": null,
+          "fileName": "Screenshot 2022-06-27 234658.png",
+          "fileSize": 306977,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b02bc097-15ab-41fc-9942-ee2049bd28f1",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b9c3788f-7e67-4e7b-8aa3-8759a1b21e67",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/13277bf0-8b2c-4604-bf28-9847e3295c2e"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c97de587-1365-4e96-bd41-83cc607a1e9e",
+          "title": null,
+          "description": null,
+          "fileName": "Screenshot 2022-06-27 235601.png",
+          "fileSize": 308541,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/f32abaab-70d9-451b-a719-e37e7d6cab0f",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/189b14f4-881b-406a-ac05-52d2e85c59b5",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e6d20c0a-264c-48fc-bbb5-e9e1fc30f133"
+        }
+      ],
+      "completionDate": "2022-03-17",
+      "url": "https://www.eagle6.com/"
+    },
+    {
+      "id": "poc-for-citrix-app-layering-on-azure",
+      "title": "POC for Citrix App Layering on Azure",
+      "description": "Created a Microsoft Remote Desktop Services project with Citrix App Layering on Azure Integration, learning everything as I went along with the project. The final implementation included high availability load balancing and file server clustering ensuring a scalable, high-performance setup for the POC that could be easily replicated in a production environment with minimum changes.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+          "title": null,
+          "description": null,
+          "fileName": "Screen Shot 2017-10-23 at 3.59.50 PM.png",
+          "fileSize": 146805,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+          "title": null,
+          "description": null,
+          "fileName": "Screenshot from October 23, 2017 4_56 PM.png",
+          "fileSize": 589281,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+          "title": null,
+          "description": null,
+          "fileName": "Screen Shot 2017-10-25 at 8.52.28 PM.png",
+          "fileSize": 125119,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920"
+        }
+      ],
+      "completionDate": "2017-10-31"
+    },
+    {
+      "id": "ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage",
+      "title": "Ionic 3 Chart and Forms with Validation and Native SQLite Storage",
+      "description": "My Client wanted me to develop a small app with the following features:\n\n- form on 2 pages ( 1 form for MM/YYYY, weight, height; 1 form for satisfaction score)\n- form validation ( MM/YYYY, weight, height, satisfaction required; age from MM/YYYY > 18; weight and height are numbers)\n- storage set and get n data with date-time ( MM/YYYY, weight, height, satisfaction)\n- base Chart with n satisfaction score set ( satisfaction score on the abscissa, the date on the ordinate)",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+          "title": null,
+          "description": null,
+          "fileName": "portfolio 1.png",
+          "fileSize": 299323,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+          "title": null,
+          "description": null,
+          "fileName": "portfolio 2.png",
+          "fileSize": 312466,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+          "title": null,
+          "description": null,
+          "fileName": "portfolio 3.png",
+          "fileSize": 317371,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392"
+        }
+      ],
+      "completionDate": "2017-12-22"
+    },
+    {
+      "id": "american-community-school-donations-page",
+      "title": "American Community School Donations Page",
+      "description": "My client wanted to have a donation form integrated with Mastercard International Gateway Service with full validation checks, Google Captcha Verification all with a secure and tight integration with a database backend to store the data regarding all valid transactions.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+          "title": null,
+          "description": null,
+          "fileName": "acs.JPG",
+          "fileSize": 314606,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+          "title": null,
+          "description": null,
+          "fileName": "acs-invalid.JPG",
+          "fileSize": 298398,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496"
+        }
+      ],
+      "completionDate": "2017-09-30",
+      "url": "http://payment.acs.sch.ae/donate.html"
+    },
+    {
+      "id": "pdf-to-responsive-html-5",
+      "title": "PDF to Responsive HTML 5",
+      "description": "Had to Convert Non-text a PDF File to Responsive HTML5, so that it could be sent as an HTML Email with some Links in it. Therefore, to achieve this, I converted the PDF to SVG via a free online tool and embedded that image into an HTML5 file with some links wrapped around SVG objects that represented the specified parts of the PDF. I also used SVG Specific JQuery to link the rest of the non-linked document and SVG objects to the Client's website as instructed.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+          "title": null,
+          "description": null,
+          "fileName": "21.JPG",
+          "fileSize": 204359,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+          "title": null,
+          "description": null,
+          "fileName": "22.JPG",
+          "fileSize": 194887,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+          "title": null,
+          "description": null,
+          "fileName": "23.JPG",
+          "fileSize": 179767,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824"
+        }
+      ],
+      "completionDate": "2017-09-10"
+    },
+    {
+      "id": "aljibouri-co",
+      "title": "Aljibouri.co",
+      "description": "My client wanted to present a responsive thumbnail grid of some specified post categories and some specified posts on the Homepage. The client also wanted special an image colored zoom hover effect on the above-mentioned thumbnails and their headings alongside some other minor adjustments to the template. For the first task, I created custom shortcodes in the theme's function.php file. I added custom CSS3 Code in the theme's custom code area provided by default.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+          "title": null,
+          "description": null,
+          "fileName": "11.JPG",
+          "fileSize": 215782,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+          "title": null,
+          "description": null,
+          "fileName": "12.JPG",
+          "fileSize": 176637,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+          "title": null,
+          "description": null,
+          "fileName": "13.JPG",
+          "fileSize": 142822,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032"
+        }
+      ],
+      "completionDate": "2017-09-11",
+      "url": "http://aljibouri.co"
+    },
+    {
+      "id": "https-directsoftwareoutlet-com-payment-gateway-integration",
+      "title": "https://directsoftwareoutlet.com/ Payment Gateway Integration",
+      "description": "My client asked me to test out different payment gateways for their Australian Woocommerce Store and after some testing and consideration, we settled on PayPal Merchant Payment, which I setup on the website for them. Moreover, I also added Payment Gateway Badges in the header and footer of the installed Woocommerce theme.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+          "title": null,
+          "description": null,
+          "fileName": "111.JPG",
+          "fileSize": 162040,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+          "title": null,
+          "description": null,
+          "fileName": "112.JPG",
+          "fileSize": 164330,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920"
+        }
+      ],
+      "completionDate": "2017-08-17",
+      "url": "https://directsoftwareoutlet.com/"
+    },
+    {
+      "id": "jmgarts-com-page-speed-optimization",
+      "title": "JMGARTS.com Page Speed Optimization",
+      "description": "My client wanted to increase page load speed of their website. To achieve this goal, I optimized website's images, improved server caching, added expire headers for different file types, enabled lazy loading of images etc. After all this, I achieved a page speed of 91% on PageSpeed and 88% on YSlow.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+          "title": null,
+          "description": null,
+          "fileName": "100.jpg",
+          "fileSize": 192007,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+          "title": null,
+          "description": null,
+          "fileName": "101.JPG",
+          "fileSize": 263386,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+          "title": null,
+          "description": null,
+          "fileName": "102.JPG",
+          "fileSize": 179273,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032"
+        }
+      ],
+      "completionDate": "2017-08-10",
+      "url": "https://jmgarts.com/"
+    },
+    {
+      "id": "web-rtc",
+      "title": "Web RTC",
+      "description": "The task was to create a video conferencing web application exactly like https://appr.tc/, but with a database-backend to store the currently active and non-active rooms. For this purpose, I used Codeigniter PHP as the  web serving and database backend, whereas the Node.js app was used for real-time communication and hosted via Heroku at:\nhttps://ar-webrtc.herokuapp.com",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+          "title": null,
+          "description": null,
+          "fileName": "91.JPG",
+          "fileSize": 121141,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528"
+        }
+      ],
+      "completionDate": "2017-07-18",
+      "url": "https://webrtc.ar27111994.com"
+    },
+    {
+      "id": "complete-controller-crm-system",
+      "title": "Complete Controller CRM System",
+      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a ‘Create New Client’ button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms – can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+          "title": null,
+          "description": null,
+          "fileName": "80.JPG",
+          "fileSize": 60873,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+          "title": null,
+          "description": null,
+          "fileName": "81.JPG",
+          "fileSize": 113854,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+          "title": null,
+          "description": null,
+          "fileName": "82.JPG",
+          "fileSize": 151431,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624"
+        }
+      ],
+      "completionDate": "2017-07-30",
+      "url": "http://upwork.ar27111994.com"
+    },
+    {
+      "id": "goggle-hunt",
+      "title": "Goggle Hunt",
+      "description": "This is my personal E-Commerce venture. Therefore, I have done everything ranging from Business Idea Generation, Branding and Logo Design to Web Development, Social Media Marketing and Campaigns etc. myself to build this business and keeping it up and running.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+          "title": null,
+          "description": null,
+          "fileName": "50.JPG",
+          "fileSize": 200013,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+          "title": null,
+          "description": null,
+          "fileName": "51.JPG",
+          "fileSize": 188179,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+          "title": null,
+          "description": null,
+          "fileName": "52.JPG",
+          "fileSize": 164220,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592"
+        }
+      ],
+      "completionDate": "2017-06-14",
+      "url": "https://gogglehunt.com"
+    },
+    {
+      "id": "neophar-website",
+      "title": "NeoPhar Website",
+      "description": "Had to convert a static HTML template into a similar Wordpress theme and in the process creating custom post types, custom post meta fields and the custom template for the respective custom post type archive.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+          "title": null,
+          "description": null,
+          "fileName": "70.JPG",
+          "fileSize": 179754,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+          "title": null,
+          "description": null,
+          "fileName": "71.JPG",
+          "fileSize": 173029,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+          "title": null,
+          "description": null,
+          "fileName": "72.JPG",
+          "fileSize": 102775,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824"
+        }
+      ],
+      "completionDate": "2017-05-21",
+      "url": "http://pharmacy.ar27111994.com"
+    },
+    {
+      "id": "television-subscription-management-system",
+      "title": "Television Subscription Management System",
+      "description": "Had to develop an Admin Panel based Customer Subscription Management System with Authorization and Reporting for a Television Subscription Provider.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+          "title": null,
+          "description": null,
+          "fileName": "61.JPG",
+          "fileSize": 171657,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+          "title": null,
+          "description": null,
+          "fileName": "62.JPG",
+          "fileSize": 101871,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+          "title": null,
+          "description": null,
+          "fileName": "63.JPG",
+          "fileSize": 92817,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840"
+        }
+      ],
+      "completionDate": "2017-05-29",
+      "url": "http://subs.ar27111994.com/admin"
+    },
+    {
+      "id": "shop-erp",
+      "title": "Shop ERP",
+      "description": "Had to develop a Complete Admin panel based solution for a small shop in a very limited timeframe alongside complete user groups and permission based authentication system, column filtering, customized data views, image gallery, client and server side validation etc., all of which I managed to create using a Highly Customized version of Codeigniter Grocery Crud library.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+          "title": null,
+          "description": null,
+          "fileName": "41.JPG",
+          "fileSize": 157045,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+          "title": null,
+          "description": null,
+          "fileName": "42.JPG",
+          "fileSize": 167018,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+          "title": null,
+          "description": null,
+          "fileName": "43.JPG",
+          "fileSize": 158076,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696"
+        }
+      ],
+      "completionDate": "2017-05-08",
+      "url": "http://fiverr.ar27111994.com/admin/"
+    },
+    {
+      "id": "nubrace-com-bugs-fixing",
+      "title": "nubrace.com Bugs Fixing",
+      "description": "Had to fix an Enterprise grade Dental Care Application in multiple phases.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+          "title": null,
+          "description": null,
+          "fileName": "31.JPG",
+          "fileSize": 94162,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+          "title": null,
+          "description": null,
+          "fileName": "32.JPG",
+          "fileSize": 180266,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+          "title": null,
+          "description": null,
+          "fileName": "33.JPG",
+          "fileSize": 155499,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416"
+        }
+      ],
+      "completionDate": "2017-03-22",
+      "url": "http://nubrace.com/"
+    },
+    {
+      "id": "http-guitarhangar-com-opencart-fix-and-modification",
+      "title": "http://guitarhangar.com/ Opencart Fix and Modification",
+      "description": "Had to Fix and Modify Checkout Page Forms.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+          "title": null,
+          "description": null,
+          "fileName": "21.JPG",
+          "fileSize": 73993,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304"
+        }
+      ],
+      "completionDate": "2017-02-07",
+      "url": "http://guitarhangar.com/"
+    }
+  ]
+}

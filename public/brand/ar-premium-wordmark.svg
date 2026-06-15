@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 205" role="img" aria-label="ARLabs premium wordmark">
+  <defs>
+    <linearGradient id="pm-word" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#edf5ff"/>
+      <stop offset="70%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#b3e0ff"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="112" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="92" font-weight="820" letter-spacing="-1.6" fill="url(#pm-word)">ARLabs</text>
+  <text x="2" y="158" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="650" letter-spacing="3" fill="#91c8ff">DEVTOOLS · AUTOMATION · SYSTEMS</text>
+</svg>

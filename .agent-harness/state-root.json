@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "packageRoot": "C:/Projects/agent-harness",
+  "stateRoot": "C:/Users/ar271/.openclaw/workspace/portfolio-v1/.agent-harness",
+  "generatedAt": "2026-05-04T19:24:41.759Z",
+  "managedAssets": [
+    "discover/sources.json",
+    "discover/selections.json",
+    "discover/official-skills-indexes.json",
+    "discover/official-upstreams.json",
+    "discover/pipeline.json",
+    "discover/source-packs",
+    "discover/schema",
+    "discover/recommendation-policy",
+    "discover/seeds",
+    "mirror/policy.json",
+    "mirror/schema"
+  ]
+}

@@ -1,0 +1,1668 @@
+---
+import UpworkPortfolioCard from "../components/UpworkPortfolioCard.astro";
+import upworkPortfolio from "../data/upwork-portfolio.json";
+import Layout from "../layouts/Layout.astro";
+import { Picture } from 'astro:assets';
+import heroPhoto from '../assets/brand/ahmed-photo-hero.webp';
+
+const contactEmail = "admin@ar27111994.dev";
+const secondaryEmail = "ahmed.rehan@ar27111994.dev";
+const whatsappUrl = "https://wa.me/923315887235";
+const upworkProfileUrl = upworkPortfolio.profileUrl;
+interface UpworkPortfolioAttachment {
+  uid?: string;
+  type?: string;
+  title?: string;
+  description?: string;
+  rank?: number | null;
+  url?: string;
+  embeddedUrl?: string;
+  originalUrl?: string;
+  image?: {
+    large?: string;
+    medium?: string;
+    small?: string;
+  };
+}
+
+interface UpworkPortfolioItem {
+  id: string;
+  title: string;
+  role?: string;
+  description: string;
+  displayDescription?: string;
+  projectGoal?: string;
+  solution?: string;
+  skills?: string[];
+  url?: string;
+  thumbnail?: string;
+  thumbnailOriginal?: string;
+  completionDate?: string;
+  featured?: boolean;
+  sourcePage?: number | null;
+  attachments?: UpworkPortfolioAttachment[];
+}
+
+interface PortfolioDisplayMeta {
+  description: string;
+  skills: string[];
+}
+
+const portfolioDisplayMeta: Record<string, PortfolioDisplayMeta> = {
+  "ar27111994.dev": {
+    description:
+      "Fast Astro portfolio/resume site that turns scattered proof, links, case studies, and contact paths into one client-ready surface.",
+    skills: ["Astro", "Portfolio UX", "SEO", "Responsive UI"],
+  },
+  "penpot-mcp": {
+    description:
+      "Agent workflow kit for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code handoff.",
+    skills: ["AI workflows", "Design systems", "MCP", "Frontend"],
+  },
+  "agent-harness": {
+    description:
+      "TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across modern coding hosts.",
+    skills: ["TypeScript", "CLI", "AI agents", "Developer tooling"],
+  },
+  "Webhook Debugger and Logger": {
+    description:
+      "Open-source webhook debugging suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic.",
+    skills: ["Webhooks", "API tooling", "Replay", "Debugging"],
+  },
+};
+const inferPortfolioTags = (item: UpworkPortfolioItem) => {
+  const text = `${item.title} ${item.description}`.toLowerCase();
+  if (text.includes("webhook")) return ["Webhooks", "APIs", "Debugging"];
+  if (text.includes("angular") || text.includes("ionic"))
+    return ["Frontend", "Angular", "App UI"];
+  if (text.includes("opencart") || text.includes("woocommerce"))
+    return ["E-commerce", "PHP", "CMS"];
+  if (text.includes("wordpress")) return ["WordPress", "CMS", "Responsive UI"];
+  if (text.includes("azure") || text.includes("citrix"))
+    return ["Azure", "Infrastructure", "POC"];
+  if (
+    text.includes("crm") ||
+    text.includes("erp") ||
+    text.includes("management")
+  ) {
+    return ["Admin systems", "Dashboards", "Backend"];
+  }
+  return ["Client project", "Web development"];
+};
+const upworkPortfolioItems = (
+  upworkPortfolio.items as unknown as UpworkPortfolioItem[]
+).map((item) => ({
+  ...item,
+  displayDescription:
+    portfolioDisplayMeta[item.title]?.description ?? item.description,
+  skills: item.skills?.length
+    ? item.skills
+    : (portfolioDisplayMeta[item.title]?.skills ?? inferPortfolioTags(item)),
+}));
+const upworkPortfolioCount = upworkPortfolioItems.length;
+const recentUpworkProofItems = upworkPortfolioItems
+  .filter((item) => item.featured)
+  .slice(0, 4);
+const recentUpworkProofTitles = (
+  recentUpworkProofItems.length
+    ? recentUpworkProofItems
+    : upworkPortfolioItems.slice(0, 4)
+)
+  .map((item) => item.title)
+  .join(" · ");
+
+const profileLinks = [
+  {
+    label: "GitHub",
+    href: "https://github.com/ar27111994",
+    icon: "/brand-icons/github.svg",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/ar27111994",
+    icon: "/brand-icons/linkedin.svg",
+  },
+  {
+    label: "Upwork",
+    href: upworkProfileUrl,
+    icon: "/brand-icons/upwork.svg",
+  },
+  {
+    label: "X/Twitter",
+    href: "https://x.com/ar27111994",
+    icon: "/brand-icons/x.svg",
+  },
+  {
+    label: "Product Hunt",
+    href: "https://www.producthunt.com/@ar27111994",
+    icon: "/brand-icons/producthunt.svg",
+  },
+  {
+    label: "Stack Overflow",
+    href: "https://stackoverflow.com/users/3841610/ar27111994",
+    icon: "/brand-icons/stackoverflow.svg",
+  },
+  {
+    label: "Hacker News",
+    href: "https://news.ycombinator.com/user?id=ar27111994",
+    icon: "/brand-icons/ycombinator.svg",
+  },
+  {
+    label: "Dev.to",
+    href: "https://dev.to/ar27111994",
+    icon: "/brand-icons/devdotto.svg",
+  },
+  {
+    label: "Hashnode",
+    href: "https://hashnode.com/@ar27111994",
+    icon: "/brand-icons/hashnode.svg",
+  },
+  {
+    label: "Medium",
+    href: "https://medium.com/@arlabs",
+    icon: "/brand-icons/medium.svg",
+  },
+  {
+    label: "CoderLegion",
+    href: "https://coderlegion.com/user/ar27111994",
+    icon: "/brand-icons/coderlegion.svg",
+  },
+  {
+    label: "Discord",
+    href: "https://discord.com/channels/@me",
+    note: "ar27111994",
+    icon: "/brand-icons/discord.svg",
+  },
+];
+
+const badges = [
+  { label: "Microsoft Partner", icon: "/brand-icons/microsoft.svg" },
+  { label: "Anthropic Partner", icon: "/brand-icons/anthropic.svg" },
+  {
+    label: "Open-source maintainer",
+    icon: "/brand-icons/opensourceinitiative.svg",
+  },
+  { label: "Devtools builder", icon: "/brand-icons/github.svg" },
+  { label: "Webhook/API tooling", mark: "API" },
+  { label: "Productivity systems", mark: "FLOW" },
+  { label: "Enterprise-aware delivery", mark: "B2B" },
+  { label: "Remote / async ready", mark: "↗" },
+  { label: "Reliability-first shipping", mark: "✓" },
+];
+
+const proofStackMetrics = [
+  {
+    value: "10+",
+    label: "years",
+    detail: "enterprise, freelance, founder, solo builds",
+  },
+  {
+    value: "52",
+    label: "public repos",
+    detail: "static fallback; syncs from GitHub in-browser",
+    stat: "githubRepos",
+  },
+  {
+    value: "30",
+    label: "GH stars",
+    detail: "static fallback; syncs from GitHub in-browser",
+    stat: "githubStars",
+  },
+];
+
+const proofCategories = [
+  { label: "Devtools", weight: "92%" },
+  { label: "Integrations", weight: "88%" },
+  { label: "Automation", weight: "84%" },
+  { label: "Agents", weight: "82%" },
+  { label: "Enterprise", weight: "76%" },
+];
+
+const featuredProjects = [
+  {
+    name: "agent-harness",
+    status: "Priority #1 · Agent tooling",
+    visual: "AI Agents · CLI · Host Wiring",
+    accent: "accent-agents",
+    href: "https://github.com/ar27111994/agent-harness",
+    summary:
+      "Node.js / TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across VS Code/Copilot, OpenCode, Cursor, Zed, Claude Code, and Pi.",
+    highlights: [
+      "Reusable agent-asset lifecycle",
+      "Host-aware activation and wiring",
+      "Public writing on agent workflow design",
+    ],
+  },
+  {
+    name: "Webhook Debugger and Logger",
+    status: "Priority #2 · Webhook tooling",
+    visual: "Capture · Replay · Verify",
+    accent: "accent-capture",
+    href: "https://github.com/ar27111994/webhook-debugger-logger",
+    summary:
+      "Enterprise-grade webhook testing suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic in real time without persistent tunnels.",
+    highlights: [
+      "SSE streaming and replay loops",
+      "JSON Schema + signature verification",
+      "Show HN, Apify, and article proof",
+    ],
+  },
+  {
+    name: "penpot-mcp",
+    status: "Priority #3 · Design-to-code agents",
+    visual: "Penpot · MCP · Design Systems",
+    accent: "accent-design",
+    href: "https://github.com/ar27111994/penpot-mcp",
+    summary:
+      "AI-agent skill for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows via MCP.",
+    highlights: [
+      "Open-source design tooling",
+      "Agent skill packaging",
+      "Design system and prototype maintenance",
+    ],
+  },
+  {
+    name: "antigravity-awesome-skills",
+    status: "Agent skill curation",
+    visual: "Skills · Claude · Cursor",
+    accent: "accent-skills",
+    href: "https://github.com/ar27111994/antigravity-awesome-skills",
+    summary:
+      "Curated collection of 200+ agentic skills for Claude Code / Antigravity / Cursor-style AI-agent workflows.",
+    highlights: [
+      "Skill curation",
+      "Agent workflow packaging",
+      "Practical AI-development assets",
+    ],
+  },
+];
+
+const additionalProjects = [
+  {
+    name: "Aesthetic Palettes",
+    href: "https://github.com/ar27111994/Aesthetic-Palettes",
+    description:
+      "Open-source color palette generator focused on WCAG-aware visual tooling, typography, UX research, and zero-cost infrastructure.",
+  },
+  {
+    name: "code-the-countdown",
+    href: "https://github.com/ar27111994/code-the-countdown",
+    description:
+      "Google I/O 2026 Code the Countdown challenge project using TypeScript, React/Next.js, canvas, motion, Web Audio, and WebGL-oriented UI work.",
+  },
+  {
+    name: "InterActNote",
+    href: "https://github.com/ar27111994/InterActNote",
+    description:
+      "Android-first call-time context and relationship notes product focused on useful, practical in-call context.",
+  },
+  {
+    name: "DataGuard",
+    href: `mailto:${contactEmail}?subject=DataGuard`,
+    description:
+      "Data quality and ETL validation product direction for CSV, Excel, JSON, and structured-data workflows.",
+  },
+];
+
+const writingLinks = [
+  {
+    label: "Agent assets need a lifecycle, not a dumping ground",
+    href: "https://dev.to/ar27111994/agent-assets-need-a-lifecycle-not-a-dumping-ground-1i3h",
+    source: "Dev.to",
+    date: "May 2026",
+    tag: "Agent tooling",
+  },
+  {
+    label: "I built a more restrained alternative to giant AI skill bundles",
+    href: "https://dev.to/ar27111994/i-built-a-more-restrained-alternative-to-giant-ai-skill-bundles-1kf5",
+    source: "Dev.to",
+    date: "May 2026",
+    tag: "AI workflows",
+  },
+  {
+    label: "Fixing Google Antigravity Pro Authentication on Windows 10 + WSL2",
+    href: "https://dev.to/ar27111994/fixing-google-antigravity-pro-authentication-on-windows-10-wsl2-45jd",
+    source: "Dev.to",
+    date: "Jan 2026",
+    tag: "Debugging",
+  },
+  {
+    label:
+      "Stop paying for webhook debuggers. I built a better one (Open Source).",
+    href: "https://dev.to/ar27111994/stop-paying-for-webhook-debuggers-i-built-a-better-one-open-source-dcl",
+    source: "Dev.to",
+    date: "Jan 2026",
+    tag: "Webhooks",
+  },
+  {
+    label: "How to Debug Webhook Integrations in Minutes",
+    href: "https://dev.to/ar27111994/how-to-debug-webhook-integrations-in-minutes-step-by-step-guide-3ccf",
+    source: "Dev.to",
+    date: "Dec 2025",
+    tag: "Webhook guide",
+  },
+  {
+    label:
+      "Show HN: Webhook Debugger — OS Alternative to RequestBin with Replay, SSRF Checks",
+    href: "https://news.ycombinator.com/item?id=46632472",
+    source: "Hacker News",
+    date: "Jan 2026",
+    tag: "Launch proof",
+  },
+];
+
+const feedSources = [
+  {
+    label: "Dev.to articles",
+    href: "https://dev.to/feed/ar27111994",
+    type: "RSS",
+    icon: "/brand-icons/devdotto.svg",
+  },
+  {
+    label: "Medium / ARLabs",
+    href: "https://medium.com/feed/@arlabs",
+    type: "RSS",
+    icon: "/brand-icons/medium.svg",
+  },
+  {
+    label: "Hashnode",
+    href: "https://hashnode.com/@ar27111994",
+    type: "Profile",
+    icon: "/brand-icons/hashnode.svg",
+  },
+  {
+    label: "GitHub repos",
+    href: "https://api.github.com/users/ar27111994/repos?sort=updated",
+    type: "API",
+    icon: "/brand-icons/github.svg",
+  },
+  {
+    label: "GitHub gists",
+    href: "https://api.github.com/users/ar27111994/gists",
+    type: "API",
+    icon: "/brand-icons/github.svg",
+  },
+  {
+    label: "Hacker News",
+    href: "https://news.ycombinator.com/user?id=ar27111994",
+    type: "Profile",
+    icon: "/brand-icons/ycombinator.svg",
+  },
+  {
+    label: "Product Hunt",
+    href: "https://www.producthunt.com/@ar27111994",
+    type: "Profile",
+    icon: "/brand-icons/producthunt.svg",
+  },
+  {
+    label: "X/Twitter",
+    href: "https://x.com/ar27111994",
+    type: "Social",
+    icon: "/brand-icons/x.svg",
+  },
+];
+
+const labNotes = [
+  {
+    title: "Integration reliability lab",
+    body: "Webhook debugging, replay safety, provider-specific diagnosis, and incident artifacts for external integrations that fail in messy real-world ways.",
+  },
+  {
+    title: "Agent workflow lab",
+    body: "Reusable skills, prompts, host-aware agent assets, and lifecycle tooling so AI-assisted development does not become another dumping ground.",
+  },
+  {
+    title: "Automation systems lab",
+    body: "Small internal tools, scripts, dashboards, and workflow utilities that are observable, maintainable, and boring in the right places.",
+  },
+  {
+    title: "Product surface lab",
+    body: "Portfolio, docs, launch pages, resumes, and proof surfaces polished for speed, clarity, accessibility, SEO, and trust.",
+  },
+];
+
+const contactWidgets = [
+  {
+    kind: "email",
+    label: "Primary email",
+    value: contactEmail,
+    detail: "Best for project briefs, partnerships, and longer context.",
+    href: `mailto:${contactEmail}`,
+    icon: "/brand-icons/gmail.svg",
+  },
+  {
+    kind: "email secondary-email",
+    label: "Direct email",
+    value: secondaryEmail,
+    detail:
+      "Additional direct inbox for portfolio, Upwork, and collaboration context.",
+    href: `mailto:${secondaryEmail}`,
+    icon: "/brand-icons/gmail.svg",
+  },
+  {
+    kind: "whatsapp",
+    label: "WhatsApp",
+    value: "+92 331 588 7235",
+    detail: "Fast async contact for focused devtools / automation work.",
+    href: whatsappUrl,
+    icon: "/brand-icons/whatsapp.svg",
+  },
+];
+
+const resumeWidgets = [
+  {
+    label: "Full resume",
+    badge: "Comprehensive",
+    href: "/resume/resume_full.pdf",
+    detail:
+      "Best default: full project, education, certification, and OSS/freemium depth.",
+    icon: "/brand-icons/adobeacrobatreader.svg",
+  },
+  {
+    label: "Client/Freelance resume",
+    badge: "Client-facing",
+    href: "/resume/resume_client_freelance.pdf",
+    detail:
+      "Trimmed for freelance/project work, delivery credibility, and practical technical scope.",
+    icon: "/brand-icons/adobeacrobatreader.svg",
+  },
+  {
+    label: "One-page resume",
+    badge: "Fast scan",
+    href: "/resume/resume_one_page.pdf",
+    detail: "Compact version for quick screening and general applications.",
+    icon: "/brand-icons/adobeacrobatreader.svg",
+  },
+];
+
+const profileWidgets = [
+  {
+    label: "GitHub",
+    href: "https://github.com/ar27111994",
+    icon: "/brand-icons/github.svg",
+    detail: "Strongest technical proof surface",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/ar27111994",
+    icon: "/brand-icons/linkedin.svg",
+    detail: "Professional credibility",
+  },
+  {
+    label: "Upwork",
+    href: upworkProfileUrl,
+    icon: "/brand-icons/upwork.svg",
+    detail: "Client acquisition surface",
+  },
+  {
+    label: "Product Hunt",
+    href: "https://www.producthunt.com/@ar27111994",
+    icon: "/brand-icons/producthunt.svg",
+    detail: "Launch and product proof",
+  },
+  {
+    label: "Stack Overflow",
+    href: "https://stackoverflow.com/users/3841610/ar27111994",
+    icon: "/brand-icons/stackoverflow.svg",
+    detail: "Developer-community history",
+  },
+  {
+    label: "Hacker News",
+    href: "https://news.ycombinator.com/user?id=ar27111994",
+    icon: "/brand-icons/ycombinator.svg",
+    detail: "Launch/discussion proof",
+  },
+];
+
+const upworkProofCards = [
+  {
+    label: "Client fit",
+    value: "Full-stack delivery for tools, dashboards, APIs, and automation",
+    detail:
+      "Best fit for teams that need a practical builder who can turn messy workflows into usable, documented software.",
+  },
+  {
+    label: "Delivery style",
+    value: "Async-friendly, artifact-driven, low-drama execution",
+    detail:
+      "Clear written updates, concrete demos, and handoff-friendly work instead of vague progress reports.",
+  },
+  {
+    label: "Portfolio depth",
+    value: `${upworkPortfolioCount} shipped examples across old and new work`,
+    detail:
+      "A long work trail spanning devtools, enterprise frontend, CMS/e-commerce, dashboards, integrations, and product surfaces.",
+  },
+  {
+    label: "Recent proof",
+    value: recentUpworkProofTitles,
+    detail:
+      "Newest featured profile work, emphasizing developer tools, AI-agent workflows, webhooks, and polished public surfaces.",
+  },
+];
+
+const upworkFitTags = [
+  "Developer tools",
+  "Webhook APIs",
+  "Dashboards",
+  "Automation",
+  "AI-agent tooling",
+  "Fast UI",
+  "Async delivery",
+  "Production-ready",
+];
+
+const capabilities = [
+  {
+    title: "Developer tools and internal platform tooling",
+    icon: "/brand-icons/github.svg",
+    cue: "Tooling",
+  },
+  {
+    title: "Webhook/API workflows and debugging systems",
+    mark: "API",
+    cue: "Integrations",
+  },
+  {
+    title: "Automation-heavy product architecture",
+    mark: "AUTO",
+    cue: "Systems",
+  },
+  {
+    title: "AI-assisted product workflows and agent tooling",
+    icon: "/brand-icons/anthropic.svg",
+    cue: "Agents",
+  },
+  {
+    title: "Design-to-code and MCP skill workflows",
+    mark: "MCP",
+    cue: "Design systems",
+  },
+  {
+    title: "Performance-conscious full-stack engineering",
+    mark: "PERF",
+    cue: "Frontend + backend",
+  },
+  {
+    title: "Production-focused build and delivery execution",
+    mark: "SHIP",
+    cue: "Launch-ready",
+  },
+  {
+    title: "Security-sensitive defaults for tooling that touches user traffic",
+    mark: "SEC",
+    cue: "Trust defaults",
+  },
+];
+
+const credibilityFacts = [
+  {
+    icon: "10+",
+    text: "10+ years across enterprise, freelance, founder, and solo-builder execution",
+  },
+  {
+    icon: "UX",
+    text: "Built complex workflow-heavy modules: permissions, documents, uploads, graphs, maps, and org charts",
+  },
+  {
+    icon: "AI",
+    text: "Current focus: devtools, webhooks, agent systems, automation, and design-to-code workflows",
+  },
+  {
+    icon: "MS",
+    text: "Microsoft Partner and Anthropic Partner identity via admin@ar27111994.dev",
+  },
+];
+
+const ventureProof = [
+  {
+    label: "Goggle Hunt exit listing (Flippa)",
+    href: "https://flippa.com/9034806-your-one-stop-shop-for-fashion-and-sports-goggles",
+  },
+  {
+    label: "Gleam competition platform used for subscriber campaigns",
+    href: "https://gleam.io/",
+  },
+  {
+    label: "Upwork freelance profile",
+    href: upworkProfileUrl,
+  },
+];
+
+const certificationLinks = [
+  {
+    label: "Coursera Certificate (12/05/2019) — ML Strategy & Error Analysis",
+    href: "https://www.coursera.org/account/accomplishments/verify/HQ3883739EQ7",
+  },
+  {
+    label:
+      "Coursera Certificate (07/04/2019) — Deep Learning Best Practices & Optimization",
+    href: "https://www.coursera.org/account/accomplishments/verify/U4QYCQLM9WUH",
+  },
+  {
+    label:
+      "Coursera Certificate (20/08/2018) — Deep Learning Foundations + TensorFlow",
+    href: "https://www.coursera.org/account/accomplishments/verify/TDDMYNV57A99",
+  },
+  {
+    label: "Coursera Certificate (29/10/2018) — Big Data Fundamentals + Hadoop",
+    href: "https://www.coursera.org/account/accomplishments/verify/HHVS4SJNXDR8",
+  },
+];
+
+const openSourceFreemium = [
+  {
+    label: "OpenCart 3.x extension listing",
+    href: "https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=33156",
+  },
+  {
+    label: "Mosaico CodeIgniter integration",
+    href: "https://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth",
+  },
+  {
+    label: "National Criminals Database",
+    href: "https://github.com/ar27111994/National-Criminals-Database",
+  },
+  {
+    label: "OpenBiz CRUD Scaffolding Templates",
+    href: "https://github.com/ar27111994/OpenBiz-CRUD-Scaffolding-Templates",
+  },
+  { label: "OpenBiz", href: "https://github.com/ar27111994/OpenBiz" },
+  {
+    label: "Generic Repository Pattern",
+    href: "https://github.com/ar27111994/Generic-Repository-Pattern",
+  },
+  { label: "Bookstore", href: "https://github.com/ar27111994/bookstore" },
+  {
+    label: "ShoppingCartLibraryv1.0",
+    href: "https://github.com/ar27111994/ShoppingCartLibraryv1.0",
+  },
+];
+
+const sponsorLinks = [
+  {
+    label: "Patreon",
+    href: "https://www.patreon.com/cw/ar27111994",
+    note: "Recurring support + roadmap voting",
+    icon: "/brand-icons/patreon.svg",
+  },
+  {
+    label: "Ko-fi",
+    href: "https://ko-fi.com/ar27111994",
+    note: "One-time or monthly support",
+    icon: "/brand-icons/kofi.svg",
+  },
+  {
+    label: "Liberapay",
+    href: "https://liberapay.com/ar27111994",
+    note: "Open recurring sponsorship",
+    icon: "/brand-icons/liberapay.svg",
+  },
+  {
+    label: "Buy Me a Coffee",
+    href: "https://buymeacoffee.com/ar27111994",
+    note: "Quick contribution for maintenance",
+    icon: "/brand-icons/buymeacoffee.svg",
+  },
+  {
+    label: "thanks.dev",
+    href: "https://thanks.dev/d/gh/ar27111994",
+    note: "Sponsor through dependency tooling ecosystem",
+    icon: "/brand-icons/thanksdotdev.png",
+  },
+];
+---
+
+<Layout
+  title="Ahmed Rehan — Devtools, Automation, Webhooks, Agent Systems"
+  description="Portfolio of Ahmed Rehan: full-stack engineer building developer tools, automation systems, webhook workflows, AI-agent tooling, and reliable performance-conscious software."
+  image="/brand/og-cover.png"
+>
+  <main class="site-wrap" id="main-content">
+    <nav class="anchor-rail" aria-label="Page sections">
+      <a href="#lab-title">Lab</a>
+      <a href="#projects-title">Work</a>
+      <a href="#upwork-title">Upwork</a>
+      <a href="#proof-title">Proof</a>
+      <a href="#contact-title">Contact</a>
+    </nav>
+
+    <section class="hero panel">
+      <div class="hero-copy">
+        <div class="brand-lockup" aria-label="Ahmed Rehan profile brand">
+          <Picture
+            src={heroPhoto}
+            alt="Portrait of Ahmed Rehan"
+            widths={[112, 224, 336]}
+            sizes="112px"
+            formats={['avif', 'webp']}
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="brand-meta">
+            <p class="brand-title">ARLabs</p>
+            <p class="brand-subtitle">Devtools · Automation · Agent Systems</p>
+          </div>
+        </div>
+        <p class="eyebrow">ar27111994.dev · Rawalpindi, Pakistan</p>
+        <h1>
+          Developer tools, automation, and agent systems that stay useful after
+          the first launch.
+        </h1>
+        <p class="lede">
+          I’m Ahmed Rehan — a <strong>full-stack engineer</strong> and solo builder
+          working like a small <strong>developer lab</strong>: shipping <strong
+            >practical tools</strong
+          >, tightening reliability, documenting the system, and taking
+          selective freelance work where
+          <strong>devtools, webhooks, automation</strong>, or AI-agent workflows
+          need clear structure.
+        </p>
+
+        <div class="badge-row" aria-label="Profile badges">
+          {
+            badges.map((badge) => (
+              <span>
+                {badge.icon ? (
+                  <img
+                    src={badge.icon}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <b aria-hidden="true">{badge.mark}</b>
+                )}
+                {badge.label}
+              </span>
+            ))
+          }
+        </div>
+
+        <div class="mobile-proof-stack" aria-label="Mobile live proof stack">
+          <span class="signal-kicker">Live proof stack</span>
+          <strong>Devtools · Integrations · Automation · Agents</strong>
+          <div class="signal-metrics" aria-label="Live public proof metrics">
+            {
+              proofStackMetrics.map((metric) => (
+                <span title={metric.detail}>
+                  <b
+                    data-proof-value={metric.stat}
+                    aria-live={metric.stat ? "polite" : undefined}
+                  >
+                    {metric.value}
+                  </b>
+                  <small>{metric.label}</small>
+                </span>
+              ))
+            }
+          </div>
+          <div class="signal-bars" aria-label="Current proof categories">
+            {
+              proofCategories.map((category) => (
+                <span style={`--w: ${category.weight}`}>
+                  <em>{category.label}</em>
+                </span>
+              ))
+            }
+          </div>
+          <div class="signal-tags">
+            <span>Productivity</span><span>APIs</span><span>Reliability</span
+            ><span>OSS</span><span>Docs</span>
+          </div>
+          <p class="signal-note" data-proof-status>
+            Public GitHub metrics update in-browser when available.
+          </p>
+        </div>
+
+        <div
+          class="hero-actions contact-command-grid"
+          aria-label="Primary contact actions"
+        >
+          <a
+            class="button primary icon-button contact-command"
+            href={`mailto:${contactEmail}`}
+          >
+            <span class="command-icon"
+              ><img
+                src="/brand-icons/gmail.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              /></span
+            >
+            <span class="command-copy"
+              ><small>Email</small><strong>admin@<wbr />ar27111994.dev</strong
+              ></span
+            >
+          </a>
+          <a
+            class="button secondary icon-button contact-command"
+            href="/resume/resume_full.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="command-icon"
+              ><img
+                src="/brand-icons/adobeacrobatreader.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              /></span
+            >
+            <span class="command-copy"
+              ><small>Resume PDF</small><strong>Download full resume</strong
+              ></span
+            >
+          </a>
+          <a
+            class="button whatsapp icon-button contact-command"
+            href={whatsappUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="command-icon"
+              ><img
+                src="/brand-icons/whatsapp.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              /></span
+            >
+            <span class="command-copy"
+              ><small>Fast contact</small><strong>WhatsApp</strong></span
+            >
+          </a>
+        </div>
+
+        <div
+          class="contact-proof-strip proof-ledger"
+          aria-label="Secondary contact and launch proof"
+        >
+          <span
+            ><img
+              src="/brand-icons/discord.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <small>Discord</small><strong>ar27111994</strong></span
+          >
+          <a href="mailto:ar27111994@gmail.com"
+            ><img
+              src="/brand-icons/gmail.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <small>Alt email</small><strong>ar27111994@<wbr />gmail.com</strong
+            ></a
+          >
+          <a
+            href="https://www.producthunt.com/@ar27111994"
+            target="_blank"
+            rel="noreferrer"
+            ><img
+              src="/brand-icons/producthunt.svg"
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+            <small>Launch proof</small><strong>Product Hunt</strong></a
+          >
+        </div>
+        <div
+          class="availability-strip availability-command-strip"
+          aria-label="Current availability and proof points"
+        >
+          <span class="availability-card"
+            ><b>WORK</b><strong>Devtools / automation / AI-agent systems</strong
+            ><small
+              >Selective builds where reliability, UX, and shipping discipline
+              matter.</small
+            ></span
+          >
+          <span class="availability-card"
+            ><b>MODE</b><strong
+              >Remote-friendly · async-ready · product-minded</strong
+            ><small
+              >Clear artifacts, written context, and low-drama execution loops.</small
+            ></span
+          >
+          <span class="wide workflow-loop">
+            <b>Current loop</b>
+            <em>Diagnose</em><i aria-hidden="true"></i><em>Build</em><i
+              aria-hidden="true"></i><em>Document</em><i aria-hidden="true"
+            ></i><em>Launch</em>
+          </span>
+        </div>
+      </div>
+
+      <aside class="hero-aside" aria-label="Quick profile facts">
+        <div class="signal-board">
+          <span class="signal-kicker">Live proof stack</span>
+          <strong>Devtools · Webhooks · Agents · Integrations</strong>
+          <div class="signal-metrics" aria-label="Live public proof metrics">
+            {
+              proofStackMetrics.map((metric) => (
+                <span title={metric.detail}>
+                  <b
+                    data-proof-value={metric.stat}
+                    aria-live={metric.stat ? "polite" : undefined}
+                  >
+                    {metric.value}
+                  </b>
+                  <small>{metric.label}</small>
+                </span>
+              ))
+            }
+          </div>
+          <div class="signal-bars" aria-label="Current proof categories">
+            {
+              proofCategories.map((category) => (
+                <span style={`--w: ${category.weight}`}>
+                  <em>{category.label}</em>
+                </span>
+              ))
+            }
+          </div>
+          <div class="signal-tags">
+            <span>Productivity</span><span>APIs</span><span>Reliability</span
+            ><span>OSS</span><span>Docs</span>
+          </div>
+          <div class="signal-icons" aria-hidden="true">
+            <span>CLI</span><span>API</span><span>AI</span>
+          </div>
+          <p class="signal-note" data-proof-status>
+            Public GitHub metrics update in-browser when the API is available.
+          </p>
+        </div>
+        <div class="snapshot-block">
+          <h2>Snapshot</h2>
+          <ul class="bullet-clean snapshot-list">
+            {
+              credibilityFacts.map((item) => (
+                <li>
+                  <span class="snapshot-icon" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <span>{item.text}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="panel lab-panel" aria-labelledby="lab-title">
+      <div class="section-head">
+        <h2 id="lab-title">Developer lab</h2>
+        <p>
+          A focused bench for tools, systems, proof surfaces, and selective
+          client work — practical experiments that can become reliable products.
+        </p>
+      </div>
+      <div class="grid four compact">
+        {
+          labNotes.map((item) => (
+            <article class="lab-card">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">Featured products</h2>
+        <p>
+          Live product evidence from the places where the work is actually
+          happening: repos, launch surfaces, docs, and systems that can keep
+          growing into paid tools.
+        </p>
+      </div>
+
+      <div class="grid two">
+        {
+          featuredProjects.map((project) => (
+            <article class="project-card">
+              <div
+                class={`project-visual ${project.accent}`}
+                aria-hidden="true"
+              >
+                <span>{project.visual}</span>
+              </div>
+              <div class="project-copy">
+                <p class="status-tag">{project.status}</p>
+                <h3>
+                  <a href={project.href} target="_blank" rel="noreferrer">
+                    {project.name}
+                  </a>
+                </h3>
+                <p>{project.summary}</p>
+                <ul class="mini-list">
+                  {project.highlights.map((point) => (
+                    <li>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="additional-projects-title">
+      <div class="section-head">
+        <h2 id="additional-projects-title">Product and tooling threads</h2>
+        <p>
+          Supporting work that shows range beyond the headline tools: visual
+          systems, challenge builds, mobile context products, and data-quality
+          workflows.
+        </p>
+      </div>
+      <div class="grid four compact">
+        {
+          additionalProjects.map((project) => (
+            <article class="project-card experiment">
+              <h3>
+                <a href={project.href} target="_blank" rel="noreferrer">
+                  {project.name}
+                </a>
+              </h3>
+              <p>{project.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="feed-title">
+      <div class="section-head split-head">
+        <div>
+          <h2 id="feed-title">Public work feed</h2>
+          <p>
+            Recent launch notes, technical posts, and repository activity pulled
+            from public surfaces when available. The curated fallback stays
+            useful even when third-party APIs are slow or blocked.
+          </p>
+        </div>
+        <a
+          class="button secondary small"
+          href="https://dev.to/ar27111994"
+          target="_blank"
+          rel="noreferrer">Open Dev.to</a
+        >
+      </div>
+
+      <div class="feed-widget" data-feed-widget>
+        <div class="feed-status" data-feed-status>
+          Loading public feed items…
+        </div>
+        <div class="feed-list" data-feed-list></div>
+      </div>
+
+      <div
+        class="support-grid writing-grid fallback-feed"
+        aria-label="Curated fallback feed"
+      >
+        {
+          writingLinks.map((item) => (
+            <a
+              class="support-card"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="chip">{item.tag}</span>
+              <span class="support-name">{item.label}</span>
+              <span class="support-note">
+                <strong>{item.source}:</strong> {item.date}
+              </span>
+            </a>
+          ))
+        }
+      </div>
+
+      <details class="feed-sources">
+        <summary>Curated feed sources</summary>
+        <ul class="feed-source-grid" aria-label="Curated feed source links">
+          {
+            feedSources.map((source) => (
+              <li>
+                <a
+                  class="feed-source-card"
+                  href={source.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${source.label} ${source.type} feed source`}
+                >
+                  <span class="feed-source-icon">
+                    <img
+                      src={source.icon}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                  <span class="feed-source-copy">
+                    <strong>{source.label}</strong>
+                    <small>{source.type}</small>
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+    </section>
+
+    <section
+      id="upwork"
+      class="panel upwork-panel"
+      aria-labelledby="upwork-title"
+    >
+      <div class="section-head split-head">
+        <div>
+          <p class="section-kicker">Freelance proof surface</p>
+          <h2 id="upwork-title">
+            Upwork portfolio
+            <span class="count-badge" id="upwork-count-badge">{upworkPortfolioCount} projects</span>
+          </h2>
+          <p>
+            A client-facing view of Upwork work history: recent developer-tool
+            projects first, with older frontend, CMS, e-commerce, dashboard, and
+            integration work kept as supporting evidence.
+          </p>
+        </div>
+        <a
+          class="button secondary small"
+          href={upworkProfileUrl}
+          target="_blank"
+          rel="noreferrer">View full profile</a
+        >
+      </div>
+
+      <div class="upwork-intro-grid">
+        <article class="upwork-summary-card">
+          <span class="signal-kicker">Client-facing profile</span>
+          <h3>
+            Full-stack engineer for devtools, webhooks, automation, and AI-agent
+            work.
+          </h3>
+          <p>
+            The Upwork surface is being tightened around practical engineering
+            outcomes: webhook/API debugging, internal tools, automation-heavy
+            products, developer tooling, and reliable async delivery.
+          </p>
+          <div class="upwork-tags" aria-label="Upwork fit tags">
+            {upworkFitTags.map((tag) => <span>{tag}</span>)}
+          </div>
+        </article>
+
+        <div
+          class="upwork-proof-grid"
+          aria-label="Upwork proof profile details"
+        >
+          {
+            upworkProofCards.map((card) => (
+              <article class="upwork-proof-card">
+                <small>{card.label}</small>
+                <strong>{card.value}</strong>
+                <p>{card.detail}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="upwork-portfolio-grid"
+        aria-label="Curated Upwork portfolio projects"
+      >
+        {
+          upworkPortfolioItems.map((item) => (
+            <UpworkPortfolioCard item={item} />
+          ))
+        }
+      </div>
+
+      <p class="subtle">
+        Full profile remains the source of truth for contracts, reviews, and
+        Upwork-native project pages; this section packages the work trail for
+        faster scanning.
+      </p>
+    </section>
+
+    <section class="panel" aria-labelledby="proof-title">
+      <div class="section-head">
+        <h2 id="proof-title">
+          Proof links: certifications, venture, OSS/freemium
+        </h2>
+        <p>
+          Verifiable background signals: certifications, partner identity, older
+          shipped projects, and founder/operator work that still supports the
+          current devtools and automation direction.
+        </p>
+      </div>
+
+      <div class="proof-grid">
+        <article class="resource-card">
+          <h3>Certifications / partner track</h3>
+          <ul>
+            <li>
+              <strong>Microsoft Partner:</strong> associated with {contactEmail}
+            </li>
+            <li>
+              <strong>Anthropic Partner:</strong> associated with {contactEmail}
+            </li>
+            <li><strong>Anthropic certifications:</strong> in progress</li>
+            {
+              certificationLinks.map((item) => (
+                <li>
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+
+        <article class="resource-card">
+          <h3>Goggle Hunt / Flippa / Gleam</h3>
+          <ul>
+            {
+              ventureProof.map((item) => (
+                <li>
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+
+        <article class="resource-card full-width">
+          <h3>Open-source / freemium work</h3>
+          <ul class="multi-col">
+            {
+              openSourceFreemium.map((item) => (
+                <li>
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="support-title">
+      <div class="section-head">
+        <h2 id="support-title">Funding / sponsor links</h2>
+        <p>
+          Lightweight ways to support the public lab: maintenance, docs, product
+          experiments, and faster shipping on open-source tools.
+        </p>
+      </div>
+      <div class="support-grid sponsor-grid">
+        {
+          sponsorLinks.map((item) => (
+            <a
+              class="support-card sponsor-card"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="support-icon">
+                <img src={item.icon} alt="" loading="lazy" decoding="async" />
+              </span>
+              <span>
+                <span class="support-name">{item.label}</span>
+                <span class="support-note">{item.note}</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <p class="subtle">
+        For direct sponsorship/partnership, email <a
+          href={`mailto:${contactEmail}`}>{contactEmail}</a
+        > or use WhatsApp.
+      </p>
+    </section>
+
+    <section class="panel" aria-labelledby="capabilities-title">
+      <div class="section-head">
+        <h2 id="capabilities-title">Core capabilities</h2>
+        <p>
+          The recurring work pattern across the portfolio: practical tooling,
+          integration reliability, automation, agent workflows, performance, and
+          production-minded delivery.
+        </p>
+      </div>
+      <ul class="capability-grid capability-card-grid">
+        {
+          capabilities.map((capability, index) => (
+            <li>
+              <span class="capability-topline">
+                <span class="capability-icon" aria-hidden="true">
+                  {capability.icon ? (
+                    <img
+                      src={capability.icon}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    capability.mark
+                  )}
+                </span>
+                <span class="capability-index">0{index + 1}</span>
+              </span>
+              <strong>{capability.title}</strong>
+              <small>{capability.cue}</small>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="panel" aria-labelledby="profiles-title">
+      <div class="section-head">
+        <h2 id="profiles-title">Proof surfaces</h2>
+        <p>
+          Primary surfaces for technical credibility, client trust, launch
+          proof, and community history. Discord: ar27111994.
+        </p>
+      </div>
+      <div class="widget-grid profile-widget-grid">
+        {
+          profileWidgets.map((profile) => (
+            <a
+              class="profile-widget"
+              href={profile.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="widget-icon brand-icon">
+                <img
+                  src={profile.icon}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>
+                <strong>{profile.label}</strong>
+                <small>{profile.detail}</small>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <details class="profile-more">
+        <summary>More profile links</summary>
+        <div class="pill-links">
+          {
+            profileLinks.map((link) => (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open ${link.label} profile${link.note ? ` for ${link.note}` : ""}`}
+              >
+                <img src={link.icon} alt="" loading="lazy" decoding="async" />
+                <span>
+                  {link.label}
+                  {link.note ? ` · ${link.note}` : ""}
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </details>
+    </section>
+
+    <section class="panel" aria-labelledby="resume-title">
+      <div class="section-head">
+        <h2 id="resume-title">Resume downloads</h2>
+        <p>
+          Three focused exports for different hiring contexts: full depth,
+          client-facing project work, and a fast one-page scan.
+        </p>
+      </div>
+      <ul
+        class="widget-grid resume-widget-grid"
+        aria-label="Resume PDF downloads"
+      >
+        {
+          resumeWidgets.map((resume) => (
+            <li>
+              <a
+                class="resume-widget"
+                href={resume.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Download ${resume.label} - ${resume.badge}`}
+              >
+                <span class="widget-icon brand-icon">
+                  <img
+                    src={resume.icon}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+                <span>
+                  <strong>{resume.label}</strong>
+                  <em>{resume.badge}</em>
+                  <small>{resume.detail}</small>
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="panel contact-panel" aria-labelledby="contact-title">
+      <div class="section-head">
+        <h2 id="contact-title">Contact</h2>
+        <p>
+          Direct routes for project briefs, partnership context, and faster
+          async follow-up.
+        </p>
+      </div>
+      <div class="widget-grid contact-widget-grid">
+        {
+          contactWidgets.map((contact) => (
+            <a
+              class={`contact-widget ${contact.kind}`}
+              href={contact.href}
+              target={contact.kind === "whatsapp" ? "_blank" : undefined}
+              rel={contact.kind === "whatsapp" ? "noreferrer" : undefined}
+              aria-label={`${contact.label}: ${contact.value}`}
+            >
+              <span class="widget-icon brand-icon">
+                <img
+                  src={contact.icon}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>
+                <strong>{contact.label}</strong>
+                <em>{contact.value}</em>
+                <small>{contact.detail}</small>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    const widget = document.querySelector("[data-feed-widget]");
+    const status = document.querySelector("[data-feed-status]");
+    const list = document.querySelector("[data-feed-list]");
+
+    const fallbackItems = [
+      ...document.querySelectorAll(".fallback-feed .support-card"),
+    ]
+      .slice(0, 4)
+      .map((card) => ({
+        title: card.querySelector(".support-name")?.textContent?.trim(),
+        url: card.href,
+        source:
+          card.querySelector(".support-note")?.textContent?.trim() || "Curated",
+      }));
+
+    function renderFeed(items, message) {
+      if (!widget || !status || !list) return;
+      list.innerHTML = "";
+      items.slice(0, 8).forEach((item) => {
+        const a = document.createElement("a");
+        a.className = "feed-item";
+        a.href = item.url;
+        a.target = "_blank";
+        a.rel = "noreferrer";
+        const title = document.createElement("span");
+        title.textContent = item.title;
+        const source = document.createElement("small");
+        source.textContent = item.source;
+        a.append(title, source);
+        list.appendChild(a);
+      });
+      status.textContent = message;
+    }
+
+    function compactNumber(value) {
+      return Intl.NumberFormat(undefined, {
+        notation: value >= 1000 ? "compact" : "standard",
+        maximumFractionDigits: 1,
+      }).format(value);
+    }
+
+    async function loadGitHubProofStats() {
+      const repoMetrics = document.querySelectorAll(
+        '[data-proof-value="githubRepos"]',
+      );
+      const starMetrics = document.querySelectorAll(
+        '[data-proof-value="githubStars"]',
+      );
+      const proofStatuses = document.querySelectorAll("[data-proof-status]");
+      if (!repoMetrics.length && !starMetrics.length) return;
+
+      try {
+        const [profileResponse, reposResponse] = await Promise.all([
+          fetch("https://api.github.com/users/ar27111994"),
+          fetch(
+            "https://api.github.com/users/ar27111994/repos?per_page=100&sort=updated",
+          ),
+        ]);
+        if (!profileResponse.ok || !reposResponse.ok) return;
+        const profile = await profileResponse.json();
+        const repos = await reposResponse.json();
+        if (!Array.isArray(repos)) return;
+        const publicRepoCount = Number(profile.public_repos) || repos.length;
+        const totalStars = repos.reduce(
+          (sum, repo) => sum + (Number(repo.stargazers_count) || 0),
+          0,
+        );
+        repoMetrics.forEach((metric) => {
+          metric.textContent = compactNumber(publicRepoCount);
+        });
+        starMetrics.forEach((metric) => {
+          metric.textContent = compactNumber(totalStars);
+        });
+        proofStatuses.forEach((statusNode) => {
+          statusNode.textContent = `Live GitHub proof synced: ${publicRepoCount} public repos · ${totalStars} total stars.`;
+        });
+      } catch {
+        // Static fallback values remain visible if GitHub is unavailable.
+      }
+    }
+
+    async function loadFeed() {
+      const items = [];
+      try {
+        const devto = await fetch(
+          "https://dev.to/api/articles?username=ar27111994&per_page=6",
+        );
+        if (devto.ok) {
+          const articles = await devto.json();
+          articles.forEach((article) =>
+            items.push({
+              title: article.title,
+              url: article.url,
+              source: `Dev.to · ${new Date(article.published_at).toLocaleDateString(undefined, { month: "short", year: "numeric" })}`,
+            }),
+          );
+        }
+      } catch {
+        // Public feed is progressive enhancement; curated fallback stays visible.
+      }
+
+      try {
+        const repos = await fetch(
+          "https://api.github.com/users/ar27111994/repos?sort=updated&per_page=4",
+        );
+        if (repos.ok) {
+          const data = await repos.json();
+          data.forEach((repo) =>
+            items.push({
+              title: repo.name,
+              url: repo.html_url,
+              source: `GitHub · updated ${new Date(repo.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
+            }),
+          );
+        }
+      } catch {
+        // GitHub feed is optional and must not block the static portfolio.
+      }
+
+      if (items.length) {
+        renderFeed(items, "Live feed loaded from public APIs where available.");
+      } else {
+        renderFeed(
+          fallbackItems,
+          "Live fetch unavailable in this browser/session; showing curated fallback items.",
+        );
+      }
+    }
+
+    renderFeed(
+      fallbackItems,
+      "Curated fallback feed shown while live sources load.",
+    );
+    async function loadUpworkPortfolio() {
+      // Refresh the count badge from the live API — cards are already rendered
+      // at build time via the prebuild script, so this is a lightweight update only.
+      try {
+        const res = await fetch("/api/upwork-portfolio");
+        if (!res.ok) return;
+        const data = await res.json();
+        const count = Array.isArray(data.items) ? data.items.length : null;
+        if (!count) return;
+        const badge = document.getElementById("upwork-count-badge");
+        if (badge) badge.textContent = `${count} projects`;
+      } catch {
+        // API unreachable — static build count badge remains visible.
+      }
+    }
+
+    loadGitHubProofStats();
+    loadFeed();
+    loadUpworkPortfolio();
+  </script>
+</Layout>

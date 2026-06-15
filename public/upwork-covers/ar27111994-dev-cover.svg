@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-label="ar27111994.dev cover">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset="1" stop-color="#efe7db"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1ca672"/>
+      <stop offset="1" stop-color="#2457ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="22" dy="22" stdDeviation="0" flood-color="#111" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="960" fill="url(#paper)"/>
+  <circle cx="180" cy="120" r="330" fill="#1ca672" opacity=".16"/>
+  <circle cx="1390" cy="160" r="360" fill="#2457ff" opacity=".14"/>
+  <g filter="url(#shadow)">
+    <rect x="68" y="58" width="1464" height="824" rx="52" fill="#fffdf8" stroke="#151515" stroke-width="4"/>
+    <rect x="952" y="58" width="580" height="824" rx="52" fill="url(#accent)"/>
+    <path d="M952 58h528c29 0 52 23 52 52v720c0 29-23 52-52 52H952z" fill="url(#accent)"/>
+    <circle cx="1425" cy="735" r="260" fill="#fff" opacity=".14"/>
+    <circle cx="1024" cy="145" r="80" fill="#fff" opacity=".13"/>
+  </g>
+  <g transform="translate(130 126)">
+    <rect width="276" height="58" rx="29" fill="#fff7c9" stroke="#151515" stroke-width="3"/>
+    <circle cx="36" cy="29" r="10" fill="#1ca672" stroke="#151515" stroke-width="3"/>
+    <text x="60" y="38" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="900" letter-spacing="2" fill="#151515">ARLABS PROOF</text>
+    <text x="0" y="238" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="102" font-weight="900" letter-spacing="-6" fill="#111">ar27111994.dev</text>
+    <text x="0" y="304" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="850" fill="#4b4540">Public proof surface</text>
+    <foreignObject x="0" y="438" width="730" height="160">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Inter,Segoe UI,Arial,sans-serif;font-size:36px;line-height:1.16;font-weight:650;color:#2f2a26;">Portfolio, resumes, proof links, public feed, and client-ready contact paths.</div>
+    </foreignObject>
+    <text x="0" y="704" font-family="Consolas, ui-monospace, monospace" font-size="30" font-weight="800" fill="#111">www.ar27111994.dev</text>
+  </g>
+  <g transform="translate(1012 130)" font-family="Inter, Segoe UI, Arial, sans-serif">
+    <text x="0" y="0" dominant-baseline="hanging" font-size="44" font-weight="950" letter-spacing="-2" fill="#fff">Developer lab artifact</text>
+    <text x="0" y="108" font-family="Consolas, ui-monospace, monospace" font-size="29" fill="#fff" opacity=".9">
+      <tspan x="0" dy="0">ship → document → verify</tspan>
+      <tspan x="0" dy="44">practical systems</tspan>
+      <tspan x="0" dy="44">over fragile demos</tspan>
+      <tspan x="0" dy="44">public proof, client context</tspan>
+    </text>
+    <g transform="translate(92 690)"><rect width="260" height="54" rx="27" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.52)" stroke-width="2"/><text x="130" y="35" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">Portfolio</text></g>
+<g transform="translate(402 690)"><rect width="260" height="54" rx="27" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.52)" stroke-width="2"/><text x="130" y="35" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">SEO</text></g>
+<g transform="translate(92 776)"><rect width="260" height="54" rx="27" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.52)" stroke-width="2"/><text x="130" y="35" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">Proof Surface</text></g>
+<g transform="translate(402 776)"><rect width="260" height="54" rx="27" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.52)" stroke-width="2"/><text x="130" y="35" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">Astro</text></g>
+  </g>
+</svg>

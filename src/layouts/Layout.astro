@@ -1,0 +1,194 @@
+---
+import "../styles/global.css";
+import ClientRouter from 'astro/components/ClientRouter.astro';
+import Analytics from '@vercel/analytics/astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Ahmed Rehan — Devtools, Agent Systems, Automation",
+  description = "Full-stack engineer and solo builder focused on developer tools, integration reliability, productivity systems, enterprise-aware automation, AI-agent workflows, and performance-conscious software.",
+  image = "/brand/og-cover.png",
+} = Astro.props;
+
+const siteBase = Astro.site ? new URL(Astro.site) : new URL(Astro.url.origin);
+const canonical = Astro.url.href;
+const socialImage = new URL(image, siteBase).toString();
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      name: "Ahmed Rehan",
+      url: siteBase.toString(),
+      jobTitle:
+        "Full-stack Engineer for Devtools, Webhooks, Automation, and AI-Agent Workflows",
+      email: "mailto:admin@ar27111994.dev",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Rawalpindi",
+        addressCountry: "PK",
+      },
+      sameAs: [
+        "https://github.com/ar27111994",
+        "https://linkedin.com/in/ar27111994",
+        "https://www.upwork.com/freelancers/~0188baee67e8f543e7",
+        "https://x.com/ar27111994",
+        "https://www.producthunt.com/@ar27111994",
+        "https://stackoverflow.com/users/3841610/ar27111994",
+        "https://news.ycombinator.com/user?id=ar27111994",
+        "https://dev.to/ar27111994",
+        "https://hashnode.com/@ar27111994",
+        "https://medium.com/@arlabs",
+        "https://coderlegion.com/user/ar27111994",
+        "https://discord.com/channels/@me",
+      ],
+      knowsAbout: [
+        "Developer Tools",
+        "Webhook Systems",
+        "API Integrations",
+        "Productivity Systems",
+        "Enterprise Automation",
+        "Automation Architecture",
+        "AI Agent Tooling",
+        "MCP Workflows",
+        "Design-to-Code Workflows",
+        "Freelance Software Development",
+        "Upwork Profile Optimization",
+        "Client-Facing Engineering Delivery",
+        "Performance Engineering",
+        "Microsoft Partner Ecosystem",
+        "Anthropic Partner Ecosystem",
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "business inquiries",
+          email: "admin@ar27111994.dev",
+          telephone: "+92-331-588-7235",
+          availableLanguage: ["en", "ur"],
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      name: "Ahmed Rehan Portfolio",
+      url: siteBase.toString(),
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfessionalService",
+      name: "ARLabs — Ahmed Rehan",
+      url: siteBase.toString(),
+      areaServed: "Worldwide",
+      serviceType: [
+        "Developer tools engineering",
+        "Webhook and API integration debugging",
+        "Workflow automation",
+        "AI-agent tooling",
+        "Full-stack product engineering",
+      ],
+      founder: {
+        "@type": "Person",
+        name: "Ahmed Rehan",
+      },
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="author" content="Ahmed Rehan" />
+    <meta
+      name="keywords"
+      content="Ahmed Rehan, ARLabs, Upwork freelancer, full-stack engineer, developer tools, webhook debugging, API integrations, productivity systems, enterprise automation, agent systems, AI agent tooling, MCP, design-to-code, freelance software developer"
+    />
+    <meta name="theme-color" content="#f4efe7" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- DNS prefetch for external image sources -->
+    <link rel="dns-prefetch" href="https://www.upwork.com" />
+    <link rel="dns-prefetch" href="https://a.storyblok.com" />
+    <link rel="dns-prefetch" href="https://img.clerk.com" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link
+      rel="preload"
+      href="/brand/ahmed-photo-hero.webp"
+      as="image"
+      type="image/webp"
+    />
+
+    <title>{title}</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ahmed Rehan Portfolio" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta
+      property="og:image:alt"
+      content="Portrait of Ahmed Rehan with ARLabs branding"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_PK" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ar27111994" />
+    <meta name="twitter:creator" content="@ar27111994" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta
+      name="twitter:image:alt"
+      content="Portrait of Ahmed Rehan with ARLabs branding"
+    />
+
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(structuredData)}
+    />
+    
+    <ClientRouter />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <slot />
+    <Analytics />
+  </body>
+</html>

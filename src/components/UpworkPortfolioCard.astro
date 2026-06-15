@@ -1,0 +1,796 @@
+---
+import { Image } from 'astro:assets';
+
+interface PortfolioAttachmentImage {
+  large?: string;
+  medium?: string;
+  small?: string;
+}
+
+interface PortfolioAttachment {
+  uid?: string;
+  type?: string;
+  title?: string;
+  description?: string;
+  rank?: number | null;
+  url?: string;
+  embeddedUrl?: string;
+  originalUrl?: string;
+  image?: PortfolioAttachmentImage;
+}
+
+interface PortfolioItem {
+  id: string;
+  title: string;
+  role?: string;
+  description: string;
+  displayDescription?: string;
+  projectGoal?: string;
+  solution?: string;
+  skills?: string[];
+  url?: string;
+  thumbnail?: string;
+  thumbnailOriginal?: string;
+  completionDate?: string;
+  featured?: boolean;
+  sourcePage?: number | null;
+  attachments?: PortfolioAttachment[];
+  mediaCounts?: Record<string, number>;
+}
+
+interface Props {
+  item: PortfolioItem;
+}
+
+type LinkSegment = {
+  type: "text" | "url";
+  value: string;
+  href?: string;
+};
+
+const { item } = Astro.props;
+const urlPattern = /((?:https?:\/\/|www\.)[^\s<>"'`]+)/gi;
+
+const normalizeExternalUrl = (value?: string) => {
+  const raw = value?.trim();
+  if (!raw) return undefined;
+  const normalized = raw.startsWith("www.") ? `https://${raw}` : raw;
+  if (!/^https?:\/\//i.test(normalized)) return undefined;
+  try {
+    const url = new URL(normalized);
+    return url.toString();
+  } catch {
+    return undefined;
+  }
+};
+
+const formatDisplayUrl = (value?: string) => {
+  const href = normalizeExternalUrl(value);
+  if (!href) return undefined;
+  const parsed = new URL(href);
+  const pathname =
+    parsed.pathname && parsed.pathname !== "/" ? parsed.pathname : "";
+  return `${parsed.host}${pathname}`;
+};
+
+const splitLinks = (text: string): LinkSegment[] => {
+  const segments: LinkSegment[] = [];
+  let cursor = 0;
+
+  for (const match of text.matchAll(urlPattern)) {
+    const matched = match[0];
+    const start = match.index ?? cursor;
+    const end = start + matched.length;
+
+    if (start > cursor) {
+      segments.push({ type: "text", value: text.slice(cursor, start) });
+    }
+
+    const trailingMatch = matched.match(/[),.;!?]+$/u);
+    const trailing = trailingMatch ? trailingMatch[0] : "";
+    const clean = trailing ? matched.slice(0, -trailing.length) : matched;
+    const href = normalizeExternalUrl(clean);
+
+    if (href) {
+      segments.push({ type: "url", value: clean, href });
+    } else {
+      segments.push({ type: "text", value: clean });
+    }
+
+    if (trailing) {
+      segments.push({ type: "text", value: trailing });
+    }
+
+    cursor = end;
+  }
+
+  if (cursor < text.length) {
+    segments.push({ type: "text", value: text.slice(cursor) });
+  }
+
+  return segments;
+};
+
+const toParagraphs = (value?: string) =>
+  (value ?? "")
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+
+const localCoverByTitle: Record<string, string> = {
+  "ar27111994.dev": "/upwork-covers/ar27111994-dev-cover.svg",
+  "penpot-mcp": "/upwork-covers/penpot-mcp-cover.svg",
+  "agent-harness": "/upwork-covers/agent-harness-cover.svg",
+  "Webhook Debugger and Logger":
+    "/upwork-covers/webhook-debugger-logger-cover.svg",
+};
+
+const previewText = item.displayDescription ?? item.description;
+const description =
+  previewText.length > 170
+    ? `${previewText.slice(0, 167).trim()}…`
+    : previewText;
+const projectHref = normalizeExternalUrl(item.url);
+const projectDisplayUrl = formatDisplayUrl(item.url);
+const linkLabel = projectHref ? "Open project" : "Project link unavailable";
+const attachments = [...(item.attachments ?? [])].sort(
+  (first, second) => (first.rank ?? 999) - (second.rank ?? 999),
+);
+const uniqueUrls = (values: Array<string | undefined>) => {
+  const seen = new Set<string>();
+
+  return values
+    .map((value) => normalizeExternalUrl(value))
+    .filter((href): href is string => Boolean(href))
+    .filter((href) => {
+      if (seen.has(href)) return false;
+      seen.add(href);
+      return true;
+    });
+};
+const normalizeMediaSrc = (value?: string) => {
+  const raw = value?.trim();
+  if (!raw) return undefined;
+  if (raw.startsWith("/") && !raw.startsWith("//")) return raw;
+  return normalizeExternalUrl(raw);
+};
+const uniqueMediaSources = (values: Array<string | undefined>) => {
+  const seen = new Set<string>();
+
+  return values
+    .map((value) => normalizeMediaSrc(value))
+    .filter((src): src is string => Boolean(src))
+    .filter((src) => {
+      if (seen.has(src)) return false;
+      seen.add(src);
+      return true;
+    });
+};
+const attachmentHref = (attachment: PortfolioAttachment) =>
+  normalizeExternalUrl(
+    attachment.embeddedUrl || attachment.originalUrl || attachment.url,
+  );
+const isPreviewImageHref = (
+  href: string | undefined,
+  attachment: PortfolioAttachment,
+) => {
+  if (!href) return false;
+  const sourceHrefs = uniqueUrls([
+    attachment.url,
+    attachment.embeddedUrl,
+    attachment.originalUrl,
+  ]);
+
+  if (attachment.type === "embeddedLink" && sourceHrefs.includes(href)) {
+    return false;
+  }
+
+  return true;
+};
+const previewImageCandidatesFromAttachment = (
+  attachment: PortfolioAttachment,
+) =>
+  uniqueMediaSources([
+    attachment.image?.large,
+    attachment.image?.medium,
+    attachment.image?.small,
+    attachment.url,
+    attachment.originalUrl,
+    attachment.embeddedUrl,
+  ]).filter((href) => isPreviewImageHref(href, attachment));
+const previewImageFromAttachment = (attachment: PortfolioAttachment) =>
+  previewImageCandidatesFromAttachment(attachment)[0];
+const videoSrcFromAttachment = (
+  attachment: PortfolioAttachment,
+  index: number,
+) => {
+  const directSource = attachmentHref(attachment);
+  if (directSource) return directSource;
+  return index === 0 && item.mediaCounts?.video
+    ? normalizeExternalUrl(item.thumbnailOriginal)
+    : undefined;
+};
+const imageAttachments = attachments.filter(
+  (attachment) =>
+    attachment.type === "image" && previewImageFromAttachment(attachment),
+);
+const linkAttachments = attachments.filter(
+  (attachment) =>
+    attachment.type === "embeddedLink" && attachmentHref(attachment),
+);
+const videoAttachments = attachments.filter(
+  (attachment) => attachment.type === "video",
+);
+const textAttachments = attachments.filter(
+  (attachment) => attachment.type === "text" && attachment.description,
+);
+const fileAttachments = attachments.filter(
+  (attachment) =>
+    attachment.type &&
+    !["image", "embeddedLink", "video", "text"].includes(attachment.type),
+);
+const pluralize = (count: number, singular: string, plural = `${singular}s`) =>
+  `${count} ${count === 1 ? singular : plural}`;
+const mediaSummary = [
+  imageAttachments.length
+    ? pluralize(imageAttachments.length, "screenshot")
+    : "",
+  videoAttachments.length ? pluralize(videoAttachments.length, "video") : "",
+  linkAttachments.length ? pluralize(linkAttachments.length, "link") : "",
+  textAttachments.length ? pluralize(textAttachments.length, "note") : "",
+  fileAttachments.length ? pluralize(fileAttachments.length, "file") : "",
+].filter(Boolean);
+const completionLabel = item.completionDate
+  ? new Date(`${item.completionDate}T00:00:00`).toLocaleDateString("en", {
+      month: "short",
+      year: "numeric",
+    })
+  : undefined;
+const completionFallback = completionLabel ?? "Not listed";
+const imageSrc = (attachment: PortfolioAttachment) =>
+  previewImageFromAttachment(attachment) || "";
+const imageFallbacks = (attachment: PortfolioAttachment) =>
+  previewImageCandidatesFromAttachment(attachment);
+const fullImageHref = (attachment: PortfolioAttachment) =>
+  attachmentHref(attachment) ||
+  normalizeExternalUrl(attachment.image?.large) ||
+  imageSrc(attachment);
+
+const detailParagraphs = toParagraphs(item.description);
+const modalId = `upwork-modal-${item.id}`;
+const modalTitleId = `${modalId}-title`;
+const modalDescriptionId = `${modalId}-description`;
+const attachmentTypeSummary = Object.entries(item.mediaCounts ?? {})
+  .filter(([, count]) => Number(count) > 0)
+  .map(([type, count]) => `${type}: ${count}`)
+  .join(" · ");
+const linkPreviewAttachments = linkAttachments.filter((attachment) =>
+  previewImageFromAttachment(attachment),
+);
+const videoPreviewAttachments = videoAttachments
+  .map((attachment, index) => ({
+    attachment,
+    src: videoSrcFromAttachment(attachment, index),
+  }))
+  .filter((entry): entry is { attachment: PortfolioAttachment; src: string } =>
+    Boolean(entry.src),
+  );
+const primaryLinkPreview = linkPreviewAttachments
+  .map((attachment) => previewImageFromAttachment(attachment))
+  .find(Boolean);
+const primaryImagePreview = imageAttachments
+  .map((attachment) => previewImageFromAttachment(attachment))
+  .find(Boolean);
+const previewMediaLabel = mediaSummary[0] ?? "Captured Upwork record";
+const previewImageFallbacks = uniqueMediaSources([
+  item.thumbnail,
+  item.thumbnailOriginal,
+  primaryImagePreview,
+  primaryLinkPreview,
+  localCoverByTitle[item.title],
+]);
+const previewImage = previewImageFallbacks[0];
+const isLocalImage = previewImage?.startsWith('/') || previewImage?.startsWith('./');
+const previewProofLine =
+  projectDisplayUrl ?? item.role ?? "Captured Upwork portfolio record";
+const modalScrollHint = attachments.length || detailParagraphs.length > 1;
+---
+
+<article class={`upwork-portfolio-card${item.featured ? " featured" : ""}`}>
+  <button
+    type="button"
+    class={`upwork-portfolio-preview${previewImage ? " has-media" : " no-media"}`}
+    data-upwork-open={modalId}
+    aria-haspopup="dialog"
+    aria-controls={modalId}
+    aria-label={`Inspect full Upwork project record for ${item.title}`}
+  >
+    {
+      previewImage ? (
+        isLocalImage ? (
+          <Image
+            src={previewImage}
+            alt={`Preview thumbnail for ${item.title}`}
+            loading="lazy"
+            decoding="async"
+            width={800}
+            height={600}
+            format="webp"
+          />
+        ) : (
+          <img
+            src={previewImage}
+            data-upwork-image-fallbacks={JSON.stringify(previewImageFallbacks)}
+            data-upwork-image-index="0"
+            alt={`Preview thumbnail for ${item.title}`}
+            loading="lazy"
+            decoding="async"
+          />
+        )
+      ) : null
+    }
+    <div
+      class="upwork-portfolio-fallback"
+      aria-hidden={previewImage ? "true" : "false"}
+    >
+      <span>{item.featured ? "Featured proof" : "Portfolio proof"}</span>
+      <strong>{item.title}</strong>
+      <small>{previewProofLine}</small>
+    </div>
+    <span class="upwork-preview-chip">{previewMediaLabel}</span>
+  </button>
+
+  <div class="upwork-portfolio-copy">
+    <div class="upwork-portfolio-title-row">
+      <h3>
+        {
+          projectHref ? (
+            <a href={projectHref} target="_blank" rel="noreferrer">
+              {item.title}
+            </a>
+          ) : (
+            item.title
+          )
+        }
+      </h3>
+      {item.featured && <span class="upwork-featured-badge">Featured</span>}
+    </div>
+    {item.role && <p class="upwork-portfolio-role">{item.role}</p>}
+    <p class="upwork-portfolio-description">{description}</p>
+    {
+      projectDisplayUrl && (
+        <a
+          class="upwork-project-url"
+          href={projectHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Open ${item.title} project: ${projectDisplayUrl}`}
+        >
+          {projectDisplayUrl}
+        </a>
+      )
+    }
+  </div>
+
+  {(completionLabel || mediaSummary.length) ? (
+    <div class="upwork-portfolio-meta-row" aria-label={`${item.title} metadata`}>
+      {completionLabel ? <span>{completionLabel}</span> : null}
+      {mediaSummary.length ? <span>{mediaSummary.join(" · ")}</span> : null}
+    </div>
+  ) : null}
+
+  {
+    item.skills?.length ? (
+      <ul class="upwork-portfolio-tags" aria-label={`${item.title} skills`}>
+        {item.skills.slice(0, 8).map((skill) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    ) : null
+  }
+
+  <div class="upwork-portfolio-actions">
+    <button
+      type="button"
+      class="upwork-open-details"
+      data-upwork-open={modalId}
+      aria-haspopup="dialog"
+      aria-controls={modalId}
+    >
+      Inspect Upwork record
+    </button>
+    {
+      projectHref && (
+        <a
+          class="upwork-portfolio-link"
+          href={projectHref}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {linkLabel}
+        </a>
+      )
+    }
+  </div>
+</article>
+
+<dialog
+  id={modalId}
+  class="upwork-modal"
+  data-upwork-modal
+  aria-labelledby={modalTitleId}
+  aria-describedby={modalDescriptionId}
+>
+  <article class="upwork-modal-shell">
+    <header class="upwork-modal-head">
+      <div>
+        <p class="upwork-modal-kicker">Captured Upwork record</p>
+        <h3 id={modalTitleId}>{item.title}</h3>
+        <p id={modalDescriptionId}>
+          Project description, link, metadata, screenshots, attachments, and raw
+          synced payload in one inspectable dossier.
+        </p>
+      </div>
+      <button type="button" class="upwork-modal-close" data-upwork-close>
+        Close
+      </button>
+    </header>
+
+    <div class="upwork-modal-content">
+      {
+        modalScrollHint && (
+          <p class="upwork-scroll-hint">
+            Scroll for screenshots, attachments, and raw synced payload.
+          </p>
+        )
+      }
+      <div class="upwork-detail-block">
+        <small>Description</small>
+        {
+          detailParagraphs.length ? (
+            detailParagraphs.map((paragraph) => (
+              <p>
+                {splitLinks(paragraph).map((segment) =>
+                  segment.type === "url" && segment.href ? (
+                    <a href={segment.href} target="_blank" rel="noreferrer">
+                      {segment.value}
+                    </a>
+                  ) : (
+                    segment.value
+                  ),
+                )}
+              </p>
+            ))
+          ) : (
+            <p>No description was captured for this item.</p>
+          )
+        }
+      </div>
+
+      {
+        item.projectGoal && (
+          <div class="upwork-detail-block">
+            <small>Project goal</small>
+            <p>{item.projectGoal}</p>
+          </div>
+        )
+      }
+
+      {
+        item.solution && (
+          <div class="upwork-detail-block">
+            <small>Solution</small>
+            <p>{item.solution}</p>
+          </div>
+        )
+      }
+
+      <dl class="upwork-fact-grid">
+        <div>
+          <dt>Completion</dt>
+          <dd>{completionFallback}</dd>
+        </div>
+        <div>
+          <dt>Featured</dt>
+          <dd>{item.featured ? "Yes" : "No"}</dd>
+        </div>
+        <div>
+          <dt>Source page</dt>
+          <dd>{item.sourcePage ?? "Not specified"}</dd>
+        </div>
+        <div>
+          <dt>Attachment types</dt>
+          <dd>{attachmentTypeSummary || "No attachment counters"}</dd>
+        </div>
+        <div class="wide-fact">
+          <dt>Primary URL</dt>
+          <dd>
+            {
+              projectHref ? (
+                <a href={projectHref} target="_blank" rel="noreferrer">
+                  {projectDisplayUrl || projectHref}
+                </a>
+              ) : (
+                "Not listed"
+              )
+            }
+          </dd>
+        </div>
+      </dl>
+
+      {
+        linkPreviewAttachments.length ? (
+          <div class="upwork-detail-block">
+            <small>Embedded link previews</small>
+            <div class="upwork-media-grid">
+              {linkPreviewAttachments.map((attachment, index) => {
+                const href = attachmentHref(attachment);
+                const previewSrc = previewImageFromAttachment(attachment);
+                const label = attachment.title || item.title;
+                return (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="upwork-media-tile upwork-link-preview"
+                  >
+                    <img
+                      data-upwork-lazy-src={previewSrc}
+                      data-upwork-image-fallbacks={JSON.stringify(
+                        imageFallbacks(attachment),
+                      )}
+                      data-upwork-image-index="0"
+                      alt={`${label} preview`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <span>
+                      {label || `Link preview ${index + 1}`}
+                      <em>Open source project</em>
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ) : null
+      }
+
+      {
+        videoPreviewAttachments.length ? (
+          <div class="upwork-detail-block">
+            <small>Video previews</small>
+            <div class="upwork-media-grid">
+              {videoPreviewAttachments.map(({ attachment, src }, index) => (
+                <div class="upwork-media-tile upwork-video-tile">
+                  <video
+                    src={src}
+                    controls
+                    preload="metadata"
+                    playsinline
+                    poster={previewImage}
+                  />
+                  <span>
+                    {attachment.title || `Video preview ${index + 1}`}
+                    <em>Play attached video</em>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null
+      }
+
+      {
+        imageAttachments.length ? (
+          <div class="upwork-detail-block">
+            <small>Screenshots</small>
+            <div class="upwork-media-grid">
+              {imageAttachments.map((attachment, index) => (
+                <a
+                  href={fullImageHref(attachment)}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="upwork-media-tile pending-media"
+                >
+                  <img
+                    data-upwork-lazy-src={imageSrc(attachment)}
+                    data-upwork-image-fallbacks={JSON.stringify(
+                      imageFallbacks(attachment),
+                    )}
+                    data-upwork-image-index="0"
+                    alt={`${item.title} screenshot ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>
+                    Screenshot {index + 1}
+                    <em>Open full asset</em>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : null
+      }
+
+      {
+        attachments.length ? (
+          <div class="upwork-detail-block">
+            <small>Source attachment links</small>
+            <div class="upwork-attachment-list">
+              {attachments.map((attachment, index) => {
+                const href = attachmentHref(attachment);
+                const label =
+                  attachment.title ||
+                  attachment.description?.slice(0, 90) ||
+                  attachment.type ||
+                  `Attachment ${index + 1}`;
+                return href ? (
+                  <a href={href} target="_blank" rel="noreferrer">
+                    {label}
+                    <em>
+                      {(attachment.type || "attachment").toUpperCase()}
+                      {attachment.rank ? ` · rank ${attachment.rank}` : ""}
+                    </em>
+                  </a>
+                ) : (
+                  <span>
+                    {label}
+                    <em>
+                      {(attachment.type || "attachment").toUpperCase()}
+                      {attachment.rank ? ` · rank ${attachment.rank}` : ""}
+                    </em>
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        ) : null
+      }
+
+      <details class="upwork-raw-data">
+        <summary>Raw captured payload</summary>
+        <pre>{JSON.stringify(item, null, 2)}</pre>
+      </details>
+    </div>
+  </article>
+</dialog>
+
+<script>
+  (() => {
+    const root = document.documentElement;
+    if (root.dataset.upworkModalWired === "true") return;
+    root.dataset.upworkModalWired = "true";
+
+    const markImageLoaded = (image: HTMLImageElement) => {
+      image.closest(".upwork-media-tile")?.classList.remove("pending-media");
+      image
+        .closest(".upwork-portfolio-preview")
+        ?.classList.add("thumbnail-loaded");
+    };
+
+    const markImageFailed = (image: HTMLImageElement) => {
+      const fallbacks = JSON.parse(
+        image.dataset.upworkImageFallbacks || "[]",
+      ) as string[];
+      const nextIndex = Number(image.dataset.upworkImageIndex || "0") + 1;
+      const nextSrc = fallbacks[nextIndex];
+
+      if (nextSrc) {
+        image.dataset.upworkImageIndex = String(nextIndex);
+        image.src = nextSrc;
+        return;
+      }
+
+      image.closest(".upwork-media-tile")?.classList.add("media-failed");
+      image
+        .closest(".upwork-portfolio-preview")
+        ?.classList.add("thumbnail-failed");
+    };
+
+    const startImageLoad = (image: HTMLImageElement) => {
+      const lazySrc = image.dataset.upworkLazySrc;
+      if (lazySrc && !image.getAttribute("src")) {
+        image.src = lazySrc;
+      }
+    };
+
+    const wireResilientImages = (scope: ParentNode) => {
+      scope
+        .querySelectorAll<HTMLImageElement>("img[data-upwork-image-fallbacks]")
+        .forEach((image) => {
+          if (image.dataset.upworkImageWired !== "true") {
+            image.dataset.upworkImageWired = "true";
+            image.addEventListener("load", () => markImageLoaded(image));
+            image.addEventListener("error", () => markImageFailed(image));
+          }
+
+          if (image.getAttribute("src")) {
+            if (image.complete) {
+              if (image.naturalWidth > 0) {
+                markImageLoaded(image);
+              } else {
+                markImageFailed(image);
+              }
+            }
+            return;
+          }
+
+          if (!image.dataset.upworkLazySrc) {
+            markImageFailed(image);
+          }
+        });
+    };
+
+    const wireVideoFallbacks = (scope: ParentNode) => {
+      scope.querySelectorAll<HTMLVideoElement>("video").forEach((video) => {
+        if (video.dataset.upworkVideoWired === "true") return;
+        video.dataset.upworkVideoWired = "true";
+        video.addEventListener("error", () => {
+          video.closest(".upwork-media-tile")?.classList.add("media-failed");
+        });
+      });
+    };
+
+    const activateModalMedia = (modal: ParentNode) => {
+      wireResilientImages(modal);
+      wireVideoFallbacks(modal);
+      modal
+        .querySelectorAll<HTMLImageElement>(".upwork-media-tile img")
+        .forEach((image) => {
+          startImageLoad(image);
+        });
+      modal.querySelectorAll<HTMLVideoElement>("video").forEach((video) => {
+        video.load();
+      });
+    };
+
+    wireResilientImages(document);
+    wireVideoFallbacks(document);
+
+    const findModal = (id?: string) => {
+      if (!id) return null;
+      const modal = document.getElementById(id);
+      return modal instanceof HTMLDialogElement ? modal : null;
+    };
+
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+
+      const openTrigger = target.closest("[data-upwork-open]");
+      if (openTrigger instanceof HTMLElement) {
+        const modalId = openTrigger.dataset.upworkOpen;
+        const modal = findModal(modalId);
+        if (!modal) return;
+
+        if (!modal.open) {
+          if (typeof modal.showModal === "function") {
+            modal.showModal();
+          } else {
+            modal.setAttribute("open", "");
+          }
+        }
+
+        activateModalMedia(modal);
+        return;
+      }
+
+      const closeTrigger = target.closest("[data-upwork-close]");
+      if (closeTrigger instanceof HTMLElement) {
+        const modal = closeTrigger.closest("dialog");
+        if (modal instanceof HTMLDialogElement) {
+          modal.close();
+        }
+      }
+    });
+
+    document.querySelectorAll("dialog[data-upwork-modal]").forEach((modal) => {
+      if (!(modal instanceof HTMLDialogElement)) return;
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) modal.close();
+      });
+    });
+  })();
+</script>

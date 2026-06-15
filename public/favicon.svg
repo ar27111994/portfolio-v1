@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ARLabs favicon">
+  <defs>
+    <linearGradient id="fg-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1d3a"/>
+      <stop offset="100%" stop-color="#184172"/>
+    </linearGradient>
+    <linearGradient id="fg-edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7ad8ff"/>
+      <stop offset="100%" stop-color="#9fd6ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#fg-bg)"/>
+  <rect x="5.5" y="5.5" width="53" height="53" rx="12.5" fill="none" stroke="url(#fg-edge)" stroke-opacity="0.8"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="24" font-weight="800" fill="#f8fbff" letter-spacing="-0.8">AR</text>
+</svg>

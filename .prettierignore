@@ -1,0 +1,6 @@
+dist
+.astro
+.vercel
+node_modules
+lh-report.json
+package-lock.json
