@@ -396,8 +396,26 @@ async function main() {
       const existingById = new Map(
         (existing.items ?? []).map((i) => [i.id, i]),
       );
-      // Apply fresh API data on top of existing
+      // Apply fresh API data on top of existing, preserving locally-downloaded
+      // attachment fields (localImage, videoId) that the official API never returns.
       for (const fresh of portfolio.items) {
+        const prev = existingById.get(fresh.id);
+        if (prev?.attachments?.length && fresh.attachments?.length) {
+          // Re-attach any localImage / videoId from the matching previous attachment
+          // (match by position — the API always returns attachments in the same order)
+          fresh.attachments = fresh.attachments.map((att, idx) => {
+            const prevAtt = prev.attachments[idx];
+            if (!prevAtt) return att;
+            const preserved = {};
+            if (!att.localImage && prevAtt.localImage)
+              preserved.localImage = prevAtt.localImage;
+            if (!att.videoId && prevAtt.videoId)
+              preserved.videoId = prevAtt.videoId;
+            return Object.keys(preserved).length
+              ? { ...att, ...preserved }
+              : att;
+          });
+        }
         existingById.set(fresh.id, fresh);
       }
       // Sort by rank (fresh items have rank; older items may not — put them last)
