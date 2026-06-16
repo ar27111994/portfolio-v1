@@ -96,7 +96,8 @@
           "fileSize": 315377,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112",
+          "localImage": "/upwork-covers/bookstore-0.jpg"
         }
       ],
       "completionDate": "2015-12-31",
@@ -204,7 +205,8 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775773712223363072",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775773712223363072"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775773712223363072",
+          "localImage": "/upwork-covers/school-management-system-0.jpg"
         }
       ],
       "completionDate": "2015-09-01",
@@ -579,7 +581,8 @@
           "fileSize": 171515,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384",
+          "localImage": "/upwork-covers/opencart-modification-0.jpg"
         },
         {
           "type": "attachment",
@@ -1506,7 +1509,8 @@
           "fileSize": 314606,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+          "localImage": "/upwork-covers/american-community-school-donations-page-0.jpg"
         },
         {
           "type": "image",
