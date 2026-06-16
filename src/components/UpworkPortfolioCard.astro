@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-
 interface PortfolioAttachmentImage {
   large?: string;
   medium?: string;
@@ -300,7 +298,6 @@ const previewImageFallbacks = uniqueMediaSources([
   "/upwork-covers/upwork-generic-cover.svg",
 ]);
 const previewImage = previewImageFallbacks[0];
-const isLocalImage = previewImage?.startsWith('/') || previewImage?.startsWith('./');
 const previewProofLine =
   projectDisplayUrl ?? item.role ?? "Captured Upwork portfolio record";
 const modalScrollHint = attachments.length || detailParagraphs.length > 1;
@@ -317,17 +314,6 @@ const modalScrollHint = attachments.length || detailParagraphs.length > 1;
   >
     {
       previewImage ? (
-        isLocalImage ? (
-          <Image
-            src={previewImage}
-            alt={`Preview thumbnail for ${item.title}`}
-            loading="lazy"
-            decoding="async"
-            width={800}
-            height={600}
-            format="webp"
-          />
-        ) : (
           <img
             src={previewImage}
             data-upwork-image-fallbacks={JSON.stringify(previewImageFallbacks)}
@@ -336,7 +322,6 @@ const modalScrollHint = attachments.length || detailParagraphs.length > 1;
             loading="lazy"
             decoding="async"
           />
-        )
       ) : null
     }
     <div
