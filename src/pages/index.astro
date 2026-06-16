@@ -1778,5 +1778,24 @@ const sponsorLinks = [
     loadGitHubProofStats();
     loadFeed();
     loadUpworkPortfolio();
+
+    // Cycle through precomputed fallback list when an Upwork image fails to load.
+    // The list is already filtered (no auth-gated /att/ URLs) so the next candidate
+    // is always either a local SVG or the generic cover.
+    document.querySelectorAll("img[data-upwork-image-fallbacks]").forEach((img) => {
+      img.addEventListener("error", function onUpworkImgError() {
+        const fallbacks = JSON.parse(this.dataset.upworkImageFallbacks || "[]");
+        const idx = Number(this.dataset.upworkImageIndex || 0) + 1;
+        if (idx < fallbacks.length) {
+          this.dataset.upworkImageIndex = String(idx);
+          this.src = fallbacks[idx];
+        } else {
+          // All fallbacks exhausted — remove the broken img so the CSS text
+          // fallback inside .upwork-portfolio-fallback becomes visible.
+          this.removeEventListener("error", onUpworkImgError);
+          this.remove();
+        }
+      });
+    });
   </script>
 </Layout>
