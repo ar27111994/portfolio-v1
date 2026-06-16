@@ -2372,7 +2372,7 @@ h3 {
   display: grid;
   grid-template-columns: 36px 1fr;
   gap: 0 0.7rem;
-  align-items: start;
+  align-items: center;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(17, 17, 17, 0.07);
 }
@@ -2388,7 +2388,6 @@ h3 {
   border-radius: 8px;
   background: rgba(17, 17, 17, 0.05);
   flex-shrink: 0;
-  margin-top: 2px;
 }
 .cert-icon {
   width: 20px;
