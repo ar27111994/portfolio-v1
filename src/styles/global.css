@@ -2059,6 +2059,21 @@ h3 {
   font-size: var(--step--1);
   line-height: 1.48;
 }
+.upwork-detail-block p + p {
+  margin-top: 0.5em;
+}
+.upwork-desc-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.upwork-desc-list li {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  line-height: 1.5;
+}
 .upwork-modal {
   width: min(980px, calc(100vw - 1.5rem));
   max-height: min(88vh, 920px);

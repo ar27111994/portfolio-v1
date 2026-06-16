@@ -109,11 +109,47 @@ const splitLinks = (text: string): LinkSegment[] => {
   return segments;
 };
 
-const toParagraphs = (value?: string) =>
-  (value ?? "")
+type TextBlock =
+  | { kind: "paragraph"; text: string }
+  | { kind: "list"; items: string[] };
+
+const parseDescription = (value?: string): TextBlock[] => {
+  if (!value?.trim()) return [];
+  const blocks: TextBlock[] = [];
+  // Split on one or more blank lines to get top-level sections
+  const sections = value
     .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
+    .map((s) => s.trim())
     .filter(Boolean);
+  for (const section of sections) {
+    const lines = section
+      .split(/\n/)
+      .map((l) => l.trim())
+      .filter(Boolean);
+    // Detect bullet sections: majority of lines start with - / • / * / numbered
+    const bulletLines = lines.filter((l) => /^[-•*]|^\d+[.)]\s/.test(l));
+    if (
+      bulletLines.length > 0 &&
+      bulletLines.length >= Math.ceil(lines.length / 2)
+    ) {
+      // Treat the whole section as a list; strip leading bullet chars
+      const items = lines
+        .map((l) => l.replace(/^[-•*]\s*|^\d+[.)]\s*/, "").trim())
+        .filter(Boolean);
+      blocks.push({ kind: "list", items });
+    } else if (lines.length > 1) {
+      // Multiple non-bullet lines — split each as its own paragraph
+      for (const line of lines) {
+        blocks.push({ kind: "paragraph", text: line });
+      }
+    } else {
+      blocks.push({ kind: "paragraph", text: lines[0] });
+    }
+  }
+  return blocks;
+};
+
+const descriptionBlocks = parseDescription(item.description);
 
 const localCoverByTitle: Record<string, string> = {
   "ar27111994.dev": "/upwork-covers/ar27111994-dev-cover.svg",
@@ -254,7 +290,7 @@ const fullImageHref = (attachment: PortfolioAttachment) =>
   normalizeExternalUrl(attachment.image?.large) ||
   imageSrc(attachment);
 
-const detailParagraphs = toParagraphs(item.description);
+const modalScrollHint = attachments.length || descriptionBlocks.length > 1;
 const modalId = `upwork-modal-${item.id}`;
 const modalTitleId = `${modalId}-title`;
 const modalDescriptionId = `${modalId}-description`;
@@ -307,7 +343,6 @@ const previewImageFallbacks = uniqueMediaSources([
 const previewImage = previewImageFallbacks[0];
 const previewProofLine =
   projectDisplayUrl ?? item.role ?? "Captured Upwork portfolio record";
-const modalScrollHint = attachments.length || detailParagraphs.length > 1;
 ---
 
 <article class={`upwork-portfolio-card${item.featured ? " featured" : ""}`}>
@@ -454,20 +489,42 @@ const modalScrollHint = attachments.length || detailParagraphs.length > 1;
       <div class="upwork-detail-block">
         <small>Description</small>
         {
-          detailParagraphs.length ? (
-            detailParagraphs.map((paragraph) => (
-              <p>
-                {splitLinks(paragraph).map((segment) =>
-                  segment.type === "url" && segment.href ? (
-                    <a href={segment.href} target="_blank" rel="noreferrer">
-                      {segment.value}
-                    </a>
-                  ) : (
-                    segment.value
-                  ),
-                )}
-              </p>
-            ))
+          descriptionBlocks.length ? (
+            descriptionBlocks.map((block) =>
+              block.kind === "list" ? (
+                <ul class="upwork-desc-list">
+                  {block.items.map((item) => (
+                    <li>
+                      {splitLinks(item).map((segment) =>
+                        segment.type === "url" && segment.href ? (
+                          <a
+                            href={segment.href}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {segment.value}
+                          </a>
+                        ) : (
+                          segment.value
+                        ),
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p>
+                  {splitLinks(block.text).map((segment) =>
+                    segment.type === "url" && segment.href ? (
+                      <a href={segment.href} target="_blank" rel="noreferrer">
+                        {segment.value}
+                      </a>
+                    ) : (
+                      segment.value
+                    ),
+                  )}
+                </p>
+              ),
+            )
           ) : (
             <p>No description was captured for this item.</p>
           )
