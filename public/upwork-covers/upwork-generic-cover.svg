@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#f4efe7"/>
+  <rect x="40" y="40" width="720" height="520" rx="12" fill="#e8e0d4" stroke="#c8b8a0" stroke-width="1.5"/>
+  <rect x="80" y="100" width="280" height="8" rx="4" fill="#b0a090"/>
+  <rect x="80" y="120" width="200" height="8" rx="4" fill="#c8b8a0"/>
+  <rect x="80" y="160" width="640" height="6" rx="3" fill="#d0c4b4"/>
+  <rect x="80" y="178" width="580" height="6" rx="3" fill="#d0c4b4"/>
+  <rect x="80" y="196" width="620" height="6" rx="3" fill="#d0c4b4"/>
+  <rect x="80" y="240" width="200" height="120" rx="8" fill="#c8b8a0"/>
+  <rect x="300" y="240" width="200" height="120" rx="8" fill="#c8b8a0"/>
+  <rect x="520" y="240" width="200" height="120" rx="8" fill="#c8b8a0"/>
+  <rect x="80" y="400" width="640" height="6" rx="3" fill="#d0c4b4"/>
+  <rect x="80" y="418" width="480" height="6" rx="3" fill="#d0c4b4"/>
+  <text x="400" y="68" font-family="system-ui,sans-serif" font-size="18" fill="#7a6a58" text-anchor="middle" font-weight="600">Upwork Portfolio</text>
+</svg>

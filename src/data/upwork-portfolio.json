@@ -17,32 +17,33 @@
           "title": null,
           "description": null,
           "fileName": null,
-          "fileSize": 0,
-          "imageSmall": null,
-          "imageMiddle": null,
-          "imageLarge": null
+          "fileSize": 0
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/08393c05-200b-4b6c-b18f-01c61d1d87f0",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/08393c05-200b-4b6c-b18f-01c61d1d87f0",
           "title": null,
           "description": null,
           "fileName": "android-chrome-512x512.png",
           "fileSize": 153106,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ebffd578-a3f7-416c-b85e-3d5633af378e",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/87a19cb1-1ef1-4e47-baba-aa0682ba9997",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e2b4a073-22fe-49d5-900b-d988420405d8"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ebffd578-a3f7-416c-b85e-3d5633af378e",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/87a19cb1-1ef1-4e47-baba-aa0682ba9997",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e2b4a073-22fe-49d5-900b-d988420405d8"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/df53b6d0-3f98-4321-b748-1147620f044c",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/df53b6d0-3f98-4321-b748-1147620f044c",
           "title": null,
           "description": null,
           "fileName": "og-cover.png",
           "fileSize": 133424,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/17f854e3-9c2d-4f6c-98aa-82a768e046db",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/3c5b71d7-bbd2-493d-93b6-3ea00a91a140",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e66820ba-2d5e-4f2d-9102-24b833014110"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/17f854e3-9c2d-4f6c-98aa-82a768e046db",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/3c5b71d7-bbd2-493d-93b6-3ea00a91a140",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e66820ba-2d5e-4f2d-9102-24b833014110"
+          }
         }
       ]
     },
@@ -59,9 +60,11 @@
           "description": "AI-agent skill for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows via the official Penpot MCP Server. - ar27111994/penpot-mcp",
           "fileName": null,
           "fileSize": 0,
-          "imageSmall": "https://opengraph.githubassets.com/98ea7425bcc0b74f4c6d9765071542f1b6cd8acfab1e856c29f62fd175ba66c5/ar27111994/penpot-mcp",
-          "imageMiddle": null,
-          "imageLarge": null
+          "image": {
+            "small": "https://opengraph.githubassets.com/98ea7425bcc0b74f4c6d9765071542f1b6cd8acfab1e856c29f62fd175ba66c5/ar27111994/penpot-mcp",
+            "medium": null,
+            "large": null
+          }
         },
         {
           "type": "image",
@@ -83,9 +86,11 @@
           "description": "Node.js TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across VS Code/Copilot, OpenCode, Cursor, Zed, Claude Code, and Pi. - ar27111994/agent-harness",
           "fileName": null,
           "fileSize": 0,
-          "imageSmall": "https://opengraph.githubassets.com/9530279156148a79b4765091e30f5cbf856007a9d80c99bb7e093ce669aef90a/ar27111994/agent-harness",
-          "imageMiddle": null,
-          "imageLarge": null
+          "image": {
+            "small": "https://opengraph.githubassets.com/9530279156148a79b4765091e30f5cbf856007a9d80c99bb7e093ce669aef90a/ar27111994/agent-harness",
+            "medium": null,
+            "large": null
+          }
         },
         {
           "type": "video",
@@ -114,9 +119,11 @@
           "description": "Enterprise-grade webhook testing suite for developers. Capture, inspect, replay, forward, validate, and mock webhook traffic in real time without tunnels. Includes SSE live streaming, JSON Schema v...",
           "fileName": null,
           "fileSize": 0,
-          "imageSmall": "https://repository-images.githubusercontent.com/1120109772/76387148-2839-4951-9b40-0ffd5458abe7",
-          "imageMiddle": null,
-          "imageLarge": null
+          "image": {
+            "small": "https://repository-images.githubusercontent.com/1120109772/76387148-2839-4951-9b40-0ffd5458abe7",
+            "medium": null,
+            "large": null
+          }
         },
         {
           "type": "image",
@@ -133,36 +140,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/12eabbd2-c0e5-4fa6-b713-f66ae2a9b2f2",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/12eabbd2-c0e5-4fa6-b713-f66ae2a9b2f2",
           "title": null,
           "description": null,
           "fileName": "Screenshot 2022-06-28 001209.png",
           "fileSize": 571637,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4bb247a-8467-465f-a025-1fea3aeda2c0",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b26a21d7-aa05-444f-b50e-a330d6c8afab",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/92a71e74-26fc-4808-b11b-54b15e8a520b"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4bb247a-8467-465f-a025-1fea3aeda2c0",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b26a21d7-aa05-444f-b50e-a330d6c8afab",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/92a71e74-26fc-4808-b11b-54b15e8a520b"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/60732087-96e3-47cc-9a6f-2fa294241bf0",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/60732087-96e3-47cc-9a6f-2fa294241bf0",
           "title": null,
           "description": null,
           "fileName": "Screenshot 2022-06-27 234658.png",
           "fileSize": 306977,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b02bc097-15ab-41fc-9942-ee2049bd28f1",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b9c3788f-7e67-4e7b-8aa3-8759a1b21e67",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/13277bf0-8b2c-4604-bf28-9847e3295c2e"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b02bc097-15ab-41fc-9942-ee2049bd28f1",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b9c3788f-7e67-4e7b-8aa3-8759a1b21e67",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/13277bf0-8b2c-4604-bf28-9847e3295c2e"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c97de587-1365-4e96-bd41-83cc607a1e9e",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c97de587-1365-4e96-bd41-83cc607a1e9e",
           "title": null,
           "description": null,
           "fileName": "Screenshot 2022-06-27 235601.png",
           "fileSize": 308541,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/f32abaab-70d9-451b-a719-e37e7d6cab0f",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/189b14f4-881b-406a-ac05-52d2e85c59b5",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e6d20c0a-264c-48fc-bbb5-e9e1fc30f133"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/f32abaab-70d9-451b-a719-e37e7d6cab0f",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/189b14f4-881b-406a-ac05-52d2e85c59b5",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e6d20c0a-264c-48fc-bbb5-e9e1fc30f133"
+          }
         }
       ],
       "completionDate": "2022-03-17",
@@ -176,36 +189,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
           "title": null,
           "description": null,
           "fileName": "Screen Shot 2017-10-23 at 3.59.50 PM.png",
           "fileSize": 146805,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
           "title": null,
           "description": null,
           "fileName": "Screenshot from October 23, 2017 4_56 PM.png",
           "fileSize": 589281,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
           "title": null,
           "description": null,
           "fileName": "Screen Shot 2017-10-25 at 8.52.28 PM.png",
           "fileSize": 125119,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920"
+          }
         }
       ],
       "completionDate": "2017-10-31"
@@ -218,36 +237,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
           "title": null,
           "description": null,
           "fileName": "portfolio 1.png",
           "fileSize": 299323,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
           "title": null,
           "description": null,
           "fileName": "portfolio 2.png",
           "fileSize": 312466,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
           "title": null,
           "description": null,
           "fileName": "portfolio 3.png",
           "fileSize": 317371,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392"
+          }
         }
       ],
       "completionDate": "2017-12-22"
@@ -260,25 +285,29 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
           "title": null,
           "description": null,
           "fileName": "acs.JPG",
           "fileSize": 314606,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
           "title": null,
           "description": null,
           "fileName": "acs-invalid.JPG",
           "fileSize": 298398,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496"
+          }
         }
       ],
       "completionDate": "2017-09-30",
@@ -292,36 +321,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
           "title": null,
           "description": null,
           "fileName": "21.JPG",
           "fileSize": 204359,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
           "title": null,
           "description": null,
           "fileName": "22.JPG",
           "fileSize": 194887,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
           "title": null,
           "description": null,
           "fileName": "23.JPG",
           "fileSize": 179767,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824"
+          }
         }
       ],
       "completionDate": "2017-09-10"
@@ -334,36 +369,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
           "title": null,
           "description": null,
           "fileName": "11.JPG",
           "fileSize": 215782,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
           "title": null,
           "description": null,
           "fileName": "12.JPG",
           "fileSize": 176637,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
           "title": null,
           "description": null,
           "fileName": "13.JPG",
           "fileSize": 142822,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032"
+          }
         }
       ],
       "completionDate": "2017-09-11",
@@ -377,25 +418,29 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
           "title": null,
           "description": null,
           "fileName": "111.JPG",
           "fileSize": 162040,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
           "title": null,
           "description": null,
           "fileName": "112.JPG",
           "fileSize": 164330,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920"
+          }
         }
       ],
       "completionDate": "2017-08-17",
@@ -409,36 +454,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
           "title": null,
           "description": null,
           "fileName": "100.jpg",
           "fileSize": 192007,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
           "title": null,
           "description": null,
           "fileName": "101.JPG",
           "fileSize": 263386,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
           "title": null,
           "description": null,
           "fileName": "102.JPG",
           "fileSize": 179273,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032"
+          }
         }
       ],
       "completionDate": "2017-08-10",
@@ -452,14 +503,16 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
           "title": null,
           "description": null,
           "fileName": "91.JPG",
           "fileSize": 121141,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528"
+          }
         }
       ],
       "completionDate": "2017-07-18",
@@ -468,41 +521,47 @@
     {
       "id": "complete-controller-crm-system",
       "title": "Complete Controller CRM System",
-      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a ‘Create New Client’ button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms – can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
+      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a \u2018Create New Client\u2019 button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms \u2013 can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
       "skills": [],
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
           "title": null,
           "description": null,
           "fileName": "80.JPG",
           "fileSize": 60873,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
           "title": null,
           "description": null,
           "fileName": "81.JPG",
           "fileSize": 113854,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
           "title": null,
           "description": null,
           "fileName": "82.JPG",
           "fileSize": 151431,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624"
+          }
         }
       ],
       "completionDate": "2017-07-30",
@@ -516,36 +575,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
           "title": null,
           "description": null,
           "fileName": "50.JPG",
           "fileSize": 200013,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
           "title": null,
           "description": null,
           "fileName": "51.JPG",
           "fileSize": 188179,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
           "title": null,
           "description": null,
           "fileName": "52.JPG",
           "fileSize": 164220,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592"
+          }
         }
       ],
       "completionDate": "2017-06-14",
@@ -559,36 +624,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
           "title": null,
           "description": null,
           "fileName": "70.JPG",
           "fileSize": 179754,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
           "title": null,
           "description": null,
           "fileName": "71.JPG",
           "fileSize": 173029,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
           "title": null,
           "description": null,
           "fileName": "72.JPG",
           "fileSize": 102775,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824"
+          }
         }
       ],
       "completionDate": "2017-05-21",
@@ -602,36 +673,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
           "title": null,
           "description": null,
           "fileName": "61.JPG",
           "fileSize": 171657,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
           "title": null,
           "description": null,
           "fileName": "62.JPG",
           "fileSize": 101871,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
           "title": null,
           "description": null,
           "fileName": "63.JPG",
           "fileSize": 92817,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840"
+          }
         }
       ],
       "completionDate": "2017-05-29",
@@ -645,36 +722,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
           "title": null,
           "description": null,
           "fileName": "41.JPG",
           "fileSize": 157045,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
           "title": null,
           "description": null,
           "fileName": "42.JPG",
           "fileSize": 167018,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
           "title": null,
           "description": null,
           "fileName": "43.JPG",
           "fileSize": 158076,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696"
+          }
         }
       ],
       "completionDate": "2017-05-08",
@@ -688,36 +771,42 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
           "title": null,
           "description": null,
           "fileName": "31.JPG",
           "fileSize": 94162,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
           "title": null,
           "description": null,
           "fileName": "32.JPG",
           "fileSize": 180266,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264"
+          }
         },
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
           "title": null,
           "description": null,
           "fileName": "33.JPG",
           "fileSize": 155499,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416"
+          }
         }
       ],
       "completionDate": "2017-03-22",
@@ -731,14 +820,16 @@
       "attachments": [
         {
           "type": "image",
-          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+          "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
           "title": null,
           "description": null,
           "fileName": "21.JPG",
           "fileSize": 73993,
-          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
-          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304"
+          "image": {
+            "small": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+            "medium": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+            "large": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304"
+          }
         }
       ],
       "completionDate": "2017-02-07",

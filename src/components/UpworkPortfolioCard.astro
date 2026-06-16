@@ -282,12 +282,22 @@ const primaryImagePreview = imageAttachments
   .map((attachment) => previewImageFromAttachment(attachment))
   .find(Boolean);
 const previewMediaLabel = mediaSummary[0] ?? "Captured Upwork record";
+const isUpworkAuthUrl = (url: string | undefined): boolean => {
+  if (!url) return false;
+  try {
+    const parsed = new URL(url);
+    return parsed.hostname.includes("upwork.com") && parsed.pathname.startsWith("/att/");
+  } catch {
+    return false;
+  }
+};
 const previewImageFallbacks = uniqueMediaSources([
+  localCoverByTitle[item.title],
   item.thumbnail,
   item.thumbnailOriginal,
-  primaryImagePreview,
-  primaryLinkPreview,
-  localCoverByTitle[item.title],
+  ...(primaryLinkPreview && !isUpworkAuthUrl(primaryLinkPreview) ? [primaryLinkPreview] : []),
+  ...(primaryImagePreview && !isUpworkAuthUrl(primaryImagePreview) ? [primaryImagePreview] : []),
+  "/upwork-covers/upwork-generic-cover.svg",
 ]);
 const previewImage = previewImageFallbacks[0];
 const isLocalImage = previewImage?.startsWith('/') || previewImage?.startsWith('./');
