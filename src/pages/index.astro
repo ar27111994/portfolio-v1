@@ -1340,47 +1340,43 @@ const sponsorLinks = [
       <div class="proof-grid">
         <article class="resource-card">
           <h3>Certifications / partner track</h3>
-          <ul>
-            <li>
-              <strong>
-                <img src="/brand-icons/microsoft.svg" alt="" loading="lazy" decoding="async" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;" />
-                Microsoft Partner:
-              </strong> associated with {contactEmail}
+          <ul class="cert-list">
+            <li class="cert-item cert-partner">
+              <span class="cert-icon-wrap">
+                <img src="/brand-icons/microsoft.svg" alt="Microsoft" loading="lazy" decoding="async" class="cert-icon" />
+              </span>
+              <div class="cert-body">
+                <strong class="cert-name">Microsoft Partner</strong>
+                <span class="cert-meta">associated with {contactEmail}</span>
+              </div>
             </li>
-            <li>
-              <strong>
-                <img src="/brand-icons/anthropic.svg" alt="" loading="lazy" decoding="async" style="width:16px;height:16px;vertical-align:middle;margin-right:6px;" />
-                Anthropic Partner:
-              </strong> associated with {contactEmail}
+            <li class="cert-item cert-partner">
+              <span class="cert-icon-wrap">
+                <img src="/brand-icons/anthropic.svg" alt="Anthropic" loading="lazy" decoding="async" class="cert-icon" />
+              </span>
+              <div class="cert-body">
+                <strong class="cert-name">Anthropic Partner</strong>
+                <span class="cert-meta">associated with {contactEmail}</span>
+              </div>
             </li>
             {
               certificationLinks
                 .filter((item) => item.issuer === "Anthropic")
                 .map((item) => (
-                  <li style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.issuer}
-                        loading="lazy"
-                        decoding="async"
-                        style="width:16px;height:16px;flex-shrink:0;"
-                      />
-                    )}
-                    <a href={item.href} target="_blank" rel="noreferrer">
-                      {item.label}
-                    </a>
-                    {item.pdf && (
-                      <a
-                        href={item.pdf}
-                        target="_blank"
-                        rel="noreferrer"
-                        style="font-size:0.78em;opacity:0.7;"
-                        aria-label={`Download PDF for ${item.label}`}
-                      >
-                        [PDF]
+                  <li class="cert-item">
+                    <span class="cert-icon-wrap">
+                      <img src={item.icon} alt={item.issuer} loading="lazy" decoding="async" class="cert-icon" />
+                    </span>
+                    <div class="cert-body">
+                      <a href={item.href} target="_blank" rel="noreferrer" class="cert-link">
+                        {item.label}
                       </a>
-                    )}
+                      {item.pdf && (
+                        <a href={item.pdf} target="_blank" rel="noreferrer" class="cert-pdf" aria-label={`Download PDF for ${item.label}`}>
+                          PDF ↓
+                        </a>
+                      )}
+                    </div>
                   </li>
                 ))
             }
@@ -1388,19 +1384,15 @@ const sponsorLinks = [
               certificationLinks
                 .filter((item) => item.issuer !== "Anthropic")
                 .map((item) => (
-                  <li style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-                    {item.icon && (
-                      <img
-                        src={item.icon}
-                        alt={item.issuer}
-                        loading="lazy"
-                        decoding="async"
-                        style="width:16px;height:16px;flex-shrink:0;"
-                      />
-                    )}
-                    <a href={item.href} target="_blank" rel="noreferrer">
-                      {item.label}
-                    </a>
+                  <li class="cert-item">
+                    <span class="cert-icon-wrap">
+                      <img src={item.icon} alt={item.issuer} loading="lazy" decoding="async" class="cert-icon" />
+                    </span>
+                    <div class="cert-body">
+                      <a href={item.href} target="_blank" rel="noreferrer" class="cert-link">
+                        {item.label}
+                      </a>
+                    </div>
                   </li>
                 ))
             }
@@ -1409,22 +1401,22 @@ const sponsorLinks = [
 
         <article class="resource-card">
           <h3>Goggle Hunt / Flippa / Gleam</h3>
-          <ul>
+          <ul class="cert-list">
             {
               ventureProof.map((item) => (
-                <li style="display:flex;align-items:center;gap:6px;">
-                  {item.icon && (
-                    <img
-                      src={item.icon}
-                      alt=""
-                      loading="lazy"
-                      decoding="async"
-                      style="width:16px;height:16px;flex-shrink:0;"
-                    />
+                <li class="cert-item">
+                  {item.icon ? (
+                    <span class="cert-icon-wrap">
+                      <img src={item.icon} alt="" loading="lazy" decoding="async" class="cert-icon" />
+                    </span>
+                  ) : (
+                    <span class="cert-icon-wrap cert-icon-empty" aria-hidden="true" />
                   )}
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {item.label}
-                  </a>
+                  <div class="cert-body">
+                    <a href={item.href} target="_blank" rel="noreferrer" class="cert-link">
+                      {item.label}
+                    </a>
+                  </div>
                 </li>
               ))
             }
