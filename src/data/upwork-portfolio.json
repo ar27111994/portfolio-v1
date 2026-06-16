@@ -3,7 +3,7 @@
   "lastUpdated": "2026-06-16",
   "source": "upwork-official-graphql-api",
   "sourceNote": "Fetched via official Upwork talentProfile GraphQL query.",
-  "extractedAt": "2026-06-16T19:57:55.520Z",
+  "extractedAt": "2026-06-16T20:08:32.276Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -1402,5 +1402,6 @@
       ],
       "completionDate": "2026-06-01"
     }
-  ]
+  ],
+  "total": 40
 }

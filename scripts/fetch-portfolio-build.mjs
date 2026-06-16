@@ -439,11 +439,37 @@ async function main() {
     }
   }
 
-  const output = { ...portfolio, items: mergedItems };
+  const output = {
+    ...portfolio,
+    items: mergedItems,
+    total: mergedItems.length,
+  };
   writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
   console.log(
     `[fetch-portfolio-build] ✓ Wrote ${mergedItems.length} portfolio items to src/data/upwork-portfolio.json`,
   );
+
+  // Write UPWORK_STATIC_COUNT to .env.local so the API serverless function
+  // can read the true full-JSON count via process.env.UPWORK_STATIC_COUNT.
+  // This file is .gitignored — Vercel reads it automatically during builds.
+  const envLocalPath = join(ROOT, ".env.local");
+  const envLine = `UPWORK_STATIC_COUNT=${mergedItems.length}\n`;
+  try {
+    let envContent = "";
+    if (existsSync(envLocalPath)) {
+      envContent = readFileSync(envLocalPath, "utf-8");
+      // Replace existing line if present
+      envContent = envContent.replace(/^UPWORK_STATIC_COUNT=.*\n?/m, "");
+    }
+    writeFileSync(envLocalPath, envContent + envLine);
+    console.log(
+      `[fetch-portfolio-build] ✓ Wrote UPWORK_STATIC_COUNT=${mergedItems.length} to .env.local`,
+    );
+  } catch (e) {
+    console.warn(
+      `[fetch-portfolio-build] Could not write .env.local: ${e.message}`,
+    );
+  }
 }
 
 main().catch((err) => {

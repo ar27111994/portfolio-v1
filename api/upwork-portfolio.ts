@@ -83,6 +83,8 @@ interface PortfolioOutput {
   sourceNote: string;
   extractedAt: string;
   items: PortfolioItem[];
+  /** True total from the static full JSON — always >= items.length (API cap 20). */
+  total: number;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -415,6 +417,11 @@ async function fetchPortfolioData(
   const items = transformProjects(projectList.projects ?? []);
   const now = new Date();
 
+  // Use UPWORK_STATIC_COUNT (set by prebuild) as the true total when it's
+  // larger than what the capped live API returned (Upwork API-598 cap = 20).
+  const staticCount = Number(process.env.UPWORK_STATIC_COUNT ?? "0");
+  const total = Math.max(items.length, staticCount);
+
   return {
     profileUrl: "https://www.upwork.com/freelancers/~0188baee67e8f543e7",
     lastUpdated: now.toISOString().split("T")[0],
@@ -422,6 +429,7 @@ async function fetchPortfolioData(
     sourceNote: "Fetched via official Upwork talentProfile GraphQL query.",
     extractedAt: now.toISOString(),
     items,
+    total,
   };
 }
 
