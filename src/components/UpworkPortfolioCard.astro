@@ -339,16 +339,18 @@ const primaryYoutubeThumbnail = videoAttachments
   })
   .find(Boolean);
 const previewImageFallbacks = uniqueMediaSources([
-  localCoverByTitle[item.title],
-  item.thumbnail,
-  item.thumbnailOriginal,
-  ...(primaryLinkPreview && !isUpworkAuthUrl(primaryLinkPreview)
-    ? [primaryLinkPreview]
-    : []),
-  ...(primaryYoutubeThumbnail ? [primaryYoutubeThumbnail] : []),
+  // Real downloaded screenshots always win over branded SVG covers
   ...(primaryImagePreview && !isUpworkAuthUrl(primaryImagePreview)
     ? [primaryImagePreview]
     : []),
+  ...(primaryYoutubeThumbnail ? [primaryYoutubeThumbnail] : []),
+  ...(primaryLinkPreview && !isUpworkAuthUrl(primaryLinkPreview)
+    ? [primaryLinkPreview]
+    : []),
+  item.thumbnail,
+  item.thumbnailOriginal,
+  // Branded SVG covers as fallback (used when no real screenshot exists)
+  localCoverByTitle[item.title],
   "/upwork-covers/upwork-generic-cover.svg",
 ]);
 const previewImage = previewImageFallbacks[0];

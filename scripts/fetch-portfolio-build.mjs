@@ -397,9 +397,16 @@ async function main() {
         (existing.items ?? []).map((i) => [i.id, i]),
       );
       // Apply fresh API data on top of existing, preserving locally-downloaded
-      // attachment fields (localImage, videoId) that the official API never returns.
+      // attachment fields (localImage, videoId) and manually-set metadata
+      // (completionDate) that the official API never returns for these items.
       for (const fresh of portfolio.items) {
         const prev = existingById.get(fresh.id);
+        if (prev) {
+          // Preserve completionDate if the API omitted it but we had one set
+          if (!fresh.completionDate && prev.completionDate) {
+            fresh.completionDate = prev.completionDate;
+          }
+        }
         if (prev?.attachments?.length && fresh.attachments?.length) {
           // Re-attach any localImage / videoId from the matching previous attachment
           // (match by position — the API always returns attachments in the same order)

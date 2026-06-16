@@ -3,7 +3,7 @@
   "lastUpdated": "2026-06-16",
   "source": "upwork-official-graphql-api",
   "sourceNote": "Fetched via official Upwork talentProfile GraphQL query.",
-  "extractedAt": "2026-06-16T19:36:41.468Z",
+  "extractedAt": "2026-06-16T19:57:55.520Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -1296,7 +1296,8 @@
           "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d27227c2-dbdb-42fc-892e-9b4f7708148c",
           "localImage": "/upwork-covers/webhook-debugger-and-logger-0.jpg"
         }
-      ]
+      ],
+      "completionDate": "2026-06-01"
     },
     {
       "id": "agent-harness",
@@ -1328,7 +1329,8 @@
           "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d8fc328d-e303-444f-a7be-0a07f6e41ac3",
           "localImage": "/upwork-covers/agent-harness-0.jpg"
         }
-      ]
+      ],
+      "completionDate": "2026-06-01"
     },
     {
       "id": "penpot-mcp",
@@ -1353,7 +1355,8 @@
           "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/384aa839-2faf-42d3-9747-6c3817e8033b",
           "localImage": "/upwork-covers/penpot-mcp-0.jpg"
         }
-      ]
+      ],
+      "completionDate": "2026-05-01"
     },
     {
       "id": "ar27111994-dev",
@@ -1396,7 +1399,8 @@
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e66820ba-2d5e-4f2d-9102-24b833014110",
           "localImage": "/upwork-covers/ar27111994-dev-1.jpg"
         }
-      ]
+      ],
+      "completionDate": "2026-06-01"
     }
   ]
 }

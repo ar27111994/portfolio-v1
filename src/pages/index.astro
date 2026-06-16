@@ -91,14 +91,21 @@ const inferPortfolioTags = (item: UpworkPortfolioItem) => {
 };
 const upworkPortfolioItems = (
   upworkPortfolio.items as unknown as UpworkPortfolioItem[]
-).map((item) => ({
-  ...item,
-  displayDescription:
-    portfolioDisplayMeta[item.title]?.description ?? item.description,
-  skills: item.skills?.length
-    ? item.skills
-    : (portfolioDisplayMeta[item.title]?.skills ?? inferPortfolioTags(item)),
-}));
+)
+  .map((item) => ({
+    ...item,
+    displayDescription:
+      portfolioDisplayMeta[item.title]?.description ?? item.description,
+    skills: item.skills?.length
+      ? item.skills
+      : (portfolioDisplayMeta[item.title]?.skills ?? inferPortfolioTags(item)),
+  }))
+  // Sort latest completionDate first; items with no date go to the end
+  .sort((a, b) => {
+    const da = a.completionDate ? new Date(a.completionDate).getTime() : 0;
+    const db = b.completionDate ? new Date(b.completionDate).getTime() : 0;
+    return db - da;
+  });
 const upworkPortfolioCount = upworkPortfolioItems.length;
 // If the JSON has exactly 20 items it was written by the official API (capped
 // at 20 by Upwork API-598). Show "20+" to signal more exist on the live profile.
@@ -1946,14 +1953,23 @@ const sponsorLinks = [
     async function loadUpworkPortfolio() {
       // Refresh the count badge from the live API — cards are already rendered
       // at build time via the prebuild script, so this is a lightweight update only.
+      // Only update if the API reports MORE items than the static build already shows
+      // (the official API is capped at 20 by Upwork API-598, so we never let a
+      // 20-item API response downgrade a correct 40-item static badge).
       try {
         const res = await fetch("/api/upwork-portfolio");
         if (!res.ok) return;
         const data = await res.json();
-        const count = Array.isArray(data.items) ? data.items.length : null;
-        if (!count) return;
+        const apiCount = Array.isArray(data.items) ? data.items.length : null;
+        if (!apiCount) return;
         const badge = document.getElementById("upwork-count-badge");
-        if (badge) badge.textContent = `${count} projects`;
+        if (!badge) return;
+        const staticCount = parseInt(badge.textContent ?? "0", 10);
+        if (apiCount > staticCount) {
+          badge.textContent = `${apiCount} projects`;
+        }
+        // If apiCount <= staticCount, keep the static value (it came from the
+        // full browser-session JSON and is more accurate than the capped API)
       } catch {
         // API unreachable — static build count badge remains visible.
       }
