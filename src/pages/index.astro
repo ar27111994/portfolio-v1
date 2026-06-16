@@ -100,6 +100,12 @@ const upworkPortfolioItems = (
     : (portfolioDisplayMeta[item.title]?.skills ?? inferPortfolioTags(item)),
 }));
 const upworkPortfolioCount = upworkPortfolioItems.length;
+// The official Upwork GraphQL API caps at 20 items (API-598). Badge shows
+// "20+" to signal there are more on the live profile than are loaded here.
+const upworkPortfolioCountLabel =
+  upworkPortfolioCount >= 20
+    ? `${upworkPortfolioCount}+`
+    : String(upworkPortfolioCount);
 const recentUpworkProofItems = upworkPortfolioItems
   .filter((item) => item.featured)
   .slice(0, 4);
@@ -1357,7 +1363,7 @@ const sponsorLinks = [
           <h2 id="upwork-title">
             Upwork portfolio
             <span class="count-badge" id="upwork-count-badge"
-              >{upworkPortfolioCount} projects</span
+              >{upworkPortfolioCountLabel} projects</span
             >
           </h2>
           <p>

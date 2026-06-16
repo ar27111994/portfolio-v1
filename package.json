@@ -16,7 +16,8 @@
     "lint": "eslint .",
     "typecheck": "astro check",
     "check": "astro check && eslint . && prettier --check .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs"
   },
   "lint-staged": {
     "*.{astro,ts,js,mjs,cjs,json,css,md}": [
