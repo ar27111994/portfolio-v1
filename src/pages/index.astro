@@ -100,10 +100,12 @@ const upworkPortfolioItems = (
     : (portfolioDisplayMeta[item.title]?.skills ?? inferPortfolioTags(item)),
 }));
 const upworkPortfolioCount = upworkPortfolioItems.length;
-// The official Upwork GraphQL API caps at 20 items (API-598). Badge shows
-// "20+" to signal there are more on the live profile than are loaded here.
+// If the JSON has exactly 20 items it was written by the official API (capped
+// at 20 by Upwork API-598). Show "20+" to signal more exist on the live profile.
+// If a browser-session fetch has populated more items, use the real count.
+const UPWORK_API_CAP = 20;
 const upworkPortfolioCountLabel =
-  upworkPortfolioCount >= 20
+  upworkPortfolioCount === UPWORK_API_CAP
     ? `${upworkPortfolioCount}+`
     : String(upworkPortfolioCount);
 const recentUpworkProofItems = upworkPortfolioItems
