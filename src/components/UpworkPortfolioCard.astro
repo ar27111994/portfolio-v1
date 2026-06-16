@@ -284,7 +284,10 @@ const isUpworkAuthUrl = (url: string | undefined): boolean => {
   if (!url) return false;
   try {
     const parsed = new URL(url);
-    return parsed.hostname.includes("upwork.com") && parsed.pathname.startsWith("/att/");
+    return (
+      parsed.hostname.includes("upwork.com") &&
+      parsed.pathname.startsWith("/att/")
+    );
   } catch {
     return false;
   }
@@ -293,8 +296,12 @@ const previewImageFallbacks = uniqueMediaSources([
   localCoverByTitle[item.title],
   item.thumbnail,
   item.thumbnailOriginal,
-  ...(primaryLinkPreview && !isUpworkAuthUrl(primaryLinkPreview) ? [primaryLinkPreview] : []),
-  ...(primaryImagePreview && !isUpworkAuthUrl(primaryImagePreview) ? [primaryImagePreview] : []),
+  ...(primaryLinkPreview && !isUpworkAuthUrl(primaryLinkPreview)
+    ? [primaryLinkPreview]
+    : []),
+  ...(primaryImagePreview && !isUpworkAuthUrl(primaryImagePreview)
+    ? [primaryImagePreview]
+    : []),
   "/upwork-covers/upwork-generic-cover.svg",
 ]);
 const previewImage = previewImageFallbacks[0];
@@ -314,14 +321,14 @@ const modalScrollHint = attachments.length || detailParagraphs.length > 1;
   >
     {
       previewImage ? (
-          <img
-            src={previewImage}
-            data-upwork-image-fallbacks={JSON.stringify(previewImageFallbacks)}
-            data-upwork-image-index="0"
-            alt={`Preview thumbnail for ${item.title}`}
-            loading="lazy"
-            decoding="async"
-          />
+        <img
+          src={previewImage}
+          data-upwork-image-fallbacks={JSON.stringify(previewImageFallbacks)}
+          data-upwork-image-index="0"
+          alt={`Preview thumbnail for ${item.title}`}
+          loading="lazy"
+          decoding="async"
+        />
       ) : null
     }
     <div
@@ -367,12 +374,17 @@ const modalScrollHint = attachments.length || detailParagraphs.length > 1;
     }
   </div>
 
-  {(completionLabel || mediaSummary.length) ? (
-    <div class="upwork-portfolio-meta-row" aria-label={`${item.title} metadata`}>
-      {completionLabel ? <span>{completionLabel}</span> : null}
-      {mediaSummary.length ? <span>{mediaSummary.join(" · ")}</span> : null}
-    </div>
-  ) : null}
+  {
+    completionLabel || mediaSummary.length ? (
+      <div
+        class="upwork-portfolio-meta-row"
+        aria-label={`${item.title} metadata`}
+      >
+        {completionLabel ? <span>{completionLabel}</span> : null}
+        {mediaSummary.length ? <span>{mediaSummary.join(" · ")}</span> : null}
+      </div>
+    ) : null
+  }
 
   {
     item.skills?.length ? (

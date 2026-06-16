@@ -124,7 +124,9 @@ async function refreshAccessToken(bundle: TokenBundle): Promise<TokenBundle> {
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Token refresh failed ${res.status}: ${text.slice(0, 300)}`);
+    throw new Error(
+      `Token refresh failed ${res.status}: ${text.slice(0, 300)}`,
+    );
   }
 
   const json = (await res.json()) as {
@@ -173,9 +175,7 @@ async function persistTokensToVercel(bundle: TokenBundle): Promise<void> {
     { key: "UPWORK_TOKEN_OBTAINED_AT", value: String(Date.now()) },
     {
       key: "UPWORK_TOKEN_EXPIRES_IN",
-      value: String(
-        Math.round((bundle.expiresAt - Date.now()) / 1000),
-      ),
+      value: String(Math.round((bundle.expiresAt - Date.now()) / 1000)),
     },
   ];
 
@@ -183,15 +183,16 @@ async function persistTokensToVercel(bundle: TokenBundle): Promise<void> {
   // Simplest: list existing env var IDs then PATCH each by ID.
   const listRes = await fetch(base, { headers });
   if (!listRes.ok) {
-    console.warn("[upwork-portfolio] Failed to list Vercel env vars:", listRes.status);
+    console.warn(
+      "[upwork-portfolio] Failed to list Vercel env vars:",
+      listRes.status,
+    );
     return;
   }
   const listJson = (await listRes.json()) as {
     envs?: Array<{ id: string; key: string }>;
   };
-  const existing = new Map(
-    (listJson.envs ?? []).map((e) => [e.key, e.id]),
-  );
+  const existing = new Map((listJson.envs ?? []).map((e) => [e.key, e.id]));
 
   await Promise.all(
     updates.map(async ({ key, value }) => {
@@ -358,14 +359,17 @@ function transformProjects(rawProjects: unknown[]): PortfolioItem[] {
     };
 
     if (attachments.length) item.attachments = attachments;
-    if (p.completionDateTime) item.completionDate = String(p.completionDateTime);
+    if (p.completionDateTime)
+      item.completionDate = String(p.completionDateTime);
     if (p.projectUrl) item.url = String(p.projectUrl);
 
     return item;
   });
 }
 
-async function fetchPortfolioData(accessToken: string): Promise<PortfolioOutput> {
+async function fetchPortfolioData(
+  accessToken: string,
+): Promise<PortfolioOutput> {
   const res = await fetch(UPWORK_GRAPHQL_URL, {
     method: "POST",
     headers: {
@@ -403,7 +407,9 @@ async function fetchPortfolioData(accessToken: string): Promise<PortfolioOutput>
 
   const projectList = data.data?.talentProfile?.profiles?.[0]?.projectList;
   if (!projectList) {
-    throw new Error("Unexpected Upwork API response shape: missing projectList");
+    throw new Error(
+      "Unexpected Upwork API response shape: missing projectList",
+    );
   }
 
   const items = transformProjects(projectList.projects ?? []);

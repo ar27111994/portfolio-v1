@@ -48,11 +48,11 @@ vercel.json             — Cron: POST /api/upwork-portfolio daily at 05:00 UTC
 
 Portfolio items are kept fresh via two layers:
 
-| Layer | How | When |
-|-------|-----|------|
-| Build-time snapshot | `prebuild` runs `scripts/fetch-portfolio-build.mjs` | Every Vercel deploy |
-| Live endpoint | `GET /api/upwork-portfolio` fetches real-time data | Every page load |
-| Daily cron | Vercel cron POSTs `/api/upwork-portfolio` daily at 05:00 UTC | Automatic refresh + token rotation |
+| Layer               | How                                                          | When                               |
+| ------------------- | ------------------------------------------------------------ | ---------------------------------- |
+| Build-time snapshot | `prebuild` runs `scripts/fetch-portfolio-build.mjs`          | Every Vercel deploy                |
+| Live endpoint       | `GET /api/upwork-portfolio` fetches real-time data           | Every page load                    |
+| Daily cron          | Vercel cron POSTs `/api/upwork-portfolio` daily at 05:00 UTC | Automatic refresh + token rotation |
 
 ### Initial local auth (one-time)
 
@@ -73,18 +73,18 @@ Token refresh is fully automatic from that point on.
 
 ### Required env vars (Vercel)
 
-| Variable | Purpose |
-|----------|---------|
-| `UPWORK_API_KEY` | OAuth2 client ID |
-| `UPWORK_API_SECRET` | OAuth2 client secret |
-| `UPWORK_ACCESS_TOKEN` | Current access token (auto-rotated) |
-| `UPWORK_REFRESH_TOKEN` | Long-lived refresh token |
-| `UPWORK_TOKEN_OBTAINED_AT` | Epoch ms when token was last issued |
-| `UPWORK_TOKEN_EXPIRES_IN` | Token TTL in seconds (usually 86400) |
-| `VERCEL_API_TOKEN` | Vercel API token for in-place token persistence |
-| `VERCEL_PROJECT_ID` | `prj_BBdQSGmlMeQXGPyXVqBT1oCYSLHg` |
-| `VERCEL_TEAM_ID` | `team_APuR5C9ajzlq0OLwjgkjl3hQ` |
-| `CRON_SECRET` | Guards the cron POST endpoint |
+| Variable                   | Purpose                                         |
+| -------------------------- | ----------------------------------------------- |
+| `UPWORK_API_KEY`           | OAuth2 client ID                                |
+| `UPWORK_API_SECRET`        | OAuth2 client secret                            |
+| `UPWORK_ACCESS_TOKEN`      | Current access token (auto-rotated)             |
+| `UPWORK_REFRESH_TOKEN`     | Long-lived refresh token                        |
+| `UPWORK_TOKEN_OBTAINED_AT` | Epoch ms when token was last issued             |
+| `UPWORK_TOKEN_EXPIRES_IN`  | Token TTL in seconds (usually 86400)            |
+| `VERCEL_API_TOKEN`         | Vercel API token for in-place token persistence |
+| `VERCEL_PROJECT_ID`        | `prj_BBdQSGmlMeQXGPyXVqBT1oCYSLHg`              |
+| `VERCEL_TEAM_ID`           | `team_APuR5C9ajzlq0OLwjgkjl3hQ`                 |
+| `CRON_SECRET`              | Guards the cron POST endpoint                   |
 
 ## Deploy (Vercel)
 
@@ -110,6 +110,7 @@ Token refresh is fully automatic from that point on.
 ## Certifications
 
 Claude Partner Network — Anthropic (all completed June 2026):
+
 - Building with the Claude API
 - Claude Code in Action
 - Introduction to Agent Skills

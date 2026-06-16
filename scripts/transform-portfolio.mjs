@@ -31,7 +31,9 @@ const OUTPUT_FILE = join(ROOT, "src", "data", "upwork-portfolio.json");
 const inputFile = process.argv[2];
 if (!inputFile) {
   console.error("Usage: node scripts/transform-portfolio.mjs <raw.json>");
-  console.error("  where raw.json is the direct curl output from the browser session");
+  console.error(
+    "  where raw.json is the direct curl output from the browser session",
+  );
   process.exit(1);
 }
 
@@ -39,11 +41,11 @@ const raw = JSON.parse(readFileSync(inputFile, "utf-8"));
 const projects = raw?.data?.talentPortfolioProjects?.projects;
 if (!projects?.length) {
   console.error(
-    "Unexpected input: missing data.talentPortfolioProjects.projects"
+    "Unexpected input: missing data.talentPortfolioProjects.projects",
   );
   console.error(
     "Keys found:",
-    Object.keys(raw?.data?.talentPortfolioProjects ?? {})
+    Object.keys(raw?.data?.talentPortfolioProjects ?? {}),
   );
   process.exit(1);
 }
@@ -61,7 +63,7 @@ function slugify(title) {
 
 function extractYouTubeId(url) {
   const m = String(url).match(
-    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/
+    /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/,
   );
   return m?.[1];
 }
@@ -80,7 +82,7 @@ function transformProject(p) {
         t.ontologySkill?.node?.prefLabel ??
         t.freeText ??
         t.skill?.prettyName ??
-        null
+        null,
     )
     .filter(Boolean);
 
@@ -199,8 +201,8 @@ writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
 const withSkills = items.filter((i) => i.skills.length > 0).length;
 const withAtts = items.filter((i) => i.attachments?.length).length;
 console.log(
-  `[transform-portfolio] ✓ Written ${items.length} items to src/data/upwork-portfolio.json`
+  `[transform-portfolio] ✓ Written ${items.length} items to src/data/upwork-portfolio.json`,
 );
 console.log(
-  `[transform-portfolio]   ${withSkills} with skills, ${withAtts} with attachments`
+  `[transform-portfolio]   ${withSkills} with skills, ${withAtts} with attachments`,
 );

@@ -133,7 +133,7 @@ summary:focus-visible {
   align-items: center;
   gap: 0.55rem;
   padding: 0.38rem 0.75rem 0.38rem 0.42rem;
-  border: 1px solid rgba(17,17,17,0.16);
+  border: 1px solid rgba(17, 17, 17, 0.16);
   border-radius: 999px;
   background: #fffaf1d1;
   backdrop-filter: blur(18px);
@@ -190,7 +190,7 @@ summary:focus-visible {
   width: fit-content;
   max-width: min(100%, 760px);
   padding: 0.3rem;
-  border: 1px solid rgba(17,17,17,0.14);
+  border: 1px solid rgba(17, 17, 17, 0.14);
   border-radius: 999px;
   background: #fffaf1d9;
   box-shadow: var(--shadow-tight);
@@ -210,7 +210,9 @@ summary:focus-visible {
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background 0.12s, color 0.12s;
+  transition:
+    background 0.12s,
+    color 0.12s;
 }
 .anchor-rail a svg {
   opacity: 0.55;
@@ -2372,7 +2374,7 @@ h3 {
   gap: 0 0.7rem;
   align-items: start;
   padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(17,17,17,0.07);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.07);
 }
 .cert-item:last-child {
   border-bottom: none;
@@ -2384,7 +2386,7 @@ h3 {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(17,17,17,0.05);
+  background: rgba(17, 17, 17, 0.05);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -2420,7 +2422,7 @@ h3 {
   font-weight: 600;
   line-height: 1.4;
   color: var(--ink);
-  text-decoration-color: rgba(36,87,255,0.35);
+  text-decoration-color: rgba(36, 87, 255, 0.35);
   word-break: break-word;
 }
 .cert-link:hover {
@@ -2439,8 +2441,10 @@ h3 {
   padding: 0.15rem 0.44rem;
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: rgba(17,17,17,0.03);
-  transition: background 0.1s, color 0.1s;
+  background: rgba(17, 17, 17, 0.03);
+  transition:
+    background 0.1s,
+    color 0.1s;
   margin-top: 0.25rem;
   width: fit-content;
 }

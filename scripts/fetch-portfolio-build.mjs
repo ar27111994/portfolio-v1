@@ -86,7 +86,9 @@ function loadTokens() {
       const raw = readFileSync(TOKEN_FILE, "utf-8");
       return { ...JSON.parse(raw), source: "file" };
     } catch {
-      console.error("[fetch-portfolio-build] Failed to parse .upwork-token.json");
+      console.error(
+        "[fetch-portfolio-build] Failed to parse .upwork-token.json",
+      );
     }
   }
 
@@ -133,7 +135,9 @@ async function refreshTokens(tokens) {
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`Token refresh failed ${res.status}: ${text.slice(0, 300)}`);
+    throw new Error(
+      `Token refresh failed ${res.status}: ${text.slice(0, 300)}`,
+    );
   }
 
   const json = await res.json();
@@ -150,7 +154,9 @@ async function refreshTokens(tokens) {
   // Persist locally if we loaded from a file
   if (tokens.source === "file") {
     writeFileSync(TOKEN_FILE, JSON.stringify(fresh, null, 2));
-    console.log("[fetch-portfolio-build] Refreshed tokens written to .upwork-token.json");
+    console.log(
+      "[fetch-portfolio-build] Refreshed tokens written to .upwork-token.json",
+    );
   } else {
     // In a Vercel build we can't persist back — log the new values so they
     // can be updated manually or via Vercel API
@@ -293,9 +299,15 @@ function transformProjects(rawProjects) {
       attachments.push({ type: "image", url: thumbUrl, thumbnail: thumbUrl });
     }
 
-    const item = { id, title: String(p.title ?? ""), description: String(p.description ?? ""), skills };
+    const item = {
+      id,
+      title: String(p.title ?? ""),
+      description: String(p.description ?? ""),
+      skills,
+    };
     if (attachments.length) item.attachments = attachments;
-    if (p.completionDateTime) item.completionDate = String(p.completionDateTime);
+    if (p.completionDateTime)
+      item.completionDate = String(p.completionDateTime);
     if (p.projectUrl) item.url = String(p.projectUrl);
 
     return item;
@@ -328,7 +340,9 @@ async function fetchPortfolio(accessToken) {
   const data = await res.json();
 
   if (data.errors?.length) {
-    throw new Error(`GraphQL errors: ${JSON.stringify(data.errors).slice(0, 400)}`);
+    throw new Error(
+      `GraphQL errors: ${JSON.stringify(data.errors).slice(0, 400)}`,
+    );
   }
 
   const projectList = data.data?.talentProfile?.profiles?.[0]?.projectList;
@@ -364,7 +378,9 @@ async function main() {
     console.log("[fetch-portfolio-build] Token valid — skipping refresh.");
   }
 
-  console.log("[fetch-portfolio-build] Fetching portfolio from Upwork GraphQL…");
+  console.log(
+    "[fetch-portfolio-build] Fetching portfolio from Upwork GraphQL…",
+  );
   const portfolio = await fetchPortfolio(tokens.access_token);
 
   // ── Merge with existing data ──────────────────────────────────────────────
@@ -377,7 +393,9 @@ async function main() {
   if (existsSync(OUTPUT_FILE)) {
     try {
       const existing = JSON.parse(readFileSync(OUTPUT_FILE, "utf-8"));
-      const existingById = new Map((existing.items ?? []).map((i) => [i.id, i]));
+      const existingById = new Map(
+        (existing.items ?? []).map((i) => [i.id, i]),
+      );
       // Apply fresh API data on top of existing
       for (const fresh of portfolio.items) {
         existingById.set(fresh.id, fresh);
@@ -390,7 +408,9 @@ async function main() {
         `[fetch-portfolio-build] Merged: ${portfolio.items.length} from API + kept ${mergedItems.length - portfolio.items.length} existing = ${mergedItems.length} total`,
       );
     } catch {
-      console.log("[fetch-portfolio-build] Could not read existing JSON — using API data only.");
+      console.log(
+        "[fetch-portfolio-build] Could not read existing JSON — using API data only.",
+      );
     }
   }
 
