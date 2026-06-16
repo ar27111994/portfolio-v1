@@ -27,8 +27,12 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-.vercel
+.vercel/
+.agent-harness/
 
 # Local verification screenshots
 verification-shots/
 debug-screenshot.png
+
+# agent-harness local activation artifacts (external tool)
+.agent-harness/
