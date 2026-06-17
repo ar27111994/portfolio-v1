@@ -36,3 +36,8 @@ debug-screenshot.png
 
 # agent-harness local activation artifacts (external tool)
 .agent-harness/
+
+# Upwork session credentials and raw API dumps — must never be committed
+scripts/portfolio-session.sh
+scripts/raw.json
+raw.json
