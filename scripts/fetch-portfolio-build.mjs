@@ -470,6 +470,54 @@ async function main() {
       `[fetch-portfolio-build] Could not write .env.local: ${e.message}`,
     );
   }
+
+  // ── Fetch GitHub stats at build time so static fallbacks stay accurate ────
+  // Writes GITHUB_PUBLIC_REPOS and GITHUB_TOTAL_STARS to .env.local.
+  // The Astro page reads them via import.meta.env at build time.
+  try {
+    const ghProfileRes = await fetch(
+      "https://api.github.com/users/ar27111994",
+      {
+        headers: { "User-Agent": "portfolio-v1-build" },
+      },
+    );
+    const ghReposRes = await fetch(
+      "https://api.github.com/users/ar27111994/repos?per_page=100",
+      { headers: { "User-Agent": "portfolio-v1-build" } },
+    );
+    if (ghProfileRes.ok && ghReposRes.ok) {
+      const ghProfile = await ghProfileRes.json();
+      const ghRepos = await ghReposRes.json();
+      const publicRepos =
+        Number(ghProfile.public_repos) ||
+        (Array.isArray(ghRepos) ? ghRepos.length : 0);
+      const totalStars = Array.isArray(ghRepos)
+        ? ghRepos.reduce((s, r) => s + (Number(r.stargazers_count) || 0), 0)
+        : 0;
+
+      let env2 = existsSync(envLocalPath)
+        ? readFileSync(envLocalPath, "utf-8")
+        : "";
+      env2 = env2.replace(/^GITHUB_PUBLIC_REPOS=.*\n?/m, "");
+      env2 = env2.replace(/^GITHUB_TOTAL_STARS=.*\n?/m, "");
+      writeFileSync(
+        envLocalPath,
+        env2 +
+          `GITHUB_PUBLIC_REPOS=${publicRepos}\nGITHUB_TOTAL_STARS=${totalStars}\n`,
+      );
+      console.log(
+        `[fetch-portfolio-build] ✓ GitHub stats: ${publicRepos} public repos, ${totalStars} total stars`,
+      );
+    } else {
+      console.warn(
+        "[fetch-portfolio-build] GitHub API unavailable — keeping existing fallbacks.",
+      );
+    }
+  } catch (e) {
+    console.warn(
+      `[fetch-portfolio-build] GitHub stats fetch failed: ${e.message}`,
+    );
+  }
 }
 
 main().catch((err) => {

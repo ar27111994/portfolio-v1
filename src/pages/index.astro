@@ -9,6 +9,22 @@ const contactEmail = "admin@ar27111994.dev";
 const secondaryEmail = "ahmed.rehan@ar27111994.dev";
 const whatsappUrl = "https://wa.me/923315887235";
 const upworkProfileUrl = upworkPortfolio.profileUrl;
+
+// ── Dynamic experience years ──────────────────────────────────────────────────
+// First professional role: Web Developer — COMITS, Jul 2014
+const CAREER_START_YEAR = 2014;
+const CAREER_START_MONTH = 7; // July (1-indexed)
+const now = new Date();
+const yearsOfExperience =
+  now.getFullYear() -
+  CAREER_START_YEAR -
+  (now.getMonth() + 1 < CAREER_START_MONTH ? 1 : 0);
+const yearsLabel = `${yearsOfExperience}+`;
+
+// ── GitHub stats — written to .env.local by prebuild, read at build time ──────
+// Falls back to last-known values if prebuild GitHub fetch was unavailable.
+const ghPublicRepos = import.meta.env.GITHUB_PUBLIC_REPOS ?? "53";
+const ghTotalStars = import.meta.env.GITHUB_TOTAL_STARS ?? "36";
 interface UpworkPortfolioAttachment {
   uid?: string;
   type?: string;
@@ -207,20 +223,20 @@ const badges = [
 
 const proofStackMetrics = [
   {
-    value: "10+",
+    value: yearsLabel,
     label: "years",
     detail: "enterprise, freelance, founder, solo builds",
   },
   {
-    value: "52",
+    value: ghPublicRepos,
     label: "public repos",
-    detail: "static fallback; syncs from GitHub in-browser",
+    detail: "fetched from GitHub at build time; syncs live in-browser",
     stat: "githubRepos",
   },
   {
-    value: "30",
+    value: ghTotalStars,
     label: "GH stars",
-    detail: "static fallback; syncs from GitHub in-browser",
+    detail: "fetched from GitHub at build time; syncs live in-browser",
     stat: "githubStars",
   },
 ];
@@ -618,8 +634,8 @@ const capabilities = [
 
 const credibilityFacts = [
   {
-    icon: "10+",
-    text: "10+ years across enterprise, freelance, founder, and solo-builder execution",
+    icon: yearsLabel,
+    text: `${yearsLabel} years across enterprise, freelance, founder, and solo-builder execution`,
   },
   {
     icon: "UX",
