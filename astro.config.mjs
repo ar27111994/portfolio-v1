@@ -6,6 +6,10 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://www.ar27111994.dev",
   integrations: [sitemap()],
+  prefetch: {
+    defaultStrategy: "hover",
+    prefetchAll: false,
+  },
   image: {
     remotePatterns: [
       {

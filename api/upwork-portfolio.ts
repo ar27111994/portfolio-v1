@@ -21,6 +21,7 @@
  *  VERCEL_PROJECT_ID       — prj_... ID for the portfolio project
  *  VERCEL_TEAM_ID          — team_... ID (or "personal" for personal accounts)
  *  CRON_SECRET             — random secret to guard cron POST endpoint
+ * UPWORK_STATIC_COUNT      — optional: static total count from prebuild (used to override API cap)
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";

@@ -365,8 +365,11 @@ const previewProofLine =
     data-upwork-open={modalId}
     aria-haspopup="dialog"
     aria-controls={modalId}
-    aria-label={`Inspect full Upwork project record for ${item.title}`}
   >
+    {
+      /* Visually-hidden label satisfies accessible-name requirement without overriding visible text */
+    }
+    <span class="sr-only">View portfolio record: {item.title}</span>
     {
       previewImage ? (
         <img
@@ -374,6 +377,8 @@ const previewProofLine =
           data-upwork-image-fallbacks={JSON.stringify(previewImageFallbacks)}
           data-upwork-image-index="0"
           alt={`Preview thumbnail for ${item.title}`}
+          width="400"
+          height="260"
           loading="lazy"
           decoding="async"
         />
@@ -618,6 +623,8 @@ const previewProofLine =
                       )}
                       data-upwork-image-index="0"
                       alt={`${label} preview`}
+                      width="400"
+                      height="260"
                       loading="lazy"
                       decoding="async"
                     />
@@ -645,6 +652,8 @@ const previewProofLine =
                     controls
                     preload="metadata"
                     playsinline
+                    width="400"
+                    height="260"
                     poster={previewImage}
                   />
                   <span>
@@ -677,6 +686,8 @@ const previewProofLine =
                     )}
                     data-upwork-image-index="0"
                     alt={`${item.title} screenshot ${index + 1}`}
+                    width="400"
+                    height="260"
                     loading="lazy"
                     decoding="async"
                   />

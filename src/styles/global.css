@@ -1,7 +1,30 @@
+/* Reduce CLS during font swap — size-adjust makes system fallback closer to Inter metrics */
+@font-face {
+  font-family: "Inter-fallback";
+  src: local("Arial");
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+/* Visually hidden but available to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 :root {
   --font-sans:
-    Inter, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica, Arial,
-    sans-serif;
+    Inter, "Inter-fallback", "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans",
+    Helvetica, Arial, sans-serif;
   --ink: #111111;
   --ink-soft: #36322f;
   --muted: #62584f;
