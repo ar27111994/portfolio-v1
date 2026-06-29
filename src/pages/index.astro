@@ -580,6 +580,66 @@ const upworkFitTags = [
   "Production-ready",
 ];
 
+const testimonialCards = [
+  {
+    source: "LinkedIn recommendation",
+    sourceKind: "linkedin",
+    featured: true,
+    quote:
+      "Ahmed exemplifies everything a company would need in a Frontend Developer: Collaborative, Critical Thinker, Open to Suggestions, Hard Worker, and Extremely Knowledgeable.",
+    author: "Reilly Gray, CLTL",
+    role: "Scrum Master II · managed Ahmed directly at EAGLE6",
+    context: "April 2022 recommendation",
+    href: "https://www.linkedin.com/in/reilly-gray-cltl-930097136/",
+    cta: "Open LinkedIn profile",
+  },
+  {
+    source: "LinkedIn recommendation",
+    sourceKind: "linkedin",
+    featured: true,
+    quote:
+      "I have had the pleasure of working as Ahmed’s business analyst and product manager for 2 years at EAGLE6 and witnessed Ahmed create desirable and innovative UI solutions to complex cyber security problems, on schedule without fail.",
+    author: "Donovan Mosley",
+    role: "Product Manager / Business Analyst · worked with Ahmed at EAGLE6",
+    context: "October 2021 recommendation",
+    href: "https://www.linkedin.com/in/donovanmosley/",
+    cta: "Open LinkedIn profile",
+  },
+  {
+    source: "Upwork client review · 5.0 / 5",
+    sourceKind: "upwork",
+    quote:
+      "Ahmed's work on our project was outstanding. His communication was top-notch, he met all deadlines, and his skills were exceptionally strong.",
+    author: "Need help with Grocery CRUD",
+    role: "Upwork client review",
+    context: "61 hours · $304.17 earned · May–Jul 2017",
+    href: upworkProfileUrl,
+    cta: "Open Upwork profile",
+  },
+  {
+    source: "Upwork client review · 5.0 / 5",
+    sourceKind: "upwork",
+    quote:
+      "Ahmed is a trusted member of our team. He has always produced top quality work. We will always return to him first when we get more work.",
+    author: "POC Needed for Citrix App Layering and Azure",
+    role: "Upwork client review",
+    context: "115 hours · $576.68 earned · Sep 2017–Jan 2018",
+    href: upworkProfileUrl,
+    cta: "Open Upwork profile",
+  },
+  {
+    source: "Upwork client review · 5.0 / 5",
+    sourceKind: "upwork",
+    quote:
+      "Ahmed is your go-to man for anything to do with OpenCart. He is one of the best in this area.",
+    author: "Android Mobile App for OpenCart",
+    role: "Upwork client review",
+    context: "$850 fixed price · Nov 2017–Jan 2018",
+    href: upworkProfileUrl,
+    cta: "Open Upwork profile",
+  },
+];
+
 const capabilities = [
   {
     title: "Developer tools and internal platform tooling",
@@ -1379,6 +1439,44 @@ const sponsorLinks = [
         Upwork-native project pages; this section packages the work trail for
         faster scanning.
       </p>
+    </section>
+
+    <section class="panel" aria-labelledby="testimonials-title">
+      <div class="section-head split-head">
+        <div>
+          <p class="section-kicker">Recommendations / client quotes</p>
+          <h2 id="testimonials-title">
+            What people say when the work is done well
+          </h2>
+          <p>
+            Verbatim recommendations from LinkedIn and client review text from
+            Upwork. Source links stay attached so the proof is inspectable
+            instead of decorative.
+          </p>
+        </div>
+      </div>
+      <div class="grid two testimonial-grid">
+        {
+          testimonialCards.map((item) => (
+            <article
+              class={`resource-card testimonial-card testimonial-card-${item.sourceKind}${item.featured ? " is-featured" : ""}`}
+            >
+              <span class="testimonial-source-chip">{item.source}</span>
+              <blockquote>{item.quote}</blockquote>
+              <div class="testimonial-attribution">
+                <strong>{item.author}</strong>
+                <small>{item.role}</small>
+              </div>
+              <div class="testimonial-proof-row">
+                <span class="testimonial-context">{item.context}</span>
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  {item.cta}
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
     </section>
 
     <section class="panel" aria-labelledby="proof-title">
