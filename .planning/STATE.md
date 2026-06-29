@@ -4,10 +4,10 @@
 
 - Milestone: 1
 - Phase: 2
-- Status: Phase 01 implemented and verified; Phase 02 implemented and verified locally; push/handoff cleanup is next.
+- Status: Phase 01 implemented and verified; Phase 02 implementation, verification, and branch handoff are complete.
 - Branch: `feat/live-deployment-open-tickets`
-- Last completed workflow: `verify-work 02`
-- Next: reconcile remaining open audit tickets (#14 wording, #21 residual dependency note), then push branch and prepare milestone handoff.
+- Last completed workflow: `push-and-report 02`
+- Next: open/maintain the PR review cycle, or run `audit-milestone` for Milestone 1 if you want a deeper requirements audit before merge.
 
 ## Active Decisions
 
@@ -39,8 +39,8 @@
 ## Pending Artifacts
 
 - Resume-phase planning notes once Phase 02 repo-backed website work lands
-- Final handoff for manual LinkedIn items
+- Manual/external LinkedIn follow-up handoff
 
 ## Next Recommended Command
 
-- Run the GSD audit-milestone workflow for Milestone 1, or open a PR from `feat/live-deployment-open-tickets` using the prepared release handoff summary.
+- Run the GSD `audit-milestone` workflow for Milestone 1, or continue the GitHub PR review/merge cycle for `feat/live-deployment-open-tickets`.
