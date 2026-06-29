@@ -16,6 +16,10 @@
     "lint": "eslint .",
     "typecheck": "astro check",
     "check": "astro check && eslint . && prettier --check .",
+    "test:smoke": "playwright test",
+    "test:smoke:headed": "playwright test --headed",
+    "test:lighthouse": "node scripts/run-lighthouse-ci.mjs",
+    "test:lighthouse:assert": "lhci assert --config=.lighthouserc.json --lhr=.lighthouseci",
     "prepare": "husky",
     "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs"
   },
@@ -35,7 +39,10 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@axe-core/playwright": "^4.12.1",
     "@eslint/js": "^10.0.1",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.60.0",
     "@vercel/node": "^5.8.14",
     "eslint": "^10.4.1",
     "eslint-plugin-astro": "^1.7.0",

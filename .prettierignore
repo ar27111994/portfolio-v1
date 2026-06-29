@@ -2,5 +2,10 @@ dist
 .astro
 .vercel
 node_modules
+.lighthouseci
+playwright-report
+test-results
 lh-report.json
+lh-report.report.json
+lh-report.report.html
 package-lock.json

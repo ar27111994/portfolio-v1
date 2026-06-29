@@ -30,9 +30,14 @@ pnpm-debug.log*
 .vercel/
 .agent-harness/
 
-# Local verification screenshots
+# Local verification screenshots and generated QA artifacts
 verification-shots/
 debug-screenshot.png
+.lighthouseci/
+playwright-report/
+test-results/
+lh-report.report.json
+lh-report.report.html
 
 # agent-harness local activation artifacts (external tool)
 .agent-harness/
