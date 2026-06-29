@@ -41,12 +41,12 @@ Production deploys happen automatically via Vercel on push.
 
 ```
 api/
-  upwork-portfolio.ts   — Vercel Serverless Function: live portfolio endpoint
+  upwork-portfolio.ts   — Vercel Serverless Function for Upwork portfolio refreshes
                           (GET /api/upwork-portfolio) + token auto-refresh
 scripts/
   fetch-portfolio-build.mjs — Build-time fetch; writes src/data/upwork-portfolio.json
 src/
-  pages/index.astro     — Homepage; fetches /api/upwork-portfolio client-side
+  pages/index.astro     — Homepage; uses build-time content plus lightweight feed/count refreshes
   components/
     UpworkPortfolioCard.astro
   data/
@@ -58,11 +58,11 @@ vercel.json             — Cron: POST /api/upwork-portfolio daily at 05:00 UTC
 
 Portfolio items are kept fresh via two layers:
 
-| Layer               | How                                                          | When                               |
-| ------------------- | ------------------------------------------------------------ | ---------------------------------- |
-| Build-time snapshot | `prebuild` runs `scripts/fetch-portfolio-build.mjs`          | Every Vercel deploy                |
-| Live endpoint       | `GET /api/upwork-portfolio` fetches real-time data           | Every page load                    |
-| Daily cron          | Vercel cron POSTs `/api/upwork-portfolio` daily at 05:00 UTC | Automatic refresh + token rotation |
+| Layer               | How                                                                  | When                               |
+| ------------------- | -------------------------------------------------------------------- | ---------------------------------- |
+| Build-time snapshot | `prebuild` runs `scripts/fetch-portfolio-build.mjs`                  | Every Vercel deploy                |
+| Live endpoint       | `/api/upwork-portfolio` can refresh the visible Upwork project count | Lightweight runtime refresh        |
+| Daily cron          | Vercel cron POSTs `/api/upwork-portfolio` daily at 05:00 UTC         | Automatic refresh + token rotation |
 
 ### Initial local auth (one-time)
 
@@ -111,7 +111,7 @@ Token refresh is fully automatic from that point on.
 ## Important content files
 
 - `src/pages/index.astro` — homepage sections
-- `src/pages/products.astro` — products page
+- Products now live at `https://products.ar27111994.dev/` (not in this repo)
 - `src/pages/privacy.astro` — privacy policy
 - `src/styles/global.css` — styling
 - `src/layouts/Layout.astro` — metadata / SEO shell

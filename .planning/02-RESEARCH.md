@@ -37,4 +37,5 @@
 ## Known limits
 
 - Testimonial and case-study tickets remain separate because they require tighter source curation; if direct scraping stays unreliable, user-supplied quote text plus source URLs from Upwork/LinkedIn is an acceptable evidence path.
+- Source evidence for testimonials is now available from user-provided LinkedIn recommendations and Upwork review text/URLs, so the testimonial blocker is reduced to packaging and selection rather than source discovery.
 - Lighthouse/axe CLI execution may still be environment-sensitive on this machine; if blocked, preserve manual/DOM-level evidence and note the blocker explicitly.

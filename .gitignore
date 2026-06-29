@@ -41,3 +41,6 @@ debug-screenshot.png
 scripts/portfolio-session.sh
 scripts/raw.json
 raw.json
+
+# local GSD planning artifacts
+.planning/

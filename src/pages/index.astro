@@ -223,13 +223,13 @@ const proofStackMetrics = [
   {
     value: ghPublicRepos,
     label: "public repos",
-    detail: "build-time GitHub snapshot with optional browser refresh",
+    detail: "build-time GitHub snapshot refreshed during deploys",
     stat: "githubRepos",
   },
   {
     value: ghTotalStars,
     label: "GH stars",
-    detail: "build-time GitHub snapshot with optional browser refresh",
+    detail: "build-time GitHub snapshot refreshed during deploys",
     stat: "githubStars",
   },
 ];
@@ -391,18 +391,6 @@ const feedSources = [
     href: "https://hashnode.com/@ar27111994",
     type: "Profile",
     icon: "/brand-icons/hashnode.svg",
-  },
-  {
-    label: "GitHub repos",
-    href: "https://api.github.com/users/ar27111994/repos?sort=updated",
-    type: "API",
-    icon: "/brand-icons/github.svg",
-  },
-  {
-    label: "GitHub gists",
-    href: "https://api.github.com/users/ar27111994/gists",
-    type: "API",
-    icon: "/brand-icons/github.svg",
   },
   {
     label: "Hacker News",
@@ -1091,8 +1079,7 @@ const sponsorLinks = [
             ><span>OSS</span><span>Docs</span>
           </div>
           <p class="signal-note" data-proof-status>
-            Build-time GitHub snapshot, with a browser refresh only when public
-            API access is available.
+            Build-time GitHub snapshot refreshed during deploys.
           </p>
         </div>
         <div class="snapshot-block">
@@ -1227,9 +1214,9 @@ const sponsorLinks = [
         <div>
           <h2 id="feed-title">Public work feed</h2>
           <p>
-            Recent launch notes, technical posts, and repository activity pulled
-            from public surfaces when available. The curated fallback stays
-            useful even when third-party APIs are slow or blocked.
+            Recent launch notes and technical writing pulled from public feeds
+            when available. The curated fallback stays useful even when
+            third-party sources are slow or blocked.
           </p>
         </div>
         <a
@@ -1858,7 +1845,6 @@ const sponsorLinks = [
           "Curated fallback feed shown while live sources load.",
         );
 
-        loadGitHubProofStats();
         loadFeed(widget, status, list, fallbackItems);
         loadUpworkPortfolio();
       }, 0);
@@ -1914,53 +1900,6 @@ const sponsorLinks = [
         ctx.status.textContent = message;
       }
 
-      function compactNumber(value) {
-        return Intl.NumberFormat(undefined, {
-          notation: value >= 1000 ? "compact" : "standard",
-          maximumFractionDigits: 1,
-        }).format(value);
-      }
-
-      async function loadGitHubProofStats() {
-        const repoMetrics = document.querySelectorAll(
-          '[data-proof-value="githubRepos"]',
-        );
-        const starMetrics = document.querySelectorAll(
-          '[data-proof-value="githubStars"]',
-        );
-        const proofStatuses = document.querySelectorAll("[data-proof-status]");
-        if (!repoMetrics.length && !starMetrics.length) return;
-
-        try {
-          const [profileResponse, reposResponse] = await Promise.all([
-            fetch("https://api.github.com/users/ar27111994"),
-            fetch(
-              "https://api.github.com/users/ar27111994/repos?per_page=100&sort=updated",
-            ),
-          ]);
-          if (!profileResponse.ok || !reposResponse.ok) return;
-          const profile = await profileResponse.json();
-          const repos = await reposResponse.json();
-          if (!Array.isArray(repos)) return;
-          const publicRepoCount = Number(profile.public_repos) || repos.length;
-          const totalStars = repos.reduce(
-            (sum, repo) => sum + (Number(repo.stargazers_count) || 0),
-            0,
-          );
-          repoMetrics.forEach((metric) => {
-            metric.textContent = compactNumber(publicRepoCount);
-          });
-          starMetrics.forEach((metric) => {
-            metric.textContent = compactNumber(totalStars);
-          });
-          proofStatuses.forEach((statusNode) => {
-            statusNode.textContent = `Live GitHub proof synced: ${publicRepoCount} public repos · ${totalStars} total stars.`;
-          });
-        } catch {
-          // Static fallback values remain visible if GitHub is unavailable.
-        }
-      }
-
       async function loadFeed(widget, status, list, fallbackItems) {
         const ctx = { widget, status, list };
         const items = [];
@@ -1982,38 +1921,21 @@ const sponsorLinks = [
           // Public feed is progressive enhancement; curated fallback stays visible.
         }
 
-        try {
-          const repos = await fetch(
-            "https://api.github.com/users/ar27111994/repos?sort=updated&per_page=4",
-          );
-          if (repos.ok) {
-            const data = await repos.json();
-            data.forEach((repo) =>
-              items.push({
-                title: repo.name,
-                url: repo.html_url,
-                source: `GitHub · updated ${new Date(repo.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}`,
-              }),
-            );
-          }
-        } catch {
-          // GitHub feed is optional and must not block the static portfolio.
-        }
-
         if (items.length) {
           renderFeed(
             ctx,
             items,
-            "Live feed loaded from public APIs where available.",
+            "Latest writing pulled from public feeds where available.",
           );
         } else {
           renderFeed(
             ctx,
             fallbackItems,
-            "Live fetch unavailable in this browser/session; showing curated fallback items.",
+            "Live writing feed unavailable in this browser/session; showing curated fallback items.",
           );
         }
       }
+
       async function loadUpworkPortfolio() {
         // Refresh the count badge from the live API — cards are already rendered
         // at build time via the prebuild script, so this is a lightweight update only.
