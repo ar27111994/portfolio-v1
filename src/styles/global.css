@@ -35,8 +35,8 @@
   --line: #d8cab6;
   --line-dark: #2a2a2a;
   --blue: #2457ff;
-  --green: #1ca672;
-  --orange: #f06b24;
+  --green: #14734f;
+  --orange: #a84310;
   --violet: #7c3aed;
   --radius-xl: 34px;
   --radius-lg: 24px;
@@ -134,9 +134,14 @@ summary:focus-visible {
 .site-wrap {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 1rem 0 5rem;
+  padding: 0 0 5rem;
   display: grid;
   gap: clamp(1rem, 1.4vw, 1.35rem);
+}
+.site-header {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding-top: 1rem;
 }
 .top-bar {
   position: sticky;
@@ -202,9 +207,66 @@ summary:focus-visible {
   color: var(--muted);
 }
 .wm-avail {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.38rem;
+  border: 1px solid rgba(20, 115, 79, 0.2);
+  border-radius: 999px;
+  background: rgba(20, 115, 79, 0.12);
+  padding: 0.13rem 0.42rem;
   color: var(--green);
   font-size: 0.52rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   vertical-align: middle;
+}
+.site-footer {
+  padding: 0 0 2.5rem;
+}
+.site-footer__inner {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: var(--shadow-tight);
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.site-footer__meta {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  font-weight: 780;
+}
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.site-footer__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.32rem 0.72rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-footer__links a:hover,
+.site-footer__links a:focus-visible {
+  background: var(--ink);
+  color: #fff;
 }
 .anchor-rail {
   display: flex;
@@ -2681,8 +2743,12 @@ h3 {
   .availability-strip span strong {
     overflow-wrap: anywhere;
   }
-  .site-wrap {
+  .site-wrap,
+  .site-header,
+  .site-footer__inner {
     width: min(100% - 1rem, 1180px);
+  }
+  .site-wrap {
     padding-bottom: 5.5rem;
   }
   .top-bar {
@@ -2690,6 +2756,10 @@ h3 {
     top: auto;
     flex-wrap: wrap;
     gap: 0.5rem;
+  }
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
   .anchor-rail {
     flex: 1 1 auto;

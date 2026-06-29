@@ -8,6 +8,7 @@ import heroPhoto from "../assets/brand/ahmed-photo-hero.webp";
 const contactEmail = "admin@ar27111994.dev";
 const secondaryEmail = "ahmed.rehan@ar27111994.dev";
 const whatsappUrl = "https://wa.me/923315887235";
+const discordHandle = "ar27111994";
 const upworkProfileUrl = upworkPortfolio.profileUrl;
 
 // ── Dynamic experience years ──────────────────────────────────────────────────
@@ -198,25 +199,18 @@ const profileLinks = [
     href: "https://coderlegion.com/user/ar27111994",
     icon: "/brand-icons/coderlegion.svg",
   },
-  {
-    label: "Discord",
-    href: "https://discord.com/channels/@me",
-    note: "ar27111994",
-    icon: "/brand-icons/discord.svg",
-  },
 ];
 
 const badges = [
-  { label: "Microsoft Partner", icon: "/brand-icons/microsoft.svg" },
-  { label: "Anthropic Partner", icon: "/brand-icons/anthropic.svg" },
+  { label: "Anthropic course track", icon: "/brand-icons/anthropic.svg" },
   {
     label: "Open-source maintainer",
     icon: "/brand-icons/opensourceinitiative.svg",
   },
+  { label: "Enterprise delivery", mark: "B2B" },
   { label: "Devtools builder", icon: "/brand-icons/github.svg" },
   { label: "Webhook/API tooling", mark: "API" },
   { label: "Productivity systems", mark: "FLOW" },
-  { label: "Enterprise-aware delivery", mark: "B2B" },
   { label: "Remote / async ready", mark: "↗" },
   { label: "Reliability-first shipping", mark: "✓" },
 ];
@@ -646,8 +640,8 @@ const credibilityFacts = [
     text: "Current focus: devtools, webhooks, agent systems, automation, and design-to-code workflows",
   },
   {
-    icon: "MS",
-    text: "Microsoft Partner and Anthropic Partner identity via admin@ar27111994.dev",
+    icon: "CERT",
+    text: "Public Anthropic course certificates and long-lived proof links are listed below.",
   },
 ];
 
@@ -794,14 +788,15 @@ const sponsorLinks = [
   description="Portfolio of Ahmed Rehan: full-stack engineer building developer tools, automation systems, webhook workflows, AI-agent tooling, and reliable performance-conscious software."
   image="/brand/og-cover.png"
 >
-  <main class="site-wrap" id="main-content">
+  <header class="site-header" role="banner">
     <div class="top-bar">
       <div class="wordmark" aria-label="Ahmed Rehan — ARLabs">
         <span class="wm-mono" aria-hidden="true">AR</span>
         <div class="wm-text">
           <span class="wm-name">Ahmed Rehan</span>
           <span class="wm-studio"
-            >ARLabs <span class="wm-avail" title="Available for work">●</span
+            >ARLabs <span class="wm-avail" aria-label="Available for work"
+              >Available for work</span
             ></span
           >
         </div>
@@ -932,7 +927,9 @@ const sponsorLinks = [
         </a>
       </nav>
     </div>
+  </header>
 
+  <main class="site-wrap" id="main-content">
     <section class="hero panel">
       <div class="hero-copy">
         <div class="brand-lockup" aria-label="Ahmed Rehan profile brand">
@@ -1102,7 +1099,7 @@ const sponsorLinks = [
               loading="lazy"
               decoding="async"
             />
-            <small>Discord</small><strong>ar27111994</strong></span
+            <small>Discord handle</small><strong>{discordHandle}</strong></span
           >
           <a href="mailto:ar27111994@gmail.com"
             ><img
@@ -1478,33 +1475,16 @@ const sponsorLinks = [
           Proof links: certifications, venture, OSS/freemium
         </h2>
         <p>
-          Verifiable background signals: certifications, partner identity, older
-          shipped projects, and founder/operator work that still supports the
-          current devtools and automation direction.
+          Verifiable background signals: certifications, public training
+          records, older shipped projects, and founder/operator work that still
+          supports the current devtools and automation direction.
         </p>
       </div>
 
       <div class="proof-grid">
         <article class="resource-card">
-          <h3>Certifications / partner track</h3>
+          <h3>Certifications / public training</h3>
           <ul class="cert-list">
-            <li class="cert-item cert-partner">
-              <span class="cert-icon-wrap">
-                <img
-                  src="/brand-icons/microsoft.svg"
-                  alt="Microsoft"
-                  width="20"
-                  height="20"
-                  loading="lazy"
-                  decoding="async"
-                  class="cert-icon"
-                />
-              </span>
-              <div class="cert-body">
-                <strong class="cert-name">Microsoft Partner</strong>
-                <span class="cert-meta">associated with {contactEmail}</span>
-              </div>
-            </li>
             <li class="cert-item cert-partner">
               <span class="cert-icon-wrap">
                 <img
@@ -1518,8 +1498,10 @@ const sponsorLinks = [
                 />
               </span>
               <div class="cert-body">
-                <strong class="cert-name">Anthropic Partner</strong>
-                <span class="cert-meta">associated with {contactEmail}</span>
+                <strong class="cert-name">Anthropic course track</strong>
+                <span class="cert-meta"
+                  >Public Skilljar verifications are linked below.</span
+                >
               </div>
             </li>
             {
@@ -1736,7 +1718,7 @@ const sponsorLinks = [
         <h2 id="profiles-title">Proof surfaces</h2>
         <p>
           Primary surfaces for technical credibility, client trust, launch
-          proof, and community history. Discord: ar27111994.
+          proof, and community history.
         </p>
       </div>
       <div class="widget-grid profile-widget-grid">
@@ -1775,7 +1757,7 @@ const sponsorLinks = [
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`Open ${link.label} profile${link.note ? ` for ${link.note}` : ""}`}
+                aria-label={`Open ${link.label} profile`}
               >
                 <img
                   src={link.icon}
@@ -1785,10 +1767,7 @@ const sponsorLinks = [
                   loading="lazy"
                   decoding="async"
                 />
-                <span>
-                  {link.label}
-                  {link.note ? ` · ${link.note}` : ""}
-                </span>
+                <span>{link.label}</span>
               </a>
             ))
           }
@@ -1877,6 +1856,24 @@ const sponsorLinks = [
       </div>
     </section>
   </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <p class="site-footer__meta">
+        Ahmed Rehan · ARLabs · Rawalpindi, Pakistan
+      </p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href={`mailto:${contactEmail}`}>Email</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/resume/resume_full.pdf" target="_blank" rel="noreferrer"
+          >Resume</a
+        >
+        <a href="https://github.com/ar27111994" target="_blank" rel="noreferrer"
+          >GitHub</a
+        >
+      </nav>
+    </div>
+  </footer>
 
   <script is:inline>
     // Wrap all UI initialisation in astro:page-load so it re-runs after
