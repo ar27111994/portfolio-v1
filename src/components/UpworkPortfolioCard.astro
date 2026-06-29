@@ -318,7 +318,7 @@ const primaryLinkPreview = linkPreviewAttachments
 const primaryImagePreview = imageAttachments
   .map((attachment) => previewImageFromAttachment(attachment))
   .find(Boolean);
-const previewMediaLabel = mediaSummary[0] ?? "Captured Upwork record";
+const previewMediaLabel = mediaSummary[0] ?? "Upwork project details";
 const isUpworkAuthUrl = (url: string | undefined): boolean => {
   if (!url) return false;
   try {
@@ -457,7 +457,7 @@ const previewProofLine =
       aria-haspopup="dialog"
       aria-controls={modalId}
     >
-      Inspect Upwork record
+      View project details
     </button>
     {
       projectHref && (
@@ -484,11 +484,11 @@ const previewProofLine =
   <article class="upwork-modal-shell">
     <header class="upwork-modal-head">
       <div>
-        <p class="upwork-modal-kicker">Captured Upwork record</p>
+        <p class="upwork-modal-kicker">Upwork project details</p>
         <h3 id={modalTitleId}>{item.title}</h3>
         <p id={modalDescriptionId}>
-          Project description, link, metadata, screenshots, attachments, and raw
-          synced payload in one inspectable dossier.
+          Project summary, supporting links, screenshots, attachments, and
+          source details in one place.
         </p>
       </div>
       <button type="button" class="upwork-modal-close" data-upwork-close>
@@ -500,7 +500,7 @@ const previewProofLine =
       {
         modalScrollHint && (
           <p class="upwork-scroll-hint">
-            Scroll for screenshots, attachments, and raw synced payload.
+            Scroll for screenshots, attachments, and project source details.
           </p>
         )
       }

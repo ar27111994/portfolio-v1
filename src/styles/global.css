@@ -167,7 +167,7 @@ summary:focus-visible {
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-tight);
   font-size: var(--step--1);
-  font-weight: 850;
+  font-weight: 800;
   letter-spacing: -0.02em;
   text-decoration: none;
   color: var(--ink);
@@ -183,7 +183,7 @@ summary:focus-visible {
   background: linear-gradient(135deg, var(--blue) 0%, var(--orange) 100%);
   color: #fff;
   font-size: 0.62rem;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: 0.04em;
   flex-shrink: 0;
 }
@@ -195,13 +195,13 @@ summary:focus-visible {
 }
 .wm-name {
   font-size: 0.72rem;
-  font-weight: 870;
+  font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--ink);
 }
 .wm-studio {
   font-size: 0.62rem;
-  font-weight: 750;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
@@ -541,14 +541,6 @@ h3 {
   color: #fff;
   line-height: 1.35;
 }
-.workflow-loop {
-  position: relative;
-  overflow: hidden;
-  padding-right: 0.75rem;
-}
-.workflow-loop:after {
-  content: none;
-}
 .availability-strip .wide b {
   width: auto;
   height: auto;
@@ -593,7 +585,7 @@ h3 {
 }
 .hero-proof-cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.6rem;
   margin-top: 0.75rem;
 }
@@ -785,6 +777,14 @@ h3 {
   background: #caff80;
   color: #111;
 }
+.hero-secondary-link {
+  margin: 0.7rem 0 0;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+}
+.hero-secondary-link a {
+  font-weight: 820;
+}
 .contact-command.whatsapp:after {
   content: "CHAT";
 }
@@ -831,9 +831,6 @@ h3 {
 .contact-command.primary .command-copy strong {
   font-size: clamp(0.64rem, 0.54rem + 0.24vw, 0.74rem);
   letter-spacing: -0.045em;
-}
-.mobile-proof-stack {
-  display: none;
 }
 .hero-aside {
   align-self: start;
@@ -902,39 +899,6 @@ h3 {
   font-weight: 820;
   line-height: 1.15;
 }
-.signal-bars {
-  display: grid;
-  gap: 0.36rem;
-  margin-top: 0.74rem;
-}
-.signal-bars span {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: #ffffff14;
-  height: 1.65rem;
-}
-.signal-bars span:before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: var(--w);
-  background: linear-gradient(90deg, #caff80, #7ee8ff);
-}
-.signal-bars em {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding-left: 0.58rem;
-  color: #111;
-  font-style: normal;
-  font-size: 0.72rem;
-  font-weight: 900;
-}
 .signal-tags {
   display: flex;
   flex-wrap: wrap;
@@ -951,24 +915,6 @@ h3 {
 }
 .signal-tags span:first-child {
   background: #caff80;
-}
-.signal-icons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.36rem;
-  margin-top: 0.48rem;
-}
-.signal-icons span {
-  display: grid;
-  place-items: center;
-  min-height: 2.15rem;
-  border: 1px solid rgba(202, 255, 128, 0.34);
-  border-radius: 14px;
-  background: #caff801a;
-  color: #caff80;
-  font-size: 0.78rem;
-  font-weight: 950;
-  letter-spacing: 0.04em;
 }
 .signal-note {
   margin: 0.48rem 0 0;
@@ -1071,6 +1017,42 @@ h3 {
 }
 .split-head > div {
   max-width: 780px;
+}
+.section-subhead {
+  margin-top: 1.4rem;
+}
+.service-grid {
+  align-items: stretch;
+}
+.service-card,
+.engagement-card {
+  height: 100%;
+}
+.engagement-grid {
+  margin-top: 0;
+}
+.engagement-card h3 {
+  margin: 0;
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+.engagement-card p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+.step-chip {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  border-radius: 999px;
+  background: #fff7c9;
+  padding: 0.22rem 0.52rem;
+  color: #514941;
+  font-size: 0.66rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .grid {
   display: grid;

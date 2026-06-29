@@ -8,7 +8,6 @@ import heroPhoto from "../assets/brand/ahmed-photo-hero.webp";
 const contactEmail = "admin@ar27111994.dev";
 const secondaryEmail = "ahmed.rehan@ar27111994.dev";
 const whatsappUrl = "https://wa.me/923315887235";
-const discordHandle = "ar27111994";
 const upworkProfileUrl = upworkPortfolio.profileUrl;
 
 // ── Dynamic experience years ──────────────────────────────────────────────────
@@ -224,23 +223,15 @@ const proofStackMetrics = [
   {
     value: ghPublicRepos,
     label: "public repos",
-    detail: "fetched from GitHub at build time; syncs live in-browser",
+    detail: "build-time GitHub snapshot with optional browser refresh",
     stat: "githubRepos",
   },
   {
     value: ghTotalStars,
     label: "GH stars",
-    detail: "fetched from GitHub at build time; syncs live in-browser",
+    detail: "build-time GitHub snapshot with optional browser refresh",
     stat: "githubStars",
   },
-];
-
-const proofCategories = [
-  { label: "Devtools", weight: "92%" },
-  { label: "Integrations", weight: "88%" },
-  { label: "Automation", weight: "84%" },
-  { label: "Agents", weight: "82%" },
-  { label: "Enterprise", weight: "76%" },
 ];
 
 const featuredProjects = [
@@ -435,20 +426,38 @@ const feedSources = [
 
 const labNotes = [
   {
-    title: "Integration reliability lab",
-    body: "Webhook debugging, replay safety, provider-specific diagnosis, and incident artifacts for external integrations that fail in messy real-world ways.",
+    title: "Webhook and API debugging",
+    body: "Fix brittle webhook flows, provider edge cases, replay/verification gaps, and the operational blind spots that make integrations hard to trust.",
   },
   {
-    title: "Agent workflow lab",
-    body: "Reusable skills, prompts, host-aware agent assets, and lifecycle tooling so AI-assisted development does not become another dumping ground.",
+    title: "Internal tools and workflow automation",
+    body: "Build focused dashboards, admin surfaces, and small operational tools that remove repetitive work without turning into a giant platform project.",
   },
   {
-    title: "Automation systems lab",
-    body: "Small internal tools, scripts, dashboards, and workflow utilities that are observable, maintainable, and boring in the right places.",
+    title: "AI-agent and developer tooling",
+    body: "Design host-aware agent workflows, reusable skills, CLIs, and supporting docs that stay maintainable after the first demo.",
   },
   {
-    title: "Product surface lab",
-    body: "Portfolio, docs, launch pages, resumes, and proof surfaces polished for speed, clarity, accessibility, SEO, and trust.",
+    title: "Performance, UX, and launch-surface cleanup",
+    body: "Tighten public product surfaces, docs, and portfolio pages so they load faster, read more clearly, and earn trust sooner.",
+  },
+];
+
+const engagementSteps = [
+  {
+    step: "01",
+    title: "Send the brief",
+    body: "Share the product problem, current stack, constraints, and what success looks like. Email is best when the context is long or messy.",
+  },
+  {
+    step: "02",
+    title: "I turn it into a plan",
+    body: "I narrow the problem into a concrete scope, tradeoffs, and the fastest sane path so the work is understandable before code starts moving.",
+  },
+  {
+    step: "03",
+    title: "Ship in verified slices",
+    body: "Implementation happens in small, testable chunks with demos, written context, and handoff notes instead of vague progress claims.",
   },
 ];
 
@@ -511,7 +520,7 @@ const profileWidgets = [
     label: "GitHub",
     href: "https://github.com/ar27111994",
     icon: "/brand-icons/github.svg",
-    detail: "Strongest technical proof surface",
+    detail: "Strongest public code and shipping signal",
   },
   {
     label: "LinkedIn",
@@ -523,13 +532,13 @@ const profileWidgets = [
     label: "Upwork",
     href: upworkProfileUrl,
     icon: "/brand-icons/upwork.svg",
-    detail: "Client acquisition surface",
+    detail: "Client history and portfolio",
   },
   {
     label: "Product Hunt",
     href: "https://www.producthunt.com/@ar27111994",
     icon: "/brand-icons/producthunt.svg",
-    detail: "Launch and product proof",
+    detail: "Launch history and product signal",
   },
   {
     label: "Stack Overflow",
@@ -541,7 +550,7 @@ const profileWidgets = [
     label: "Hacker News",
     href: "https://news.ycombinator.com/user?id=ar27111994",
     icon: "/brand-icons/ycombinator.svg",
-    detail: "Launch/discussion proof",
+    detail: "Launch and discussion trail",
   },
 ];
 
@@ -629,19 +638,19 @@ const capabilities = [
 const credibilityFacts = [
   {
     icon: yearsLabel,
-    text: `${yearsLabel} years across enterprise, freelance, founder, and solo-builder execution`,
+    text: `${yearsLabel} years across enterprise, freelance, founder, and solo-builder delivery`,
   },
   {
-    icon: "UX",
-    text: "Built complex workflow-heavy modules: permissions, documents, uploads, graphs, maps, and org charts",
+    icon: "SYS",
+    text: "Hands-on work across workflow-heavy systems: permissions, documents, uploads, graphs, maps, and internal operations surfaces.",
   },
   {
-    icon: "AI",
-    text: "Current focus: devtools, webhooks, agent systems, automation, and design-to-code workflows",
+    icon: "SHIP",
+    text: "Current focus: devtools, webhook/API workflows, automation, and AI-agent tooling that still needs strong UX and handoff quality.",
   },
   {
     icon: "CERT",
-    text: "Public Anthropic course certificates and long-lived proof links are listed below.",
+    text: "Public training, OSS history, and long-lived proof links are collected below instead of hidden behind vague claims.",
   },
 ];
 
@@ -819,7 +828,7 @@ const sponsorLinks = [
               x2="20"
               y2="19"></line></svg
           >
-          Lab
+          Services
         </a>
         <a href="#projects-title" data-spy="projects-title">
           <svg
@@ -867,7 +876,7 @@ const sponsorLinks = [
             ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
             ></path><polyline points="9 12 11 14 15 10"></polyline></svg
           >
-          Proof
+          Credentials
         </a>
         <a href="#contact-title" data-spy="contact-title">
           <svg
@@ -953,13 +962,11 @@ const sponsorLinks = [
           the first launch.
         </h1>
         <p class="lede">
-          I’m Ahmed Rehan — a <strong>full-stack engineer</strong> and solo builder
-          working like a small <strong>developer lab</strong>: shipping <strong
-            >practical tools</strong
-          >, tightening reliability, documenting the system, and taking
-          selective freelance work where
-          <strong>devtools, webhooks, automation</strong>, or AI-agent workflows
-          need clear structure.
+          I’m Ahmed Rehan — a <strong>full-stack engineer</strong> who helps teams
+          ship <strong
+            >devtools, webhook/API workflows, automation, and AI-agent systems</strong
+          >
+          without leaving reliability, UX, or handoff quality to chance.
         </p>
 
         <div class="badge-row" aria-label="Profile badges">
@@ -984,42 +991,6 @@ const sponsorLinks = [
           }
         </div>
 
-        <div class="mobile-proof-stack" aria-label="Mobile live proof stack">
-          <span class="signal-kicker">Live proof stack</span>
-          <strong>Devtools · Integrations · Automation · Agents</strong>
-          <div class="signal-metrics" aria-label="Live public proof metrics">
-            {
-              proofStackMetrics.map((metric) => (
-                <span title={metric.detail}>
-                  <b
-                    data-proof-value={metric.stat}
-                    aria-live={metric.stat ? "polite" : undefined}
-                  >
-                    {metric.value}
-                  </b>
-                  <small>{metric.label}</small>
-                </span>
-              ))
-            }
-          </div>
-          <div class="signal-bars" aria-label="Current proof categories">
-            {
-              proofCategories.map((category) => (
-                <span style={`--w: ${category.weight}`}>
-                  <em>{category.label}</em>
-                </span>
-              ))
-            }
-          </div>
-          <div class="signal-tags">
-            <span>Productivity</span><span>APIs</span><span>Reliability</span
-            ><span>OSS</span><span>Docs</span>
-          </div>
-          <p class="signal-note" data-proof-status>
-            Public GitHub metrics update in-browser when available.
-          </p>
-        </div>
-
         <div
           class="hero-actions contact-command-grid"
           aria-label="Primary contact actions"
@@ -1039,28 +1010,8 @@ const sponsorLinks = [
               /></span
             >
             <span class="command-copy"
-              ><small>Email</small><strong>admin@<wbr />ar27111994.dev</strong
-              ></span
-            >
-          </a>
-          <a
-            class="button secondary icon-button contact-command"
-            href="/resume/resume_full.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="command-icon"
-              ><img
-                src="/brand-icons/adobeacrobatreader.svg"
-                alt=""
-                width="24"
-                height="24"
-                loading="lazy"
-                decoding="async"
-              /></span
-            >
-            <span class="command-copy"
-              ><small>Resume PDF</small><strong>Download full resume</strong
+              ><small>Primary contact</small><strong
+                >Email the project brief</strong
               ></span
             >
           </a>
@@ -1081,85 +1032,46 @@ const sponsorLinks = [
               /></span
             >
             <span class="command-copy"
-              ><small>Fast contact</small><strong>WhatsApp</strong></span
+              ><small>Fast follow-up</small><strong>WhatsApp</strong></span
             >
           </a>
         </div>
+        <p class="hero-secondary-link">
+          Need background first? <a
+            href="/resume/resume_full.pdf"
+            target="_blank"
+            rel="noreferrer">Open the full resume</a
+          >.
+        </p>
 
         <div
-          class="contact-proof-strip proof-ledger"
-          aria-label="Secondary contact and launch proof"
-        >
-          <span
-            ><img
-              src="/brand-icons/discord.svg"
-              alt=""
-              width="24"
-              height="24"
-              loading="lazy"
-              decoding="async"
-            />
-            <small>Discord handle</small><strong>{discordHandle}</strong></span
-          >
-          <a href="mailto:ar27111994@gmail.com"
-            ><img
-              src="/brand-icons/gmail.svg"
-              alt=""
-              width="24"
-              height="24"
-              loading="lazy"
-              decoding="async"
-            />
-            <small>Alt email</small><strong>ar27111994@<wbr />gmail.com</strong
-            ></a
-          >
-          <a
-            href="https://www.producthunt.com/@ar27111994"
-            target="_blank"
-            rel="noreferrer"
-            ><img
-              src="/brand-icons/producthunt.svg"
-              alt=""
-              width="24"
-              height="24"
-              loading="lazy"
-              decoding="async"
-            />
-            <small>Launch proof</small><strong>Product Hunt</strong></a
-          >
-        </div>
-        <div
           class="availability-strip availability-command-strip"
-          aria-label="Current availability and proof points"
+          aria-label="Best-fit work and working style"
         >
           <span class="availability-card"
-            ><b>WORK</b><strong>Devtools / automation / AI-agent systems</strong
+            ><b>BEST FIT</b><strong
+              >Devtools, webhook/API debugging, automation, and AI-agent systems</strong
             ><small
-              >Selective builds where reliability, UX, and shipping discipline
-              matter.</small
+              >Work where messy flows need a practical engineer who can clarify
+              the system and still ship it cleanly.</small
             ></span
           >
           <span class="availability-card"
-            ><b>MODE</b><strong
-              >Remote-friendly · async-ready · product-minded</strong
+            ><b>WORKING STYLE</b><strong
+              >Remote-friendly · async-ready · scoped before code</strong
             ><small
-              >Clear artifacts, written context, and low-drama execution loops.</small
+              >Written plans, visible tradeoffs, verified slices, and handoff
+              material instead of vague status updates.</small
             ></span
           >
-          <span class="wide workflow-loop">
-            <b>Current loop</b>
-            <em>Diagnose</em><i aria-hidden="true"></i><em>Build</em><i
-              aria-hidden="true"></i><em>Document</em><i aria-hidden="true"
-            ></i><em>Launch</em>
-          </span>
         </div>
       </div>
 
       <aside class="hero-aside" aria-label="Quick profile facts">
         <div class="signal-board">
-          <span class="signal-kicker">Live proof stack</span>
-          <strong>Devtools · Webhooks · Agents · Integrations</strong>
-          <div class="signal-metrics" aria-label="Live public proof metrics">
+          <span class="signal-kicker">Public work snapshot</span>
+          <strong>Devtools · webhooks · automation · agent systems</strong>
+          <div class="signal-metrics" aria-label="Public work metrics">
             {
               proofStackMetrics.map((metric) => (
                 <span title={metric.detail}>
@@ -1174,28 +1086,17 @@ const sponsorLinks = [
               ))
             }
           </div>
-          <div class="signal-bars" aria-label="Current proof categories">
-            {
-              proofCategories.map((category) => (
-                <span style={`--w: ${category.weight}`}>
-                  <em>{category.label}</em>
-                </span>
-              ))
-            }
-          </div>
           <div class="signal-tags">
-            <span>Productivity</span><span>APIs</span><span>Reliability</span
+            <span>Devtools</span><span>Webhooks</span><span>Automation</span
             ><span>OSS</span><span>Docs</span>
           </div>
-          <div class="signal-icons" aria-hidden="true">
-            <span>CLI</span><span>API</span><span>AI</span>
-          </div>
           <p class="signal-note" data-proof-status>
-            Public GitHub metrics update in-browser when the API is available.
+            Build-time GitHub snapshot, with a browser refresh only when public
+            API access is available.
           </p>
         </div>
         <div class="snapshot-block">
-          <h2>Snapshot</h2>
+          <h2>Why teams bring me in</h2>
           <ul class="bullet-clean snapshot-list">
             {
               credibilityFacts.map((item) => (
@@ -1213,19 +1114,43 @@ const sponsorLinks = [
     </section>
 
     <section class="panel lab-panel" aria-labelledby="lab-title">
-      <div class="section-head">
-        <h2 id="lab-title">Developer lab</h2>
-        <p>
-          A focused bench for tools, systems, proof surfaces, and selective
-          client work — practical experiments that can become reliable products.
-        </p>
+      <div class="section-head split-head">
+        <div>
+          <p class="section-kicker">Services</p>
+          <h2 id="lab-title">What I build</h2>
+          <p>
+            Focused engineering help for teams that need practical software,
+            cleaner operations, or a calmer path through messy integration and
+            tooling work.
+          </p>
+        </div>
       </div>
-      <div class="grid four compact">
+      <div class="grid two service-grid">
         {
           labNotes.map((item) => (
-            <article class="lab-card">
+            <article class="lab-card service-card">
               <h3>{item.title}</h3>
               <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+      <div class="section-head split-head section-subhead">
+        <div>
+          <p class="section-kicker">How we start</p>
+          <p>
+            Short version: send the brief, I turn it into a scoped plan, then we
+            ship in small verified slices.
+          </p>
+        </div>
+      </div>
+      <div class="support-grid engagement-grid">
+        {
+          engagementSteps.map((step) => (
+            <article class="support-card engagement-card">
+              <span class="step-chip">{step.step}</span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
             </article>
           ))
         }
@@ -1397,7 +1322,7 @@ const sponsorLinks = [
     >
       <div class="section-head split-head">
         <div>
-          <p class="section-kicker">Freelance proof surface</p>
+          <p class="section-kicker">Freelance track record</p>
           <h2 id="upwork-title">
             Upwork portfolio
             <span class="count-badge" id="upwork-count-badge"
@@ -1471,13 +1396,11 @@ const sponsorLinks = [
 
     <section class="panel" aria-labelledby="proof-title">
       <div class="section-head">
-        <h2 id="proof-title">
-          Proof links: certifications, venture, OSS/freemium
-        </h2>
+        <h2 id="proof-title">Public credentials, founder history, and OSS</h2>
         <p>
-          Verifiable background signals: certifications, public training
-          records, older shipped projects, and founder/operator work that still
-          supports the current devtools and automation direction.
+          Verifiable context that supports the current work: public training,
+          founder/operator history, and older shipped software that still shows
+          how I build.
         </p>
       </div>
 
@@ -1633,48 +1556,6 @@ const sponsorLinks = [
       </div>
     </section>
 
-    <section class="panel" aria-labelledby="support-title">
-      <div class="section-head">
-        <h2 id="support-title">Funding / sponsor links</h2>
-        <p>
-          Lightweight ways to support the public lab: maintenance, docs, product
-          experiments, and faster shipping on open-source tools.
-        </p>
-      </div>
-      <div class="support-grid sponsor-grid">
-        {
-          sponsorLinks.map((item) => (
-            <a
-              class="support-card sponsor-card"
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span class="support-icon">
-                <img
-                  src={item.icon}
-                  alt=""
-                  width="24"
-                  height="24"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span>
-                <span class="support-name">{item.label}</span>
-                <span class="support-note">{item.note}</span>
-              </span>
-            </a>
-          ))
-        }
-      </div>
-      <p class="subtle">
-        For direct sponsorship/partnership, email <a
-          href={`mailto:${contactEmail}`}>{contactEmail}</a
-        > or use WhatsApp.
-      </p>
-    </section>
-
     <section class="panel" aria-labelledby="capabilities-title">
       <div class="section-head">
         <h2 id="capabilities-title">Core capabilities</h2>
@@ -1715,10 +1596,10 @@ const sponsorLinks = [
 
     <section class="panel" aria-labelledby="profiles-title">
       <div class="section-head">
-        <h2 id="profiles-title">Proof surfaces</h2>
+        <h2 id="profiles-title">Public profiles</h2>
         <p>
-          Primary surfaces for technical credibility, client trust, launch
-          proof, and community history.
+          The main public surfaces behind the work: code, client history, launch
+          traces, and long-lived professional profiles.
         </p>
       </div>
       <div class="widget-grid profile-widget-grid">
@@ -1854,6 +1735,47 @@ const sponsorLinks = [
           ))
         }
       </div>
+    </section>
+    <section class="panel" aria-labelledby="support-title">
+      <div class="section-head">
+        <h2 id="support-title">Optional support for the open-source work</h2>
+        <p>
+          These sponsorship links are for people who specifically want to back
+          the public tooling and writing. They are separate from the client-hire
+          path.
+        </p>
+      </div>
+      <div class="support-grid sponsor-grid">
+        {
+          sponsorLinks.map((item) => (
+            <a
+              class="support-card sponsor-card"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="support-icon">
+                <img
+                  src={item.icon}
+                  alt=""
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>
+                <span class="support-name">{item.label}</span>
+                <span class="support-note">{item.note}</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <p class="subtle optional-support-note">
+        Hiring inquiry instead? Use the contact routes above for project briefs
+        and delivery work.
+      </p>
     </section>
   </main>
 

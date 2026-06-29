@@ -1,0 +1,20 @@
+{
+  "phase": 2,
+  "commits_planned": [
+    {
+      "plan": "02-1-PLAN.md",
+      "issues": [9, 10, 11, 22],
+      "scope": "homepage conversion, buyer-facing services framing, jargon removal, duplicate proof-surface cleanup"
+    },
+    {
+      "plan": "02-2-PLAN.md",
+      "issues": [12, 13, 20, 24, 26, 27, 18],
+      "scope": "font self-hosting, runtime/perf cleanup, metadata/CI/readme cleanup, mobile nav affordance"
+    }
+  ],
+  "deferred": {
+    "phase_2_later_or_needs_more_source_curation": [6, 8, 14, 21],
+    "resume_phase": [28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+    "manual_external": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53]
+  }
+}
