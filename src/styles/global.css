@@ -1068,6 +1068,98 @@ h3 {
 .grid.four {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+}
+.case-study-card {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  min-height: 100%;
+  background: linear-gradient(145deg, #fff, #fffaf2);
+}
+.case-study-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  border-radius: 999px;
+  background: #fff7c9;
+  padding: 0.24rem 0.56rem;
+  color: #514941;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.case-study-card h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.14rem, 1.02rem + 0.36vw, 1.38rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+.case-study-copy {
+  display: grid;
+  gap: 0.68rem;
+}
+.case-study-copy p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+.case-study-copy strong {
+  color: var(--ink);
+}
+.case-study-metrics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.46rem;
+}
+.case-study-metrics li {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.28rem 0.58rem;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+  line-height: 1.15;
+}
+.case-study-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+.case-study-links a {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  padding: 0.32rem 0.64rem;
+  background: #fff;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 3px 3px #11111112;
+}
+.case-study-links a:hover,
+.case-study-links a:focus-visible {
+  background: #222;
+  color: #fff;
+}
+
 .project-card,
 .resource-card,
 .support-card,
@@ -2877,6 +2969,7 @@ h3 {
   .testimonial-card.is-featured {
     grid-column: auto;
   }
+  .case-study-grid,
   .grid.two,
   .grid.three,
   .grid.four,
