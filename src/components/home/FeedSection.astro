@@ -1,0 +1,101 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  writingLinks: HomepageContent["writingLinks"];
+  feedSources: HomepageContent["feedSources"];
+}
+
+const { writingLinks, feedSources } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="feed-title">
+  <div class="section-head split-head">
+    <div>
+      <h2 id="feed-title">Public work feed</h2>
+      <p>
+        Recent launch notes and technical writing pulled from public feeds when
+        available. The curated fallback stays useful even when third-party
+        sources are slow or blocked.
+      </p>
+    </div>
+    <a
+      class="button secondary small"
+      href="https://dev.to/ar27111994"
+      target="_blank"
+      rel="noreferrer">Open Dev.to</a
+    >
+  </div>
+
+  <div class="feed-widget" data-feed-widget>
+    <div class="feed-status" data-feed-status>Loading public feed items…</div>
+    <div class="feed-list" data-feed-list></div>
+  </div>
+
+  <div
+    class="support-grid writing-grid fallback-feed"
+    aria-label="Curated fallback feed"
+  >
+    {
+      writingLinks.map((item) => (
+        <a
+          class="support-card"
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="chip">
+            {item.icon && (
+              <img
+                src={item.icon}
+                alt=""
+                loading="lazy"
+                decoding="async"
+                style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"
+              />
+            )}
+            {item.tag}
+          </span>
+          <span class="support-name">{item.label}</span>
+          <span class="support-note">
+            <strong>{item.source}:</strong> {item.date}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+
+  <details class="feed-sources">
+    <summary>Curated feed sources</summary>
+    <ul class="feed-source-grid" aria-label="Curated feed source links">
+      {
+        feedSources.map((source) => (
+          <li>
+            <a
+              class="feed-source-card"
+              href={source.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${source.label} ${source.type} feed source`}
+            >
+              <span class="feed-source-icon">
+                <img
+                  src={source.icon}
+                  alt=""
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span class="feed-source-copy">
+                <strong>{source.label}</strong>
+                <small>{source.type}</small>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</section>

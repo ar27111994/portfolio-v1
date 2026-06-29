@@ -1,0 +1,47 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  testimonialCards: HomepageContent["testimonialCards"];
+}
+
+const { testimonialCards } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="testimonials-title">
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Recommendations / client quotes</p>
+      <h2 id="testimonials-title">
+        What people say when the work is done well
+      </h2>
+      <p>
+        Verbatim recommendations from LinkedIn and client review text from
+        Upwork. Source links stay attached so the proof is inspectable instead
+        of decorative.
+      </p>
+    </div>
+  </div>
+  <div class="grid two testimonial-grid">
+    {
+      testimonialCards.map((item) => (
+        <article
+          class={`resource-card testimonial-card testimonial-card-${item.sourceKind}${item.featured ? " is-featured" : ""}`}
+        >
+          <span class="testimonial-source-chip">{item.source}</span>
+          <blockquote>{item.quote}</blockquote>
+          <div class="testimonial-attribution">
+            <strong>{item.author}</strong>
+            <small>{item.role}</small>
+          </div>
+          <div class="testimonial-proof-row">
+            <span class="testimonial-context">{item.context}</span>
+            <a href={item.href} target="_blank" rel="noreferrer">
+              {item.cta}
+            </a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

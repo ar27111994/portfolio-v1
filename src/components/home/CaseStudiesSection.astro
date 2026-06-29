@@ -1,0 +1,61 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  caseStudies: HomepageContent["caseStudies"];
+}
+
+const { caseStudies } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="case-studies-title">
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Case studies / outcomes</p>
+      <h2 id="case-studies-title">
+        Selected work with visible proof behind it
+      </h2>
+      <p>
+        A faster way to read the portfolio: what problem I tackled, how I
+        approached it, and the public signal that the result exists and is
+        getting used.
+      </p>
+    </div>
+  </div>
+  <div class="case-study-grid">
+    {
+      caseStudies.map((study) => (
+        <article class="resource-card case-study-card">
+          <span class="case-study-tag">{study.tag}</span>
+          <h3>{study.title}</h3>
+          <div class="case-study-copy">
+            <p>
+              <strong>Problem:</strong> {study.problem}
+            </p>
+            <p>
+              <strong>Approach:</strong> {study.approach}
+            </p>
+            <p>
+              <strong>Outcome:</strong> {study.outcome}
+            </p>
+          </div>
+          <ul
+            class="case-study-metrics"
+            aria-label={`${study.title} public metrics`}
+          >
+            {study.metrics.map((metric) => (
+              <li>{metric}</li>
+            ))}
+          </ul>
+          <div class="case-study-links">
+            {study.links.map((link) => (
+              <a href={link.href} target="_blank" rel="noreferrer">
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

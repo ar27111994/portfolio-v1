@@ -1,0 +1,173 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  certificationLinks: HomepageContent["certificationLinks"];
+  ventureProof: HomepageContent["ventureProof"];
+  openSourceFreemium: HomepageContent["openSourceFreemium"];
+}
+
+const { certificationLinks, ventureProof, openSourceFreemium } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="proof-title">
+  <div class="section-head">
+    <h2 id="proof-title">Public credentials, founder history, and OSS</h2>
+    <p>
+      Verifiable context that supports the current work: public training,
+      founder/operator history, and older shipped software that still shows how
+      I build.
+    </p>
+  </div>
+
+  <div class="proof-grid">
+    <article class="resource-card">
+      <h3>Certifications / public training</h3>
+      <ul class="cert-list">
+        <li class="cert-item cert-partner">
+          <span class="cert-icon-wrap">
+            <img
+              src="/brand-icons/anthropic.svg"
+              alt="Anthropic"
+              width="20"
+              height="20"
+              loading="lazy"
+              decoding="async"
+              class="cert-icon"
+            />
+          </span>
+          <div class="cert-body">
+            <strong class="cert-name">Anthropic course track</strong>
+            <span class="cert-meta"
+              >Public Skilljar verifications are linked below.</span
+            >
+          </div>
+        </li>
+        {
+          certificationLinks
+            .filter((item) => item.issuer === "Anthropic")
+            .map((item) => (
+              <li class="cert-item">
+                <span class="cert-icon-wrap">
+                  <img
+                    src={item.icon}
+                    alt={item.issuer}
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    decoding="async"
+                    class="cert-icon"
+                  />
+                </span>
+                <div class="cert-body">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="cert-link"
+                  >
+                    {item.label}
+                  </a>
+                  {item.pdf && (
+                    <a
+                      href={item.pdf}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="cert-pdf"
+                      aria-label={`Download PDF for ${item.label}`}
+                    >
+                      PDF ↓
+                    </a>
+                  )}
+                </div>
+              </li>
+            ))
+        }
+        {
+          certificationLinks
+            .filter((item) => item.issuer !== "Anthropic")
+            .map((item) => (
+              <li class="cert-item">
+                <span class="cert-icon-wrap">
+                  <img
+                    src={item.icon}
+                    alt={item.issuer}
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    decoding="async"
+                    class="cert-icon"
+                  />
+                </span>
+                <div class="cert-body">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="cert-link"
+                  >
+                    {item.label}
+                  </a>
+                </div>
+              </li>
+            ))
+        }
+      </ul>
+    </article>
+
+    <article class="resource-card">
+      <h3>Goggle Hunt / Flippa / Gleam</h3>
+      <ul class="cert-list">
+        {
+          ventureProof.map((item) => (
+            <li class="cert-item">
+              {item.icon ? (
+                <span class="cert-icon-wrap">
+                  <img
+                    src={item.icon}
+                    alt=""
+                    width="20"
+                    height="20"
+                    loading="lazy"
+                    decoding="async"
+                    class="cert-icon"
+                  />
+                </span>
+              ) : (
+                <span
+                  class="cert-icon-wrap cert-icon-empty"
+                  aria-hidden="true"
+                />
+              )}
+              <div class="cert-body">
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="cert-link"
+                >
+                  {item.label}
+                </a>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+
+    <article class="resource-card full-width">
+      <h3>Open-source / freemium work</h3>
+      <ul class="multi-col">
+        {
+          openSourceFreemium.map((item) => (
+            <li>
+              <a href={item.href} target="_blank" rel="noreferrer">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </article>
+  </div>
+</section>

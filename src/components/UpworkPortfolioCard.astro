@@ -1,41 +1,48 @@
 ---
 interface PortfolioAttachmentImage {
-  large?: string;
-  medium?: string;
-  small?: string;
+  large?: string | null;
+  medium?: string | null;
+  small?: string | null;
 }
 
 interface PortfolioAttachment {
-  uid?: string;
-  type?: string;
-  title?: string;
-  description?: string;
+  uid?: string | null;
+  type?: string | null;
+  title?: string | null;
+  description?: string | null;
   rank?: number | null;
-  url?: string;
-  embeddedUrl?: string;
-  originalUrl?: string;
-  image?: PortfolioAttachmentImage;
-  localImage?: string; // locally-downloaded copy of an auth-gated image
-  videoId?: string; // YouTube video ID for video-type attachments
+  url?: string | null;
+  embeddedUrl?: string | null;
+  originalUrl?: string | null;
+  image?: PortfolioAttachmentImage | null;
+  localImage?: string | null; // locally-downloaded copy of an auth-gated image
+  videoId?: string | null; // YouTube video ID for video-type attachments
+  thumbnail?: string | null;
+  provider?: string | null;
+  fileName?: string | null;
+  fileSize?: number | null;
+  imageSmall?: string | null;
+  imageMiddle?: string | null;
+  imageLarge?: string | null;
 }
 
 interface PortfolioItem {
   id: string;
   title: string;
-  role?: string;
+  role?: string | null;
   description: string;
   displayDescription?: string;
-  projectGoal?: string;
-  solution?: string;
-  skills?: string[];
-  url?: string;
-  thumbnail?: string;
-  thumbnailOriginal?: string;
-  completionDate?: string;
-  featured?: boolean;
+  projectGoal?: string | null;
+  solution?: string | null;
+  skills?: string[] | null;
+  url?: string | null;
+  thumbnail?: string | null;
+  thumbnailOriginal?: string | null;
+  completionDate?: string | null;
+  featured?: boolean | null;
   sourcePage?: number | null;
-  attachments?: PortfolioAttachment[];
-  mediaCounts?: Record<string, number>;
+  attachments?: PortfolioAttachment[] | null;
+  mediaCounts?: Record<string, number> | null;
 }
 
 interface Props {
@@ -51,7 +58,7 @@ type LinkSegment = {
 const { item } = Astro.props;
 const urlPattern = /((?:https?:\/\/|www\.)[^\s<>"'`]+)/gi;
 
-const normalizeExternalUrl = (value?: string) => {
+const normalizeExternalUrl = (value?: string | null) => {
   const raw = value?.trim();
   if (!raw) return undefined;
   const normalized = raw.startsWith("www.") ? `https://${raw}` : raw;
@@ -64,7 +71,7 @@ const normalizeExternalUrl = (value?: string) => {
   }
 };
 
-const formatDisplayUrl = (value?: string) => {
+const formatDisplayUrl = (value?: string | null) => {
   const href = normalizeExternalUrl(value);
   if (!href) return undefined;
   const parsed = new URL(href);
@@ -172,7 +179,7 @@ const linkLabel = projectHref ? "Open project" : "Project link unavailable";
 const attachments = [...(item.attachments ?? [])].sort(
   (first, second) => (first.rank ?? 999) - (second.rank ?? 999),
 );
-const uniqueUrls = (values: Array<string | undefined>) => {
+const uniqueUrls = (values: Array<string | null | undefined>) => {
   const seen = new Set<string>();
 
   return values
@@ -184,13 +191,13 @@ const uniqueUrls = (values: Array<string | undefined>) => {
       return true;
     });
 };
-const normalizeMediaSrc = (value?: string) => {
+const normalizeMediaSrc = (value?: string | null) => {
   const raw = value?.trim();
   if (!raw) return undefined;
   if (raw.startsWith("/") && !raw.startsWith("//")) return raw;
   return normalizeExternalUrl(raw);
 };
-const uniqueMediaSources = (values: Array<string | undefined>) => {
+const uniqueMediaSources = (values: Array<string | null | undefined>) => {
   const seen = new Set<string>();
 
   return values

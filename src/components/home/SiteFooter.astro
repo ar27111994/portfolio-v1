@@ -1,0 +1,23 @@
+---
+interface Props {
+  contactEmail: string;
+}
+
+const { contactEmail } = Astro.props;
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+    <p class="site-footer__meta">Ahmed Rehan · ARLabs · Rawalpindi, Pakistan</p>
+    <nav class="site-footer__links" aria-label="Footer">
+      <a href={`mailto:${contactEmail}`}>Email</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/resume/resume_full.pdf" target="_blank" rel="noreferrer"
+        >Resume</a
+      >
+      <a href="https://github.com/ar27111994" target="_blank" rel="noreferrer"
+        >GitHub</a
+      >
+    </nav>
+  </div>
+</footer>

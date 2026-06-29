@@ -1,0 +1,194 @@
+---
+import { Picture } from "astro:assets";
+import heroPhoto from "../../assets/brand/ahmed-photo-hero.webp";
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  contactEmail: string;
+  whatsappUrl: string;
+  badges: HomepageContent["badges"];
+  proofStackMetrics: HomepageContent["proofStackMetrics"];
+  credibilityFacts: HomepageContent["credibilityFacts"];
+}
+
+const {
+  contactEmail,
+  whatsappUrl,
+  badges,
+  proofStackMetrics,
+  credibilityFacts,
+} = Astro.props;
+---
+
+<section class="hero panel">
+  <div class="hero-copy">
+    <div class="brand-lockup" aria-label="Ahmed Rehan profile brand">
+      <Picture
+        src={heroPhoto}
+        alt="Portrait of Ahmed Rehan"
+        widths={[112, 224, 336]}
+        sizes="112px"
+        formats={["avif", "webp"]}
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="brand-meta">
+        <p class="brand-title">ARLabs</p>
+        <p class="brand-subtitle">Devtools · Automation · Agent Systems</p>
+      </div>
+    </div>
+    <p class="eyebrow">ar27111994.dev · Rawalpindi, Pakistan</p>
+    <h1>
+      Developer tools, automation, and agent systems that stay useful after the
+      first launch.
+    </h1>
+    <p class="lede">
+      I’m Ahmed Rehan — a <strong>full-stack engineer</strong> who helps teams ship
+      <strong
+        >devtools, webhook/API workflows, automation, and AI-agent systems</strong
+      >
+      without leaving reliability, UX, or handoff quality to chance.
+    </p>
+
+    <div class="badge-row" aria-label="Profile badges">
+      {
+        badges.map((badge) => (
+          <span>
+            {badge.icon ? (
+              <img
+                src={badge.icon}
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <b aria-hidden="true">{badge.mark}</b>
+            )}
+            {badge.label}
+          </span>
+        ))
+      }
+    </div>
+
+    <div
+      class="hero-actions contact-command-grid"
+      aria-label="Primary contact actions"
+    >
+      <a
+        class="button primary icon-button contact-command"
+        href={`mailto:${contactEmail}`}
+      >
+        <span class="command-icon"
+          ><img
+            src="/brand-icons/gmail.svg"
+            alt=""
+            width="24"
+            height="24"
+            loading="lazy"
+            decoding="async"
+          /></span
+        >
+        <span class="command-copy"
+          ><small>Primary contact</small><strong>Email the project brief</strong
+          ></span
+        >
+      </a>
+      <a
+        class="button whatsapp icon-button contact-command"
+        href={whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class="command-icon"
+          ><img
+            src="/brand-icons/whatsapp.svg"
+            alt=""
+            width="24"
+            height="24"
+            loading="lazy"
+            decoding="async"
+          /></span
+        >
+        <span class="command-copy"
+          ><small>Fast follow-up</small><strong>WhatsApp</strong></span
+        >
+      </a>
+    </div>
+    <p class="hero-secondary-link">
+      Need background first? <a
+        href="/resume/resume_full.pdf"
+        target="_blank"
+        rel="noreferrer">Open the full resume</a
+      >.
+    </p>
+
+    <div
+      class="availability-strip availability-command-strip"
+      aria-label="Best-fit work and working style"
+    >
+      <span class="availability-card"
+        ><b>BEST FIT</b><strong
+          >Devtools, webhook/API debugging, automation, and AI-agent systems</strong
+        ><small
+          >Work where messy flows need a practical engineer who can clarify the
+          system and still ship it cleanly.</small
+        ></span
+      >
+      <span class="availability-card"
+        ><b>WORKING STYLE</b><strong
+          >Remote-friendly · async-ready · scoped before code</strong
+        ><small
+          >Written plans, visible tradeoffs, verified slices, and handoff
+          material instead of vague status updates.</small
+        ></span
+      >
+    </div>
+  </div>
+
+  <aside class="hero-aside" aria-label="Quick profile facts">
+    <div class="signal-board">
+      <span class="signal-kicker">Public work snapshot</span>
+      <strong>Devtools · webhooks · automation · agent systems</strong>
+      <div class="signal-metrics" aria-label="Public work metrics">
+        {
+          proofStackMetrics.map((metric) => (
+            <span title={metric.detail}>
+              <b
+                data-proof-value={metric.stat}
+                aria-live={metric.stat ? "polite" : undefined}
+              >
+                {metric.value}
+              </b>
+              <small>{metric.label}</small>
+            </span>
+          ))
+        }
+      </div>
+      <div class="signal-tags">
+        <span>Devtools</span><span>Webhooks</span><span>Automation</span><span
+          >OSS</span
+        ><span>Docs</span>
+      </div>
+      <p class="signal-note" data-proof-status>
+        Build-time GitHub snapshot refreshed during deploys.
+      </p>
+    </div>
+    <div class="snapshot-block">
+      <h2>Why teams bring me in</h2>
+      <ul class="bullet-clean snapshot-list">
+        {
+          credibilityFacts.map((item) => (
+            <li>
+              <span class="snapshot-icon" aria-hidden="true">
+                {item.icon}
+              </span>
+              <span>{item.text}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </aside>
+</section>

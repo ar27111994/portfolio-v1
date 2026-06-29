@@ -1,0 +1,89 @@
+---
+import UpworkPortfolioCard from "../UpworkPortfolioCard.astro";
+import type { HomepageContent } from "../../data/homepage";
+import type { UpworkPortfolioItem } from "../../data/upwork-portfolio-display";
+
+interface Props {
+  upworkProfileUrl: string;
+  upworkPortfolioCountLabel: string;
+  upworkFitTags: HomepageContent["upworkFitTags"];
+  upworkProofCards: HomepageContent["upworkProofCards"];
+  upworkPortfolioItems: UpworkPortfolioItem[];
+}
+
+const {
+  upworkProfileUrl,
+  upworkPortfolioCountLabel,
+  upworkFitTags,
+  upworkProofCards,
+  upworkPortfolioItems,
+} = Astro.props;
+---
+
+<section id="upwork" class="panel upwork-panel" aria-labelledby="upwork-title">
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Freelance track record</p>
+      <h2 id="upwork-title">
+        Upwork portfolio
+        <span class="count-badge" id="upwork-count-badge"
+          >{upworkPortfolioCountLabel} projects</span
+        >
+      </h2>
+      <p>
+        A client-facing view of Upwork work history: recent developer-tool
+        projects first, with older frontend, CMS, e-commerce, dashboard, and
+        integration work kept as supporting evidence.
+      </p>
+    </div>
+    <a
+      class="button secondary small"
+      href={upworkProfileUrl}
+      target="_blank"
+      rel="noreferrer">View full profile</a
+    >
+  </div>
+
+  <div class="upwork-intro-grid">
+    <article class="upwork-summary-card">
+      <span class="signal-kicker">Client-facing profile</span>
+      <h3>
+        Full-stack engineer for devtools, webhooks, automation, and AI-agent
+        work.
+      </h3>
+      <p>
+        The Upwork surface is being tightened around practical engineering
+        outcomes: webhook/API debugging, internal tools, automation-heavy
+        products, developer tooling, and reliable async delivery.
+      </p>
+      <div class="upwork-tags" aria-label="Upwork fit tags">
+        {upworkFitTags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </article>
+
+    <div class="upwork-proof-grid" aria-label="Upwork proof profile details">
+      {
+        upworkProofCards.map((card) => (
+          <article class="upwork-proof-card">
+            <small>{card.label}</small>
+            <strong>{card.value}</strong>
+            <p>{card.detail}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+
+  <div
+    class="upwork-portfolio-grid"
+    aria-label="Curated Upwork portfolio projects"
+  >
+    {upworkPortfolioItems.map((item) => <UpworkPortfolioCard item={item} />)}
+  </div>
+
+  <p class="subtle">
+    Full profile remains the source of truth for contracts, reviews, and
+    Upwork-native project pages; this section packages the work trail for faster
+    scanning.
+  </p>
+</section>

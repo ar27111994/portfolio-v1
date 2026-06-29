@@ -1,0 +1,47 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  capabilities: HomepageContent["capabilities"];
+}
+
+const { capabilities } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="capabilities-title">
+  <div class="section-head">
+    <h2 id="capabilities-title">Core capabilities</h2>
+    <p>
+      The recurring work pattern across the portfolio: practical tooling,
+      integration reliability, automation, agent workflows, performance, and
+      production-minded delivery.
+    </p>
+  </div>
+  <ul class="capability-grid capability-card-grid">
+    {
+      capabilities.map((capability, index) => (
+        <li>
+          <span class="capability-topline">
+            <span class="capability-icon" aria-hidden="true">
+              {capability.icon ? (
+                <img
+                  src={capability.icon}
+                  alt=""
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                capability.mark
+              )}
+            </span>
+            <span class="capability-index">0{index + 1}</span>
+          </span>
+          <strong>{capability.title}</strong>
+          <small>{capability.cue}</small>
+        </li>
+      ))
+    }
+  </ul>
+</section>

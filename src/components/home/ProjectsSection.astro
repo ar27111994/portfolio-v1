@@ -1,0 +1,72 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  featuredProjects: HomepageContent["featuredProjects"];
+  additionalProjects: HomepageContent["additionalProjects"];
+}
+
+const { featuredProjects, additionalProjects } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="projects-title">
+  <div class="section-head">
+    <h2 id="projects-title">Featured products</h2>
+    <p>
+      Live product evidence from the places where the work is actually
+      happening: repos, launch surfaces, docs, and systems that can keep growing
+      into paid tools.
+    </p>
+  </div>
+
+  <div class="grid two">
+    {
+      featuredProjects.map((project) => (
+        <article class="project-card">
+          <div class={`project-visual ${project.accent}`} aria-hidden="true">
+            <span>{project.visual}</span>
+          </div>
+          <div class="project-copy">
+            <p class="status-tag">{project.status}</p>
+            <h3>
+              <a href={project.href} target="_blank" rel="noreferrer">
+                {project.name}
+              </a>
+            </h3>
+            <p>{project.summary}</p>
+            <ul class="mini-list">
+              {project.highlights.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="additional-projects-title">
+  <div class="section-head">
+    <h2 id="additional-projects-title">Product and tooling threads</h2>
+    <p>
+      Supporting work that shows range beyond the headline tools: visual
+      systems, challenge builds, mobile context products, and data-quality
+      workflows.
+    </p>
+  </div>
+  <div class="grid four compact">
+    {
+      additionalProjects.map((project) => (
+        <article class="project-card experiment">
+          <h3>
+            <a href={project.href} target="_blank" rel="noreferrer">
+              {project.name}
+            </a>
+          </h3>
+          <p>{project.description}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

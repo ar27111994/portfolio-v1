@@ -1,0 +1,53 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  labNotes: HomepageContent["labNotes"];
+  engagementSteps: HomepageContent["engagementSteps"];
+}
+
+const { labNotes, engagementSteps } = Astro.props;
+---
+
+<section class="panel lab-panel" aria-labelledby="lab-title">
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Services</p>
+      <h2 id="lab-title">What I build</h2>
+      <p>
+        Focused engineering help for teams that need practical software, cleaner
+        operations, or a calmer path through messy integration and tooling work.
+      </p>
+    </div>
+  </div>
+  <div class="grid two service-grid">
+    {
+      labNotes.map((item) => (
+        <article class="lab-card service-card">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))
+    }
+  </div>
+  <div class="section-head split-head section-subhead">
+    <div>
+      <p class="section-kicker">How we start</p>
+      <p>
+        Short version: send the brief, I turn it into a scoped plan, then we
+        ship in small verified slices.
+      </p>
+    </div>
+  </div>
+  <div class="support-grid engagement-grid">
+    {
+      engagementSteps.map((step) => (
+        <article class="support-card engagement-card">
+          <span class="step-chip">{step.step}</span>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

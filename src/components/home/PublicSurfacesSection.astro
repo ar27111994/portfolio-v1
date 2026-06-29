@@ -1,0 +1,200 @@
+---
+import type { HomepageContent } from "../../data/homepage";
+
+interface Props {
+  profileWidgets: HomepageContent["profileWidgets"];
+  profileLinks: HomepageContent["profileLinks"];
+  resumeWidgets: HomepageContent["resumeWidgets"];
+  contactWidgets: HomepageContent["contactWidgets"];
+  sponsorLinks: HomepageContent["sponsorLinks"];
+}
+
+const {
+  profileWidgets,
+  profileLinks,
+  resumeWidgets,
+  contactWidgets,
+  sponsorLinks,
+} = Astro.props;
+---
+
+<section class="panel" aria-labelledby="profiles-title">
+  <div class="section-head">
+    <h2 id="profiles-title">Public profiles</h2>
+    <p>
+      The main public surfaces behind the work: code, client history, launch
+      traces, and long-lived professional profiles.
+    </p>
+  </div>
+  <div class="widget-grid profile-widget-grid">
+    {
+      profileWidgets.map((profile) => (
+        <a
+          class="profile-widget"
+          href={profile.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="widget-icon brand-icon">
+            <img
+              src={profile.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>
+            <strong>{profile.label}</strong>
+            <small>{profile.detail}</small>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+  <details class="profile-more">
+    <summary>More profile links</summary>
+    <div class="pill-links">
+      {
+        profileLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${link.label} profile`}
+          >
+            <img
+              src={link.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+            <span>{link.label}</span>
+          </a>
+        ))
+      }
+    </div>
+  </details>
+</section>
+
+<section class="panel" aria-labelledby="resume-title">
+  <div class="section-head">
+    <h2 id="resume-title">Resume downloads</h2>
+    <p>
+      Three focused exports for different hiring contexts: full depth,
+      client-facing project work, and a fast one-page scan.
+    </p>
+  </div>
+  <ul class="widget-grid resume-widget-grid" aria-label="Resume PDF downloads">
+    {
+      resumeWidgets.map((resume) => (
+        <li>
+          <a
+            class="resume-widget"
+            href={resume.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="widget-icon brand-icon">
+              <img
+                src={resume.icon}
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+            <span>
+              <strong>{resume.label}</strong>
+              <em>{resume.badge}</em>
+              <small>{resume.detail}</small>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<section class="panel contact-panel" aria-labelledby="contact-title">
+  <div class="section-head">
+    <h2 id="contact-title">Contact</h2>
+    <p>
+      Direct routes for project briefs, partnership context, and faster async
+      follow-up.
+    </p>
+  </div>
+  <div class="widget-grid contact-widget-grid">
+    {
+      contactWidgets.map((contact) => (
+        <a
+          class={`contact-widget ${contact.kind}`}
+          href={contact.href}
+          target={contact.kind === "whatsapp" ? "_blank" : undefined}
+          rel={contact.kind === "whatsapp" ? "noreferrer" : undefined}
+        >
+          <span class="widget-icon brand-icon">
+            <img
+              src={contact.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>
+            <strong>{contact.label}</strong>
+            <em>{contact.value}</em>
+            <small>{contact.detail}</small>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="support-title">
+  <div class="section-head">
+    <h2 id="support-title">Optional support for the open-source work</h2>
+    <p>
+      These sponsorship links are for people who specifically want to back the
+      public tooling and writing. They are separate from the client-hire path.
+    </p>
+  </div>
+  <div class="support-grid sponsor-grid">
+    {
+      sponsorLinks.map((item) => (
+        <a
+          class="support-card sponsor-card"
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="support-icon">
+            <img
+              src={item.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>
+            <span class="support-name">{item.label}</span>
+            <span class="support-note">{item.note}</span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+  <p class="subtle optional-support-note">
+    Hiring inquiry instead? Use the contact routes above for project briefs and
+    delivery work.
+  </p>
+</section>
