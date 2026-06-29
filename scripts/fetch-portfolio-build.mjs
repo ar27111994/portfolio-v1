@@ -444,10 +444,47 @@ async function main() {
     items: mergedItems,
     total: mergedItems.length,
   };
-  writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
-  console.log(
-    `[fetch-portfolio-build] ✓ Wrote ${mergedItems.length} portfolio items to src/data/upwork-portfolio.json`,
-  );
+
+  let existingRaw = null;
+  let existingParsed = null;
+  if (existsSync(OUTPUT_FILE)) {
+    try {
+      existingRaw = readFileSync(OUTPUT_FILE, "utf-8");
+      existingParsed = JSON.parse(existingRaw);
+    } catch {
+      existingRaw = null;
+      existingParsed = null;
+    }
+  }
+
+  const normalizeSnapshot = (snapshot) => {
+    if (!snapshot) return null;
+    const rest = { ...snapshot };
+    delete rest.extractedAt;
+    return JSON.stringify(rest);
+  };
+
+  const hasOnlyTimestampChange =
+    existingParsed &&
+    normalizeSnapshot(existingParsed) === normalizeSnapshot(output);
+
+  if (hasOnlyTimestampChange) {
+    console.log(
+      "[fetch-portfolio-build] Portfolio snapshot unchanged — kept committed JSON intact.",
+    );
+  } else {
+    const nextOutputRaw = `${JSON.stringify(output, null, 2)}\n`;
+    if (existingRaw !== nextOutputRaw) {
+      writeFileSync(OUTPUT_FILE, nextOutputRaw);
+      console.log(
+        `[fetch-portfolio-build] ✓ Wrote ${mergedItems.length} portfolio items to src/data/upwork-portfolio.json`,
+      );
+    } else {
+      console.log(
+        "[fetch-portfolio-build] Portfolio snapshot already formatted and current.",
+      );
+    }
+  }
 
   // Write UPWORK_STATIC_COUNT to .env.local so the API serverless function
   // can read the true full-JSON count via process.env.UPWORK_STATIC_COUNT.
