@@ -4,21 +4,18 @@
 
 - Milestone: 1
 - Phase: 2
-- Status: Phase 01 implemented and verified; Phase 02 implementation, verification, and branch handoff are complete.
+- Status: Milestone 1 audited; website branch work is ready with caveats, but the full milestone is not yet complete.
 - Branch: `feat/live-deployment-open-tickets`
-- Last completed workflow: `push-and-report 02`
-- Next: open/maintain the PR review cycle, or run `audit-milestone` for Milestone 1 if you want a deeper requirements audit before merge.
+- Last completed workflow: `audit-milestone 01`
+- Next: plan/execute the remaining repo-backed Phase 3 and resume tickets, or open/merge the current website PR while treating resume + Phase 3 work as the next slice.
 
 ## Active Decisions
 
-- Repo-actionable scope is website/repo tickets #1-27, #55, #57 plus resume tickets #28-39.
-- LinkedIn tickets #40-51 are external/manual and will be documented, not falsely marked as implemented in-repo.
-- Unverified partner/testimonial/metric claims must be softened or removed instead of embellished.
-- Resume PDFs must be regenerated from `C:\Users\ar271\AppData\Local\hermes\workspace\build_v3.py`.
-- Priority order is P0 trust/security/accessibility first, then conversion/proof/perf, then refactor/tests/polish.
-- Phase 01 is considered complete: `01-1`, `01-2`, and `01-3` all shipped and passed verification/UAT.
-- Phase 02 will prioritize repo-backed conversion/performance issues before the resume rebuild phase.
-- Keep proof/copy truthful and calm; reduce runtime theatrics instead of adding more live widgets.
+- Phase 03 is now defined as the remaining repo-backed maintainability/testing/OSS slice before the resume rebuild wave.
+- Repo-backed Phase 03 focus: #15, #17, #19, with related follow-ups #16, #23, and #26.
+- Resume tickets remain in milestone scope, but they are intentionally deferred until after the Phase 03 website/repo slice is planned/executed.
+- Upstream-supported solutions still beat hacks; #21 remains visibility/monitoring work unless upstream packages actually move.
+- Preserve the current Phase 02 homepage strategy and factual posture during componentization/testing work.
 
 ## Blockers
 
@@ -38,9 +35,10 @@
 
 ## Pending Artifacts
 
-- Resume-phase planning notes once Phase 02 repo-backed website work lands
+- Resume-phase planning and implementation artifacts
 - Manual/external LinkedIn follow-up handoff
+- Phase 03 execution summaries, verification, and UAT artifacts
 
 ## Next Recommended Command
 
-- Run the GSD `audit-milestone` workflow for Milestone 1, or continue the GitHub PR review/merge cycle for `feat/live-deployment-open-tickets`.
+- Run the GSD `execute-phase 3` workflow for the planned repo-backed tickets (`03-1` through `03-4`), starting with docs/community-health and automated QA before the larger homepage refactor.

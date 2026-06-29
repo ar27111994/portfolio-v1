@@ -1,32 +1,50 @@
 # ar27111994.dev — Portfolio v1 (Astro)
 
-Personal portfolio for **Ahmed Rehan** — devtools, agent systems, webhooks & automation.
+![CI](https://github.com/ar27111994/portfolio-v1/actions/workflows/ci.yml/badge.svg)
+![License: MIT](https://img.shields.io/badge/license-MIT-0f172a.svg)
+
+Personal portfolio for Ahmed Rehan — developer tools, agent systems, webhooks, automation, and client-facing engineering proof.
 
 ## Stack
 
-- Astro 6 (static output)
+- Astro 7 (static-first site)
 - `@astrojs/sitemap`
 - Vercel (hosting + serverless functions + cron)
+- Build-time Upwork portfolio snapshot with lightweight runtime refresh support
 
-## Trust / policy files
+## Trust / community files
 
 - License: `LICENSE` (MIT)
-- Security disclosures: `SECURITY.md`
+- Security policy: `SECURITY.md`
+- Contributing guide: `CONTRIBUTING.md`
+- Code of conduct: `CODE_OF_CONDUCT.md`
 - Live privacy notice: `/privacy` (`src/pages/privacy.astro`)
 
-Some products published from this surface are local-only downloads, while others
-are cloud-assisted/API-routed tools. The privacy policy now distinguishes between
-those modes explicitly.
+Some products published from this surface are local-only downloads, while others are cloud-assisted/API-routed tools. The privacy policy explicitly distinguishes between those modes.
 
 ## Local dev
 
 ```bash
 npm install
-npm run dev       # http://localhost:4321
+npm run dev
 ```
 
-> First-time local build requires a valid `.upwork-token.json` in the project root.
-> See **Upwork portfolio data** below.
+Default Astro dev server:
+
+- `http://localhost:4321`
+
+First local build requires a valid `.upwork-token.json` in the project root. See “Upwork portfolio data” below.
+
+## Verification
+
+Baseline repo checks:
+
+```bash
+npm run check
+npm run build
+```
+
+Current CI runs the same quality baseline on GitHub Actions.
 
 ## Build & deploy
 
@@ -39,19 +57,29 @@ Production deploys happen automatically via Vercel on push.
 
 ## Project structure
 
-```
+```text
 api/
-  upwork-portfolio.ts   — Vercel Serverless Function for Upwork portfolio refreshes
-                          (GET /api/upwork-portfolio) + token auto-refresh
+  upwork-portfolio.ts        Vercel Serverless Function for Upwork portfolio refreshes
 scripts/
-  fetch-portfolio-build.mjs — Build-time fetch; writes src/data/upwork-portfolio.json
+  fetch-portfolio-build.mjs  Build-time fetch; writes src/data/upwork-portfolio.json
 src/
-  pages/index.astro     — Homepage; uses build-time content plus lightweight feed/count refreshes
+  assets/
+    brand/                   Brand assets and hero image
   components/
     UpworkPortfolioCard.astro
   data/
-    upwork-portfolio.json  — Build-time snapshot (fallback / SSG)
-vercel.json             — Cron: POST /api/upwork-portfolio daily at 05:00 UTC
+    upwork-portfolio.json    Build-time snapshot fallback
+  layouts/
+    Layout.astro             Shared metadata / SEO shell
+  pages/
+    index.astro              Homepage
+    privacy.astro            Privacy policy page
+  styles/
+    global.css               Global styling
+.github/workflows/
+  ci.yml                     Repo quality/build workflow
+vercel.json                  Cron: POST /api/upwork-portfolio daily at 05:00 UTC
+public/resume/               Downloadable resume PDFs
 ```
 
 ## Upwork portfolio data
@@ -66,8 +94,7 @@ Portfolio items are kept fresh via two layers:
 
 ### Initial local auth (one-time)
 
-The OAuth PKCE initial auth flow is not included in this repo (use the Upwork Developer Portal to
-get a token manually and save it as `.upwork-token.json`):
+The OAuth PKCE initial auth flow is not included in this repo. Use the Upwork Developer Portal to get a token manually and save it as `.upwork-token.json`:
 
 ```json
 {
@@ -79,7 +106,7 @@ get a token manually and save it as `.upwork-token.json`):
 }
 ```
 
-Token refresh is fully automatic from that point on.
+Token refresh is automatic from that point on.
 
 ### Required env vars (Vercel)
 
@@ -98,39 +125,39 @@ Token refresh is fully automatic from that point on.
 
 ## Deploy (Vercel)
 
-1. Push to GitHub (repo: `portfolio-v1`).
-2. Import in Vercel — Astro preset auto-detected.
-3. Ensure all env vars above are set in Vercel → Settings → Environment Variables.
-4. Build command: `npm run build` / Output: `dist`.
-
-## DNS (Dynadot → Vercel)
-
-- **A record**: `@` → `76.76.21.21`
-- **CNAME**: `www` → `cname.vercel-dns.com`
+1. Push to GitHub (`portfolio-v1`).
+2. Import in Vercel — Astro preset should auto-detect.
+3. Ensure the environment variables above are set in Vercel.
+4. Build command: `npm run build`
+5. Output directory: `dist`
 
 ## Important content files
 
-- `src/pages/index.astro` — homepage sections
-- Products now live at `https://products.ar27111994.dev/` (not in this repo)
+- `src/pages/index.astro` — homepage sections and page composition shell
 - `src/pages/privacy.astro` — privacy policy
-- `src/styles/global.css` — styling
+- `src/styles/global.css` — styling system
 - `src/layouts/Layout.astro` — metadata / SEO shell
 - `public/resume/*.pdf` — downloadable resumes
 
 ## Certifications
 
-Claude Partner Network — Anthropic (all completed June 2026):
+Anthropic course track (completed June 2026):
 
 - Building with the Claude API
 - Claude Code in Action
 - Introduction to Agent Skills
 - Introduction to Model Context Protocol
 
-Coursera (2018–2019): ML Strategy, Deep Learning, TensorFlow, Big Data/Hadoop.
+Coursera (2018–2019):
+
+- Machine Learning Strategy
+- Deep Learning
+- TensorFlow
+- Big Data / Hadoop
 
 ## Future ideas
 
-- Project case-study pages with screenshots/metrics
+- Project case-study pages with screenshots and metrics
 - `/now` page and changelog
 - Blog via Astro content collections
-- Analytics (Plausible or Umami)
+- Additional browser QA / release-quality gates
