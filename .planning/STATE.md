@@ -4,10 +4,10 @@
 
 - Milestone: 1
 - Phase: 2
-- Status: Phase 01 implemented and verified; Phase 02 planning complete and implementation starting
+- Status: Phase 01 implemented and verified; Phase 02 implemented and verified locally; push/handoff cleanup is next.
 - Branch: `feat/live-deployment-open-tickets`
-- Last completed workflow: `verify-work 01`
-- Next: execute Phase 02 plan 1 (homepage conversion/copy cleanup), then plan 2 (runtime/perf cleanup)
+- Last completed workflow: `verify-work 02`
+- Next: reconcile remaining open audit tickets (#14 wording, #21 residual dependency note), then push branch and prepare milestone handoff.
 
 ## Active Decisions
 
@@ -22,7 +22,8 @@
 
 ## Blockers
 
-- Upwork public profile is anti-bot protected, so live scraping for review/testimonial enrichment is unreliable; use existing local data or verifiable static sources only.
+- Upwork public profile is anti-bot protected, so live scraping remains unreliable; testimonial proof now uses user-supplied review text plus canonical source URLs instead of depending on runtime scraping.
+- Remaining dependency advisories are now narrowed to 2 transitive packages (`js-yaml`, `esbuild`) after the Astro upgrade, but they are not fully cleared because upstream toolchain packages still resolve vulnerable ranges.
 - Some external/manual tickets cannot be completed from this repo alone and must be captured as follow-up.
 
 ## Evidence / Notes

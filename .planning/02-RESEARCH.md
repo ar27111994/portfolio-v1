@@ -39,3 +39,5 @@
 - Testimonial and case-study tickets remain separate because they require tighter source curation; if direct scraping stays unreliable, user-supplied quote text plus source URLs from Upwork/LinkedIn is an acceptable evidence path.
 - Source evidence for testimonials is now available from user-provided LinkedIn recommendations and Upwork review text/URLs, so the testimonial blocker is reduced to packaging and selection rather than source discovery.
 - Lighthouse/axe CLI execution may still be environment-sensitive on this machine; if blocked, preserve manual/DOM-level evidence and note the blocker explicitly.
+- LinkedIn recommendations and Upwork client review text are now integrated into the homepage plan as direct testimonial proof, not just background source material.
+- Case-study proof is now using repo-backed/public facts only: GitHub stars/forks, public release evidence, and launch/write-up links rather than invented adoption or revenue claims.
