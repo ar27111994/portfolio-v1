@@ -249,10 +249,25 @@ const videoSrcFromAttachment = (
   index: number,
 ) => {
   const directSource = attachmentHref(attachment);
+  if (attachment.provider === "youtube" && attachment.videoId) {
+    return undefined;
+  }
   if (directSource) return directSource;
   return index === 0 && item.mediaCounts?.video
     ? normalizeExternalUrl(item.thumbnailOriginal)
     : undefined;
+};
+
+const youtubeEmbedFromAttachment = (attachment: PortfolioAttachment) => {
+  if (attachment.provider !== "youtube" || !attachment.videoId)
+    return undefined;
+  const params = new URLSearchParams({
+    rel: "0",
+    playsinline: "1",
+    cc_load_policy: "1",
+    cc_lang_pref: "en",
+  });
+  return `https://www.youtube.com/embed/${attachment.videoId}?${params.toString()}`;
 };
 const imageAttachments = attachments.filter(
   (attachment) =>
@@ -315,10 +330,12 @@ const videoPreviewAttachments = videoAttachments
   .map((attachment, index) => ({
     attachment,
     src: videoSrcFromAttachment(attachment, index),
+    youtubeEmbed: youtubeEmbedFromAttachment(attachment),
   }))
-  .filter((entry): entry is { attachment: PortfolioAttachment; src: string } =>
-    Boolean(entry.src),
-  );
+  .filter((entry) => Boolean(entry.src || entry.youtubeEmbed));
+const hasNarratedYoutubePreview = videoPreviewAttachments.some(
+  ({ youtubeEmbed }) => Boolean(youtubeEmbed),
+);
 const primaryLinkPreview = linkPreviewAttachments
   .map((attachment) => previewImageFromAttachment(attachment))
   .find(Boolean);
@@ -652,24 +669,50 @@ const previewProofLine =
           <div class="upwork-detail-block">
             <small>Video previews</small>
             <div class="upwork-media-grid">
-              {videoPreviewAttachments.map(({ attachment, src }, index) => (
-                <div class="upwork-media-tile upwork-video-tile">
-                  <video
-                    src={src}
-                    controls
-                    preload="metadata"
-                    playsinline
-                    width="400"
-                    height="260"
-                    poster={previewImage}
-                  />
-                  <span>
-                    {attachment.title || `Video preview ${index + 1}`}
-                    <em>Play attached video</em>
-                  </span>
-                </div>
-              ))}
+              {videoPreviewAttachments.map(
+                ({ attachment, src, youtubeEmbed }, index) => (
+                  <div
+                    class={`upwork-media-tile upwork-video-tile${youtubeEmbed ? " upwork-video-tile-embed" : ""}`}
+                  >
+                    {youtubeEmbed ? (
+                      <iframe
+                        src={youtubeEmbed}
+                        data-upwork-video-embed
+                        title={`${attachment.title || item.title} video preview with captions available`}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      />
+                    ) : (
+                      <video
+                        src={src}
+                        controls
+                        preload="metadata"
+                        playsinline
+                        width="400"
+                        height="260"
+                        poster={previewImage}
+                      />
+                    )}
+                    <span>
+                      {attachment.title || `Video preview ${index + 1}`}
+                      <em>
+                        {youtubeEmbed
+                          ? "Captions available in the YouTube player"
+                          : "Play attached video"}
+                      </em>
+                    </span>
+                  </div>
+                ),
+              )}
             </div>
+            {hasNarratedYoutubePreview ? (
+              <p class="upwork-video-caption-note">
+                Spoken narration is present in this demo. Captions are available
+                through the embedded YouTube player controls.
+              </p>
+            ) : null}
           </div>
         ) : null
       }
@@ -828,9 +871,22 @@ const previewProofLine =
       });
     };
 
+    const wireIframeFallbacks = (scope: ParentNode) => {
+      scope
+        .querySelectorAll<HTMLIFrameElement>("iframe[data-upwork-video-embed]")
+        .forEach((frame) => {
+          if (frame.dataset.upworkVideoWired === "true") return;
+          frame.dataset.upworkVideoWired = "true";
+          frame.addEventListener("error", () => {
+            frame.closest(".upwork-media-tile")?.classList.add("media-failed");
+          });
+        });
+    };
+
     const activateModalMedia = (modal: ParentNode) => {
       wireResilientImages(modal);
       wireVideoFallbacks(modal);
+      wireIframeFallbacks(modal);
       modal
         .querySelectorAll<HTMLImageElement>(".upwork-media-tile img")
         .forEach((image) => {
@@ -843,6 +899,7 @@ const previewProofLine =
 
     wireResilientImages(document);
     wireVideoFallbacks(document);
+    wireIframeFallbacks(document);
 
     const findModal = (id?: string) => {
       if (!id) return null;
