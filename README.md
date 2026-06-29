@@ -8,6 +8,16 @@ Personal portfolio for **Ahmed Rehan** — devtools, agent systems, webhooks & a
 - `@astrojs/sitemap`
 - Vercel (hosting + serverless functions + cron)
 
+## Trust / policy files
+
+- License: `LICENSE` (MIT)
+- Security disclosures: `SECURITY.md`
+- Live privacy notice: `/privacy` (`src/pages/privacy.astro`)
+
+Some products published from this surface are local-only downloads, while others
+are cloud-assisted/API-routed tools. The privacy policy now distinguishes between
+those modes explicitly.
+
 ## Local dev
 
 ```bash

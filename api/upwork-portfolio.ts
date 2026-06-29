@@ -24,6 +24,7 @@
  * UPWORK_STATIC_COUNT      — optional: static total count from prebuild (used to override API cap)
  */
 
+import { timingSafeEqual } from "node:crypto";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -106,6 +107,21 @@ function readTokensFromEnv(): TokenBundle {
 function isStale(bundle: TokenBundle): boolean {
   if (!bundle.accessToken) return true;
   return Date.now() + STALE_THRESHOLD_MS >= bundle.expiresAt;
+}
+
+function hasValidCronAuthorization(
+  authHeader: string,
+  secret: string,
+): boolean {
+  const expected = `Bearer ${secret}`;
+  const receivedBuffer = Buffer.from(authHeader);
+  const expectedBuffer = Buffer.from(expected);
+
+  if (receivedBuffer.length != expectedBuffer.length) {
+    return false;
+  }
+
+  return timingSafeEqual(receivedBuffer, expectedBuffer);
 }
 
 async function refreshAccessToken(bundle: TokenBundle): Promise<TokenBundle> {
@@ -446,7 +462,7 @@ export default async function handler(
   if (req.method === "POST") {
     const secret = process.env.CRON_SECRET;
     const authHeader = req.headers.authorization ?? "";
-    if (!secret || authHeader !== `Bearer ${secret}`) {
+    if (!secret || !hasValidCronAuthorization(authHeader, secret)) {
       res.status(401).json({ error: "Unauthorized" });
       return;
     }
@@ -506,8 +522,7 @@ export default async function handler(
   } catch (err) {
     console.error("[upwork-portfolio] Error:", err);
     res.status(500).json({
-      error: "Failed to fetch Upwork portfolio",
-      detail: err instanceof Error ? err.message : String(err),
+      error: "Upwork portfolio data is temporarily unavailable.",
     });
   }
 }
