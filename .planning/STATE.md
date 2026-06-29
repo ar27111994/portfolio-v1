@@ -32,14 +32,15 @@
 - Branch already exists from latest `main`: `feat/live-deployment-open-tickets`.
 - Open-ticket backlog was classified from GitHub issues #1-57.
 - Phase 01 verification is recorded in `01-VERIFICATION.md` and Phase 01 UAT passed in `01-UAT.md`.
-- `npm audit --omit=dev --json` is now down to 3 advisories total: 2 low (`astro`/`esbuild`) and 1 moderate (`js-yaml`).
+- Phase 02 verification is now recorded in `02-VERIFICATION.md` and `02-UAT.md`.
+- `npm audit --omit=dev --json` is now down to 2 remaining advisories total: 1 low (`esbuild`) and 1 moderate (`js-yaml`).
+- Ticket `#14` has been reconciled and closed; ticket `#21` remains open with narrowed scope.
 
 ## Pending Artifacts
 
-- Phase 02 implementation summaries / verification notes
 - Resume-phase planning notes once Phase 02 repo-backed website work lands
 - Final handoff for manual LinkedIn items
 
 ## Next Recommended Command
 
-- Execute Phase 02: implement and commit homepage conversion/copy cleanup first (#9, #10, #11, #22), then runtime/perf cleanup (#12, #13, #20, #24, #26, #27, partial #18).
+- Run the GSD audit-milestone workflow for Milestone 1, or open a PR from `feat/live-deployment-open-tickets` using the prepared release handoff summary.

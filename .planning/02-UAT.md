@@ -60,4 +60,4 @@ Verified on `/privacy`:
 
 ## Follow-up items (non-blocking)
 - If desired before public push, run a dedicated accessibility CLI pass (axe/Lighthouse) in CI or a controlled local browser harness and store the artifact in `.planning/`.
-- Reconcile issue `#14` formally before closing the open audit ticket, even though the current visible copy is already softer than the originally flagged partner-claim wording.
+- Ticket `#14` has already been reconciled/closed; the remaining noteworthy release follow-up is the residual dependency exposure tracked in `#21`.

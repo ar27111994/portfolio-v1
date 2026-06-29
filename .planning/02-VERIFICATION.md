@@ -51,9 +51,9 @@ Phase 02 verification covers the four implemented Phase 02 plan slices already l
 
 ## Notes
 - `scripts/fetch-portfolio-build.mjs` was hardened so timestamp-only portfolio refreshes no longer rewrite `src/data/upwork-portfolio.json` during builds.
-- One repo-actionable ticket remains open from the current audit slice:
-  - `#14` — soften or substantiate partner-style claims. Current repo state already avoids direct `Microsoft Partner` / `Anthropic Partner` wording in the surfaced homepage copy, but the issue should be formally reconciled against desired wording before closeout.
+- Ticket `#14` has now been reconciled and closed against the current branch state: surfaced homepage wording avoids the original unsubstantiated Microsoft/Anthropic partner-style claims and limits visible credential language to defensible text such as `Anthropic course track` with linked verification context.
+- Ticket `#21` remains open, but its scope is now narrower: the current branch reduces the production audit state to 2 remaining transitive advisories rather than the older 4-advisory snapshot.
 
 ## Final Verification Verdict
 - Phase 02 implementation is locally verified and stable for release handoff.
-- Remaining work is now release hygiene / issue reconciliation, not core functionality repair.
+- Remaining work is now release hygiene plus the residual upstream dependency exposure tracked in `#21`, not core functionality repair.
