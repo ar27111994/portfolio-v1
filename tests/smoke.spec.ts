@@ -34,6 +34,7 @@ test.describe("portfolio smoke", () => {
       }),
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: /Contact/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /ATS resume/i })).toBeVisible();
     await expect(
       page.getByRole("link", { name: /Privacy/i }).first(),
     ).toBeVisible();
