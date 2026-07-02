@@ -431,7 +431,15 @@ export function getHomepageContent(args: HomepageContentArgs) {
       badge: "Comprehensive",
       href: "/resume/resume_full.pdf",
       detail:
-        "Best default: full project, education, certification, and OSS/freemium depth.",
+        "Comprehensive depth for direct review, now kept photo-free and single-column for stronger ATS compatibility too.",
+      icon: "/brand-icons/adobeacrobatreader.svg",
+    },
+    {
+      label: "ATS resume",
+      badge: "ATS-safe default",
+      href: "/resume/resume.pdf",
+      detail:
+        "Photo-free, single-column, US-Letter export for general applications and parser-heavy hiring flows.",
       icon: "/brand-icons/adobeacrobatreader.svg",
     },
     {
@@ -446,7 +454,7 @@ export function getHomepageContent(args: HomepageContentArgs) {
       label: "One-page resume",
       badge: "Fast scan",
       href: "/resume/resume_one_page.pdf",
-      detail: "Compact version for quick screening and general applications.",
+      detail: "Compact version for quick screening and warm introductions.",
       icon: "/brand-icons/adobeacrobatreader.svg",
     },
   ];
