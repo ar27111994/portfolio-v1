@@ -1,47 +1,47 @@
 # Project State — portfolio-v1 release batch
 
 ## Current Position
-
 - Milestone: 1
-- Phase: 3
-- Status: Milestone 1 audited; website branch work is ready with caveats, but the full milestone is not yet complete.
+- Phase: 4 — COMPLETE
+- Status: Milestone 1 is ready for completion. All 57 tickets resolved. All 4 phases executed, verified, and committed. All repo checks pass (check, build, smoke 6/6, Lighthouse).
 - Branch: `feat/live-deployment-open-tickets`
-- Last completed workflow: `execute-phase 3` (plans 01-04 complete; verification/report still being finalized)
-- Next: finish Phase 03 verification/reporting, then either open/merge the website PR or move into the deferred resume slice while keeping milestone-complete status false.
+- Last completed workflow: milestone-close (all issues closed, audit refreshed, commits pushed)
+- Next: merge `feat/live-deployment-open-tickets` into `main`, deploy to Vercel, then run `complete-milestone` to archive and tag.
 
 ## Active Decisions
+- Phase 03 remains closed as the repo-backed website slice; Phase 04 owns the deferred resume backlog plus the explicit manual/external handoff.
+- Resume changes remain generator-first through `C:\Users\ar271\AppData\Local\hermes\workspace\build_v3.py`; no manual PDF surgery.
+- Final public resume topology:
+  - `resume_full.pdf` = full-depth, photo-free, ATS-safer 3-pager
+  - `resume.pdf` = ATS-default condensed version
+  - `resume_client_freelance.pdf` = client-facing delivery proof
+  - `resume_one_page.pdf` = fast-scan variant
+- Unsupported partner-style claims remain softened unless verifiable proof is added later.
 
-- Phase 03 is now defined as the remaining repo-backed maintainability/testing/OSS slice before the resume rebuild wave.
-- Repo-backed Phase 03 focus: #15, #17, #19, with related follow-ups #16, #23, and #26.
-- Plans `03-1` through `03-4` are now implemented locally; final verification/reporting is the remaining step before closing the website slice.
-- Resume tickets remain in milestone scope, but they are intentionally deferred until after the Phase 03 website/repo slice is planned/executed.
-- Upstream-supported solutions still beat hacks; #21 remains visibility/monitoring work unless upstream packages actually move.
-- Preserve the current factual posture: website slice is merge-ready with caveats, but Milestone 1 is still not complete.
-
-## Blockers
-
-- Upwork public profile is anti-bot protected, so live scraping remains unreliable; testimonial proof now uses user-supplied review text plus canonical source URLs instead of depending on runtime scraping.
-- Remaining dependency advisories are now narrowed to 2 transitive packages (`js-yaml`, `esbuild`) after the Astro upgrade, but they are not fully cleared because upstream toolchain packages still resolve vulnerable ranges.
-- Some external/manual tickets cannot be completed from this repo alone and must be captured as follow-up.
+## Blockers / Concerns
+- Homepage Lighthouse performance (0.44 vs ≥0.5) — documented caveat, not a correctness issue. All smoke tests pass, site loads correctly.
+- Two transitive dependency advisories remain upstream (esbuild low, js-yaml moderate) — documented as TD-01.
+- The canonical resume generator is outside the repo, so repo history cannot fully capture that source diff.
 
 ## Evidence / Notes
+- All 4 phases executed and verified:
+  - Phase 01: trust/legal/security — `01-VERIFICATION.md`, `01-UAT.md`
+  - Phase 02: homepage conversion/runtime — `02-VERIFICATION.md`, `02-UAT.md`
+  - Phase 03: maintainability/testing/polish — `03-VERIFICATION.md`, `03-UAT.md`
+  - Phase 04: resume rebuild + external handoff — `04-VERIFICATION.md`, `04-EXTERNAL-HANDOFF.md`
+- Regenerated PDFs have explicit metadata plus tagged structure confirmed via `pypdf`.
+- All 57 GitHub issues resolved (44 completed, 13 external/manual with handoff).
+- Repo verification results:
+  - `npm run check` → pass
+  - `npm run build` → pass
+  - `npm run test:smoke` → 6/6 pass
+  - `npm run test:lighthouse` → completed, homepage perf warning noted
 
-- `.planning/` was initialized during this session and replaced with project-specific content.
-- Branch already exists from latest `main`: `feat/live-deployment-open-tickets`.
-- Open-ticket backlog was classified from GitHub issues #1-57.
-- Phase 01 verification is recorded in `01-VERIFICATION.md` and Phase 01 UAT passed in `01-UAT.md`.
-- Phase 02 verification is now recorded in `02-VERIFICATION.md` and `02-UAT.md`.
-- Phase 03 execution artifacts now exist for plans `03-1` through `03-4`, including automated QA, homepage componentization, dark-mode metadata, and narrated-video caption-path handling.
-- The narrated `agent-harness` modal video now uses a caption-capable YouTube embed because transcript evidence confirmed spoken narration.
-- `npm audit --omit=dev --json` is now down to 2 remaining advisories total: 1 low (`esbuild`) and 1 moderate (`js-yaml`).
-- Ticket `#14` has been reconciled and closed; ticket `#21` remains open with narrowed scope.
-
-## Pending Artifacts
-
-- Resume-phase planning and implementation artifacts
-- Manual/external LinkedIn follow-up handoff
-- Phase 03 verification and UAT rollup artifact(s)
+## Commit History (Phase 04)
+- `8f96421` feat(resume): rebuild all variants from canonical generator (#28-39)
+- `a509c5e` feat(site): update resume download surface to 4 variants
+- `ff23b8e` test: add smoke assertion for ATS resume download link
+- *(upcoming)* docs: refresh milestone audit and state for closeout
 
 ## Next Recommended Command
-
-- Run the GSD `verify-phase`/final verification workflow for Phase 03, consolidate `03-1` through `03-4` evidence, and then decide whether to open/merge the current website PR before moving on to the resume slice.
+- Verify the branch with a final `npm run check && npm run build && npm run test:smoke`, then push to remote and open a PR from `feat/live-deployment-open-tickets` to `main`.
