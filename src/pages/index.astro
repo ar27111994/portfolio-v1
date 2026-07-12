@@ -200,8 +200,8 @@ const profileLinks = [
   },
   {
     label: "Discord",
-    href: "https://discord.com/channels/@me",
-    note: "ar27111994",
+    href: "#contact-title",
+    note: "ar27111994 — DM for server invite",
     icon: "/brand-icons/discord.svg",
   },
 ];
@@ -795,13 +795,17 @@ const sponsorLinks = [
   image="/brand/og-cover.png"
 >
   <main class="site-wrap" id="main-content">
-    <div class="top-bar">
+    <header class="top-bar">
       <div class="wordmark" aria-label="Ahmed Rehan — ARLabs">
         <span class="wm-mono" aria-hidden="true">AR</span>
         <div class="wm-text">
           <span class="wm-name">Ahmed Rehan</span>
           <span class="wm-studio"
-            >ARLabs <span class="wm-avail" title="Available for work">●</span
+            >ARLabs <span
+              class="wm-avail"
+              title="Available for work"
+              role="img"
+              aria-label="Available for work">●</span
             ></span
           >
         </div>
@@ -931,7 +935,7 @@ const sponsorLinks = [
           Privacy
         </a>
       </nav>
-    </div>
+    </header>
 
     <section class="hero panel">
       <div class="hero-copy">
@@ -1876,6 +1880,13 @@ const sponsorLinks = [
         }
       </div>
     </section>
+    <footer class="site-footer" role="contentinfo">
+      <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
+      <p>
+        <a href="/privacy">Privacy Policy</a> · <a
+          href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a>
+      </p>
+    </footer>
   </main>
 
   <script is:inline>

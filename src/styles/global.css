@@ -35,8 +35,8 @@
   --line: #d8cab6;
   --line-dark: #2a2a2a;
   --blue: #2457ff;
-  --green: #1ca672;
-  --orange: #f06b24;
+  --green: #0d7247;
+  --orange: #c44d12;
   --violet: #7c3aed;
   --radius-xl: 34px;
   --radius-lg: 24px;
@@ -2911,4 +2911,34 @@ h3 {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* ── Site Footer ─────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.site-footer a:hover {
+  color: var(--blue);
 }
