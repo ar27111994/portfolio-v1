@@ -44,3 +44,5 @@ debug-screenshot.png
 scripts/portfolio-session.sh
 scripts/raw.json
 raw.json
+coverage/
+lcov.info
