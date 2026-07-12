@@ -336,6 +336,105 @@ const testimonials = [
   },
 ];
 
+const caseStudies = [
+  {
+    title: "Eagle 6 — Enterprise Cybersecurity Frontend",
+    context: "Sr. Frontend Engineer · Feb 2018 – Mar 2022 · Remote",
+    problem:
+      "Eagle 6 needed a rich, performant frontend for their flagship cybersecurity platform — cloud storage with complex permission models, real-time network monitoring dashboards, organization chart modeling, and collaborative document editing. All modules had to handle enterprise-scale data with role-based access control baked into every interaction.",
+    approach:
+      "Led frontend implementation across 4 major product modules over 4 years. Built the Cloud Storage module with chunked TUS-protocol uploads for large files, role-based permissions at the file/folder level, and in-browser preview/editing. Re-architected the Organization Chart Modeling tool on GOJS with Akita (Redux/Flux) state management for scalability. Built network-monitoring dashboards with D3, Highcharts, Leaflet, and OSM tiles. Standardized the UI to a responsive, accessible Material Design system. Interviewed and helped hire frontend developers; reviewed code contributions and mentored the team.",
+    outcome:
+      "Delivered all modules on schedule across 4 years in an Agile team. The Org Chart rewrite produced a more maintainable state architecture that the team extended for 3+ years. The accessible Material Design system became the org-wide UI standard. Multiple modules shipped from concept through deployment with zero production regressions traceable to frontend.",
+    tech: [
+      "Angular 7+",
+      "TypeScript",
+      "RxJS",
+      "Akita",
+      "GOJS",
+      "D3",
+      "Highcharts",
+      "Leaflet/OSM",
+      "TUS",
+      "SCSS/BEM",
+      "Jest",
+      "Angular Material",
+    ],
+    metrics: [
+      "4 years on a single product",
+      "4 major modules delivered",
+      "Hired & mentored frontend team",
+      "Standardized org-wide UI system",
+    ],
+  },
+  {
+    title: "Microsoft RDS + Citrix App Layering on Azure",
+    context: "Solo POC Engineer · Sep 2017 – Jan 2018 · Upwork",
+    problem:
+      "A repeat Upwork client needed a proof-of-concept integrating Microsoft Remote Desktop Services with Citrix App Layering on Microsoft Azure — a stack I had never touched before. The client needed someone who could learn the entire stack from scratch and deliver a working, documented POC on a fixed timeline.",
+    approach:
+      "Researched and taught myself Azure infrastructure provisioning, Citrix App Layering architecture, and RDS deployment from official docs and community resources. Built the POC iteratively: provisioned Azure VMs, configured the App Layering appliance, created OS and platform layers, published layered images to RDS session hosts, and documented every step for the client's internal team to reproduce. Delivered incremental progress reviews.",
+    outcome:
+      "Delivered a fully working, documented POC across a 115-hour engagement. The client returned for follow-on work and rated the engagement 5.0 stars, citing top-quality work and reliability. The documentation became the client team's onboarding reference for the Azure + Citrix stack.",
+    tech: [
+      "Microsoft Azure",
+      "Citrix App Layering",
+      "RDS",
+      "Windows Server",
+      "IIS",
+      "PowerShell",
+    ],
+    metrics: [
+      "115-hour engagement",
+      "5.0★ client rating",
+      "Learned entire stack from scratch",
+      "Repeat client — 'trusted team member'",
+    ],
+  },
+  {
+    title: "Goggle Hunt — Shopify Dropship Business",
+    context: "Solo Founder · May 2017 – Sep 2017 · Founded & Sold",
+    problem:
+      "Identified a keyword with 600K monthly searches and low competition in the US fashion/sports goggles niche. Needed to validate, build, market, and either scale or exit — all while working full-time as a freelance developer.",
+    approach:
+      "Stood up a Shopify store with product sourcing, ran Instagram influencer partnerships and Gleam giveaway competitions to build an audience, created and managed 4 social media accounts, built a Facebook Merchant storefront for frictionless purchasing, and collected ~150 email subscribers. Ran day-to-day operations, marketing, and product sourcing solo for 4 months.",
+    outcome:
+      "Built a functional dropship business from zero, validated the market, grew a small but engaged audience, and successfully sold the full business on Flippa to focus exclusively on a software engineering career.",
+    tech: ["Shopify", "Gleam", "Instagram", "Facebook Merchant", "Flippa"],
+    metrics: [
+      "600K/mo search keyword",
+      "150 email subscribers",
+      "4 social media accounts",
+      "Sold on Flippa",
+    ],
+  },
+  {
+    title: "Webhook Debugger & Logger v3",
+    context: "Solo OSS Maintainer · 2025–Present · Show HN",
+    problem:
+      "Developers debugging webhook integrations waste hours setting up tunnels, tailing logs, and manually replaying requests. Existing tools were either SaaS-locked, limited to capture-only, or lacked replay/forward/validation workflows. Teams needed an open-source, self-hosted tool that could capture, inspect, replay, forward, validate, and mock webhook traffic — all in one place.",
+    approach:
+      "Designed and built a complete v3 rewrite in TypeScript with SSE streaming for real-time capture, a replay engine with loop support, JSON Schema + HMAC signature validation, request forwarding with header transformation, a mock server for testing, and a zero-dependency approach to keep install friction low. Shipped with a CLI, programmatic API, and Docker support. Launched on Show HN, published articles on dev.to, and listed on Apify as a webhook testing utility.",
+    outcome:
+      "Featured on Show HN front page. Published 4+ technical articles. Listed on Apify marketplace. Used by developers testing Stripe, GitHub, Shopify, and custom webhook integrations. The v3 rewrite reduced the codebase surface by 40% while adding 5 major features — capture, replay, forward, validate, and mock — in a single install.",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "SSE",
+      "JSON Schema",
+      "HMAC",
+      "Docker",
+      "CLI",
+    ],
+    metrics: [
+      "Show HN front page",
+      "5-in-1 tool (capture/replay/forward/validate/mock)",
+      "40% codebase reduction in v3",
+      "Apify marketplace listed",
+    ],
+  },
+];
+
 const featuredProjects = [
   {
     name: "agent-harness",
@@ -1378,6 +1477,52 @@ const sponsorLinks = [
                 <ul class="mini-list">
                   {project.highlights.map((point) => (
                     <li>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="case-studies-title">
+      <div class="section-head">
+        <h2 id="case-studies-title">Case studies</h2>
+        <p>
+          Problem → approach → measurable outcome. Four representative projects
+          across enterprise, solo POC, founder, and OSS work.
+        </p>
+      </div>
+      <div class="case-studies-grid">
+        {
+          caseStudies.map((cs) => (
+            <article class="case-study-card">
+              <h3>{cs.title}</h3>
+              <p class="cs-context">{cs.context}</p>
+              <div class="cs-body">
+                <div class="cs-block">
+                  <h4>Problem</h4>
+                  <p>{cs.problem}</p>
+                </div>
+                <div class="cs-block">
+                  <h4>Approach</h4>
+                  <p>{cs.approach}</p>
+                </div>
+                <div class="cs-block">
+                  <h4>Outcome</h4>
+                  <p>{cs.outcome}</p>
+                </div>
+              </div>
+              <div class="cs-footer">
+                <div class="cs-tech">
+                  {cs.tech.map((t) => (
+                    <span class="cs-tag">{t}</span>
+                  ))}
+                </div>
+                <ul class="cs-metrics">
+                  {cs.metrics.map((m) => (
+                    <li>{m}</li>
                   ))}
                 </ul>
               </div>

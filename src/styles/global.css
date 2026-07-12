@@ -3249,3 +3249,113 @@ h3 {
     font-size: 0.85rem;
   }
 }
+
+/* ── Case Studies ────────────────────────────────────────────────── */
+.case-studies-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.case-study-card {
+  padding: 1.75rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.case-study-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.cs-context {
+  font-size: 0.75rem;
+  color: var(--blue);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+}
+
+.cs-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.cs-block h4 {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.cs-block p {
+  font-size: 0.825rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.cs-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.cs-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.cs-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2em 0.55em;
+  background: color-mix(in srgb, var(--blue) 8%, transparent);
+  color: var(--blue);
+  border: 1px solid color-mix(in srgb, var(--blue) 20%, transparent);
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.cs-metrics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cs-metrics li {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--green);
+  background: color-mix(in srgb, var(--green) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--green) 22%, transparent);
+  border-radius: 999px;
+  padding: 0.2em 0.6em;
+}
+
+@media (max-width: 600px) {
+  .cs-body {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-footer {
+    flex-direction: column;
+  }
+}
