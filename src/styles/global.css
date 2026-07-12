@@ -50,6 +50,111 @@
   --step-3: clamp(2.45rem, 1.9rem + 2.8vw, 4.8rem);
   --step-4: clamp(3.2rem, 2.1rem + 5vw, 7rem);
 }
+
+/* ── Dark Mode ────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f0ede8;
+    --ink-soft: #c4beb4;
+    --muted: #8a8178;
+    --paper: #1a1814;
+    --paper-2: #1e1c18;
+    --card: #24211c;
+    --card-strong: #f0ede8;
+    --line: #3a3530;
+    --line-dark: #5a5248;
+    --blue: #6b8aff;
+    --green: #3dbe88;
+    --orange: #e87840;
+    --shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+    --shadow-tight: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  body {
+    background:
+      radial-gradient(
+        ellipse 40rem 28rem at 8% 8%,
+        rgba(196, 77, 18, 0.12),
+        transparent 28rem
+      ),
+      radial-gradient(
+        ellipse 28rem 32rem at 88% 5%,
+        rgba(36, 87, 255, 0.1),
+        transparent 28rem
+      ),
+      linear-gradient(180deg, #1e1b16 0%, var(--paper) 45%, #151310 100%);
+  }
+
+  body:before {
+    opacity: 0.12;
+  }
+
+  /* Adjust glass-morphism panels */
+  .panel {
+    background: rgba(36, 33, 28, 0.9);
+  }
+
+  /* Top bar glass */
+  .top-bar {
+    background: rgba(26, 24, 20, 0.88);
+  }
+
+  /* Nav pill */
+  .anchor-rail {
+    background: rgba(36, 33, 28, 0.88);
+    border-color: rgba(90, 82, 72, 0.4);
+  }
+
+  /* Badge chips */
+  .badge-row span,
+  .chip {
+    background: var(--card);
+    border-color: var(--line-dark);
+  }
+
+  .badge-row span:nth-child(6),
+  .badge-row span:nth-child(7),
+  .badge-row span:nth-child(8),
+  .badge-row span:nth-child(9) {
+    background: rgba(120, 100, 50, 0.2);
+  }
+
+  /* Availability strip */
+  .availability-strip span {
+    background: rgba(36, 33, 28, 0.8);
+    border-color: var(--line);
+  }
+
+  /* Skip link */
+  .skip-link:focus-visible {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Image brightness for dark mode */
+  img:not([src*="brand-icons"]):not(.cert-icon) {
+    filter: brightness(0.92);
+  }
+
+  /* Contact widget backgrounds */
+  .contact-widget {
+    background: var(--card);
+  }
+
+  /* Privacy page */
+  .priv-intro {
+    background: var(--card);
+  }
+
+  .priv-footer {
+    border-color: var(--line);
+  }
+
+  /* Footer */
+  .site-footer {
+    border-color: var(--line);
+  }
+}
 *,
 *:before,
 *:after {
