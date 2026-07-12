@@ -25,6 +25,7 @@
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { timingSafeEqual } from "node:crypto";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Constants
@@ -442,11 +443,19 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse,
 ): Promise<void> {
-  // Guard cron POST requests with CRON_SECRET
+  // Guard cron POST requests with CRON_SECRET (constant-time comparison)
   if (req.method === "POST") {
     const secret = process.env.CRON_SECRET;
     const authHeader = req.headers.authorization ?? "";
-    if (!secret || authHeader !== `Bearer ${secret}`) {
+
+    if (!secret || authHeader.length !== `Bearer ${secret}`.length) {
+      res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+
+    const expected = Buffer.from(`Bearer ${secret}`);
+    const actual = Buffer.from(authHeader);
+    if (!timingSafeEqual(expected, actual)) {
       res.status(401).json({ error: "Unauthorized" });
       return;
     }
@@ -507,7 +516,6 @@ export default async function handler(
     console.error("[upwork-portfolio] Error:", err);
     res.status(500).json({
       error: "Failed to fetch Upwork portfolio",
-      detail: err instanceof Error ? err.message : String(err),
     });
   }
 }
