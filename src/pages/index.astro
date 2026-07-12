@@ -991,19 +991,14 @@ const sponsorLinks = [
           }
         </div>
 
-        <div class="mobile-proof-stack" aria-label="Mobile live proof stack">
+        <div class="mobile-proof-stack" aria-hidden="true">
           <span class="signal-kicker">Live proof stack</span>
           <strong>Devtools · Integrations · Automation · Agents</strong>
           <div class="signal-metrics" aria-label="Live public proof metrics">
             {
               proofStackMetrics.map((metric) => (
                 <span title={metric.detail}>
-                  <b
-                    data-proof-value={metric.stat}
-                    aria-live={metric.stat ? "polite" : undefined}
-                  >
-                    {metric.value}
-                  </b>
+                  <b data-proof-value={metric.stat}>{metric.value}</b>
                   <small>{metric.label}</small>
                 </span>
               ))
@@ -1170,12 +1165,7 @@ const sponsorLinks = [
             {
               proofStackMetrics.map((metric) => (
                 <span title={metric.detail}>
-                  <b
-                    data-proof-value={metric.stat}
-                    aria-live={metric.stat ? "polite" : undefined}
-                  >
-                    {metric.value}
-                  </b>
+                  <b data-proof-value={metric.stat}>{metric.value}</b>
                   <small>{metric.label}</small>
                 </span>
               ))
@@ -1884,7 +1874,8 @@ const sponsorLinks = [
       <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
       <p>
         <a href="/privacy">Privacy Policy</a> · <a
-          href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a>
+          href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a
+        >
       </p>
     </footer>
   </main>
@@ -2013,7 +2004,12 @@ const sponsorLinks = [
         }).format(value);
       }
 
+      let _githubFetchAttempted = false;
+
       async function loadGitHubProofStats() {
+        if (_githubFetchAttempted) return;
+        _githubFetchAttempted = true;
+
         const repoMetrics = document.querySelectorAll(
           '[data-proof-value="githubRepos"]',
         );
@@ -2024,12 +2020,21 @@ const sponsorLinks = [
         if (!repoMetrics.length && !starMetrics.length) return;
 
         try {
+          const controller = new AbortController();
+          const timeout = setTimeout(() => controller.abort(), 5000);
+
           const [profileResponse, reposResponse] = await Promise.all([
-            fetch("https://api.github.com/users/ar27111994"),
+            fetch("https://api.github.com/users/ar27111994", {
+              signal: controller.signal,
+            }),
             fetch(
               "https://api.github.com/users/ar27111994/repos?per_page=100&sort=updated",
+              { signal: controller.signal },
             ),
           ]);
+
+          clearTimeout(timeout);
+
           if (!profileResponse.ok || !reposResponse.ok) return;
           const profile = await profileResponse.json();
           const repos = await reposResponse.json();
@@ -2049,7 +2054,8 @@ const sponsorLinks = [
             statusNode.textContent = `Live GitHub proof synced: ${publicRepoCount} public repos · ${totalStars} total stars.`;
           });
         } catch {
-          // Static fallback values remain visible if GitHub is unavailable.
+          // GitHub API unavailable — static fallback values remain visible.
+          // No console error: this is expected behind shared IPs / rate limits.
         }
       }
 
