@@ -207,7 +207,10 @@ summary:focus-visible {
 }
 .anchor-rail {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
   gap: 0.25rem;
   width: fit-content;
   max-width: min(100%, 760px);
@@ -218,8 +221,12 @@ summary:focus-visible {
   box-shadow: var(--shadow-tight);
   backdrop-filter: blur(18px);
 }
+.anchor-rail::-webkit-scrollbar {
+  display: none;
+}
 .anchor-rail a {
   display: inline-flex;
+  flex-shrink: 0;
   align-items: center;
   gap: 0.3rem;
   min-height: 2rem;
