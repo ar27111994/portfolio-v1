@@ -37,6 +37,9 @@ debug-screenshot.png
 # agent-harness local activation artifacts (external tool)
 .agent-harness/
 
+# GSD planning artifacts
+.planning/
+
 # Upwork session credentials and raw API dumps — must never be committed
 scripts/portfolio-session.sh
 scripts/raw.json

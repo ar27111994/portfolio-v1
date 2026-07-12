@@ -249,6 +249,93 @@ const proofCategories = [
   { label: "Enterprise" },
 ];
 
+const servicesOfferings = [
+  {
+    title: "Developer Tools",
+    summary:
+      "CLI tooling, VS Code extensions, build pipelines, CI/CD automation, and open-source libraries that stay useful after the first launch.",
+    icon: "🛠",
+  },
+  {
+    title: "Webhook Debugging & Automation",
+    summary:
+      "Real-time webhook capture, inspection, replay, validation, and forwarding — from prototype to production-grade reliability tooling.",
+    icon: "⚡",
+  },
+  {
+    title: "Agentic Systems & Tooling",
+    summary:
+      "AI-agent workflows, MCP server design, skill/asset lifecycle management, and agent-harness infrastructure for modern coding hosts.",
+    icon: "🤖",
+  },
+];
+
+const testimonials = [
+  {
+    quote:
+      "Ahmed exemplifies everything a company would need in a Frontend Developer: Collaborative, Critical Thinker, Open to Suggestions, Hard Worker, and Extremely Knowledgeable. I never had a time where I asked him to work on a story or project that he wasn't confident in accomplishing. Other developers sing his praises the same.",
+    author: "Reilly Gray, CLTL",
+    role: "Scrum Master II · CSM · A-CSM",
+    relation: "Managed Ahmed directly at Eagle 6",
+    href: "https://www.linkedin.com/in/reilly-gray-cltl-930097136/",
+    platform: "LinkedIn",
+  },
+  {
+    quote:
+      "I have had the pleasure of working as Ahmed's business analyst and product manager for 2 years at EAGLE6 and witnessed Ahmed create desirable and innovative UI solutions to complex cyber security problems, on schedule without fail. Not only is Ahmed ridiculously talented as a front end developer but his work ethic, character, and commitment are above reproach. As a senior developer Ahmed's experience and dedication are wise investments for any Scrum developer team.",
+    author: "Donovan Mosley",
+    role: "Product Manager · CSPO, CSM",
+    relation: "Worked with Ahmed on the same team at Eagle 6",
+    href: "https://www.linkedin.com/in/donovanmosley/",
+    platform: "LinkedIn",
+  },
+  {
+    quote:
+      "Ahmed's work on our project was outstanding. His communication was top-notch, he met all deadlines, and his skills were exceptionally strong. Our project was successful because of Ahmed's tireless work. I look forward to continuing to work with Ahmed on this and future projects. I give him my highest recommendation.",
+    author: "Upwork Client",
+    role: "Grocery CRUD / CodeIgniter project",
+    relation: "61-hour engagement · May–Jul 2017",
+    href: upworkProfileUrl,
+    platform: "Upwork",
+  },
+  {
+    quote:
+      "Ahmed is your go-to man for anything to do with OpenCart. He is one of the best in this area.",
+    author: "Upwork Client",
+    role: "Android Mobile App for OpenCart",
+    relation: "Fixed-price · Nov 2017–Jan 2018",
+    href: upworkProfileUrl,
+    platform: "Upwork",
+  },
+  {
+    quote:
+      "Ahmed is very effective and reliable. He delivered a good work on this Ionic development project. I enjoyed working with him and will likely have additional jobs for him in the future.",
+    author: "Upwork Client",
+    role: "Ionic 3 App Update",
+    relation: "14-hour engagement · Dec 2017",
+    href: upworkProfileUrl,
+    platform: "Upwork",
+  },
+  {
+    quote:
+      "Ahmed delivered a very good work on this ionic 3 project. I enjoyed working with Ahmed and will likely have additional jobs for him in the future.",
+    author: "Upwork Client",
+    role: "Ionic 3 Mobile App",
+    relation: "11-hour engagement · Jan 2018",
+    href: upworkProfileUrl,
+    platform: "Upwork",
+  },
+  {
+    quote:
+      "Ahmed is a trusted member of our team. He has always produced top quality work. We will always return to him first when we get more work.",
+    author: "Upwork Client",
+    role: "Citrix App Layering + Azure POC",
+    relation: "115-hour engagement · Sep 2017–Jan 2018",
+    href: upworkProfileUrl,
+    platform: "Upwork",
+  },
+];
+
 const featuredProjects = [
   {
     name: "agent-harness",
@@ -1209,6 +1296,37 @@ const sponsorLinks = [
       </aside>
     </section>
 
+    <section class="panel services-panel" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 id="services-title">What I build & how we start</h2>
+        <p>
+          Three core lanes, one model: you share the problem, I scope a thin
+          deliverable, we ship fast, then iterate from proof.
+        </p>
+      </div>
+      <div class="services-grid">
+        {
+          servicesOfferings.map((svc) => (
+            <article class="service-card">
+              <span class="service-icon" aria-hidden="true">
+                {svc.icon}
+              </span>
+              <h3>{svc.title}</h3>
+              <p>{svc.summary}</p>
+            </article>
+          ))
+        }
+      </div>
+      <div class="services-cta">
+        <p>
+          <strong>How it works:</strong> Brief → scope → fixed-price estimate or milestone.
+          Typically 1–2 weeks to first deliverable.
+          <a href="#contact-title" class="inline-cta">Start a project brief →</a
+          >
+        </p>
+      </div>
+    </section>
+
     <section class="panel lab-panel" aria-labelledby="lab-title">
       <div class="section-head">
         <h2 id="lab-title">Developer lab</h2>
@@ -1466,6 +1584,43 @@ const sponsorLinks = [
       </p>
     </section>
 
+    <section
+      class="panel testimonials-panel"
+      aria-labelledby="testimonials-title"
+    >
+      <div class="section-head">
+        <h2 id="testimonials-title">What clients & colleagues say</h2>
+        <p>
+          Endorsements from LinkedIn and Upwork across enterprise, freelance,
+          and team-collaboration engagements.
+        </p>
+      </div>
+      <div class="testimonials-grid">
+        {
+          testimonials.map((t) => (
+            <blockquote class="testimonial-card">
+              <p class="testimonial-quote">"{t.quote}"</p>
+              <footer class="testimonial-footer">
+                <cite>
+                  <strong>{t.author}</strong>
+                  <span class="testimonial-role">{t.role}</span>
+                  <span class="testimonial-context">{t.relation}</span>
+                </cite>
+                <a
+                  href={t.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="testimonial-source"
+                >
+                  {t.platform}
+                </a>
+              </footer>
+            </blockquote>
+          ))
+        }
+      </div>
+    </section>
+
     <section class="panel" aria-labelledby="proof-title">
       <div class="section-head">
         <h2 id="proof-title">
@@ -1719,48 +1874,6 @@ const sponsorLinks = [
       </div>
     </section>
 
-    <section class="panel" aria-labelledby="support-title">
-      <div class="section-head">
-        <h2 id="support-title">Funding / sponsor links</h2>
-        <p>
-          Lightweight ways to support the public lab: maintenance, docs, product
-          experiments, and faster shipping on open-source tools.
-        </p>
-      </div>
-      <div class="support-grid sponsor-grid">
-        {
-          sponsorLinks.map((item) => (
-            <a
-              class="support-card sponsor-card"
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span class="support-icon">
-                <img
-                  src={item.icon}
-                  alt=""
-                  width="24"
-                  height="24"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span>
-                <span class="support-name">{item.label}</span>
-                <span class="support-note">{item.note}</span>
-              </span>
-            </a>
-          ))
-        }
-      </div>
-      <p class="subtle">
-        For direct sponsorship/partnership, email <a
-          href={`mailto:${contactEmail}`}>{contactEmail}</a
-        > or use WhatsApp.
-      </p>
-    </section>
-
     <section class="panel" aria-labelledby="capabilities-title">
       <div class="section-head">
         <h2 id="capabilities-title">Core capabilities</h2>
@@ -1909,11 +2022,33 @@ const sponsorLinks = [
 
     <section class="panel contact-panel" aria-labelledby="contact-title">
       <div class="section-head">
-        <h2 id="contact-title">Contact</h2>
+        <h2 id="contact-title">Start a project</h2>
         <p>
-          Direct routes for project briefs, partnership context, and faster
-          async follow-up.
+          Share a brief and I'll scope a thin first deliverable with a fixed
+          estimate — typically 1–2 weeks to a working proof. Direct hire,
+          contract, or milestone-based.
         </p>
+      </div>
+      <div class="contact-cta-primary">
+        <a
+          href={`mailto:${contactEmail}?subject=Project%20Brief`}
+          class="hire-cta-btn"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path
+              d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+          >
+          Send a project brief → {contactEmail}
+        </a>
       </div>
       <div class="widget-grid contact-widget-grid">
         {
@@ -1943,6 +2078,48 @@ const sponsorLinks = [
           ))
         }
       </div>
+    </section>
+
+    <section class="panel" aria-labelledby="support-title">
+      <div class="section-head">
+        <h2 id="support-title">Funding / sponsor links</h2>
+        <p>
+          Lightweight ways to support the public lab: maintenance, docs, product
+          experiments, and faster shipping on open-source tools.
+        </p>
+      </div>
+      <div class="support-grid sponsor-grid">
+        {
+          sponsorLinks.map((item) => (
+            <a
+              class="support-card sponsor-card"
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="support-icon">
+                <img
+                  src={item.icon}
+                  alt=""
+                  width="24"
+                  height="24"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
+              <span>
+                <span class="support-name">{item.label}</span>
+                <span class="support-note">{item.note}</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <p class="subtle">
+        For direct sponsorship/partnership, email <a
+          href={`mailto:${contactEmail}`}>{contactEmail}</a
+        > or use WhatsApp.
+      </p>
     </section>
     <footer class="site-footer" role="contentinfo">
       <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>

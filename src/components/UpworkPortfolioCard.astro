@@ -655,7 +655,16 @@ const previewProofLine =
                     width="400"
                     height="260"
                     poster={previewImage}
-                  />
+                    muted
+                  >
+                    <track
+                      kind="captions"
+                      label="English"
+                      srclang="en"
+                      src={`/captions/${attachment.uid ?? index}.vtt`}
+                      default
+                    />
+                  </video>
                   <span>
                     {attachment.title || `Video preview ${index + 1}`}
                     <em>Play attached video</em>
