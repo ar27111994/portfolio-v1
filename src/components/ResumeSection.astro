@@ -1,0 +1,47 @@
+---
+interface Props {
+  resumeWidgets: import("../data/site-content").ResumeWidget[];
+}
+
+const { resumeWidgets } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="resume-title">
+  <div class="section-head">
+    <h2 id="resume-title">Resume downloads</h2>
+    <p>
+      Three focused exports for different hiring contexts: full depth,
+      client-facing project work, and a fast one-page scan.
+    </p>
+  </div>
+  <ul class="widget-grid resume-widget-grid" aria-label="Resume PDF downloads">
+    {
+      resumeWidgets.map((resume) => (
+        <li>
+          <a
+            class="resume-widget"
+            href={resume.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="widget-icon brand-icon">
+              <img
+                src={resume.icon}
+                alt=""
+                width="24"
+                height="24"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+            <span>
+              <strong>{resume.label}</strong>
+              <em>{resume.badge}</em>
+              <small>{resume.detail}</small>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

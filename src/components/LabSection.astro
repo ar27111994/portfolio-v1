@@ -1,0 +1,27 @@
+---
+interface Props {
+  labNotes: import("../data/site-content").LabNote[];
+}
+
+const { labNotes } = Astro.props;
+---
+
+<section class="panel lab-panel" aria-labelledby="lab-title">
+  <div class="section-head">
+    <h2 id="lab-title">Developer lab</h2>
+    <p>
+      A focused bench for tools, systems, proof surfaces, and selective client
+      work — practical experiments that can become reliable products.
+    </p>
+  </div>
+  <div class="grid four compact">
+    {
+      labNotes.map((item) => (
+        <article class="lab-card">
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>

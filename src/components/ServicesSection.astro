@@ -1,0 +1,37 @@
+---
+interface Props {
+  servicesOfferings: import("../data/site-content").ServiceOffering[];
+}
+
+const { servicesOfferings } = Astro.props;
+---
+
+<section class="panel services-panel" aria-labelledby="services-title">
+  <div class="section-head">
+    <h2 id="services-title">What I build & how we start</h2>
+    <p>
+      Three core lanes, one model: you share the problem, I scope a thin
+      deliverable, we ship fast, then iterate from proof.
+    </p>
+  </div>
+  <div class="services-grid">
+    {
+      servicesOfferings.map((svc) => (
+        <article class="service-card">
+          <span class="service-icon" aria-hidden="true">
+            {svc.icon}
+          </span>
+          <h3>{svc.title}</h3>
+          <p>{svc.summary}</p>
+        </article>
+      ))
+    }
+  </div>
+  <div class="services-cta">
+    <p>
+      <strong>How it works:</strong> Brief → scope → fixed-price estimate or milestone.
+      Typically 1–2 weeks to first deliverable.
+      <a href="#contact-title" class="inline-cta">Start a project brief →</a>
+    </p>
+  </div>
+</section>

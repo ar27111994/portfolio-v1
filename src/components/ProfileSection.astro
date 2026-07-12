@@ -1,0 +1,73 @@
+---
+interface Props {
+  profileWidgets: import("../data/site-content").ProfileWidget[];
+  profileLinks: import("../data/site-content").ProfileLink[];
+}
+
+const { profileWidgets, profileLinks } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="profiles-title">
+  <div class="section-head">
+    <h2 id="profiles-title">Proof surfaces</h2>
+    <p>
+      Primary surfaces for technical credibility, client trust, launch proof,
+      and community history. Discord: ar27111994.
+    </p>
+  </div>
+  <div class="widget-grid profile-widget-grid">
+    {
+      profileWidgets.map((profile) => (
+        <a
+          class="profile-widget"
+          href={profile.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="widget-icon brand-icon">
+            <img
+              src={profile.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>
+            <strong>{profile.label}</strong>
+            <small>{profile.detail}</small>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+  <details class="profile-more">
+    <summary>More profile links</summary>
+    <div class="pill-links">
+      {
+        profileLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Open ${link.label} profile${link.note ? ` for ${link.note}` : ""}`}
+          >
+            <img
+              src={link.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+            <span>
+              {link.label}
+              {link.note ? ` · ${link.note}` : ""}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </details>
+</section>

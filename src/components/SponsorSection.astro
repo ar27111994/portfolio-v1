@@ -1,0 +1,50 @@
+---
+interface Props {
+  contactEmail: string;
+  sponsorLinks: import("../data/site-content").SponsorLink[];
+}
+
+const { contactEmail, sponsorLinks } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="support-title">
+  <div class="section-head">
+    <h2 id="support-title">Funding / sponsor links</h2>
+    <p>
+      Lightweight ways to support the public lab: maintenance, docs, product
+      experiments, and faster shipping on open-source tools.
+    </p>
+  </div>
+  <div class="support-grid sponsor-grid">
+    {
+      sponsorLinks.map((item) => (
+        <a
+          class="support-card sponsor-card"
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="support-icon">
+            <img
+              src={item.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>
+            <span class="support-name">{item.label}</span>
+            <span class="support-note">{item.note}</span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+  <p class="subtle">
+    For direct sponsorship/partnership, email <a href={`mailto:${contactEmail}`}
+      >{contactEmail}</a
+    > or use WhatsApp.
+  </p>
+</section>

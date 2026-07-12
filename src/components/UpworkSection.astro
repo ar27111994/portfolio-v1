@@ -1,0 +1,80 @@
+---
+import UpworkPortfolioCard from "../components/UpworkPortfolioCard.astro";
+
+interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  upworkPortfolioItems: any[];
+  upworkPortfolioCountLabel: string;
+  recentUpworkProofTitles: string;
+  upworkFitTags: string[];
+  upworkProfileUrl: string;
+  upworkPortfolioCount: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  upworkProofCards: any[];
+}
+
+const {
+  upworkPortfolioItems,
+  upworkPortfolioCountLabel,
+  upworkFitTags,
+  upworkProofCards,
+} = Astro.props;
+---
+
+<section id="upwork" class="panel upwork-panel" aria-labelledby="upwork-title">
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Freelance proof surface</p>
+      <h2 id="upwork-title">
+        Upwork project trail{" "}
+        <span class="count-badge" id="upwork-count-badge"
+          >{upworkPortfolioCountLabel} items · 40+ jobs completed · 5★ rating</span
+        >
+      </h2>
+    </div>
+    <p class="section-sub">
+      Live public work history, split across recent featured projects and a
+      deeper portfolio grid.
+    </p>
+  </div>
+
+  <div class="upwork-panel-grid">
+    <div class="upwork-proof-strip">
+      <h3>Featured project cards</h3>
+      <div class="upwork-proof-cards">
+        {
+          upworkProofCards.map((card) => (
+            <div class="upwork-proof-card">
+              {card.thumbnail && (
+                <img
+                  src={card.thumbnail}
+                  alt={card.title}
+                  width="120"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <div>
+                <small>{card.label}</small>
+                <strong>{card.value}</strong>
+                <p>{card.detail}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="upwork-fit">
+      <h3>Fit signals</h3>
+      <div class="upwork-fit-tags">
+        {upworkFitTags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <div class="upwork-grid" id="upwork-grid">
+    {upworkPortfolioItems.map((item) => <UpworkPortfolioCard item={item} />)}
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+interface Props {
+  caseStudies: import("../data/site-content").CaseStudy[];
+}
+
+const { caseStudies } = Astro.props;
+---
+
+<section class="panel" aria-labelledby="case-studies-title">
+  <div class="section-head">
+    <h2 id="case-studies-title">Case studies</h2>
+    <p>
+      Problem → approach → measurable outcome. Four representative projects
+      across enterprise, solo POC, founder, and OSS work.
+    </p>
+  </div>
+  <div class="case-studies-grid">
+    {
+      caseStudies.map((cs) => (
+        <article class="case-study-card">
+          <h3>{cs.title}</h3>
+          <p class="cs-context">{cs.context}</p>
+          <div class="cs-body">
+            <div class="cs-block">
+              <h4>Problem</h4>
+              <p>{cs.problem}</p>
+            </div>
+            <div class="cs-block">
+              <h4>Approach</h4>
+              <p>{cs.approach}</p>
+            </div>
+            <div class="cs-block">
+              <h4>Outcome</h4>
+              <p>{cs.outcome}</p>
+            </div>
+          </div>
+          <div class="cs-footer">
+            <div class="cs-tech">
+              {cs.tech.map((t) => (
+                <span class="cs-tag">{t}</span>
+              ))}
+            </div>
+            <ul class="cs-metrics">
+              {cs.metrics.map((m) => (
+                <li>{m}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
