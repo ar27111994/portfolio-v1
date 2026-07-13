@@ -17,7 +17,9 @@ from pypdf import PdfReader, PdfWriter
 import os as _os
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RESUME_DIR = PROJECT_ROOT / "public" / "resume"
-PHOTO_PATH = PROJECT_ROOT / "public" / "pic.jpg"
+PHOTO_PATH = PROJECT_ROOT / "public" / "brand" / "ahmed-photo-hero.webp"
+if not PHOTO_PATH.exists():
+    PHOTO_PATH = PROJECT_ROOT / "public" / "pic.jpg"
 
 SITE_URL = "https://www.ar27111994.dev"
 GITHUB_URL = "https://github.com/ar27111994"
