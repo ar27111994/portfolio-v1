@@ -73,16 +73,16 @@ body {
 .hdr-photo {
   width: 66pt; height: 66pt; border-radius: 50%;
   object-fit: cover; object-position: 50% 30%;
-  border: 1.8pt solid #e2e8f0; flex-shrink: 0;
+  border: 1.8pt solid #dde3ed; flex-shrink: 0;
   filter: grayscale(100%);
 }
 .hdr-info { flex: 1; min-width: 0; }
 .hdr-name {
   font-size: 22pt; font-weight: 800; letter-spacing: -0.03em;
-  color: #0f172a; margin: 0 0 3pt;
+  color: #071a33; margin: 0 0 3pt;
 }
 .hdr-role {
-  font-size: 9.2pt; font-weight: 600; color: #334155;
+  font-size: 9.2pt; font-weight: 600; color: #2c5f8a;
   margin: 0 0 5pt; line-height: 1.35;
 }
 .hdr-loc { font-size: 8pt; color: #64748b; margin: 0 0 6pt; }
@@ -96,7 +96,7 @@ body {
 .contact-row img { vertical-align: -1.5pt; margin-right: 1.5pt; }
 .contact-row .sep { color: #cbd5e1; }
 
-/* ── Badges ─── */
+/* ── Badges (colored) ─── */
 .badge-row { display: flex; flex-wrap: wrap; gap: 4pt; }
 .badge {
   display: inline-flex; align-items: center; gap: 3pt;
@@ -105,14 +105,21 @@ body {
   border: 1pt solid #e2e8f0; background: #f8fafc; color: #475569;
 }
 .badge img { width: 7pt; height: 7pt; flex-shrink: 0; }
+.badge.ms   { border-color: #bfdbfe; background: #eff6ff; color: #1d4ed8; }
+.badge.anth { border-color: #fed7aa; background: #fff7ed; color: #c2410c; }
+.badge.oss  { border-color: #d1d5db; background: #f3f4f6; color: #374151; }
 
-/* ── Section headers ─── */
+/* ── Section headers (teal accent with diamond) ─── */
 h2 {
   font-size: 8pt; font-weight: 800;
   text-transform: uppercase; letter-spacing: 0.1em;
-  color: #0f172a;
+  color: #0f766e;
   margin: 16pt 0 6pt; padding-bottom: 2.5pt;
-  border-bottom: 1pt solid #e2e8f0;
+  border-bottom: 1pt solid #ccfbf1;
+}
+h2::before {
+  content: '◆'; font-size: 5pt; color: #0f766e;
+  margin-right: 5pt; vertical-align: 1.5pt;
 }
 
 /* ── Entries ─── */
@@ -128,6 +135,7 @@ h2 {
 .entry p { font-size: 8.2pt; color: #374151; line-height: 1.5; margin-bottom: 3pt; }
 .entry li { font-size: 8pt; color: #374151; line-height: 1.45; margin-bottom: 2pt; }
 .entry ul { margin: 3pt 0 0 14pt; padding: 0; }
+.entry li::marker { color: #0f766e; }
 .entry img { width: 8pt; height: 8pt; vertical-align: -1pt; }
 
 /* ── Writing ─── */
@@ -147,8 +155,7 @@ a { color: #2563eb; text-decoration: none; }
 .muted { color: #64748b; }
 .small { font-size: 7.8pt; color: #475569; line-height: 1.5; }
 .tag { font-size: 6.5pt; color: #64748b; margin-top: 2pt; }
-.tri { color: #d97706; margin-right: 2pt; }
-
+.tri { color: #d97706; margin-right: 2pt; font-size: 9pt; }
 .page-break { page-break-before: always; }
 """
 
@@ -178,9 +185,9 @@ def header(photo: bool = False) -> str:
       <span class="sep">|</span> {icon('devdotto', 8)} <a href="{DEVTO_URL}">dev.to/ar27111994</a>
     </div>
     <div class="badge-row">
-      <span class="badge">{icon('microsoft', 7)} Microsoft Partner</span>
-      <span class="badge">{icon('anthropic', 7)} Anthropic Partner</span>
-      <span class="badge">{icon('github', 7)} Open-source maintainer</span>
+      <span class="badge ms">{icon('microsoft', 7)} Microsoft Partner</span>
+      <span class="badge anth">{icon('anthropic', 7)} Anthropic Partner</span>
+      <span class="badge oss">{icon('github', 7)} Open-source maintainer</span>
       <span class="badge">Devtools builder</span>
       <span class="badge">Webhook / API tooling</span>
       <span class="badge">AI-agent workflows</span>
