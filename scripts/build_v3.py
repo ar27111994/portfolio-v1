@@ -129,11 +129,16 @@ h2 {
   font-size: 7.8pt; color: #64748b; margin-bottom: 3pt;
 }
 .entry-meta .org { font-weight: 650; color: #334155; }
+.entry-meta .date {
+  font-size: 7.2pt; font-weight: 600; color: #1d4ed8;
+  background: #eff6ff; padding: 1pt 5pt; border-radius: 999px;
+  white-space: nowrap;
+}
 .entry p { font-size: 8.2pt; color: #374151; line-height: 1.5; margin-bottom: 3pt; }
 .entry li { font-size: 8pt; color: #374151; line-height: 1.45; margin-bottom: 2pt; }
 .entry ul { margin: 3pt 0 0 14pt; padding: 0; }
+.entry li::marker { color: #1d4ed8; }
 .entry img { width: 8pt; height: 8pt; vertical-align: -1pt; }
-
 /* ── Writing ─── */
 .writing-item { margin-bottom: 2pt; }
 .writing-item a { font-size: 8.2pt; color: #2563eb; text-decoration: none; font-weight: 600; }
@@ -143,6 +148,11 @@ h2 {
 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16pt; }
 .skill-block { margin-bottom: 5pt; }
 .skill-block h3 { font-size: 8.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2pt; }
+.skill-block h3::before { content: '•'; margin-right: 3pt; }
+.skill-block.frontend h3::before { color: #1d4ed8; }
+.skill-block.backend h3::before { color: #059669; }
+.skill-block.data h3::before { color: #d97706; }
+.skill-block.infra h3::before { color: #7c3aed; }
 .skill-block p { font-size: 7.8pt; color: #374151; line-height: 1.5; }
 
 /* ── Common ─── */
@@ -281,7 +291,7 @@ def build_full_html() -> str:
     # Eagle 6
     body += """<div class="entry">
 <p class="entry-title">Frontend Engineer</p>
-<p class="entry-meta"><span class="org">Eagle 6 — cybersecurity product securing large enterprises by detecting unknown vulnerabilities</span><span>Feb 2018 &ndash; Mar 2022</span></p>
+<p class="entry-meta"><span class="org">Eagle 6 — cybersecurity product securing large enterprises by detecting unknown vulnerabilities</span><span class="date"><span>Feb 2018 &ndash; Mar 2022</span></span></p>
 <ul>
 <li>Implemented frontend for Cloud Storage and Organization Chart Modeling modules of the flagship enterprise product alongside integration and customization of rich text document editing tools via Angular-ized plugins.</li>
 <li>Built file and folder management with role-based permissions assignment, preview and edit capabilities based on file type and user permission level.</li>
@@ -298,7 +308,7 @@ def build_full_html() -> str:
     # Upwork
     body += """<div class="entry">
 <p class="entry-title">Full-Stack Freelance Contractor</p>
-<p class="entry-meta"><span class="org">Upwork / Independent Client Work</span><span>May 2017 &ndash; Feb 2018</span></p>
+<p class="entry-meta"><span class="org">Upwork / Independent Client Work</span><span class="date"><span>May 2017 &ndash; Feb 2018</span></span></p>
 <ul>
 <li>Implemented, maintained, managed, and delivered solo projects as a freelance contractor in a timely manner.</li>
 <li>Spun out free and open-source projects based on solo freelancing work (with client consent).</li>
@@ -315,7 +325,7 @@ def build_full_html() -> str:
     # Goggle Hunt
     body += """<div class="entry">
 <p class="entry-title">Founder / Owner — Goggle Hunt</p>
-<p class="entry-meta"><span class="org">Shopify dropshipping — fashion &amp; sports goggles, US &amp; EU markets</span><span>May 2017 &ndash; Sep 2017</span></p>
+<p class="entry-meta"><span class="org">Shopify dropshipping — fashion &amp; sports goggles, US &amp; EU markets</span><span class="date"><span>May 2017 &ndash; Sep 2017</span></span></p>
 <ul>
 <li>Identified a primary keyword with 600K monthly Google searches and low competition in the US market.</li>
 <li>Created, maintained, marketed, and did product sourcing for the Shopify store; ran day-to-day operations for 4 months while freelancing full-time.</li>
@@ -329,35 +339,35 @@ def build_full_html() -> str:
     # GMINNS
     body += """<div class="entry">
 <p class="entry-title">PHP Developer</p>
-<p class="entry-meta"><span class="org">GMINNS</span><span>Jul 2015 &ndash; Apr 2016</span></p>
+<p class="entry-meta"><span class="org">GMINNS</span><span class="date"><span>Jul 2015 &ndash; Apr 2016</span></span></p>
 <p>PHP web applications, database-driven features, custom CMS components.</p>
 </div>"""
     # COMITS
     body += """<div class="entry">
 <p class="entry-title">Web Developer</p>
-<p class="entry-meta"><span class="org">COMITS</span><span>Jul 2014 &ndash; Mar 2015</span></p>
+<p class="entry-meta"><span class="org">COMITS</span><span class="date"><span>Jul 2014 &ndash; Mar 2015</span></span></p>
 <p>Client web projects in PHP / JavaScript; frontend, backend, deployment.</p>
 </div>"""
 
     # Skills
     body += section("Technical Skills", "⚙")
     body += """<div class="skills-grid">
-<div class="skill-block"><h3>Frontend</h3><p>TypeScript &middot; Angular &middot; React &middot; Next.js &middot; RxJS &middot; Angular Material &middot; Akita &middot; Jest &middot; SCSS &middot; BEM &middot; D3 &middot; Highcharts &middot; GoJS &middot; Leaflet &middot; OSM</p></div>
-<div class="skill-block"><h3>Backend / Systems</h3><p>Node.js &middot; Express &middot; ASP.NET Core &middot; PHP &middot; CodeIgniter &middot; WordPress &middot; OpenCart &middot; API integrations &middot; automation workflows</p></div>
-<div class="skill-block"><h3>Data / Delivery</h3><p>MySQL &middot; SQL Server &middot; Docker &middot; Azure &middot; Linux &middot; Apify &middot; Vercel &middot; Git &middot; GitHub &middot; Jira &middot; VS Code &middot; WebStorm &middot; Visual Studio</p></div>
-<div class="skill-block"><h3>Infrastructure</h3><p>Apache &middot; Nginx &middot; IIS &middot; XAMPP &middot; Cordova &middot; Xamarin &middot; Citrix App Layering</p></div>
+<div class="skill-block frontend"><h3>Frontend</h3><p>TypeScript &middot; Angular &middot; React &middot; Next.js &middot; RxJS &middot; Angular Material &middot; Akita &middot; Jest &middot; SCSS &middot; BEM &middot; D3 &middot; Highcharts &middot; GoJS &middot; Leaflet &middot; OSM</p></div>
+<div class="skill-block backend"><h3>Backend / Systems</h3><p>Node.js &middot; Express &middot; ASP.NET Core &middot; PHP &middot; CodeIgniter &middot; WordPress &middot; OpenCart &middot; API integrations &middot; automation workflows</p></div>
+<div class="skill-block data"><h3>Data / Delivery</h3><p>MySQL &middot; SQL Server &middot; Docker &middot; Azure &middot; Linux &middot; Apify &middot; Vercel &middot; Git &middot; GitHub &middot; Jira &middot; VS Code &middot; WebStorm &middot; Visual Studio</p></div>
+<div class="skill-block infra"><h3>Infrastructure</h3><p>Apache &middot; Nginx &middot; IIS &middot; XAMPP &middot; Cordova &middot; Xamarin &middot; Citrix App Layering</p></div>
 </div>"""
 
     # Education
     body += section("Education", "🎓")
     body += """<div class="entry">
 <p class="entry-title">M.C.S. — Master of Computer Science</p>
-<p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span>Oct 2014 &ndash; Aug 2016</span></p>
+<p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span class="date"><span>Oct 2014 &ndash; Aug 2016</span></span></p>
 <p class="small">Digital Design &middot; Web &amp; Desktop Development &middot; Operating Systems &middot; System Programming &middot; Networking &middot; Software Engineering &middot; Database Systems &middot; Artificial Intelligence &middot; Data Structures</p>
 </div>
 <div class="entry">
 <p class="entry-title">B.Sc. — Computer, Statistics and Mathematics</p>
-<p class="entry-meta"><span class="org">University of the Punjab</span><span>Sep 2012 &ndash; Jul 2014</span></p>
+<p class="entry-meta"><span class="org">University of the Punjab</span><span class="date"><span>Sep 2012 &ndash; Jul 2014</span></span></p>
 <p class="small">Computer Science &middot; Software Engineering &middot; Databases &middot; Operating Systems &middot; Statistics &amp; Probability &middot; Calculus &middot; Mathematical Methods</p>
 </div>"""
 
