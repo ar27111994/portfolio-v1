@@ -202,10 +202,22 @@ ANTHROPIC_CERTS = [
 ]
 
 COURSERA_CERTS = [
-    ("ML Strategy & Error Analysis", "https://www.coursera.org/account/accomplishments/verify/HQ3883739EQ7", "12/05/2019"),
-    ("Deep Learning Best Practices & Optimization", "https://www.coursera.org/account/accomplishments/verify/U4QYCQLM9WUH", "07/04/2019"),
-    ("Deep Learning Foundations + TensorFlow", "https://www.coursera.org/account/accomplishments/verify/TDDMYNV57A99", "20/08/2018"),
-    ("Big Data Fundamentals & Hadoop", "https://www.coursera.org/account/accomplishments/verify/HHVS4SJNXDR8", "29/10/2018"),
+    ("ML Strategy & Error Analysis",
+     "https://www.coursera.org/account/accomplishments/verify/HQ3883739EQ7",
+     "12/05/2019",
+     "Diagnose errors in ML systems; prioritize improvement directions; mismatched train/test sets; human-level performance comparisons; end-to-end and transfer learning; multi-task learning."),
+    ("Deep Learning Best Practices & Optimization",
+     "https://www.coursera.org/account/accomplishments/verify/U4QYCQLM9WUH",
+     "07/04/2019",
+     "L2/dropout regularization; batch normalization; gradient checking; optimization algorithms (mini-batch GD, Momentum, RMSprop, Adam); train/dev/test setup; bias/variance analysis."),
+    ("Deep Learning Foundations + TensorFlow",
+     "https://www.coursera.org/account/accomplishments/verify/TDDMYNV57A99",
+     "20/08/2018",
+     "Fully connected deep neural networks; vectorized implementation; key architecture parameters; TensorFlow implementation; major technology trends driving Deep Learning."),
+    ("Big Data Fundamentals & Hadoop",
+     "https://www.coursera.org/account/accomplishments/verify/HHVS4SJNXDR8",
+     "29/10/2018",
+     "Big Data landscape (volume, velocity, variety, veracity, valence, value); 5-step analysis process; Hadoop architecture (YARN, HDFS, MapReduce); scalable big data analysis."),
 ]
 
 # ── Build full resume ─────────────────────────────────────────────────────────
@@ -242,7 +254,15 @@ def build_full_html() -> str:
     # Legacy OSS
     body += """<div class="entry">
 <p class="entry-title">Legacy OSS / Freemium</p>
-<p>OpenCart 3.x marketplace extension &middot; Mosaico CodeIgniter integration &middot; OpenBiz (ASP.NET MVC supply-chain) &middot; Generic Repository Pattern &middot; Bookstore &amp; Shopping Cart Library (used by hundreds on phpclasses.org). Additional gist proof: Global AI-agent coding rules &middot; Remote Desktop Services HA Farm</p>
+<ul>
+<li><span class="lbl">Shopping Cart Library</span> — PHP class for add/update/delete/destroy cart operations with session persistence. Used by hundreds on phpclasses.org.</li>
+<li><span class="lbl">Mosaico + CodeIgniter</span> — Open-source WYSIWYG email template editor integrated with custom PHP/CodeIgniter backend and database.</li>
+<li><span class="lbl">OpenCart 3.x extensions</span> — 3-Level Menu extension and Obligr SMS Order Alert with customized admin email (Indian merchants).</li>
+<li><span class="lbl">CRUD Scaffolding Templates</span> — AJAX search/sort/page with Excel/CSV export; generic repository pattern on Entity Framework 6.</li>
+<li><span class="lbl">OpenBiz</span> — Open-source supply chain management system built on ASP.NET MVC, Entity Framework, Razor, C#, jQuery, Bootstrap.</li>
+<li><span class="lbl">National Criminals Database</span> — WCF + ASP.NET MVC demonstrating N-Layered Architecture with web client contracts and unit tests.</li>
+<li><span class="lbl">Bookstore</span> — Full-featured SEO-friendly bookstore with admin panel, vanilla PHP with PSD-to-HTML design implementation.</li>
+</ul>
 </div>"""
 
     # Writing
@@ -295,8 +315,16 @@ def build_full_html() -> str:
     # Goggle Hunt
     body += """<div class="entry">
 <p class="entry-title">Founder / Owner — Goggle Hunt</p>
-<p class="entry-meta"><span class="org">Shopify dropshipping</span><span>May 2017 &ndash; Sep 2017</span></p>
-<p>Built, operated, marketed, and sold; influencer outreach, email capture flows, Flippa exit.</p>
+<p class="entry-meta"><span class="org">Shopify dropshipping — fashion &amp; sports goggles, US &amp; EU markets</span><span>May 2017 &ndash; Sep 2017</span></p>
+<ul>
+<li>Identified a primary keyword with 600K monthly Google searches and low competition in the US market.</li>
+<li>Created, maintained, marketed, and did product sourcing for the Shopify store; ran day-to-day operations for 4 months while freelancing full-time.</li>
+<li>Conducted Instagram influencer interviews and giveaway competitions for marketing and brand reach.</li>
+<li>Created and ran four social media accounts, each reaching a few hundred followers.</li>
+<li>Collected ~150 email subscribers, majority via a Gleam competition campaign.</li>
+<li>Created a Facebook Merchant Account with all shop products integrated for frictionless purchasing.</li>
+<li>Sold the full business on Flippa to focus exclusively on a software engineering career.</li>
+</ul>
 </div>"""
     # GMINNS
     body += """<div class="entry">
@@ -325,20 +353,21 @@ def build_full_html() -> str:
     body += """<div class="entry">
 <p class="entry-title">M.C.S. — Master of Computer Science</p>
 <p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span>Oct 2014 &ndash; Aug 2016</span></p>
-<p class="small">Digital Design &middot; Web &amp; Desktop Development &middot; OS &middot; System Programming &middot; Networking &middot; Software Engineering &middot; Database Systems &middot; AI &middot; Data Structures</p>
+<p class="small">Digital Design &middot; Web &amp; Desktop Development &middot; Operating Systems &middot; System Programming &middot; Networking &middot; Software Engineering &middot; Database Systems &middot; Artificial Intelligence &middot; Data Structures</p>
 </div>
 <div class="entry">
 <p class="entry-title">B.Sc. — Computer, Statistics and Mathematics</p>
 <p class="entry-meta"><span class="org">University of the Punjab</span><span>Sep 2012 &ndash; Jul 2014</span></p>
-<p class="small">CS &middot; Software Engineering &middot; Databases &middot; OS &middot; Statistics &amp; Probability &middot; Calculus &middot; Mathematical Methods</p>
+<p class="small">Computer Science &middot; Software Engineering &middot; Databases &middot; Operating Systems &middot; Statistics &amp; Probability &middot; Calculus &middot; Mathematical Methods</p>
 </div>"""
 
     # Coursera
     body += section("Certifications / Coursework", "📜")
-    for name, url, date in COURSERA_CERTS:
+    for name, url, date, syllabus in COURSERA_CERTS:
         body += f"""<div class="entry">
 <p class="entry-title">Coursera — {esc(name)}</p>
 <p class="entry-meta"><span class="org">Completed {date}</span><span></span></p>
+<p class="small">{esc(syllabus)}</p>
 <p class="small"><a href="{url}">{url.replace('https://', '')}</a></p>
 </div>"""
 
@@ -367,13 +396,18 @@ def build():
 
     html = build_full_html()
     path = RESUME_DIR / "resume_full.pdf"
+    tmp = RESUME_DIR / "resume_full_tmp.pdf"
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
         page.set_content(html, wait_until="networkidle")
-        page.pdf(path=str(path), format="A4", print_background=True)
+        page.pdf(path=str(tmp), format="A4", print_background=True)
         browser.close()
+
+    # Replace final file
+    import shutil
+    shutil.move(str(tmp), str(path))
 
     # Add metadata
     reader = PdfReader(str(path))
