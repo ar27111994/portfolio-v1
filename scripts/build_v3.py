@@ -109,18 +109,15 @@ body {
 .badge.anth { border-color: #fed7aa; background: #fff7ed; color: #c2410c; }
 .badge.oss  { border-color: #d1d5db; background: #f3f4f6; color: #374151; }
 
-/* ── Section headers (teal accent with diamond) ─── */
+/* ── Section headers (blue accent, semantic icons via content) ─── */
 h2 {
   font-size: 8pt; font-weight: 800;
   text-transform: uppercase; letter-spacing: 0.1em;
-  color: #0f766e;
+  color: #1d4ed8;
   margin: 16pt 0 6pt; padding-bottom: 2.5pt;
-  border-bottom: 1pt solid #ccfbf1;
+  border-bottom: 1pt solid #dbeafe;
 }
-h2::before {
-  content: '◆'; font-size: 5pt; color: #0f766e;
-  margin-right: 5pt; vertical-align: 1.5pt;
-}
+.entry li::marker { color: #1d4ed8; }
 
 /* ── Entries ─── */
 .entry { margin-bottom: 6pt; }
@@ -135,7 +132,6 @@ h2::before {
 .entry p { font-size: 8.2pt; color: #374151; line-height: 1.5; margin-bottom: 3pt; }
 .entry li { font-size: 8pt; color: #374151; line-height: 1.45; margin-bottom: 2pt; }
 .entry ul { margin: 3pt 0 0 14pt; padding: 0; }
-.entry li::marker { color: #0f766e; }
 .entry img { width: 8pt; height: 8pt; vertical-align: -1pt; }
 
 /* ── Writing ─── */
@@ -155,8 +151,6 @@ a { color: #2563eb; text-decoration: none; }
 .muted { color: #64748b; }
 .small { font-size: 7.8pt; color: #475569; line-height: 1.5; }
 .tag { font-size: 6.5pt; color: #64748b; margin-top: 2pt; }
-.tri { color: #d97706; margin-right: 2pt; font-size: 9pt; }
-.page-break { page-break-before: always; }
 """
 
 # ── Helper ────────────────────────────────────────────────────────────────────
@@ -195,8 +189,9 @@ def header(photo: bool = False) -> str:
   </div>
 </header>"""
 
-def section(title: str) -> str:
-    return f"<h2>{esc(title)}</h2>"
+def section(title: str, emoji: str = "") -> str:
+    prefix = f"{emoji} " if emoji else ""
+    return f"<h2>{prefix}{esc(title)}</h2>"
 
 # ── Certifications data ──────────────────────────────────────────────────────
 ANTHROPIC_CERTS = [
@@ -218,14 +213,14 @@ def build_full_html() -> str:
     body = header(photo=True)
 
     # Summary
-    body += section("Summary")
+    body += section("Summary", "⭐")
     body += """<div class="entry">
 <p>Product-minded full-stack engineer and solo builder focused on developer tools, workflow automation, agent systems, webhook/API infrastructure, and performance-conscious software. Strong background in frontend architecture, interactive product engineering, and full-stack delivery across web, mobile, API-driven, and enterprise workflow systems.</p>
 <p><span class="lbl">Partner / certification track:</span> Microsoft Partner and Anthropic Partner through admin@ar27111994.dev; four Anthropic certifications completed Jun 2026.</p>
 </div>"""
 
     # Products
-    body += section("Selected Products & Open-Source Work")
+    body += section("Selected Products & Open-Source Work", "🛠")
     # Webhook Debugger
     body += """<div class="entry">
 <p class="entry-title">Webhook Debugger and Logger</p>
@@ -251,7 +246,7 @@ def build_full_html() -> str:
 </div>"""
 
     # Writing
-    body += section("Writing / Public Technical Content")
+    body += section("Writing / Public Technical Content", "📄")
     writings = [
         ("Agent assets need a lifecycle, not a dumping ground", "https://dev.to/ar27111994/agent-assets-need-a-lifecycle-not-a-dumping-ground-1i3h", "Dev.to"),
         ("I built a more restrained alternative to giant AI skill bundles", "https://dev.to/ar27111994/i-built-a-more-restrained-alternative-to-giant-ai-skill-bundles-1kf5", "Dev.to"),
@@ -262,7 +257,7 @@ def build_full_html() -> str:
         body += f'<p class="writing-item"><a href="{url}">{esc(title)}</a> <span class="src">{src}</span></p>'
 
     # Experience
-    body += section("Experience")
+    body += section("Experience", "💼")
     # Eagle 6
     body += """<div class="entry">
 <p class="entry-title">Frontend Engineer</p>
@@ -317,7 +312,7 @@ def build_full_html() -> str:
 </div>"""
 
     # Skills
-    body += section("Technical Skills")
+    body += section("Technical Skills", "⚙")
     body += """<div class="skills-grid">
 <div class="skill-block"><h3>Frontend</h3><p>TypeScript &middot; Angular &middot; React &middot; Next.js &middot; RxJS &middot; Angular Material &middot; Akita &middot; Jest &middot; SCSS &middot; BEM &middot; D3 &middot; Highcharts &middot; GoJS &middot; Leaflet &middot; OSM</p></div>
 <div class="skill-block"><h3>Backend / Systems</h3><p>Node.js &middot; Express &middot; ASP.NET Core &middot; PHP &middot; CodeIgniter &middot; WordPress &middot; OpenCart &middot; API integrations &middot; automation workflows</p></div>
@@ -326,7 +321,7 @@ def build_full_html() -> str:
 </div>"""
 
     # Education
-    body += section("Education")
+    body += section("Education", "🎓")
     body += """<div class="entry">
 <p class="entry-title">M.C.S. — Master of Computer Science</p>
 <p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span>Oct 2014 &ndash; Aug 2016</span></p>
@@ -339,7 +334,7 @@ def build_full_html() -> str:
 </div>"""
 
     # Coursera
-    body += section("Certifications / Coursework")
+    body += section("Certifications / Coursework", "📜")
     for name, url, date in COURSERA_CERTS:
         body += f"""<div class="entry">
 <p class="entry-title">Coursera — {esc(name)}</p>
@@ -348,20 +343,20 @@ def build_full_html() -> str:
 </div>"""
 
     # Anthropic
-    body += '<p style="margin-top:14pt"><span class="tri">&#9650;</span> <span class="lbl">Anthropic Certifications</span> <span class="muted">— completed Jun 2026</span></p>'
+    body += '<p style="margin-top:14pt">' + icon('anthropic', 10) + ' <span class="lbl">Anthropic Certifications</span> <span class="muted">— completed Jun 2026</span></p>'
     body += "<ul>"
     for name, url in ANTHROPIC_CERTS:
         body += f'<li><span class="lbl">{esc(name)}</span> — <a href="{url}">{url.replace("https://", "")}</a></li>'
     body += "</ul>"
 
     # Microsoft RDS
-    body += '<p style="margin-top:10pt"><span class="tri">&#9650;</span> <span class="lbl">Microsoft Virtual Academy</span></p>'
+    body += '<p style="margin-top:10pt">' + icon('microsoft', 10) + ' <span class="lbl">Microsoft Virtual Academy</span></p>'
     body += '<p style="margin-left:12pt"><span class="lbl">Microsoft Remote Desktop Services Deep Dive</span> <span class="muted">— Pending verification</span> <a href="https://microsoft.com/en-us/learning/">(microsoft.com/en-us/learning/)</a></p>'
 
     # Partner track
-    body += '<p style="margin-top:12pt"><span class="tri">&#9650;</span> <span class="lbl">PARTNER / ACTIVE CREDENTIAL TRACK</span></p>'
-    body += f'<p style="margin-left:12pt"><span class="tri">&#9650;</span> <span class="lbl">Microsoft Partner:</span> partner identity via {EMAIL}.</p>'
-    body += f'<p style="margin-left:12pt"><span class="tri">&#9650;</span> <span class="lbl">Anthropic Partner:</span> partner identity via {EMAIL}.</p>'
+    body += '<p style="margin-top:12pt">⭐ <span class="lbl">PARTNER / ACTIVE CREDENTIAL TRACK</span></p>'
+    body += f'<p style="margin-left:12pt">' + icon('microsoft', 9) + f' <span class="lbl">Microsoft Partner:</span> partner identity via {EMAIL}.</p>'
+    body += f'<p style="margin-left:12pt">' + icon('anthropic', 9) + f' <span class="lbl">Anthropic Partner:</span> partner identity via {EMAIL}.</p>'
 
     return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
 
