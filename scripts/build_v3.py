@@ -52,14 +52,14 @@ if PHOTO_PATH.exists():
 
 # ── CSS ───────────────────────────────────────────────────────────────────────
 CSS = r"""
-@page { size: A4; margin: 28pt 32pt 28pt 32pt; }
+@page { size: A4; margin: 30pt 34pt 30pt 34pt; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-  font-size: 8.8pt;
-  line-height: 1.48;
-  color: #1a1f2e;
+  font-size: 8.6pt;
+  line-height: 1.5;
+  color: #1e293b;
   background: #fff;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -67,40 +67,41 @@ body {
 
 /* ── Header ─── */
 .hdr {
-  display: flex; align-items: flex-start; gap: 14pt;
-  padding-bottom: 14pt; margin-bottom: 4pt;
+  display: flex; align-items: flex-start; gap: 16pt;
+  padding: 0 0 16pt 0; margin-bottom: 6pt;
+  border-bottom: 2pt solid #e2e8f0;
 }
 .hdr-photo {
-  width: 66pt; height: 66pt; border-radius: 50%;
+  width: 68pt; height: 68pt; border-radius: 50%;
   object-fit: cover; object-position: 50% 30%;
-  border: 1.8pt solid #dde3ed; flex-shrink: 0;
+  border: 2pt solid #e2e8f0; flex-shrink: 0;
   filter: grayscale(100%);
 }
 .hdr-info { flex: 1; min-width: 0; }
 .hdr-name {
-  font-size: 22pt; font-weight: 800; letter-spacing: -0.03em;
-  color: #071a33; margin: 0 0 3pt;
+  font-size: 23pt; font-weight: 800; letter-spacing: -0.04em;
+  color: #0f172a; margin: 0 0 3pt;
 }
 .hdr-role {
-  font-size: 9.2pt; font-weight: 600; color: #2c5f8a;
-  margin: 0 0 5pt; line-height: 1.35;
+  font-size: 9pt; font-weight: 600; color: #475569;
+  margin: 0 0 6pt; line-height: 1.4;
 }
-.hdr-loc { font-size: 8pt; color: #64748b; margin: 0 0 6pt; }
+.hdr-loc { font-size: 8pt; color: #64748b; margin: 0 0 7pt; }
 .hdr-loc img { vertical-align: -1pt; margin-right: 2pt; }
 
 .contact-row {
-  display: flex; flex-wrap: wrap; gap: 2pt 8pt;
-  font-size: 7.8pt; color: #475569; margin-bottom: 6pt;
+  display: flex; flex-wrap: wrap; gap: 2pt 10pt;
+  font-size: 7.8pt; color: #475569; margin-bottom: 7pt;
 }
-.contact-row a { color: #2563eb; text-decoration: none; }
-.contact-row img { vertical-align: -1.5pt; margin-right: 1.5pt; }
+.contact-row a { color: #2563eb; text-decoration: none; font-weight: 500; }
+.contact-row img { vertical-align: -1.5pt; margin-right: 2pt; }
 .contact-row .sep { color: #cbd5e1; }
 
-/* ── Badges (colored) ─── */
-.badge-row { display: flex; flex-wrap: wrap; gap: 4pt; }
+/* ── Badges ─── */
+.badge-row { display: flex; flex-wrap: wrap; gap: 5pt; }
 .badge {
   display: inline-flex; align-items: center; gap: 3pt;
-  padding: 2.2pt 6pt; border-radius: 999px;
+  padding: 2.5pt 7pt; border-radius: 999px;
   font-size: 7pt; font-weight: 700;
   border: 1pt solid #e2e8f0; background: #f8fafc; color: #475569;
 }
@@ -109,58 +110,74 @@ body {
 .badge.anth { border-color: #fed7aa; background: #fff7ed; color: #c2410c; }
 .badge.oss  { border-color: #d1d5db; background: #f3f4f6; color: #374151; }
 
-/* ── Section headers (blue accent, semantic icons via content) ─── */
+/* ── Section headers ─── */
 h2 {
-  font-size: 8pt; font-weight: 800;
-  text-transform: uppercase; letter-spacing: 0.1em;
-  color: #1d4ed8;
-  margin: 16pt 0 6pt; padding-bottom: 2.5pt;
-  border-bottom: 1pt solid #dbeafe;
+  font-size: 7.8pt; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: #1e40af;
+  margin: 18pt 0 8pt; padding: 0 0 3pt;
+  border-bottom: 1.5pt solid #dbeafe;
 }
-.entry li::marker { color: #1d4ed8; }
 
 /* ── Entries ─── */
-.entry { margin-bottom: 6pt; }
+.entry {
+  margin-bottom: 7pt;
+  padding-left: 10pt;
+  border-left: 2pt solid #e2e8f0;
+}
 .entry-title {
-  font-size: 9.2pt; font-weight: 700; color: #0f172a; margin: 0 0 1.5pt;
+  font-size: 9pt; font-weight: 700; color: #0f172a; margin: 0 0 2pt;
 }
 .entry-meta {
-  display: flex; justify-content: space-between;
-  font-size: 7.8pt; color: #64748b; margin-bottom: 3pt;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 7.5pt; color: #64748b; margin-bottom: 4pt;
 }
 .entry-meta .org { font-weight: 650; color: #334155; }
 .entry-meta .date {
-  font-size: 7.2pt; font-weight: 600; color: #1d4ed8;
-  background: #eff6ff; padding: 1pt 5pt; border-radius: 999px;
-  white-space: nowrap;
+  font-size: 7pt; font-weight: 600; color: #1d4ed8;
+  background: #eff6ff; padding: 1.5pt 6pt; border-radius: 999px;
+  white-space: nowrap; letter-spacing: 0.02em;
 }
-.entry p { font-size: 8.2pt; color: #374151; line-height: 1.5; margin-bottom: 3pt; }
-.entry li { font-size: 8pt; color: #374151; line-height: 1.45; margin-bottom: 2pt; }
-.entry ul { margin: 3pt 0 0 14pt; padding: 0; }
-.entry li::marker { color: #1d4ed8; }
+.entry p { font-size: 8pt; color: #374151; line-height: 1.55; margin-bottom: 4pt; }
+.entry li {
+  font-size: 7.8pt; color: #374151; line-height: 1.5; margin-bottom: 2.5pt;
+  list-style-type: none; position: relative; padding-left: 10pt;
+}
+.entry li::before {
+  content: '—'; color: #1d4ed8; position: absolute; left: 0;
+  font-weight: 700;
+}
+.entry ul { margin: 3pt 0 0 0; padding: 0; }
 .entry img { width: 8pt; height: 8pt; vertical-align: -1pt; }
+
 /* ── Writing ─── */
-.writing-item { margin-bottom: 2pt; }
-.writing-item a { font-size: 8.2pt; color: #2563eb; text-decoration: none; font-weight: 600; }
-.writing-item .src { font-size: 7.2pt; color: #94a3b8; }
+.writing-item {
+  margin-bottom: 2pt; padding-left: 10pt;
+  border-left: 1.5pt solid #e2e8f0;
+}
+.writing-item a { font-size: 8pt; color: #2563eb; text-decoration: none; font-weight: 600; }
+.writing-item .src { font-size: 6.8pt; color: #94a3b8; }
 
 /* ── Skills ─── */
-.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16pt; }
-.skill-block { margin-bottom: 5pt; }
-.skill-block h3 { font-size: 8.2pt; font-weight: 700; color: #0f172a; margin-bottom: 2pt; }
-.skill-block h3::before { content: '•'; margin-right: 3pt; }
-.skill-block.frontend h3::before { color: #1d4ed8; }
-.skill-block.backend h3::before { color: #059669; }
-.skill-block.data h3::before { color: #d97706; }
-.skill-block.infra h3::before { color: #7c3aed; }
-.skill-block p { font-size: 7.8pt; color: #374151; line-height: 1.5; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt 18pt; }
+.skill-block {
+  margin-bottom: 4pt; padding: 6pt 8pt;
+  background: #f8fafc; border-radius: 6pt;
+  border-left: 3pt solid #e2e8f0;
+}
+.skill-block h3 { font-size: 7.8pt; font-weight: 700; color: #0f172a; margin-bottom: 3pt; }
+.skill-block.frontend { border-left-color: #3b82f6; }
+.skill-block.backend  { border-left-color: #10b981; }
+.skill-block.data     { border-left-color: #f59e0b; }
+.skill-block.infra    { border-left-color: #8b5cf6; }
+.skill-block p { font-size: 7.5pt; color: #475569; line-height: 1.55; }
 
 /* ── Common ─── */
 a { color: #2563eb; text-decoration: none; }
 .lbl { font-weight: 700; color: #0f172a; }
 .muted { color: #64748b; }
-.small { font-size: 7.8pt; color: #475569; line-height: 1.5; }
-.tag { font-size: 6.5pt; color: #64748b; margin-top: 2pt; }
+.small { font-size: 7.5pt; color: #475569; line-height: 1.55; }
+.tag { font-size: 6.5pt; color: #64748b; margin-top: 3pt; font-style: italic; }
 """
 
 # ── Helper ────────────────────────────────────────────────────────────────────
