@@ -291,7 +291,7 @@ def build_full_html() -> str:
     # Eagle 6
     body += """<div class="entry">
 <p class="entry-title">Frontend Engineer</p>
-<p class="entry-meta"><span class="org">Eagle 6 — cybersecurity product securing large enterprises by detecting unknown vulnerabilities</span><span class="date"><span>Feb 2018 &ndash; Mar 2022</span></span></p>
+<p class="entry-meta"><span class="org">Eagle 6 — cybersecurity product securing large enterprises by detecting unknown vulnerabilities</span><span class="date">Feb 2018 &ndash; Mar 2022</span></p>
 <ul>
 <li>Implemented frontend for Cloud Storage and Organization Chart Modeling modules of the flagship enterprise product alongside integration and customization of rich text document editing tools via Angular-ized plugins.</li>
 <li>Built file and folder management with role-based permissions assignment, preview and edit capabilities based on file type and user permission level.</li>
@@ -308,7 +308,7 @@ def build_full_html() -> str:
     # Upwork
     body += """<div class="entry">
 <p class="entry-title">Full-Stack Freelance Contractor</p>
-<p class="entry-meta"><span class="org">Upwork / Independent Client Work</span><span class="date"><span>May 2017 &ndash; Feb 2018</span></span></p>
+<p class="entry-meta"><span class="org">Upwork / Independent Client Work</span><span class="date">May 2017 &ndash; Feb 2018</span></p>
 <ul>
 <li>Implemented, maintained, managed, and delivered solo projects as a freelance contractor in a timely manner.</li>
 <li>Spun out free and open-source projects based on solo freelancing work (with client consent).</li>
@@ -325,7 +325,7 @@ def build_full_html() -> str:
     # Goggle Hunt
     body += """<div class="entry">
 <p class="entry-title">Founder / Owner — Goggle Hunt</p>
-<p class="entry-meta"><span class="org">Shopify dropshipping — fashion &amp; sports goggles, US &amp; EU markets</span><span class="date"><span>May 2017 &ndash; Sep 2017</span></span></p>
+<p class="entry-meta"><span class="org">Shopify dropshipping — fashion &amp; sports goggles, US &amp; EU markets</span><span class="date">May 2017 &ndash; Sep 2017</span></p>
 <ul>
 <li>Identified a primary keyword with 600K monthly Google searches and low competition in the US market.</li>
 <li>Created, maintained, marketed, and did product sourcing for the Shopify store; ran day-to-day operations for 4 months while freelancing full-time.</li>
@@ -339,14 +339,14 @@ def build_full_html() -> str:
     # GMINNS
     body += """<div class="entry">
 <p class="entry-title">PHP Developer</p>
-<p class="entry-meta"><span class="org">GMINNS</span><span class="date"><span>Jul 2015 &ndash; Apr 2016</span></span></p>
-<p>PHP web applications, database-driven features, custom CMS components.</p>
+<p class="entry-meta"><span class="org">GMINNS — Genius Marketing INNovationS</span><span class="date">Jul 2015 &ndash; Apr 2016</span></p>
+<p>Worked on customization of a School Management System based on customer requirements, alongside initial development of a Saudi football federation club management portal. Built and maintained PHP web applications with database-driven features and custom CMS components.</p>
 </div>"""
     # COMITS
     body += """<div class="entry">
 <p class="entry-title">Web Developer</p>
-<p class="entry-meta"><span class="org">COMITS</span><span class="date"><span>Jul 2014 &ndash; Mar 2015</span></span></p>
-<p>Client web projects in PHP / JavaScript; frontend, backend, deployment.</p>
+<p class="entry-meta"><span class="org">COMITS</span><span class="date">Jul 2014 &ndash; Mar 2015</span></p>
+<p>Built WordPress sites for a local newspaper and a local printing shop with custom themes and image sliders. Built an e-commerce website for the company in OpenCart. Delivered client web projects in PHP / JavaScript covering frontend, backend, and deployment.</p>
 </div>"""
 
     # Skills
@@ -362,12 +362,12 @@ def build_full_html() -> str:
     body += section("Education", "🎓")
     body += """<div class="entry">
 <p class="entry-title">M.C.S. — Master of Computer Science</p>
-<p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span class="date"><span>Oct 2014 &ndash; Aug 2016</span></span></p>
+<p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span class="date">Oct 2014 &ndash; Aug 2016</span></p>
 <p class="small">Digital Design &middot; Web &amp; Desktop Development &middot; Operating Systems &middot; System Programming &middot; Networking &middot; Software Engineering &middot; Database Systems &middot; Artificial Intelligence &middot; Data Structures</p>
 </div>
 <div class="entry">
 <p class="entry-title">B.Sc. — Computer, Statistics and Mathematics</p>
-<p class="entry-meta"><span class="org">University of the Punjab</span><span class="date"><span>Sep 2012 &ndash; Jul 2014</span></span></p>
+<p class="entry-meta"><span class="org">University of the Punjab</span><span class="date">Sep 2012 &ndash; Jul 2014</span></p>
 <p class="small">Computer Science &middot; Software Engineering &middot; Databases &middot; Operating Systems &middot; Statistics &amp; Probability &middot; Calculus &middot; Mathematical Methods</p>
 </div>"""
 
