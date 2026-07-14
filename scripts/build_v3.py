@@ -30,7 +30,7 @@ def icon(name: str, size: int = 10) -> str:
     uri = BRAND_ICONS.get(name, "")
     if not uri:
         return ""
-    return f'<img src="{uri}" alt="">'
+    return f'<img src="{uri}" width="{size}" height="{size}" alt="">'
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 EMAIL = "admin@ar27111994.dev"
