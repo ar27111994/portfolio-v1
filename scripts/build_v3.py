@@ -18,6 +18,19 @@ PHOTO_PATH = PROJECT_ROOT / "public" / "brand" / "ahmed-photo-hero.webp"
 if not PHOTO_PATH.exists():
     PHOTO_PATH = PROJECT_ROOT / "public" / "pic.jpg"
 
+# ── Inter font (Latin subset, 400/600/700/800) ────────────────────────────────
+_FONT_DIR = PROJECT_ROOT / "node_modules" / "@fontsource" / "inter" / "files"
+_FONT_FACES = ""
+for _w, _wn in [(400, "Regular"), (600, "SemiBold"), (700, "Bold"), (800, "ExtraBold")]:
+    _fp = _FONT_DIR / f"inter-latin-{_w}-normal.woff2"
+    if _fp.exists():
+        _data = base64.b64encode(_fp.read_bytes()).decode()
+        _FONT_FACES += f"""@font-face {{
+  font-family: 'Inter'; font-style: normal; font-weight: {_w}; font-display: swap;
+  src: url('data:font/woff2;base64,{_data}') format('woff2');
+}}
+"""
+
 # Load brand icons from generated data file
 _brand_file = PROJECT_ROOT / "scripts" / "_brand_icons.py"
 if _brand_file.exists():
@@ -64,7 +77,7 @@ CSS = r"""
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
   font-size: 8.5pt; line-height: 1.5; color: #1e293b; background: #fff;
   -webkit-print-color-adjust: exact; print-color-adjust: exact;
 }
@@ -284,6 +297,7 @@ def build_full_html() -> str:
 <li>Assessed UX/UI designs for technical feasibility and provided implementation estimates in an Agile-driven environment.</li>
 </ul>
 <p class="tag">Angular 7+ &middot; TypeScript &middot; Angular Material &middot; RxJS &middot; Akita &middot; GoJS &middot; D3 &middot; Highcharts &middot; Leaflet &middot; OSM &middot; Jest &middot; SCSS &middot; BEM &middot; TUS</p>
+<p class="small"><span class="lbl">Metrics:</span> 4-year tenure on a single flagship product · 4 major modules delivered · Helped hire &amp; mentor frontend team · Standardized org-wide UI system adopted across all modules</p>
 </div>"""
     # Upwork
     body += """<div class="entry">
@@ -301,6 +315,7 @@ def build_full_html() -> str:
 <li>Deployed and managed web and mobile backends using UNIX and Apache web servers.</li>
 </ul>
 <p class="tag">Angular &middot; Ionic &middot; TypeScript &middot; PHP &middot; MySQL &middot; CodeIgniter &middot; WordPress &middot; OpenCart &middot; C# &middot; Azure &middot; Cordova &middot; Xamarin &middot; Apache &middot; Nginx</p>
+<p class="small"><span class="lbl">Metrics:</span> 40+ completed jobs · 5.0★ Upwork rating · 115-hour Azure/Citrix POC · $850 OpenCart mobile app · $165 Ionic app · $577 Citrix/Azure engagement</p>
 </div>"""
     # Goggle Hunt
     body += """<div class="entry">
@@ -377,7 +392,7 @@ def build_full_html() -> str:
     body += f'<p style="margin-left:12pt">' + icon('microsoft', 9) + f' <span class="lbl">Microsoft Partner:</span> partner identity via {EMAIL}.</p>'
     body += f'<p style="margin-left:12pt">' + icon('anthropic', 9) + f' <span class="lbl">Anthropic Partner:</span> partner identity via {EMAIL}.</p>'
 
-    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
+    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — Resume</title><style>{_FONT_FACES}{CSS}</style></head><body>{body}</body></html>"
 
 # ── PDF Generation ────────────────────────────────────────────────────────────
 
@@ -468,7 +483,7 @@ def build_ats_html() -> str:
     body += "</ul>"
     body += '<p style="margin-top:6pt">' + icon('microsoft', 9) + ' <span class="lbl">Microsoft Partner</span> — via admin@ar27111994.dev</p>'
 
-    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — ATS Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
+    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — ATS Resume</title><style>{_FONT_FACES}{CSS}</style></head><body>{body}</body></html>"
 
 
 def build_client_html() -> str:
@@ -546,7 +561,7 @@ def build_client_html() -> str:
     body += '<p style="margin-top:3pt">' + icon('anthropic', 9) + ' <span class="lbl">Anthropic Partner</span> — 4 certifications (Jun 2026) via admin@ar27111994.dev</p>'
     body += '<p style="margin-top:6pt">' + icon('microsoft', 9) + ' <span class="lbl">Microsoft Partner</span> — via admin@ar27111994.dev</p>'
 
-    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — Client & Freelance Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
+    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — Client & Freelance Resume</title><style>{_FONT_FACES}{CSS}</style></head><body>{body}</body></html>"
 
 
 def build() -> None:
