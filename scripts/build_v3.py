@@ -134,33 +134,46 @@ def esc(text: str) -> str:
     return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 # ── Header ────────────────────────────────────────────────────────────────────
-def header(photo: bool = False) -> str:
+def header(photo: bool = False, role: str = "", badges_html: str = "", contact_count: int = 8) -> str:
     ph = f'<img class="hdr-photo" src="{PHOTO_SRC}" alt="Ahmed Rehan">' if photo and PHOTO_SRC else ""
-    return f"""<header class="hdr">
-  {ph}
-  <div class="hdr-info">
-    <h1 class="hdr-name">Ahmed Rehan</h1>
-    <p class="hdr-role">Full-Stack Engineer &bull; Devtools, Agent Systems, Automation, Webhooks &amp; Performance-Conscious Products</p>
-    <p class="hdr-loc">{icon('globe', 9)}{esc(LOCATION)}</p>
-    <div class="contact-row">
-      {icon('gmail', 8)}<a href="mailto:{EMAIL}">{EMAIL}</a>
+    r = role or "Full-Stack Engineer &bull; Devtools, Agent Systems, Automation, Webhooks &amp; Performance-Conscious Products"
+
+    contacts_row1 = f"""{icon('gmail', 8)}<a href="mailto:{EMAIL}">{EMAIL}</a>
      <span class="sep">|</span>{icon('whatsapp', 8)}{PHONE}
      <span class="sep">|</span>{icon('globe', 8)}<a href="{SITE_URL}">ar27111994.dev</a>
-     <span class="sep">|</span>{icon('github', 8)}<a href="{GITHUB_URL}">github.com/ar27111994</a>
-    </div>
+     <span class="sep">|</span>{icon('github', 8)}<a href="{GITHUB_URL}">github.com/ar27111994</a>"""
+
+    contacts_row2 = ""
+    if contact_count >= 6:
+        contacts_row2 = f"""
     <div class="contact-row">
       {icon('linkedin', 8)}<a href="{LINKEDIN_URL}">linkedin.com/in/ar27111994</a>
-     <span class="sep">|</span>{icon('upwork', 8)}<a href="{UPWORK_URL}">Upwork</a>
-     <span class="sep">|</span>{icon('x', 8)}<a href="{X_URL}">x.com/ar27111994</a>
-     <span class="sep">|</span>{icon('devdotto', 8)}<a href="{DEVTO_URL}">dev.to/ar27111994</a>
-    </div>
-    <div class="badge-row">
-      <span class="badge ms">{icon('microsoft', 7)}Microsoft Partner</span>
+     <span class="sep">|</span>{icon('upwork', 8)}<a href="{UPWORK_URL}">Upwork</a>"""
+    if contact_count >= 7:
+        contacts_row2 += f"""
+     <span class="sep">|</span>{icon('x', 8)}<a href="{X_URL}">x.com/ar27111994</a>"""
+    if contact_count >= 8:
+        contacts_row2 += f"""
+     <span class="sep">|</span>{icon('devdotto', 8)}<a href="{DEVTO_URL}">dev.to/ar27111994</a>"""
+    contacts_row2 += "\n    </div>"
+
+    badges = badges_html or f"""<span class="badge ms">{icon('microsoft', 7)}Microsoft Partner</span>
       <span class="badge anth">{icon('anthropic', 7)}Anthropic Partner</span>
       <span class="badge oss">{icon('github', 7)}Open-source maintainer</span>
       <span class="badge">Devtools builder</span>
       <span class="badge">Webhook / API tooling</span>
-      <span class="badge">AI-agent workflows</span>
+      <span class="badge">AI-agent workflows</span>"""
+
+    return f"""<header class="hdr">
+  {ph}
+  <div class="hdr-info">
+    <h1 class="hdr-name">Ahmed Rehan</h1>
+    <p class="hdr-role">{r}</p>
+    <p class="hdr-loc">{icon('globe', 9)}{esc(LOCATION)}</p>
+    <div class="contact-row">{contacts_row1}
+    </div>{contacts_row2}
+    <div class="badge-row">
+      {badges}
     </div>
   </div>
 </header>"""
@@ -453,6 +466,84 @@ def build_ats_html() -> str:
     return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — ATS Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
 
 
+def build_client_html() -> str:
+    """Client/freelance: photo, client-focused summary, Upwork-first, testimonials."""
+    body = header(photo=True, role="Full-Stack Engineer for Devtools, Webhooks, Automation & AI-Assisted Product Workflows",
+                  badges_html=f'<span class="badge ms">{icon("microsoft", 7)}Microsoft Partner</span>'
+                              f'<span class="badge anth">{icon("anthropic", 7)}Anthropic Partner</span>'
+                              f'<span class="badge">Devtools</span>'
+                              f'<span class="badge">Webhooks</span>'
+                              f'<span class="badge">AI workflows</span>'
+                              f'<span class="badge oss">{icon("github", 7)}Open source</span>',
+                  contact_count=5)
+
+    body += section("Summary", "⭐")
+    body += """<div class="entry">
+<p>Full-stack engineer and solo builder focused on developer tools, webhook/API systems, workflow automation, and AI-assisted product workflows. I help clients turn messy integration and tooling problems into shipped products with real implementation depth, reliable delivery, and clean handoff quality.</p>
+<p><span class="lbl">Best-fit work:</span> Developer tools, internal dashboards, webhook/API integrations, debugging systems, automation-heavy products, and engineering utilities.</p>
+</div>"""
+
+    body += section("Client Delivery Proof", "💼")
+    body += """<div class="entry">
+<p class="entry-title">Full-Stack Freelance Contractor</p>
+<p class="entry-meta"><span class="org">Upwork / Independent Client Work</span><span class="date">May 2017 &ndash; Feb 2018</span></p>
+<ul>
+<li>Implemented, maintained, and delivered solo projects as a freelance contractor — 40+ jobs, 5.0★ rating.</li>
+<li>Created a Microsoft Remote Desktop Services project with Citrix App Layering on Azure — learned the entire stack from scratch across a 115-hour engagement.</li>
+<li>Built and extended mobile apps with Ionic 3, Angular 5+, PHP, MySQL, and Apache Cordova; deployed backends on UNIX, Apache, Nginx.</li>
+<li>Spun out free and open-source projects from freelancing work (with client consent); contributed bugfixes to open-source libraries.</li>
+<li>Fixed, maintained, and extended existing projects developed and deployed by other developers.</li>
+</ul>
+<p class="tag">Angular · Ionic · TypeScript · PHP · MySQL · Azure · Cordova · Apache · Nginx</p>
+</div>"""
+
+    body += section("Selected Products", "🛠")
+    body += f"""<div class="entry">
+<p class="entry-title">Webhook Debugger and Logger</p>
+<p>Open-source webhook testing suite: capture, replay, forward, validate, mock, SSE streaming. Show HN front page. 25★.</p>
+<p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/webhook-debugger-logger">github.com/ar27111994/webhook-debugger-logger</a></p>
+</div>
+<div class="entry">
+<p class="entry-title">agent-harness</p>
+<p>TypeScript CLI for discovering, staging, and wiring reusable AI-agent assets across 6 coding hosts. 3★.</p>
+<p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/agent-harness">github.com/ar27111994/agent-harness</a></p>
+</div>"""
+
+    body += section("Enterprise Background", "⭐")
+    body += """<div class="entry">
+<p class="entry-title">Frontend Engineer</p>
+<p class="entry-meta"><span class="org">Eagle 6 — cybersecurity</span><span class="date">Feb 2018 &ndash; Mar 2022</span></p>
+<ul>
+<li>Built enterprise product modules: cloud storage with role-based permissions, org chart modeling (GoJS + Akita), plugin-based document editing, chunked TUS uploads.</li>
+<li>Built network monitoring dashboards: D3, Highcharts, Leaflet, OSM; standardized org-wide UI to accessible Material Design.</li>
+<li>Interviewed and helped hire frontend developers; drove code quality and mentored the team.</li>
+</ul>
+<p class="tag">Angular · TypeScript · RxJS · Akita · GoJS · D3 · Highcharts · Leaflet · Jest · SCSS</p>
+</div>
+<div class="entry">
+<p class="entry-title">Founder / Owner — Goggle Hunt</p>
+<p class="entry-meta"><span class="org">Shopify dropshipping — 600K/mo keyword, Flippa exit</span><span class="date">May 2017 &ndash; Sep 2017</span></p>
+<p>Built, marketed, and sold a Shopify store; Instagram influencer outreach, Gleam competitions, ~150 email subscribers.</p>
+</div>"""
+
+    body += section("What Clients Say", "💬")
+    body += """<div class="entry">
+<p>"Ahmed is a trusted member of our team. He has always produced top quality work. We will always return to him first when we get more work." <span class="muted">— Upwork Client, Citrix App Layering + Azure POC (115h)</span></p>
+</div>
+<div class="entry">
+<p>"Ahmed's work on our project was outstanding. His communication was top-notch, he met all deadlines, and his skills were exceptionally strong." <span class="muted">— Upwork Client, Grocery CRUD (61h)</span></p>
+</div>
+<div class="entry">
+<p>"Ahmed exemplifies everything a company would need in a Frontend Developer: Collaborative, Critical Thinker, Hard Worker, and Extremely Knowledgeable." <span class="muted">— Reilly Gray, Scrum Master II, Eagle 6</span></p>
+</div>"""
+
+    body += section("Partner Track", "⭐")
+    body += '<p style="margin-top:3pt">' + icon('anthropic', 9) + ' <span class="lbl">Anthropic Partner</span> — 4 certifications (Jun 2026) via admin@ar27111994.dev</p>'
+    body += '<p style="margin-top:6pt">' + icon('microsoft', 9) + ' <span class="lbl">Microsoft Partner</span> — via admin@ar27111994.dev</p>'
+
+    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — Client & Freelance Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
+
+
 def build() -> None:
     RESUME_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -463,6 +554,9 @@ def build() -> None:
         ("resume.pdf", build_ats_html(), "Letter",
          "Ahmed Rehan — ATS Resume",
          "ATS-safe default resume for general applications."),
+        ("resume_client_freelance.pdf", build_client_html(), "A4",
+         "Ahmed Rehan — Client & Freelance Resume",
+         "Client-facing resume focused on delivery, automation, and product workflow work."),
         ("resume_one_page.pdf", build_full_html(), "A4",
          "Ahmed Rehan — One-Page Resume",
          "Condensed one-page resume for quick scanning.", "1"),
