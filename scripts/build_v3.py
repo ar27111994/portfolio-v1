@@ -367,41 +367,137 @@ def build_full_html() -> str:
 
 # ── PDF Generation ────────────────────────────────────────────────────────────
 
-def build():
+def build_ats_html() -> str:
+    """ATS-safe: US-Letter, photo-free, single-column, condensed."""
+    body = header(photo=False)
+
+    body += section("Summary", "⭐")
+    body += """<div class="entry">
+<p>Product-minded full-stack engineer and solo builder focused on developer tools, workflow automation, agent systems, webhook/API infrastructure, and performance-conscious software.</p>
+<p><span class="lbl">Partner / certification track:</span> Microsoft Partner and Anthropic Partner via admin@ar27111994.dev; four Anthropic certifications completed Jun 2026.</p>
+</div>"""
+
+    body += section("Selected Products", "🛠")
+    body += f"""<div class="entry">
+<p class="entry-title">Webhook Debugger and Logger</p>
+<p>Enterprise webhook testing suite: capture, replay, forward, validate (JSON Schema), mock, SSE streaming. Show HN launch. 25★.</p>
+<p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/webhook-debugger-logger">github.com/ar27111994/webhook-debugger-logger</a></p>
+</div>
+<div class="entry">
+<p class="entry-title">agent-harness</p>
+<p>TypeScript CLI for discovering, staging, and wiring reusable AI-agent assets across 6 coding hosts. 3★.</p>
+<p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/agent-harness">github.com/ar27111994/agent-harness</a></p>
+</div>
+<div class="entry">
+<p class="entry-title">penpot-mcp</p>
+<p>Agent skill for creating, auditing, and maintaining Penpot design systems and design-to-code workflows via MCP. 9★.</p>
+<p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/penpot-mcp">github.com/ar27111994/penpot-mcp</a></p>
+</div>"""
+
+    body += section("Experience", "💼")
+    body += """<div class="entry">
+<p class="entry-title">Frontend Engineer</p>
+<p class="entry-meta"><span class="org">Eagle 6 — cybersecurity</span><span class="date">Feb 2018 &ndash; Mar 2022</span></p>
+<ul>
+<li>Built Cloud Storage and Org Chart Modeling modules for flagship enterprise product using Angular, Akita, GoJS.</li>
+<li>Implemented file management with role-based permissions, chunked TUS uploads, plugin-based document editing with concurrent editing and PDF export.</li>
+<li>Built network monitoring dashboards (D3, Highcharts, Leaflet, OSM); standardized org-wide UI to accessible Material Design.</li>
+<li>Interviewed and helped hire frontend developers; drove code quality through reviews and state management restructuring.</li>
+</ul>
+<p class="tag">Angular 7+ · TypeScript · RxJS · Akita · GoJS · D3 · Highcharts · Leaflet · TUS · Jest · SCSS</p>
+</div>
+<div class="entry">
+<p class="entry-title">Full-Stack Freelance Contractor</p>
+<p class="entry-meta"><span class="org">Upwork / Independent</span><span class="date">May 2017 &ndash; Feb 2018</span></p>
+<ul>
+<li>Delivered solo projects across web and mobile: 115-hour Azure/Citrix POC, $850 OpenCart app, 61-hour Grocery CRUD build.</li>
+<li>Built mobile apps with Ionic 3, Angular 5+, PHP, MySQL, Cordova; deployed backends on UNIX, Apache, Nginx.</li>
+<li>Created Microsoft Remote Desktop Services + Citrix App Layering on Azure — learned entire stack from scratch.</li>
+</ul>
+<p class="tag">Angular · Ionic · TypeScript · PHP · MySQL · Azure · Cordova · Apache · Nginx</p>
+</div>
+<div class="entry">
+<p class="entry-title">Founder / Owner — Goggle Hunt</p>
+<p class="entry-meta"><span class="org">Shopify dropshipping</span><span class="date">May 2017 &ndash; Sep 2017</span></p>
+<p>Identified 600K/mo keyword; built Shopify store with influencer marketing, Gleam competitions, 150 email subscribers; sold on Flippa.</p>
+</div>"""
+
+    body += section("Technical Skills", "⚙")
+    body += """<div class="skills-grid">
+<div class="skill-block frontend"><h3>Frontend</h3><p>TypeScript · Angular · React · Next.js · RxJS · Angular Material · Akita · Jest · SCSS · D3 · Highcharts · GoJS · Leaflet</p></div>
+<div class="skill-block backend"><h3>Backend / Systems</h3><p>Node.js · Express · ASP.NET Core · PHP · CodeIgniter · WordPress · OpenCart · API integrations · automation</p></div>
+<div class="skill-block data"><h3>Data / Delivery</h3><p>MySQL · SQL Server · Docker · Azure · Linux · Git · GitHub · Jira · VS Code</p></div>
+<div class="skill-block infra"><h3>Infrastructure</h3><p>Apache · Nginx · IIS · Cordova · Xamarin · Citrix App Layering</p></div>
+</div>"""
+
+    body += section("Education", "🎓")
+    body += """<div class="entry">
+<p class="entry-title">M.C.S. — Master of Computer Science</p>
+<p class="entry-meta"><span class="org">Arid Agriculture University, Rawalpindi</span><span class="date">2014 &ndash; 2016</span></p>
+</div>
+<div class="entry">
+<p class="entry-title">B.Sc. — Computer, Statistics and Mathematics</p>
+<p class="entry-meta"><span class="org">University of the Punjab</span><span class="date">2012 &ndash; 2014</span></p>
+</div>"""
+
+    body += section("Certifications", "📜")
+    for name, url, date, *_ in COURSERA_CERTS[:2]:  # Top 2 only for ATS
+        body += f"""<div class="entry">
+<p class="entry-title">Coursera — {esc(name)}</p>
+<p class="entry-meta"><span class="org">{date}</span><span></span></p>
+</div>"""
+
+    body += '<p style="margin-top:9pt">' + icon('anthropic', 9) + ' <span class="lbl">Anthropic Partner</span> — 4 certifications (Jun 2026)</p>'
+    body += '<p style="margin-top:6pt">' + icon('microsoft', 9) + ' <span class="lbl">Microsoft Partner</span> — via admin@ar27111994.dev</p>'
+
+    return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — ATS Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
+
+
+def build() -> None:
     RESUME_DIR.mkdir(parents=True, exist_ok=True)
 
-    html = build_full_html()
-    path = RESUME_DIR / "resume_full.pdf"
-    tmp = RESUME_DIR / "resume_full_tmp.pdf"
+    variants = [
+        ("resume_full.pdf", build_full_html(), "A4",
+         "Ahmed Rehan — Full Resume",
+         "Comprehensive resume with project depth, experience, education, and public proof."),
+        ("resume.pdf", build_ats_html(), "Letter",
+         "Ahmed Rehan — ATS Resume",
+         "ATS-safe default resume for general applications."),
+        ("resume_one_page.pdf", build_full_html(), "A4",
+         "Ahmed Rehan — One-Page Resume",
+         "Condensed one-page resume for quick scanning.", "1"),
+    ]
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
-        page.set_content(html, wait_until="networkidle")
-        page.pdf(path=str(tmp), format="A4", print_background=True)
-        browser.close()
+    for filename, html, page_format, title, subject, *rest in variants:
+        page_ranges = rest[0] if rest else None
+        path = RESUME_DIR / filename
+        tmp = RESUME_DIR / (filename + ".tmp")
 
-    # Replace final file
-    import shutil
-    shutil.move(str(tmp), str(path))
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page()
+            page.set_content(html, wait_until="networkidle")
+            page.pdf(path=str(tmp), format=page_format, print_background=True,
+                     page_ranges=page_ranges)
+            browser.close()
 
-    # Add metadata
-    reader = PdfReader(str(path))
-    writer = PdfWriter()
-    for pg in reader.pages:
-        writer.add_page(pg)
-    writer.add_metadata({
-        "/Title": "Ahmed Rehan — Full Resume",
-        "/Author": "Ahmed Rehan",
-        "/Subject": "Comprehensive resume with project depth, experience, education, and public proof.",
-        "/Keywords": "Ahmed Rehan, full stack engineer, devtools, automation, webhook, AI agent, resume",
-    })
-    with open(str(path), "wb") as f:
-        writer.write(f)
+        import shutil
+        shutil.move(str(tmp), str(path))
 
-    import os
-    print(f"  resume_full.pdf: {os.path.getsize(path)} bytes")
-    print("\nDone.")
+        reader = PdfReader(str(path))
+        writer = PdfWriter()
+        for pg in reader.pages:
+            writer.add_page(pg)
+        writer.add_metadata({
+            "/Title": title, "/Author": "Ahmed Rehan",
+            "/Subject": subject,
+            "/Keywords": "Ahmed Rehan, full stack engineer, devtools, automation, webhook, AI agent, resume",
+        })
+        with open(str(path), "wb") as f:
+            writer.write(f)
+
+        import os
+        print(f"  {filename}: {os.path.getsize(path)} bytes")
 
 if __name__ == "__main__":
     build()
