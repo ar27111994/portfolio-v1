@@ -46,3 +46,5 @@ scripts/raw.json
 raw.json
 coverage/
 lcov.info
+__pycache__/
+public/pic.jpg
