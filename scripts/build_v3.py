@@ -155,7 +155,8 @@ def header(photo: bool = False, role: str = "", badges_html: str = "", contact_c
     if contact_count >= 8:
         contacts_row2 += f"""
      <span class="sep">|</span>{icon('devdotto', 8)}<a href="{DEVTO_URL}">dev.to/ar27111994</a>"""
-    contacts_row2 += "\n    </div>"
+    if contact_count >= 6:
+        contacts_row2 += "\n    </div>"
 
     badges = badges_html or f"""<span class="badge ms">{icon('microsoft', 7)}Microsoft Partner</span>
       <span class="badge anth">{icon('anthropic', 7)}Anthropic Partner</span>
@@ -454,13 +455,17 @@ def build_ats_html() -> str:
 </div>"""
 
     body += section("Certifications", "📜")
-    for name, url, date, *_ in COURSERA_CERTS[:2]:  # Top 2 only for ATS
+    for name, url, date, *_ in COURSERA_CERTS[:2]:
         body += f"""<div class="entry">
 <p class="entry-title">Coursera — {esc(name)}</p>
 <p class="entry-meta"><span class="org">{date}</span><span></span></p>
 </div>"""
 
-    body += '<p style="margin-top:9pt">' + icon('anthropic', 9) + ' <span class="lbl">Anthropic Partner</span> — 4 certifications (Jun 2026)</p>'
+    body += '<p style="margin-top:9pt">' + icon('anthropic', 9) + ' <span class="lbl">Anthropic Partner</span> — 4 certifications completed Jun 2026:</p>'
+    body += "<ul>"
+    for name, *_ in ANTHROPIC_CERTS:
+        body += f'<li><span class="lbl">{esc(name)}</span></li>'
+    body += "</ul>"
     body += '<p style="margin-top:6pt">' + icon('microsoft', 9) + ' <span class="lbl">Microsoft Partner</span> — via admin@ar27111994.dev</p>'
 
     return f"<!DOCTYPE html><html lang='en'><head><meta charset='utf-8'><title>Ahmed Rehan — ATS Resume</title><style>{CSS}</style></head><body>{body}</body></html>"
