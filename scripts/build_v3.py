@@ -87,14 +87,14 @@ body {
   margin: 0 0 6pt; line-height: 1.4;
 }
 .hdr-loc { font-size: 8pt; color: #64748b; margin: 0 0 7pt; }
-.hdr-loc img { vertical-align: -1pt; margin-right: 2pt; }
+.hdr-loc img { vertical-align: -1pt; margin-right: 1pt; }
 
 .contact-row {
-  display: flex; flex-wrap: wrap; gap: 2pt 10pt;
+  display: flex; flex-wrap: wrap; gap: 1pt 6pt;
   font-size: 7.8pt; color: #475569; margin-bottom: 7pt;
 }
 .contact-row a { color: #2563eb; text-decoration: none; font-weight: 500; }
-.contact-row img { vertical-align: -1.5pt; margin-right: 2pt; }
+.contact-row img { vertical-align: -1.5pt; margin-right: 0.5pt; }
 .contact-row .sep { color: #cbd5e1; }
 
 /* ── Badges ─── */
@@ -192,23 +192,23 @@ def header(photo: bool = False) -> str:
   <div class="hdr-info">
     <h1 class="hdr-name">Ahmed Rehan</h1>
     <p class="hdr-role">Full-Stack Engineer &bull; Devtools, Agent Systems, Automation, Webhooks &amp; Performance-Conscious Products</p>
-    <p class="hdr-loc">{icon('globe', 9)} {esc(LOCATION)}</p>
+    <p class="hdr-loc">{icon('globe', 9)}{esc(LOCATION)}</p>
     <div class="contact-row">
-      {icon('gmail', 8)} <a href="mailto:{EMAIL}">{EMAIL}</a>
-      <span class="sep">|</span> {icon('whatsapp', 8)} {PHONE}
-      <span class="sep">|</span> {icon('globe', 8)} <a href="{SITE_URL}">ar27111994.dev</a>
-      <span class="sep">|</span> {icon('github', 8)} <a href="{GITHUB_URL}">github.com/ar27111994</a>
+      {icon('gmail', 8)}<a href="mailto:{EMAIL}">{EMAIL}</a>
+      <span class="sep">|</span> {icon('whatsapp', 8)}{PHONE}
+      <span class="sep">|</span> {icon('globe', 8)}<a href="{SITE_URL}">ar27111994.dev</a>
+      <span class="sep">|</span> {icon('github', 8)}<a href="{GITHUB_URL}">github.com/ar27111994</a>
     </div>
     <div class="contact-row">
-      {icon('linkedin', 8)} <a href="{LINKEDIN_URL}">linkedin.com/in/ar27111994</a>
-      <span class="sep">|</span> {icon('upwork', 8)} <a href="{UPWORK_URL}">Upwork</a>
-      <span class="sep">|</span> {icon('x', 8)} <a href="{X_URL}">x.com/ar27111994</a>
-      <span class="sep">|</span> {icon('devdotto', 8)} <a href="{DEVTO_URL}">dev.to/ar27111994</a>
+      {icon('linkedin', 8)}<a href="{LINKEDIN_URL}">linkedin.com/in/ar27111994</a>
+      <span class="sep">|</span> {icon('upwork', 8)}<a href="{UPWORK_URL}">Upwork</a>
+      <span class="sep">|</span> {icon('x', 8)}<a href="{X_URL}">x.com/ar27111994</a>
+      <span class="sep">|</span> {icon('devdotto', 8)}<a href="{DEVTO_URL}">dev.to/ar27111994</a>
     </div>
     <div class="badge-row">
-      <span class="badge ms">{icon('microsoft', 7)} Microsoft Partner</span>
-      <span class="badge anth">{icon('anthropic', 7)} Anthropic Partner</span>
-      <span class="badge oss">{icon('github', 7)} Open-source maintainer</span>
+      <span class="badge ms">{icon('microsoft', 7)}Microsoft Partner</span>
+      <span class="badge anth">{icon('anthropic', 7)}Anthropic Partner</span>
+      <span class="badge oss">{icon('github', 7)}Open-source maintainer</span>
       <span class="badge">Devtools builder</span>
       <span class="badge">Webhook / API tooling</span>
       <span class="badge">AI-agent workflows</span>
