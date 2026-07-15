@@ -2563,3 +2563,58 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
 }
+
+/* ── Contact Widgets ─────────────────────────────────────────────── */
+.contact-widget {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.contact-widget:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.contact-widget:hover strong,
+.contact-widget:hover em { color: #fff; }
+.contact-widget strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+.contact-widget em {
+  display: block;
+  font-size: 0.78rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--blue);
+}
+.contact-widget small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.widget-icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 12px;
+  background: rgba(17,17,17,0.04);
+  flex-shrink: 0;
+}
+.widget-icon img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
