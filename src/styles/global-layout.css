@@ -2908,3 +2908,180 @@ h3 {
 .availability-command-strip > span {
   cursor: default;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PREMIUM VISUAL UPGRADE — glass, depth, gradient accents, glow
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Glass / Translucency on Panels ──────────────────────────────── */
+.panel {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Premium Section Headers ─────────────────────────────────────── */
+.section-head {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--blue), var(--orange), var(--green)) 1;
+}
+.section-head h2 {
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+}
+
+/* ── Enhanced Card Shadows (multi-layer depth) ───────────────────── */
+.service-card,
+.lab-card,
+.testimonial-card,
+.resource-card,
+.upwork-proof-card {
+  box-shadow:
+    0 1px 2px rgba(17,17,17,0.04),
+    0 4px 16px rgba(17,17,17,0.06);
+}
+.project-card,
+.upwork-portfolio-card {
+  box-shadow:
+    0 1px 2px rgba(17,17,17,0.05),
+    0 8px 24px rgba(17,17,17,0.08);
+}
+
+/* ── Glow on Hover ───────────────────────────────────────────────── */
+.service-card:hover,
+.lab-card:hover,
+.testimonial-card:hover,
+.capability-card-grid li:hover {
+  box-shadow:
+    0 1px 2px rgba(17,17,17,0.04),
+    0 8px 28px rgba(36,87,255,0.15),
+    0 0 0 1px rgba(36,87,255,0.15);
+}
+.project-card:hover,
+.upwork-portfolio-card:hover {
+  box-shadow:
+    0 1px 2px rgba(17,17,17,0.05),
+    0 12px 40px rgba(17,17,17,0.12),
+    0 0 0 1px rgba(17,17,17,0.08);
+}
+.resource-card:hover {
+  box-shadow:
+    0 4px 16px rgba(17,17,17,0.06),
+    0 0 0 1px var(--line-dark);
+}
+
+/* ── CTA Button Shimmer ──────────────────────────────────────────── */
+.hire-cta-btn {
+  position: relative;
+  overflow: hidden;
+}
+.hire-cta-btn:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.2) 45%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0.2) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* ── Decorative Corner Accent on Feature Cards ───────────────────── */
+.case-study-card {
+  position: relative;
+}
+.case-study-card:before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  width: 3rem; height: 3rem;
+  background: linear-gradient(135deg, transparent 50%, var(--blue) 50%);
+  opacity: 0.06;
+  border-radius: 0 var(--radius-lg) 0 0;
+}
+
+/* ── Section Divider Art ─────────────────────────────────────────── */
+.panel + .panel {
+  margin-top: 0.5rem;
+}
+
+/* ── Gradient Number Badges ──────────────────────────────────────── */
+.proof-stack-metrics b {
+  background: linear-gradient(135deg, var(--blue), #6b8aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Pulse Dot for Availability ──────────────────────────────────── */
+.wm-avail {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ── Rich Testimonial Quote Marks ────────────────────────────────── */
+.testimonial-quote {
+  position: relative;
+}
+.testimonial-quote:before {
+  content: "\201C";
+  position: absolute;
+  top: -0.5rem;
+  left: -0.3rem;
+  font-size: 3.5rem;
+  line-height: 0.6;
+  color: var(--violet);
+  opacity: 0.15;
+  font-family: Georgia, serif;
+}
+
+/* ── Case Study Metric Bubbles ───────────────────────────────────── */
+.cs-metrics li {
+  position: relative;
+  overflow: hidden;
+}
+.cs-metrics li:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--green), #3dbe88);
+  opacity: 0.08;
+  border-radius: 999px;
+}
+
+/* ── Elevated Contact Widget ─────────────────────────────────────── */
+.contact-widget {
+  box-shadow:
+    0 1px 3px rgba(17,17,17,0.04),
+    0 4px 12px rgba(17,17,17,0.06);
+}
+.contact-widget:hover {
+  box-shadow:
+    0 4px 16px rgba(17,17,17,0.08),
+    0 8px 32px rgba(36,87,255,0.12);
+}
+
+/* ── Subtle Card Entry Animation Support ─────────────────────────── */
+.service-card,
+.lab-card,
+.project-card,
+.case-study-card,
+.testimonial-card,
+.resource-card,
+.capability-card-grid li {
+  transition:
+    transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
