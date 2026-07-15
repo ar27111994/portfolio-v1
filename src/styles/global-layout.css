@@ -2618,3 +2618,10 @@ h3 {
   height: 1.25rem;
   object-fit: contain;
 }
+
+/* ── Fallback Feed ───────────────────────────────────────────────── */
+.fallback-feed {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
