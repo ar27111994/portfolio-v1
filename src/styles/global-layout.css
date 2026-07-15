@@ -339,8 +339,8 @@ summary:focus-visible {
   opacity: 0.9;
 }
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr);
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr) !important;
   align-items: stretch;
   gap: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(1.4rem, 3vw, 2.4rem);
