@@ -2521,3 +2521,45 @@ h3 {
   color: var(--ink-soft);
 }
 
+
+/* ── Section Panel Variants ──────────────────────────────────────── */
+.services-panel {
+  background:
+    linear-gradient(135deg, #fffdf8f0, #fff7ed),
+    radial-gradient(circle at 90% 20%, rgba(240,107,36,0.12), transparent 20rem);
+}
+.lab-panel {
+  background:
+    linear-gradient(135deg, #fffdf8f0, #f0f9ff),
+    radial-gradient(circle at 10% 80%, rgba(36,87,255,0.08), transparent 20rem);
+}
+.testimonials-panel {
+  background:
+    linear-gradient(135deg, #fffdf8f0, #faf5ff),
+    radial-gradient(circle at 80% 40%, rgba(124,58,237,0.08), transparent 20rem);
+}
+.contact-panel {
+  background:
+    linear-gradient(135deg, #fffdf8f0, #ecfdf5),
+    radial-gradient(circle at 20% 80%, rgba(13,114,71,0.08), transparent 20rem);
+}
+
+/* ── Grid Variants ───────────────────────────────────────────────── */
+.grid.compact { gap: 0.8rem; }
+.grid.four {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* ── Writing Grid ────────────────────────────────────────────────── */
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.9rem;
+}
+
+/* ── Contact Widget Grid ─────────────────────────────────────────── */
+.contact-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
