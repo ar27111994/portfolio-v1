@@ -2625,3 +2625,187 @@ h3 {
   padding-top: 1rem;
   border-top: 1px solid var(--line);
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   Section Card Polish — hover, spacing, typography refinements
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Service Cards ─────────────────────────────────────────────── */
+.service-card {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.service-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(36, 87, 255, 0.12);
+}
+
+/* ── Lab Cards ─────────────────────────────────────────────────── */
+.lab-card {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.lab-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(36, 87, 255, 0.12);
+}
+
+/* ── Project Cards ─────────────────────────────────────────────── */
+.project-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(32, 24, 16, 0.15);
+}
+.project-visual {
+  overflow: hidden;
+  position: relative;
+}
+.project-visual:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 60%, rgba(0,0,0,0.03));
+}
+.project-card h3 a {
+  transition: color 0.15s;
+}
+.project-card h3 a:hover {
+  color: var(--blue);
+}
+.mini-list li {
+  padding: 0.22rem 0;
+  border-bottom: 1px solid rgba(17,17,17,0.06);
+}
+.mini-list li:last-child { border-bottom: none; }
+
+/* ── Case Study Cards ──────────────────────────────────────────── */
+.case-study-card {
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.case-study-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-dark);
+}
+.cs-block h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* ── Testimonial Cards ──────────────────────────────────────────── */
+.testimonial-card {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--violet);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+}
+
+/* ── Resource Cards (Proof section) ─────────────────────────────── */
+.resource-card {
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.resource-card:hover {
+  border-color: var(--line-dark);
+}
+.multi-col li {
+  padding: 0.25rem 0;
+}
+.multi-col a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+.multi-col a:hover {
+  color: var(--blue);
+}
+
+/* ── Capability Cards ───────────────────────────────────────────── */
+.capability-card-grid li {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.capability-card-grid li:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(36, 87, 255, 0.12);
+}
+.capability-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 10px;
+  background: rgba(36,87,255,0.08);
+  flex-shrink: 0;
+}
+.capability-icon img {
+  width: 1.1rem;
+  height: 1.1rem;
+  object-fit: contain;
+}
+.capability-index {
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.capability-topline {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ── Feed Widget Polish ─────────────────────────────────────────── */
+.feed-status {
+  padding: 0.6rem 0.8rem;
+  border-radius: 12px;
+  background: rgba(202,255,128,0.15);
+}
+.feed-list {
+  margin-top: 0.6rem;
+}
+.feed-item {
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.feed-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(202,255,128,0.4);
+}
+
+/* ── Source Cards ───────────────────────────────────────────────── */
+.feed-source-card {
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.feed-source-card:hover {
+  transform: translateY(-1px);
+}
+.feed-source-card:hover small {
+  color: inherit;
+}
+
+/* ── Upwork / Portfolio Cards ───────────────────────────────────── */
+.upwork-portfolio-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.upwork-portfolio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(32, 24, 16, 0.15);
+}
+
+/* ── Writing Items ──────────────────────────────────────────────── */
+.writing-item {
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+.writing-item:hover {
+  background: rgba(36,87,255,0.06);
+}
