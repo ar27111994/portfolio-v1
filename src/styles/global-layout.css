@@ -933,10 +933,11 @@ h3 {
   align-items: center;
   height: 100%;
   padding-left: 0.58rem;
-  color: #111;
+  color: #e7e7e7;
   font-style: normal;
+  font-weight: 800;
   font-size: 0.72rem;
-  font-weight: 900;
+  letter-spacing: 0.04em;
 }
 .signal-tags {
   display: flex;
