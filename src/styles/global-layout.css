@@ -341,7 +341,7 @@ summary:focus-visible {
 .hero {
   display: grid !important;
   grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.75fr) !important;
-  align-items: stretch;
+  align-items: start;
   gap: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(1.4rem, 3vw, 2.4rem);
   background:
@@ -361,6 +361,7 @@ summary:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-self: start;
   min-height: 0;
 }
 .hero-copy > * {
@@ -459,10 +460,12 @@ h3 {
 .availability-strip {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
   gap: 0.6rem;
   margin-top: 1rem;
 }
 .availability-strip span {
+  align-content: start;
   border: 1px solid var(--line-dark);
   border-radius: 18px;
   background: #ffffffb8;
@@ -538,9 +541,8 @@ h3 {
   line-height: 1.35;
 }
 .workflow-loop {
-  position: relative;
+  flex-wrap: nowrap;
   overflow: hidden;
-  padding-right: 0.75rem;
 }
 .workflow-loop:after {
   content: none;
