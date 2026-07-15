@@ -554,16 +554,20 @@ h3 {
   content: none;
 }
 .availability-strip .wide b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: auto;
   margin: 0 0.15rem 0 0;
-  padding: 0.16rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   border: 1px solid rgba(202, 255, 128, 0.46);
   background: #caff80;
   color: #111;
   font-size: 0.74rem;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+}
 }
 .availability-strip .wide em {
   font-style: normal;
