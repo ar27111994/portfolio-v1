@@ -1751,7 +1751,9 @@ h3 {
 }
 .upwork-fit {
   border-top: 1px solid var(--line);
-  padding-top: 1rem;
+  border-bottom: 1px solid var(--line);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
 .upwork-fit h3 {
   margin: 0 0 0.75rem;
