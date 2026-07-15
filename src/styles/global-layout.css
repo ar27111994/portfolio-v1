@@ -1728,6 +1728,22 @@ h3 {
   line-height: 1.1;
   vertical-align: middle;
 }
+.upwork-panel-grid {
+  display: grid;
+  gap: 2rem;
+}
+.upwork-proof-strip h3 {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-size: var(--step-1);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.upwork-proof-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
 .upwork-portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
