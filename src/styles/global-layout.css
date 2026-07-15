@@ -364,6 +364,7 @@ summary:focus-visible {
   flex-direction: column;
   justify-content: flex-start;
   align-self: start;
+  gap: 0.5rem;
   min-height: 0;
 }
 .hero-copy > * {
@@ -464,7 +465,7 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
   gap: 0.6rem;
-  margin-top: 0.6rem;
+  margin-top: 0;
 }
 .availability-strip span {
   align-content: start;
@@ -624,7 +625,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.42rem;
-  margin-top: 0.8rem;
+  margin-top: 0;
 }
 .badge-row span,
 .chip {
