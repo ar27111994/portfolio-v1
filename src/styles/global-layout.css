@@ -507,7 +507,7 @@ h3 {
   font-size: 0.86rem;
   vertical-align: middle;
 }
-.availability-card b {
+.availability-strip .availability-card b {
   display: inline-block;
   width: max-content;
   height: auto;
