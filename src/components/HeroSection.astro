@@ -72,7 +72,7 @@ const {
             {badge.icon ? (
               <img
                 src={badge.icon}
-                alt=""
+                alt={`${badge.label} icon`}
                 width="16"
                 height="16"
                 loading="lazy"
@@ -130,8 +130,8 @@ const {
     >
     <span class="wide workflow-loop">
       <b>Current loop</b>
-      <em>Diagnose</em><i aria-hidden="true"></i><em>Build</em><i
-        aria-hidden="true"></i><em>Document</em><i aria-hidden="true"></i><em
+      <em>Diagnose</em><i role="presentation"></i><em>Build</em><i
+        role="presentation"></i><em>Document</em><i role="presentation"></i><em
         >Launch</em
       >
     </span>
@@ -165,7 +165,7 @@ const {
           >OSS</span
         ><span>Docs</span>
       </div>
-      <div class="signal-icons" aria-hidden="true">
+      <div class="signal-icons">
         <span>CLI</span><span>API</span><span>AI</span>
       </div>
       <p class="signal-note" data-proof-status>
