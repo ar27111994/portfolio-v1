@@ -3714,10 +3714,11 @@ h3 {
 .writing-card-meta { font-size: 0.68rem; color: var(--muted); font-weight: 600; }
 .feed-live-widget { border: 1px solid var(--line-subtle); border-radius: var(--radius-lg); background: radial-gradient(ellipse 24rem 18rem at 10% 10%, rgba(92,138,255,0.06), transparent), var(--card-strong); color: #ede8e0; padding: 0.75rem; margin-bottom: 0.75rem; box-shadow: var(--shadow-card); }
 .feed-live-status { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #8a8278; margin-bottom: 0.5rem; }
-.feed-live-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.feed-live-list { display: flex; flex-direction: column; gap: 0.45rem; }
+.feed-sentinel { height: 1px; }
 .feed-item {
   display: grid; grid-template-columns: auto 1fr; gap: 0.55rem; align-items: start;
-  padding: 0.6rem 0.7rem; border: 1px solid rgba(237,232,224,0.08); border-radius: var(--radius-sm);
+  padding: 0.65rem 0.75rem; border: 1px solid rgba(237,232,224,0.08); border-radius: var(--radius-sm);
   text-decoration: none; color: #ede8e0; background: rgba(255,255,255,0.03);
   transition: transform var(--dur-fast) var(--ease-spring), border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
 }
@@ -3738,7 +3739,6 @@ h3 {
 .feed-source-pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
 .feed-source-pill:hover small { color: #aaa; }
-.feed-sentinel { height: 1px; }
 .feed-sources-carousel .swiper-slide { width: auto; height: auto; }
 
 /* Platform-specific feed item accents */
@@ -3757,4 +3757,4 @@ h3 {
 .feed-source-xtwitter .feed-item-tag { background: rgba(255,255,255,0.1); color: #ccc; }
 .feed-source-linkedin .feed-item-tag { background: rgba(10,102,194,0.25); color: #4da6ff; }
 .feed-source-coderlegion .feed-item-tag { background: rgba(139,92,246,0.2); color: #b794ff; }
-@media (max-width: 600px) { .writing-grid { grid-template-columns: 1fr; } .feed-live-list { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .writing-grid { grid-template-columns: 1fr; } }
