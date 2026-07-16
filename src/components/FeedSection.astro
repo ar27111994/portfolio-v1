@@ -12,8 +12,8 @@ const { feedSources } = Astro.props;
     <div>
       <h2 id="feed-title">Public work feed</h2>
       <p>
-        Live content pulled from dev.to, GitHub, and Hacker News APIs on page
-        load. Falls back gracefully when APIs are rate-limited or blocked.
+        Live content pulled from dev.to, GitHub, HN, Hashnode, CoderLegion,
+        X/Twitter, and LinkedIn APIs. Scroll to load more — newest first.
       </p>
     </div>
     <a
@@ -26,37 +26,40 @@ const { feedSources } = Astro.props;
     </a>
   </div>
 
-  <!-- Fully dynamic live feed -->
+  <!-- Fully dynamic live feed with infinite scroll -->
   <div class="feed-live-widget" data-feed-widget>
     <div class="feed-live-status" data-feed-status>Loading public feed items…</div>
     <div class="feed-live-list" data-feed-list></div>
+    <div id="feed-sentinel" class="feed-sentinel" aria-hidden="true"></div>
   </div>
 
-  <!-- Feed sources -->
-  <details class="feed-sources-details">
-    <summary>Feed sources ({feedSources.length})</summary>
-    <div class="feed-sources-grid">
+  <!-- Feed sources carousel -->
+  <div class="feed-sources-carousel swiper" id="feed-sources-swiper">
+    <div class="swiper-wrapper">
       {
         feedSources.map((source) => (
-          <a
-            class="feed-source-pill"
-            href={source.href}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src={source.icon}
-              alt=""
-              width="18"
-              height="18"
-              loading="lazy"
-              decoding="async"
-            />
-            <span>{source.label}</span>
-            <small>{source.type}</small>
-          </a>
+          <div class="swiper-slide">
+            <a
+              class="feed-source-pill"
+              href={source.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={source.icon}
+                alt=""
+                width="18"
+                height="18"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>{source.label}</span>
+              <small>{source.type}</small>
+            </a>
+          </div>
         ))
       }
     </div>
-  </details>
+    <div class="swiper-pagination"></div>
+  </div>
 </section>

@@ -86,7 +86,7 @@ function initPage() {
       }));
 
     // Show fallback immediately, then replace with live data when ready
-    renderFeed(
+    renderInitialFeed(
       { widget, status, list },
       [{ title: "Fetching live content from dev.to, GitHub, HN…", url: "#", source: "Loading", icon: "", tag: "Live" }],
       "Fetching live feed data…",
@@ -129,46 +129,63 @@ function initPage() {
   // widget/status/list/fallbackItems are now passed in from the deferred setTimeout
   // to avoid forced layout queries on the main thread at page load.
 
-  function renderFeed(ctx, items, message) {
+  let allFeedItems = [];
+  let feedVisible = 0;
+  const FEED_BATCH = 6;
+
+  function createFeedItem(item) {
+    const a = document.createElement("a");
+    a.className = `feed-item feed-source-${item.source.toLowerCase().replace(/[^a-z0-9]/g, "-")}`;
+    a.href = item.url;
+    a.target = "_blank";
+    a.rel = "noreferrer";
+    // Icon
+    if (item.icon) {
+      const iconWrap = document.createElement("span");
+      iconWrap.className = "feed-item-icon";
+      const img = document.createElement("img");
+      img.src = item.icon;
+      img.alt = "";
+      img.width = 16;
+      img.height = 16;
+      img.loading = "lazy";
+      iconWrap.appendChild(img);
+      a.appendChild(iconWrap);
+    }
+    // Body
+    const body = document.createElement("span");
+    body.className = "feed-item-body";
+    if (item.tag) {
+      const tag = document.createElement("span");
+      tag.className = "feed-item-tag";
+      tag.textContent = item.tag;
+      body.appendChild(tag);
+    }
+    const title = document.createElement("strong");
+    title.textContent = item.title;
+    body.appendChild(title);
+    const meta = document.createElement("small");
+    meta.textContent = `${item.source} · ${item.date}`;
+    body.appendChild(meta);
+    a.appendChild(body);
+    return a;
+  }
+
+  function showMoreFeed(list) {
+    const batch = allFeedItems.slice(feedVisible, feedVisible + FEED_BATCH);
+    batch.forEach((item) => list.appendChild(createFeedItem(item)));
+    feedVisible += batch.length;
+    // Hide sentinel if no more items
+    const sentinel = document.getElementById("feed-sentinel");
+    if (sentinel) sentinel.style.display = feedVisible >= allFeedItems.length ? "none" : "";
+  }
+
+  function renderInitialFeed(ctx, items, message) {
     if (!ctx.widget || !ctx.status || !ctx.list) return;
     ctx.list.innerHTML = "";
-    items.slice(0, 12).forEach((item) => {
-      const a = document.createElement("a");
-      a.className = "feed-item";
-      a.href = item.url;
-      a.target = "_blank";
-      a.rel = "noreferrer";
-      // Icon
-      if (item.icon) {
-        const iconWrap = document.createElement("span");
-        iconWrap.className = "feed-item-icon";
-        const img = document.createElement("img");
-        img.src = item.icon;
-        img.alt = "";
-        img.width = 16;
-        img.height = 16;
-        img.loading = "lazy";
-        iconWrap.appendChild(img);
-        a.appendChild(iconWrap);
-      }
-      // Body
-      const body = document.createElement("span");
-      body.className = "feed-item-body";
-      if (item.tag) {
-        const tag = document.createElement("span");
-        tag.className = "feed-item-tag";
-        tag.textContent = item.tag;
-        body.appendChild(tag);
-      }
-      const title = document.createElement("strong");
-      title.textContent = item.title;
-      body.appendChild(title);
-      const meta = document.createElement("small");
-      meta.textContent = `${item.source} · ${item.date}`;
-      body.appendChild(meta);
-      a.appendChild(body);
-      ctx.list.appendChild(a);
-    });
+    allFeedItems = items;
+    feedVisible = 0;
+    showMoreFeed(ctx.list);
     ctx.status.textContent = message;
   }
 
@@ -388,7 +405,7 @@ function initPage() {
     } catch { /* API unavailable — skip */ }
 
     if (items.length) {
-      renderFeed(ctx, items, `Live feed · ${items.length} items from dev.to, GitHub, HN, Hashnode, X, LinkedIn, CoderLegion`);
+      renderInitialFeed(ctx, items, `Live feed · ${items.length} items from dev.to, GitHub, HN, Hashnode, X, LinkedIn, CoderLegion`);
     } else {
       status.textContent = "Live feed unavailable — APIs may be rate-limited or blocked.";
     }
@@ -465,6 +482,18 @@ function initPage() {
         autoplay: { delay: 3500, pauseOnMouseEnter: true, disableOnInteraction: false },
         pagination: { el: ".swiper-pagination", clickable: true },
         a11y: { prevSlideMessage: "Previous profile links", nextSlideMessage: "Next profile links" }
+      });
+    }
+
+    // Feed sources carousel — pill cards, auto-width slides
+    const feedSourcesEl = document.getElementById("feed-sources-swiper");
+    if (feedSourcesEl) {
+      new Swiper("#feed-sources-swiper", {
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        autoplay: { delay: 4000, pauseOnMouseEnter: true, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        a11y: { prevSlideMessage: "Previous feed sources", nextSlideMessage: "Next feed sources" }
       });
     }
   };
@@ -706,11 +735,26 @@ function initPage() {
   };
 
   if ("requestIdleCallback" in window) {
-    requestIdleCallback(() => { initSwipers(); initUpworkPagination(); }, { timeout: 3000 });
+  requestIdleCallback(() => { initSwipers(); initUpworkPagination(); }, { timeout: 3000 });
   } else {
-    setTimeout(() => { initSwipers(); initUpworkPagination(); }, 200);
+  setTimeout(() => { initSwipers(); initUpworkPagination(); }, 200);
   }
-} // end initPage
+
+  // ── TIER 4: Infinite scroll sentinel for feed ──────────────────────────
+  if ("requestIdleCallback" in window) {
+  requestIdleCallback(function setupFeedSentinel() {
+    const sentinel = document.getElementById("feed-sentinel");
+    const list = document.querySelector("[data-feed-list]");
+    if (!sentinel || !list) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) showMoreFeed(list);
+      });
+    }, { rootMargin: "0px 0px 200px 0px" });
+    observer.observe(sentinel);
+  }, { timeout: 4000 });
+  }
+  } // end initPage
 
 // Run on first load and after every ClientRouter navigation.
 document.addEventListener("astro:page-load", initPage);

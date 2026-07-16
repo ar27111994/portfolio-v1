@@ -3728,7 +3728,7 @@ h3 {
 .feed-item-tag { display: inline-block; width: fit-content; padding: 0.08rem 0.4rem; border-radius: 999px; background: rgba(92,138,255,0.15); color: #5c8aff; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .feed-item-body strong { font-size: 0.78rem; font-weight: 700; color: #ede8e0; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .feed-item-body small { font-size: 0.65rem; color: #8a8278; font-weight: 600; }
-.feed-sources-details { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); }
+.feed-sources-carousel { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); overflow: visible; padding-bottom: 2.5rem; }
 .feed-sources-details summary { cursor: pointer; font-weight: 700; font-size: 0.8rem; color: var(--muted); transition: color var(--dur-fast) var(--ease-out); }
 .feed-sources-details summary:hover { color: var(--blue); }
 .feed-sources-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.55rem; }
@@ -3738,4 +3738,23 @@ h3 {
 .feed-source-pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
 .feed-source-pill:hover small { color: #aaa; }
+.feed-sentinel { height: 1px; }
+.feed-sources-carousel .swiper-slide { width: auto; height: auto; }
+
+/* Platform-specific feed item accents */
+.feed-source-dev-to .feed-item-icon { background: rgba(74,144,226,0.2); }
+.feed-source-github .feed-item-icon { background: rgba(255,255,255,0.15); }
+.feed-source-hacker-news .feed-item-icon { background: rgba(255,102,0,0.2); }
+.feed-source-hashnode .feed-item-icon { background: rgba(41,98,255,0.2); }
+.feed-source-xtwitter .feed-item-icon { background: rgba(255,255,255,0.2); }
+.feed-source-linkedin .feed-item-icon { background: rgba(10,102,194,0.25); }
+.feed-source-coderlegion .feed-item-icon { background: rgba(139,92,246,0.2); }
+
+.feed-source-dev-to .feed-item-tag { background: rgba(74,144,226,0.2); color: #7ab8ff; }
+.feed-source-github .feed-item-tag { background: rgba(255,255,255,0.1); color: #aaa; }
+.feed-source-hacker-news .feed-item-tag { background: rgba(255,102,0,0.2); color: #ff8033; }
+.feed-source-hashnode .feed-item-tag { background: rgba(41,98,255,0.2); color: #5983ff; }
+.feed-source-xtwitter .feed-item-tag { background: rgba(255,255,255,0.1); color: #ccc; }
+.feed-source-linkedin .feed-item-tag { background: rgba(10,102,194,0.25); color: #4da6ff; }
+.feed-source-coderlegion .feed-item-tag { background: rgba(139,92,246,0.2); color: #b794ff; }
 @media (max-width: 600px) { .writing-grid { grid-template-columns: 1fr; } .feed-live-list { grid-template-columns: 1fr; } }
