@@ -702,8 +702,8 @@
 /* Carousel mode — overrides grid */
 .testimonials-carousel {
   display: block;
-  overflow: visible;
-  padding: 0.25rem 0.25rem 2.5rem;
+  overflow: hidden;
+  padding: 0.25rem 0.25rem 3rem;
 }
 .testimonials-carousel .swiper-slide {
   height: auto;

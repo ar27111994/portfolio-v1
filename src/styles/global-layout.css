@@ -3623,8 +3623,8 @@ h3 {
    ═══════════════════════════════════════════════════════════════════ */
 
 .case-studies-carousel {
-  overflow: visible;
-  padding: 0.25rem 0.25rem 2.5rem;
+  overflow: hidden;
+  padding: 0.25rem 0.25rem 3rem;
 }
 .case-studies-carousel .swiper-slide {
   height: auto;
