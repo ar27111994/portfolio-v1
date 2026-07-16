@@ -203,49 +203,55 @@ import {
     credibilityFacts={credibilityFacts}
     recentUpworkProofTitles={recentUpworkProofTitles}
   />
-  <ServicesSection servicesOfferings={servicesOfferings} />
+  <div class="reveal"><ServicesSection servicesOfferings={servicesOfferings} /></div>
 
-  <LabSection labNotes={labNotes} />
+  <div class="reveal"><LabSection labNotes={labNotes} /></div>
 
-  <FeaturedProjectsSection featuredProjects={featuredProjects} />
+  <div class="reveal"><FeaturedProjectsSection featuredProjects={featuredProjects} /></div>
 
-  <CaseStudiesSection caseStudies={caseStudies} />
+  <div class="reveal"><CaseStudiesSection caseStudies={caseStudies} /></div>
 
-  <AdditionalProjectsSection
-    additionalProjects={additionalProjects}
-    writingLinks={writingLinks}
-  />
+  <div class="reveal">
+    <AdditionalProjectsSection
+      additionalProjects={additionalProjects}
+      writingLinks={writingLinks}
+    />
+  </div>
 
-  <FeedSection feedSources={feedSources} writingLinks={writingLinks} />
+  <div class="reveal"><FeedSection feedSources={feedSources} writingLinks={writingLinks} /></div>
 
-  <UpworkSection
-    upworkPortfolioItems={upworkPortfolioItems}
-    upworkPortfolioCountLabel={upworkPortfolioCountLabel}
-    recentUpworkProofTitles={recentUpworkProofTitles}
-    upworkFitTags={upworkFitTags}
-    upworkProfileUrl={upworkProfileUrl}
-    upworkPortfolioCount={upworkPortfolioCount}
-    upworkProofCards={upworkProofCards}
-  />
+  <div class="reveal">
+    <UpworkSection
+      upworkPortfolioItems={upworkPortfolioItems}
+      upworkPortfolioCountLabel={upworkPortfolioCountLabel}
+      recentUpworkProofTitles={recentUpworkProofTitles}
+      upworkFitTags={upworkFitTags}
+      upworkProfileUrl={upworkProfileUrl}
+      upworkPortfolioCount={upworkPortfolioCount}
+      upworkProofCards={upworkProofCards}
+    />
+  </div>
 
-  <TestimonialsSection testimonials={testimonials} />
+  <div class="reveal"><TestimonialsSection testimonials={testimonials} /></div>
 
-  <ProofSection
-    contactEmail={contactEmail}
-    certificationLinks={certificationLinks}
-    ventureProof={ventureProof}
-    openSourceFreemium={openSourceFreemium}
-  />
+  <div class="reveal">
+    <ProofSection
+      contactEmail={contactEmail}
+      certificationLinks={certificationLinks}
+      ventureProof={ventureProof}
+      openSourceFreemium={openSourceFreemium}
+    />
+  </div>
 
-  <CapabilitiesSection capabilities={capabilities} />
+  <div class="reveal"><CapabilitiesSection capabilities={capabilities} /></div>
 
-  <ProfileSection profileWidgets={profileWidgets} profileLinks={profileLinks} />
+  <div class="reveal"><ProfileSection profileWidgets={profileWidgets} profileLinks={profileLinks} /></div>
 
-  <ResumeSection resumeWidgets={resumeWidgets} />
+  <div class="reveal"><ResumeSection resumeWidgets={resumeWidgets} /></div>
 
-  <ContactSection contactEmail={contactEmail} contactWidgets={contactWidgets} />
+  <div class="reveal"><ContactSection contactEmail={contactEmail} contactWidgets={contactWidgets} /></div>
 
-  <SponsorSection contactEmail={contactEmail} sponsorLinks={sponsorLinks} />
+  <div class="reveal"><SponsorSection contactEmail={contactEmail} sponsorLinks={sponsorLinks} /></div>
   <footer class="site-footer" role="contentinfo">
     <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
     <p>

@@ -35,6 +35,7 @@ export interface CaseStudy {
   outcome: string;
   tech: string[];
   metrics: string[];
+  icon?: string;
 }
 export interface FeaturedProject {
   name: string;
@@ -44,11 +45,14 @@ export interface FeaturedProject {
   href: string;
   summary: string;
   highlights: string[];
+  icon?: string;
 }
 export interface AdditionalProject {
   name: string;
   href: string;
   description: string;
+  icon?: string;
+  accent?: string;
 }
 export interface WritingLink {
   label: string;
@@ -67,6 +71,7 @@ export interface FeedSource {
 export interface LabNote {
   title: string;
   body: string;
+  icon?: string;
 }
 export interface ContactWidget {
   kind: string;
@@ -115,6 +120,7 @@ export interface OpenSourceItem {
   label: string;
   href: string;
   detail?: string;
+  icon?: string;
 }
 export interface Capability {
   title: string;

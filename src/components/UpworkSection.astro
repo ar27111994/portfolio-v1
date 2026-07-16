@@ -19,6 +19,9 @@ const {
   upworkFitTags,
   upworkProofCards,
 } = Astro.props;
+
+const PER_PAGE = 8;
+const totalPages = Math.ceil(upworkPortfolioItems.length / PER_PAGE);
 ---
 
 <section id="upwork" class="panel upwork-panel" aria-labelledby="upwork-title">
@@ -74,7 +77,61 @@ const {
     </div>
   </div>
 
+  <!-- Toolbar: search, sort, filters, per-page -->
+  <div class="pagination-toolbar" id="upwork-toolbar">
+    <div class="toolbar-row">
+      <div class="toolbar-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input
+          type="text"
+          id="upwork-search"
+          placeholder="Search by title or description…"
+          aria-label="Search portfolio items"
+          autocomplete="off"
+        />
+        <button class="search-clear" id="upwork-search-clear" aria-label="Clear search" hidden>&times;</button>
+      </div>
+      <div class="toolbar-actions">
+        <select id="upwork-sort" aria-label="Sort order">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+        <select id="upwork-per-page" aria-label="Items per page">
+          <option value="8">8 per page</option>
+          <option value="16">16 per page</option>
+          <option value="24">24 per page</option>
+          <option value="all">All items</option>
+        </select>
+      </div>
+    </div>
+    <div class="toolbar-tags" id="upwork-filter-tags">
+      <!-- Dynamically populated by JS -->
+    </div>
+  </div>
+
+  <!-- Result count -->
+  <p class="pagination-summary" id="upwork-summary">
+    Showing {Math.min(PER_PAGE, upworkPortfolioItems.length)} of {upworkPortfolioItems.length} items
+  </p>
+
   <div class="upwork-grid" id="upwork-grid">
     {upworkPortfolioItems.map((item) => <UpworkPortfolioCard item={item} />)}
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination-bar" id="upwork-pagination-bar">
+    <div class="pagination-controls">
+      <button class="pagination-btn" id="upwork-prev" aria-label="Previous page" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="pagination-pages" id="upwork-page-numbers">
+        <!-- Dynamically populated by JS -->
+      </div>
+      <button class="pagination-btn" id="upwork-next" aria-label="Next page">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
   </div>
 </section>

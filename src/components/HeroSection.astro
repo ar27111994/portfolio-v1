@@ -136,6 +136,22 @@ const {
     </span>
   </div>
 
+  <div class="snapshot-block" aria-label="Credibility facts">
+    <h2>Snapshot</h2>
+    <ul class="bullet-clean snapshot-list">
+      {
+        credibilityFacts.map((item) => (
+          <li>
+            <span class="snapshot-icon" aria-hidden="true">
+              {item.icon}
+            </span>
+            <span>{item.text}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
   </div>
 
   <aside class="hero-aside" aria-label="Quick profile facts">
@@ -172,21 +188,6 @@ const {
       <p class="signal-note" data-proof-status>
         Public GitHub metrics update in-browser when the API is available.
       </p>
-    </div>
-    <div class="snapshot-block">
-      <h2>Snapshot</h2>
-      <ul class="bullet-clean snapshot-list">
-        {
-          credibilityFacts.map((item) => (
-            <li>
-              <span class="snapshot-icon" aria-hidden="true">
-                {item.icon}
-              </span>
-              <span>{item.text}</span>
-            </li>
-          ))
-        }
-      </ul>
     </div>
   </aside>
 </section>

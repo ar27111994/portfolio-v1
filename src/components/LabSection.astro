@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { labNotes } = Astro.props;
+
+const accentColors = ["accent-blue", "accent-orange", "accent-green", "accent-violet"];
 ---
 
 <section class="panel lab-panel" aria-labelledby="lab-title">
@@ -14,12 +16,18 @@ const { labNotes } = Astro.props;
       work — practical experiments that can become reliable products.
     </p>
   </div>
-  <div class="grid four compact">
+  <div class="lab-grid">
     {
-      labNotes.map((item) => (
-        <article class="lab-card">
-          <h3>{item.title}</h3>
-          <p>{item.body}</p>
+      labNotes.map((item, i) => (
+        <article class={`lab-card-premium ${accentColors[i % 4]}`}>
+          <div class="lab-card-icon" aria-hidden="true">
+            {item.icon || "🔬"}
+          </div>
+          <div class="lab-card-body">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </div>
+          <div class="lab-card-glow" aria-hidden="true"></div>
         </article>
       ))
     }

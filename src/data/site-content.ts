@@ -196,12 +196,6 @@ export const profileLinks = [
     href: "https://coderlegion.com/user/ar27111994",
     icon: "/brand-icons/coderlegion.svg",
   },
-  {
-    label: "Discord",
-    href: "#contact-title",
-    note: "ar27111994 — DM for server invite",
-    icon: "/brand-icons/discord.svg",
-  },
 ];
 
 export const badges = [
@@ -338,6 +332,7 @@ export const caseStudies = [
   {
     title: "Eagle 6 — Enterprise Cybersecurity Frontend",
     context: "Sr. Frontend Engineer · Feb 2018 – Mar 2022 · Remote",
+    icon: "/brand-icons/angular.svg",
     problem:
       "Eagle 6 needed a rich, performant frontend for their flagship cybersecurity platform — cloud storage with complex permission models, real-time network monitoring dashboards, organization chart modeling, and collaborative document editing. All modules had to handle enterprise-scale data with role-based access control baked into every interaction.",
     approach:
@@ -368,6 +363,7 @@ export const caseStudies = [
   {
     title: "Microsoft RDS + Citrix App Layering on Azure",
     context: "Solo POC Engineer · Sep 2017 – Jan 2018 · Upwork",
+    icon: "/brand-icons/microsoft.svg",
     problem:
       "A repeat Upwork client needed a proof-of-concept integrating Microsoft Remote Desktop Services with Citrix App Layering on Microsoft Azure — a stack I had never touched before. The client needed someone who could learn the entire stack from scratch and deliver a working, documented POC on a fixed timeline.",
     approach:
@@ -392,6 +388,7 @@ export const caseStudies = [
   {
     title: "Goggle Hunt — Shopify Dropship Business",
     context: "Solo Founder · May 2017 – Sep 2017 · Founded & Sold",
+    icon: "/brand-icons/shopify.svg",
     problem:
       "Identified a keyword with 600K monthly searches and low competition in the US fashion/sports goggles niche. Needed to validate, build, market, and either scale or exit — all while working full-time as a freelance developer.",
     approach:
@@ -409,6 +406,7 @@ export const caseStudies = [
   {
     title: "Webhook Debugger & Logger v3",
     context: "Solo OSS Maintainer · 2025–Present · Show HN",
+    icon: "/brand-icons/github.svg",
     problem:
       "Developers debugging webhook integrations waste hours setting up tunnels, tailing logs, and manually replaying requests. Existing tools were either SaaS-locked, limited to capture-only, or lacked replay/forward/validation workflows. Teams needed an open-source, self-hosted tool that could capture, inspect, replay, forward, validate, and mock webhook traffic — all in one place.",
     approach:
@@ -440,6 +438,7 @@ export const featuredProjects = [
     visual: "AI Agents · CLI · Host Wiring",
     accent: "accent-agents",
     href: "https://github.com/ar27111994/agent-harness",
+    icon: "/brand-icons/github.svg",
     summary:
       "Node.js / TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across VS Code/Copilot, OpenCode, Cursor, Zed, Claude Code, and Pi.",
     highlights: [
@@ -454,6 +453,7 @@ export const featuredProjects = [
     visual: "Capture · Replay · Verify",
     accent: "accent-capture",
     href: "https://github.com/ar27111994/webhook-debugger-logger",
+    icon: "/brand-icons/github.svg",
     summary:
       "Enterprise-grade webhook testing suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic in real time without persistent tunnels.",
     highlights: [
@@ -468,6 +468,7 @@ export const featuredProjects = [
     visual: "Penpot · MCP · Design Systems",
     accent: "accent-design",
     href: "https://github.com/ar27111994/penpot-mcp",
+    icon: "/brand-icons/github.svg",
     summary:
       "AI-agent skill for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows via MCP.",
     highlights: [
@@ -482,6 +483,7 @@ export const featuredProjects = [
     visual: "Skills · Claude · Cursor",
     accent: "accent-skills",
     href: "https://github.com/ar27111994/antigravity-awesome-skills",
+    icon: "/brand-icons/github.svg",
     summary:
       "Curated collection of 200+ agentic skills for Claude Code / Antigravity / Cursor-style AI-agent workflows.",
     highlights: [
@@ -498,24 +500,32 @@ export const additionalProjects = [
     href: "https://github.com/ar27111994/Aesthetic-Palettes",
     description:
       "Open-source color palette generator focused on WCAG-aware visual tooling, typography, UX research, and zero-cost infrastructure.",
+    icon: "/brand-icons/github.svg",
+    accent: "palette",
   },
   {
     name: "code-the-countdown",
     href: "https://github.com/ar27111994/code-the-countdown",
     description:
       "Google I/O 2026 Code the Countdown challenge project using TypeScript, React/Next.js, canvas, motion, Web Audio, and WebGL-oriented UI work.",
+    icon: "/brand-icons/github.svg",
+    accent: "code",
   },
   {
     name: "InterActNote",
     href: "https://github.com/ar27111994/InterActNote",
     description:
       "Android-first call-time context and relationship notes product focused on useful, practical in-call context.",
+    icon: "/brand-icons/github.svg",
+    accent: "mobile",
   },
   {
     name: "DataGuard",
     href: `mailto:${contactEmail}?subject=DataGuard`,
     description:
       "Data quality and ETL validation product direction for CSV, Excel, JSON, and structured-data workflows.",
+    icon: "/brand-icons/github.svg",
+    accent: "data",
   },
 ];
 
@@ -627,18 +637,22 @@ export const labNotes = [
   {
     title: "Integration reliability lab",
     body: "Webhook debugging, replay safety, provider-specific diagnosis, and incident artifacts for external integrations that fail in messy real-world ways.",
+    icon: "⚡",
   },
   {
     title: "Agent workflow lab",
     body: "Reusable skills, prompts, host-aware agent assets, and lifecycle tooling so AI-assisted development does not become another dumping ground.",
+    icon: "🤖",
   },
   {
     title: "Automation systems lab",
     body: "Small internal tools, scripts, dashboards, and workflow utilities that are observable, maintainable, and boring in the right places.",
+    icon: "⚙️",
   },
   {
     title: "Product surface lab",
     body: "Portfolio, docs, launch pages, resumes, and proof surfaces polished for speed, clarity, accessibility, SEO, and trust.",
+    icon: "🎯",
   },
 ];
 
@@ -732,6 +746,12 @@ export const profileWidgets = [
     href: "https://news.ycombinator.com/user?id=ar27111994",
     icon: "/brand-icons/ycombinator.svg",
     detail: "Launch/discussion proof",
+  },
+  {
+    label: "Discord",
+    href: "#contact-title",
+    icon: "/brand-icons/discord.svg",
+    detail: "ar27111994 — DM for server invite",
   },
 ];
 
@@ -839,7 +859,7 @@ export const ventureProof = [
   {
     label: "Goggle Hunt exit listing (Flippa)",
     href: "https://flippa.com/9034806-your-one-stop-shop-for-fashion-and-sports-goggles",
-    icon: "/brand-icons/flippa.svg",
+    icon: "/brand-icons/flippa.jpg",
   },
   {
     label: "Gleam competition platform used for subscriber campaigns",
@@ -914,28 +934,42 @@ export const openSourceFreemium = [
   {
     label: "OpenCart 3.x extension listing",
     href: "https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=33156",
+    icon: "/brand-icons/opencart.svg",
   },
   {
     label: "Mosaico CodeIgniter integration",
     href: "https://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth",
+    icon: "/brand-icons/github.svg",
   },
   {
     label: "National Criminals Database",
     href: "https://github.com/ar27111994/National-Criminals-Database",
+    icon: "/brand-icons/github.svg",
   },
   {
     label: "OpenBiz CRUD Scaffolding Templates",
     href: "https://github.com/ar27111994/OpenBiz-CRUD-Scaffolding-Templates",
+    icon: "/brand-icons/github.svg",
   },
-  { label: "OpenBiz", href: "https://github.com/ar27111994/OpenBiz" },
+  {
+    label: "OpenBiz",
+    href: "https://github.com/ar27111994/OpenBiz",
+    icon: "/brand-icons/github.svg",
+  },
   {
     label: "Generic Repository Pattern",
     href: "https://github.com/ar27111994/Generic-Repository-Pattern",
+    icon: "/brand-icons/github.svg",
   },
-  { label: "Bookstore", href: "https://github.com/ar27111994/bookstore" },
+  {
+    label: "Bookstore",
+    href: "https://github.com/ar27111994/bookstore",
+    icon: "/brand-icons/github.svg",
+  },
   {
     label: "ShoppingCartLibraryv1.0",
     href: "https://github.com/ar27111994/ShoppingCartLibraryv1.0",
+    icon: "/brand-icons/github.svg",
   },
 ];
 

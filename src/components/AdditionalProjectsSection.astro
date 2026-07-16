@@ -1,7 +1,6 @@
 ---
 interface Props {
   additionalProjects: import("../data/site-types").AdditionalProject[];
-  writingLinks: import("../data/site-types").WritingLink[];
 }
 
 const { additionalProjects } = Astro.props;
@@ -16,16 +15,33 @@ const { additionalProjects } = Astro.props;
       workflows.
     </p>
   </div>
-  <div class="grid four compact">
+  <div class="threads-grid">
     {
       additionalProjects.map((project) => (
-        <article class="project-card experiment">
-          <h3>
-            <a href={project.href} target="_blank" rel="noreferrer">
-              {project.name}
-            </a>
-          </h3>
-          <p>{project.description}</p>
+        <article class={`thread-card thread-${project.accent || "default"}`}>
+          <div class="thread-visual" aria-hidden="true">
+            {project.icon && (
+              <img
+                src={project.icon}
+                alt=""
+                width="28"
+                height="28"
+                loading="lazy"
+                decoding="async"
+                class="thread-icon"
+              />
+            )}
+            <span class="thread-accent-dot"></span>
+          </div>
+          <div class="thread-copy">
+            <h3>
+              <a href={project.href} target="_blank" rel="noreferrer">
+                {project.name}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="external-arrow"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </h3>
+            <p>{project.description}</p>
+          </div>
         </article>
       ))
     }

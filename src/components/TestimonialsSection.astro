@@ -14,28 +14,45 @@ const { testimonials } = Astro.props;
       team-collaboration engagements.
     </p>
   </div>
-  <div class="testimonials-grid">
-    {
-      testimonials.map((t) => (
-        <blockquote class="testimonial-card">
-          <p class="testimonial-quote">"{t.quote}"</p>
-          <footer class="testimonial-footer">
-            <cite>
-              <strong>{t.author}</strong>
-              <span class="testimonial-role">{t.role}</span>
-              <span class="testimonial-context">{t.relation}</span>
-            </cite>
-            <a
-              href={t.href}
-              target="_blank"
-              rel="noreferrer"
-              class="testimonial-source"
-            >
-              {t.platform}
-            </a>
-          </footer>
-        </blockquote>
-      ))
-    }
+
+  <div class="testimonials-carousel swiper" id="testimonials-swiper">
+    <div class="swiper-wrapper">
+      {
+        testimonials.map((t) => (
+          <div class="swiper-slide">
+            <blockquote class="testimonial-card">
+              <p class="testimonial-quote">"{t.quote}"</p>
+              <footer class="testimonial-footer">
+                <cite>
+                  <strong>{t.author}</strong>
+                  <span class="testimonial-role">{t.role}</span>
+                  <span class="testimonial-context">{t.relation}</span>
+                </cite>
+                <a
+                  href={t.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="testimonial-source"
+                >
+                  <img
+                    src={`/brand-icons/${t.platform.toLowerCase()}.svg`}
+                    alt=""
+                    width="14"
+                    height="14"
+                    loading="lazy"
+                    decoding="async"
+                    class="testimonial-source-icon"
+                  />
+                  {t.platform}
+                </a>
+              </footer>
+            </blockquote>
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
 </section>

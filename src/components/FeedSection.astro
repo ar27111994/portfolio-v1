@@ -4,7 +4,7 @@ interface Props {
   writingLinks: import("../data/site-types").WritingLink[];
 }
 
-const { feedSources, writingLinks } = Astro.props;
+const { feedSources } = Astro.props;
 ---
 
 <section class="panel" aria-labelledby="feed-title">
@@ -12,88 +12,51 @@ const { feedSources, writingLinks } = Astro.props;
     <div>
       <h2 id="feed-title">Public work feed</h2>
       <p>
-        Recent launch notes, technical posts, and repository activity pulled
-        from public surfaces when available. The curated fallback stays useful
-        even when third-party APIs are slow or blocked.
+        Live content pulled from dev.to, GitHub, and Hacker News APIs on page
+        load. Falls back gracefully when APIs are rate-limited or blocked.
       </p>
     </div>
     <a
-      class="button secondary small"
+      class="button primary small"
       href="https://dev.to/ar27111994"
       target="_blank"
-      rel="noreferrer">Open Dev.to</a
-    >
+      rel="noreferrer">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Dev.to
+    </a>
   </div>
 
-  <div class="feed-widget" data-feed-widget>
-    <div class="feed-status" data-feed-status>Loading public feed items…</div>
-    <div class="feed-list" data-feed-list></div>
+  <!-- Fully dynamic live feed -->
+  <div class="feed-live-widget" data-feed-widget>
+    <div class="feed-live-status" data-feed-status>Loading public feed items…</div>
+    <div class="feed-live-list" data-feed-list></div>
   </div>
 
-  <div
-    class="support-grid writing-grid fallback-feed"
-    aria-label="Curated fallback feed"
-  >
-    {
-      writingLinks.map((item) => (
-        <a
-          class="support-card"
-          href={item.href}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span class="chip">
-            {item.icon && (
-              <img
-                src={item.icon}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                style="width:14px;height:14px;vertical-align:middle;margin-right:4px;"
-              />
-            )}
-            {item.tag}
-          </span>
-          <span class="support-name">{item.label}</span>
-          <span class="support-note">
-            <strong>{item.source}:</strong> {item.date}
-          </span>
-        </a>
-      ))
-    }
-  </div>
-
-  <details class="feed-sources">
-    <summary>Curated feed sources</summary>
-    <ul class="feed-source-grid" aria-label="Curated feed source links">
+  <!-- Feed sources -->
+  <details class="feed-sources-details">
+    <summary>Feed sources ({feedSources.length})</summary>
+    <div class="feed-sources-grid">
       {
         feedSources.map((source) => (
-          <li>
-            <a
-              class="feed-source-card"
-              href={source.href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open ${source.label} ${source.type} feed source`}
-            >
-              <span class="feed-source-icon">
-                <img
-                  src={source.icon}
-                  alt=""
-                  width="24"
-                  height="24"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </span>
-              <span class="feed-source-copy">
-                <strong>{source.label}</strong>
-                <small>{source.type}</small>
-              </span>
-            </a>
-          </li>
+          <a
+            class="feed-source-pill"
+            href={source.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={source.icon}
+              alt=""
+              width="18"
+              height="18"
+              loading="lazy"
+              decoding="async"
+            />
+            <span>{source.label}</span>
+            <small>{source.type}</small>
+          </a>
         ))
       }
-    </ul>
+    </div>
   </details>
 </section>
