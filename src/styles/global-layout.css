@@ -1945,7 +1945,7 @@ h3 {
   margin-top: 1.2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
-  overflow: visible;
+  overflow: hidden;
   padding-bottom: 2.5rem;
 }
 .profile-links-carousel .swiper-slide {
@@ -3732,7 +3732,7 @@ h3 {
 .feed-item-tag { display: inline-block; width: fit-content; padding: 0.08rem 0.4rem; border-radius: 999px; background: rgba(92,138,255,0.15); color: #5c8aff; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .feed-item-body strong { font-size: 0.78rem; font-weight: 700; color: #ede8e0; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .feed-item-body small { font-size: 0.65rem; color: #8a8278; font-weight: 600; }
-.feed-sources-carousel { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); overflow: visible; padding-bottom: 2.5rem; }
+.feed-sources-carousel { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); overflow: hidden; padding-bottom: 2.5rem; }
 .feed-sources-details summary { cursor: pointer; font-weight: 700; font-size: 0.8rem; color: var(--muted); transition: color var(--dur-fast) var(--ease-out); }
 .feed-sources-details summary:hover { color: var(--blue); }
 .feed-sources-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.55rem; }

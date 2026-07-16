@@ -251,164 +251,34 @@ function initPage() {
     }
   }
 
+  let feedPage = 1;
+  let feedHasMore = false;
+
   async function loadFeed(widget, status, list) {
-    const ctx = { widget, status, list };
-    const items = [];
-
-    // dev.to articles
     try {
-      const devto = await fetch("https://dev.to/api/articles?username=ar27111994&per_page=6");
-      if (devto.ok) {
-        const articles = await devto.json();
-        articles.forEach((article) =>
-          items.push({
-            title: article.title,
-            url: article.url,
-            source: "Dev.to",
-            date: new Date(article.published_at).toLocaleDateString(undefined, { month: "short", year: "numeric" }),
-            icon: "/brand-icons/devdotto.svg",
-            tag: article.tag_list?.[0] || "Article",
-          }),
-        );
+      const res = await fetch(`/api/feed?page=${feedPage}&per_page=10`);
+      if (!res.ok) throw new Error("API unavailable");
+      const data = await res.json();
+      feedHasMore = data.has_more;
+      if (feedPage === 1) {
+        renderInitialFeed({ widget, status, list }, data.items, `Live feed · ${data.total} items from 8 sources`);
+      } else {
+        data.items.forEach((item) => list.appendChild(createFeedItem(item)));
+        feedVisible += data.items.length;
       }
-    } catch { /* API unavailable — skip */ }
-
-    // GitHub updated repos
-    try {
-      const repos = await fetch("https://api.github.com/users/ar27111994/repos?sort=updated&per_page=4");
-      if (repos.ok) {
-        const data = await repos.json();
-        data.forEach((repo) =>
-          items.push({
-            title: repo.name,
-            url: repo.html_url,
-            source: "GitHub",
-            date: new Date(repo.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric" }),
-            icon: "/brand-icons/github.svg",
-            tag: repo.language || "Repo",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    // HN posts via Algolia
-    try {
-      const hn = await fetch("https://hn.algolia.com/api/v1/search?tags=author_ar27111994&hitsPerPage=3");
-      if (hn.ok) {
-        const data = await hn.json();
-        (data.hits || []).forEach((hit) =>
-          items.push({
-            title: hit.title || hit.story_title,
-            url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
-            source: "Hacker News",
-            date: new Date(hit.created_at).toLocaleDateString(undefined, { month: "short", year: "numeric" }),
-            icon: "/brand-icons/ycombinator.svg",
-            tag: "HN",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    // GitHub gists
-    try {
-      const gists = await fetch("https://api.github.com/users/ar27111994/gists?per_page=3");
-      if (gists.ok) {
-        const data = await gists.json();
-        data.forEach((gist) =>
-          items.push({
-            title: Object.keys(gist.files || {})[0] || "Gist",
-            url: gist.html_url,
-            source: "GitHub",
-            date: new Date(gist.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric" }),
-            icon: "/brand-icons/github.svg",
-            tag: "Gist",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    // Hashnode articles
-    try {
-      const hashnode = await fetch("https://gql.hashnode.com/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: `{ user(username: "ar27111994") { publication { posts(first: 3) { edges { node { title slug dateAdded } } } } } }` }),
-      });
-      if (hashnode.ok) {
-        const data = await hashnode.json();
-        const posts = data?.data?.user?.publication?.posts?.edges || [];
-        posts.forEach(({ node }) =>
-          items.push({
-            title: node.title,
-            url: `https://hashnode.com/post/${node.slug}`,
-            source: "Hashnode",
-            date: new Date(node.dateAdded).toLocaleDateString(undefined, { month: "short", year: "numeric" }),
-            icon: "/brand-icons/hashnode.svg",
-            tag: "Blog",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    // CoderLegion posts (via server-side proxy)
-    try {
-      const cl = await fetch("/api/coderlegion-feed");
-      if (cl.ok) {
-        const data = await cl.json();
-        (data.posts || []).forEach((post) =>
-          items.push({
-            title: post.title,
-            url: post.url,
-            source: "CoderLegion",
-            date: new Date(post.date).toLocaleDateString(undefined, { month: "short", year: "numeric" }),
-            icon: "/brand-icons/coderlegion.svg",
-            tag: post.tag || "Post",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    // X/Twitter tweets (via server-side proxy)
-    try {
-      const twitter = await fetch("/api/twitter-feed");
-      if (twitter.ok) {
-        const data = await twitter.json();
-        (data.tweets || []).forEach((tweet) =>
-          items.push({
-            title: tweet.title,
-            url: tweet.url,
-            source: "X/Twitter",
-            date: new Date(tweet.date).toLocaleDateString(undefined, { month: "short", year: "numeric" }),
-            icon: "/brand-icons/x.svg",
-            tag: tweet.tag || "Tweet",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    // LinkedIn posts (via server-side proxy)
-    try {
-      const linkedin = await fetch("/api/linkedin-feed");
-      if (linkedin.ok) {
-        const data = await linkedin.json();
-        (data.posts || []).forEach((post) =>
-          items.push({
-            title: post.title,
-            url: post.url,
-            source: "LinkedIn",
-            date: post.date ? new Date(post.date).toLocaleDateString(undefined, { month: "short", year: "numeric" }) : "",
-            icon: "/brand-icons/linkedin.svg",
-            tag: post.tag || "LinkedIn",
-          }),
-        );
-      }
-    } catch { /* API unavailable — skip */ }
-
-    if (items.length) {
-      renderInitialFeed(ctx, items, `Live feed · ${items.length} items from dev.to, GitHub, HN, Hashnode, X, LinkedIn, CoderLegion`);
-    } else {
-      status.textContent = "Live feed unavailable — APIs may be rate-limited or blocked.";
+      const sentinel = document.getElementById("feed-sentinel");
+      if (sentinel) sentinel.style.display = feedHasMore ? "" : "none";
+    } catch {
+      if (feedPage === 1) status.textContent = "Live feed unavailable — APIs may be rate-limited or blocked.";
     }
+  }
+
+  function loadMoreFeed(list) {
+    if (!feedHasMore) return;
+    feedPage++;
+    const widget = document.querySelector("[data-feed-widget]");
+    const status = document.querySelector("[data-feed-status]");
+    if (widget && status) loadFeed(widget, status, list);
   }
   async function loadUpworkPortfolio() {
     // Refresh the count badge from the live API — cards are already rendered
@@ -748,7 +618,7 @@ function initPage() {
     if (!sentinel || !list) return;
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) showMoreFeed(list);
+        if (entry.isIntersecting) loadMoreFeed(list);
       });
     }, { rootMargin: "0px 0px 200px 0px" });
     observer.observe(sentinel);
