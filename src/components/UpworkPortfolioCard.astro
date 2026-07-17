@@ -650,27 +650,51 @@ const previewProofLine =
             <div class="upwork-media-grid">
               {videoPreviewAttachments.map(({ attachment, src }, index) => (
                 <div class="upwork-media-tile upwork-video-tile">
-                  <video
-                    src={src}
-                    controls
-                    preload="metadata"
-                    playsinline
-                    width="400"
-                    height="260"
-                    poster={previewImage}
-                    muted
-                  >
-                    <track
-                      kind="captions"
-                      label="English"
-                      srclang="en"
-                      src={`/captions/${attachment.uid ?? index}.vtt`}
-                      default
+                  {attachment.provider === "youtube" || attachment.embeddedUrl?.includes("youtube") ? (
+                    <iframe
+                      src={attachment.embeddedUrl || src}
+                      width="400"
+                      height="260"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      title={attachment.title || `YouTube video ${index + 1}`}
+                      loading="lazy"
+                      style="border:none;border-radius:12px"
                     />
-                  </video>
+                  ) : attachment.embeddedUrl?.includes("vimeo") ? (
+                    <iframe
+                      src={attachment.embeddedUrl}
+                      width="400"
+                      height="260"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowfullscreen
+                      title={attachment.title || `Vimeo video ${index + 1}`}
+                      loading="lazy"
+                      style="border:none;border-radius:12px"
+                    />
+                  ) : (
+                    <video
+                      src={src}
+                      controls
+                      preload="metadata"
+                      playsinline
+                      width="400"
+                      height="260"
+                      poster={previewImage}
+                      muted
+                    >
+                      <track
+                        kind="captions"
+                        label="English"
+                        srclang="en"
+                        src={`/captions/${attachment.uid ?? index}.vtt`}
+                        default
+                      />
+                    </video>
+                  )}
                   <span>
                     {attachment.title || `Video preview ${index + 1}`}
-                    <em>Play attached video</em>
+                    <em>{attachment.provider === "youtube" || attachment.embeddedUrl?.includes("youtube") ? "YouTube embed" : attachment.embeddedUrl?.includes("vimeo") ? "Vimeo embed" : "Play attached video"}</em>
                   </span>
                 </div>
               ))}
