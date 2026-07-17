@@ -181,10 +181,6 @@ const PORTFOLIO_QUERY = `
     talentProfile(personId: $personId) {
       profiles {
         personId
-        personalData {
-          firstName
-          lastName
-        }
         projectList {
           projects {
             id
@@ -197,7 +193,7 @@ const PORTFOLIO_QUERY = `
             creationDateTime
             thumbnail
             thumbnailOriginal
-            attachments {
+            attachments(limit: 100) {
               id
               type
               title
@@ -209,9 +205,6 @@ const PORTFOLIO_QUERY = `
               imageSmall
               imageMiddle
               imageLarge
-              rank
-              creationDateTime
-              group
             }
             tags {
               id
@@ -346,7 +339,7 @@ async function fetchPortfolio(accessToken) {
     },
     body: JSON.stringify({
       query: PORTFOLIO_QUERY,
-      variables: { personId: PERSON_ID },
+      variables: { personId: PERSON_ID, pageSize: 40 },
     }),
   });
 
