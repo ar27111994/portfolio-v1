@@ -193,7 +193,7 @@ const PORTFOLIO_QUERY = `
             creationDateTime
             thumbnail
             thumbnailOriginal
-            attachments(limit: 100) {
+            attachments {
               id
               type
               title
