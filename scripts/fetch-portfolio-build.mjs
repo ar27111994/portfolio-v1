@@ -406,6 +406,10 @@ async function main() {
           if (!fresh.completionDate && prev.completionDate) {
             fresh.completionDate = prev.completionDate;
           }
+          // Preserve url if the API omitted it (common for freshly-added items)
+          if (!fresh.url && prev.url) {
+            fresh.url = prev.url;
+          }
         }
         if (prev?.attachments?.length && fresh.attachments?.length) {
           // Re-attach any localImage / videoId from the matching previous attachment
