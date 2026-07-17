@@ -152,17 +152,13 @@ function transformProjects(rawProjects) {
 async function main() {
   console.log("[fetch-portfolio-browser] Launching Chromium…");
 
-  const browser = await chromium.launchPersistentContext(
-    join(process.env.LOCALAPPDATA || join(process.env.USERPROFILE, "AppData", "Local"),
-      "Google", "Chrome", "User Data"),
-    {
-      headless: false,
-      channel: "chrome",
-      args: ["--profile-directory=Default"],
-    },
-  );
+  const browser = await chromium.launch({
+    headless: false,
+    channel: "chrome",
+  });
 
-  const page = await browser.newPage();
+  const context = await browser.newContext();
+  const page = await context.newPage();
   console.log("[fetch-portfolio-browser] Navigating to Upwork profile…");
   await page.goto(PROFILE_URL, { waitUntil: "domcontentloaded", timeout: 30000 });
 
