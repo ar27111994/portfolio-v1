@@ -867,7 +867,7 @@
     {
       "id": "complete-controller-crm-system",
       "title": "Complete Controller CRM System",
-      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a \u2018Create New Client\u2019 button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms \u2013 can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
+      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a ‘Create New Client’ button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms – can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
       "skills": [],
       "attachments": [
         {
@@ -1404,7 +1404,7 @@
     },
     {
       "id": "ai-development-suite-11-agent-skills-submissions-on-capafy",
-      "title": "AI Development Suite \u2014 11 Agent & Skills Submissions on Capafy",
+      "title": "AI Development Suite — 11 Agent & Skills Submissions on Capafy",
       "description": "Published 11 production-grade AI agent skills on Capafy marketplace, spanning design systems engineering, CLI tool QA, code quality standards, Astro optimization, LLM context modular docs, Penpot MCP, GSD spec-driven development, project documentation, release readiness audit, and startup AI playbook. Each skill is packaged as a .skill bundle with canonical SKILL.md, references, scripts, and assets. Includes Gumroad storefront listings and Capafy submission pipeline.",
       "skills": [],
       "attachments": [
@@ -1442,9 +1442,7 @@
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2bf66a1f-29c3-4707-842c-e73a4c949229",
           "localImage": "/upwork-covers/ai-development-suite-11-agent-skills-submissions-on-capafy-1.jpg"
         }
-      ],
-      "completionDate": "2026-07-17",
-      "url": "https://capafy.ai/publisher/ar27111994"
+      ]
     },
     {
       "id": "supahooks-sentinel-hermes-accelerated-business-hackathon-submission",
@@ -1471,14 +1469,12 @@
           "url": "https://youtu.be/uefialldYYw?si=2JyQ7VGFYdWpI5RQ",
           "embeddedUrl": "https://www.youtube.com/embed/uefialldYYw"
         }
-      ],
-      "completionDate": "2026-07-17",
-      "url": "https://x.com/ar27111994/status/2072177718893097449"
+      ]
     },
     {
       "id": "opencorporates-us-resolver",
       "title": "OpenCorporates US Resolver",
-      "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace \u2014 using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
+      "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace — using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
       "skills": [],
       "attachments": [
         {
@@ -1517,9 +1513,7 @@
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/02da66ab-75c3-4bf9-8bed-28b1798b9caf",
           "localImage": "/upwork-covers/opencorporates-us-resolver-2.jpg"
         }
-      ],
-      "completionDate": "2026-07-17",
-      "url": "https://github.com/ar27111994/opencorporates"
+      ]
     }
   ],
   "total": 43
