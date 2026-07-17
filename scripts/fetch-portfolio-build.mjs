@@ -209,6 +209,9 @@ const PORTFOLIO_QUERY = `
               imageSmall
               imageMiddle
               imageLarge
+              rank
+              creationDateTime
+              group
             }
             tags {
               id

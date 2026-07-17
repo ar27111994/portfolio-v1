@@ -2114,7 +2114,7 @@ h3 {
 }
 .upwork-proof-card {
   display: grid;
-  align-content: start;
+  align-content: center;
   gap: 0.56rem;
   min-height: 168px;
   background: #fff;
