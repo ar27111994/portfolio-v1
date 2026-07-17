@@ -277,6 +277,13 @@ function transformProjects(rawProjects) {
             url: String(att.videoUrl),
             embeddedUrl: `https://www.youtube.com/embed/${ytId}`,
           });
+        } else {
+          // Direct video upload (Upwork-hosted, not YouTube)
+          attachments.push({
+            type: "video",
+            provider: "direct",
+            url: String(att.videoUrl),
+          });
         }
       } else if (att.originalAttachment) {
         attachments.push({

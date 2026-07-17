@@ -3,7 +3,7 @@
   "lastUpdated": "2026-07-17",
   "source": "upwork-official-graphql-api",
   "sourceNote": "Fetched via official Upwork talentProfile GraphQL query.",
-  "extractedAt": "2026-07-17T15:45:10.691Z",
+  "extractedAt": "2026-07-17T15:48:26.694Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -1470,6 +1470,11 @@
           "videoId": "uefialldYYw",
           "url": "https://youtu.be/uefialldYYw?si=2JyQ7VGFYdWpI5RQ",
           "embeddedUrl": "https://www.youtube.com/embed/uefialldYYw"
+        },
+        {
+          "type": "video",
+          "provider": "direct",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775b1b3c-a332-433f-85e3-c47ddb2608d1"
         }
       ],
       "completionDate": "2026-07-17",

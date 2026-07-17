@@ -243,6 +243,9 @@ const videoSrcFromAttachment = (
 ) => {
   const directSource = attachmentHref(attachment);
   if (directSource) return directSource;
+  // Handle Upwork CDN paths (relative URLs like /att/download/...)
+  const rawUrl = attachment.url?.trim();
+  if (rawUrl?.startsWith("/")) return `https://www.upwork.com${rawUrl}`;
   return index === 0 && item.mediaCounts?.video
     ? normalizeExternalUrl(item.thumbnailOriginal)
     : undefined;
