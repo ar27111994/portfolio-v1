@@ -1,9 +1,9 @@
 {
   "profileUrl": "https://www.upwork.com/freelancers/~0188baee67e8f543e7",
-  "lastUpdated": "2026-07-15",
+  "lastUpdated": "2026-07-17",
   "source": "upwork-official-graphql-api",
   "sourceNote": "Fetched via official Upwork talentProfile GraphQL query.",
-  "extractedAt": "2026-07-15T18:56:30.455Z",
+  "extractedAt": "2026-07-17T14:05:27.616Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -1378,7 +1378,7 @@
         {
           "type": "image",
           "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/08393c05-200b-4b6c-b18f-01c61d1d87f0",
-          "title": null,
+          "title": "",
           "description": null,
           "fileName": "android-chrome-512x512.png",
           "fileSize": 153106,
@@ -1390,7 +1390,7 @@
         {
           "type": "image",
           "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/df53b6d0-3f98-4321-b748-1147620f044c",
-          "title": null,
+          "title": "",
           "description": null,
           "fileName": "og-cover.png",
           "fileSize": 133424,
@@ -1401,7 +1401,115 @@
         }
       ],
       "completionDate": "2026-06-01"
+    },
+    {
+      "id": "ai-development-suite-11-agent-skills-submissions-on-capafy",
+      "title": "AI Development Suite — 11 Agent & Skills Submissions on Capafy",
+      "description": "Published 11 production-grade AI agent skills on Capafy marketplace, spanning design systems engineering, CLI tool QA, code quality standards, Astro optimization, LLM context modular docs, Penpot MCP, GSD spec-driven development, project documentation, release readiness audit, and startup AI playbook. Each skill is packaged as a .skill bundle with canonical SKILL.md, references, scripts, and assets. Includes Gumroad storefront listings and Capafy submission pipeline.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "embeddedLink",
+          "url": "https://capafy.ai/publisher/ar27111994",
+          "title": null,
+          "description": null,
+          "fileName": null,
+          "fileSize": 0,
+          "imageSmall": null,
+          "imageMiddle": null,
+          "imageLarge": null
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b722af98-8066-4bec-be9e-627307ff0aa7",
+          "title": "",
+          "description": null,
+          "fileName": "startup-ai-playbook-logo-512.png",
+          "fileSize": 55994,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/abcd6503-6ee3-4734-b9ae-614dc4b2f60d",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d86ef809-10bc-4af8-96f0-e316072ac74c",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/56c2e575-5223-4829-8f45-1f04b18db6ac"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/72e80d30-344a-4921-b2a8-86adf87cff6a",
+          "title": "",
+          "description": null,
+          "fileName": "453f4d2b-8903-4616-934f-32164b250bf7.png",
+          "fileSize": 201886,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2d0b984e-ec56-443c-b195-3be4a6eb430c",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/404953ad-23b0-452c-acdb-55f637812fb2",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2bf66a1f-29c3-4707-842c-e73a4c949229"
+        }
+      ]
+    },
+    {
+      "id": "supahooks-sentinel-hermes-accelerated-business-hackathon-submission",
+      "title": "SupaHooks Sentinel - Hermes Accelerated Business Hackathon Submission",
+      "description": "onitors public vendor trust centers (Vercel, SafeBase, Vanta, Drata, Conveyor, UpGuard, SecurityScorecard) 24/7 for subprocessor drift, incident bulletins, compliance posture updates, and AI vendor risk disclosures. Every change is captured as a structured event, routed through an LLM pipeline, and delivered as a verified action pack with ownership and urgency. Built on Hermes Agent, Webhook Debugger & Logger, Stripe subscription billing, and MCP automation.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/84bc4c9e-1196-4e72-ae05-4006ad804809",
+          "title": "",
+          "description": null,
+          "fileName": "test-logo-scene1.png",
+          "fileSize": 440269,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/0fa23055-16cd-498f-9d09-d6702f62b74a",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/3a4aff17-41b5-4f78-8cde-7b33bee59846",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/eed354a4-4b4a-403d-bfce-f3acfe5bc5d4"
+        },
+        {
+          "type": "video",
+          "provider": "youtube",
+          "videoId": "uefialldYYw",
+          "url": "https://youtu.be/uefialldYYw?si=2JyQ7VGFYdWpI5RQ",
+          "embeddedUrl": "https://www.youtube.com/embed/uefialldYYw"
+        }
+      ]
+    },
+    {
+      "id": "opencorporates-us-resolver",
+      "title": "OpenCorporates US Resolver",
+      "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace — using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
+      "skills": [],
+      "attachments": [
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/8cc380b1-fea6-47fd-9862-cc55c04708da",
+          "title": "",
+          "description": null,
+          "fileName": "7e2dfb6f-0db5-49f1-9040-2e0ebb64174d.png",
+          "fileSize": 282221,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4828deb-3c7c-405d-8a7e-43a22607769f",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/033893a0-8246-45e0-bdfd-7a50f5c01814",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/438988ce-0a0b-451b-9e0e-f9ddb5950be3"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/08f55509-42fc-4b63-8267-251b04b0df08",
+          "title": "",
+          "description": null,
+          "fileName": "07138099-865d-4b6b-837c-09c57d08375c.png",
+          "fileSize": 623773,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/6e7a76ce-0eb1-489d-b118-ba31b97a7e6a",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/22af17cf-69d1-438e-931b-6d63b34b6fb5",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c93eebc9-6c55-44a0-9363-03e78fc57e33"
+        },
+        {
+          "type": "image",
+          "url": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/37c2f113-0a84-4fb1-9137-0c28de9ca958",
+          "title": "",
+          "description": null,
+          "fileName": "b1dbc538-aa9b-4d0e-bfac-d6579ba83a8b.png",
+          "fileSize": 373707,
+          "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ccf6d4ed-af4a-46b1-9332-fa3384f84c6b",
+          "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/4263b091-0e69-4afa-b8c7-23fc4acf65ce",
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/02da66ab-75c3-4bf9-8bed-28b1798b9caf"
+        }
+      ]
     }
   ],
-  "total": 40
+  "total": 43
 }
