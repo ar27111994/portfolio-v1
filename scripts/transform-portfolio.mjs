@@ -161,8 +161,16 @@ function transformProject(p) {
     rank: p.rank,
   };
   if (attachments.length) item.attachments = attachments;
-  if (p.completionDate) item.completionDate = String(p.completionDate);
+  if (p.completionDateTime) item.completionDate = String(p.completionDateTime);
+  else if (p.createdDateTime) item.completionDate = String(p.createdDateTime).slice(0, 10);
+  // Project URL — explicit field first, then first embeddedLink/article/website
   if (p.projectUrl) item.url = String(p.projectUrl);
+  else {
+    const linkAtt = attachments.find((a) =>
+      ["embeddedlink", "website", "article"].includes(String(a.type ?? "").toLowerCase())
+    );
+    if (linkAtt?.url) item.url = linkAtt.url;
+  }
 
   return item;
 }
