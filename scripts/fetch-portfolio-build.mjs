@@ -321,6 +321,12 @@ function transformProjects(rawProjects) {
     else if (embeddedUrl) item.url = String(embeddedUrl);
     if (p.completionDateTime)
       item.completionDate = String(p.completionDateTime);
+    else if (p.publishedAt)
+      item.completionDate = String(p.publishedAt);
+    else if (p.createdAt)
+      item.completionDate = String(p.createdAt);
+    else if (p.updatedAt)
+      item.completionDate = String(p.updatedAt);
 
     return item;
   });
