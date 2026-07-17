@@ -363,9 +363,17 @@ function transformProjects(rawProjects: unknown[]): PortfolioItem[] {
     };
 
     if (attachments.length) item.attachments = attachments;
+    const embeddedUrl = (p.attachments ?? []).find(
+      (a) => String(a.type ?? "") === "embeddedLink",
+    )?.originalAttachment || (p.attachments ?? []).find(
+      (a) => a.link && !a.type,
+    )?.link;
+    if (p.projectUrl) item.url = String(p.projectUrl);
+    else if (embeddedUrl) item.url = String(embeddedUrl);
     if (p.completionDateTime)
       item.completionDate = String(p.completionDateTime);
-    if (p.projectUrl) item.url = String(p.projectUrl);
+    else if (p.creationTs)
+      item.completionDate = String(p.creationTs).slice(0, 10);
 
     return item;
   });

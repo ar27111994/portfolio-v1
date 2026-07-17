@@ -202,6 +202,7 @@ const PORTFOLIO_QUERY = `
               title
               description
               videoUrl
+              link
               attachmentName
               attachmentSize
               originalAttachment
@@ -313,20 +314,18 @@ function transformProjects(rawProjects) {
       skills,
     };
     if (attachments.length) item.attachments = attachments;
-    // Use projectUrl from API, or fall back to embeddedLink attachment URL
+    // Use projectUrl from API, or fall back to embeddedLink/link attachment URL
     const embeddedUrl = (p.attachments ?? []).find(
       (a) => String(a.type ?? "") === "embeddedLink",
-    )?.originalAttachment;
+    )?.originalAttachment || (p.attachments ?? []).find(
+      (a) => a.link && !a.type,
+    )?.link;
     if (p.projectUrl) item.url = String(p.projectUrl);
     else if (embeddedUrl) item.url = String(embeddedUrl);
     if (p.completionDateTime)
       item.completionDate = String(p.completionDateTime);
-    else if (p.publishedAt)
-      item.completionDate = String(p.publishedAt);
-    else if (p.createdAt)
-      item.completionDate = String(p.createdAt);
-    else if (p.updatedAt)
-      item.completionDate = String(p.updatedAt);
+    else if (p.creationTs)
+      item.completionDate = String(p.creationTs).slice(0, 10);
 
     return item;
   });
