@@ -5,7 +5,7 @@ This manual process gets ALL attachments (including embedded links like Loom).
 
 ## Step 1 — Browser DevTools Console
 
-1. Open Chrome and go to **https://www.upwork.com** — make sure you're logged in
+1. Open Chrome and go to **<https://www.upwork.com>** — make sure you're logged in
 2. Press `F12` to open DevTools
 3. Go to the **Console** tab
 4. Paste the entire script below and press Enter:
@@ -13,6 +13,7 @@ This manual process gets ALL attachments (including embedded links like Loom).
 ```javascript
 fetch("https://api.upwork.com/graphql", {
   method: "POST",
+  credentials: "include",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
     query: `
@@ -56,8 +57,8 @@ fetch("https://api.upwork.com/graphql", {
         }
       }
     `,
-    variables: { personId: "424245383220543488", pageSize: 999999 }
-  })
+    variables: { personId: "424245383220543488", pageSize: 999999 },
+  }),
 })
   .then((r) => r.json())
   .then((d) => {
