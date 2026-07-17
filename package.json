@@ -21,7 +21,8 @@
     "test:ui": "playwright test --ui",
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs"
+    "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs",
+    "fetch-portfolio-browser": "node scripts/fetch-portfolio-browser.mjs"
   },
   "lint-staged": {
     "*.{astro,ts,js,mjs,cjs,json,css,md}": [
