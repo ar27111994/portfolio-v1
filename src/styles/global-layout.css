@@ -2839,13 +2839,15 @@ h3 {
   text-decoration: none;
 }
 .upwork-media-tile img,
-.upwork-media-tile video {
+.upwork-media-tile video,
+.upwork-media-tile iframe {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
-.upwork-video-tile video {
+.upwork-video-tile video,
+.upwork-video-tile iframe {
   background: #111;
 }
 .upwork-media-tile span {
