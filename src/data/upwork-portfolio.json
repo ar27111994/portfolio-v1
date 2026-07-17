@@ -3,7 +3,7 @@
   "lastUpdated": "2026-07-17",
   "source": "upwork-official-graphql-api",
   "sourceNote": "Fetched via official Upwork talentProfile GraphQL query.",
-  "extractedAt": "2026-07-17T15:48:26.694Z",
+  "extractedAt": "2026-07-17T16:14:09.937Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -769,8 +769,8 @@
           "localImage": "/upwork-covers/television-subscription-management-system-2.jpg"
         }
       ],
-      "completionDate": "2017-05-29",
-      "url": "http://subs.ar27111994.com/admin"
+      "url": "http://subs.ar27111994.com/admin",
+      "completionDate": "2017-05-29"
     },
     {
       "id": "neophar-website",
@@ -815,8 +815,8 @@
           "localImage": "/upwork-covers/neophar-website-2.jpg"
         }
       ],
-      "completionDate": "2017-05-21",
-      "url": "http://pharmacy.ar27111994.com"
+      "url": "http://pharmacy.ar27111994.com",
+      "completionDate": "2017-05-21"
     },
     {
       "id": "goggle-hunt",
@@ -861,8 +861,8 @@
           "localImage": "/upwork-covers/goggle-hunt-2.jpg"
         }
       ],
-      "completionDate": "2017-06-14",
-      "url": "https://gogglehunt.com"
+      "url": "https://gogglehunt.com",
+      "completionDate": "2017-06-14"
     },
     {
       "id": "complete-controller-crm-system",
@@ -907,8 +907,8 @@
           "localImage": "/upwork-covers/complete-controller-crm-system-2.jpg"
         }
       ],
-      "completionDate": "2017-07-30",
-      "url": "http://upwork.ar27111994.com"
+      "url": "http://upwork.ar27111994.com",
+      "completionDate": "2017-07-30"
     },
     {
       "id": "web-rtc",
@@ -929,8 +929,8 @@
           "localImage": "/upwork-covers/web-rtc-0.jpg"
         }
       ],
-      "completionDate": "2017-07-18",
-      "url": "https://webrtc.ar27111994.com"
+      "url": "https://webrtc.ar27111994.com",
+      "completionDate": "2017-07-18"
     },
     {
       "id": "jmgarts-com-page-speed-optimization",
@@ -975,8 +975,8 @@
           "localImage": "/upwork-covers/jmgarts-com-page-speed-optimization-2.jpg"
         }
       ],
-      "completionDate": "2017-08-10",
-      "url": "https://jmgarts.com/"
+      "url": "https://jmgarts.com/",
+      "completionDate": "2017-08-10"
     },
     {
       "id": "https-directsoftwareoutlet-com-payment-gateway-integration",
@@ -1009,8 +1009,8 @@
           "localImage": "/upwork-covers/https-directsoftwareoutlet-com-payment-gateway-integration-1.jpg"
         }
       ],
-      "completionDate": "2017-08-17",
-      "url": "https://directsoftwareoutlet.com/"
+      "url": "https://directsoftwareoutlet.com/",
+      "completionDate": "2017-08-17"
     },
     {
       "id": "aljibouri-co",
@@ -1055,8 +1055,8 @@
           "localImage": "/upwork-covers/aljibouri-co-2.jpg"
         }
       ],
-      "completionDate": "2017-09-11",
-      "url": "http://aljibouri.co"
+      "url": "http://aljibouri.co",
+      "completionDate": "2017-09-11"
     },
     {
       "id": "pdf-to-responsive-html-5",
@@ -1134,8 +1134,8 @@
           "localImage": "/upwork-covers/american-community-school-donations-page-1.jpg"
         }
       ],
-      "completionDate": "2017-09-30",
-      "url": "http://payment.acs.sch.ae/donate.html"
+      "url": "http://payment.acs.sch.ae/donate.html",
+      "completionDate": "2017-09-30"
     },
     {
       "id": "ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage",
@@ -1270,8 +1270,8 @@
           "localImage": "/upwork-covers/eagle-6-2.jpg"
         }
       ],
-      "completionDate": "2022-03-17",
-      "url": "https://www.eagle6.com/"
+      "url": "https://www.eagle6.com/",
+      "completionDate": "2022-03-17"
     },
     {
       "id": "webhook-debugger-and-logger",
@@ -1297,6 +1297,7 @@
           "localImage": "/upwork-covers/webhook-debugger-and-logger-0.jpg"
         }
       ],
+      "url": "https://github.com/ar27111994/webhook-debugger-logger",
       "completionDate": "2026-06-01"
     },
     {
@@ -1330,6 +1331,7 @@
           "localImage": "/upwork-covers/agent-harness-0.jpg"
         }
       ],
+      "url": "https://github.com/ar27111994/agent-harness",
       "completionDate": "2026-06-01"
     },
     {
@@ -1356,6 +1358,7 @@
           "localImage": "/upwork-covers/penpot-mcp-0.jpg"
         }
       ],
+      "url": "https://github.com/ar27111994/penpot-mcp",
       "completionDate": "2026-05-01"
     },
     {
@@ -1400,6 +1403,7 @@
           "localImage": "/upwork-covers/ar27111994-dev-1.jpg"
         }
       ],
+      "url": "https://www.ar27111994.dev",
       "completionDate": "2026-06-01"
     },
     {
@@ -1443,8 +1447,8 @@
           "localImage": "/upwork-covers/ai-development-suite-11-agent-skills-submissions-on-capafy-1.jpg"
         }
       ],
-      "completionDate": "2026-07-17",
-      "url": "https://capafy.ai/publisher/ar27111994"
+      "url": "https://capafy.ai/publisher/ar27111994",
+      "completionDate": "2026-07-17"
     },
     {
       "id": "supahooks-sentinel-hermes-accelerated-business-hackathon-submission",

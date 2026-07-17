@@ -313,9 +313,14 @@ function transformProjects(rawProjects) {
       skills,
     };
     if (attachments.length) item.attachments = attachments;
+    // Use projectUrl from API, or fall back to embeddedLink attachment URL
+    const embeddedUrl = (p.attachments ?? []).find(
+      (a) => String(a.type ?? "") === "embeddedLink",
+    )?.originalAttachment;
+    if (p.projectUrl) item.url = String(p.projectUrl);
+    else if (embeddedUrl) item.url = String(embeddedUrl);
     if (p.completionDateTime)
       item.completionDate = String(p.completionDateTime);
-    if (p.projectUrl) item.url = String(p.projectUrl);
 
     return item;
   });
