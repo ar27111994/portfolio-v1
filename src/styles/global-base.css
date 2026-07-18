@@ -26,76 +26,7 @@
   --font-sans: Inter, "Inter-fallback", "Segoe UI", Roboto, Ubuntu, Cantarell,
     "Noto Sans", Helvetica, Arial, sans-serif;
 
-  /* ── Core Palette ────────────────────────── */
-  --ink: #0f0d0b;
-  --ink-soft: #2d2824;
-  --muted: #5c5248;
-  --paper: #faf7f2;
-  --paper-2: #fefcf8;
-  --card: #fefdfb;
-  --card-strong: #141210;
-
-  /* ── Lines & Borders ─────────────────────── */
-  --line: #d4c8b4;
-  --line-dark: #2e2a26;
-  --line-subtle: rgba(15, 13, 11, 0.08);
-
-  /* ── Accent Colors ───────────────────────── */
-  --blue: #1a4dff;
-  --blue-glow: rgba(26, 77, 255, 0.12);
-  --blue-soft: #e8edff;
-  --green: #0b7a4a;
-  --green-glow: rgba(11, 122, 74, 0.1);
-  --green-soft: #e6f5ed;
-  --orange: #d44a1a;
-  --orange-glow: rgba(212, 74, 26, 0.1);
-  --orange-soft: #fef0e5;
-  --violet: #7c3aed;
-  --violet-soft: #f4ebff;
-
-  /* ── Gradients ───────────────────────────── */
-  --grad-hero: linear-gradient(165deg, #fefcf8 0%, #faf4e8 50%, #fefcf8 100%);
-  --grad-accent: linear-gradient(
-    135deg,
-    var(--blue) 0%,
-    var(--violet) 50%,
-    var(--orange) 100%
-  );
-  --grad-warm: linear-gradient(
-    135deg,
-    var(--orange) 0%,
-    var(--blue) 100%
-  );
-  --grad-card-hover: linear-gradient(
-    180deg,
-    rgba(26, 77, 255, 0.03) 0%,
-    transparent 60%
-  );
-
-  /* ── Radii ────────────────────────────────── */
-  --radius-xs: 8px;
-  --radius-sm: 14px;
-  --radius-md: 18px;
-  --radius-lg: 24px;
-  --radius-xl: 34px;
-  --radius-full: 999px;
-
-  /* ── Shadows ──────────────────────────────── */
-  --shadow-xs: 0 1px 3px rgba(15, 13, 11, 0.06);
-  --shadow-sm: 0 4px 12px rgba(15, 13, 11, 0.07);
-  --shadow-md: 0 12px 40px rgba(15, 13, 11, 0.1);
-  --shadow-lg: 0 24px 70px rgba(15, 13, 11, 0.12);
-  --shadow-xl: 0 36px 100px rgba(15, 13, 11, 0.16);
-  --shadow-card: 0 1px 2px rgba(15, 13, 11, 0.04),
-    0 8px 24px rgba(15, 13, 11, 0.07);
-  --shadow-card-hover: 0 2px 4px rgba(15, 13, 11, 0.06),
-    0 16px 48px rgba(15, 13, 11, 0.12);
-  --shadow-inner: inset 0 1px 2px rgba(255, 255, 255, 0.5);
-  --shadow-tight: 0 4px 16px rgba(15, 13, 11, 0.08);
-  --shadow-button: 0 2px 8px rgba(15, 13, 11, 0.1);
-  --shadow-button-hover: 0 4px 16px rgba(15, 13, 11, 0.18);
-
-  /* ── Typography Scale ────────────────────── */
+  /* ── Typography Scale (base.css canonical) ─ */
   --text-xs: clamp(0.7rem, 0.67rem + 0.12vw, 0.78rem);
   --text-sm: clamp(0.82rem, 0.78rem + 0.16vw, 0.9rem);
   --text-base: clamp(0.98rem, 0.93rem + 0.22vw, 1.08rem);
@@ -105,38 +36,16 @@
   --text-3xl: clamp(2.1rem, 1.55rem + 2.2vw, 3.4rem);
   --text-display: clamp(2.8rem, 2rem + 3.5vw, 5.2rem);
 
-  /* ── Spacing Scale (4pt) ─────────────────── */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.25rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
-  --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
-  --space-20: 5rem;
-  --space-24: 6rem;
-
-  /* ── Animation ────────────────────────────── */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
-  --dur-slow: 350ms;
-  --dur-glacial: 600ms;
-
-  /* ── Legacy aliases (backward compat) ────── */
+  /* ── Legacy aliases for backward compat ───── */
   --step--1: var(--text-sm);
   --step-0: var(--text-base);
   --step-1: var(--text-lg);
   --step-2: var(--text-2xl);
   --step-3: var(--text-3xl);
   --step-4: var(--text-display);
-  --shadow: var(--shadow-lg);
 }
+
+/* All color, spacing, radius, shadow, and animation tokens are in global-theme.css */
 
 /* ── Scroll-triggered reveal animation ──────── */
 /* Sections are always visible — animation is additive only */

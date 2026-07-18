@@ -60,7 +60,7 @@ body:before {
   left: 16px;
   top: -48px;
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
   padding: 0.56rem 0.78rem;
   border-radius: 999px;
   font-weight: 800;
@@ -169,7 +169,7 @@ summary:focus-visible {
   height: 28px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--blue) 0%, var(--orange) 100%);
-  color: #fff;
+  color: var(--ink-on-dark);
   font-size: 0.62rem;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -248,7 +248,7 @@ summary:focus-visible {
 .anchor-rail a:hover,
 .anchor-rail a:focus-visible {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .anchor-rail a:hover svg,
 .anchor-rail a:focus-visible svg {
@@ -257,7 +257,7 @@ summary:focus-visible {
 .anchor-rail a[aria-current="true"],
 .anchor-rail a.is-active {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .anchor-rail a[aria-current="true"] svg,
 .anchor-rail a.is-active svg {
@@ -515,7 +515,7 @@ h3 {
   align-items: center;
   gap: 0.44rem;
   background: #111;
-  color: #fff;
+  color: var(--ink-on-dark);
   line-height: 1.35;
 }
 .workflow-loop {
@@ -551,7 +551,7 @@ h3 {
   border-radius: 999px;
   padding: 0.24rem 0.56rem;
   background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  color: var(--ink-on-dark);
   font-weight: 900;
   font-size: 0.78rem;
   letter-spacing: 0.02em;
@@ -670,7 +670,7 @@ h3 {
   padding: 0 0.2rem;
   border-radius: 999px;
   background: #111;
-  color: #fff;
+  color: var(--ink-on-dark);
   font-size: 0.6rem;
   font-weight: 900;
   line-height: 1;
@@ -731,7 +731,7 @@ h3 {
 }
 .button.primary {
   background: var(--ink);
-  color: #fff;
+  color: var(--button-primary-text);
 }
 .button.secondary {
   background: var(--tag-bg);
@@ -792,12 +792,12 @@ h3 {
 }
 .contact-command.secondary:hover {
   background: #111;
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .contact-command.secondary:after {
   content: "PDF";
   background: #111;
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .contact-command.secondary:hover:after {
   background: #caff80;
@@ -872,7 +872,7 @@ h3 {
       transparent
     ),
     linear-gradient(170deg, #1c1915 0%, #141210 100%);
-  color: #fff;
+  color: var(--ink-on-dark);
   box-shadow: var(--shadow-lg);
 }
 .signal-board {
@@ -893,7 +893,7 @@ h3 {
 }
 .signal-board strong {
   display: block;
-  color: #fff;
+  color: var(--ink-on-dark);
   font-size: clamp(1.15rem, 0.95rem + 1vw, 1.85rem);
   line-height: 1;
   letter-spacing: -0.055em;
@@ -1015,7 +1015,7 @@ h3 {
   margin: 0 0 0.6rem;
 }
 .hero-aside h2 {
-  color: #fff;
+  color: var(--ink-on-dark);
   font-size: clamp(1.55rem, 1.12rem + 1.35vw, 2.45rem);
 }
 .bullet-clean {
@@ -1171,7 +1171,7 @@ h3 {
 .resume-widget:hover,
 .contact-widget:hover {
   background: #222;
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .profile-widget:hover .widget-icon,
 .resume-widget:hover .widget-icon,
@@ -1188,7 +1188,7 @@ h3 {
 .profile-widget:hover em,
 .resume-widget:hover em,
 .contact-widget:hover em {
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .profile-widget:hover small,
 .resume-widget:hover small,
@@ -1575,7 +1575,7 @@ h3 {
 }
 .pill-links a:hover {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
   border-color: var(--ink);
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
@@ -1808,7 +1808,7 @@ h3 {
 }
 .contact-proof-strip a:hover {
   background: #222;
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .contact-proof-strip a:hover small,
 .proof-ledger a:hover small {
@@ -1816,7 +1816,7 @@ h3 {
 }
 .contact-proof-strip a:hover strong,
 .proof-ledger a:hover strong {
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .proof-ledger a:hover:after {
   background: #caff80;
@@ -1863,7 +1863,7 @@ h3 {
 }
 .pill-link-card:hover .pill-link-text strong,
 .pill-link-card:hover .pill-link-text small {
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .pill-link-card:hover .pill-link-icon img {
   filter: brightness(0) invert(1);
@@ -1962,11 +1962,11 @@ h3 {
   align-content: start;
   gap: 0.72rem;
   background: #171717;
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .upwork-summary-card h3 {
   margin: 0;
-  color: #fff;
+  color: var(--ink-on-dark);
   font-size: clamp(1.5rem, 1.2rem + 1.25vw, 2.35rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
@@ -2226,7 +2226,7 @@ h3 {
   .upwork-portfolio-fallback
   small {
   max-width: calc(100% - 1.2rem);
-  color: #fff;
+  color: var(--ink-on-dark);
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.36);
 }
 .upwork-portfolio-preview.thumbnail-loaded.has-media
@@ -2388,7 +2388,7 @@ h3 {
 .upwork-project-url:hover,
 .upwork-project-url:focus-visible {
   background: #173ec1;
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .upwork-portfolio-meta-row {
   display: flex;
@@ -2588,7 +2588,7 @@ h3 {
   border: 1px solid var(--ink);
   border-radius: 999px;
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
   padding: 0.55rem 0.78rem;
   font-family: inherit;
   font-weight: 900;
@@ -2597,7 +2597,7 @@ h3 {
 .upwork-modal-close:hover,
 .upwork-modal-close:focus-visible {
   background: var(--blue);
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .upwork-modal-content {
   display: grid;
@@ -2684,7 +2684,7 @@ h3 {
   border: 1px solid var(--line-divider);
   border-radius: 18px;
   background: #171717;
-  color: #fff;
+  color: var(--ink-on-dark);
   overflow: hidden;
 }
 .upwork-raw-data summary {
@@ -2802,12 +2802,12 @@ h3 {
 .upwork-portfolio-link {
   border: 1px solid var(--ink);
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .upwork-portfolio-link:hover,
 .upwork-portfolio-link:focus-visible {
   background: var(--blue);
-  color: #fff;
+  color: var(--ink-on-dark);
   transform: translateY(-1px);
 }
 .proof-grid {
@@ -2892,11 +2892,11 @@ h3 {
 }
 .contact-widget:hover {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
   border-color: var(--ink);
 }
 .contact-widget:hover strong,
-.contact-widget:hover em { color: #fff; }
+.contact-widget:hover em { color: var(--ink-on-dark); }
 .contact-widget strong {
   display: block;
   font-size: 0.9rem;
@@ -3354,7 +3354,7 @@ h3 {
 }
 .search-clear:hover {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .toolbar-actions {
   display: flex;
@@ -3402,7 +3402,7 @@ h3 {
 .filter-tag.is-active {
   background: var(--blue);
   border-color: var(--blue);
-  color: #fff;
+  color: var(--ink-on-dark);
 }
 .filter-clear {
   padding: 0.22rem 0.55rem;
@@ -3457,7 +3457,7 @@ h3 {
 }
 .pagination-btn:hover:not(:disabled) {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
   border-color: var(--ink);
 }
 .pagination-btn:disabled {
@@ -3492,7 +3492,7 @@ h3 {
 }
 .page-num.is-active {
   background: var(--ink);
-  color: #fff;
+  color: var(--ink-on-dark);
   border-color: var(--ink);
 }
 .page-ellipsis {
@@ -3628,7 +3628,7 @@ h3 {
 .feed-source-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.32rem 0.6rem; border: 1px solid var(--line-subtle); border-radius: 999px; background: var(--card); text-decoration: none; font-size: 0.72rem; font-weight: 700; color: var(--ink); transition: all var(--dur-fast) var(--ease-out); }
 .feed-source-pill img { width: 1rem; height: 1rem; object-fit: contain; opacity: 0.6; }
 .feed-source-pill small { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
-.feed-source-pill:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+.feed-source-pill:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
 .feed-source-pill:hover small { color: #aaa; }
 .feed-sources-carousel .swiper-slide { width: auto; height: auto; }
