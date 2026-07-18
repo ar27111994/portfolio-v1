@@ -371,7 +371,7 @@ summary:focus-visible {
   font-size: var(--step--1);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #5f564f;
+  color: var(--muted);
   font-weight: 800;
   overflow-wrap: anywhere;
 }
@@ -421,7 +421,7 @@ h3 {
 }
 .subtle {
   margin: 0.8rem 0 0;
-  color: #5f564f;
+  color: var(--muted);
   font-size: var(--step--1);
 }
 .availability-strip {
@@ -454,7 +454,7 @@ h3 {
   align-content: start;
 }
 .availability-card small {
-  color: #5f564f;
+  color: var(--muted);
   font-size: 0.76rem;
   line-height: 1.28;
   font-weight: 780;
@@ -474,7 +474,7 @@ h3 {
   height: 1.55rem;
   margin-right: 0.24rem;
   border-radius: 999px;
-  background: #fff7c9;
+  background: var(--tag-bg);
   color: #111;
   font-size: 0.86rem;
   vertical-align: middle;
@@ -485,12 +485,12 @@ h3 {
   height: auto;
   margin: 0 0 0.3rem 0;
   padding: 0.16rem 0.5rem;
-  border: 1px solid rgba(17, 17, 17, 0.18);
+  border: 1px solid var(--line-divider);
   border-radius: 6px;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: #fff7c9;
+  background: var(--tag-bg);
 }
 .availability-strip span strong {
   display: inline;
@@ -593,10 +593,10 @@ h3 {
 .hero-proof-cards span {
   border: 1px solid var(--line-dark);
   border-radius: 18px;
-  background: #fffaf1;
+  background: var(--surface-raised);
   padding: 0.75rem;
   min-height: 92px;
-  box-shadow: 5px 5px #11111114;
+  box-shadow: 5px 5px rgba(var(--shadow-color), 0.08);
 }
 .hero-proof-cards b,
 .hero-proof-cards em {
@@ -632,7 +632,7 @@ h3 {
   border-radius: 999px;
   padding: 0.28rem 0.64rem;
   color: var(--ink);
-  background: #fff;
+  background: var(--surface);
   font-size: 0.78rem;
   font-weight: 800;
   line-height: 1.25;
@@ -656,7 +656,7 @@ h3 {
 .badge-row span:nth-child(7),
 .badge-row span:nth-child(8),
 .badge-row span:nth-child(9) {
-  background: #fff7c9;
+  background: var(--tag-bg);
   border-color: var(--line-dark);
 }
 .badge-row b {
@@ -727,14 +727,14 @@ h3 {
 }
 .button:hover {
   transform: translateY(-2px);
-  box-shadow: 5px 5px #11111124;
+  box-shadow: 5px 5px rgba(var(--shadow-color), 0.14);
 }
 .button.primary {
   background: var(--ink);
   color: #fff;
 }
 .button.secondary {
-  background: #fff7c9;
+  background: var(--tag-bg);
   color: var(--ink);
 }
 .button.tertiary,
@@ -773,10 +773,10 @@ h3 {
   content: "OPEN";
   align-self: center;
   justify-self: end;
-  border: 1px solid rgba(17, 17, 17, 0.18);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
   padding: 0.18rem 0.42rem;
-  background: #fff;
+  background: var(--surface);
   color: #111;
   font-size: 0.62rem;
   font-weight: 900;
@@ -788,7 +788,7 @@ h3 {
 .contact-command.secondary {
   border-width: 2px;
   background: linear-gradient(135deg, #fff0a8, #fff7c9 54%, #fff);
-  box-shadow: 6px 6px #1111112b;
+  box-shadow: 6px 6px rgba(var(--shadow-color), 0.17);
 }
 .contact-command.secondary:hover {
   background: #111;
@@ -807,7 +807,7 @@ h3 {
   content: "CHAT";
 }
 .contact-command.secondary .command-icon {
-  background: #fffdf8;
+  background: var(--surface-raised);
 }
 .command-icon {
   display: inline-grid;
@@ -815,10 +815,10 @@ h3 {
   flex: 0 0 auto;
   width: 2.15rem;
   height: 2.15rem;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 14px;
-  background: #fff;
-  box-shadow: 3px 3px #11111118;
+  background: var(--surface);
+  box-shadow: 3px 3px rgba(var(--shadow-color), 0.09);
 }
 .contact-command .command-icon img {
   width: 1.22rem;
@@ -880,7 +880,7 @@ h3 {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 22px;
   padding: 0.78rem;
-  background: #ffffff0f;
+  background: var(--line-subtle);
 }
 .signal-kicker {
   display: block;
@@ -934,7 +934,7 @@ h3 {
   overflow: hidden;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  background: #ffffff14;
+  background: rgba(255,255,255,0.08);
   height: 1.65rem;
 }
 .signal-bars span:before {
@@ -965,7 +965,7 @@ h3 {
 }
 .signal-tags span {
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface);
   color: #111;
   padding: 0.28rem 0.48rem;
   font-size: 0.72rem;
@@ -994,7 +994,7 @@ h3 {
 }
 .signal-note {
   margin: 0.48rem 0 0;
-  color: #d8d8d8;
+  color: var(--muted);
   font-size: 0.78rem;
   font-weight: 820;
   line-height: 1.35;
@@ -1080,11 +1080,11 @@ h3 {
 .section-kicker {
   margin: 0 0 0.32rem;
   width: fit-content;
-  border: 1px solid rgba(17, 17, 17, 0.16);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #fff7c9;
+  background: var(--tag-bg);
   padding: 0.24rem 0.54rem;
-  color: #514941;
+  color: var(--tag-text);
   font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -1165,7 +1165,7 @@ h3 {
 .upwork-proof-card:hover,
 .upwork-portfolio-card:hover {
   transform: translateY(-2px);
-  box-shadow: 10px 10px #1111111f;
+  box-shadow: 10px 10px rgba(var(--shadow-color), 0.12);
 }
 .profile-widget:hover,
 .resume-widget:hover,
@@ -1179,7 +1179,7 @@ h3 {
 .feed-source-card:hover .feed-source-icon,
 .contact-proof-strip a:hover img,
 .proof-ledger a:hover img {
-  background: #fff;
+  background: var(--surface);
   filter: none;
 }
 .profile-widget:hover strong,
@@ -1193,7 +1193,7 @@ h3 {
 .profile-widget:hover small,
 .resume-widget:hover small,
 .contact-widget:hover small {
-  color: #d8d8d8;
+  color: var(--muted);
 }
 .project-visual {
   border: 1px solid rgba(15, 13, 11, 0.08);
@@ -1451,7 +1451,7 @@ h3 {
   border-radius: 18px;
   padding: 0.82rem;
   color: var(--ink);
-  background: #fff;
+  background: var(--surface);
   font-weight: 760;
 }
 .capability-card-grid {
@@ -1500,7 +1500,7 @@ h3 {
   height: 2.2rem;
   border: 1px solid var(--line-dark);
   border-radius: 14px;
-  background: #fff;
+  background: var(--surface);
   box-shadow: 3px 3px #11111112;
   color: var(--ink);
   font-size: 0.62rem;
@@ -1529,16 +1529,16 @@ h3 {
   width: fit-content;
   border: 1px solid rgba(17, 17, 17, 0.14);
   border-radius: 999px;
-  background: #fff7c9;
+  background: var(--tag-bg);
   padding: 0.2rem 0.48rem;
-  color: #514941;
+  color: var(--tag-text);
   font-size: 0.68rem;
   font-weight: 880;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 .experiment {
-  background: #fffaf3;
+  background: var(--surface-raised);
 }
 .compact .project-card h3 {
   margin-top: 0;
@@ -1605,7 +1605,7 @@ h3 {
   text-decoration: none;
   display: grid;
   gap: 0.35rem;
-  background: #fff;
+  background: var(--surface);
 }
 .resume-widget {
   height: 100%;
@@ -1733,15 +1733,15 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
-  border: 1px solid rgba(17, 17, 17, 0.16);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.42rem 0.68rem;
   color: var(--ink-soft);
   font-size: var(--step--1);
   font-weight: 820;
   text-decoration: none;
-  box-shadow: 3px 3px #11111110;
+  box-shadow: 3px 3px rgba(var(--shadow-color), 0.06);
 }
 .proof-ledger span,
 .proof-ledger a {
@@ -1759,10 +1759,10 @@ h3 {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
-  border: 1px solid rgba(17, 17, 17, 0.16);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
   padding: 0.12rem 0.34rem;
-  background: #fff7c9;
+  background: var(--tag-bg);
   color: #111;
   font-size: 0.58rem;
   font-weight: 900;
@@ -1797,9 +1797,9 @@ h3 {
   width: 1.75rem;
   height: 1.75rem;
   flex: 0 0 auto;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 10px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.32rem;
   object-fit: contain;
 }
@@ -1812,7 +1812,7 @@ h3 {
 }
 .contact-proof-strip a:hover small,
 .proof-ledger a:hover small {
-  color: #d8d8d8;
+  color: var(--muted);
 }
 .contact-proof-strip a:hover strong,
 .proof-ledger a:hover strong {
@@ -1922,8 +1922,8 @@ h3 {
   height: 2.3rem;
   border: 1px solid var(--line-dark);
   border-radius: 15px;
-  background: #fff;
-  box-shadow: 4px 4px #11111112;
+  background: var(--surface);
+  box-shadow: 4px 4px rgba(var(--shadow-color), 0.07);
 }
 .support-icon img {
   width: 1.38rem;
@@ -2004,7 +2004,7 @@ h3 {
   align-content: center;
   gap: 0.56rem;
   min-height: 168px;
-  background: #fff;
+  background: var(--surface);
 }
 .upwork-proof-card small {
   display: inline-flex;
@@ -2012,18 +2012,18 @@ h3 {
   justify-self: start;
   width: fit-content;
   max-width: 100%;
-  border: 1px solid rgba(17, 17, 17, 0.18);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #fff7c9;
+  background: var(--tag-bg);
   padding: 0.26rem 0.58rem;
-  color: #514941;
+  color: var(--tag-text);
   font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.08em;
   line-height: 1.1;
   text-transform: uppercase;
   overflow-wrap: anywhere;
-  box-shadow: inset 0 -1px 0 rgba(17, 17, 17, 0.08);
+  box-shadow: inset 0 -1px 0 var(--line-subtle);
 }
 .upwork-proof-card strong {
   color: var(--ink);
@@ -2042,7 +2042,7 @@ h3 {
   align-items: center;
   width: fit-content;
   margin-left: 0.42rem;
-  border: 1px solid rgba(17, 17, 17, 0.16);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
   background: #caff80;
   padding: 0.2rem 0.56rem;
@@ -2098,7 +2098,7 @@ h3 {
   font-size: 0.82rem;
   font-weight: 700;
   color: var(--ink-soft);
-  background: #fff;
+  background: var(--surface);
 }
 .upwork-portfolio-grid {
   display: grid;
@@ -2206,7 +2206,7 @@ h3 {
   background: linear-gradient(
     0deg,
     rgba(17, 17, 17, 0.72),
-    rgba(17, 17, 17, 0.18) 64%,
+    var(--line-divider) 64%,
     transparent
   );
   justify-items: start;
@@ -2262,9 +2262,9 @@ h3 {
 .upwork-preview-chip {
   width: fit-content;
   max-width: calc(100% - 1.1rem);
-  border: 1px solid rgba(17, 17, 17, 0.18);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.22rem 0.52rem;
   color: var(--ink);
   font-size: 0.66rem;
@@ -2272,7 +2272,7 @@ h3 {
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
-  box-shadow: 0 6px 20px rgba(17, 17, 17, 0.08);
+  box-shadow: 0 6px 20px var(--line-subtle);
 }
 .upwork-portfolio-fallback strong {
   max-width: 100%;
@@ -2311,7 +2311,7 @@ h3 {
 }
 .upwork-portfolio-card.featured {
   border-color: var(--ink);
-  box-shadow: 8px 8px #11111120;
+  box-shadow: 8px 8px rgba(var(--shadow-color), 0.13);
 }
 .upwork-portfolio-copy {
   display: grid;
@@ -2345,7 +2345,7 @@ h3 {
   flex: 0 0 auto;
   border: 1px solid rgba(17, 17, 17, 0.14);
   border-radius: 999px;
-  background: #fff7c9;
+  background: var(--tag-bg);
   padding: 0.16rem 0.38rem;
   color: var(--ink-soft);
   font-size: 0.62rem;
@@ -2356,7 +2356,7 @@ h3 {
 }
 .upwork-portfolio-role {
   margin: 0;
-  color: #514941;
+  color: var(--tag-text);
   font-size: var(--step--1);
   font-weight: 800;
 }
@@ -2394,14 +2394,14 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.34rem;
-  color: #6b6259;
+  color: var(--tag-text);
   font-size: 0.68rem;
   font-weight: 820;
 }
 .upwork-portfolio-meta-row span {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 999px;
-  background: #fffdf8;
+  background: var(--surface-raised);
   padding: 0.18rem 0.46rem;
 }
 .upwork-portfolio-tags {
@@ -2414,9 +2414,9 @@ h3 {
   list-style: none;
 }
 .upwork-portfolio-tags li {
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.2rem 0.48rem;
   color: var(--ink-soft);
   font-size: 0.66rem;
@@ -2457,9 +2457,9 @@ h3 {
 }
 .upwork-open-details {
   border: 1px solid var(--ink);
-  background: #fff;
+  background: var(--surface);
   color: var(--ink);
-  box-shadow: 4px 4px #11111112;
+  box-shadow: 4px 4px rgba(var(--shadow-color), 0.07);
 }
 .upwork-open-details:before {
   content: "↗";
@@ -2469,14 +2469,14 @@ h3 {
 }
 .upwork-open-details:hover,
 .upwork-open-details:focus-visible {
-  background: #fff7c9;
+  background: var(--tag-bg);
   transform: translateY(-1px);
-  box-shadow: 6px 6px #1111111c;
+  box-shadow: 6px 6px rgba(var(--shadow-color), 0.11);
 }
 .upwork-portfolio-details {
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 18px;
-  background: #fffdf8;
+  background: var(--surface-raised);
   overflow: hidden;
 }
 .upwork-portfolio-details summary {
@@ -2500,7 +2500,7 @@ h3 {
   gap: 0.42rem;
 }
 .upwork-detail-block small {
-  color: #6b6259;
+  color: var(--tag-text);
   font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -2533,7 +2533,7 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--line-dark);
   border-radius: 28px;
-  background: #fffdf8;
+  background: var(--surface-raised);
   color: var(--ink);
   padding: 0;
   box-shadow: 0 30px 90px rgba(17, 17, 17, 0.32);
@@ -2558,14 +2558,14 @@ h3 {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 1rem;
   align-items: start;
-  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+  border-bottom: 1px solid var(--line-divider);
   background: rgba(255, 253, 248, 0.94);
   padding: clamp(1rem, 2vw, 1.35rem);
   backdrop-filter: blur(16px);
 }
 .upwork-modal-kicker {
   margin: 0 0 0.36rem;
-  color: #514941;
+  color: var(--tag-text);
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -2618,7 +2618,7 @@ h3 {
 .upwork-modal-content::-webkit-scrollbar-track,
 .upwork-raw-data pre::-webkit-scrollbar-track {
   border-radius: 999px;
-  background: #efe7db;
+  background: var(--line);
 }
 .upwork-modal::-webkit-scrollbar-thumb,
 .upwork-modal-content::-webkit-scrollbar-thumb,
@@ -2639,15 +2639,15 @@ h3 {
   width: fit-content;
   max-width: 100%;
   margin: 0;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #fff7c9;
+  background: var(--tag-bg);
   padding: 0.34rem 0.62rem;
   color: var(--ink);
   font-size: 0.74rem;
   font-weight: 900;
   line-height: 1.15;
-  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.08);
+  box-shadow: 0 8px 24px var(--line-subtle);
 }
 .upwork-fact-grid {
   display: grid;
@@ -2658,16 +2658,16 @@ h3 {
 .upwork-fact-grid div {
   display: grid;
   gap: 0.2rem;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 16px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.72rem;
 }
 .upwork-fact-grid .wide-fact {
   grid-column: 1 / -1;
 }
 .upwork-fact-grid dt {
-  color: #6b6259;
+  color: var(--tag-text);
   font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -2681,7 +2681,7 @@ h3 {
   overflow-wrap: anywhere;
 }
 .upwork-raw-data {
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 18px;
   background: #171717;
   color: #fff;
@@ -2713,7 +2713,7 @@ h3 {
   position: relative;
   display: block;
   overflow: hidden;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 12px;
   background:
     radial-gradient(
@@ -2754,9 +2754,9 @@ h3 {
   place-items: center;
   width: 2.1rem;
   height: 2.1rem;
-  border: 1px solid rgba(17, 17, 17, 0.16);
+  border: 1px solid var(--line-divider);
   border-radius: 12px;
-  background: #fff;
+  background: var(--surface);
   color: var(--blue);
 }
 .upwork-media-tile span em {
@@ -2783,9 +2783,9 @@ h3 {
 .upwork-attachment-list span {
   display: grid;
   gap: 0.18rem;
-  border: 1px solid rgba(17, 17, 17, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 14px;
-  background: #fff;
+  background: var(--surface);
   padding: 0.52rem 0.58rem;
   color: var(--ink);
   font-size: var(--step--1);
@@ -3149,7 +3149,7 @@ h3 {
   padding: 0.3rem 0.6rem;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #fffdf8;
+  background: var(--surface-raised);
 }
 .proof-stack-metrics b {
   font-size: 1.05rem;
