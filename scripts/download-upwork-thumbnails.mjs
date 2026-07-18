@@ -150,7 +150,7 @@ for (const item of items) {
 
   const imageAtts = (item.attachments ?? []).filter((a) => {
     if (a.type !== "image") return false;
-    if (a.localImage) return false; // already have a local copy
+    if (!overwrite && a.localImage) return false; // skip if already cached (unless overwriting)
     const url = bestImageUrl(a);
     return url && isUpworkAuthUrl(url);
   });
