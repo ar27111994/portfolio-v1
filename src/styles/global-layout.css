@@ -2124,6 +2124,9 @@ html.dark .contact-panel {
     ),
     radial-gradient(circle at 18% 0%, rgba(36, 87, 255, 0.1), transparent 16rem);
 }
+html.dark .upwork-portfolio-card {
+  background: var(--card);
+}
 /* Reduce gap after cover/preview image */
 .upwork-portfolio-preview {
   margin-bottom: -0.46rem;
