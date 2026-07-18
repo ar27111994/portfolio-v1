@@ -1,9 +1,9 @@
 {
   "profileUrl": "https://www.upwork.com/freelancers/~0188baee67e8f543e7",
-  "lastUpdated": "2026-07-17",
+  "lastUpdated": "2026-07-18",
   "source": "upwork-browser-graphql-api",
   "sourceNote": "Fetched via Upwork talentPortfolioProjects GraphQL query (all items, paginated). Requires browser session curl — see script header for instructions.",
-  "extractedAt": "2026-07-17T20:40:32.465Z",
+  "extractedAt": "2026-07-18T08:05:40.087Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -15,10 +15,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488018887127040",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488018887127040"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488018887127040",
+          "localImage": "/upwork-covers/golden-point-print-0.jpg"
         }
       ],
-      "completionDate": "2014-10-08",
       "url": "http://www.goldenpointprint.com"
     },
     {
@@ -31,10 +31,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488030480183296",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488030480183296"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488030480183296",
+          "localImage": "/upwork-covers/newspaper-website-0.jpg"
         }
       ],
-      "completionDate": "2015-01-30",
       "url": "http://dailyjammukashmir.org/"
     },
     {
@@ -52,7 +52,8 @@
           "fileSize": 212677,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488050910638081",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488052466724865",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488039644737536"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488039644737536",
+          "localImage": "/upwork-covers/garments-store-concept-website-0.jpg"
         },
         {
           "type": "image",
@@ -62,7 +63,8 @@
           "fileSize": 65646,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488052965847040",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488053334945793",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488049643958272"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488049643958272",
+          "localImage": "/upwork-covers/garments-store-concept-website-1.jpg"
         },
         {
           "type": "image",
@@ -72,10 +74,10 @@
           "fileSize": 73816,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488049371328513",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488052043100160",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488043939704832"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488043939704832",
+          "localImage": "/upwork-covers/garments-store-concept-website-2.jpg"
         }
       ],
-      "completionDate": "2014-10-11",
       "url": "http://wecanwear.com/"
     },
     {
@@ -92,10 +94,10 @@
           "fileSize": 315377,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775761617473626112",
+          "localImage": "/upwork-covers/bookstore-0.jpg"
         }
       ],
-      "completionDate": "2015-12-31",
       "url": "https://github.com/ar27111994/bookstore"
     },
     {
@@ -104,7 +106,6 @@
       "description": "Shopping Cart Library: Version 1.0 | Copyright (c) 2015 - 2016, University Institute of Information Technology | (UIIT-UAAR) Currently used by hundreds of users on phpclasses.org.",
       "skills": [],
       "rank": 5,
-      "completionDate": "2015-12-30",
       "url": "https://github.com/ar27111994/ShoppingCartLibraryv1.0"
     },
     {
@@ -117,7 +118,8 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775765483422343168",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775765483422343168"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775765483422343168",
+          "localImage": "/upwork-covers/openbiz-supply-chain-management-system-0.jpg"
         }
       ],
       "url": "https://github.com/ar27111994/OpenBiz.git"
@@ -132,10 +134,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775766488000290816",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775766488000290816"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775766488000290816",
+          "localImage": "/upwork-covers/online-cloud-storage-0.jpg"
         }
       ],
-      "completionDate": "2016-07-05",
       "url": "https://github.com/ar27111994/UDrive-Cloud-Storage"
     },
     {
@@ -148,10 +150,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775767209210667008",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775767209210667008"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775767209210667008",
+          "localImage": "/upwork-covers/phonewordandroidapp-0.jpg"
         }
       ],
-      "completionDate": "2016-02-09",
       "url": "https://github.com/ar27111994/PhoneWordAndroidApp"
     },
     {
@@ -164,10 +166,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775768069613412352",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775768069613412352"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775768069613412352",
+          "localImage": "/upwork-covers/hotel-reservation-systemc-file-based-0.jpg"
         }
       ],
-      "completionDate": "2015-02-24",
       "url": "https://github.com/ar27111994/Hotel-Reservation-System-C--File-Based"
     },
     {
@@ -180,7 +182,8 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775772795486724096",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775772795486724096"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775772795486724096",
+          "localImage": "/upwork-covers/national-criminals-database-0.jpg"
         }
       ],
       "url": "https://github.com/ar27111994/National-Criminals-Database"
@@ -195,10 +198,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775773712223363072",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775773712223363072"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/775773712223363072",
+          "localImage": "/upwork-covers/school-management-system-0.jpg"
         }
       ],
-      "completionDate": "2015-09-01",
       "url": "http://dev1.gminns.com/sms"
     },
     {
@@ -216,7 +219,8 @@
           "fileSize": 1105031,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176615342940160",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176615342940160",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176615342940160"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176615342940160",
+          "localImage": "/upwork-covers/mak-table-tennis-equipment-and-supplies-0.jpg"
         },
         {
           "type": "image",
@@ -226,7 +230,8 @@
           "fileSize": 692206,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176637954433024",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176637954433024",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176637954433024"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176637954433024",
+          "localImage": "/upwork-covers/mak-table-tennis-equipment-and-supplies-1.jpg"
         },
         {
           "type": "image",
@@ -236,10 +241,10 @@
           "fileSize": 467641,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176660838555648",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176660838555648",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176660838555648"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/802176660838555648",
+          "localImage": "/upwork-covers/mak-table-tennis-equipment-and-supplies-2.jpg"
         }
       ],
-      "completionDate": "2016-07-01",
       "url": "http://www.maksportsgoods.com/"
     },
     {
@@ -256,10 +261,10 @@
           "fileSize": 96331,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/777027260588089344",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/777027260588089344",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/777027260588089344"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/777027260588089344",
+          "localImage": "/upwork-covers/logo-design-competition-for-topcoder-open-0.jpg"
         }
-      ],
-      "completionDate": "2015-08-12"
+      ]
     },
     {
       "id": "my-submissions-for-some-logo-banner-competitions",
@@ -275,7 +280,8 @@
           "fileSize": 319404,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/776846370419367936",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/776846370419367936",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/776846370419367936"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/776846370419367936",
+          "localImage": "/upwork-covers/my-submissions-for-some-logo-banner-competitions-0.jpg"
         }
       ]
     },
@@ -294,10 +300,10 @@
           "fileSize": 76683,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799986853781708800",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799986853781708800",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799986853781708800"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799986853781708800",
+          "localImage": "/upwork-covers/asaandukan-pk-opencart-0.jpg"
         }
       ],
-      "completionDate": "2016-11-04",
       "url": "http://asaandukan.pk/opencart"
     },
     {
@@ -315,10 +321,10 @@
           "fileSize": 156276,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/797696740402446336",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/797696740402446336",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/797696740402446336"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/797696740402446336",
+          "localImage": "/upwork-covers/iqra-books-agency-0.jpg"
         }
       ],
-      "completionDate": "2016-11-11",
       "url": "http://www.iqrabookagency.com.pk/"
     },
     {
@@ -331,10 +337,10 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799694786199298048",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799694786199298048"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/799694786199298048",
+          "localImage": "/upwork-covers/smart-auto-0.jpg"
         }
-      ],
-      "completionDate": "2016-11-18"
+      ]
     },
     {
       "id": "thanks-for-caring-plugin",
@@ -350,7 +356,8 @@
           "fileSize": 73593,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846891849383936",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846891849383936",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846891849383936"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846891849383936",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-0.jpg"
         },
         {
           "type": "image",
@@ -359,7 +366,8 @@
           "fileSize": 87515,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846910933467136",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846910933467136",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846910933467136"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846910933467136",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-1.jpg"
         },
         {
           "type": "image",
@@ -368,7 +376,8 @@
           "fileSize": 181642,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846939098218496",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846939098218496",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846939098218496"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846939098218496",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-2.jpg"
         },
         {
           "type": "image",
@@ -377,7 +386,8 @@
           "fileSize": 94248,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846953438543872",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846953438543872",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846953438543872"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846953438543872",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-3.jpg"
         },
         {
           "type": "image",
@@ -386,7 +396,8 @@
           "fileSize": 61574,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846969242681344",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846969242681344",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846969242681344"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846969242681344",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-4.jpg"
         },
         {
           "type": "image",
@@ -395,7 +406,8 @@
           "fileSize": 77144,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846990889484288",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846990889484288",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846990889484288"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811846990889484288",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-5.jpg"
         },
         {
           "type": "image",
@@ -404,7 +416,8 @@
           "fileSize": 72264,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847007897387008",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847007897387008",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847007897387008"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847007897387008",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-6.jpg"
         },
         {
           "type": "image",
@@ -413,7 +426,8 @@
           "fileSize": 162200,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847026687184896",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847026687184896",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847026687184896"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847026687184896",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-7.jpg"
         },
         {
           "type": "image",
@@ -422,10 +436,10 @@
           "fileSize": 211052,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847043213426688",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847043213426688",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847043213426688"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/811847043213426688",
+          "localImage": "/upwork-covers/thanks-for-caring-plugin-8.jpg"
         }
       ],
-      "completionDate": "2016-12-12",
       "url": "https://freelancer.ar27111994.com/tfc"
     },
     {
@@ -442,7 +456,8 @@
           "fileSize": 200603,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435005021290496",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435005021290496",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435005021290496"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435005021290496",
+          "localImage": "/upwork-covers/fit-fugitives-0.jpg"
         },
         {
           "type": "image",
@@ -451,7 +466,8 @@
           "fileSize": 316620,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435277054775296",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435277054775296",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435277054775296"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435277054775296",
+          "localImage": "/upwork-covers/fit-fugitives-1.jpg"
         },
         {
           "type": "image",
@@ -460,7 +476,8 @@
           "fileSize": 367380,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435358710169600",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435358710169600",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435358710169600"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435358710169600",
+          "localImage": "/upwork-covers/fit-fugitives-2.jpg"
         },
         {
           "type": "image",
@@ -469,7 +486,8 @@
           "fileSize": 215816,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435801703485440",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435801703485440",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435801703485440"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814435801703485440",
+          "localImage": "/upwork-covers/fit-fugitives-3.jpg"
         },
         {
           "type": "image",
@@ -478,7 +496,8 @@
           "fileSize": 291966,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814436061410594816",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814436061410594816",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814436061410594816"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/814436061410594816",
+          "localImage": "/upwork-covers/fit-fugitives-4.jpg"
         },
         {
           "type": "image",
@@ -487,7 +506,8 @@
           "fileSize": 112249,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826807394950447104",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826807394950447104",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826807394950447104"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826807394950447104",
+          "localImage": "/upwork-covers/fit-fugitives-5.jpg"
         },
         {
           "type": "image",
@@ -496,7 +516,8 @@
           "fileSize": 279057,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808121395511296",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808121395511296",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808121395511296"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808121395511296",
+          "localImage": "/upwork-covers/fit-fugitives-6.jpg"
         },
         {
           "type": "image",
@@ -505,7 +526,8 @@
           "fileSize": 702819,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808151737106432",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808151737106432",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808151737106432"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808151737106432",
+          "localImage": "/upwork-covers/fit-fugitives-7.jpg"
         },
         {
           "type": "image",
@@ -514,7 +536,8 @@
           "fileSize": 1909361,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808828139245568",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808828139245568",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808828139245568"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808828139245568",
+          "localImage": "/upwork-covers/fit-fugitives-8.jpg"
         },
         {
           "type": "image",
@@ -523,10 +546,10 @@
           "fileSize": 839556,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808961237778432",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808961237778432",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808961237778432"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/826808961237778432",
+          "localImage": "/upwork-covers/fit-fugitives-9.jpg"
         }
       ],
-      "completionDate": "2017-01-29",
       "url": "http://fitfugitives.com/"
     },
     {
@@ -543,7 +566,8 @@
           "fileSize": 171515,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828309360302096384",
+          "localImage": "/upwork-covers/opencart-modification-0.jpg"
         },
         {
           "type": "attachment",
@@ -558,10 +582,10 @@
           "fileSize": 296937,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828884354287534080",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828884354287534080",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828884354287534080"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/828884354287534080",
+          "localImage": "/upwork-covers/opencart-modification-1.jpg"
         }
       ],
-      "completionDate": "2017-02-04",
       "url": "https://www.tctouch.co.uk/"
     },
     {
@@ -578,10 +602,10 @@
           "fileSize": 73993,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879408866503266304",
+          "localImage": "/upwork-covers/http-guitarhangar-com-opencart-fix-and-modification-0.jpg"
         }
       ],
-      "completionDate": "2017-02-07",
       "url": "http://guitarhangar.com/"
     },
     {
@@ -598,7 +622,8 @@
           "fileSize": 94162,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411208803946496",
+          "localImage": "/upwork-covers/nubrace-com-bugs-fixing-0.jpg"
         },
         {
           "type": "image",
@@ -607,7 +632,8 @@
           "fileSize": 180266,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411255171211264",
+          "localImage": "/upwork-covers/nubrace-com-bugs-fixing-1.jpg"
         },
         {
           "type": "image",
@@ -616,7 +642,8 @@
           "fileSize": 155499,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411281596092416",
+          "localImage": "/upwork-covers/nubrace-com-bugs-fixing-2.jpg"
         },
         {
           "type": "image",
@@ -625,10 +652,10 @@
           "fileSize": 146055,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411297105862656",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411297105862656",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411297105862656"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879411297105862656",
+          "localImage": "/upwork-covers/nubrace-com-bugs-fixing-3.jpg"
         }
       ],
-      "completionDate": "2017-03-22",
       "url": "http://nubrace.com/"
     },
     {
@@ -645,7 +672,8 @@
           "fileSize": 157045,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612741448753152",
+          "localImage": "/upwork-covers/shop-erp-0.jpg"
         },
         {
           "type": "image",
@@ -654,7 +682,8 @@
           "fileSize": 167018,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612760679636992",
+          "localImage": "/upwork-covers/shop-erp-1.jpg"
         },
         {
           "type": "image",
@@ -663,7 +692,8 @@
           "fileSize": 158076,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612775783325696",
+          "localImage": "/upwork-covers/shop-erp-2.jpg"
         },
         {
           "type": "image",
@@ -672,7 +702,8 @@
           "fileSize": 172704,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612791721680896",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612791721680896",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612791721680896"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612791721680896",
+          "localImage": "/upwork-covers/shop-erp-3.jpg"
         },
         {
           "type": "image",
@@ -681,7 +712,8 @@
           "fileSize": 102871,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612819458613248",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612819458613248",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612819458613248"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612819458613248",
+          "localImage": "/upwork-covers/shop-erp-4.jpg"
         },
         {
           "type": "image",
@@ -690,7 +722,8 @@
           "fileSize": 101435,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612836219817984",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612836219817984",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612836219817984"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612836219817984",
+          "localImage": "/upwork-covers/shop-erp-5.jpg"
         },
         {
           "type": "image",
@@ -699,10 +732,10 @@
           "fileSize": 138135,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612855647068160",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612855647068160",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612855647068160"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/879612855647068160",
+          "localImage": "/upwork-covers/shop-erp-6.jpg"
         }
       ],
-      "completionDate": "2017-05-08",
       "url": "http://fiverr.ar27111994.com/admin/"
     },
     {
@@ -719,7 +752,8 @@
           "fileSize": 171657,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532655951376384",
+          "localImage": "/upwork-covers/television-subscription-management-system-0.jpg"
         },
         {
           "type": "image",
@@ -728,7 +762,8 @@
           "fileSize": 101871,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532683033997312",
+          "localImage": "/upwork-covers/television-subscription-management-system-1.jpg"
         },
         {
           "type": "image",
@@ -737,7 +772,8 @@
           "fileSize": 92817,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532709697187840",
+          "localImage": "/upwork-covers/television-subscription-management-system-2.jpg"
         },
         {
           "type": "image",
@@ -746,7 +782,8 @@
           "fileSize": 135520,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952",
+          "localImage": "/upwork-covers/television-subscription-management-system-3.jpg"
         },
         {
           "type": "image",
@@ -755,7 +792,8 @@
           "fileSize": 165037,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888",
+          "localImage": "/upwork-covers/television-subscription-management-system-4.jpg"
         },
         {
           "type": "image",
@@ -764,7 +802,8 @@
           "fileSize": 122934,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832",
+          "localImage": "/upwork-covers/television-subscription-management-system-5.jpg"
         },
         {
           "type": "image",
@@ -773,7 +812,8 @@
           "fileSize": 104210,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712",
+          "localImage": "/upwork-covers/television-subscription-management-system-6.jpg"
         },
         {
           "type": "image",
@@ -782,10 +822,10 @@
           "fileSize": 129119,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672",
+          "localImage": "/upwork-covers/television-subscription-management-system-7.jpg"
         }
       ],
-      "completionDate": "2017-05-29",
       "url": "http://subs.ar27111994.com/admin"
     },
     {
@@ -802,7 +842,8 @@
           "fileSize": 179754,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900335994883190784",
+          "localImage": "/upwork-covers/neophar-website-0.jpg"
         },
         {
           "type": "image",
@@ -811,7 +852,8 @@
           "fileSize": 173029,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336030304088064",
+          "localImage": "/upwork-covers/neophar-website-1.jpg"
         },
         {
           "type": "image",
@@ -820,7 +862,8 @@
           "fileSize": 102775,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336052660301824",
+          "localImage": "/upwork-covers/neophar-website-2.jpg"
         },
         {
           "type": "image",
@@ -829,7 +872,8 @@
           "fileSize": 198156,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288",
+          "localImage": "/upwork-covers/neophar-website-3.jpg"
         },
         {
           "type": "image",
@@ -838,7 +882,8 @@
           "fileSize": 117185,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336",
+          "localImage": "/upwork-covers/neophar-website-4.jpg"
         },
         {
           "type": "image",
@@ -847,7 +892,8 @@
           "fileSize": 117004,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928",
+          "localImage": "/upwork-covers/neophar-website-5.jpg"
         },
         {
           "type": "image",
@@ -856,10 +902,10 @@
           "fileSize": 112846,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480",
+          "localImage": "/upwork-covers/neophar-website-6.jpg"
         }
       ],
-      "completionDate": "2017-05-21",
       "url": "http://pharmacy.ar27111994.com"
     },
     {
@@ -876,7 +922,8 @@
           "fileSize": 200013,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358232727056384",
+          "localImage": "/upwork-covers/goggle-hunt-0.jpg"
         },
         {
           "type": "image",
@@ -885,7 +932,8 @@
           "fileSize": 188179,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358251986726912",
+          "localImage": "/upwork-covers/goggle-hunt-1.jpg"
         },
         {
           "type": "image",
@@ -894,7 +942,8 @@
           "fileSize": 164220,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358273734766592",
+          "localImage": "/upwork-covers/goggle-hunt-2.jpg"
         },
         {
           "type": "image",
@@ -903,7 +952,8 @@
           "fileSize": 138131,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104",
+          "localImage": "/upwork-covers/goggle-hunt-3.jpg"
         },
         {
           "type": "image",
@@ -912,7 +962,8 @@
           "fileSize": 108158,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384",
+          "localImage": "/upwork-covers/goggle-hunt-4.jpg"
         },
         {
           "type": "image",
@@ -921,7 +972,8 @@
           "fileSize": 146842,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080",
+          "localImage": "/upwork-covers/goggle-hunt-5.jpg"
         },
         {
           "type": "image",
@@ -930,7 +982,8 @@
           "fileSize": 105759,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104",
+          "localImage": "/upwork-covers/goggle-hunt-6.jpg"
         },
         {
           "type": "image",
@@ -939,7 +992,8 @@
           "fileSize": 101660,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408",
+          "localImage": "/upwork-covers/goggle-hunt-7.jpg"
         },
         {
           "type": "image",
@@ -948,7 +1002,8 @@
           "fileSize": 135970,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744",
+          "localImage": "/upwork-covers/goggle-hunt-8.jpg"
         },
         {
           "type": "image",
@@ -957,7 +1012,8 @@
           "fileSize": 158914,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752",
+          "localImage": "/upwork-covers/goggle-hunt-9.jpg"
         },
         {
           "type": "image",
@@ -966,7 +1022,8 @@
           "fileSize": 151388,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872",
+          "localImage": "/upwork-covers/goggle-hunt-10.jpg"
         },
         {
           "type": "image",
@@ -975,7 +1032,8 @@
           "fileSize": 184659,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712",
+          "localImage": "/upwork-covers/goggle-hunt-11.jpg"
         },
         {
           "type": "image",
@@ -984,7 +1042,8 @@
           "fileSize": 158977,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912",
+          "localImage": "/upwork-covers/goggle-hunt-12.jpg"
         },
         {
           "type": "image",
@@ -993,10 +1052,10 @@
           "fileSize": 125148,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072",
+          "localImage": "/upwork-covers/goggle-hunt-13.jpg"
         }
       ],
-      "completionDate": "2017-06-14",
       "url": "https://gogglehunt.com"
     },
     {
@@ -1013,7 +1072,8 @@
           "fileSize": 60873,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377794784751616",
+          "localImage": "/upwork-covers/complete-controller-crm-system-0.jpg"
         },
         {
           "type": "image",
@@ -1022,7 +1082,8 @@
           "fileSize": 113854,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377824698527744",
+          "localImage": "/upwork-covers/complete-controller-crm-system-1.jpg"
         },
         {
           "type": "image",
@@ -1031,7 +1092,8 @@
           "fileSize": 151431,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377854981402624",
+          "localImage": "/upwork-covers/complete-controller-crm-system-2.jpg"
         },
         {
           "type": "image",
@@ -1040,7 +1102,8 @@
           "fileSize": 83942,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528",
+          "localImage": "/upwork-covers/complete-controller-crm-system-3.jpg"
         },
         {
           "type": "image",
@@ -1049,7 +1112,8 @@
           "fileSize": 109708,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640",
+          "localImage": "/upwork-covers/complete-controller-crm-system-4.jpg"
         },
         {
           "type": "image",
@@ -1058,7 +1122,8 @@
           "fileSize": 94246,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984",
+          "localImage": "/upwork-covers/complete-controller-crm-system-5.jpg"
         },
         {
           "type": "image",
@@ -1067,7 +1132,8 @@
           "fileSize": 126589,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064",
+          "localImage": "/upwork-covers/complete-controller-crm-system-6.jpg"
         },
         {
           "type": "image",
@@ -1076,7 +1142,8 @@
           "fileSize": 162679,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368",
+          "localImage": "/upwork-covers/complete-controller-crm-system-7.jpg"
         },
         {
           "type": "image",
@@ -1085,7 +1152,8 @@
           "fileSize": 219744,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048",
+          "localImage": "/upwork-covers/complete-controller-crm-system-8.jpg"
         },
         {
           "type": "image",
@@ -1094,7 +1162,8 @@
           "fileSize": 145905,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032",
+          "localImage": "/upwork-covers/complete-controller-crm-system-9.jpg"
         },
         {
           "type": "image",
@@ -1103,7 +1172,8 @@
           "fileSize": 93293,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072",
+          "localImage": "/upwork-covers/complete-controller-crm-system-10.jpg"
         },
         {
           "type": "image",
@@ -1112,7 +1182,8 @@
           "fileSize": 185818,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680",
+          "localImage": "/upwork-covers/complete-controller-crm-system-11.jpg"
         },
         {
           "type": "image",
@@ -1121,7 +1192,8 @@
           "fileSize": 207322,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832",
+          "localImage": "/upwork-covers/complete-controller-crm-system-12.jpg"
         },
         {
           "type": "image",
@@ -1130,7 +1202,8 @@
           "fileSize": 142440,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112",
+          "localImage": "/upwork-covers/complete-controller-crm-system-13.jpg"
         },
         {
           "type": "image",
@@ -1139,7 +1212,8 @@
           "fileSize": 129769,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712",
+          "localImage": "/upwork-covers/complete-controller-crm-system-14.jpg"
         },
         {
           "type": "image",
@@ -1148,7 +1222,8 @@
           "fileSize": 137579,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464",
+          "localImage": "/upwork-covers/complete-controller-crm-system-15.jpg"
         },
         {
           "type": "image",
@@ -1157,7 +1232,8 @@
           "fileSize": 197770,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480",
+          "localImage": "/upwork-covers/complete-controller-crm-system-16.jpg"
         },
         {
           "type": "image",
@@ -1166,7 +1242,8 @@
           "fileSize": 213316,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624",
+          "localImage": "/upwork-covers/complete-controller-crm-system-17.jpg"
         },
         {
           "type": "image",
@@ -1175,7 +1252,8 @@
           "fileSize": 133884,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088",
+          "localImage": "/upwork-covers/complete-controller-crm-system-18.jpg"
         },
         {
           "type": "image",
@@ -1184,10 +1262,10 @@
           "fileSize": 145868,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832",
+          "localImage": "/upwork-covers/complete-controller-crm-system-19.jpg"
         }
       ],
-      "completionDate": "2017-07-30",
       "url": "http://upwork.ar27111994.com"
     },
     {
@@ -1204,10 +1282,10 @@
           "fileSize": 121141,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901166577704726528",
+          "localImage": "/upwork-covers/web-rtc-0.jpg"
         }
       ],
-      "completionDate": "2017-07-18",
       "url": "https://webrtc.ar27111994.com"
     },
     {
@@ -1224,7 +1302,8 @@
           "fileSize": 192007,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901741034521456640",
+          "localImage": "/upwork-covers/jmgarts-com-page-speed-optimization-0.jpg"
         },
         {
           "type": "image",
@@ -1233,7 +1312,8 @@
           "fileSize": 263386,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743316482879488",
+          "localImage": "/upwork-covers/jmgarts-com-page-speed-optimization-1.jpg"
         },
         {
           "type": "image",
@@ -1242,10 +1322,10 @@
           "fileSize": 179273,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901743339807404032",
+          "localImage": "/upwork-covers/jmgarts-com-page-speed-optimization-2.jpg"
         }
       ],
-      "completionDate": "2017-08-10",
       "url": "https://jmgarts.com/"
     },
     {
@@ -1262,7 +1342,8 @@
           "fileSize": 162040,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750067248148480",
+          "localImage": "/upwork-covers/https-directsoftwareoutlet-com-payment-gateway-integration-0.jpg"
         },
         {
           "type": "image",
@@ -1271,10 +1352,10 @@
           "fileSize": 164330,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/901750092351057920",
+          "localImage": "/upwork-covers/https-directsoftwareoutlet-com-payment-gateway-integration-1.jpg"
         }
       ],
-      "completionDate": "2017-08-17",
       "url": "https://directsoftwareoutlet.com/"
     },
     {
@@ -1291,7 +1372,8 @@
           "fileSize": 215782,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711631929827328",
+          "localImage": "/upwork-covers/aljibouri-co-0.jpg"
         },
         {
           "type": "image",
@@ -1300,7 +1382,8 @@
           "fileSize": 176637,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711647513755648",
+          "localImage": "/upwork-covers/aljibouri-co-1.jpg"
         },
         {
           "type": "image",
@@ -1309,7 +1392,8 @@
           "fileSize": 142822,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711666476204032",
+          "localImage": "/upwork-covers/aljibouri-co-2.jpg"
         },
         {
           "type": "image",
@@ -1318,7 +1402,8 @@
           "fileSize": 139302,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504",
+          "localImage": "/upwork-covers/aljibouri-co-3.jpg"
         },
         {
           "type": "image",
@@ -1327,10 +1412,10 @@
           "fileSize": 108764,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512",
+          "localImage": "/upwork-covers/aljibouri-co-4.jpg"
         }
       ],
-      "completionDate": "2017-09-11",
       "url": "http://aljibouri.co"
     },
     {
@@ -1347,7 +1432,8 @@
           "fileSize": 204359,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717499377336320",
+          "localImage": "/upwork-covers/pdf-to-responsive-html-5-0.jpg"
         },
         {
           "type": "image",
@@ -1356,7 +1442,8 @@
           "fileSize": 194887,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717516213272576",
+          "localImage": "/upwork-covers/pdf-to-responsive-html-5-1.jpg"
         },
         {
           "type": "image",
@@ -1365,7 +1452,8 @@
           "fileSize": 179767,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717534194253824",
+          "localImage": "/upwork-covers/pdf-to-responsive-html-5-2.jpg"
         },
         {
           "type": "image",
@@ -1374,10 +1462,10 @@
           "fileSize": 166037,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424",
+          "localImage": "/upwork-covers/pdf-to-responsive-html-5-3.jpg"
         }
-      ],
-      "completionDate": "2017-09-10"
+      ]
     },
     {
       "id": "american-community-school-donations-page",
@@ -1393,7 +1481,8 @@
           "fileSize": 314606,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922789891570733056",
+          "localImage": "/upwork-covers/american-community-school-donations-page-0.jpg"
         },
         {
           "type": "image",
@@ -1402,10 +1491,10 @@
           "fileSize": 298398,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/922790130058858496",
+          "localImage": "/upwork-covers/american-community-school-donations-page-1.jpg"
         }
       ],
-      "completionDate": "2017-09-30",
       "url": "http://payment.acs.sch.ae/donate.html"
     },
     {
@@ -1422,7 +1511,8 @@
           "fileSize": 299323,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751719405907968",
+          "localImage": "/upwork-covers/ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage-0.jpg"
         },
         {
           "type": "image",
@@ -1431,7 +1521,8 @@
           "fileSize": 312466,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751746701443072",
+          "localImage": "/upwork-covers/ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage-1.jpg"
         },
         {
           "type": "image",
@@ -1440,7 +1531,8 @@
           "fileSize": 317371,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751765911355392",
+          "localImage": "/upwork-covers/ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage-2.jpg"
         },
         {
           "type": "image",
@@ -1449,10 +1541,10 @@
           "fileSize": 304927,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504",
+          "localImage": "/upwork-covers/ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage-3.jpg"
         }
-      ],
-      "completionDate": "2017-12-22"
+      ]
     },
     {
       "id": "poc-for-citrix-app-layering-on-azure",
@@ -1468,7 +1560,8 @@
           "fileSize": 146805,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345117480546304",
+          "localImage": "/upwork-covers/poc-for-citrix-app-layering-on-azure-0.jpg"
         },
         {
           "type": "image",
@@ -1477,7 +1570,8 @@
           "fileSize": 589281,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345150137397248",
+          "localImage": "/upwork-covers/poc-for-citrix-app-layering-on-azure-1.jpg"
         },
         {
           "type": "image",
@@ -1486,10 +1580,10 @@
           "fileSize": 125119,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/953345153690705920",
+          "localImage": "/upwork-covers/poc-for-citrix-app-layering-on-azure-2.jpg"
         }
-      ],
-      "completionDate": "2017-10-31"
+      ]
     },
     {
       "id": "eagle-6",
@@ -1521,7 +1615,8 @@
           "fileSize": 571637,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4bb247a-8467-465f-a025-1fea3aeda2c0",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b26a21d7-aa05-444f-b50e-a330d6c8afab",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/92a71e74-26fc-4808-b11b-54b15e8a520b"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/92a71e74-26fc-4808-b11b-54b15e8a520b",
+          "localImage": "/upwork-covers/eagle-6-0.jpg"
         },
         {
           "type": "image",
@@ -1530,7 +1625,8 @@
           "fileSize": 306977,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b02bc097-15ab-41fc-9942-ee2049bd28f1",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b9c3788f-7e67-4e7b-8aa3-8759a1b21e67",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/13277bf0-8b2c-4604-bf28-9847e3295c2e"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/13277bf0-8b2c-4604-bf28-9847e3295c2e",
+          "localImage": "/upwork-covers/eagle-6-1.jpg"
         },
         {
           "type": "image",
@@ -1539,7 +1635,8 @@
           "fileSize": 308541,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/f32abaab-70d9-451b-a719-e37e7d6cab0f",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/189b14f4-881b-406a-ac05-52d2e85c59b5",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e6d20c0a-264c-48fc-bbb5-e9e1fc30f133"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e6d20c0a-264c-48fc-bbb5-e9e1fc30f133",
+          "localImage": "/upwork-covers/eagle-6-2.jpg"
         },
         {
           "type": "image",
@@ -1548,7 +1645,8 @@
           "fileSize": 230046,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/a9285fb8-c6a4-4550-ba76-72290946c95c",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/28abbb25-7e29-4a63-8775-b29c622c2a81",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/25d72613-da5f-4b2f-a1c1-a1275a29863f"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/25d72613-da5f-4b2f-a1c1-a1275a29863f",
+          "localImage": "/upwork-covers/eagle-6-3.jpg"
         },
         {
           "type": "image",
@@ -1557,7 +1655,8 @@
           "fileSize": 265911,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2df11eb4-6a71-47d2-ace1-d8bface7f2f5",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/aa6bd8f9-11d4-420b-835e-667f8589baec",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/abdc13ed-335c-4342-aac2-f81666977944"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/abdc13ed-335c-4342-aac2-f81666977944",
+          "localImage": "/upwork-covers/eagle-6-4.jpg"
         },
         {
           "type": "image",
@@ -1566,7 +1665,8 @@
           "fileSize": 257454,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c09826ac-1970-419e-9ed7-1a00b945f338",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ca226ca9-80c5-4afc-a8c3-d1648380b740",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9acad925-fbe5-4885-bc25-ad2b719d8e54"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9acad925-fbe5-4885-bc25-ad2b719d8e54",
+          "localImage": "/upwork-covers/eagle-6-5.jpg"
         },
         {
           "type": "image",
@@ -1575,7 +1675,8 @@
           "fileSize": 36645,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4c41f27-c18a-4246-a53d-4e554972acdc",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/697fd366-f7c9-49e2-9ac9-49bbe6143a46",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e42eb3a9-518a-4903-89c5-e681501c1e63"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e42eb3a9-518a-4903-89c5-e681501c1e63",
+          "localImage": "/upwork-covers/eagle-6-6.jpg"
         },
         {
           "type": "image",
@@ -1584,7 +1685,8 @@
           "fileSize": 38786,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/f442ce95-8191-4b26-8468-3cc055ff22ec",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/6539aba9-8f30-4264-8dea-906848714921",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2a32729a-b62a-4a9d-901d-530968a5650c"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2a32729a-b62a-4a9d-901d-530968a5650c",
+          "localImage": "/upwork-covers/eagle-6-7.jpg"
         },
         {
           "type": "image",
@@ -1593,7 +1695,8 @@
           "fileSize": 578492,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/261d4bdc-9822-4274-aff0-4fa411322106",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/0ddcf46a-e690-4a33-ac96-3ef75d521a07",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/21e249de-c36e-423d-9962-ab0123aa4ce9"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/21e249de-c36e-423d-9962-ab0123aa4ce9",
+          "localImage": "/upwork-covers/eagle-6-8.jpg"
         },
         {
           "type": "image",
@@ -1602,7 +1705,8 @@
           "fileSize": 177694,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/62552f77-88a3-4983-8072-6415058ed7f2",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/024712b3-ebf1-47a8-8345-ee9e98bcbe0a",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9aa80507-a3d6-4239-9648-7d6c057d80ad"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9aa80507-a3d6-4239-9648-7d6c057d80ad",
+          "localImage": "/upwork-covers/eagle-6-9.jpg"
         },
         {
           "type": "image",
@@ -1611,7 +1715,8 @@
           "fileSize": 495462,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d705d281-f305-48d3-9fb7-b6c6005d6a75",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/7374baec-acf7-4661-9728-e7a12c61cbb9",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4a54a8f-4af7-497a-8e17-c31b5b9cdde7"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4a54a8f-4af7-497a-8e17-c31b5b9cdde7",
+          "localImage": "/upwork-covers/eagle-6-10.jpg"
         },
         {
           "type": "image",
@@ -1620,7 +1725,8 @@
           "fileSize": 272312,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/73f44c1c-805e-4e9d-a5f4-fd37ce435a8e",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/6c375167-c46e-4fef-bcda-1746c401bce2",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/fac16ec2-2615-440e-904d-5706fdd2c81a"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/fac16ec2-2615-440e-904d-5706fdd2c81a",
+          "localImage": "/upwork-covers/eagle-6-11.jpg"
         },
         {
           "type": "image",
@@ -1629,23 +1735,17 @@
           "fileSize": 275188,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/96dd9c80-7195-436f-ba86-ec1abdff0ae1",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b9bbf801-6465-490e-91a1-e45181b41e19",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/66b045f2-8626-456a-8ea0-a0e7210e9db6"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/66b045f2-8626-456a-8ea0-a0e7210e9db6",
+          "localImage": "/upwork-covers/eagle-6-12.jpg"
         }
       ],
-      "completionDate": "2022-03-17",
       "url": "https://www.eagle6.com/"
     },
     {
       "id": "webhook-debugger-and-logger",
       "title": "Webhook Debugger and Logger",
       "description": "Open-source webhook testing and debugging suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic in real time.\n\nI designed and built the product surface, backend workflow, replay/debugging loop, and developer-facing documentation around practical integration reliability.\n\nRelevant for webhook receivers, API integrations, incident debugging, replay safety, and developer-tool UX.\n\nProof: https://github.com/ar27111994/webhook-debugger-logger",
-      "skills": [
-        "JavaScript",
-        "Node.js",
-        "API",
-        "Docker",
-        "Jest"
-      ],
+      "skills": ["JavaScript", "Node.js", "API", "Docker", "Jest"],
       "rank": 37,
       "attachments": [
         {
@@ -1656,7 +1756,8 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d27227c2-dbdb-42fc-892e-9b4f7708148c",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d27227c2-dbdb-42fc-892e-9b4f7708148c"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d27227c2-dbdb-42fc-892e-9b4f7708148c",
+          "localImage": "/upwork-covers/webhook-debugger-and-logger-0.jpg"
         }
       ]
     },
@@ -1687,7 +1788,8 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d8fc328d-e303-444f-a7be-0a07f6e41ac3",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d8fc328d-e303-444f-a7be-0a07f6e41ac3"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d8fc328d-e303-444f-a7be-0a07f6e41ac3",
+          "localImage": "/upwork-covers/agent-harness-0.jpg"
         }
       ]
     },
@@ -1695,11 +1797,7 @@
       "id": "penpot-mcp",
       "title": "penpot-mcp",
       "description": "Agent workflow support for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows.\n\nI packaged the workflow as reusable agent support for product-surface quality, design-system maintenance, and MCP-style design-to-code collaboration. The project is relevant for frontend implementation, design systems, prototype maintenance, and AI-assisted product workflows.\n\nProof: https://github.com/ar27111994/penpot-mcp",
-      "skills": [
-        "Web Development",
-        "JavaScript",
-        "Prototyping"
-      ],
+      "skills": ["Web Development", "JavaScript", "Prototyping"],
       "rank": 39,
       "attachments": [
         {
@@ -1710,7 +1808,8 @@
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/384aa839-2faf-42d3-9747-6c3817e8033b",
-          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/384aa839-2faf-42d3-9747-6c3817e8033b"
+          "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/384aa839-2faf-42d3-9747-6c3817e8033b",
+          "localImage": "/upwork-covers/penpot-mcp-0.jpg"
         }
       ]
     },
@@ -1718,11 +1817,7 @@
       "id": "ar27111994-dev",
       "title": "ar27111994.dev",
       "description": "Consolidated public portfolio, resume downloads, project proof links, public work feed, and client-facing contact surface for freelance/client acquisition.\n\nI built and refined the site as a developer-lab proof surface: fast static Astro deployment, responsive layout, SEO metadata, structured proof sections, live-enhanced public metrics, and polished resume/contact paths. The project is relevant for trust-building, proof packaging, technical portfolio design, performance-conscious frontend work, and accessibility-minded implementation.\n\nProof: https://www.ar27111994.dev",
-      "skills": [
-        "Web Development",
-        "Responsive Design",
-        "JavaScript"
-      ],
+      "skills": ["Web Development", "Responsive Design", "JavaScript"],
       "rank": 40,
       "attachments": [
         {
@@ -1736,7 +1831,8 @@
           "fileSize": 153106,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ebffd578-a3f7-416c-b85e-3d5633af378e",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/87a19cb1-1ef1-4e47-baba-aa0682ba9997",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e2b4a073-22fe-49d5-900b-d988420405d8"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e2b4a073-22fe-49d5-900b-d988420405d8",
+          "localImage": "/upwork-covers/ar27111994-dev-0.jpg"
         },
         {
           "type": "image",
@@ -1745,7 +1841,8 @@
           "fileSize": 133424,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/17f854e3-9c2d-4f6c-98aa-82a768e046db",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/3c5b71d7-bbd2-493d-93b6-3ea00a91a140",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e66820ba-2d5e-4f2d-9102-24b833014110"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e66820ba-2d5e-4f2d-9102-24b833014110",
+          "localImage": "/upwork-covers/ar27111994-dev-1.jpg"
         }
       ],
       "url": "https://www.ar27111994.dev"
@@ -1754,13 +1851,7 @@
       "id": "opencorporates-us-resolver",
       "title": "OpenCorporates US Resolver",
       "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace — using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
-      "skills": [
-        "FastAPI",
-        "Web Scraping",
-        "Selenium",
-        "Python",
-        "pytest"
-      ],
+      "skills": ["FastAPI", "Web Scraping", "Selenium", "Python", "pytest"],
       "rank": 41,
       "attachments": [
         {
@@ -1770,7 +1861,8 @@
           "fileSize": 282221,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4828deb-3c7c-405d-8a7e-43a22607769f",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/033893a0-8246-45e0-bdfd-7a50f5c01814",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/438988ce-0a0b-451b-9e0e-f9ddb5950be3"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/438988ce-0a0b-451b-9e0e-f9ddb5950be3",
+          "localImage": "/upwork-covers/opencorporates-us-resolver-0.jpg"
         },
         {
           "type": "image",
@@ -1779,7 +1871,8 @@
           "fileSize": 623773,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/6e7a76ce-0eb1-489d-b118-ba31b97a7e6a",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/22af17cf-69d1-438e-931b-6d63b34b6fb5",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c93eebc9-6c55-44a0-9363-03e78fc57e33"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c93eebc9-6c55-44a0-9363-03e78fc57e33",
+          "localImage": "/upwork-covers/opencorporates-us-resolver-1.jpg"
         },
         {
           "type": "image",
@@ -1788,7 +1881,8 @@
           "fileSize": 373707,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ccf6d4ed-af4a-46b1-9332-fa3384f84c6b",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/4263b091-0e69-4afa-b8c7-23fc4acf65ce",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/02da66ab-75c3-4bf9-8bed-28b1798b9caf"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/02da66ab-75c3-4bf9-8bed-28b1798b9caf",
+          "localImage": "/upwork-covers/opencorporates-us-resolver-2.jpg"
         },
         {
           "type": "image",
@@ -1806,7 +1900,8 @@
           "fileSize": 316538,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e9ae4af2-c55b-4415-a134-ece34d89d0b6",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/4471264b-ba18-4a7a-aa21-c09cce61ed6e",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9519fe61-6d0c-4e4c-ab36-f704a7ea5f12"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9519fe61-6d0c-4e4c-ab36-f704a7ea5f12",
+          "localImage": "/upwork-covers/opencorporates-us-resolver-4.jpg"
         },
         {
           "type": "image",
@@ -1815,7 +1910,8 @@
           "fileSize": 257694,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b4f7945a-c2f2-4785-82b2-4f5d0ab6a317",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/af4acea7-acfe-42c4-9bb3-3d293053412d",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/52aac597-29a4-43a2-beb5-db0f5b7aedcd"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/52aac597-29a4-43a2-beb5-db0f5b7aedcd",
+          "localImage": "/upwork-covers/opencorporates-us-resolver-5.jpg"
         },
         {
           "type": "website",
@@ -1851,7 +1947,8 @@
           "fileSize": 440269,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/0fa23055-16cd-498f-9d09-d6702f62b74a",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/3a4aff17-41b5-4f78-8cde-7b33bee59846",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/eed354a4-4b4a-403d-bfce-f3acfe5bc5d4"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/eed354a4-4b4a-403d-bfce-f3acfe5bc5d4",
+          "localImage": "/upwork-covers/supahooks-sentinel-hermes-accelerated-business-hackathon-submission-0.jpg"
         },
         {
           "type": "video",
@@ -1892,7 +1989,8 @@
           "fileSize": 55994,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/abcd6503-6ee3-4734-b9ae-614dc4b2f60d",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d86ef809-10bc-4af8-96f0-e316072ac74c",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/56c2e575-5223-4829-8f45-1f04b18db6ac"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/56c2e575-5223-4829-8f45-1f04b18db6ac",
+          "localImage": "/upwork-covers/ai-development-suite-11-agent-skills-submissions-on-capafy-0.jpg"
         },
         {
           "type": "image",
@@ -1901,7 +1999,8 @@
           "fileSize": 201886,
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2d0b984e-ec56-443c-b195-3be4a6eb430c",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/404953ad-23b0-452c-acdb-55f637812fb2",
-          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2bf66a1f-29c3-4707-842c-e73a4c949229"
+          "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2bf66a1f-29c3-4707-842c-e73a4c949229",
+          "localImage": "/upwork-covers/ai-development-suite-11-agent-skills-submissions-on-capafy-1.jpg"
         }
       ],
       "url": "https://capafy.ai/publisher/ar27111994"
