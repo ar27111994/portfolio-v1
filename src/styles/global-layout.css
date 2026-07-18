@@ -35,7 +35,9 @@
   --shadow-button-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 [data-theme="dark"] .panel { background: rgba(24, 21, 16, 0.85); backdrop-filter: blur(16px); }
-[data-theme="dark"] .top-bar { background: rgba(18, 16, 13, 0.82); }
+[data-theme="dark"] .top-bar { background: rgba(18, 16, 13, 0.82); backdrop-filter: blur(20px); }
+[data-theme="dark"] .anchor-rail { background: rgba(24, 21, 16, 0.82); border-color: rgba(72, 68, 60, 0.5); backdrop-filter: blur(20px); }
+[data-theme="dark"] .availability-strip span { background: rgba(24, 21, 16, 0.8); }
 [data-theme="dark"] .badge-row span:nth-child(6),
 [data-theme="dark"] .badge-row span:nth-child(7),
 [data-theme="dark"] .badge-row span:nth-child(8),
@@ -48,8 +50,9 @@
               linear-gradient(175deg, #181510 0%, var(--paper) 30%, #14120d 65%, #161410 100%);
 }
 [data-theme="dark"] body:before { opacity: 0.06; }
-[data-theme="light"] .panel { background: rgba(254, 252, 248, 0.85); }
-[data-theme="light"] .top-bar { background: rgba(250, 247, 242, 0.82); }
+[data-theme="light"] .panel { background: rgba(254, 252, 248, 0.85); backdrop-filter: blur(12px); }
+[data-theme="light"] .top-bar { background: rgba(250, 247, 242, 0.82); backdrop-filter: blur(20px); }
+[data-theme="light"] .anchor-rail { background: rgba(254, 252, 248, 0.82); border-color: rgba(212, 200, 180, 0.5); backdrop-filter: blur(20px); }
 [data-theme="light"] img:not([src*="brand-icons"]):not(.cert-icon) { filter: none; }
 [data-theme="light"] body {
   background: radial-gradient(ellipse 60rem 40rem at 5% 0%, rgba(26,77,255,0.04), transparent 36rem),
