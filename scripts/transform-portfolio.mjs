@@ -148,6 +148,16 @@ function transformProject(p) {
         type: attType || "link",
         url: String(att.link),
         title: att.title ?? null,
+        description: att.description ?? null,
+      });
+    } else if (att.description || att.attachmentName) {
+      // Catch-all for text/document attachments with no URL (e.g. "text" type)
+      attachments.push({
+        type: attType || "file",
+        title: att.title ?? null,
+        description: att.description ?? null,
+        fileName: att.attachmentName ?? null,
+        fileSize: att.attachmentSize ?? null,
       });
     }
   }
