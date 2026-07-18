@@ -267,7 +267,7 @@ summary:focus-visible {
   position: relative;
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  background: rgba(254, 253, 251, 0.82);
+  background: var(--glass-panel-bg);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow-card);
   padding: clamp(1.4rem, 3vw, 2.4rem);
@@ -295,24 +295,6 @@ summary:focus-visible {
   align-items: start;
   gap: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(1.4rem, 3vw, 2.4rem);
-  background:
-    linear-gradient(150deg, rgba(254, 253, 251, 0.95), rgba(250, 244, 232, 0.9)),
-    radial-gradient(
-      ellipse 32rem 28rem at 15% 20%,
-      var(--blue-glow),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 28rem 24rem at 85% 12%,
-      var(--orange-glow),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 24rem 20rem at 60% 90%,
-      rgba(124, 58, 237, 0.06),
-      transparent
-    );
-  box-shadow: var(--shadow-inner);
 }
 .hero-copy {
   grid-column: 1;
