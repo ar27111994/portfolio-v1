@@ -475,7 +475,7 @@ h3 {
   margin-right: 0.24rem;
   border-radius: 999px;
   background: var(--tag-bg);
-  color: #111;
+  color: var(--ink);
   font-size: 0.86rem;
   vertical-align: middle;
 }
@@ -536,7 +536,7 @@ h3 {
   padding: 0.24rem 0.6rem;
   border: 1px solid rgba(202, 255, 128, 0.5);
   background: #caff80;
-  color: #111;
+  color: var(--ink);
   font-size: 0.72rem;
   line-height: 1;
   text-transform: uppercase;
@@ -777,7 +777,7 @@ h3 {
   border-radius: 999px;
   padding: 0.18rem 0.42rem;
   background: var(--surface);
-  color: #111;
+  color: var(--ink);
   font-size: 0.62rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -787,7 +787,7 @@ h3 {
 }
 .contact-command.secondary {
   border-width: 2px;
-  background: linear-gradient(135deg, #fff0a8, #fff7c9 54%, #fff);
+  background: linear-gradient(135deg, #fff0a8, #fff7c9 54%, var(--surface));
   box-shadow: 6px 6px rgba(var(--shadow-color), 0.17);
 }
 .contact-command.secondary:hover {
@@ -801,7 +801,7 @@ h3 {
 }
 .contact-command.secondary:hover:after {
   background: #caff80;
-  color: #111;
+  color: var(--ink);
 }
 .contact-command.whatsapp:after {
   content: "CHAT";
@@ -966,7 +966,7 @@ h3 {
 .signal-tags span {
   border-radius: 999px;
   background: var(--surface);
-  color: #111;
+  color: var(--ink);
   padding: 0.28rem 0.48rem;
   font-size: 0.72rem;
   font-weight: 900;
@@ -1062,7 +1062,7 @@ h3 {
   height: 1.8rem;
   border-radius: 12px;
   background: #caff80;
-  color: #111;
+  color: var(--ink);
   font-size: 0.82rem;
   font-weight: 900;
 }
@@ -1373,25 +1373,25 @@ h3 {
   transform: translateY(-0.04em);
 }
 .project-visual.accent-capture {
-  background: linear-gradient(135deg, #c8f1ff, #fff);
+  background: linear-gradient(135deg, #c8f1ff, var(--surface));
 }
 .project-visual.accent-agents {
-  background: linear-gradient(135deg, #caff80, #fff);
+  background: linear-gradient(135deg, #caff80, var(--surface));
 }
 .project-visual.accent-mobile {
-  background: linear-gradient(135deg, #e1d7ff, #fff);
+  background: linear-gradient(135deg, #e1d7ff, var(--surface));
 }
 .project-visual.accent-data {
-  background: linear-gradient(135deg, #c8ffe8, #fff);
+  background: linear-gradient(135deg, #c8ffe8, var(--surface));
 }
 .project-visual.accent-design {
-  background: linear-gradient(135deg, #ffd9b8, #fff);
+  background: linear-gradient(135deg, #ffd9b8, var(--surface));
 }
 .project-visual.accent-palette {
-  background: linear-gradient(135deg, #ffd1ea, #fff);
+  background: linear-gradient(135deg, #ffd1ea, var(--surface));
 }
 .project-visual.accent-skills {
-  background: linear-gradient(135deg, #dfd1ff, #fff);
+  background: linear-gradient(135deg, #dfd1ff, var(--surface));
 }
 .project-card p {
   margin: 0.5rem 0 0;
@@ -1763,7 +1763,7 @@ h3 {
   border-radius: 999px;
   padding: 0.12rem 0.34rem;
   background: var(--tag-bg);
-  color: #111;
+  color: var(--ink);
   font-size: 0.58rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -1820,7 +1820,7 @@ h3 {
 }
 .proof-ledger a:hover:after {
   background: #caff80;
-  color: #111;
+  color: var(--ink);
 }
 .contact-widget.email .widget-icon {
   background: #dff3ff;
@@ -2302,7 +2302,7 @@ h3 {
   z-index: 3;
   border-color: rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.92);
-  color: #171717;
+  color: var(--ink);
   backdrop-filter: blur(12px);
 }
 .upwork-portfolio-preview.thumbnail-loaded.has-media .upwork-preview-chip {
