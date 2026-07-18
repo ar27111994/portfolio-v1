@@ -644,9 +644,24 @@ function initPage() {
     });
 
     function applyTheme(theme) {
-      document.documentElement.setAttribute("data-theme", theme);
+      const resolved = theme === "auto"
+        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : theme;
+      document.documentElement.setAttribute("data-theme", resolved);
+      // Update toggle icon
+      const sun = document.querySelector(".theme-icon-sun");
+      const moon = document.querySelector(".theme-icon-moon");
+      if (sun && moon) {
+        sun.style.display = resolved === "light" ? "block" : "none";
+        moon.style.display = resolved === "dark" ? "block" : "none";
+      }
       current = theme;
     }
+
+    // Re-apply when system preference changes in auto mode
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      if (current === "auto") applyTheme("auto");
+    });
   })();
   // ── End theme toggle ─────────────────────────────────────────────
 
