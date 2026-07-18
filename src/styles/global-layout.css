@@ -1509,7 +1509,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   object-fit: contain;
 }
 .capability-index {
-  color: #8a8177;
+  color: var(--muted);
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -1777,7 +1777,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   grid-row: span 2;
 }
 .proof-ledger small {
-  color: #756d65;
+  color: var(--muted);
   font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -2807,7 +2807,7 @@ html.dark .upwork-portfolio-card {
 }
 .upwork-portfolio-link {
   border: 1px solid var(--ink);
-  background: var(--ink);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .upwork-portfolio-link:hover,
