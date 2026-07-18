@@ -133,7 +133,8 @@
   --code-bg: rgba(15, 13, 11, 0.05);
   --button-primary-text: #fff;
   --ink-on-dark: #fff;           /* text on always-dark surfaces */
-  --surface-inverse: #0f0d0b;    /* always-dark surface (buttons, footers) */
+  --surface-inverse: #0f0d0b; --text-dim: #9a9082;    /* always-dark surface (buttons, footers) */
+  --text-dim: #9a9082;           /* dim/meta text on dark backgrounds */
 
   /* ── Gradients ─────────────────────────────────────────────────── */
   --grad-hero: linear-gradient(165deg, #fefcf8 0%, #faf4e8 50%, #fefcf8 100%);
@@ -217,7 +218,7 @@
   --badge-accent-bg: rgba(80, 65, 30, 0.25);
   --img-brightness: brightness(0.88);
   --code-bg: rgba(237, 232, 224, 0.06);
-  --button-primary-text: #111; --surface-inverse: #0f0d0b; --ink-on-dark: #fff;
+  --button-primary-text: #111; --surface-inverse: #0f0d0b; --text-dim: #9a9082; --ink-on-dark: #fff;
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 
@@ -262,8 +263,8 @@
     --body-grad-stop-1: #181510;--body-grad-stop-2: #14120d;--body-grad-stop-3: #161410;
     --body-before-opacity: 0.06;
     --avail-strip-bg: rgba(24,21,16,0.8);--badge-accent-bg: rgba(80,65,30,0.25);
-    --img-brightness: brightness(0.88);--code-bg: rgba(237,232,224,0.06); --surface-inverse: #0f0d0b;
-    --button-primary-text: #111; --surface-inverse: #0f0d0b; --ink-on-dark: #fff;
+    --img-brightness: brightness(0.88);--code-bg: rgba(237,232,224,0.06); --surface-inverse: #0f0d0b; --text-dim: #9a9082;
+    --button-primary-text: #111; --surface-inverse: #0f0d0b; --text-dim: #9a9082; --ink-on-dark: #fff;
     --grad-hero: linear-gradient(165deg,#1a1712 0%,#1e1b14 50%,#181510 100%);
     --shadow-color: 0,0,0;
     --shadow-xs: 0 1px 3px rgba(var(--shadow-color),0.2);
