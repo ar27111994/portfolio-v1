@@ -3705,3 +3705,34 @@ html.dark .upwork-tags span {
 html.dark .feed-source-copy small {
   color: var(--muted);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FINAL DARK MODE OVERRIDES — Remaining hardcoded light elements
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Availability wide ribbon pills ───────────────────────────────── */
+html.dark .availability-strip .wide em {
+  background: rgba(237, 232, 224, 0.06);
+  border-color: rgba(237, 232, 224, 0.1);
+}
+html.dark .availability-strip .wide em:hover {
+  background: rgba(237, 232, 224, 0.12);
+  border-color: rgba(237, 232, 224, 0.2);
+}
+
+/* ── Signal board / metrics / bars — white borders on dark bg ──────── */
+html.dark .signal-board {
+  border-color: rgba(237, 232, 224, 0.1);
+}
+html.dark .signal-metrics span {
+  border-color: rgba(237, 232, 224, 0.1);
+}
+html.dark .signal-bars span {
+  border-color: rgba(237, 232, 224, 0.1);
+}
+
+/* ── Upwork summary tags — white pill backgrounds ─────────────────── */
+html.dark .upwork-tags span {
+  background: rgba(237, 232, 224, 0.08);
+  border-color: rgba(237, 232, 224, 0.12);
+}
