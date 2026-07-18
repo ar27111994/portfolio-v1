@@ -514,7 +514,7 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.44rem;
-  background: #111;
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
   line-height: 1.35;
 }
@@ -669,7 +669,7 @@ h3 {
   height: 1.4rem;
   padding: 0 0.2rem;
   border-radius: 999px;
-  background: #111;
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
   font-size: 0.6rem;
   font-weight: 900;
@@ -791,12 +791,12 @@ h3 {
   box-shadow: 6px 6px rgba(var(--shadow-color), 0.17);
 }
 .contact-command.secondary:hover {
-  background: #111;
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .contact-command.secondary:after {
   content: "PDF";
-  background: #111;
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .contact-command.secondary:hover:after {
@@ -1170,7 +1170,7 @@ h3 {
 .profile-widget:hover,
 .resume-widget:hover,
 .contact-widget:hover {
-  background: #222;
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .profile-widget:hover .widget-icon,
@@ -1807,7 +1807,7 @@ h3 {
   color: var(--ink);
 }
 .contact-proof-strip a:hover {
-  background: #222;
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .contact-proof-strip a:hover small,
@@ -2735,7 +2735,7 @@ h3 {
 }
 .upwork-video-tile video,
 .upwork-video-tile iframe {
-  background: #111;
+  background: var(--surface-inverse);
 }
 .upwork-media-tile span {
   display: none;
@@ -3630,7 +3630,7 @@ h3 {
 .feed-source-pill small { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
 .feed-source-pill:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
-.feed-source-pill:hover small { color: #aaa; }
+.feed-source-pill:hover small { color: var(--ink-soft); }
 .feed-sources-carousel .swiper-slide { width: auto; height: auto; }
 
 /* Platform-specific feed item accents */
