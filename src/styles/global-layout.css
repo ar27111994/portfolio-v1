@@ -3,38 +3,6 @@
    No hardcoded colors for light/dark mode.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* System dark mode — swaps tokens only, components use var(--*) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #ede8e0;--ink-soft: #c8c0b4;--muted: #8a8278;
-    --paper: #12100d;--paper-2: #181612;--card: #1e1b16;--card-strong: #ede8e0;
-    --line: #2e2a24;--line-dark: #48443c;--line-subtle: rgba(237,232,224,0.06);
-    --blue: #5c8aff;--blue-glow: rgba(92,138,255,0.15);--blue-soft: #1a2238;
-    --green: #2dd48b;--green-glow: rgba(45,212,139,0.12);--green-soft: #162a22;
-    --orange: #f08050;--orange-glow: rgba(240,128,80,0.12);--orange-soft: #2a1e16;
-    --violet-soft: #201a30;
-    --glass-panel-bg: rgba(24,21,16,0.85);--glass-topbar-bg: rgba(18,16,13,0.82);
-    --glass-nav-bg: rgba(24,21,16,0.82);--glass-nav-border: rgba(72,68,60,0.5);
-    --glass-blur: 16px;--glass-blur-topbar: 20px;
-    --body-glow-1: rgba(92,138,255,0.08);--body-glow-2: rgba(240,128,80,0.07);
-    --body-glow-3: rgba(124,58,237,0.05);
-    --body-grad-stop-1: #181510;--body-grad-stop-2: #14120d;--body-grad-stop-3: #161410;
-    --body-before-opacity: 0.06;
-    --avail-strip-bg: rgba(24,21,16,0.8);--badge-accent-bg: rgba(80,65,30,0.25);
-    --img-brightness: brightness(0.88);
-    --grad-hero: linear-gradient(165deg,#1a1712 0%,#1e1b14 50%,#181510 100%);
-    --shadow-xs: 0 1px 3px rgba(0,0,0,0.2);--shadow-sm: 0 4px 12px rgba(0,0,0,0.25);
-    --shadow-md: 0 12px 40px rgba(0,0,0,0.35);--shadow-lg: 0 24px 70px rgba(0,0,0,0.4);
-    --shadow-xl: 0 36px 100px rgba(0,0,0,0.5);
-    --shadow-card: 0 1px 2px rgba(0,0,0,0.2),0 8px 24px rgba(0,0,0,0.3);
-    --shadow-card-hover: 0 2px 4px rgba(0,0,0,0.25),0 16px 48px rgba(0,0,0,0.4);
-    --shadow-inner: inset 0 1px 1px rgba(255,255,255,0.04);
-    --shadow-tight: 0 4px 16px rgba(0,0,0,0.3);
-    --shadow-button: 0 2px 8px rgba(0,0,0,0.3);
-    --shadow-button-hover: 0 4px 16px rgba(0,0,0,0.4);
-  }
-}
-
 *,
 *:before,
 *:after {
