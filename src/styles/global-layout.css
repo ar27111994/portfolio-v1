@@ -250,6 +250,31 @@ summary:focus-visible {
 .top-bar > * {
   pointer-events: auto;
 }
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--line-subtle);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.theme-icon { display: none; }
+[data-theme="light"] .theme-icon-sun { display: block; }
+[data-theme="dark"] .theme-icon-moon { display: block; }
+[data-theme="auto"] .theme-icon-sun,
+[data-theme="auto"] .theme-icon-moon { display: block; }
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }
 .wordmark {
   display: inline-flex;
   align-items: center;

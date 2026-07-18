@@ -626,5 +626,33 @@ function initPage() {
   }
   } // end initPage
 
+  // ── Theme toggle ─────────────────────────────────────────────────
+  (function initTheme() {
+    const STORAGE_KEY = "portfolio-theme";
+    const btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+
+    const themes = ["auto", "light", "dark"];
+    let current = localStorage.getItem(STORAGE_KEY) || "auto";
+    applyTheme(current);
+
+    btn.addEventListener("click", () => {
+      const idx = themes.indexOf(current);
+      current = themes[(idx + 1) % themes.length];
+      localStorage.setItem(STORAGE_KEY, current);
+      applyTheme(current);
+    });
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      if (theme === "light") document.documentElement.classList.add("light");
+      else document.documentElement.classList.remove("light");
+      if (theme === "dark") document.documentElement.classList.add("dark");
+      else document.documentElement.classList.remove("dark");
+      current = theme;
+    }
+  })();
+  // ── End theme toggle ─────────────────────────────────────────────
+
 // Run on first load and after every ClientRouter navigation.
 document.addEventListener("astro:page-load", initPage);
