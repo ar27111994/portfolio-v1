@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Theme System — Design Tokens for Light & Dark Modes
+   ═══════════════════════════════════════════════════════════════════════════
+   All components MUST reference these tokens. No component-level color
+   overrides for light/dark — just swap token values here.
+   
+   Tokens are defined in three blocks:
+     1. :root              — light mode defaults
+     2. [data-theme="dark"] — manual dark mode override
+     3. @media (prefers-color-scheme: dark) :root — system dark mode
+   ═════════════════════════════════════════════════════════════════════════ */
+
+/* ── Light Mode (defaults on :root) ────────────────────────────────── */
+:root {
+  /* Core palette */
+  --ink: #0f0d0b;
+  --ink-soft: #2d2824;
+  --muted: #5c5248;
+  --paper: #faf7f2;
+  --paper-2: #fefcf8;
+  --card: #fefdfb;
+  --card-strong: #141210;
+  --line: #d4c8b4;
+  --line-dark: #2e2a26;
+  --line-subtle: rgba(15, 13, 11, 0.08);
+
+  /* Accent */
+  --blue: #1a4dff;
+  --blue-glow: rgba(26, 77, 255, 0.12);
+  --blue-soft: #e8edff;
+  --green: #0b7a4a;
+  --green-glow: rgba(11, 122, 74, 0.1);
+  --green-soft: #e6f5ed;
+  --orange: #d44a1a;
+  --orange-glow: rgba(212, 74, 26, 0.1);
+  --orange-soft: #fef0e5;
+  --violet-soft: #f4ebff;
+
+  /* Glass panels */
+  --glass-panel-bg: rgba(254, 252, 248, 0.85);
+  --glass-topbar-bg: rgba(250, 247, 242, 0.82);
+  --glass-nav-bg: rgba(254, 252, 248, 0.82);
+  --glass-nav-border: rgba(212, 200, 180, 0.5);
+  --glass-blur: 12px;
+  --glass-blur-topbar: 20px;
+
+  /* Body background gradients */
+  --body-glow-1: rgba(26, 77, 255, 0.08);
+  --body-glow-2: rgba(212, 74, 26, 0.09);
+  --body-glow-3: rgba(124, 58, 237, 0.04);
+  --body-grad-stop-1: #fdfaf3;
+  --body-grad-stop-2: #f8f0e5;
+  --body-grad-stop-3: #faf5ed;
+  --body-before-opacity: 0.03;
+
+  /* Misc */
+  --avail-strip-bg: rgba(254, 252, 248, 0.8);
+  --badge-accent-bg: rgba(26, 77, 255, 0.12);
+  --img-brightness: none;
+
+  /* Gradients */
+  --grad-hero: linear-gradient(165deg, #fefcf8 0%, #faf4e8 50%, #fefcf8 100%);
+  --grad-accent: linear-gradient(135deg, var(--blue) 0%, var(--violet-soft) 50%, var(--orange) 100%);
+  --grad-warm: linear-gradient(135deg, var(--orange) 0%, var(--blue) 100%);
+  --grad-card-hover: linear-gradient(180deg, rgba(26, 77, 255, 0.03) 0%, transparent 60%);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 36px 100px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.06), 0 16px 48px rgba(0, 0, 0, 0.1);
+  --shadow-inner: inset 0 1px 1px rgba(0, 0, 0, 0.02);
+  --shadow-tight: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-button: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-button-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ── Manual Dark Mode ─────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --ink: #ede8e0;
+  --ink-soft: #c8c0b4;
+  --muted: #8a8278;
+  --paper: #12100d;
+  --paper-2: #181612;
+  --card: #1e1b16;
+  --card-strong: #ede8e0;
+  --line: #2e2a24;
+  --line-dark: #48443c;
+  --line-subtle: rgba(237, 232, 224, 0.06);
+
+  --blue: #5c8aff;
+  --blue-glow: rgba(92, 138, 255, 0.15);
+  --blue-soft: #1a2238;
+  --green: #2dd48b;
+  --green-glow: rgba(45, 212, 139, 0.12);
+  --green-soft: #162a22;
+  --orange: #f08050;
+  --orange-glow: rgba(240, 128, 80, 0.12);
+  --orange-soft: #2a1e16;
+  --violet-soft: #201a30;
+
+  --glass-panel-bg: rgba(24, 21, 16, 0.85);
+  --glass-topbar-bg: rgba(18, 16, 13, 0.82);
+  --glass-nav-bg: rgba(24, 21, 16, 0.82);
+  --glass-nav-border: rgba(72, 68, 60, 0.5);
+  --glass-blur: 16px;
+  --glass-blur-topbar: 20px;
+
+  --body-glow-1: rgba(92, 138, 255, 0.08);
+  --body-glow-2: rgba(240, 128, 80, 0.07);
+  --body-glow-3: rgba(124, 58, 237, 0.05);
+  --body-grad-stop-1: #181510;
+  --body-grad-stop-2: #14120d;
+  --body-grad-stop-3: #161410;
+  --body-before-opacity: 0.06;
+
+  --avail-strip-bg: rgba(24, 21, 16, 0.8);
+  --badge-accent-bg: rgba(80, 65, 30, 0.25);
+  --img-brightness: brightness(0.88);
+
+  --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
+
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 36px 100px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.25), 0 16px 48px rgba(0, 0, 0, 0.4);
+  --shadow-inner: inset 0 1px 1px rgba(255, 255, 255, 0.04);
+  --shadow-tight: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-button: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-button-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ── System Dark Mode ─────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #ede8e0;
+    --ink-soft: #c8c0b4;
+    --muted: #8a8278;
+    --paper: #12100d;
+    --paper-2: #181612;
+    --card: #1e1b16;
+    --card-strong: #ede8e0;
+    --line: #2e2a24;
+    --line-dark: #48443c;
+    --line-subtle: rgba(237, 232, 224, 0.06);
+
+    --blue: #5c8aff;
+    --blue-glow: rgba(92, 138, 255, 0.15);
+    --blue-soft: #1a2238;
+    --green: #2dd48b;
+    --green-glow: rgba(45, 212, 139, 0.12);
+    --green-soft: #162a22;
+    --orange: #f08050;
+    --orange-glow: rgba(240, 128, 80, 0.12);
+    --orange-soft: #2a1e16;
+    --violet-soft: #201a30;
+
+    --glass-panel-bg: rgba(24, 21, 16, 0.85);
+    --glass-topbar-bg: rgba(18, 16, 13, 0.82);
+    --glass-nav-bg: rgba(24, 21, 16, 0.82);
+    --glass-nav-border: rgba(72, 68, 60, 0.5);
+    --glass-blur: 16px;
+    --glass-blur-topbar: 20px;
+
+    --body-glow-1: rgba(92, 138, 255, 0.08);
+    --body-glow-2: rgba(240, 128, 80, 0.07);
+    --body-glow-3: rgba(124, 58, 237, 0.05);
+    --body-grad-stop-1: #181510;
+    --body-grad-stop-2: #14120d;
+    --body-grad-stop-3: #161410;
+    --body-before-opacity: 0.06;
+
+    --avail-strip-bg: rgba(24, 21, 16, 0.8);
+    --badge-accent-bg: rgba(80, 65, 30, 0.25);
+    --img-brightness: brightness(0.88);
+
+    --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
+
+    --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 24px 70px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 36px 100px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.25), 0 16px 48px rgba(0, 0, 0, 0.4);
+    --shadow-inner: inset 0 1px 1px rgba(255, 255, 255, 0.04);
+    --shadow-tight: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-button: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-button-hover: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+}
