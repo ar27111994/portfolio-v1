@@ -181,6 +181,28 @@ function transformProject(p) {
 const sorted = [...projects].sort((a, b) => a.rank - b.rank);
 const items = sorted.map(transformProject);
 
+// Merge localImage/fileSize/videoId from existing portfolio JSON
+let existingById = new Map();
+try {
+  const existing = JSON.parse(readFileSync(OUTPUT_FILE, "utf-8"));
+  for (const prev of existing.items ?? []) {
+    existingById.set(prev.id, prev);
+  }
+} catch { /* no existing file */ }
+
+for (const item of items) {
+  const prev = existingById.get(item.id);
+  if (!prev?.attachments?.length || !item.attachments?.length) continue;
+  for (let i = 0; i < Math.min(item.attachments.length, prev.attachments.length); i++) {
+    const pa = prev.attachments[i];
+    const ia = item.attachments[i];
+    if (pa.localImage) ia.localImage = pa.localImage;
+    if (pa.fileName && !ia.fileName) ia.fileName = pa.fileName;
+    if (pa.fileSize && !ia.fileSize) ia.fileSize = pa.fileSize;
+    if (pa.videoId && !ia.videoId) ia.videoId = pa.videoId;
+  }
+}
+
 // De-duplicate IDs (same title → append rank suffix)
 const seen = new Set();
 for (const item of items) {
