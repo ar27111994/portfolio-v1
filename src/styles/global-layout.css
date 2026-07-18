@@ -1320,6 +1320,20 @@ h3 {
   background: linear-gradient(160deg, #e8dcff, #f9f5ff);
 }
 
+/* Dark mode overrides for featured card visuals */
+[data-theme="dark"] .featured-card.accent-agents .featured-visual {
+  background: linear-gradient(160deg, #1a2818, var(--card));
+}
+[data-theme="dark"] .featured-card.accent-capture .featured-visual {
+  background: linear-gradient(160deg, #101a28, var(--card));
+}
+[data-theme="dark"] .featured-card.accent-design .featured-visual {
+  background: linear-gradient(160deg, #281a10, var(--card));
+}
+[data-theme="dark"] .featured-card.accent-skills .featured-visual {
+  background: linear-gradient(160deg, #1a1028, var(--card));
+}
+
 @media (max-width: 680px) {
   .featured-grid {
     grid-template-columns: 1fr;
