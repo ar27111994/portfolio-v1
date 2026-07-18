@@ -165,7 +165,7 @@ function initPage() {
     title.textContent = item.title;
     body.appendChild(title);
     const meta = document.createElement("small");
-    meta.textContent = `${item.source} · ${item.date}`;
+    meta.textContent = item.date ? `${item.source} · ${item.date}` : item.source;
     body.appendChild(meta);
     a.appendChild(body);
     return a;

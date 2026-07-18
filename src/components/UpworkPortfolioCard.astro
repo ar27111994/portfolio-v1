@@ -211,6 +211,8 @@ const isPreviewImageHref = (
   attachment: PortfolioAttachment,
 ) => {
   if (!href) return false;
+  // Skip relative Upwork CDN paths — they 404 on our domain
+  if (href.startsWith("/att/")) return false;
   const sourceHrefs = uniqueUrls([
     attachment.url,
     attachment.embeddedUrl,
