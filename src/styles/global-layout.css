@@ -3666,3 +3666,42 @@ html.dark .anchor-rail {
   background: var(--glass-topbar-bg);
   border-color: var(--glass-nav-border);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE FIXES — Comprehensive audit pass
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Availability strip cards ────────────────────────────────────── */
+html.dark .availability-strip span {
+  background: var(--glass-panel-bg);
+}
+/* Fix wide ribbon contrast: light green bg needs dark text */
+html.dark .availability-strip .wide b {
+  color: var(--surface-inverse);
+}
+
+/* ── Secondary contact widget ────────────────────────────────────── */
+html.dark .contact-widget.secondary {
+  background: var(--card);
+}
+
+/* ── Upwork inner media tiles ────────────────────────────────────── */
+html.dark .upwork-portfolio-preview {
+  background: var(--card);
+}
+html.dark .upwork-portfolio-fallback {
+  background: var(--card);
+}
+html.dark .upwork-media-tile {
+  background: var(--card);
+}
+
+/* ── Upwork tags (white pills on dark cards) — use dark text ────── */
+html.dark .upwork-tags span {
+  color: var(--surface-inverse);
+}
+
+/* ── Feed source meta text ───────────────────────────────────────── */
+html.dark .feed-source-copy small {
+  color: var(--muted);
+}
