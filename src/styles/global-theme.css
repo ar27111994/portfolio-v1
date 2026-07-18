@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════════════════════════════
    Three token blocks, zero component duplication:
      1. :root              — light mode defaults
-     2. [data-theme="dark"] — manual dark mode
+     2. html.dark — manual dark mode
      3. @media (prefers-color-scheme: dark) :root — system dark mode
    
    Token naming convention (3 tiers):
@@ -163,9 +163,9 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   MANUAL DARK MODE — [data-theme="dark"]
+   MANUAL DARK MODE — html.dark
    ═══════════════════════════════════════════════════════════════════════════ */
-[data-theme="dark"] {
+html.dark {
   --ink: #ede8e0;
   --ink-soft: #c8c0b4;
   --muted: #8a8278;

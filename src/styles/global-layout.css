@@ -131,12 +131,12 @@ summary:focus-visible {
   color: var(--ink);
 }
 .theme-icon { display: none; }
-[data-theme="light"] .theme-icon-sun { display: block; }
-[data-theme="dark"] .theme-icon-moon { display: block; }
-[data-theme="auto"] .theme-icon-sun,
-[data-theme="auto"] .theme-icon-moon { display: block; }
-[data-theme="light"] { color-scheme: light; }
-[data-theme="dark"] { color-scheme: dark; }
+html.light .theme-icon-sun { display: block; }
+html.dark .theme-icon-moon { display: block; }
+html.auto .theme-icon-sun,
+html.auto .theme-icon-moon { display: block; }
+html.light { color-scheme: light; }
+html.dark { color-scheme: dark; }
 .wordmark {
   display: inline-flex;
   align-items: center;
@@ -1321,16 +1321,16 @@ h3 {
 }
 
 /* Dark mode overrides for featured card visuals */
-[data-theme="dark"] .featured-card.accent-agents .featured-visual {
+html.dark .featured-card.accent-agents .featured-visual {
   background: linear-gradient(160deg, #1a2818, var(--card));
 }
-[data-theme="dark"] .featured-card.accent-capture .featured-visual {
+html.dark .featured-card.accent-capture .featured-visual {
   background: linear-gradient(160deg, #101a28, var(--card));
 }
-[data-theme="dark"] .featured-card.accent-design .featured-visual {
+html.dark .featured-card.accent-design .featured-visual {
   background: linear-gradient(160deg, #281a10, var(--card));
 }
-[data-theme="dark"] .featured-card.accent-skills .featured-visual {
+html.dark .featured-card.accent-skills .featured-visual {
   background: linear-gradient(160deg, #1a1028, var(--card));
 }
 

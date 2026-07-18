@@ -647,7 +647,9 @@ function initPage() {
       const resolved = theme === "auto"
         ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
         : theme;
-      document.documentElement.setAttribute("data-theme", resolved);
+      // Use classes for Astro/Vite compatibility (data-theme is tree-shaken)
+      document.documentElement.classList.remove("dark", "light");
+      document.documentElement.classList.add(resolved);
       // Update toggle icon
       const sun = document.querySelector(".theme-icon-sun");
       const moon = document.querySelector(".theme-icon-moon");
