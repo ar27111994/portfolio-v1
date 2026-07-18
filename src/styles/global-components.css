@@ -273,7 +273,7 @@
 .floating-contact a {
   text-decoration: none;
   border: 1px solid var(--ink);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.55rem 0.78rem;
   color: var(--ink-on-dark);
   background: rgba(var(--shadow-color), 0.9);
@@ -722,7 +722,7 @@
 .swiper-pagination-bullet-active {
   background: var(--blue);
   width: 24px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
 }
 /* Swiper nav arrows */
 .swiper-button-prev,
@@ -832,7 +832,7 @@
   font-weight: 600;
   padding: 0.25rem 0.6rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   color: var(--blue);
   text-decoration: none;
   white-space: nowrap;
@@ -877,7 +877,7 @@
   font-weight: 800;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(26, 77, 255, 0.25);
   transition:
@@ -1006,7 +1006,7 @@
   background: color-mix(in srgb, var(--blue) 8%, transparent);
   color: var(--blue);
   border: 1px solid color-mix(in srgb, var(--blue) 20%, transparent);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   letter-spacing: 0.03em;
 }
 
@@ -1025,7 +1025,7 @@
   color: var(--green);
   background: var(--green-soft);
   border: 1px solid rgba(11, 122, 74, 0.15);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.25em 0.7em;
   letter-spacing: 0.01em;
 }

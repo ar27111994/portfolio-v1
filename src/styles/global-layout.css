@@ -62,7 +62,7 @@ body:before {
   background: var(--ink);
   color: var(--ink-on-dark);
   padding: 0.56rem 0.78rem;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   font-weight: 800;
   z-index: 200;
 }
@@ -143,7 +143,7 @@ html.dark { color-scheme: dark; }
   gap: 0.55rem;
   padding: 0.38rem 0.75rem 0.38rem 0.42rem;
   border: 1px solid rgba(15, 13, 11, 0.12);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: rgba(254, 252, 248, 0.78);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow-tight);
@@ -210,7 +210,7 @@ html.dark { color-scheme: dark; }
   max-width: min(100%, 760px);
   padding: 0.3rem;
   border: 1px solid rgba(15, 13, 11, 0.1);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: rgba(254, 252, 248, 0.78);
   box-shadow: var(--shadow-tight);
   backdrop-filter: blur(18px);
@@ -227,7 +227,7 @@ html.dark { color-scheme: dark; }
   align-items: center;
   gap: 0.3rem;
   min-height: 2rem;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.3rem 0.6rem;
   color: var(--ink-soft);
   font-size: 0.68rem;
@@ -286,7 +286,7 @@ html.dark { color-scheme: dark; }
   top: 0;
   height: 4px;
   background: var(--grad-accent);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   opacity: 0.85;
 }
 .hero {
@@ -320,7 +320,7 @@ html.dark { color-scheme: dark; }
   width: 82px;
   height: 82px;
   object-fit: cover;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   border: 3px solid var(--ink);
   box-shadow: 8px 8px 0 var(--orange), 0 0 0 8px rgba(212, 74, 26, 0.1);
   transition:
@@ -455,7 +455,7 @@ h3 {
   width: 1.55rem;
   height: 1.55rem;
   margin-right: 0.24rem;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--tag-bg);
   color: var(--ink);
   font-size: 0.86rem;
@@ -530,7 +530,7 @@ h3 {
 .availability-strip .wide em {
   font-style: normal;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.24rem 0.56rem;
   background: rgba(255, 255, 255, 0.08);
   color: var(--ink-on-dark);
@@ -549,7 +549,7 @@ h3 {
   display: inline-block;
   width: 1.25rem;
   height: 2px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: #caff80;
   font-style: normal;
   font-weight: 900;
@@ -611,7 +611,7 @@ h3 {
   min-width: 0;
   gap: 0.34rem;
   border: 1px solid var(--line-subtle);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.28rem 0.64rem;
   color: var(--ink);
   background: var(--surface);
@@ -650,7 +650,7 @@ h3 {
   max-width: 2.5rem;
   height: 1.4rem;
   padding: 0 0.2rem;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--surface-inverse);
   color: var(--ink-on-dark);
   font-size: 0.6rem;
@@ -674,7 +674,7 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   border: 1px solid var(--ink);
   text-decoration: none;
   font-weight: 900;
@@ -756,7 +756,7 @@ h3 {
   align-self: center;
   justify-self: end;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.18rem 0.42rem;
   background: var(--surface);
   color: var(--ink);
@@ -914,7 +914,7 @@ h3 {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255,255,255,0.08);
   height: 1.65rem;
@@ -946,7 +946,7 @@ h3 {
   margin-top: 0.64rem;
 }
 .signal-tags span {
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--surface);
   color: var(--ink);
   padding: 0.28rem 0.48rem;
@@ -1063,7 +1063,7 @@ h3 {
   margin: 0 0 0.32rem;
   width: fit-content;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--tag-bg);
   padding: 0.24rem 0.54rem;
   color: var(--tag-text);
@@ -1402,7 +1402,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   color: var(--ink);
   background: var(--blue-soft);
   border: 1px solid rgba(26, 77, 255, 0.15);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.28rem 0.64rem;
   font-size: 0.7rem;
   line-height: 1.2;
@@ -1524,7 +1524,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   align-self: end;
   width: fit-content;
   border: 1px solid rgba(17, 17, 17, 0.14);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--tag-bg);
   padding: 0.2rem 0.48rem;
   color: var(--tag-text);
@@ -1550,7 +1550,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   gap: 0.42rem;
   text-decoration: none;
   border: 1px solid var(--line-subtle);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.42rem 0.72rem;
   background: var(--card);
   font-weight: 800;
@@ -1730,7 +1730,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   align-items: center;
   gap: 0.38rem;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--surface);
   padding: 0.42rem 0.68rem;
   color: var(--ink-soft);
@@ -1756,7 +1756,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   right: 0.5rem;
   top: 0.5rem;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.12rem 0.34rem;
   background: var(--tag-bg);
   color: var(--ink);
@@ -1841,7 +1841,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   gap: 0.55rem;
   padding: 0.55rem 0.8rem;
   border: 1px solid var(--line-subtle);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--card);
   text-decoration: none;
   box-shadow: var(--shadow-xs);
@@ -1986,7 +1986,7 @@ html.dark .contact-panel {
 }
 .upwork-tags span {
   border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.94);
   padding: 0.22rem 0.5rem;
   color: var(--ink-soft);
@@ -2016,7 +2016,7 @@ html.dark .contact-panel {
   width: fit-content;
   max-width: 100%;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--tag-bg);
   padding: 0.26rem 0.58rem;
   color: var(--tag-text);
@@ -2046,7 +2046,7 @@ html.dark .contact-panel {
   width: fit-content;
   margin-left: 0.42rem;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: #caff80;
   padding: 0.2rem 0.56rem;
   color: var(--ink);
@@ -2096,7 +2096,7 @@ html.dark .contact-panel {
 }
 .upwork-fit-tags span {
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.35rem 0.75rem;
   font-size: 0.82rem;
   font-weight: 700;
@@ -2269,7 +2269,7 @@ html.dark .upwork-portfolio-card {
   width: fit-content;
   max-width: calc(100% - 1.1rem);
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--surface);
   padding: 0.22rem 0.52rem;
   color: var(--ink);
@@ -2350,7 +2350,7 @@ html.dark .upwork-portfolio-card {
 .upwork-featured-badge {
   flex: 0 0 auto;
   border: 1px solid rgba(17, 17, 17, 0.14);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--tag-bg);
   padding: 0.16rem 0.38rem;
   color: var(--ink-soft);
@@ -2406,7 +2406,7 @@ html.dark .upwork-portfolio-card {
 }
 .upwork-portfolio-meta-row span {
   border: 1px solid rgba(17, 17, 17, 0.1);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--surface-raised);
   padding: 0.18rem 0.46rem;
 }
@@ -2421,7 +2421,7 @@ html.dark .upwork-portfolio-card {
 }
 .upwork-portfolio-tags li {
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--surface);
   padding: 0.2rem 0.48rem;
   color: var(--ink-soft);
@@ -2447,7 +2447,7 @@ html.dark .upwork-portfolio-card {
   align-items: center;
   justify-content: center;
   min-height: 2.5rem;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   padding: 0.58rem 0.82rem;
   font-family: inherit;
   font-size: var(--step--1);
@@ -2592,7 +2592,7 @@ html.dark .upwork-portfolio-card {
 }
 .upwork-modal-close {
   border: 1px solid var(--ink);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--ink);
   color: var(--ink-on-dark);
   padding: 0.55rem 0.78rem;
@@ -2623,14 +2623,14 @@ html.dark .upwork-portfolio-card {
 .upwork-modal::-webkit-scrollbar-track,
 .upwork-modal-content::-webkit-scrollbar-track,
 .upwork-raw-data pre::-webkit-scrollbar-track {
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--line);
 }
 .upwork-modal::-webkit-scrollbar-thumb,
 .upwork-modal-content::-webkit-scrollbar-thumb,
 .upwork-raw-data pre::-webkit-scrollbar-thumb {
   border: 0.18rem solid #efe7db;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: #171717;
 }
 .upwork-modal::-webkit-scrollbar-thumb:hover,
@@ -2646,7 +2646,7 @@ html.dark .upwork-portfolio-card {
   max-width: 100%;
   margin: 0;
   border: 1px solid var(--line-divider);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--tag-bg);
   padding: 0.34rem 0.62rem;
   color: var(--ink);
@@ -3314,7 +3314,7 @@ html.dark .upwork-portfolio-card {
   min-width: 200px;
   padding: 0.4rem 0.65rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--card);
   transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
 }
@@ -3371,7 +3371,7 @@ html.dark .upwork-portfolio-card {
 .toolbar-actions select {
   padding: 0.4rem 0.6rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--card);
   color: var(--ink);
   font-size: 0.78rem;
@@ -3392,7 +3392,7 @@ html.dark .upwork-portfolio-card {
 .filter-tag {
   padding: 0.22rem 0.55rem;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--card);
   color: var(--muted);
   font-size: 0.72rem;
@@ -3413,7 +3413,7 @@ html.dark .upwork-portfolio-card {
 .filter-clear {
   padding: 0.22rem 0.55rem;
   border: 1px dashed var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: none;
   color: var(--muted);
   font-size: 0.7rem;
@@ -3483,7 +3483,7 @@ html.dark .upwork-portfolio-card {
   height: 2rem;
   padding: 0 0.4rem;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: none;
   color: var(--muted);
   font-size: 0.8rem;
@@ -3603,13 +3603,13 @@ html.dark .upwork-portfolio-card {
 .writing-card-icon img { width: 1.2rem; height: 1.2rem; object-fit: contain; opacity: 0.7; transition: opacity var(--dur-fast) var(--ease-out); }
 .writing-card:hover .writing-card-icon img { opacity: 1; }
 .writing-card-body { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
-.writing-card-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.writing-card-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: var(--radius-full); background: var(--blue-soft); color: var(--blue); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .writing-card-title { font-size: 0.82rem; font-weight: 800; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .writing-card-meta { font-size: 0.68rem; color: var(--muted); font-weight: 600; }
 .feed-live-widget { border: 1px solid rgba(237,232,224,0.12); border-radius: var(--radius-lg); background: linear-gradient(160deg, #1c1a17 0%, #1a1814 100%); color: #e8e3d8; padding: 0.9rem; margin-bottom: 0.75rem; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.03); max-height: 28rem; overflow-y: auto; overscroll-behavior: contain; }
 .feed-live-widget::-webkit-scrollbar { width: 5px; }
 .feed-live-widget::-webkit-scrollbar-track { background: transparent; }
-.feed-live-widget::-webkit-scrollbar-thumb { background: rgba(200,190,175,0.18); border-radius: 999px; }
+.feed-live-widget::-webkit-scrollbar-thumb { background: rgba(200,190,175,0.18); border-radius: var(--radius-full); }
 .feed-live-widget::-webkit-scrollbar-thumb:hover { background: rgba(200,190,175,0.3); }
 .feed-live-status { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #a09888; margin-bottom: 0.65rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(237,232,224,0.06); }
 .feed-live-list { display: flex; flex-direction: column; gap: 0.45rem; }
@@ -3624,14 +3624,14 @@ html.dark .upwork-portfolio-card {
 .feed-item-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.1rem; height: 2.1rem; border-radius: 10px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
 .feed-item-icon img { width: 1.05rem; height: 1.05rem; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
 .feed-item-body { display: flex; flex-direction: column; gap: 0.18rem; min-width: 0; }
-.feed-item-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: 999px; background: rgba(92,138,255,0.18); color: #7eb0ff; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.feed-item-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: var(--radius-full); background: rgba(92,138,255,0.18); color: #7eb0ff; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .feed-item-body strong { font-size: 0.8rem; font-weight: 700; color: #f0ece4; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .feed-item-body small { font-size: 0.67rem; color: #9a9082; font-weight: 600; }
 .feed-sources-carousel { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); overflow: hidden; padding-bottom: 2.5rem; }
 .feed-sources-details summary { cursor: pointer; font-weight: 700; font-size: 0.8rem; color: var(--muted); transition: color var(--dur-fast) var(--ease-out); }
 .feed-sources-details summary:hover { color: var(--blue); }
 .feed-sources-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.55rem; }
-.feed-source-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.32rem 0.6rem; border: 1px solid var(--line-subtle); border-radius: 999px; background: var(--card); text-decoration: none; font-size: 0.72rem; font-weight: 700; color: var(--ink); transition: all var(--dur-fast) var(--ease-out); }
+.feed-source-pill { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.32rem 0.6rem; border: 1px solid var(--line-subtle); border-radius: var(--radius-full); background: var(--card); text-decoration: none; font-size: 0.72rem; font-weight: 700; color: var(--ink); transition: all var(--dur-fast) var(--ease-out); }
 .feed-source-pill img { width: 1rem; height: 1rem; object-fit: contain; opacity: 0.6; }
 .feed-source-pill small { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
 .feed-source-pill:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
