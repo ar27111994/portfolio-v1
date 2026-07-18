@@ -645,10 +645,6 @@ function initPage() {
 
     function applyTheme(theme) {
       document.documentElement.setAttribute("data-theme", theme);
-      if (theme === "light") document.documentElement.classList.add("light");
-      else document.documentElement.classList.remove("light");
-      if (theme === "dark") document.documentElement.classList.add("dark");
-      else document.documentElement.classList.remove("dark");
       current = theme;
     }
   })();
