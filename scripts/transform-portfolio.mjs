@@ -162,7 +162,9 @@ function transformProject(p) {
   };
   if (attachments.length) item.attachments = attachments;
   if (p.completionDateTime) item.completionDate = String(p.completionDateTime);
+  else if (p.creationTs) item.completionDate = String(p.creationTs).slice(0, 10);
   else if (p.createdDateTime) item.completionDate = String(p.createdDateTime).slice(0, 10);
+  else if (p.completionDate) item.completionDate = String(p.completionDate).slice(0, 10);
   // Project URL — explicit field first, then first embeddedLink/article/website
   if (p.projectUrl) item.url = String(p.projectUrl);
   else {
