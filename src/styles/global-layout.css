@@ -1946,10 +1946,12 @@ html.dark .featured-card.accent-skills .featured-visual {
       transparent 18rem
     );
 }
-html.dark .upwork-panel {
-  background:
-    linear-gradient(145deg, rgba(24, 21, 16, 0.9), rgba(30, 22, 10, 0.75)),
-    radial-gradient(circle at 92% 10%, rgba(202, 255, 128, 0.12), transparent 18rem);
+html.dark .upwork-panel,
+html.dark .services-panel,
+html.dark .lab-panel,
+html.dark .testimonials-panel,
+html.dark .contact-panel {
+  background: var(--glass-panel-bg);
 }
 .upwork-grid,
 .upwork-intro-grid {
@@ -3652,30 +3654,12 @@ html.dark .upwork-panel {
 .feed-source-coderlegion .feed-item-tag { background: rgba(139,92,246,0.3); color: #c8a8ff; }
 @media (max-width: 600px) { .writing-grid { grid-template-columns: 1fr; } }
 
-/* ── Component panel dark mode overrides ─────────────────────────── */
-html.dark .services-panel {
-  background: linear-gradient(135deg, rgba(24,21,16,0.94), rgba(28,20,14,0.9)),
-              radial-gradient(circle at 90% 20%, rgba(240,107,36,0.08), transparent 20rem);
-}
-html.dark .lab-panel {
-  background: linear-gradient(135deg, rgba(24,21,16,0.94), rgba(14,18,28,0.9)),
-              radial-gradient(circle at 10% 80%, rgba(92,138,255,0.08), transparent 20rem);
-}
-html.dark .testimonials-panel {
-  background: linear-gradient(135deg, rgba(24,21,16,0.94), rgba(20,14,28,0.9)),
-              radial-gradient(circle at 80% 40%, rgba(124,58,237,0.08), transparent 20rem);
-}
-html.dark .contact-panel {
-  background: linear-gradient(135deg, rgba(24,21,16,0.94), rgba(14,24,18,0.9)),
-              radial-gradient(circle at 20% 80%, rgba(45,212,139,0.08), transparent 20rem);
-}
-
-/* ── Header chrome dark mode ─────────────────────────────────────── */
+/* ── Header chrome dark mode (tokens only) ──────────────────────── */
 html.dark .wordmark {
-  background: rgba(24, 21, 16, 0.82);
-  border-color: rgba(72, 68, 60, 0.5);
+  background: var(--glass-topbar-bg);
+  border-color: var(--glass-nav-border);
 }
 html.dark .anchor-rail {
-  background: rgba(24, 21, 16, 0.82);
-  border-color: rgba(72, 68, 60, 0.5);
+  background: var(--glass-topbar-bg);
+  border-color: var(--glass-nav-border);
 }
