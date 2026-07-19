@@ -9,6 +9,17 @@ if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 //   Tier 2 — setTimeout(0):        API fetches (feed, GitHub, Upwork badge)
 //   Tier 3 — requestIdleCallback:  img onerror wiring (40+ elements, idle only)
 function initPage() {
+  // ── Re-apply theme after view-transition navigations ──────────────────
+  (function reapplyTheme() {
+    var t = localStorage.getItem("portfolio-theme") || "auto";
+    var d = t === "auto" ? window.matchMedia("(prefers-color-scheme: dark)").matches : t === "dark";
+    document.documentElement.classList.remove("dark", "light");
+    document.documentElement.classList.add(d ? "dark" : "light");
+    var s = document.querySelector(".theme-icon-sun");
+    var m = document.querySelector(".theme-icon-moon");
+    if (s && m) { s.style.display = t === "auto" || !d ? "block" : "none"; m.style.display = t === "auto" || d ? "block" : "none"; }
+  })();
+
   // ── TIER 1: scrollspy — synchronous, must be ready on first paint ──────────
   (function setupScrollspy() {
     const spyLinks = document.querySelectorAll(".anchor-rail a[data-spy]");
