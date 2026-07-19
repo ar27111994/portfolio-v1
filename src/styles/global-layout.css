@@ -1801,7 +1801,7 @@ h3 {
   color: var(--ink);
 }
 .contact-widget.email .widget-icon {
-  background: #dff3ff;
+  background: var(--blue-soft);
 }
 .contact-widget.whatsapp .widget-icon {
   background: var(--brand-accent);
