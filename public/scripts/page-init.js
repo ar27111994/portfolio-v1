@@ -629,28 +629,15 @@ function initPage() {
   // ── Theme toggle ─────────────────────────────────────────────────
   (function initTheme() {
     const STORAGE_KEY = "portfolio-theme";
-    const btn = document.querySelector(".theme-toggle");
-    if (!btn) return;
-
     const themes = ["auto", "light", "dark"];
     let current = localStorage.getItem(STORAGE_KEY) || "auto";
-    applyTheme(current);
-
-    btn.addEventListener("click", () => {
-      const idx = themes.indexOf(current);
-      current = themes[(idx + 1) % themes.length];
-      localStorage.setItem(STORAGE_KEY, current);
-      applyTheme(current);
-    });
 
     function applyTheme(theme) {
       const resolved = theme === "auto"
         ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
         : theme;
-      // Use classes for Astro/Vite compatibility (data-theme is tree-shaken)
       document.documentElement.classList.remove("dark", "light");
       document.documentElement.classList.add(resolved);
-      // Update toggle icon
       const sun = document.querySelector(".theme-icon-sun");
       const moon = document.querySelector(".theme-icon-moon");
       if (sun && moon) {
@@ -660,9 +647,23 @@ function initPage() {
       current = theme;
     }
 
-    // Re-apply when system preference changes in auto mode
+    // Apply theme immediately (don't wait for button to exist)
+    applyTheme(current);
+
+    // Listen for system theme changes
     window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
       if (current === "auto") applyTheme("auto");
+    });
+
+    // Wire up the toggle button — use event delegation on document in case
+    // button doesn't exist yet (Astro view transitions)
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".theme-toggle");
+      if (!btn) return;
+      const idx = themes.indexOf(current);
+      current = themes[(idx + 1) % themes.length];
+      localStorage.setItem(STORAGE_KEY, current);
+      applyTheme(current);
     });
   })();
   // ── End theme toggle ─────────────────────────────────────────────
