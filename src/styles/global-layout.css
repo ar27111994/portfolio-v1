@@ -1324,20 +1324,6 @@ h3 {
   color: var(--muted);
 }
 
-/* Visual accent color per card */
-.featured-card.accent-agents .featured-visual {
-  background: linear-gradient(160deg, #e8f5d0, #fafdf5);
-}
-.featured-card.accent-capture .featured-visual {
-  background: linear-gradient(160deg, #ddf0ff, #f7faff);
-}
-.featured-card.accent-design .featured-visual {
-  background: linear-gradient(160deg, #ffe8d6, #fffaf5);
-}
-.featured-card.accent-skills .featured-visual {
-  background: linear-gradient(160deg, #e8dcff, #f9f5ff);
-}
-
 @media (max-width: 680px) {
   .featured-grid {
     grid-template-columns: 1fr;
@@ -1936,19 +1922,6 @@ h3 {
 }
 .sponsor-card:hover .support-name {
   color: var(--blue);
-}
-.upwork-panel {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 253, 248, 0.9),
-      rgba(255, 247, 201, 0.72)
-    ),
-    radial-gradient(
-      circle at 92% 10%,
-      rgba(202, 255, 128, 0.48),
-      transparent 18rem
-    );
 }
 .upwork-grid,
 .upwork-intro-grid {
@@ -2559,7 +2532,7 @@ h3 {
   gap: 1rem;
   align-items: start;
   border-bottom: 1px solid var(--line-divider);
-  background: rgba(255, 253, 248, 0.94);
+  background: var(--glass-panel-bg);
   padding: clamp(1rem, 2vw, 1.35rem);
   backdrop-filter: blur(16px);
 }
