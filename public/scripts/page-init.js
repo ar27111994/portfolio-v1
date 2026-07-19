@@ -629,7 +629,7 @@ function initPage() {
   // ── Theme toggle ─────────────────────────────────────────────────
   (function initTheme() {
     const STORAGE_KEY = "portfolio-theme";
-    const themes = ["auto", "light", "dark"];
+    const themes = ["light", "dark", "auto"];
     let current = localStorage.getItem(STORAGE_KEY) || "auto";
 
     function applyTheme(theme) {
@@ -641,8 +641,8 @@ function initPage() {
       const sun = document.querySelector(".theme-icon-sun");
       const moon = document.querySelector(".theme-icon-moon");
       if (sun && moon) {
-        sun.style.display = resolved === "light" ? "block" : "none";
-        moon.style.display = resolved === "dark" ? "block" : "none";
+        sun.style.display = theme === "auto" || resolved === "light" ? "block" : "none";
+        moon.style.display = theme === "auto" || resolved === "dark" ? "block" : "none";
       }
       current = theme;
     }
