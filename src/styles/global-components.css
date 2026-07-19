@@ -1056,3 +1056,15 @@ img[alt*="Flippa"],
 img[alt*="Gleam"] {
   filter: none !important;
 }
+
+/* Cert icons needing filter — invert dark icons to white */
+.cert-icon {
+  filter: var(--brand-icon-filter);
+}
+
+/* Exceptions: preserve colored logos */
+.cert-icon[alt*="Coursera"],
+.cert-icon[alt*="Flippa"],
+.cert-icon[alt*="Gleam"] {
+  filter: none;
+}
