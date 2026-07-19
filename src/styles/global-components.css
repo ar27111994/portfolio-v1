@@ -1055,3 +1055,12 @@ img[alt*="Coursera"],
 img[alt*="Flippa"],
 img[alt*="Gleam"] {
   filter: none !important;
+
+.cert-icon {
+  filter: var(--brand-icon-filter);
+}
+.cert-icon[alt*="Coursera"],
+.cert-icon[alt*="Flippa"],
+.cert-icon[alt*="Gleam"] {
+  filter: none;
+}
