@@ -636,6 +636,11 @@ h3 {
   flex: 0 0 auto;
   filter: var(--brand-icon-filter);
 }
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
+}
 .badge-row span:nth-child(6),
 .badge-row span:nth-child(7),
 .badge-row span:nth-child(8),
@@ -810,6 +815,11 @@ h3 {
   height: 1.22rem;
   object-fit: contain;
   filter: var(--brand-icon-filter);
+}
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
 }
 .command-copy {
   display: grid;
@@ -1170,6 +1180,11 @@ h3 {
   background: var(--surface);
   filter: var(--brand-icon-filter);
 }
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
+}
 .profile-widget:hover strong,
 .resume-widget:hover strong,
 .contact-widget:hover strong,
@@ -1311,6 +1326,32 @@ h3 {
 .featured-copy .mini-list li {
   font-size: 0.8rem;
   color: var(--muted);
+}
+
+/* ── Featured card visual accents ────────────────────────────────── */
+.featured-card.accent-agents .featured-visual {
+  background: linear-gradient(160deg, #e8f5d0, #fafdf5);
+}
+.featured-card.accent-capture .featured-visual {
+  background: linear-gradient(160deg, #ddf0ff, #f7faff);
+}
+.featured-card.accent-design .featured-visual {
+  background: linear-gradient(160deg, #ffe8d6, #fffaf5);
+}
+.featured-card.accent-skills .featured-visual {
+  background: linear-gradient(160deg, #e8dcff, #f9f5ff);
+}
+html.dark .featured-card.accent-agents .featured-visual {
+  background: linear-gradient(160deg, var(--green-soft), var(--card));
+}
+html.dark .featured-card.accent-capture .featured-visual {
+  background: linear-gradient(160deg, var(--blue-soft), var(--card));
+}
+html.dark .featured-card.accent-design .featured-visual {
+  background: linear-gradient(160deg, var(--orange-soft), var(--card));
+}
+html.dark .featured-card.accent-skills .featured-visual {
+  background: linear-gradient(160deg, var(--violet-soft), var(--card));
 }
 
 @media (max-width: 680px) {
@@ -1487,6 +1528,11 @@ h3 {
   height: 1.18rem;
   object-fit: contain;
   filter: var(--brand-icon-filter);
+}
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
 }
 .capability-index {
   color: #8a8177;
@@ -1668,6 +1714,11 @@ h3 {
   object-fit: contain;
   filter: var(--brand-icon-filter);
 }
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
+}
 .profile-widget strong,
 .resume-widget strong,
 .contact-widget strong {
@@ -1759,6 +1810,11 @@ h3 {
   grid-row: span 2;
   filter: var(--brand-icon-filter);
 }
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
+}
 .proof-ledger small {
   color: var(--muted);
   font-size: 0.66rem;
@@ -1782,6 +1838,11 @@ h3 {
   padding: 0.32rem;
   object-fit: contain;
   filter: var(--brand-icon-filter);
+}
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
 }
 .contact-proof-strip strong {
   color: var(--ink);
@@ -1860,6 +1921,11 @@ h3 {
   object-fit: contain;
   filter: var(--brand-icon-filter);
 }
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
+}
 .pill-link-text {
   display: flex;
   flex-direction: column;
@@ -1911,6 +1977,11 @@ h3 {
   height: 1.38rem;
   object-fit: contain;
   filter: var(--brand-icon-filter);
+}
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
 }
 .sponsor-card .support-name,
 .sponsor-card .support-note {
@@ -3002,6 +3073,11 @@ h3 {
   height: 1.1rem;
   object-fit: contain;
   filter: var(--brand-icon-filter);
+}
+/* Preserve multicolored brand logos — don't invert */
+.contact-widget.email .widget-icon img,
+.contact-widget.whatsapp .widget-icon img {
+  filter: none;
 }
 .capability-index {
   font-size: 0.64rem;
