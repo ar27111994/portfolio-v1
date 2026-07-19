@@ -1052,7 +1052,8 @@
 }
 
 /* Logos already light/colored — inversion destroys them */
-}
-
-.preserve-icon {
+img[alt*="Coursera"],
+img[alt*="Flippa"],
+img[alt*="Gleam"] {
+  filter: none !important;
 }
