@@ -2257,8 +2257,8 @@ h3 {
   left: 0.7rem;
   bottom: 0.68rem;
   z-index: 3;
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--line-divider);
+  background: var(--glass-panel-bg);
   color: var(--ink);
   backdrop-filter: blur(12px);
 }
@@ -2758,7 +2758,7 @@ h3 {
 }
 .upwork-portfolio-link {
   border: 1px solid var(--ink);
-  background: var(--ink);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .upwork-portfolio-link:hover,
@@ -3428,9 +3428,9 @@ h3 {
   color: var(--ink);
 }
 .page-num.is-active {
-  background: var(--ink);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
-  border-color: var(--ink);
+  border-color: var(--surface-inverse);
 }
 .page-ellipsis {
   color: var(--muted);
