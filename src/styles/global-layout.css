@@ -1657,6 +1657,7 @@ h3 {
   width: 1.8rem;
   height: 1.8rem;
   object-fit: contain;
+  filter: var(--brand-icon-filter);
 }
 .profile-widget strong,
 .resume-widget strong,
@@ -1747,9 +1748,10 @@ h3 {
 }
 .proof-ledger img {
   grid-row: span 2;
+  filter: var(--brand-icon-filter);
 }
 .proof-ledger small {
-  color: #756d65;
+  color: var(--muted);
   font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.08em;
