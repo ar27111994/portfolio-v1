@@ -30,7 +30,6 @@
   height: 20px;
   object-fit: contain;
   display: block;
-  filter: var(--brand-icon-filter);
 }
 .cert-icon-empty {
   background: transparent;
