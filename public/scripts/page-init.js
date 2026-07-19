@@ -3,6 +3,9 @@
 //
 // Tiered execution — avoids blocking the main thread (input delay fix):
 //   Tier 1 — synchronous:          scrollspy IntersectionObserver setup only
+
+// Prevent browser auto-scroll on refresh
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 //   Tier 2 — setTimeout(0):        API fetches (feed, GitHub, Upwork badge)
 //   Tier 3 — requestIdleCallback:  img onerror wiring (40+ elements, idle only)
 function initPage() {
