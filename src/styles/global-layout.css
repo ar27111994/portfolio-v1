@@ -1162,7 +1162,9 @@ h3 {
 .profile-widget:hover .widget-icon,
 .resume-widget:hover .widget-icon,
 .contact-widget:hover .widget-icon,
-.feed-source-card:hover .feed-source-icon,
+.feed-source-card:hover .feed-source-icon {
+  background: var(--surface);
+}
 .contact-proof-strip a:hover img,
 .proof-ledger a:hover img {
   background: var(--surface);
