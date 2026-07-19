@@ -3534,7 +3534,7 @@ h3 {
 .feed-live-widget::-webkit-scrollbar-track { background: transparent; }
 .feed-live-widget::-webkit-scrollbar-thumb { background: rgba(200,190,175,0.18); border-radius: 999px; }
 .feed-live-widget::-webkit-scrollbar-thumb:hover { background: rgba(200,190,175,0.3); }
-.feed-live-status { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #a09888; margin-bottom: 0.65rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(237,232,224,0.06); }
+.feed-live-status { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.65rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(237,232,224,0.06); }
 .feed-live-list { display: flex; flex-direction: column; gap: 0.45rem; }
 .feed-sentinel { height: 1px; }
 .feed-item {
@@ -3559,7 +3559,7 @@ h3 {
 .feed-source-pill small { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
 .feed-source-pill:hover { background: var(--ink); color: var(--ink-on-dark); border-color: var(--ink); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
-.feed-source-pill:hover small { color: #aaa; }
+.feed-source-pill:hover small { color: var(--ink-soft); }
 .feed-sources-carousel .swiper-slide { width: auto; height: auto; }
 
 /* Platform-specific feed item accents */
