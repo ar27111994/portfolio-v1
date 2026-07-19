@@ -30,6 +30,13 @@
   height: 20px;
   object-fit: contain;
   display: block;
+  filter: var(--brand-icon-filter);
+}
+/* Coursera, Flippa, Gleam — preserve original colors */
+.cert-icon[alt*="Coursera"],
+.cert-icon[alt*="Flippa"],
+.cert-icon[alt*="Gleam"] {
+  filter: none;
 }
 .cert-icon-empty {
   background: transparent;
