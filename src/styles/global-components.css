@@ -1051,3 +1051,9 @@
     flex-direction: column;
   }
 }
+
+/* Logos already light/colored — inversion destroys them */
+img[src*="coursera"],
+img[src*="flippa"] {
+  filter: none !important;
+}
