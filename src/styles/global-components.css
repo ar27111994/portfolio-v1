@@ -30,6 +30,7 @@
   height: 20px;
   object-fit: contain;
   display: block;
+  filter: var(--brand-icon-filter);
 }
 .cert-icon-empty {
   background: transparent;
@@ -790,7 +791,7 @@
   color: var(--blue);
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
-  opacity: 0.25;
+  opacity: 0.35;
 }
 
 .testimonial-footer {

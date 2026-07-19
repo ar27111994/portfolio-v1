@@ -967,6 +967,7 @@ h3 {
 }
 .signal-tags span:first-child {
   background: var(--brand-accent);
+  color: var(--surface-inverse);
 }
 .signal-icons {
   display: grid;
@@ -1953,9 +1954,6 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .sponsor-card:last-child {
   grid-column: 1 / -1;
-}
-.sponsor-card:last-child .support-icon img {
-  filter: none;
 }
 .support-icon {
   display: inline-grid;
