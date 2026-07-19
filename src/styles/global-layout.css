@@ -637,7 +637,6 @@ h3 {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -817,7 +816,6 @@ h3 {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1181,7 +1179,6 @@ h3 {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1530,7 +1527,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1715,7 +1711,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1811,7 +1806,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1840,7 +1834,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1922,7 +1915,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -1979,7 +1971,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
@@ -3075,7 +3066,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: var(--brand-icon-filter);
 }
 /* Preserve multicolored brand logos — don't invert */
-.contact-widget.email .widget-icon img,
 .contact-widget.whatsapp .widget-icon img {
   filter: none;
 }
