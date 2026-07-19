@@ -247,7 +247,7 @@ html.dark { color-scheme: dark; }
 }
 .anchor-rail a:hover,
 .anchor-rail a:focus-visible {
-  background: var(--ink);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .anchor-rail a:hover svg,
