@@ -1066,5 +1066,5 @@ img[alt*="Gleam"] {
 .cert-icon[alt*="Coursera"],
 .cert-icon[alt*="Flippa"],
 .cert-icon[alt*="Gleam"] {
-  filter: none;
+  filter: none !important;
 }
