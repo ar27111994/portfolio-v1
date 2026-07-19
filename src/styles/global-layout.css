@@ -478,7 +478,7 @@ h3 {
   display: inline;
   padding: 0.04em 0.18em;
   border-radius: 0.16em;
-  background: rgba(202, 255, 128, 0.65);
+  background: color-mix(in srgb, var(--brand-accent) 65%, transparent);
   color: var(--surface-inverse);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
@@ -517,8 +517,8 @@ h3 {
   height: auto;
   margin: 0 0.15rem 0 0;
   padding: 0.24rem 0.6rem;
-  border: 1px solid rgba(202, 255, 128, 0.5);
-  background: #caff80;
+  border: 1px solid color-mix(in srgb, var(--brand-accent) 50%, transparent);
+  background: var(--brand-accent);
   color: var(--surface-inverse);
   font-size: 0.72rem;
   line-height: 1;
@@ -526,7 +526,7 @@ h3 {
   border-radius: 8px;
   font-weight: 900;
   letter-spacing: 0.05em;
-  box-shadow: 0 0 12px rgba(202, 255, 128, 0.25);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--brand-accent) 25%, transparent);
 }
 .availability-strip .wide em {
   font-style: normal;
@@ -551,7 +551,7 @@ h3 {
   width: 1.25rem;
   height: 2px;
   border-radius: 999px;
-  background: #caff80;
+  background: var(--brand-accent);
   font-style: normal;
   font-weight: 900;
   opacity: 0.86;
@@ -565,7 +565,7 @@ h3 {
   height: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 6px solid #caff80;
+  border-left: 6px solid var(--brand-accent);
 }
 .hero-proof-cards {
   display: grid;
@@ -724,7 +724,7 @@ h3 {
 }
 .button.tertiary,
 .button.whatsapp {
-  background: #caff80;
+  background: var(--brand-accent);
   color: var(--surface-inverse);
 }
 .button.small {
@@ -785,7 +785,7 @@ h3 {
   color: var(--ink-on-dark);
 }
 .contact-command.secondary:hover:after {
-  background: #caff80;
+  background: var(--brand-accent);
   color: var(--ink);
 }
 .contact-command.whatsapp:after {
@@ -869,7 +869,7 @@ h3 {
 }
 .signal-kicker {
   display: block;
-  color: #caff80;
+  color: var(--brand-accent);
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.1em;
@@ -898,7 +898,7 @@ h3 {
 }
 .signal-metrics b {
   display: block;
-  color: #caff80;
+  color: var(--brand-accent);
   font-size: 1.05rem;
 }
 .signal-metrics small {
@@ -927,7 +927,7 @@ h3 {
   position: absolute;
   inset: 0 auto 0 0;
   width: var(--w);
-  background: linear-gradient(90deg, #caff80, #7ee8ff);
+  background: linear-gradient(90deg, var(--brand-accent), #7ee8ff);
 }
 .signal-bars em {
   position: relative;
@@ -957,7 +957,7 @@ h3 {
   font-weight: 900;
 }
 .signal-tags span:first-child {
-  background: #caff80;
+  background: var(--brand-accent);
 }
 .signal-icons {
   display: grid;
@@ -969,10 +969,10 @@ h3 {
   display: grid;
   place-items: center;
   min-height: 2.15rem;
-  border: 1px solid rgba(202, 255, 128, 0.34);
+  border: 1px solid color-mix(in srgb, var(--brand-accent) 34%, transparent);
   border-radius: 14px;
-  background: #caff801a;
-  color: #caff80;
+  background: color-mix(in srgb, var(--brand-accent) 10%, transparent);
+  color: var(--brand-accent);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -1046,7 +1046,7 @@ h3 {
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 12px;
-  background: #caff80;
+  background: var(--brand-accent);
   color: var(--surface-inverse);
   font-size: 0.82rem;
   font-weight: 900;
@@ -1347,7 +1347,7 @@ h3 {
   background: linear-gradient(135deg, #c8f1ff, var(--surface));
 }
 .project-visual.accent-agents {
-  background: linear-gradient(135deg, #caff80, var(--surface));
+  background: linear-gradient(135deg, var(--brand-accent), var(--surface));
 }
 .project-visual.accent-mobile {
   background: linear-gradient(135deg, #e1d7ff, var(--surface));
@@ -1795,14 +1795,14 @@ h3 {
   color: var(--ink-on-dark);
 }
 .proof-ledger a:hover:after {
-  background: #caff80;
+  background: var(--brand-accent);
   color: var(--ink);
 }
 .contact-widget.email .widget-icon {
   background: #dff3ff;
 }
 .contact-widget.whatsapp .widget-icon {
-  background: #caff80;
+  background: var(--brand-accent);
 }
 .profile-links-carousel {
   margin-top: 1.2rem;
@@ -2009,7 +2009,7 @@ h3 {
   margin-left: 0.42rem;
   border: 1px solid var(--line-divider);
   border-radius: 999px;
-  background: #caff80;
+  background: var(--brand-accent);
   padding: 0.2rem 0.56rem;
   color: var(--surface-inverse);
   font-size: var(--step--1);
@@ -2095,7 +2095,7 @@ h3 {
     linear-gradient(135deg, rgba(36, 87, 255, 0.12), transparent 42%),
     radial-gradient(
       circle at 88% 18%,
-      rgba(202, 255, 128, 0.72),
+      color-mix(in srgb, var(--brand-accent) 72%, transparent),
       transparent 42%
     ),
     var(--card);
@@ -2648,7 +2648,7 @@ h3 {
 .upwork-raw-data summary {
   cursor: pointer;
   padding: 0.72rem 0.86rem;
-  color: #caff80;
+  color: var(--brand-accent);
   font-weight: 900;
 }
 .upwork-raw-data pre {
