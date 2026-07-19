@@ -2333,7 +2333,7 @@ h3 {
   border-radius: 12px;
   background: rgba(36, 87, 255, 0.08);
   padding: 0.34rem 0.46rem;
-  color: #173ec1;
+  color: var(--blue);
   font-size: 0.78rem;
   font-weight: 800;
   line-height: 1.18;
@@ -2580,7 +2580,7 @@ h3 {
 .upwork-modal::-webkit-scrollbar-thumb,
 .upwork-modal-content::-webkit-scrollbar-thumb,
 .upwork-raw-data pre::-webkit-scrollbar-thumb {
-  border: 0.18rem solid #efe7db;
+  border: 0.18rem solid var(--line-divider);
   border-radius: 999px;
   background: var(--surface-inverse);
 }
