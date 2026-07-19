@@ -105,6 +105,10 @@ summary:focus-visible {
   gap: 0.75rem;
   pointer-events: none;
   padding: 0.5rem 0;
+  background: var(--glass-panel-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
 }
 .top-bar.is-scrolled {
   padding: 0.35rem 0;
