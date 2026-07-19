@@ -256,7 +256,7 @@ html.dark { color-scheme: dark; }
 }
 .anchor-rail a[aria-current="true"],
 .anchor-rail a.is-active {
-  background: var(--ink);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
 }
 .anchor-rail a[aria-current="true"] svg,
@@ -518,7 +518,7 @@ h3 {
   padding: 0.24rem 0.6rem;
   border: 1px solid rgba(202, 255, 128, 0.5);
   background: #caff80;
-  color: var(--ink);
+  color: var(--surface-inverse);
   font-size: 0.72rem;
   line-height: 1;
   text-transform: uppercase;
