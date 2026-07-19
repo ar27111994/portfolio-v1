@@ -295,24 +295,6 @@ html.dark { color-scheme: dark; }
   align-items: start;
   gap: clamp(1rem, 2vw, 1.5rem);
   padding: clamp(1.4rem, 3vw, 2.4rem);
-  background:
-    linear-gradient(150deg, rgba(254, 253, 251, 0.95), rgba(250, 244, 232, 0.9)),
-    radial-gradient(
-      ellipse 32rem 28rem at 15% 20%,
-      var(--blue-glow),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 28rem 24rem at 85% 12%,
-      var(--orange-glow),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 24rem 20rem at 60% 90%,
-      rgba(124, 58, 237, 0.06),
-      transparent
-    );
-  box-shadow: var(--shadow-inner);
 }
 .hero-copy {
   grid-column: 1;
@@ -2801,27 +2783,6 @@ h3 {
 
 
 /* ── Section Panel Variants ──────────────────────────────────────── */
-.services-panel {
-  background:
-    linear-gradient(135deg, #fffdf8f0, #fff7ed),
-    radial-gradient(circle at 90% 20%, rgba(240,107,36,0.12), transparent 20rem);
-}
-.lab-panel {
-  background:
-    linear-gradient(135deg, #fffdf8f0, #f0f9ff),
-    radial-gradient(circle at 10% 80%, rgba(36,87,255,0.08), transparent 20rem);
-}
-.testimonials-panel {
-  background:
-    linear-gradient(135deg, #fffdf8f0, #faf5ff),
-    radial-gradient(circle at 80% 40%, rgba(124,58,237,0.08), transparent 20rem);
-}
-.contact-panel {
-  background:
-    linear-gradient(135deg, #fffdf8f0, #ecfdf5),
-    radial-gradient(circle at 20% 80%, rgba(13,114,71,0.08), transparent 20rem);
-}
-
 /* ── Grid Variants ───────────────────────────────────────────────── */
 .grid.compact { gap: 0.8rem; }
 .grid.four {
