@@ -862,10 +862,11 @@ h3 {
 }
 .signal-board {
   align-self: start;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--line-dark);
   border-radius: 22px;
   padding: 0.78rem;
-  background: var(--line-subtle);
+  background: var(--surface-inverse);
+  color: var(--ink-on-dark);
 }
 .signal-kicker {
   display: block;
