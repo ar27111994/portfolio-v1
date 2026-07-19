@@ -725,7 +725,7 @@ h3 {
 .button.tertiary,
 .button.whatsapp {
   background: #caff80;
-  color: var(--surface-inverse);
+  color: var(--ink);
 }
 .button.small {
   padding: 0.52rem 0.75rem;
@@ -1047,7 +1047,7 @@ h3 {
   height: 1.8rem;
   border-radius: 12px;
   background: #caff80;
-  color: var(--surface-inverse);
+  color: var(--ink);
   font-size: 0.82rem;
   font-weight: 900;
 }
@@ -2011,7 +2011,7 @@ h3 {
   border-radius: 999px;
   background: #caff80;
   padding: 0.2rem 0.56rem;
-  color: var(--surface-inverse);
+  color: var(--ink);
   font-size: var(--step--1);
   font-weight: 900;
   letter-spacing: 0.04em;
