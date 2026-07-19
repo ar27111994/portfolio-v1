@@ -133,8 +133,7 @@ summary:focus-visible {
 .theme-icon { display: none; }
 html.light .theme-icon-sun { display: block; }
 html.dark .theme-icon-moon { display: block; }
-[data-theme="auto"] .theme-icon-sun,
-[data-theme="auto"] .theme-icon-moon { display: block; }
+/* Auto mode: JS sets inline display for both when auto */
 html.light { color-scheme: light; }
 html.dark { color-scheme: dark; }
 .wordmark {
