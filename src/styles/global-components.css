@@ -950,6 +950,7 @@
   object-fit: contain;
   flex-shrink: 0;
   opacity: 0.85;
+  filter: var(--brand-icon-filter);
 }
 
 .cs-context {

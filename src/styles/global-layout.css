@@ -1244,6 +1244,7 @@ h3 {
   height: 2rem;
   object-fit: contain;
   opacity: 0.6;
+  filter: var(--brand-icon-filter);
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-spring);
   position: relative;
   z-index: 1;
@@ -2543,9 +2544,9 @@ h3 {
   line-height: 1.45;
 }
 .upwork-modal-close {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--surface-inverse);
   border-radius: 999px;
-  background: var(--ink);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
   padding: 0.55rem 0.78rem;
   font-family: inherit;
