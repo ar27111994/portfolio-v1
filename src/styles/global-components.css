@@ -30,7 +30,7 @@
   height: 20px;
   object-fit: contain;
   display: block;
-  
+  filter: var(--brand-icon-filter);
 }
 .cert-icon-empty {
   background: transparent;
@@ -1052,4 +1052,8 @@
 }
 
 /* Logos already light/colored — inversion destroys them */
+}
+
+.preserve-icon {
+  filter: none !important;
 }
