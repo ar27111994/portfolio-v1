@@ -31,7 +31,7 @@
   height: 20px;
   object-fit: contain;
   display: block;
-  filter: var(--brand-icon-filter);
+  
 }
 .cert-icon-empty {
   background: transparent;
@@ -1053,7 +1053,4 @@
 }
 
 /* Logos already light/colored — inversion destroys them */
-img[src*="coursera"],
-img[src*="flippa"] {
-  filter: none !important;
 }
