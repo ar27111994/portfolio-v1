@@ -3267,7 +3267,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   width: 2.5rem;
   height: 2.5rem;
   background: linear-gradient(135deg, transparent 50%, var(--blue) 50%);
-  opacity: 0.05;
+  opacity: 0.12;
   border-radius: 0 var(--radius-lg) 0 0;
 }
 
