@@ -21,31 +21,7 @@
   border: 0;
 }
 
-:root {
-  /* ── Font Stack ──────────────────────────── */
-  --font-sans: Inter, "Inter-fallback", "Segoe UI", Roboto, Ubuntu, Cantarell,
-    "Noto Sans", Helvetica, Arial, sans-serif;
-
-  /* ── Typography Scale (base.css canonical) ─ */
-  --text-xs: clamp(0.7rem, 0.67rem + 0.12vw, 0.78rem);
-  --text-sm: clamp(0.82rem, 0.78rem + 0.16vw, 0.9rem);
-  --text-base: clamp(0.98rem, 0.93rem + 0.22vw, 1.08rem);
-  --text-lg: clamp(1.16rem, 1.04rem + 0.48vw, 1.38rem);
-  --text-xl: clamp(1.38rem, 1.18rem + 0.8vw, 1.78rem);
-  --text-2xl: clamp(1.68rem, 1.32rem + 1.4vw, 2.4rem);
-  --text-3xl: clamp(2.1rem, 1.55rem + 2.2vw, 3.4rem);
-  --text-display: clamp(2.8rem, 2rem + 3.5vw, 5.2rem);
-
-  /* ── Legacy aliases for backward compat ───── */
-  --step--1: var(--text-sm);
-  --step-0: var(--text-base);
-  --step-1: var(--text-lg);
-  --step-2: var(--text-2xl);
-  --step-3: var(--text-3xl);
-  --step-4: var(--text-display);
-}
-
-/* All color, spacing, radius, shadow, and animation tokens are in global-theme.css */
+/* All color, spacing, radius, shadow, typography, and animation tokens are in global-theme.css */
 
 /* ── Scroll-triggered reveal animation ──────── */
 /* Sections are always visible — animation is additive only */
