@@ -270,17 +270,17 @@ html.dark {
 
   /* Rigid paper-cutout halos — sharp offset, no blur */
   --shadow-color: 255, 255, 255;
-  --shadow-xs:   1px 1px 0 rgba(var(--shadow-color), 0.03);
-  --shadow-sm:   2px 2px 0 rgba(var(--shadow-color), 0.04);
-  --shadow-md:   3px 3px 0 rgba(var(--shadow-color), 0.05);
-  --shadow-lg:   4px 4px 0 rgba(var(--shadow-color), 0.06);
-  --shadow-xl:   6px 6px 0 rgba(var(--shadow-color), 0.08);
-  --shadow-card:    2px 2px 0 rgba(var(--shadow-color), 0.05);
-  --shadow-card-hover: 3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-xs:   1px 1px 0 rgba(var(--shadow-color), 0.04);
+  --shadow-sm:   2px 2px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-md:   3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-lg:   4px 4px 0 rgba(var(--shadow-color), 0.10);
+  --shadow-xl:   6px 6px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-card:    2px 2px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-card-hover: 3px 3px 0 rgba(var(--shadow-color), 0.12);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
-  --shadow-tight: 1px 1px 0 rgba(var(--shadow-color), 0.03);
-  --shadow-button:     1px 1px 0 rgba(var(--shadow-color), 0.05);
-  --shadow-button-hover: 2px 2px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-tight: 1px 1px 0 rgba(var(--shadow-color), 0.05);
+  --shadow-button:     1px 1px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-button-hover: 2px 2px 0 rgba(var(--shadow-color), 0.12);
 
   --focus-ring-color: var(--blue);
 }

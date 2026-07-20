@@ -494,8 +494,11 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.44rem;
-  background: var(--avail-strip-bg);
+  background: var(--surface-inverse);
   color: var(--ink-on-dark);
+  border: var(--pill-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-tight);
   line-height: 1.35;
 }
 .workflow-loop {
