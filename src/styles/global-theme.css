@@ -274,8 +274,8 @@ html.dark {
   --shadow-md: 0 12px 40px rgba(var(--shadow-color), 0.35);
   --shadow-lg: 0 24px 70px rgba(var(--shadow-color), 0.4);
   --shadow-xl: 0 36px 100px rgba(var(--shadow-color), 0.5);
-  --shadow-card: 0 1px 2px rgba(var(--shadow-color), 0.2), 0 8px 24px rgba(var(--shadow-color), 0.3);
-  --shadow-card-hover: 0 2px 4px rgba(var(--shadow-color), 0.25), 0 16px 48px rgba(var(--shadow-color), 0.4);
+  --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.15), 0 4px 8px rgba(var(--shadow-color), 0.25), 0 12px 28px rgba(var(--shadow-color), 0.35);
+  --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.20), 0 6px 12px rgba(var(--shadow-color), 0.30), 0 20px 48px rgba(var(--shadow-color), 0.45);
   --shadow-inner: inset 0 1px 1px rgba(255, 255, 255, 0.04);
   --shadow-tight: 0 4px 16px rgba(var(--shadow-color), 0.3);
   --shadow-button: 0 2px 8px rgba(var(--shadow-color), 0.3);
@@ -356,8 +356,8 @@ html.dark {
     --shadow-md: 0 12px 40px rgba(var(--shadow-color), 0.35);
     --shadow-lg: 0 24px 70px rgba(var(--shadow-color), 0.4);
     --shadow-xl: 0 36px 100px rgba(var(--shadow-color), 0.5);
-    --shadow-card: 0 1px 2px rgba(var(--shadow-color), 0.2), 0 8px 24px rgba(var(--shadow-color), 0.3);
-    --shadow-card-hover: 0 2px 4px rgba(var(--shadow-color), 0.25), 0 16px 48px rgba(var(--shadow-color), 0.4);
+    --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.15), 0 4px 8px rgba(var(--shadow-color), 0.25), 0 12px 28px rgba(var(--shadow-color), 0.35);
+    --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.20), 0 6px 12px rgba(var(--shadow-color), 0.30), 0 20px 48px rgba(var(--shadow-color), 0.45);
     --shadow-inner: inset 0 1px 1px rgba(255, 255, 255, 0.04);
     --shadow-tight: 0 4px 16px rgba(var(--shadow-color), 0.3);
     --shadow-button: 0 2px 8px rgba(var(--shadow-color), 0.3);
