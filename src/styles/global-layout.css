@@ -3029,7 +3029,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
 .resource-card:hover {
-  border-color: var(--line-dark);
+  border-color: var(--card-hover-border);
 }
 .multi-col li {
   padding: 0.25rem 0;
@@ -3663,3 +3663,12 @@ html.dark .featured-card.accent-skills .featured-visual {
 .feed-source-coderlegion .feed-item-tag { background: rgba(139,92,246,0.3); color: #c8a8ff; }
 @media (max-width: 600px) { .writing-grid { grid-template-columns: 1fr; } }
 
+
+/* ── Code blocks ──────────────────────────────────────────────────── */
+code {
+  background: var(--code-bg);
+  font-family: var(--font-mono);
+  padding: 0.15em 0.35em;
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+}
