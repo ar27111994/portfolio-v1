@@ -203,7 +203,7 @@ html.dark { color-scheme: dark; }
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  background: var(--glass-panel-bg);
+  background: var(--glass-nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: var(--pill-border);
@@ -494,7 +494,7 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.44rem;
-  background: var(--surface-inverse);
+  background: var(--avail-strip-bg);
   color: var(--ink-on-dark);
   line-height: 1.35;
 }
@@ -725,8 +725,8 @@ h3 {
 }
 .button.tertiary,
 .button.whatsapp {
-  background: var(--brand-accent);
-  color: var(--surface-inverse);
+  background: var(--button-accent-bg);
+  color: var(--button-accent-color);
 }
 .button.small {
   padding: 0.52rem 0.75rem;
