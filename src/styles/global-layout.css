@@ -1509,7 +1509,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   border: 1px solid var(--line-dark);
   border-radius: 14px;
   background: var(--surface);
-  box-shadow: 3px 3px #11111112;
+  box-shadow: var(--shadow-tight);
   color: var(--ink);
   font-size: 0.62rem;
   font-weight: 900;
@@ -2022,7 +2022,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   letter-spacing: 0.015em;
   line-height: 1.15;
   white-space: normal;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-md);
 }
 .upwork-proof-grid {
   display: grid;
@@ -2176,7 +2176,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .upwork-portfolio-preview:hover,
 .upwork-portfolio-preview:focus-visible {
   border-color: var(--blue);
-  box-shadow: 0 0 0 4px rgba(36, 87, 255, 0.14);
+  box-shadow: 0 0 0 4px var(--blue-glow);
   transform: translateY(-1px);
 }
 .upwork-portfolio-preview:focus-visible {
@@ -2559,7 +2559,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   background: var(--surface-raised);
   color: var(--ink);
   padding: 0;
-  box-shadow: 0 30px 90px rgba(17, 17, 17, 0.32);
+  box-shadow: var(--shadow-xl);
   scrollbar-color: var(--ink) #efe7db;
   scrollbar-width: thin;
 }
@@ -2951,7 +2951,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .service-card:hover {
   transform: translateY(-2px);
   border-color: var(--blue);
-  box-shadow: 0 8px 24px rgba(36, 87, 255, 0.12);
+  box-shadow: 0 4px 8px rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(26, 77, 255, 0.14);
 }
 
 /* ── Lab Cards ─────────────────────────────────────────────────── */
@@ -2961,7 +2961,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .lab-card:hover {
   transform: translateY(-2px);
   border-color: var(--blue);
-  box-shadow: 0 8px 24px rgba(36, 87, 255, 0.12);
+  box-shadow: 0 4px 8px rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(26, 77, 255, 0.14);
 }
 
 /* ── Project Cards ─────────────────────────────────────────────── */
@@ -2970,7 +2970,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .project-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(32, 24, 16, 0.15);
+  box-shadow: var(--shadow-lg);
 }
 .project-visual {
   overflow: hidden;
@@ -3018,7 +3018,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .testimonial-card:hover {
   transform: translateY(-2px);
   border-color: var(--violet);
-  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 4px 8px rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(124, 58, 237, 0.14);
 }
 
 /* ── Resource Cards (Proof section) ─────────────────────────────── */
@@ -3047,7 +3047,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .capability-card-grid li:hover {
   transform: translateY(-2px);
   border-color: var(--blue);
-  box-shadow: 0 8px 24px rgba(36, 87, 255, 0.12);
+  box-shadow: 0 4px 8px rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(26, 77, 255, 0.14);
 }
 .capability-icon {
   display: grid;
@@ -3116,7 +3116,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .upwork-portfolio-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(32, 24, 16, 0.15);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ── Writing Items ──────────────────────────────────────────────── */
@@ -3321,7 +3321,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .toolbar-search:focus-within {
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(26, 77, 255, 0.08);
+  box-shadow: 0 0 0 3px var(--blue-glow);
 }
 .toolbar-search svg {
   color: var(--muted);
