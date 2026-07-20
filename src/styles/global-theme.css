@@ -180,19 +180,19 @@
   --grad-card-hover: linear-gradient(180deg, rgba(26, 77, 255, 0.03) 0%, transparent 60%);
 
   /* ── Shadows ───────────────────────────────────────────────────── */
-  /* ── Explicit 3-layer paper shadows — top highlight + tight + broad ─ */
+  /* ── Rigid paper-cutout shadows — sharp offset, no blur ──────────── */
   --shadow-color: 45, 30, 15;
-  --shadow-xs:   0 1px 0 rgba(var(--shadow-color), 0.04), 0 1px 2px rgba(var(--shadow-color), 0.08);
-  --shadow-sm:   0 1px 0 rgba(var(--shadow-color), 0.05), 0 2px 4px rgba(var(--shadow-color), 0.10), 0 4px 8px rgba(var(--shadow-color), 0.04);
-  --shadow-md:   0 1px 0 rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.12), 0 8px 16px rgba(var(--shadow-color), 0.06);
-  --shadow-lg:   0 1px 0 rgba(var(--shadow-color), 0.06), 0 6px 12px rgba(var(--shadow-color), 0.14), 0 12px 24px rgba(var(--shadow-color), 0.08);
-  --shadow-xl:   0 1px 0 rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(var(--shadow-color), 0.16), 0 16px 32px rgba(var(--shadow-color), 0.10);
-  --shadow-card:         0 1px 0 rgba(var(--shadow-color), 0.05), 0 2px 4px rgba(var(--shadow-color), 0.10), 0 6px 12px rgba(var(--shadow-color), 0.12);
-  --shadow-card-hover:   0 1px 0 rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.14), 0 12px 24px rgba(var(--shadow-color), 0.16);
+  --shadow-xs:   2px 2px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-sm:   3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-md:   4px 4px 0 rgba(var(--shadow-color), 0.10);
+  --shadow-lg:   6px 6px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-xl:   8px 8px 0 rgba(var(--shadow-color), 0.14);
+  --shadow-card:    3px 3px 0 rgba(var(--shadow-color), 0.10);
+  --shadow-card-hover: 4px 4px 0 rgba(var(--shadow-color), 0.14);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
-  --shadow-tight: 0 1px 0 rgba(var(--shadow-color), 0.04), 0 2px 4px rgba(var(--shadow-color), 0.08);
-  --shadow-button:        0 1px 0 rgba(var(--shadow-color), 0.05), 0 1px 2px rgba(var(--shadow-color), 0.10);
-  --shadow-button-hover:  0 1px 0 rgba(var(--shadow-color), 0.06), 0 2px 4px rgba(var(--shadow-color), 0.14), 0 6px 12px rgba(var(--shadow-color), 0.08);
+  --shadow-tight: 2px 2px 0 rgba(var(--shadow-color), 0.07);
+  --shadow-button:     2px 2px 0 rgba(var(--shadow-color), 0.10);
+  --shadow-button-hover: 3px 3px 0 rgba(var(--shadow-color), 0.14);
 
   /* ── Focus ─────────────────────────────────────────────────────── */
   --focus-ring-color: var(--blue);
@@ -263,19 +263,19 @@ html.dark {
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 
-  /* Explicit 3-layer light halos — top glow + tight + broad */
+  /* Rigid paper-cutout halos — sharp offset, no blur */
   --shadow-color: 255, 255, 255;
-  --shadow-xs:   0 1px 0 rgba(var(--shadow-color), 0.02), 0 1px 2px rgba(var(--shadow-color), 0.05);
-  --shadow-sm:   0 1px 0 rgba(var(--shadow-color), 0.03), 0 2px 4px rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.03);
-  --shadow-md:   0 1px 0 rgba(var(--shadow-color), 0.04), 0 4px 8px rgba(var(--shadow-color), 0.07), 0 8px 16px rgba(var(--shadow-color), 0.04);
-  --shadow-lg:   0 1px 0 rgba(var(--shadow-color), 0.04), 0 6px 12px rgba(var(--shadow-color), 0.08), 0 12px 24px rgba(var(--shadow-color), 0.05);
-  --shadow-xl:   0 1px 0 rgba(var(--shadow-color), 0.05), 0 8px 16px rgba(var(--shadow-color), 0.10), 0 16px 32px rgba(var(--shadow-color), 0.06);
-  --shadow-card:         0 1px 0 rgba(var(--shadow-color), 0.03), 0 2px 4px rgba(var(--shadow-color), 0.06), 0 6px 12px rgba(var(--shadow-color), 0.08);
-  --shadow-card-hover:   0 1px 0 rgba(var(--shadow-color), 0.04), 0 4px 8px rgba(var(--shadow-color), 0.09), 0 12px 24px rgba(var(--shadow-color), 0.12);
+  --shadow-xs:   1px 1px 0 rgba(var(--shadow-color), 0.03);
+  --shadow-sm:   2px 2px 0 rgba(var(--shadow-color), 0.04);
+  --shadow-md:   3px 3px 0 rgba(var(--shadow-color), 0.05);
+  --shadow-lg:   4px 4px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-xl:   6px 6px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-card:    2px 2px 0 rgba(var(--shadow-color), 0.05);
+  --shadow-card-hover: 3px 3px 0 rgba(var(--shadow-color), 0.08);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
-  --shadow-tight: 0 1px 0 rgba(var(--shadow-color), 0.02), 0 2px 4px rgba(var(--shadow-color), 0.05);
-  --shadow-button:        0 1px 0 rgba(var(--shadow-color), 0.03), 0 1px 2px rgba(var(--shadow-color), 0.07);
-  --shadow-button-hover:  0 1px 0 rgba(var(--shadow-color), 0.04), 0 2px 4px rgba(var(--shadow-color), 0.09), 0 6px 12px rgba(var(--shadow-color), 0.05);
+  --shadow-tight: 1px 1px 0 rgba(var(--shadow-color), 0.03);
+  --shadow-button:     1px 1px 0 rgba(var(--shadow-color), 0.05);
+  --shadow-button-hover: 2px 2px 0 rgba(var(--shadow-color), 0.08);
 
   --focus-ring-color: var(--blue);
 }
