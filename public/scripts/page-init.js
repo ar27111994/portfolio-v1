@@ -565,12 +565,6 @@ function initPage() {
           container.appendChild(buildBtn(p));
         }
       });
-
-      // Prev/next
-      const prevBtn = document.getElementById("upwork-prev");
-      const nextBtn = document.getElementById("upwork-next");
-      if (prevBtn) prevBtn.disabled = currentPage <= 1;
-      if (nextBtn) nextBtn.disabled = currentPage >= maxPage;
     }
 
     // ── Wire up controls ──────────────────────────────────────────────
