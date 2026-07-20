@@ -694,3 +694,13 @@ document.addEventListener("astro:before-swap", () => {
   document.documentElement.classList.remove("dark", "light");
   document.documentElement.classList.add(d ? "dark" : "light");
 });
+
+// ── Hamburger menu toggle ─────────────────────────────────────────
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".hamburger");
+  if (!btn) return;
+  const rail = document.querySelector(".anchor-rail");
+  const expanded = btn.getAttribute("aria-expanded") === "true";
+  btn.setAttribute("aria-expanded", String(!expanded));
+  if (rail) rail.classList.toggle("is-open", !expanded);
+});
