@@ -1,17 +1,12 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    Theme System — Design Tokens for Light & Dark Modes
    ═══════════════════════════════════════════════════════════════════════════
-   Three token blocks, zero component duplication:
-     1. :root              — light mode defaults
-     2. html.dark — manual dark mode
-     3. @media (prefers-color-scheme: dark) :root — system dark mode
+   Two token blocks, single source of truth:
+     1. :root              — light mode defaults (warm paper)
+     2. html.dark — dark mode (dark cardstock)
    
-   Token naming convention (3 tiers):
-     Tier 1: --palette-*     raw values (e.g. --palette-blue-500)
-     Tier 2: --color-*       semantic/role tokens (e.g. --color-text-primary)
-     Tier 3: --component-*   component-scoped (e.g. --component-button-bg)
-   
-   Current tokens use a flattened semantic naming for CSS performance.
+   System dark (OS preference) is handled by the blocking <head> script
+   which applies html.dark before first paint — no duplicate @media block.
    ═════════════════════════════════════════════════════════════════════════ */
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -283,89 +278,6 @@ html.dark {
   --shadow-button-hover: 0 2px 4px rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(var(--shadow-color), 0.05);
 
   --focus-ring-color: var(--blue);
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   SYSTEM DARK MODE — @media (prefers-color-scheme: dark) → swaps :root tokens
-   ═══════════════════════════════════════════════════════════════════════════ */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #ede8e0;
-    --ink-soft: #c8c0b4;
-    --muted: #a89d8e;
-    --paper: #14110d;
-    --paper-2: #1a1712;
-    --card: #1e1b16;
-    --card-strong: #ede8e0;
-    --line: #3e3830;
-    --line-dark: #5a544c;
-    --line-subtle: rgba(237, 232, 224, 0.10);
-    --line-divider: rgba(237, 232, 224, 0.08);
-
-    --surface: #1e1b16;
-    --surface-raised: #242018;
-    --surface-overlay: rgba(18, 16, 13, 0.92);
-
-    --tag-bg: rgba(80, 65, 30, 0.3);
-    --tag-text: #c8b88a;
-    --tag-border: rgba(237, 232, 224, 0.1);
-
-    --blue: #6b94ff;
-    --blue-glow: rgba(92, 138, 255, 0.15);
-    --blue-soft: #1a2238;
-    --green: #2dd48b;
-    --green-glow: rgba(45, 212, 139, 0.12);
-    --green-soft: #162a22;
-    --orange: #f08050;
-    --orange-glow: rgba(240, 128, 80, 0.12);
-    --orange-soft: #2a1e16;
-    --violet: #a78bfa;
-    --violet-soft: #201a30;
-    --brand-accent: #caff80;
-    --brand-accent-soft: #2a3618;
-
-    --glass-panel-bg: rgba(24, 21, 16, 0.88);
-    --glass-topbar-bg: rgba(15, 13, 10, 0.92);
-    --glass-nav-bg: rgba(24, 21, 16, 0.85);
-    --glass-nav-border: rgba(72, 68, 60, 0.45);
-    --glass-blur: 16px;
-    --glass-blur-topbar: 22px;
-
-    --body-glow-1: rgba(92, 138, 255, 0.08);
-    --body-glow-2: rgba(240, 128, 80, 0.07);
-    --body-glow-3: rgba(124, 58, 237, 0.05);
-    --body-grad-stop-1: #181510;
-    --body-grad-stop-2: #14120d;
-    --body-grad-stop-3: #161410;
-    --body-before-opacity: 0.06;
-
-    --avail-strip-bg: rgba(24, 21, 16, 0.8);
-    --badge-accent-bg: rgba(80, 65, 30, 0.25);
-    --img-brightness: brightness(0.88);
-    --brand-icon-filter: brightness(0) invert(1);
-    --code-bg: rgba(237, 232, 224, 0.06);
-    --button-primary-text: #111;
-    --surface-inverse: #0f0d0b;
-    --text-dim: #9a9082;
-    --ink-on-dark: #fff;
-
-    --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
-
-    /* Dark shadows are light halos, not dark pools */
-    --shadow-color: 255, 255, 255;
-    --shadow-xs: 0 1px 2px rgba(var(--shadow-color), 0.04);
-    --shadow-sm: 0 2px 4px rgba(var(--shadow-color), 0.05), 0 4px 8px rgba(var(--shadow-color), 0.03);
-    --shadow-md: 0 4px 8px rgba(var(--shadow-color), 0.06), 0 8px 16px rgba(var(--shadow-color), 0.04);
-    --shadow-lg: 0 8px 16px rgba(var(--shadow-color), 0.07), 0 16px 32px rgba(var(--shadow-color), 0.04);
-    --shadow-xl: 0 12px 24px rgba(var(--shadow-color), 0.08), 0 24px 48px rgba(var(--shadow-color), 0.05);
-    --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.03), 0 2px 4px rgba(var(--shadow-color), 0.05), 0 6px 12px rgba(var(--shadow-color), 0.07);
-    --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.04), 0 4px 8px rgba(var(--shadow-color), 0.07), 0 10px 24px rgba(var(--shadow-color), 0.10);
-    --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
-    --shadow-tight: 0 2px 4px rgba(var(--shadow-color), 0.05), 0 6px 12px rgba(var(--shadow-color), 0.03);
-    --shadow-button: 0 1px 2px rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.03);
-    --shadow-button-hover: 0 2px 4px rgba(var(--shadow-color), 0.08), 0 8px 16px rgba(var(--shadow-color), 0.05);
-    --focus-ring-color: var(--blue);
-  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
