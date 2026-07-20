@@ -214,7 +214,7 @@ html.dark {
   --card-strong: #ede8e0;
   --line: #3e3830;
   --line-dark: #5a544c;
-  --line-subtle: rgba(237, 232, 224, 0.06);
+  --line-subtle: rgba(237, 232, 224, 0.10);
   --line-divider: rgba(237, 232, 224, 0.08);
 
   --surface: #1e1b16;
@@ -290,9 +290,9 @@ html.dark {
     --paper-2: #181612;
     --card: #1e1b16;
     --card-strong: #ede8e0;
-    --line: #2e2a24;
-    --line-dark: #48443c;
-    --line-subtle: rgba(237, 232, 224, 0.06);
+    --line: #3e3830;
+    --line-dark: #5a544c;
+    --line-subtle: rgba(237, 232, 224, 0.10);
     --line-divider: rgba(237, 232, 224, 0.08);
 
     --surface: #1e1b16;
