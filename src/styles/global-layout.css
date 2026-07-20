@@ -3643,7 +3643,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .feed-source-pill img { width: 1rem; height: 1rem; object-fit: contain;
   filter: var(--brand-icon-filter); opacity: 0.6; }
 .feed-source-pill small { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
-.feed-source-pill:hover { background: var(--surface-inverse); color: var(--ink-on-dark); border-color: var(--surface-inverse); }
+.feed-source-pill:hover { background: var(--surface-inverse); color: var(--ink-on-dark); border-color: var(--line-dark); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
 .feed-source-pill:hover small { color: var(--text-dim); }
 .feed-sources-carousel .swiper-slide { width: auto; height: auto; }
