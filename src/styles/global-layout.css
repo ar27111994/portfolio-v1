@@ -855,8 +855,6 @@ h3 {
   align-content: start;
   align-items: start;
   gap: 0.72rem;
-  border: 1px solid rgba(237, 232, 224, 0.14);
-  border-radius: 28px;
   padding: 0.82rem;
   background:
     radial-gradient(
