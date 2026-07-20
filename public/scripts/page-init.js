@@ -684,3 +684,11 @@ function initPage() {
 
 // Run on first load and after every ClientRouter navigation.
 document.addEventListener("astro:page-load", initPage);
+
+// Apply theme BEFORE view-transition swap — prevents flash
+document.addEventListener("astro:before-swap", () => {
+  var t = localStorage.getItem("portfolio-theme") || "auto";
+  var d = t === "auto" ? window.matchMedia("(prefers-color-scheme: dark)").matches : t === "dark";
+  document.documentElement.classList.remove("dark", "light");
+  document.documentElement.classList.add(d ? "dark" : "light");
+});
