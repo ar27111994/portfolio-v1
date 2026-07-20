@@ -525,7 +525,12 @@ function initPage() {
     function updatePageNumbers(maxPage) {
       const container = document.getElementById("upwork-page-numbers");
       if (!container) return;
-      container.innerHTML = "";
+
+      // Always update prev/next — even when "All items" or single page
+      const prevBtn = document.getElementById("upwork-prev");
+      const nextBtn = document.getElementById("upwork-next");
+      if (prevBtn) prevBtn.disabled = perPage === 0 || currentPage <= 1;
+      if (nextBtn) nextBtn.disabled = perPage === 0 || currentPage >= maxPage;
 
       if (perPage === 0 || maxPage <= 1) {
         // Hide page numbers if "All" or only 1 page
