@@ -192,8 +192,8 @@
   --shadow-md: 0 8px 24px rgba(var(--shadow-color), 0.08);
   --shadow-lg: 0 16px 48px rgba(var(--shadow-color), 0.10);
   --shadow-xl: 0 24px 72px rgba(var(--shadow-color), 0.12);
-  --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.04), 0 2px 4px rgba(var(--shadow-color), 0.06), 0 8px 20px rgba(var(--shadow-color), 0.08);
-  --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.08), 0 16px 36px rgba(var(--shadow-color), 0.12);
+  --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.05), 0 2px 4px rgba(var(--shadow-color), 0.08), 0 6px 12px rgba(var(--shadow-color), 0.10);
+  --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.10), 0 10px 24px rgba(var(--shadow-color), 0.14);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
   --shadow-tight: 0 4px 12px rgba(var(--shadow-color), 0.06);
   --shadow-button: 0 2px 6px rgba(var(--shadow-color), 0.08);
@@ -268,18 +268,19 @@ html.dark {
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 
-  --shadow-color: 0, 0, 0;
-  --shadow-xs: 0 1px 3px rgba(var(--shadow-color), 0.2);
-  --shadow-sm: 0 4px 12px rgba(var(--shadow-color), 0.25);
-  --shadow-md: 0 12px 40px rgba(var(--shadow-color), 0.35);
-  --shadow-lg: 0 24px 70px rgba(var(--shadow-color), 0.4);
-  --shadow-xl: 0 36px 100px rgba(var(--shadow-color), 0.5);
-  --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.15), 0 4px 8px rgba(var(--shadow-color), 0.25), 0 12px 28px rgba(var(--shadow-color), 0.35);
-  --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.20), 0 6px 12px rgba(var(--shadow-color), 0.30), 0 20px 48px rgba(var(--shadow-color), 0.45);
-  --shadow-inner: inset 0 1px 1px rgba(255, 255, 255, 0.04);
-  --shadow-tight: 0 4px 16px rgba(var(--shadow-color), 0.3);
-  --shadow-button: 0 2px 8px rgba(var(--shadow-color), 0.3);
-  --shadow-button-hover: 0 4px 16px rgba(var(--shadow-color), 0.4);
+  /* Dark shadows are light halos, not dark pools */
+  --shadow-color: 255, 255, 255;
+  --shadow-xs: 0 1px 2px rgba(var(--shadow-color), 0.03);
+  --shadow-sm: 0 2px 6px rgba(var(--shadow-color), 0.04);
+  --shadow-md: 0 6px 16px rgba(var(--shadow-color), 0.05);
+  --shadow-lg: 0 12px 32px rgba(var(--shadow-color), 0.06);
+  --shadow-xl: 0 20px 48px rgba(var(--shadow-color), 0.08);
+  --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.03), 0 2px 4px rgba(var(--shadow-color), 0.05), 0 6px 12px rgba(var(--shadow-color), 0.07);
+  --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.04), 0 4px 8px rgba(var(--shadow-color), 0.07), 0 10px 24px rgba(var(--shadow-color), 0.10);
+  --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
+  --shadow-tight: 0 4px 8px rgba(var(--shadow-color), 0.04);
+  --shadow-button: 0 2px 4px rgba(var(--shadow-color), 0.05);
+  --shadow-button-hover: 0 4px 8px rgba(var(--shadow-color), 0.08);
 
   --focus-ring-color: var(--blue);
 }
@@ -350,18 +351,19 @@ html.dark {
 
     --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 
-    --shadow-color: 0, 0, 0;
-    --shadow-xs: 0 1px 3px rgba(var(--shadow-color), 0.2);
-    --shadow-sm: 0 4px 12px rgba(var(--shadow-color), 0.25);
-    --shadow-md: 0 12px 40px rgba(var(--shadow-color), 0.35);
-    --shadow-lg: 0 24px 70px rgba(var(--shadow-color), 0.4);
-    --shadow-xl: 0 36px 100px rgba(var(--shadow-color), 0.5);
-    --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.15), 0 4px 8px rgba(var(--shadow-color), 0.25), 0 12px 28px rgba(var(--shadow-color), 0.35);
-    --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.20), 0 6px 12px rgba(var(--shadow-color), 0.30), 0 20px 48px rgba(var(--shadow-color), 0.45);
-    --shadow-inner: inset 0 1px 1px rgba(255, 255, 255, 0.04);
-    --shadow-tight: 0 4px 16px rgba(var(--shadow-color), 0.3);
-    --shadow-button: 0 2px 8px rgba(var(--shadow-color), 0.3);
-    --shadow-button-hover: 0 4px 16px rgba(var(--shadow-color), 0.4);
+    /* Dark shadows are light halos, not dark pools */
+    --shadow-color: 255, 255, 255;
+    --shadow-xs: 0 1px 2px rgba(var(--shadow-color), 0.03);
+    --shadow-sm: 0 2px 6px rgba(var(--shadow-color), 0.04);
+    --shadow-md: 0 6px 16px rgba(var(--shadow-color), 0.05);
+    --shadow-lg: 0 12px 32px rgba(var(--shadow-color), 0.06);
+    --shadow-xl: 0 20px 48px rgba(var(--shadow-color), 0.08);
+    --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.03), 0 2px 4px rgba(var(--shadow-color), 0.05), 0 6px 12px rgba(var(--shadow-color), 0.07);
+    --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.04), 0 4px 8px rgba(var(--shadow-color), 0.07), 0 10px 24px rgba(var(--shadow-color), 0.10);
+    --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
+    --shadow-tight: 0 4px 8px rgba(var(--shadow-color), 0.04);
+    --shadow-button: 0 2px 4px rgba(var(--shadow-color), 0.05);
+    --shadow-button-hover: 0 4px 8px rgba(var(--shadow-color), 0.08);
     --focus-ring-color: var(--blue);
   }
 }
