@@ -533,7 +533,7 @@ function initPage() {
       if (nextBtn) nextBtn.disabled = perPage === 0 || currentPage >= maxPage;
 
       if (perPage === 0 || maxPage <= 1) {
-        // Hide page numbers if "All" or only 1 page
+        container.innerHTML = "";
         return;
       }
 
