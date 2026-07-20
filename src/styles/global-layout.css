@@ -105,6 +105,8 @@ summary:focus-visible {
 }
 .top-bar.is-scrolled {
   padding: 0.35rem 0;
+  backdrop-filter: blur(var(--glass-blur-topbar));
+  -webkit-backdrop-filter: blur(var(--glass-blur-topbar));
 }
 .top-bar > * {
   pointer-events: auto;
@@ -241,8 +243,8 @@ html.dark { color-scheme: dark; }
 }
 .anchor-rail a:hover,
 .anchor-rail a:focus-visible {
-  background: var(--surface-inverse);
-  color: var(--ink-on-dark);
+  background: var(--nav-hover-bg);
+  color: var(--nav-hover-color);
 }
 .anchor-rail a:hover svg,
 .anchor-rail a:focus-visible svg {
@@ -250,8 +252,8 @@ html.dark { color-scheme: dark; }
 }
 .anchor-rail a[aria-current="true"],
 .anchor-rail a.is-active {
-  background: var(--surface-inverse);
-  color: var(--ink-on-dark);
+  background: var(--nav-active-bg);
+  color: var(--nav-active-color);
 }
 .anchor-rail a[aria-current="true"] svg,
 .anchor-rail a.is-active svg {
@@ -714,8 +716,8 @@ h3 {
   box-shadow: 5px 5px rgba(var(--shadow-color), 0.14);
 }
 .button.primary {
-  background: var(--surface-inverse);
-  color: var(--ink-on-dark);
+  background: var(--button-primary-bg);
+  color: var(--button-primary-color);
 }
 .button.secondary {
   background: var(--tag-bg);
