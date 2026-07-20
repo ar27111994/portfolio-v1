@@ -3699,9 +3699,6 @@ code {
 }
 
 /* ── Images: brightness adjustment for dark mode ───────────────────── */
-html.dark img[src] {
-  filter: var(--img-brightness);
-}
 
 /* ── Inner shadows ─────────────────────────────────────────────────── */
 .card-inner-shadow {
