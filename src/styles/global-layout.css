@@ -373,6 +373,7 @@ h2 {
   letter-spacing: -0.025em;
   line-height: 1.15;
   text-wrap: balance;
+  text-shadow: var(--heading-text-shadow);
 }
 h3 {
   margin: 0.45rem 0 0;
@@ -605,7 +606,7 @@ h3 {
   width: fit-content;
   min-width: 0;
   gap: 0.34rem;
-  border: 1px solid var(--line-subtle);
+  border: var(--pill-border);
   border-radius: 999px;
   padding: 0.28rem 0.64rem;
   color: var(--ink);
@@ -614,7 +615,7 @@ h3 {
   font-weight: 800;
   line-height: 1.25;
   overflow-wrap: anywhere;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--pill-shadow);
   transition:
     transform var(--dur-fast) var(--ease-sharp),
     box-shadow var(--dur-fast) var(--ease-sharp);
