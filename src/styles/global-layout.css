@@ -36,12 +36,9 @@ body:before {
   inset: 0;
   z-index: -1;
   opacity: var(--body-before-opacity);
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><circle cx="30" cy="30" r="0.6" fill="%230f0d0b"/></svg>') 0 0 / 60px 60px;
-  mask-image: linear-gradient(to bottom, #000, transparent 72%);
+  background-image: var(--paper-texture);
   pointer-events: none;
 }
-
-/* ── Glass panels ────────────────────────────────────────────────── */
 .panel {
   background: var(--glass-panel-bg);
   backdrop-filter: blur(var(--glass-blur));

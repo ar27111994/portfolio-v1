@@ -137,14 +137,14 @@
   --glass-blur: 14px;
   --glass-blur-topbar: 22px;
 
-  /* ── Body Background ───────────────────────────────────────────── */
-  --body-glow-1: rgba(26, 77, 255, 0.08);
-  --body-glow-2: rgba(212, 74, 26, 0.09);
-  --body-glow-3: rgba(124, 58, 237, 0.04);
-  --body-grad-stop-1: #fdfaf3;
-  --body-grad-stop-2: #f8f0e5;
+  /* ── Body Background — paper grain with warm gradient ────────────── */
+  --body-glow-1: rgba(45, 30, 15, 0.04);
+  --body-glow-2: rgba(92, 75, 50, 0.05);
+  --body-glow-3: rgba(180, 150, 110, 0.03);
+  --body-grad-stop-1: #fcf9f3;
+  --body-grad-stop-2: #f7f0e4;
   --body-grad-stop-3: #faf5ed;
-  --body-before-opacity: 0.03;
+  --body-before-opacity: 0.04;
 
   /* ── Misc ──────────────────────────────────────────────────────── */
   --avail-strip-bg: rgba(254, 252, 248, 0.8);
