@@ -584,11 +584,6 @@
   gap: 1rem;
   flex-wrap: wrap;
   margin-top: 4rem;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(26, 77, 255, 0.02) 100%
-  );
 }
 
 .site-footer p {
