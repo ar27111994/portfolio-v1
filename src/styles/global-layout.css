@@ -3672,3 +3672,108 @@ code {
   border-radius: var(--radius-sm);
   font-size: 0.85em;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   WIRED TOKENS — Component-scoped hooks for all defined tokens
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Buttons: hover + inverse states ──────────────────────────────── */
+.button.primary:hover {
+  background: var(--button-primary-hover-bg);
+}
+.button.inverse {
+  background: var(--button-inverse-bg);
+  color: var(--button-inverse-color);
+}
+
+/* ── Pills: inverse (on dark surfaces) ──────────────────────────────── */
+.pill-inverse {
+  background: var(--pill-inverse-bg);
+  color: var(--pill-inverse-color);
+}
+
+/* ── Tags: explicit borders ────────────────────────────────────────── */
+.featured-meta-tag,
+.cs-tag {
+  border: var(--tag-border);
+}
+
+/* ── Images: brightness adjustment for dark mode ───────────────────── */
+html.dark img[src] {
+  filter: var(--img-brightness);
+}
+
+/* ── Inner shadows ─────────────────────────────────────────────────── */
+.card-inner-shadow {
+  box-shadow: var(--shadow-inner);
+}
+
+/* ── Badge accent backgrounds ──────────────────────────────────────── */
+.badge-accent {
+  background: var(--badge-accent-bg);
+}
+
+/* ── Hero gradient ─────────────────────────────────────────────────── */
+.hero-visual {
+  background: var(--grad-hero);
+}
+
+/* ── Warm gradient accents ─────────────────────────────────────────── */
+.grad-warm-accent {
+  background: var(--grad-warm);
+}
+
+/* ── Soft brand accent backgrounds ─────────────────────────────────── */
+.brand-accent-soft-bg {
+  background: var(--brand-accent-soft);
+}
+
+/* ── Secondary paper surfaces ──────────────────────────────────────── */
+.paper-secondary {
+  background: var(--paper-2);
+}
+
+/* ── Overlay surfaces ──────────────────────────────────────────────── */
+.surface-overlay {
+  background: var(--surface-overlay);
+}
+
+/* ── Typography: wire letter-spacing tokens ────────────────────────── */
+.ls-tight  { letter-spacing: var(--letter-spacing-tight); }
+.ls-normal { letter-spacing: var(--letter-spacing-normal); }
+.ls-wide   { letter-spacing: var(--letter-spacing-wide); }
+
+/* ── Typography: wire line-height tokens ───────────────────────────── */
+.lh-tight  { line-height: var(--line-height-tight); }
+.lh-normal { line-height: var(--line-height-normal); }
+.lh-loose  { line-height: var(--line-height-loose); }
+
+/* ── Typography: wire font-weight tokens ───────────────────────────── */
+.fw-normal { font-weight: var(--font-weight-normal); }
+.fw-medium { font-weight: var(--font-weight-medium); }
+.fw-bold   { font-weight: var(--font-weight-bold); }
+.fw-black  { font-weight: var(--font-weight-black); }
+
+/* ── Typography: wire legacy step-4 ────────────────────────────────── */
+.step-4-text { font-size: var(--step-4); }
+
+/* ── Spacing: wire size tokens via utility classes ─────────────────── */
+.space-1  { gap: var(--space-1);  padding: var(--space-1); }
+.space-3  { gap: var(--space-3);  padding: var(--space-3); }
+.space-5  { gap: var(--space-5);  padding: var(--space-5); }
+.space-6  { gap: var(--space-6);  padding: var(--space-6); }
+.space-8  { gap: var(--space-8);  padding: var(--space-8); }
+.space-10 { gap: var(--space-10); padding: var(--space-10); }
+.space-12 { gap: var(--space-12); padding: var(--space-12); }
+.space-16 { gap: var(--space-16); padding: var(--space-16); }
+.space-20 { gap: var(--space-20); padding: var(--space-20); }
+.space-24 { gap: var(--space-24); padding: var(--space-24); }
+
+/* ── Zero radius ───────────────────────────────────────────────────── */
+.radius-none { border-radius: var(--radius-none); }
+
+/* ── Easing and duration wire points ───────────────────────────────── */
+.ease-in-out-transition { transition-timing-function: var(--ease-in-out); }
+.dur-glacial { transition-duration: var(--dur-glacial); }
+.dur-instant { transition-duration: var(--dur-instant); }
+.dur-normal  { transition-duration: var(--dur-normal); }
