@@ -2474,6 +2474,8 @@ html.dark .featured-card.accent-skills .featured-visual {
   font-size: var(--step--1);
   font-weight: 900;
   line-height: 1;
+  flex: 1;
+  max-width: 50%;
   text-decoration: none;
   cursor: pointer;
   transition:
