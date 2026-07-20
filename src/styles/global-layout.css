@@ -862,7 +862,7 @@ h3 {
       rgba(92, 138, 255, 0.12),
       transparent
     ),
-    linear-gradient(170deg, #1c1915 0%, var(--card-strong) 100%);
+    linear-gradient(170deg, var(--card-strong) 0%, var(--card-strong) 100%);
   color: var(--ink-on-dark);
   box-shadow: var(--shadow-lg);
 }
@@ -2007,7 +2007,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .upwork-summary-card p {
   margin: 0;
-  color: #dedbd4;
+  color: var(--text-dim);
 }
 .upwork-tags {
   display: flex;
@@ -2414,7 +2414,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .upwork-project-url:hover,
 .upwork-project-url:focus-visible {
-  background: #173ec1;
+  background: var(--blue);
   color: var(--ink-on-dark);
 }
 .upwork-portfolio-meta-row {
@@ -2564,7 +2564,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   color: var(--ink);
   padding: 0;
   box-shadow: var(--shadow-xl);
-  scrollbar-color: var(--ink) #efe7db;
+  scrollbar-color: var(--ink) var(--line-divider);
   scrollbar-width: thin;
 }
 .upwork-modal::backdrop {
@@ -2632,7 +2632,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   gap: 1rem;
   overflow: auto;
   padding: clamp(1rem, 2vw, 1.35rem);
-  scrollbar-color: var(--ink) #efe7db;
+  scrollbar-color: var(--ink) var(--line-divider);
   scrollbar-width: thin;
 }
 .upwork-modal::-webkit-scrollbar,
@@ -3612,7 +3612,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .writing-card-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .writing-card-title { font-size: 0.82rem; font-weight: 800; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .writing-card-meta { font-size: 0.68rem; color: var(--muted); font-weight: 600; }
-.feed-live-widget { border: 1px solid rgba(237,232,224,0.12); border-radius: var(--radius-lg); background: linear-gradient(160deg, #1c1a17 0%, #1a1814 100%); color: #e8e3d8; padding: 0.9rem; margin-bottom: 0.75rem; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.03); max-height: 28rem; overflow-y: auto; overscroll-behavior: contain; }
+.feed-live-widget { border: 1px solid rgba(237,232,224,0.12); border-radius: var(--radius-lg); background: linear-gradient(160deg, var(--card-strong) 0%, #1a1814 100%); color: #e8e3d8; padding: 0.9rem; margin-bottom: 0.75rem; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.03); max-height: 28rem; overflow-y: auto; overscroll-behavior: contain; }
 .feed-live-widget::-webkit-scrollbar { width: 5px; }
 .feed-live-widget::-webkit-scrollbar-track { background: transparent; }
 .feed-live-widget::-webkit-scrollbar-thumb { background: rgba(200,190,175,0.18); border-radius: 999px; }
@@ -3631,7 +3631,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .feed-item-icon img { width: 1.05rem; height: 1.05rem; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
 .feed-item-body { display: flex; flex-direction: column; gap: 0.18rem; min-width: 0; }
 .feed-item-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: 999px; background: rgba(92,138,255,0.18); color: #7eb0ff; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
-.feed-item-body strong { font-size: 0.8rem; font-weight: 700; color: #f0ece4; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.feed-item-body strong { font-size: 0.8rem; font-weight: 700; color: var(--paper-2); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .feed-item-body small { font-size: 0.67rem; color: var(--text-dim); font-weight: 600; }
 .feed-sources-carousel { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); overflow: hidden; padding-bottom: 2.5rem; }
 .feed-sources-details summary { cursor: pointer; font-weight: 700; font-size: 0.8rem; color: var(--muted); transition: color var(--dur-fast) var(--ease-sharp); }
