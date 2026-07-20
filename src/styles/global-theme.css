@@ -124,6 +124,10 @@
   --violet-soft: #f4ebff;
   --brand-accent: #caff80;
   --brand-accent-soft: #eaffc0;
+  /* ── Paper-cutout Pills — explicit border + sharp offset shadow ──── */
+  --pill-border: 1px solid var(--line-dark);
+  --pill-shadow: var(--shadow-tight);
+  --heading-text-shadow: 0 1px 0 rgba(var(--shadow-color), 0.05);
 
   /* ── Frosted-paper Panels — warm, soft, organic ──────────────────── */
   --glass-panel-bg: rgba(254, 252, 248, 0.88);
