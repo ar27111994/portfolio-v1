@@ -201,7 +201,7 @@ html.dark {
   --brand-accent-soft: #2a3618;
 
   --glass-panel-bg: rgba(24, 21, 16, 0.85);
-  --glass-topbar-bg: rgba(18, 16, 13, 0.82);
+  --glass-topbar-bg: rgba(15, 13, 10, 0.92);
   --glass-nav-bg: rgba(24, 21, 16, 0.82);
   --glass-nav-border: rgba(72, 68, 60, 0.5);
   --glass-blur: 16px;
@@ -256,7 +256,7 @@ html.dark {
     --green: #2dd48b;--green-glow: rgba(45,212,139,0.12);--green-soft: #162a22;
     --orange: #f08050;--orange-glow: rgba(240,128,80,0.12);--orange-soft: #2a1e16;
     --violet-soft: #201a30;--brand-accent: #caff80;--brand-accent-soft: #2a3618;
-    --glass-panel-bg: rgba(24,21,16,0.85);--glass-topbar-bg: rgba(18,16,13,0.82);
+    --glass-panel-bg: rgba(24,21,16,0.85);--glass-topbar-bg: rgba(15,13,10,0.92);
     --glass-nav-bg: rgba(24,21,16,0.82);--glass-nav-border: rgba(72,68,60,0.5);
     --glass-blur: 16px;--glass-blur-topbar: 20px;
     --body-glow-1: rgba(92,138,255,0.08);--body-glow-2: rgba(240,128,80,0.07);
