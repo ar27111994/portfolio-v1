@@ -354,3 +354,17 @@ html.dark {
   background: var(--blue);
   color: #fff;
 }
+
+/* ── Platform feed colors — always-dark surfaces ──────────────────── */
+--feed-devto: #7eb0ff;
+--feed-github: #c0b8a8;
+--feed-hn: #ffa366;
+--feed-hashnode: #8dc4ff;
+--feed-twitter: #e7e7e7;
+--feed-linkedin: #6db8ff;
+--feed-coderlegion: #c8a8ff;
+/* ── One-off effects ──────────────────────────────────────────────── */
+--scrollbar-thumb: rgba(200, 190, 175, 0.3);
+--scrollbar-thumb-hover: rgba(200, 190, 175, 0.5);
+--link-underline: #2457ff6b;
+--link-underline-hover: #2457ff2e;
