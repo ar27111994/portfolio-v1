@@ -530,7 +530,7 @@ h3 {
 }
 .availability-strip .wide em {
   font-style: normal;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--line-on-dark);
   border-radius: 999px;
   padding: 0.24rem 0.56rem;
   background: rgba(255, 255, 255, 0.08);
@@ -544,7 +544,7 @@ h3 {
 }
 .availability-strip .wide em:hover {
   background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: var(--line-dark);
 }
 .availability-strip .wide i {
   display: inline-block;
@@ -897,7 +897,7 @@ h3 {
   margin-top: 0.72rem;
 }
 .signal-metrics span {
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid var(--line-on-dark);
   border-radius: 14px;
   padding: 0.48rem;
   color: #ddd;
@@ -925,7 +925,7 @@ h3 {
   display: block;
   overflow: hidden;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--line-on-dark);
   background: rgba(255,255,255,0.08);
   height: 1.65rem;
 }
@@ -1417,7 +1417,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   margin: 0;
   color: var(--ink);
   background: var(--blue-soft);
-  border: 1px solid rgba(26, 77, 255, 0.15);
+  border: 1px solid var(--blue-glow);
   border-radius: 999px;
   padding: 0.28rem 0.64rem;
   font-size: 0.7rem;
@@ -1431,15 +1431,15 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .project-card:nth-child(2) .status-tag {
   background: var(--orange-soft);
-  border-color: rgba(212, 74, 26, 0.18);
+  border-color: var(--orange-glow);
 }
 .project-card:nth-child(3) .status-tag {
   background: var(--violet-soft);
-  border-color: rgba(124, 58, 237, 0.18);
+  border-color: var(--violet-glow);
 }
 .project-card:nth-child(4) .status-tag {
   background: var(--green-soft);
-  border-color: rgba(11, 122, 74, 0.18);
+  border-color: var(--green-glow);
 }
 .mini-list {
   margin: 0.7rem 0 0;
@@ -2016,7 +2016,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   align-items: flex-start;
 }
 .upwork-tags span {
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--line-on-dark);
   border-radius: 999px;
   background: var(--surface-inverse);
   padding: 0.22rem 0.5rem;
@@ -2399,7 +2399,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .upwork-project-url {
   width: fit-content;
   max-width: 100%;
-  border: 1px solid rgba(36, 87, 255, 0.18);
+  border: 1px solid var(--blue-glow);
   border-radius: 12px;
   background: rgba(36, 87, 255, 0.08);
   padding: 0.34rem 0.46rem;
@@ -2724,7 +2724,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   max-height: 24rem;
   margin: 0;
   overflow: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--line-on-dark);
   padding: 0.9rem;
   color: #f5f5f5;
   font-size: 0.76rem;

@@ -97,6 +97,7 @@
   --line-darker: rgba(15, 13, 11, 0.18);
   --line-subtle: rgba(15, 13, 11, 0.07);
   --line-divider: rgba(15, 13, 11, 0.09);
+  --line-on-dark: rgba(255, 255, 255, 0.16);
 
   /* ── Paper texture — visible grain via denser SVG noise ──────────── */
   --paper-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
@@ -122,6 +123,7 @@
   --orange-glow: rgba(212, 74, 26, 0.1);
   --orange-soft: #fef0e5;
   --violet: #7c3aed;
+  --violet-glow: rgba(124, 58, 237, 0.18);
   --violet-soft: #f4ebff;
   --brand-accent: #caff80;
   --brand-accent-soft: #eaffc0;
