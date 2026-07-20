@@ -3393,7 +3393,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .filter-tag {
   padding: 0.22rem 0.55rem;
-  border: 1px solid var(--line);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--card);
   color: var(--muted);
