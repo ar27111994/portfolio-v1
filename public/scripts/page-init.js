@@ -621,7 +621,7 @@ function initPage() {
   if ("requestIdleCallback" in window) {
   requestIdleCallback(() => { initSwipers(); initUpworkPagination(); }, { timeout: 3000 });
   } else {
-  setTimeout(() => { initSwipers(); initUpworkPagination(); }, 200);
+  setTimeout(() => { initSwipers(); initUpworkPagination(); }, 0);
   }
 
   // ── TIER 4: Infinite scroll sentinel for feed ──────────────────────────

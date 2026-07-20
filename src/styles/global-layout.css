@@ -3662,3 +3662,6 @@ html.dark .featured-card.accent-skills .featured-visual {
 .feed-source-linkedin .feed-item-tag { background: rgba(10,102,194,0.35); color: #6db8ff; }
 .feed-source-coderlegion .feed-item-tag { background: rgba(139,92,246,0.3); color: #c8a8ff; }
 @media (max-width: 600px) { .writing-grid { grid-template-columns: 1fr; } }
+
+/* Default: hide Upwork cards beyond page 1 until JS pagination initializes */
+#upwork-grid .upwork-portfolio-card:nth-child(n+9) { display: none; }
