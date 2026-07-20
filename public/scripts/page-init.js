@@ -618,10 +618,13 @@ function initPage() {
     applyAll();
   };
 
+  // ── Upwork pagination — run immediately ──────────────────────────────
+  initUpworkPagination();
+
   if ("requestIdleCallback" in window) {
-  requestIdleCallback(() => { initSwipers(); initUpworkPagination(); }, { timeout: 3000 });
+  requestIdleCallback(() => { initSwipers(); }, { timeout: 3000 });
   } else {
-  setTimeout(() => { initSwipers(); initUpworkPagination(); }, 0);
+  setTimeout(() => { initSwipers(); }, 0);
   }
 
   // ── TIER 4: Infinite scroll sentinel for feed ──────────────────────────
