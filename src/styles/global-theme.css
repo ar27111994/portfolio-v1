@@ -96,8 +96,8 @@
   --paper-2: #fefcf8;
   --card: #fefdfb;
   --card-strong: #141210;
-  --line: #d4c8b4;
-  --line-dark: #2e2a26;
+  --line: #c8b898;
+  --line-dark: #3e3830;
   --line-subtle: rgba(15, 13, 11, 0.07);
   --line-divider: rgba(15, 13, 11, 0.09);
 
@@ -192,8 +192,8 @@
   --shadow-md: 0 8px 24px rgba(var(--shadow-color), 0.08);
   --shadow-lg: 0 16px 48px rgba(var(--shadow-color), 0.10);
   --shadow-xl: 0 24px 72px rgba(var(--shadow-color), 0.12);
-  --shadow-card: 0 1px 2px rgba(var(--shadow-color), 0.04), 0 6px 16px rgba(var(--shadow-color), 0.06);
-  --shadow-card-hover: 0 2px 4px rgba(var(--shadow-color), 0.06), 0 12px 32px rgba(var(--shadow-color), 0.10);
+  --shadow-card: 0 1px 0 rgba(var(--shadow-color), 0.04), 0 2px 4px rgba(var(--shadow-color), 0.06), 0 8px 20px rgba(var(--shadow-color), 0.08);
+  --shadow-card-hover: 0 1px 0 rgba(var(--shadow-color), 0.06), 0 4px 8px rgba(var(--shadow-color), 0.08), 0 16px 36px rgba(var(--shadow-color), 0.12);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
   --shadow-tight: 0 4px 12px rgba(var(--shadow-color), 0.06);
   --shadow-button: 0 2px 6px rgba(var(--shadow-color), 0.08);
