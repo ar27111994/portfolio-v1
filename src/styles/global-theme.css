@@ -212,7 +212,7 @@ html.dark {
   /* ── Core Palette — dark cardstock ───────────────────────────────── */
   --ink: #ede8e0;
   --ink-soft: #c8c0b4;
-  --muted: #9a9082;
+  --muted: #a89d8e;
   --paper: #14110d;
   --paper-2: #1a1712;
   --card: #1e1b16;
@@ -230,7 +230,7 @@ html.dark {
   --tag-text: #c8b88a;
   --tag-border: rgba(237, 232, 224, 0.1);
 
-  --blue: #5c8aff;
+  --blue: #6b94ff;
   --blue-glow: rgba(92, 138, 255, 0.15);
   --blue-soft: #1a2238;
   --green: #2dd48b;
@@ -291,7 +291,7 @@ html.dark {
   :root {
     --ink: #ede8e0;
     --ink-soft: #c8c0b4;
-    --muted: #9a9082;
+    --muted: #a89d8e;
     --paper: #14110d;
     --paper-2: #1a1712;
     --card: #1e1b16;
@@ -309,7 +309,7 @@ html.dark {
     --tag-text: #c8b88a;
     --tag-border: rgba(237, 232, 224, 0.1);
 
-    --blue: #5c8aff;
+    --blue: #6b94ff;
     --blue-glow: rgba(92, 138, 255, 0.15);
     --blue-soft: #1a2238;
     --green: #2dd48b;
