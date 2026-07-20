@@ -3835,6 +3835,8 @@ code {
   }
   .anchor-rail.is-open {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
   .anchor-rail a {
     font-size: 0.75rem;
@@ -3864,5 +3866,20 @@ code {
 @media (max-width: 480px) {
   .anchor-rail a {
     width: 100%;
+  }
+}
+
+/* ── Responsive: upwork modal ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .upwork-modal-body {
+    padding: 1rem;
+  }
+  .upwork-modal-body img,
+  .upwork-modal-body video {
+    max-width: 100%;
+    height: auto;
+  }
+  .upwork-portfolio-detail-body {
+    font-size: 0.85rem;
   }
 }

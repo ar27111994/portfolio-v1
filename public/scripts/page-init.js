@@ -698,9 +698,17 @@ document.addEventListener("astro:before-swap", () => {
 // ── Hamburger menu toggle ─────────────────────────────────────────
 document.addEventListener("click", (e) => {
   const btn = e.target.closest(".hamburger");
-  if (!btn) return;
   const rail = document.querySelector(".anchor-rail");
-  const expanded = btn.getAttribute("aria-expanded") === "true";
-  btn.setAttribute("aria-expanded", String(!expanded));
-  if (rail) rail.classList.toggle("is-open", !expanded);
+  if (btn) {
+    const expanded = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!expanded));
+    if (rail) rail.classList.toggle("is-open", !expanded);
+    return;
+  }
+  // Close if clicking outside
+  if (rail && rail.classList.contains("is-open") && !e.target.closest(".anchor-rail")) {
+    rail.classList.remove("is-open");
+    const ham = document.querySelector(".hamburger");
+    if (ham) ham.setAttribute("aria-expanded", "false");
+  }
 });
