@@ -204,7 +204,7 @@ html.dark { color-scheme: dark; }
   background: var(--glass-panel-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   padding: 0.28rem 0.35rem;
   gap: 0.15rem;
@@ -757,7 +757,7 @@ h3 {
   content: "OPEN";
   align-self: center;
   justify-self: end;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   padding: 0.18rem 0.42rem;
   background: var(--surface);
@@ -1070,7 +1070,7 @@ h3 {
 .section-kicker {
   margin: 0 0 0.32rem;
   width: fit-content;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--tag-bg);
   padding: 0.24rem 0.54rem;
@@ -1753,7 +1753,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   display: inline-flex;
   align-items: center;
   gap: 0.38rem;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--surface);
   padding: 0.42rem 0.68rem;
@@ -1779,7 +1779,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   padding: 0.12rem 0.34rem;
   background: var(--tag-bg);
@@ -2043,7 +2043,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   justify-self: start;
   width: fit-content;
   max-width: 100%;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--tag-bg);
   padding: 0.26rem 0.58rem;
@@ -2073,7 +2073,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   align-items: center;
   width: fit-content;
   margin-left: 0.42rem;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--brand-accent);
   padding: 0.2rem 0.56rem;
@@ -2286,7 +2286,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .upwork-preview-chip {
   width: fit-content;
   max-width: calc(100% - 1.1rem);
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--surface);
   padding: 0.22rem 0.52rem;
@@ -2438,7 +2438,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   list-style: none;
 }
 .upwork-portfolio-tags li {
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--surface);
   padding: 0.2rem 0.48rem;
@@ -2663,7 +2663,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   width: fit-content;
   max-width: 100%;
   margin: 0;
-  border: 1px solid var(--line-divider);
+  border: var(--pill-border);
   border-radius: 999px;
   background: var(--tag-bg);
   padding: 0.34rem 0.62rem;
