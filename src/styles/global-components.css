@@ -146,13 +146,13 @@
 .feed-item {
   background: var(--surface-inverse);
   border-color: rgba(237, 232, 224, 0.1);
-  color: #ede8e0;
+  color: var(--ink-on-dark);
 }
 .feed-item span {
-  color: #ede8e0;
+  color: var(--ink-on-dark);
 }
 .feed-item small {
-  color: #8a8278;
+  color: var(--text-dim);
 }
 .feed-widget {
   border: 1px solid rgba(237, 232, 224, 0.08);
@@ -169,7 +169,7 @@
     var(--surface-inverse);
 }
 .feed-status {
-  color: #caff80;
+  color: var(--brand-accent);
   font-size: var(--step--1);
   margin-bottom: 0.6rem;
   font-weight: 800;
@@ -268,7 +268,7 @@
   font-size: 0.68rem;
 }
 .feed-source-card:hover small {
-  color: #d8d8d8;
+  color: var(--ink-soft);
 }
 .floating-contact {
   position: fixed;
