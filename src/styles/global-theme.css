@@ -88,7 +88,7 @@
   --radius-xl: 24px;
   --radius-full: 9999px;
 
-  /* ── Core Palette ──────────────────────────────────────────────── */
+  /* ── Core Palette — paper-like warm tones ───────────────────────── */
   --ink: #0f0d0b;
   --ink-soft: #2d2824;
   --muted: #5c5248;
@@ -98,8 +98,11 @@
   --card-strong: #141210;
   --line: #d4c8b4;
   --line-dark: #2e2a26;
-  --line-subtle: rgba(15, 13, 11, 0.08);
-  --line-divider: rgba(15, 13, 11, 0.1);
+  --line-subtle: rgba(15, 13, 11, 0.07);
+  --line-divider: rgba(15, 13, 11, 0.09);
+
+  /* ── Paper texture — subtle grain via SVG noise ──────────────────── */
+  --paper-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 
   /* ── Surfaces ──────────────────────────────────────────────────── */
   --surface: #fff;
@@ -126,13 +129,13 @@
   --brand-accent: #caff80;
   --brand-accent-soft: #eaffc0;
 
-  /* ── Glass Panels ──────────────────────────────────────────────── */
-  --glass-panel-bg: rgba(254, 252, 248, 0.85);
-  --glass-topbar-bg: rgba(250, 247, 242, 0.82);
-  --glass-nav-bg: rgba(254, 252, 248, 0.82);
-  --glass-nav-border: rgba(212, 200, 180, 0.5);
-  --glass-blur: 12px;
-  --glass-blur-topbar: 20px;
+  /* ── Frosted-paper Panels — warm, soft, organic ──────────────────── */
+  --glass-panel-bg: rgba(254, 252, 248, 0.88);
+  --glass-topbar-bg: rgba(250, 247, 242, 0.85);
+  --glass-nav-bg: rgba(254, 252, 248, 0.85);
+  --glass-nav-border: rgba(180, 168, 148, 0.45);
+  --glass-blur: 14px;
+  --glass-blur-topbar: 22px;
 
   /* ── Body Background ───────────────────────────────────────────── */
   --body-glow-1: rgba(26, 77, 255, 0.08);
@@ -182,18 +185,19 @@
   --grad-card-hover: linear-gradient(180deg, rgba(26, 77, 255, 0.03) 0%, transparent 60%);
 
   /* ── Shadows ───────────────────────────────────────────────────── */
-  --shadow-color: 15, 13, 11;
-  --shadow-xs: 0 1px 3px rgba(var(--shadow-color), 0.04);
-  --shadow-sm: 0 4px 12px rgba(var(--shadow-color), 0.06);
-  --shadow-md: 0 12px 40px rgba(var(--shadow-color), 0.08);
-  --shadow-lg: 0 24px 70px rgba(var(--shadow-color), 0.1);
-  --shadow-xl: 0 36px 100px rgba(var(--shadow-color), 0.12);
-  --shadow-card: 0 1px 2px rgba(var(--shadow-color), 0.04), 0 8px 24px rgba(var(--shadow-color), 0.06);
-  --shadow-card-hover: 0 2px 4px rgba(var(--shadow-color), 0.06), 0 16px 48px rgba(var(--shadow-color), 0.1);
+  /* ── Warm paper shadows — soft brown cast ────────────────────────── */
+  --shadow-color: 45, 30, 15;
+  --shadow-xs: 0 1px 2px rgba(var(--shadow-color), 0.04);
+  --shadow-sm: 0 2px 8px rgba(var(--shadow-color), 0.06);
+  --shadow-md: 0 8px 24px rgba(var(--shadow-color), 0.08);
+  --shadow-lg: 0 16px 48px rgba(var(--shadow-color), 0.10);
+  --shadow-xl: 0 24px 72px rgba(var(--shadow-color), 0.12);
+  --shadow-card: 0 1px 2px rgba(var(--shadow-color), 0.04), 0 6px 16px rgba(var(--shadow-color), 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(var(--shadow-color), 0.06), 0 12px 32px rgba(var(--shadow-color), 0.10);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
-  --shadow-tight: 0 4px 16px rgba(var(--shadow-color), 0.06);
-  --shadow-button: 0 2px 8px rgba(var(--shadow-color), 0.08);
-  --shadow-button-hover: 0 4px 16px rgba(var(--shadow-color), 0.12);
+  --shadow-tight: 0 4px 12px rgba(var(--shadow-color), 0.06);
+  --shadow-button: 0 2px 6px rgba(var(--shadow-color), 0.08);
+  --shadow-button-hover: 0 4px 12px rgba(var(--shadow-color), 0.12);
 
   /* ── Focus ─────────────────────────────────────────────────────── */
   --focus-ring-color: var(--blue);
@@ -205,11 +209,12 @@
    MANUAL DARK MODE — html.dark
    ═══════════════════════════════════════════════════════════════════════════ */
 html.dark {
+  /* ── Core Palette — dark cardstock ───────────────────────────────── */
   --ink: #ede8e0;
   --ink-soft: #c8c0b4;
   --muted: #9a9082;
-  --paper: #12100d;
-  --paper-2: #181612;
+  --paper: #14110d;
+  --paper-2: #1a1712;
   --card: #1e1b16;
   --card-strong: #ede8e0;
   --line: #3e3830;
@@ -239,12 +244,13 @@ html.dark {
   --brand-accent: #caff80;
   --brand-accent-soft: #2a3618;
 
-  --glass-panel-bg: rgba(24, 21, 16, 0.85);
+  /* ── Frosted-cardstock Panels — warm dark translucency ───────────── */
+  --glass-panel-bg: rgba(24, 21, 16, 0.88);
   --glass-topbar-bg: rgba(15, 13, 10, 0.92);
-  --glass-nav-bg: rgba(24, 21, 16, 0.82);
-  --glass-nav-border: rgba(72, 68, 60, 0.5);
+  --glass-nav-bg: rgba(24, 21, 16, 0.85);
+  --glass-nav-border: rgba(72, 68, 60, 0.45);
   --glass-blur: 16px;
-  --glass-blur-topbar: 20px;
+  --glass-blur-topbar: 22px;
 
   --body-glow-1: rgba(92, 138, 255, 0.08);
   --body-glow-2: rgba(240, 128, 80, 0.07);
@@ -286,8 +292,8 @@ html.dark {
     --ink: #ede8e0;
     --ink-soft: #c8c0b4;
     --muted: #9a9082;
-    --paper: #12100d;
-    --paper-2: #181612;
+    --paper: #14110d;
+    --paper-2: #1a1712;
     --card: #1e1b16;
     --card-strong: #ede8e0;
     --line: #3e3830;
@@ -317,12 +323,12 @@ html.dark {
     --brand-accent: #caff80;
     --brand-accent-soft: #2a3618;
 
-    --glass-panel-bg: rgba(24, 21, 16, 0.85);
+    --glass-panel-bg: rgba(24, 21, 16, 0.88);
     --glass-topbar-bg: rgba(15, 13, 10, 0.92);
-    --glass-nav-bg: rgba(24, 21, 16, 0.82);
-    --glass-nav-border: rgba(72, 68, 60, 0.5);
+    --glass-nav-bg: rgba(24, 21, 16, 0.85);
+    --glass-nav-border: rgba(72, 68, 60, 0.45);
     --glass-blur: 16px;
-    --glass-blur-topbar: 20px;
+    --glass-blur-topbar: 22px;
 
     --body-glow-1: rgba(92, 138, 255, 0.08);
     --body-glow-2: rgba(240, 128, 80, 0.07);
