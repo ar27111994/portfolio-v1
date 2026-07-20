@@ -3862,6 +3862,14 @@ code {
   .hero {
     grid-template-columns: 1fr !important;
   }
+  .hero-aside {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    max-width: 100%;
+  }
+  .signal-board {
+    max-width: 100%;
+  }
 }
 @media (max-width: 480px) {
   .anchor-rail a {
@@ -3897,16 +3905,5 @@ code {
   }
   .wordmark .wm-studio {
     display: none;
-  }
-}
-
-/* ── Responsive: hero-aside signal board ──────────────────────────── */
-@media (max-width: 860px) {
-  .hero-aside {
-    grid-column: 1 !important;
-    grid-row: auto !important;
-  }
-  .signal-board {
-    max-width: 100%;
   }
 }
