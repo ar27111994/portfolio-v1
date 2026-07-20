@@ -3816,7 +3816,7 @@ code {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .top-bar {
     gap: 0.35rem;
     padding: 0.35rem 0;
