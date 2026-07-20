@@ -3639,7 +3639,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .feed-source-pill small { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 600; }
 .feed-source-pill:hover { background: var(--surface-inverse); color: var(--ink-on-dark); border-color: var(--surface-inverse); }
 .feed-source-pill:hover img { filter: brightness(0) invert(1); }
-.feed-source-pill:hover small { color: var(--ink-soft); }
+.feed-source-pill:hover small { color: var(--text-dim); }
 .feed-sources-carousel .swiper-slide { width: auto; height: auto; }
 
 /* Platform-specific feed item accents */
