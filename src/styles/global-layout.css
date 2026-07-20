@@ -1188,7 +1188,7 @@ h3 {
 .profile-widget:hover small,
 .resume-widget:hover small,
 .contact-widget:hover small {
-  color: var(--muted);
+  color: var(--text-dim);
 }
 .project-visual {
   border: 1px solid rgba(15, 13, 11, 0.08);
@@ -1268,7 +1268,7 @@ h3 {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-dim);
   position: relative;
   z-index: 1;
   text-align: center;
@@ -1317,7 +1317,7 @@ h3 {
 }
 .featured-copy .mini-list li {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--text-dim);
 }
 
 /* ── Featured card visual accents ────────────────────────────────── */
@@ -1722,7 +1722,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .resume-widget small,
 .contact-widget small {
   display: block;
-  color: var(--muted);
+  color: var(--text-dim);
   font-size: 0.8rem;
   line-height: 1.35;
 }
@@ -1805,7 +1805,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: none;
 }
 .proof-ledger small {
-  color: var(--muted);
+  color: var(--text-dim);
   font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.08em;
