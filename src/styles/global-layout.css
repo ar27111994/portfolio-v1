@@ -3777,3 +3777,35 @@ code {
 .dur-glacial { transition-duration: var(--dur-glacial); }
 .dur-instant { transition-duration: var(--dur-instant); }
 .dur-normal  { transition-duration: var(--dur-normal); }
+
+/* ── Responsive: compact nav on smaller screens ───────────────────── */
+@media (max-width: 768px) {
+  .anchor-rail a {
+    font-size: 0.68rem;
+    padding: 0.28rem 0.45rem;
+    gap: 0.2rem;
+  }
+  .anchor-rail a svg {
+    width: 10px;
+    height: 10px;
+  }
+  .wordmark {
+    padding: 0.28rem 0.5rem 0.28rem 0.3rem;
+  }
+}
+@media (max-width: 480px) {
+  .anchor-rail {
+    gap: 0.08rem;
+    padding: 0.22rem 0.25rem;
+  }
+  .anchor-rail a {
+    font-size: 0.62rem;
+    padding: 0.22rem 0.35rem;
+  }
+  .anchor-rail a svg {
+    display: none;
+  }
+  .wordmark .wm-studio {
+    display: none;
+  }
+}
