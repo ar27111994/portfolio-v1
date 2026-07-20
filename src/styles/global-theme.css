@@ -94,6 +94,7 @@
   --card-strong: #141210;
   --line: #c8b898;
   --line-dark: #3e3830;
+  --line-darker: rgba(15, 13, 11, 0.18);
   --line-subtle: rgba(15, 13, 11, 0.07);
   --line-divider: rgba(15, 13, 11, 0.09);
 

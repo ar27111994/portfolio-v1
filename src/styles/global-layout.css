@@ -140,7 +140,7 @@ html.dark { color-scheme: dark; }
   align-items: center;
   gap: 0.55rem;
   padding: 0.38rem 0.75rem 0.38rem 0.42rem;
-  border: 1px solid rgba(15, 13, 11, 0.12);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
   background: var(--glass-topbar-bg);
   backdrop-filter: blur(18px);
@@ -157,7 +157,7 @@ html.dark { color-scheme: dark; }
 }
 .wordmark:hover {
   box-shadow: var(--shadow-md);
-  border-color: rgba(15, 13, 11, 0.2);
+  border-color: var(--line-darker);
 }
 .wm-mono {
   display: inline-flex;
@@ -1195,7 +1195,7 @@ h3 {
   color: var(--text-dim);
 }
 .project-visual {
-  border: 1px solid rgba(15, 13, 11, 0.08);
+  border: 1px solid var(--line-subtle);
   border-radius: var(--radius-md);
   min-height: 104px;
   margin-bottom: 0.9rem;
@@ -1544,7 +1544,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .capability-card-grid small {
   align-self: end;
   width: fit-content;
-  border: 1px solid rgba(17, 17, 17, 0.14);
+  border: 1px solid var(--line-dark);
   border-radius: 999px;
   background: var(--tag-bg);
   padding: 0.2rem 0.48rem;
@@ -2370,7 +2370,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .upwork-featured-badge {
   flex: 0 0 auto;
-  border: 1px solid rgba(17, 17, 17, 0.14);
+  border: 1px solid var(--line-dark);
   border-radius: 999px;
   background: var(--tag-bg);
   padding: 0.16rem 0.38rem;
@@ -2426,7 +2426,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   font-weight: 820;
 }
 .upwork-portfolio-meta-row span {
-  border: 1px solid rgba(17, 17, 17, 0.1);
+  border: 1px solid var(--line-divider);
   border-radius: 999px;
   background: var(--surface-raised);
   padding: 0.18rem 0.46rem;
@@ -2515,7 +2515,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   list-style-position: inside;
 }
 .upwork-portfolio-details[open] summary {
-  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+  border-bottom: 1px solid var(--line-divider);
 }
 .upwork-portfolio-detail-body {
   display: grid;
