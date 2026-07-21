@@ -2464,6 +2464,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .upwork-open-details,
 .upwork-portfolio-link {
+  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
