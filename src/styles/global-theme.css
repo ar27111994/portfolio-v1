@@ -135,6 +135,21 @@
   --pill-shadow: var(--shadow-tight);
   --heading-text-shadow: 0 1px 0 rgba(var(--shadow-color), 0.05);
 
+  /* ── Platform feed colors ────────────────────────────────────────── */
+  --feed-devto: #7eb0ff;
+  --feed-github: #c0b8a8;
+  --feed-hn: #ffa366;
+  --feed-hashnode: #8dc4ff;
+  --feed-twitter: #e7e7e7;
+  --feed-linkedin: #6db8ff;
+  --feed-coderlegion: #c8a8ff;
+
+  /* ── Interactive effects ─────────────────────────────────────────── */
+  --link-underline: rgba(26, 77, 255, 0.22);
+  --link-underline-hover: rgba(26, 77, 255, 0.12);
+  --scrollbar-thumb: rgba(200, 190, 175, 0.3);
+  --scrollbar-thumb-hover: rgba(200, 190, 175, 0.5);
+
   /* ── Frosted-paper Panels — warm, soft, organic ──────────────────── */
   --glass-panel-bg: rgba(254, 252, 248, 0.88);
   --glass-topbar-bg: rgba(250, 247, 242, 0.85);
@@ -357,17 +372,3 @@ html.dark {
   background: var(--blue);
   color: #fff;
 }
-
-/* ── Platform feed colors — always-dark surfaces ──────────────────── */
---feed-devto: #7eb0ff;
---feed-github: #c0b8a8;
---feed-hn: #ffa366;
---feed-hashnode: #8dc4ff;
---feed-twitter: #e7e7e7;
---feed-linkedin: #6db8ff;
---feed-coderlegion: #c8a8ff;
-/* ── One-off effects ──────────────────────────────────────────────── */
---scrollbar-thumb: rgba(200, 190, 175, 0.3);
---scrollbar-thumb-hover: rgba(200, 190, 175, 0.5);
---link-underline: #2457ff6b;
---link-underline-hover: #2457ff2e;
