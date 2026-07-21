@@ -63,7 +63,7 @@ export default async function handler(
       }));
 
     res.status(200).json({ status: "success", posts });
-  } catch (_err) {
+  } catch {
     res.status(500).json({ error: "Failed to fetch from CoderLegion" });
   }
 }
