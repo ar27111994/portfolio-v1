@@ -771,6 +771,14 @@ document.addEventListener("click", (e) => {
     lb.classList.add("is-open");
     lb.classList.remove("is-zoomed");
     lb.setAttribute("aria-hidden", "false");
+
+    // Close any open upwork modal
+    var openModal = document.querySelector(".upwork-modal[open], .upwork-modal[aria-hidden=\"false\"]");
+    if (openModal) {
+      var closeBtn = openModal.querySelector(".upwork-modal-close");
+      if (closeBtn) closeBtn.click();
+    }
+
     if (images.length > 1) {
       lCounter.textContent = (current + 1) + " / " + images.length;
     } else {
@@ -800,7 +808,11 @@ document.addEventListener("click", (e) => {
     }
   }
 
+  var zoomDebounce = 0;
   function toggleZoom() {
+    var now = Date.now();
+    if (now - zoomDebounce < 400) return;
+    zoomDebounce = now;
     zoomed = !zoomed;
     scale = zoomed ? 2.5 : 1;
     panX = panY = 0;
