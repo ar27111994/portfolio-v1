@@ -201,5 +201,13 @@ const structuredData = {
     <slot />
     <Analytics />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <!-- Image lightbox -->
+    <div class="img-lightbox" id="img-lightbox" aria-hidden="true">
+      <img src="" alt="" id="img-lightbox-img" />
+    </div>
+    <button class="img-lightbox-close" id="img-lightbox-close" aria-label="Close image viewer">&times;</button>
+    <button class="img-lightbox-nav img-lightbox-prev" id="img-lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+    <button class="img-lightbox-nav img-lightbox-next" id="img-lightbox-next" aria-label="Next image">&rsaquo;</button>
+    <span class="img-lightbox-counter" id="img-lightbox-counter"></span>
   </body>
 </html>

@@ -713,3 +713,149 @@ document.addEventListener("click", (e) => {
     if (ham) ham.setAttribute("aria-expanded", "false");
   }
 });
+
+// ── Image Gallery Lightbox ─────────────────────────────────────────
+(function initLightbox() {
+  const lb = document.getElementById("img-lightbox");
+  const img = document.getElementById("img-lightbox-img");
+  const close = document.getElementById("img-lightbox-close");
+  const prev = document.getElementById("img-lightbox-prev");
+  const next = document.getElementById("img-lightbox-next");
+  const counter = document.getElementById("img-lightbox-counter");
+  if (!lb || !img) return;
+
+  let images = [];
+  let current = 0;
+  let zoomed = false;
+  let scale = 1;
+  let panX = 0, panY = 0, startX = 0, startY = 0, dragging = false;
+
+  function open(index, srcs) {
+    images = srcs;
+    current = index;
+    zoomed = false;
+    scale = 1;
+    panX = panY = 0;
+    img.style.transform = "";
+    img.src = images[current];
+    img.alt = "Screenshot " + (current + 1);
+    lb.classList.add("is-open");
+    lb.classList.remove("is-zoomed");
+    lb.setAttribute("aria-hidden", "false");
+    updateCounter();
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lb.classList.remove("is-open", "is-zoomed");
+    lb.setAttribute("aria-hidden", "true");
+    img.src = "";
+    document.body.style.overflow = "";
+    zoomed = false;
+    scale = 1;
+  }
+
+  function goTo(idx) {
+    if (idx < 0 || idx >= images.length) return;
+    current = idx;
+    zoomed = false;
+    scale = 1;
+    panX = panY = 0;
+    img.style.transform = "";
+    lb.classList.remove("is-zoomed");
+    img.src = images[current];
+    img.alt = "Screenshot " + (current + 1);
+    updateCounter();
+  }
+
+  function updateCounter() {
+    if (images.length > 1) {
+      counter.textContent = (current + 1) + " / " + images.length;
+    } else {
+      counter.textContent = "";
+    }
+  }
+
+  function toggleZoom() {
+    if (zoomed) {
+      zoomed = false;
+      scale = 1;
+      panX = panY = 0;
+      img.style.transform = "";
+      lb.classList.remove("is-zoomed");
+    } else {
+      zoomed = true;
+      scale = 2;
+      img.style.transform = "scale(" + scale + ")";
+      lb.classList.add("is-zoomed");
+    }
+  }
+
+  // Click on any screenshot in the upwork modal
+  document.addEventListener("click", function(e) {
+    const tile = e.target.closest(".upwork-media-tile");
+    if (!tile) return;
+    const tileImg = tile.querySelector("img");
+    if (!tileImg) return;
+
+    // Collect all sibling screenshots in this modal
+    const grid = tile.closest(".upwork-media-grid");
+    if (!grid) return;
+    const allImages = Array.from(grid.querySelectorAll("img")).map(function(i) {
+      return i.currentSrc || i.src;
+    }).filter(function(s) { return s && !s.includes("data:"); });
+
+    if (allImages.length === 0) return;
+    const idx = allImages.indexOf(tileImg.currentSrc || tileImg.src);
+    e.preventDefault();
+    e.stopPropagation();
+    open(Math.max(0, idx), allImages);
+  });
+
+  // Close button
+  close.addEventListener("click", closeLightbox);
+
+  // Navigation
+  prev.addEventListener("click", function() { goTo(current - 1); });
+  next.addEventListener("click", function() { goTo(current + 1); });
+
+  // Click on lightbox background (not on image) to close or zoom
+  lb.addEventListener("click", function(e) {
+    if (e.target === lb) {
+      if (zoomed) {
+        toggleZoom();
+      } else {
+        closeLightbox();
+      }
+    } else if (e.target === img) {
+      toggleZoom();
+    }
+  });
+
+  // Keyboard
+  document.addEventListener("keydown", function(e) {
+    if (!lb.classList.contains("is-open")) return;
+    if (e.key === "Escape") { closeLightbox(); return; }
+    if (e.key === "ArrowLeft") { goTo(current - 1); return; }
+    if (e.key === "ArrowRight") { goTo(current + 1); return; }
+  });
+
+  // Zoomed panning
+  img.addEventListener("mousedown", function(e) {
+    if (!zoomed) return;
+    dragging = true;
+    startX = e.clientX - panX;
+    startY = e.clientY - panY;
+    img.style.cursor = "grabbing";
+  });
+  window.addEventListener("mousemove", function(e) {
+    if (!dragging) return;
+    panX = e.clientX - startX;
+    panY = e.clientY - startY;
+    img.style.transform = "scale(" + scale + ") translate(" + (panX / scale) + "px, " + (panY / scale) + "px)";
+  });
+  window.addEventListener("mouseup", function() {
+    dragging = false;
+    img.style.cursor = zoomed ? "grab" : "";
+  });
+})();

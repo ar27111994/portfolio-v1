@@ -3930,3 +3930,95 @@ code {
     grid-row: auto !important;
   }
 }
+
+/* ── Image Gallery Lightbox ───────────────────────────────────────── */
+.img-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: zoom-in;
+}
+.img-lightbox.is-open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-lightbox.is-zoomed {
+  cursor: grab;
+  align-items: flex-start;
+  overflow: auto;
+}
+.img-lightbox.is-zoomed:active {
+  cursor: grabbing;
+}
+.img-lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  transition: transform 0.25s var(--ease-sharp);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.img-lightbox.is-zoomed img {
+  max-width: none;
+  max-height: none;
+  transform-origin: 0 0;
+}
+.img-lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10001;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.img-lightbox-close:hover { background: rgba(255,255,255,0.2); }
+.img-lightbox.is-open ~ .img-lightbox-close { display: flex; }
+.img-lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10001;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.img-lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+.img-lightbox.is-open ~ .img-lightbox-nav { display: flex; }
+.img-lightbox-prev { left: 1rem; }
+.img-lightbox-next { right: 1rem; }
+.img-lightbox-counter {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  display: none;
+}
+.img-lightbox.is-open ~ .img-lightbox-counter { display: block; }
