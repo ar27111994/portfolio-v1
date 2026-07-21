@@ -2,6 +2,10 @@
   "name": "portfolio-v1",
   "type": "module",
   "version": "0.1.0",
+  "description": "Personal portfolio for Ahmed Rehan — devtools, agent systems, webhooks, and automation",
+  "author": "Ahmed Rehan <admin@ar27111994.dev>",
+  "license": "UNLICENSED",
+  "private": true,
   "engines": {
     "node": ">=22.0.0"
   },
