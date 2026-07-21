@@ -173,6 +173,10 @@ def header(photo: bool = False, role: str = "", badges_html: str = "", contact_c
 
     badges = badges_html or f"""<span class="badge ms">{icon('microsoft', 7)}Microsoft Partner</span>
       <span class="badge anth">{icon('anthropic', 7)}Anthropic Partner</span>
+      <span class="badge anth">{icon('nvidia', 7)}NVIDIA Developer</span>
+      <span class="badge anth">{icon('amd', 7)}AMD Developer</span>
+      <span class="badge anth">{icon('aws', 7)}AWS Developer</span>
+      <span class="badge anth">{icon('google', 7)}Google Cloud Developer</span>
       <span class="badge oss">{icon('github', 7)}Open-source maintainer</span>
       <span class="badge">Devtools builder</span>
       <span class="badge">Webhook / API tooling</span>
@@ -248,6 +252,21 @@ def build_full_html() -> str:
 <p>Node.js / TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across VS Code/Copilot, OpenCode, Cursor, Zed, Claude Code, and Pi.</p>
 """
     body += f'<p class="small">{icon("github", 7)} <a href="https://github.com/ar27111994/agent-harness">github.com/ar27111994/agent-harness</a></p></div>'
+    # OpenCorporates
+    body += """<div class="entry">
+<p class="entry-title">OpenCorporates US Resolver</p>
+<p>Enterprise data-resolution service normalizing and enriching company records against the OpenCorporates US registry for compliance, KYC, and B2B data-quality pipelines.</p>
+""" + f'<p class="small">{icon("github", 7)} <a href="https://github.com/ar27111994/open-corporates-us-resolver">github.com/ar27111994/open-corporates-us-resolver</a></p></div>'
+    # SupaHooks Sentinel
+    body += """<div class="entry">
+<p class="entry-title">SupaHooks Sentinel</p>
+<p>Hermes Accelerated Business Hackathon submission: Supabase-native webhook monitoring, alerting, and audit-trail system with real-time event replay and structured incident management.</p>
+""" + f'<p class="small">{icon("github", 7)} <a href="https://github.com/ar27111994/supahooks-sentinel">github.com/ar27111994/supahooks-sentinel</a></p></div>'
+    # AI Dev Suite
+    body += """<div class="entry">
+<p class="entry-title">AI Development Suite</p>
+<p>Curated bundle of 11 production-grade agent skills and developer tools published on Capafy covering code review, release auditing, CLI QA, documentation generation, design systems, and workflow automation.</p>
+""" + f'<p class="small"><a href="https://api.capafy.ai">api.capafy.ai</a> — 11 agent & skill submissions</p></div>'
     # penpot-mcp
     body += """<div class="entry">
 <p class="entry-title">penpot-mcp</p>
