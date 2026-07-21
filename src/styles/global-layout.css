@@ -951,7 +951,7 @@ h3 {
   height: 100%;
   padding-left: 0.58rem;
   color: var(--surface-inverse);
-  text-shadow: 0 0 4px rgba(237,232,224,0.6);
+  text-shadow: var(--text-glow);
   font-style: normal;
   font-weight: 800;
   font-size: 0.72rem;

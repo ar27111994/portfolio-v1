@@ -134,6 +134,7 @@
   --pill-border: 1px solid var(--line-dark);
   --pill-shadow: var(--shadow-tight);
   --heading-text-shadow: 0 1px 0 rgba(var(--shadow-color), 0.05);
+  --text-glow: 0 0 4px rgba(237, 232, 224, 0.6);
 
   /* ── Platform feed colors ────────────────────────────────────────── */
   --feed-devto: #7eb0ff;
