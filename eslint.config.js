@@ -8,7 +8,13 @@ export default [
   ...tseslint.configs.recommended,
   ...astro.configs.recommended,
   {
-    ignores: ["dist/**", ".astro/**", ".vercel/**", "node_modules/**", "coverage/**"],
+    ignores: [
+      "dist/**",
+      ".astro/**",
+      ".vercel/**",
+      "node_modules/**",
+      "coverage/**",
+    ],
   },
   {
     languageOptions: {

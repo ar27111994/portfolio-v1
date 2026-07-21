@@ -87,6 +87,7 @@ Additional:
 3. Any Eagle 6 colleagues you're still connected with
 
 **Template message:**
+
 > Hi [Name], hope you're doing well! I'm updating my LinkedIn profile and would really appreciate a brief recommendation about our work together at Eagle 6. No pressure at all — even a few sentences about what it was like working together would be incredibly helpful. Thanks!
 
 ---
@@ -164,6 +165,7 @@ or performance-sensitive product engineering, let's talk.
 **Action:** Edit your headline. Current is strong but all titles/skills. Add benefit clause.
 
 **Replace with:**
+
 ```
 Full-Stack Engineer · Devtools, Webhooks, Automation & AI-Agent Systems | Open to freelance & contract work
 ```
