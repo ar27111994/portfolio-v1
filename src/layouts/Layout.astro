@@ -116,11 +116,11 @@ const structuredData = {
     <!-- No-flash: apply theme before any rendering -->
     <script is:inline>
       (function () {
-        var t = localStorage.getItem("portfolio-theme") || "auto";
-        var d =
-          t === "auto"
-            ? window.matchMedia("(prefers-color-scheme: dark)").matches
-            : t === "dark";
+        const t = localStorage.getItem("portfolio-theme") || "auto";
+        const d =
+    t === "auto"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : t === "dark";
         document.documentElement.classList.add(d ? "dark" : "light");
       })();
     </script>

@@ -17,6 +17,7 @@ interface PortfolioAttachment {
   image?: PortfolioAttachmentImage;
   localImage?: string; // locally-downloaded copy of an auth-gated image
   videoId?: string; // YouTube video ID for video-type attachments
+  provider?: string; // e.g. "youtube", "vimeo"
 }
 
 interface PortfolioItem {
