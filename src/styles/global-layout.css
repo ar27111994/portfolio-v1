@@ -1626,7 +1626,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   background: var(--surface);
 }
 .resume-widget {
-  height: 100%;
+  
 }
 .lab-card {
   background: var(--card);
@@ -2144,8 +2144,8 @@ html.dark .featured-card.accent-skills .featured-visual {
   display: flex;
   flex-direction: column;
   gap: 0.92rem;
-  height: 100%;
-  min-height: 100%;
+  
+  min-
   overflow: hidden;
 }
 /* Reduce gap after cover/preview image */
