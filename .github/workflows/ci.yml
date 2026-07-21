@@ -66,10 +66,6 @@ jobs:
       - run: npm ci
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
-      - name: Build and start preview
-        run: npm run build && npx serve dist -p 4321 &
-      - name: Wait for server
-        run: npx wait-on http://localhost:4321
       - name: Run E2E tests
         run: npx playwright test
         env:
