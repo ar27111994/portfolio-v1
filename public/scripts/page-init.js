@@ -88,8 +88,6 @@ function initPage() {
     const widget = document.querySelector("[data-feed-widget]");
     const status = document.querySelector("[data-feed-status]");
     const list = document.querySelector("[data-feed-list]");
-    ]
-      .slice(0, 4)
       .map((card) => ({
         title: card.querySelector(".support-name")?.textContent?.trim(),
         url: card.href,
