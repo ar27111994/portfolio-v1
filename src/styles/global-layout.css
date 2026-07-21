@@ -864,7 +864,7 @@ h3 {
       rgba(92, 138, 255, 0.12),
       transparent
     ),
-    linear-gradient(170deg, var(--card-strong) 0%, var(--card-strong) 100%);
+    linear-gradient(170deg, var(--surface-inverse) 0%, var(--surface-inverse) 100%);
   color: var(--ink-on-dark);
   box-shadow: var(--shadow-lg);
 }
@@ -3616,7 +3616,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .writing-card-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 .writing-card-title { font-size: 0.82rem; font-weight: 800; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .writing-card-meta { font-size: 0.68rem; color: var(--muted); font-weight: 600; }
-.feed-live-widget { border: 1px solid rgba(237,232,224,0.12); border-radius: var(--radius-lg); background: linear-gradient(160deg, var(--card-strong) 0%, var(--card-strong) 100%); color: var(--paper-2); padding: 0.9rem; margin-bottom: 0.75rem; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.03); max-height: 28rem; overflow-y: auto; overscroll-behavior: contain; }
+.feed-live-widget { border: 1px solid var(--line-on-dark); border-radius: var(--radius-lg); background: linear-gradient(160deg, var(--surface-inverse) 0%, var(--surface-inverse) 100%); color: var(--paper-2); padding: 0.9rem; margin-bottom: 0.75rem; box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255,255,255,0.03); max-height: 28rem; overflow-y: auto; overscroll-behavior: contain; }
 .feed-live-widget::-webkit-scrollbar { width: 5px; }
 .feed-live-widget::-webkit-scrollbar-track { background: transparent; }
 .feed-live-widget::-webkit-scrollbar-thumb { background: rgba(200,190,175,0.18); border-radius: 999px; }
