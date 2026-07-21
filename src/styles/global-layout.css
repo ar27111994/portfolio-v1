@@ -950,7 +950,8 @@ h3 {
   align-items: center;
   height: 100%;
   padding-left: 0.58rem;
-  color: var(--ink-on-dark);
+  color: var(--surface-inverse);
+  text-shadow: 0 0 4px rgba(237,232,224,0.6);
   font-style: normal;
   font-weight: 800;
   font-size: 0.72rem;
@@ -972,7 +973,7 @@ h3 {
 }
 .signal-tags span:first-child {
   background: var(--brand-accent);
-  color: var(--ink-on-dark);
+  color: var(--surface-inverse);
 }
 .signal-icons {
   display: grid;
