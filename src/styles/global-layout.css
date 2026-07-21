@@ -855,6 +855,8 @@ h3 {
   align-content: start;
   align-items: start;
   gap: 0.72rem;
+  border: 1px solid var(--line-on-dark);
+  border-radius: var(--radius-lg);
   padding: 0.82rem;
   background:
     radial-gradient(
@@ -3905,5 +3907,16 @@ code {
   }
   .wordmark .wm-studio {
     display: none;
+  }
+}
+
+/* ── Prevent hero-aside collapse at narrow desktop widths ────────── */
+@media (min-width: 861px) and (max-width: 950px) {
+  .hero {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-aside {
+    grid-column: 1 !important;
+    grid-row: auto !important;
   }
 }
