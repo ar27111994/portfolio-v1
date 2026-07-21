@@ -1,3 +1,4 @@
+/* global Swiper */
 // Wrap all UI initialisation in astro:page-load so it re-runs after
 // every ClientRouter (View Transitions) navigation, not just the first load.
 //
@@ -87,9 +88,6 @@ function initPage() {
     const widget = document.querySelector("[data-feed-widget]");
     const status = document.querySelector("[data-feed-status]");
     const list = document.querySelector("[data-feed-list]");
-
-    const fallbackItems = [
-      ...document.querySelectorAll(".fallback-feed .support-card"),
     ]
       .slice(0, 4)
       .map((card) => ({

@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 const BASE = process.env.TEST_URL || "http://localhost:4321";
-const LIVE = process.env.LIVE_URL || BASE;
 
 test.describe("SEO fundamentals", () => {
   test("has title and meta description", async ({ page }) => {

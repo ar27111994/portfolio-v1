@@ -4,7 +4,6 @@ const BASE = process.env.TEST_URL || "http://localhost:4321";
 // Adjusted thresholds for local dev — tighten for CI against production builds
 const MAX_LCP_MS = 4000; // LCP under 4s
 const MAX_FCP_MS = 2500; // FCP under 2.5s
-const MAX_TTI_MS = 6000; // TTI under 6s (local dev penalized)
 const MAX_CLS = 0.1; // CLS under 0.1
 
 test.describe("Core Web Vitals", () => {
@@ -48,8 +47,8 @@ test.describe("Core Web Vitals", () => {
           let value = 0;
           new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
-              if (!(entry as any).hadRecentInput) {
-                value += (entry as any).value;
+              if (!(entry as PerformanceEntry (entry as any) { value: number; hadRecentInput: boolean }).hadRecentInput) {
+                value += (entry as PerformanceEntry (entry as any) { value: number; hadRecentInput: boolean }).value;
               }
             }
           }).observe({ type: "layout-shift", buffered: true });
