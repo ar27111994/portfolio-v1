@@ -286,7 +286,8 @@ html.dark {
   --badge-accent-bg: rgba(80, 65, 30, 0.25);
   --img-brightness: brightness(0.88); --brand-icon-filter: brightness(0) invert(1);
   --code-bg: rgba(237, 232, 224, 0.06);
-  --button-primary-text: #111; --surface-inverse: #0f0d0b; --text-dim: #b0a595; --ink-on-dark: #fff;
+  --button-primary-text: #fff;
+  --surface-inverse: #0f0d0b; --text-dim: #b0a595; --ink-on-dark: #fff;
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 
