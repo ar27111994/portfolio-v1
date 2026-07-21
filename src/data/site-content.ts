@@ -201,6 +201,10 @@ export const profileLinks = [
 export const badges = [
   { label: "Anthropic Certified", icon: "/brand-icons/anthropic.svg" },
   { label: "Microsoft Certified", icon: "/brand-icons/microsoft.svg" },
+  { label: "NVIDIA Developer Program", icon: "/brand-icons/nvidia.svg" },
+  { label: "AMD Developer Program", icon: "/brand-icons/amd.svg" },
+  { label: "AWS Developer Program", icon: "/brand-icons/aws.svg" },
+  { label: "Google Developer Program", icon: "/brand-icons/googlecloud.svg" },
   {
     label: "Open-source maintainer",
     icon: "/brand-icons/opensourceinitiative.svg",
