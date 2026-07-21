@@ -1387,7 +1387,7 @@ h3 {
 }
 .featured-copy .mini-list li {
   font-size: 0.8rem;
-  color: var(--text-dim);
+  color: var(--ink-soft);
 }
 
 /* ── Featured card visual accents ────────────────────────────────── */
