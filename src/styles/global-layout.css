@@ -1132,10 +1132,10 @@ h3 {
 .upwork-summary-card,
 .upwork-proof-card,
 .upwork-portfolio-card {
-  border: 1px solid var(--line-subtle);
+  border: var(--card-border);
   border-radius: var(--radius-lg);
   padding: 1rem;
-  background: var(--card);
+  background: var(--card-bg);
   box-shadow: var(--shadow-card);
   transition:
     transform var(--dur-base) var(--ease-spring),
