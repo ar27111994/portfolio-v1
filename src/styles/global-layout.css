@@ -3635,7 +3635,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .feed-item-icon img { width: 1.05rem; height: 1.05rem; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
 .feed-item-body { display: flex; flex-direction: column; gap: 0.18rem; min-width: 0; }
 .feed-item-tag { display: inline-block; width: fit-content; padding: 0.1rem 0.45rem; border-radius: 999px; background: rgba(92,138,255,0.18); color: var(--feed-devto); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
-.feed-item-body strong { font-size: 0.8rem; font-weight: 700; color: var(--paper-2); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.feed-item-body strong { font-size: 0.8rem; font-weight: 700; color: var(--ink-on-dark); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .feed-item-body small { font-size: 0.67rem; color: var(--text-dim); font-weight: 600; }
 .feed-sources-carousel { margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--line); overflow: hidden; padding-bottom: 2.5rem; }
 .feed-sources-details summary { cursor: pointer; font-weight: 700; font-size: 0.8rem; color: var(--muted); transition: color var(--dur-fast) var(--ease-sharp); }
