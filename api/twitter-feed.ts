@@ -26,12 +26,13 @@ export default async function handler(
 
   try {
     // Step 1: Get user ID by username
-    const userRes = await fetch(
-      `${TWITTER_API}/users/by/username/ar27111994`,
-      { headers },
-    );
+    const userRes = await fetch(`${TWITTER_API}/users/by/username/ar27111994`, {
+      headers,
+    });
     if (!userRes.ok) {
-      res.status(userRes.status).json({ error: `Twitter user lookup failed: ${userRes.status}` });
+      res
+        .status(userRes.status)
+        .json({ error: `Twitter user lookup failed: ${userRes.status}` });
       return;
     }
     const userData = (await userRes.json()) as { data?: { id: string } };
@@ -47,7 +48,9 @@ export default async function handler(
       { headers },
     );
     if (!tweetsRes.ok) {
-      res.status(tweetsRes.status).json({ error: `Twitter tweets fetch failed: ${tweetsRes.status}` });
+      res
+        .status(tweetsRes.status)
+        .json({ error: `Twitter tweets fetch failed: ${tweetsRes.status}` });
       return;
     }
     const tweetsData = (await tweetsRes.json()) as {

@@ -8,6 +8,7 @@ with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## [0.1.0] — 2026-07-21
 
 ### Added
+
 - **10-section navigation** with TESTIMONIALS, FEED, RESUME added to anchor-rail
 - **Hamburger menu** for mobile (≤860px) with animated toggle and close-on-outside-click
 - **Image gallery lightbox** — click-to-zoom, pan, prev/next, keyboard nav
@@ -22,6 +23,7 @@ with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - **MIT License**
 
 ### Changed
+
 - **Astro 6.4.8** — upgraded from 6.4.6, XSS advisory fixed
 - **CSS minifier** — esbuild for lightningcss compatibility
 - **Paper-like theme** — warm background, cardstock dark mode, paper texture
@@ -34,6 +36,7 @@ with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - **README** — corrected Astro version to 6
 
 ### Fixed
+
 - **Missing CSS brace** in `global-components.css`
 - **`:global()` syntax** removed from `privacy.css`
 - **Hero-aside artifact** — single-column at 861–950px
@@ -44,6 +47,7 @@ with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - **Upwork pagination** — duplicate page numbers, all-items arrow disable
 
 ### Removed
+
 - **GraphQL prebuild** — `fetch-portfolio-build.mjs`, Vercel cron, `api/upwork-portfolio.ts`
 - **Deprecated API test** — referenced deleted upwork-portfolio.ts
 

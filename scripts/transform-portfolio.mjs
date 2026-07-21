@@ -179,14 +179,19 @@ function transformProject(p) {
   };
   if (attachments.length) item.attachments = attachments;
   if (p.completionDateTime) item.completionDate = String(p.completionDateTime);
-  else if (p.creationTs) item.completionDate = String(p.creationTs).slice(0, 10);
-  else if (p.createdDateTime) item.completionDate = String(p.createdDateTime).slice(0, 10);
-  else if (p.completionDate) item.completionDate = String(p.completionDate).slice(0, 10);
+  else if (p.creationTs)
+    item.completionDate = String(p.creationTs).slice(0, 10);
+  else if (p.createdDateTime)
+    item.completionDate = String(p.createdDateTime).slice(0, 10);
+  else if (p.completionDate)
+    item.completionDate = String(p.completionDate).slice(0, 10);
   // Project URL — explicit field first, then first embeddedLink/article/website
   if (p.projectUrl) item.url = String(p.projectUrl);
   else {
     const linkAtt = attachments.find((a) =>
-      ["embeddedlink", "website", "article"].includes(String(a.type ?? "").toLowerCase())
+      ["embeddedlink", "website", "article"].includes(
+        String(a.type ?? "").toLowerCase(),
+      ),
     );
     if (linkAtt?.url) item.url = linkAtt.url;
   }
@@ -205,12 +210,18 @@ try {
   for (const prev of existing.items ?? []) {
     existingById.set(prev.id, prev);
   }
-} catch { /* no existing file */ }
+} catch {
+  /* no existing file */
+}
 
 for (const item of items) {
   const prev = existingById.get(item.id);
   if (!prev?.attachments?.length || !item.attachments?.length) continue;
-  for (let i = 0; i < Math.min(item.attachments.length, prev.attachments.length); i++) {
+  for (
+    let i = 0;
+    i < Math.min(item.attachments.length, prev.attachments.length);
+    i++
+  ) {
     const pa = prev.attachments[i];
     const ia = item.attachments[i];
     if (pa.localImage) ia.localImage = pa.localImage;

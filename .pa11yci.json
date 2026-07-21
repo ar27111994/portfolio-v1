@@ -11,16 +11,12 @@
     {
       "url": "http://localhost:4323/",
       "screenCapture": ".pa11y-screenshots/main.png",
-      "actions": [
-        "wait for element .panel to be visible"
-      ]
+      "actions": ["wait for element .panel to be visible"]
     },
     {
       "url": "http://localhost:4323/privacy/",
       "screenCapture": ".pa11y-screenshots/privacy.png",
-      "actions": [
-        "wait for element .privacy-wrap to be visible"
-      ]
+      "actions": ["wait for element .privacy-wrap to be visible"]
     }
   ]
 }

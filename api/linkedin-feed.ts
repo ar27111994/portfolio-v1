@@ -20,7 +20,9 @@ async function getAccessToken(): Promise<string> {
   const clientId = process.env.LINKEDIN_CLIENT_ID;
   const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
   if (!clientId || !clientSecret) {
-    throw new Error("LINKEDIN_CLIENT_ID or LINKEDIN_CLIENT_SECRET not configured");
+    throw new Error(
+      "LINKEDIN_CLIENT_ID or LINKEDIN_CLIENT_SECRET not configured",
+    );
   }
 
   const res = await fetch(`${LINKEDIN_AUTH}/accessToken`, {
@@ -36,10 +38,15 @@ async function getAccessToken(): Promise<string> {
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`LinkedIn auth failed ${res.status}: ${text.slice(0, 200)}`);
+    throw new Error(
+      `LinkedIn auth failed ${res.status}: ${text.slice(0, 200)}`,
+    );
   }
 
-  const data = (await res.json()) as { access_token: string; expires_in: number };
+  const data = (await res.json()) as {
+    access_token: string;
+    expires_in: number;
+  };
   cachedToken = {
     access_token: data.access_token,
     expires_at: Date.now() + (data.expires_in || 3600) * 1000,
@@ -89,8 +96,12 @@ export default async function handler(
     };
 
     const posts = (data.elements || []).map((p) => ({
-      title: (p.commentary || "LinkedIn post").slice(0, 100) + ((p.commentary || "").length > 100 ? "…" : ""),
-      url: p.id ? `https://www.linkedin.com/feed/update/${p.id}` : "https://linkedin.com/in/ar27111994",
+      title:
+        (p.commentary || "LinkedIn post").slice(0, 100) +
+        ((p.commentary || "").length > 100 ? "…" : ""),
+      url: p.id
+        ? `https://www.linkedin.com/feed/update/${p.id}`
+        : "https://linkedin.com/in/ar27111994",
       date: p.createdAt ? new Date(p.createdAt).toISOString() : "",
       tag: "LinkedIn",
     }));
