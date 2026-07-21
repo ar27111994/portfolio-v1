@@ -784,6 +784,7 @@ document.addEventListener("click", (e) => {
     } else {
       lCounter.textContent = "";
     }
+    updateButtons();
     document.body.style.overflow = "hidden";
   }
 
@@ -806,6 +807,14 @@ document.addEventListener("click", (e) => {
     if (images.length > 1) {
       lCounter.textContent = (current + 1) + " / " + images.length;
     }
+    updateButtons();
+  }
+
+  function updateButtons() {
+    lPrev.disabled = current <= 0;
+    lNext.disabled = current >= images.length - 1;
+    lPrev.style.opacity = lPrev.disabled ? "0.3" : "1";
+    lNext.style.opacity = lNext.disabled ? "0.3" : "1";
   }
 
   var zoomDebounce = 0;
@@ -847,9 +856,11 @@ document.addEventListener("click", (e) => {
     if (e.target === lb) { closeLightbox(); }
   });
 
-  // Click on image toggles zoom
+  // Click on image toggles zoom (skip if we just panned)
+  var didPan = false;
   lImg.addEventListener("click", function(e) {
     e.stopPropagation();
+    if (didPan) { didPan = false; return; }
     toggleZoom();
   });
 
@@ -858,6 +869,7 @@ document.addEventListener("click", (e) => {
   lImg.addEventListener("mousedown", function(e) {
     if (!zoomed) return;
     dragging = true;
+    didPan = false;
     panStartX = e.clientX;
     panStartY = e.clientY;
     e.preventDefault();
@@ -867,6 +879,7 @@ document.addEventListener("click", (e) => {
     var dx = e.clientX - panStartX;
     var dy = e.clientY - panStartY;
     if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+    didPan = true;
     panX += dx; panY += dy;
     panStartX = e.clientX;
     panStartY = e.clientY;
