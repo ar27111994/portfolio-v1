@@ -47,8 +47,10 @@ test.describe("Core Web Vitals", () => {
           let value = 0;
           new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
-              if (!(entry as PerformanceEntry (entry as any) { value: number; hadRecentInput: boolean }).hadRecentInput) {
-                value += (entry as PerformanceEntry (entry as any) { value: number; hadRecentInput: boolean }).value;
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              if (!(entry as any).hadRecentInput) {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                value += (entry as any).value;
               }
             }
           }).observe({ type: "layout-shift", buffered: true });
