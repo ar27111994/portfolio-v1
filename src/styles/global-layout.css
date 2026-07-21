@@ -1199,7 +1199,7 @@ h3 {
 .project-visual {
   border: 1px solid var(--line-subtle);
   border-radius: var(--radius-md);
-  min-height: 104px;
+  padding: 1.2rem 1rem;
   margin-bottom: 0.9rem;
   display: flex;
   align-items: center;
@@ -1216,7 +1216,6 @@ h3 {
   transform: scale(1.02);
 }
 .grid.two .project-card:first-child .project-visual {
-  min-height: 100%;
   margin-bottom: 0;
 }
 
@@ -1251,7 +1250,6 @@ h3 {
   justify-content: center;
   gap: 0.6rem;
   padding: 1.5rem 1rem;
-  min-height: 120px;
   position: relative;
   overflow: hidden;
 }
