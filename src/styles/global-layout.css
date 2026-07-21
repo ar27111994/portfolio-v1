@@ -1791,7 +1791,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 .resume-widget small,
 .contact-widget small {
   display: block;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   font-size: 0.8rem;
   line-height: 1.35;
 }
