@@ -519,7 +519,7 @@ h3 {
   padding: 0.24rem 0.6rem;
   border: 1px solid color-mix(in srgb, var(--brand-accent) 50%, transparent);
   background: var(--brand-accent);
-  color: var(--ink-on-dark);
+  color: var(--surface-inverse);
   font-size: 0.72rem;
   line-height: 1;
   text-transform: uppercase;
@@ -1074,7 +1074,7 @@ h3 {
   height: 1.8rem;
   border-radius: 12px;
   background: var(--brand-accent);
-  color: var(--ink-on-dark);
+  color: var(--surface-inverse);
   font-size: 0.82rem;
   font-weight: 900;
 }
