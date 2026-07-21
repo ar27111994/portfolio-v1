@@ -974,7 +974,7 @@
   margin-bottom: 1.25rem;
 }
 
-.cs-block h4 {
+.cs-block .cs-label {
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.1em;
