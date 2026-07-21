@@ -13,12 +13,18 @@ function initPage() {
   // ── Re-apply theme after view-transition navigations ──────────────────
   (function reapplyTheme() {
     var t = localStorage.getItem("portfolio-theme") || "auto";
-    var d = t === "auto" ? window.matchMedia("(prefers-color-scheme: dark)").matches : t === "dark";
+    var d =
+      t === "auto"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        : t === "dark";
     document.documentElement.classList.remove("dark", "light");
     document.documentElement.classList.add(d ? "dark" : "light");
     var s = document.querySelector(".theme-icon-sun");
     var m = document.querySelector(".theme-icon-moon");
-    if (s && m) { s.style.display = t === "auto" || !d ? "block" : "none"; m.style.display = t === "auto" || d ? "block" : "none"; }
+    if (s && m) {
+      s.style.display = t === "auto" || !d ? "block" : "none";
+      m.style.display = t === "auto" || d ? "block" : "none";
+    }
   })();
 
   // ── TIER 1: scrollspy — synchronous, must be ready on first paint ──────────
@@ -92,7 +98,15 @@ function initPage() {
     // Show fallback immediately, then replace with live data when ready
     renderInitialFeed(
       { widget, status, list },
-      [{ title: "Fetching live content from dev.to, GitHub, HN…", url: "#", source: "Loading", icon: "", tag: "Live" }],
+      [
+        {
+          title: "Fetching live content from dev.to, GitHub, HN…",
+          url: "#",
+          source: "Loading",
+          icon: "",
+          tag: "Live",
+        },
+      ],
       "Fetching live feed data…",
     );
 
@@ -169,7 +183,9 @@ function initPage() {
     title.textContent = item.title;
     body.appendChild(title);
     const meta = document.createElement("small");
-    meta.textContent = item.date ? `${item.source} · ${item.date}` : item.source;
+    meta.textContent = item.date
+      ? `${item.source} · ${item.date}`
+      : item.source;
     body.appendChild(meta);
     a.appendChild(body);
     return a;
@@ -181,7 +197,8 @@ function initPage() {
     feedVisible += batch.length;
     // Hide sentinel if no more items
     const sentinel = document.getElementById("feed-sentinel");
-    if (sentinel) sentinel.style.display = feedVisible >= allFeedItems.length ? "none" : "";
+    if (sentinel)
+      sentinel.style.display = feedVisible >= allFeedItems.length ? "none" : "";
   }
 
   function renderInitialFeed(ctx, items, message) {
@@ -265,7 +282,11 @@ function initPage() {
       const data = await res.json();
       feedHasMore = data.has_more;
       if (feedPage === 1) {
-        renderInitialFeed({ widget, status, list }, data.items, `Live feed · ${data.total} items from 8 sources`);
+        renderInitialFeed(
+          { widget, status, list },
+          data.items,
+          `Live feed · ${data.total} items from 8 sources`,
+        );
       } else {
         data.items.forEach((item) => list.appendChild(createFeedItem(item)));
         feedVisible += data.items.length;
@@ -273,7 +294,9 @@ function initPage() {
       const sentinel = document.getElementById("feed-sentinel");
       if (sentinel) sentinel.style.display = feedHasMore ? "" : "none";
     } catch {
-      if (feedPage === 1) status.textContent = "Live feed unavailable — APIs may be rate-limited or blocked.";
+      if (feedPage === 1)
+        status.textContent =
+          "Live feed unavailable — APIs may be rate-limited or blocked.";
     }
   }
 
@@ -324,13 +347,23 @@ function initPage() {
         slidesPerView: 1,
         spaceBetween: 16,
         autoHeight: true,
-        autoplay: { delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        breakpoints: {
-          680: { slidesPerView: 2, spaceBetween: 20 }
+        autoplay: {
+          delay: 5000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
         },
-        a11y: { prevSlideMessage: "Previous testimonial", nextSlideMessage: "Next testimonial" }
+        pagination: { el: ".swiper-pagination", clickable: true },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          680: { slidesPerView: 2, spaceBetween: 20 },
+        },
+        a11y: {
+          prevSlideMessage: "Previous testimonial",
+          nextSlideMessage: "Next testimonial",
+        },
       });
     }
 
@@ -341,10 +374,20 @@ function initPage() {
         slidesPerView: 1,
         spaceBetween: 16,
         autoHeight: true,
-        autoplay: { delay: 6000, pauseOnMouseEnter: true, disableOnInteraction: false },
+        autoplay: {
+          delay: 6000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
         pagination: { el: ".swiper-pagination", clickable: true },
-        navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        a11y: { prevSlideMessage: "Previous case study", nextSlideMessage: "Next case study" }
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        a11y: {
+          prevSlideMessage: "Previous case study",
+          nextSlideMessage: "Next case study",
+        },
       });
     }
 
@@ -354,9 +397,16 @@ function initPage() {
       new Swiper("#profile-links-swiper", {
         slidesPerView: "auto",
         spaceBetween: 8,
-        autoplay: { delay: 3500, pauseOnMouseEnter: true, disableOnInteraction: false },
+        autoplay: {
+          delay: 3500,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
         pagination: { el: ".swiper-pagination", clickable: true },
-        a11y: { prevSlideMessage: "Previous profile links", nextSlideMessage: "Next profile links" }
+        a11y: {
+          prevSlideMessage: "Previous profile links",
+          nextSlideMessage: "Next profile links",
+        },
       });
     }
 
@@ -366,9 +416,16 @@ function initPage() {
       new Swiper("#feed-sources-swiper", {
         slidesPerView: "auto",
         spaceBetween: 8,
-        autoplay: { delay: 4000, pauseOnMouseEnter: true, disableOnInteraction: false },
+        autoplay: {
+          delay: 4000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: false,
+        },
         pagination: { el: ".swiper-pagination", clickable: true },
-        a11y: { prevSlideMessage: "Previous feed sources", nextSlideMessage: "Next feed sources" }
+        a11y: {
+          prevSlideMessage: "Previous feed sources",
+          nextSlideMessage: "Next feed sources",
+        },
       });
     }
   };
@@ -388,13 +445,15 @@ function initPage() {
     let searchQuery = "";
 
     // Store original order for resetting sort
-    cards.forEach((card, i) => { card.dataset.originalIndex = i; });
+    cards.forEach((card, i) => {
+      card.dataset.originalIndex = i;
+    });
 
     // ── Tag extraction from card data ──────────────────────────────────
     function getCardTags(card) {
       const tags = [];
       const tagEls = card.querySelectorAll(".upwork-portfolio-tags li");
-      tagEls.forEach(el => {
+      tagEls.forEach((el) => {
         const t = el.textContent.trim();
         if (t) tags.push(t);
       });
@@ -406,12 +465,13 @@ function initPage() {
       const container = document.getElementById("upwork-filter-tags");
       if (!container) return;
       const allTags = new Set();
-      cards.forEach(card => getCardTags(card).forEach(t => allTags.add(t)));
+      cards.forEach((card) => getCardTags(card).forEach((t) => allTags.add(t)));
       const sorted = Array.from(allTags).sort();
       container.innerHTML = "";
-      sorted.forEach(tag => {
+      sorted.forEach((tag) => {
         const chip = document.createElement("span");
-        chip.className = "filter-tag" + (activeFilters.has(tag) ? " is-active" : "");
+        chip.className =
+          "filter-tag" + (activeFilters.has(tag) ? " is-active" : "");
         chip.textContent = tag;
         chip.addEventListener("click", () => {
           if (activeFilters.has(tag)) activeFilters.delete(tag);
@@ -438,19 +498,33 @@ function initPage() {
     function getSortedCards() {
       let list = [...cards];
       if (sortOrder === "newest") {
-        list.sort((a, b) => (a.dataset.originalIndex|0) - (b.dataset.originalIndex|0));
+        list.sort(
+          (a, b) =>
+            (a.dataset.originalIndex | 0) - (b.dataset.originalIndex | 0),
+        );
       } else if (sortOrder === "oldest") {
-        list.sort((a, b) => (b.dataset.originalIndex|0) - (a.dataset.originalIndex|0));
+        list.sort(
+          (a, b) =>
+            (b.dataset.originalIndex | 0) - (a.dataset.originalIndex | 0),
+        );
       } else if (sortOrder === "az") {
         list.sort((a, b) => {
-          const ta = (a.querySelector("h3")?.textContent || "").trim().toLowerCase();
-          const tb = (b.querySelector("h3")?.textContent || "").trim().toLowerCase();
+          const ta = (a.querySelector("h3")?.textContent || "")
+            .trim()
+            .toLowerCase();
+          const tb = (b.querySelector("h3")?.textContent || "")
+            .trim()
+            .toLowerCase();
           return ta.localeCompare(tb);
         });
       } else if (sortOrder === "za") {
         list.sort((a, b) => {
-          const ta = (a.querySelector("h3")?.textContent || "").trim().toLowerCase();
-          const tb = (b.querySelector("h3")?.textContent || "").trim().toLowerCase();
+          const ta = (a.querySelector("h3")?.textContent || "")
+            .trim()
+            .toLowerCase();
+          const tb = (b.querySelector("h3")?.textContent || "")
+            .trim()
+            .toLowerCase();
           return tb.localeCompare(ta);
         });
       }
@@ -470,24 +544,25 @@ function initPage() {
     function matchesFilter(card) {
       if (activeFilters.size === 0) return true;
       const cardTags = getCardTags(card);
-      return Array.from(activeFilters).some(ft => cardTags.includes(ft));
+      return Array.from(activeFilters).some((ft) => cardTags.includes(ft));
     }
 
     // ── Apply all (filter → search → sort → paginate) ──────────────────
     function applyAll() {
       let list = getSortedCards();
-      list = list.filter(c => matchesSearch(c) && matchesFilter(c));
+      list = list.filter((c) => matchesSearch(c) && matchesFilter(c));
 
       const total = list.length;
-      const maxPage = perPage === 0 ? 1 : Math.max(1, Math.ceil(total / perPage));
+      const maxPage =
+        perPage === 0 ? 1 : Math.max(1, Math.ceil(total / perPage));
       currentPage = Math.min(currentPage, maxPage);
 
       // Hide all first
-      cards.forEach(c => c.setAttribute("data-page-hidden", ""));
+      cards.forEach((c) => c.setAttribute("data-page-hidden", ""));
 
       if (perPage === 0) {
         // "All items"
-        list.forEach(c => c.removeAttribute("data-page-hidden"));
+        list.forEach((c) => c.removeAttribute("data-page-hidden"));
       } else {
         const start = (currentPage - 1) * perPage;
         const end = start + perPage;
@@ -505,7 +580,7 @@ function initPage() {
       const el = document.getElementById("upwork-summary");
       if (!el) return;
       if (searchQuery || activeFilters.size > 0) {
-        el.textContent = `${total} item${total !== 1 ? "s" : ""} match${total !== 1 ? "" : "es"}${searchQuery ? " for \"" + searchQuery + "\"" : ""}${activeFilters.size > 0 ? " · filtered by " + activeFilters.size + " tag" + (activeFilters.size > 1 ? "s" : "") : ""}`;
+        el.textContent = `${total} item${total !== 1 ? "s" : ""} match${total !== 1 ? "" : "es"}${searchQuery ? ' for "' + searchQuery + '"' : ""}${activeFilters.size > 0 ? " · filtered by " + activeFilters.size + " tag" + (activeFilters.size > 1 ? "s" : "") : ""}`;
       } else {
         const showing = perPage === 0 ? total : Math.min(perPage, total);
         el.textContent = `Showing ${showing} of ${total} items`;
@@ -532,7 +607,11 @@ function initPage() {
         const btn = document.createElement("button");
         btn.className = "page-num" + (num === currentPage ? " is-active" : "");
         btn.textContent = label || String(num);
-        if (num !== null) btn.addEventListener("click", () => { currentPage = num; applyAll(); });
+        if (num !== null)
+          btn.addEventListener("click", () => {
+            currentPage = num;
+            applyAll();
+          });
         return btn;
       };
 
@@ -540,13 +619,17 @@ function initPage() {
       const pages = [];
       pages.push(1);
       if (currentPage > 3) pages.push("…");
-      for (let i = Math.max(2, currentPage - 1); i <= Math.min(maxPage - 1, currentPage + 1); i++) {
+      for (
+        let i = Math.max(2, currentPage - 1);
+        i <= Math.min(maxPage - 1, currentPage + 1);
+        i++
+      ) {
         if (!pages.includes(i)) pages.push(i);
       }
       if (currentPage < maxPage - 2) pages.push("…");
       if (maxPage > 1) pages.push(maxPage);
 
-      pages.forEach(p => {
+      pages.forEach((p) => {
         if (p === "…") {
           const span = document.createElement("span");
           span.className = "page-ellipsis";
@@ -600,8 +683,16 @@ function initPage() {
 
     const prevBtn = document.getElementById("upwork-prev");
     const nextBtn = document.getElementById("upwork-next");
-    if (prevBtn) prevBtn.addEventListener("click", () => { currentPage--; applyAll(); });
-    if (nextBtn) nextBtn.addEventListener("click", () => { currentPage++; applyAll(); });
+    if (prevBtn)
+      prevBtn.addEventListener("click", () => {
+        currentPage--;
+        applyAll();
+      });
+    if (nextBtn)
+      nextBtn.addEventListener("click", () => {
+        currentPage++;
+        applyAll();
+      });
 
     // ── Initial render ─────────────────────────────────────────────────
     buildFilterTags();
@@ -612,68 +703,88 @@ function initPage() {
   initUpworkPagination();
 
   if ("requestIdleCallback" in window) {
-  requestIdleCallback(() => { initSwipers(); }, { timeout: 3000 });
+    requestIdleCallback(
+      () => {
+        initSwipers();
+      },
+      { timeout: 3000 },
+    );
   } else {
-  setTimeout(() => { initSwipers(); }, 0);
+    setTimeout(() => {
+      initSwipers();
+    }, 0);
   }
 
   // ── TIER 4: Infinite scroll sentinel for feed ──────────────────────────
   if ("requestIdleCallback" in window) {
-  requestIdleCallback(function setupFeedSentinel() {
-    const sentinel = document.getElementById("feed-sentinel");
-    const list = document.querySelector("[data-feed-list]");
-    if (!sentinel || !list) return;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) loadMoreFeed(list);
-      });
-    }, { rootMargin: "0px 0px 200px 0px" });
-    observer.observe(sentinel);
-  }, { timeout: 4000 });
+    requestIdleCallback(
+      function setupFeedSentinel() {
+        const sentinel = document.getElementById("feed-sentinel");
+        const list = document.querySelector("[data-feed-list]");
+        if (!sentinel || !list) return;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) loadMoreFeed(list);
+            });
+          },
+          { rootMargin: "0px 0px 200px 0px" },
+        );
+        observer.observe(sentinel);
+      },
+      { timeout: 4000 },
+    );
   }
-  } // end initPage
+} // end initPage
 
-  // ── Theme toggle ─────────────────────────────────────────────────
-  (function initTheme() {
-    const STORAGE_KEY = "portfolio-theme";
-    const themes = ["light", "dark", "auto"];
-    let current = localStorage.getItem(STORAGE_KEY) || "auto";
+// ── Theme toggle ─────────────────────────────────────────────────
+(function initTheme() {
+  const STORAGE_KEY = "portfolio-theme";
+  const themes = ["light", "dark", "auto"];
+  let current = localStorage.getItem(STORAGE_KEY) || "auto";
 
-    function applyTheme(theme) {
-      const resolved = theme === "auto"
-        ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+  function applyTheme(theme) {
+    const resolved =
+      theme === "auto"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light"
         : theme;
-      document.documentElement.classList.remove("dark", "light");
-      document.documentElement.classList.add(resolved);
-      const sun = document.querySelector(".theme-icon-sun");
-      const moon = document.querySelector(".theme-icon-moon");
-      if (sun && moon) {
-        sun.style.display = theme === "auto" || resolved === "light" ? "block" : "none";
-        moon.style.display = theme === "auto" || resolved === "dark" ? "block" : "none";
-      }
-      current = theme;
+    document.documentElement.classList.remove("dark", "light");
+    document.documentElement.classList.add(resolved);
+    const sun = document.querySelector(".theme-icon-sun");
+    const moon = document.querySelector(".theme-icon-moon");
+    if (sun && moon) {
+      sun.style.display =
+        theme === "auto" || resolved === "light" ? "block" : "none";
+      moon.style.display =
+        theme === "auto" || resolved === "dark" ? "block" : "none";
     }
+    current = theme;
+  }
 
-    // Apply theme immediately (don't wait for button to exist)
-    applyTheme(current);
+  // Apply theme immediately (don't wait for button to exist)
+  applyTheme(current);
 
-    // Listen for system theme changes
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+  // Listen for system theme changes
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", () => {
       if (current === "auto") applyTheme("auto");
     });
 
-    // Wire up the toggle button — use event delegation on document in case
-    // button doesn't exist yet (Astro view transitions)
-    document.addEventListener("click", (e) => {
-      const btn = e.target.closest(".theme-toggle");
-      if (!btn) return;
-      const idx = themes.indexOf(current);
-      current = themes[(idx + 1) % themes.length];
-      localStorage.setItem(STORAGE_KEY, current);
-      applyTheme(current);
-    });
-  })();
-  // ── End theme toggle ─────────────────────────────────────────────
+  // Wire up the toggle button — use event delegation on document in case
+  // button doesn't exist yet (Astro view transitions)
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".theme-toggle");
+    if (!btn) return;
+    const idx = themes.indexOf(current);
+    current = themes[(idx + 1) % themes.length];
+    localStorage.setItem(STORAGE_KEY, current);
+    applyTheme(current);
+  });
+})();
+// ── End theme toggle ─────────────────────────────────────────────
 
 // Run on first load and after every ClientRouter navigation.
 document.addEventListener("astro:page-load", initPage);
@@ -681,7 +792,10 @@ document.addEventListener("astro:page-load", initPage);
 // Apply theme BEFORE view-transition swap — prevents flash
 document.addEventListener("astro:before-swap", () => {
   var t = localStorage.getItem("portfolio-theme") || "auto";
-  var d = t === "auto" ? window.matchMedia("(prefers-color-scheme: dark)").matches : t === "dark";
+  var d =
+    t === "auto"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : t === "dark";
   document.documentElement.classList.remove("dark", "light");
   document.documentElement.classList.add(d ? "dark" : "light");
 });
@@ -697,7 +811,11 @@ document.addEventListener("click", (e) => {
     return;
   }
   // Close if clicking outside
-  if (rail && rail.classList.contains("is-open") && !e.target.closest(".anchor-rail")) {
+  if (
+    rail &&
+    rail.classList.contains("is-open") &&
+    !e.target.closest(".anchor-rail")
+  ) {
     rail.classList.remove("is-open");
     const ham = document.querySelector(".hamburger");
     if (ham) ham.setAttribute("aria-expanded", "false");
@@ -749,12 +867,15 @@ document.addEventListener("click", (e) => {
   var current = 0;
   var zoomed = false;
   var scale = 1;
-  var panX = 0, panY = 0;
+  var panX = 0,
+    panY = 0;
 
   function open(index, srcs) {
     images = srcs;
     current = index;
-    zoomed = false; scale = 1; panX = panY = 0;
+    zoomed = false;
+    scale = 1;
+    panX = panY = 0;
     lImg.style.transform = "";
     lImg.src = images[current];
     lImg.alt = "Screenshot " + (current + 1);
@@ -763,14 +884,16 @@ document.addEventListener("click", (e) => {
     lb.setAttribute("aria-hidden", "false");
 
     // Close any open upwork modal
-    var openModal = document.querySelector(".upwork-modal[open], .upwork-modal[aria-hidden=\"false\"]");
+    var openModal = document.querySelector(
+      '.upwork-modal[open], .upwork-modal[aria-hidden="false"]',
+    );
     if (openModal) {
       var closeBtn = openModal.querySelector(".upwork-modal-close");
       if (closeBtn) closeBtn.click();
     }
 
     if (images.length > 1) {
-      lCounter.textContent = (current + 1) + " / " + images.length;
+      lCounter.textContent = current + 1 + " / " + images.length;
     } else {
       lCounter.textContent = "";
     }
@@ -783,19 +906,22 @@ document.addEventListener("click", (e) => {
     lb.setAttribute("aria-hidden", "true");
     lImg.src = "";
     document.body.style.overflow = "";
-    zoomed = false; scale = 1;
+    zoomed = false;
+    scale = 1;
   }
 
   function goTo(idx) {
     if (idx < 0 || idx >= images.length) return;
     current = idx;
-    zoomed = false; scale = 1; panX = panY = 0;
+    zoomed = false;
+    scale = 1;
+    panX = panY = 0;
     lImg.style.transform = "";
     lb.classList.remove("is-zoomed");
     lImg.src = images[current];
     lImg.alt = "Screenshot " + (current + 1);
     if (images.length > 1) {
-      lCounter.textContent = (current + 1) + " / " + images.length;
+      lCounter.textContent = current + 1 + " / " + images.length;
     }
     updateButtons();
   }
@@ -820,16 +946,20 @@ document.addEventListener("click", (e) => {
   }
 
   // Intercept clicks on upwork screenshots
-  document.addEventListener("click", function(e) {
+  document.addEventListener("click", function (e) {
     var tile = e.target.closest(".upwork-media-tile");
     if (!tile) return;
     var tileImg = tile.querySelector("img");
     if (!tileImg) return;
     var grid = tile.closest(".upwork-media-grid");
     if (!grid) return;
-    var allImages = Array.from(grid.querySelectorAll("img")).map(function(i) {
-      return i.currentSrc || i.src;
-    }).filter(function(s) { return s && !s.includes("data:"); });
+    var allImages = Array.from(grid.querySelectorAll("img"))
+      .map(function (i) {
+        return i.currentSrc || i.src;
+      })
+      .filter(function (s) {
+        return s && !s.includes("data:");
+      });
     if (allImages.length === 0) return;
     var idx = allImages.indexOf(tileImg.currentSrc || tileImg.src);
     e.preventDefault();
@@ -837,26 +967,42 @@ document.addEventListener("click", (e) => {
     open(Math.max(0, idx), allImages);
   });
 
-  lClose.addEventListener("click", function(e) { e.stopPropagation(); closeLightbox(); });
-  lPrev.addEventListener("click", function(e) { e.stopPropagation(); goTo(current - 1); });
-  lNext.addEventListener("click", function(e) { e.stopPropagation(); goTo(current + 1); });
+  lClose.addEventListener("click", function (e) {
+    e.stopPropagation();
+    closeLightbox();
+  });
+  lPrev.addEventListener("click", function (e) {
+    e.stopPropagation();
+    goTo(current - 1);
+  });
+  lNext.addEventListener("click", function (e) {
+    e.stopPropagation();
+    goTo(current + 1);
+  });
 
   // Click on lightbox background
-  lb.addEventListener("click", function(e) {
-    if (e.target === lb) { closeLightbox(); }
+  lb.addEventListener("click", function (e) {
+    if (e.target === lb) {
+      closeLightbox();
+    }
   });
 
   // Click on image toggles zoom (skip if we just panned)
   var didPan = false;
-  lImg.addEventListener("click", function(e) {
+  lImg.addEventListener("click", function (e) {
     e.stopPropagation();
-    if (didPan) { didPan = false; return; }
+    if (didPan) {
+      didPan = false;
+      return;
+    }
     toggleZoom();
   });
 
   // Pan only when zoomed — track start point, only pan after 8px move
-  var panStartX = 0, panStartY = 0, dragging = false;
-  lImg.addEventListener("mousedown", function(e) {
+  var panStartX = 0,
+    panStartY = 0,
+    dragging = false;
+  lImg.addEventListener("mousedown", function (e) {
     if (!zoomed) return;
     dragging = true;
     didPan = false;
@@ -864,24 +1010,40 @@ document.addEventListener("click", (e) => {
     panStartY = e.clientY;
     e.preventDefault();
   });
-  document.addEventListener("mousemove", function(e) {
+  document.addEventListener("mousemove", function (e) {
     if (!dragging) return;
     var dx = e.clientX - panStartX;
     var dy = e.clientY - panStartY;
     if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
     didPan = true;
-    panX += dx; panY += dy;
+    panX += dx;
+    panY += dy;
     panStartX = e.clientX;
     panStartY = e.clientY;
-    lImg.style.transform = "scale(" + scale + ") translate(" + (panX / scale) + "px, " + (panY / scale) + "px)";
+    lImg.style.transform =
+      "scale(" +
+      scale +
+      ") translate(" +
+      panX / scale +
+      "px, " +
+      panY / scale +
+      "px)";
   });
-  document.addEventListener("mouseup", function() { dragging = false; });
+  document.addEventListener("mouseup", function () {
+    dragging = false;
+  });
 
   // Keyboard
-  document.addEventListener("keydown", function(e) {
+  document.addEventListener("keydown", function (e) {
     if (!lb.classList.contains("is-open")) return;
-    if (e.key === "Escape") { closeLightbox(); }
-    if (e.key === "ArrowLeft") { goTo(current - 1); }
-    if (e.key === "ArrowRight") { goTo(current + 1); }
+    if (e.key === "Escape") {
+      closeLightbox();
+    }
+    if (e.key === "ArrowLeft") {
+      goTo(current - 1);
+    }
+    if (e.key === "ArrowRight") {
+      goTo(current + 1);
+    }
   });
 })();

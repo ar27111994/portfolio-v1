@@ -12,15 +12,29 @@ test.describe("SEO fundamentals", () => {
 
   test("has Open Graph tags", async ({ page }) => {
     await page.goto(BASE);
-    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute("content", /.+/);
-    await expect(page.locator('meta[property="og:description"]')).toHaveAttribute("content", /.+/);
-    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", /ar27111994\.dev/);
+    await expect(page.locator('meta[property="og:title"]')).toHaveAttribute(
+      "content",
+      /.+/,
+    );
+    await expect(
+      page.locator('meta[property="og:description"]'),
+    ).toHaveAttribute("content", /.+/);
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute(
+      "content",
+      /ar27111994\.dev/,
+    );
   });
 
   test("has Twitter Card tags", async ({ page }) => {
     await page.goto(BASE);
-    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute("content", /.+/);
-    await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute("content", /.+/);
+    await expect(page.locator('meta[name="twitter:card"]')).toHaveAttribute(
+      "content",
+      /.+/,
+    );
+    await expect(page.locator('meta[name="twitter:title"]')).toHaveAttribute(
+      "content",
+      /.+/,
+    );
   });
 
   test("has JSON-LD structured data", async ({ page }) => {

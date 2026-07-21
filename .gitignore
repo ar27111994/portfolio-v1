@@ -49,3 +49,4 @@ lcov.info
 __pycache__/
 public/pic.jpg
 *.bak
+coverage/

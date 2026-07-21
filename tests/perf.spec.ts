@@ -25,9 +25,9 @@ test.describe("Core Web Vitals", () => {
   test("FCP is within budget", async ({ page }) => {
     await page.goto(BASE, { waitUntil: "networkidle" });
     const [fcp] = await page.evaluate(() => {
-      const [paint] = performance.getEntriesByType("paint").filter(
-        (e) => e.name === "first-contentful-paint",
-      );
+      const [paint] = performance
+        .getEntriesByType("paint")
+        .filter((e) => e.name === "first-contentful-paint");
       return [paint ? paint.startTime : 0];
     });
     expect(fcp).toBeLessThan(MAX_FCP_MS);
@@ -84,7 +84,7 @@ test.describe("Lighthouse-like checks", () => {
 
   test("all navigation links resolve", async ({ page }) => {
     await page.goto(BASE);
-    const links = page.locator(".anchor-rail a[href^=\"#\"]");
+    const links = page.locator('.anchor-rail a[href^="#"]');
     const count = await links.count();
     for (let i = 0; i < count; i++) {
       const href = await links.nth(i).getAttribute("href");
@@ -101,9 +101,9 @@ test.describe("Lighthouse-like checks", () => {
     const count = await imgs.count();
     let broken = 0;
     for (let i = 0; i < count; i++) {
-      const natural = await imgs.nth(i).evaluate(
-        (el: HTMLImageElement) => el.naturalWidth,
-      );
+      const natural = await imgs
+        .nth(i)
+        .evaluate((el: HTMLImageElement) => el.naturalWidth);
       if (natural === 0) broken++;
     }
     // Allow a few dynamic/lazy images to not have loaded yet
