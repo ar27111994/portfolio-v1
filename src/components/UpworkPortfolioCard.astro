@@ -652,7 +652,8 @@ const previewProofLine =
             <div class="upwork-media-grid">
               {videoPreviewAttachments.map(({ attachment, src }, index) => (
                 <div class="upwork-media-tile upwork-video-tile">
-                  {attachment.provider === "youtube" || attachment.embeddedUrl?.includes("youtube") ? (
+                  {attachment.provider === "youtube" ||
+                  attachment.embeddedUrl?.includes("youtube") ? (
                     <iframe
                       src={attachment.embeddedUrl || src}
                       width="400"
@@ -688,7 +689,14 @@ const previewProofLine =
                   )}
                   <span>
                     {attachment.title || `Video preview ${index + 1}`}
-                    <em>{attachment.provider === "youtube" || attachment.embeddedUrl?.includes("youtube") ? "YouTube embed" : attachment.embeddedUrl?.includes("vimeo") ? "Vimeo embed" : "Play attached video"}</em>
+                    <em>
+                      {attachment.provider === "youtube" ||
+                      attachment.embeddedUrl?.includes("youtube")
+                        ? "YouTube embed"
+                        : attachment.embeddedUrl?.includes("vimeo")
+                          ? "Vimeo embed"
+                          : "Play attached video"}
+                    </em>
                   </span>
                 </div>
               ))}

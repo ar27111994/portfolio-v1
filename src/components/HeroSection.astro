@@ -111,47 +111,46 @@ const {
       </div>
     </div>
 
-  <div
-    class="availability-strip availability-command-strip"
-    aria-label="Current availability and proof points"
-  >
-    <span class="availability-card"
-      ><b>WORK</b><strong>Devtools / automation / AI-agent systems</strong
-      ><small
-        >Selective builds where reliability, UX, and shipping discipline matter.</small
-      ></span
+    <div
+      class="availability-strip availability-command-strip"
+      aria-label="Current availability and proof points"
     >
-    <span class="availability-card"
-      ><b>RECENT</b><strong>{recentUpworkProofTitles}</strong><small
-        >Latest portfolio items from the full Upwork profile; 5.0★ average
-        across 40+ jobs.</small
-      ></span
-    >
-    <span class="wide workflow-loop">
-      <b>Current loop</b>
-      <em>Diagnose</em><i role="presentation"></i><em>Build</em><i
-        role="presentation"></i><em>Document</em><i role="presentation"></i><em
-        >Launch</em
+      <span class="availability-card"
+        ><b>WORK</b><strong>Devtools / automation / AI-agent systems</strong
+        ><small
+          >Selective builds where reliability, UX, and shipping discipline
+          matter.</small
+        ></span
       >
-    </span>
-  </div>
+      <span class="availability-card"
+        ><b>RECENT</b><strong>{recentUpworkProofTitles}</strong><small
+          >Latest portfolio items from the full Upwork profile; 5.0★ average
+          across 40+ jobs.</small
+        ></span
+      >
+      <span class="wide workflow-loop">
+        <b>Current loop</b>
+        <em>Diagnose</em><i role="presentation"></i><em>Build</em><i
+          role="presentation"></i><em>Document</em><i role="presentation"
+        ></i><em>Launch</em>
+      </span>
+    </div>
 
-  <div class="snapshot-block" aria-label="Credibility facts">
-    <h2>Snapshot</h2>
-    <ul class="bullet-clean snapshot-list">
-      {
-        credibilityFacts.map((item) => (
-          <li>
-            <span class="snapshot-icon" aria-hidden="true">
-              {item.icon}
-            </span>
-            <span>{item.text}</span>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-
+    <div class="snapshot-block" aria-label="Credibility facts">
+      <h2>Snapshot</h2>
+      <ul class="bullet-clean snapshot-list">
+        {
+          credibilityFacts.map((item) => (
+            <li>
+              <span class="snapshot-icon" aria-hidden="true">
+                {item.icon}
+              </span>
+              <span>{item.text}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 
   <aside class="hero-aside" aria-label="Quick profile facts">

@@ -14,8 +14,11 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 :root {
   /* ── Typography Scale ──────────────────────────────────────────── */
-  --font-sans: Inter, "Inter-fallback", "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Helvetica, Arial, sans-serif;
-  --font-mono: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+  --font-sans:
+    Inter, "Inter-fallback", "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
   --font-size-xs: clamp(0.7rem, 0.67rem + 0.12vw, 0.78rem);
   --font-size-sm: clamp(0.82rem, 0.78rem + 0.16vw, 0.9rem);
   --font-size-base: clamp(0.98rem, 0.93rem + 0.22vw, 1.08rem);
@@ -37,16 +40,16 @@
 
   /* Legacy aliases — reference canonical typography scale */
   --step--1: var(--font-size-xs);
-  --step-0:  var(--font-size-base);
-  --step-1:  var(--font-size-md);
-  --step-2:  var(--font-size-xl);
-  --step-3:  var(--font-size-2xl);
-  --step-4:  var(--font-size-3xl);
-  --text-xs:  var(--font-size-xs);
-  --text-sm:  var(--font-size-sm);
+  --step-0: var(--font-size-base);
+  --step-1: var(--font-size-md);
+  --step-2: var(--font-size-xl);
+  --step-3: var(--font-size-2xl);
+  --step-4: var(--font-size-3xl);
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
   --text-base: var(--font-size-base);
-  --text-lg:  var(--font-size-md);
-  --text-xl:  var(--font-size-lg);
+  --text-lg: var(--font-size-md);
+  --text-xl: var(--font-size-lg);
   --text-2xl: var(--font-size-xl);
   --text-3xl: var(--font-size-2xl);
   --text-display: var(--font-size-3xl);
@@ -71,12 +74,12 @@
   --dur-fast: 120ms;
   --dur-normal: 220ms;
   --dur-slow: 350ms;
-  --dur-base: var(--dur-slow);          /* legacy alias */
+  --dur-base: var(--dur-slow); /* legacy alias */
   --dur-glacial: 600ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);    /* crisp paper-cutout snap */
+  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1); /* crisp paper-cutout snap */
 
   /* ── Radius Tokens ─────────────────────────────────────────────── */
   --radius-none: 0;
@@ -172,12 +175,13 @@
   --avail-strip-bg: rgba(254, 252, 248, 0.8);
   --badge-accent-bg: rgba(26, 77, 255, 0.12);
   --img-brightness: none;
-  --brand-icon-filter: none;    /* brand icons stay native in light mode */
+  --brand-icon-filter: none; /* brand icons stay native in light mode */
   --code-bg: rgba(15, 13, 11, 0.05);
   --button-primary-text: #fff;
-  --ink-on-dark: #fff;           /* text on always-dark surfaces */
-  --surface-inverse: #0f0d0b; --text-dim: #b0a595;    /* always-dark surface (buttons, footers) */
-  --text-dim: #b0a595;           /* dim/meta text on dark backgrounds */
+  --ink-on-dark: #fff; /* text on always-dark surfaces */
+  --surface-inverse: #0f0d0b;
+  --text-dim: #b0a595; /* always-dark surface (buttons, footers) */
+  --text-dim: #b0a595; /* dim/meta text on dark backgrounds */
 
   /* ── Component-scoped token aliases ──────────────────────────────── */
   --button-primary-bg: var(--blue);
@@ -202,23 +206,32 @@
 
   /* ── Gradients ─────────────────────────────────────────────────── */
   --grad-hero: linear-gradient(165deg, #fefcf8 0%, #faf4e8 50%, #fefcf8 100%);
-  --grad-accent: linear-gradient(135deg, var(--blue) 0%, var(--violet) 50%, var(--orange) 100%);
+  --grad-accent: linear-gradient(
+    135deg,
+    var(--blue) 0%,
+    var(--violet) 50%,
+    var(--orange) 100%
+  );
   --grad-warm: linear-gradient(135deg, var(--orange) 0%, var(--blue) 100%);
-  --grad-card-hover: linear-gradient(180deg, rgba(26, 77, 255, 0.03) 0%, transparent 60%);
+  --grad-card-hover: linear-gradient(
+    180deg,
+    rgba(26, 77, 255, 0.03) 0%,
+    transparent 60%
+  );
 
   /* ── Shadows ───────────────────────────────────────────────────── */
   /* ── Rigid paper-cutout shadows — sharp offset, no blur ──────────── */
   --shadow-color: 45, 30, 15;
-  --shadow-xs:   2px 2px 0 rgba(var(--shadow-color), 0.06);
-  --shadow-sm:   3px 3px 0 rgba(var(--shadow-color), 0.08);
-  --shadow-md:   4px 4px 0 rgba(var(--shadow-color), 0.10);
-  --shadow-lg:   6px 6px 0 rgba(var(--shadow-color), 0.12);
-  --shadow-xl:   8px 8px 0 rgba(var(--shadow-color), 0.14);
-  --shadow-card:    3px 3px 0 rgba(var(--shadow-color), 0.10);
+  --shadow-xs: 2px 2px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-sm: 3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-md: 4px 4px 0 rgba(var(--shadow-color), 0.1);
+  --shadow-lg: 6px 6px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-xl: 8px 8px 0 rgba(var(--shadow-color), 0.14);
+  --shadow-card: 3px 3px 0 rgba(var(--shadow-color), 0.1);
   --shadow-card-hover: 4px 4px 0 rgba(var(--shadow-color), 0.14);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
   --shadow-tight: 2px 2px 0 rgba(var(--shadow-color), 0.07);
-  --shadow-button:     2px 2px 0 rgba(var(--shadow-color), 0.10);
+  --shadow-button: 2px 2px 0 rgba(var(--shadow-color), 0.1);
   --shadow-button-hover: 3px 3px 0 rgba(var(--shadow-color), 0.14);
 
   /* ── Focus ─────────────────────────────────────────────────────── */
@@ -241,7 +254,7 @@ html.dark {
   --card-strong: #ede8e0;
   --line: #3e3830;
   --line-dark: #5a544c;
-  --line-subtle: rgba(237, 232, 224, 0.10);
+  --line-subtle: rgba(237, 232, 224, 0.1);
   --line-divider: rgba(237, 232, 224, 0.08);
 
   --surface: #1e1b16;
@@ -284,25 +297,28 @@ html.dark {
 
   --avail-strip-bg: rgba(24, 21, 16, 0.8);
   --badge-accent-bg: rgba(80, 65, 30, 0.25);
-  --img-brightness: brightness(0.88); --brand-icon-filter: brightness(0) invert(1);
+  --img-brightness: brightness(0.88);
+  --brand-icon-filter: brightness(0) invert(1);
   --code-bg: rgba(237, 232, 224, 0.06);
   --button-primary-text: #fff;
-  --surface-inverse: #0f0d0b; --text-dim: #b0a595; --ink-on-dark: #fff;
+  --surface-inverse: #0f0d0b;
+  --text-dim: #b0a595;
+  --ink-on-dark: #fff;
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 
   /* Rigid paper-cutout halos — sharp offset, no blur */
   --shadow-color: 255, 255, 255;
-  --shadow-xs:   1px 1px 0 rgba(var(--shadow-color), 0.04);
-  --shadow-sm:   2px 2px 0 rgba(var(--shadow-color), 0.06);
-  --shadow-md:   3px 3px 0 rgba(var(--shadow-color), 0.08);
-  --shadow-lg:   4px 4px 0 rgba(var(--shadow-color), 0.10);
-  --shadow-xl:   6px 6px 0 rgba(var(--shadow-color), 0.12);
-  --shadow-card:    2px 2px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-xs: 1px 1px 0 rgba(var(--shadow-color), 0.04);
+  --shadow-sm: 2px 2px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-md: 3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-lg: 4px 4px 0 rgba(var(--shadow-color), 0.1);
+  --shadow-xl: 6px 6px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-card: 2px 2px 0 rgba(var(--shadow-color), 0.08);
   --shadow-card-hover: 3px 3px 0 rgba(var(--shadow-color), 0.12);
   --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
   --shadow-tight: 1px 1px 0 rgba(var(--shadow-color), 0.05);
-  --shadow-button:     1px 1px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-button: 1px 1px 0 rgba(var(--shadow-color), 0.08);
   --shadow-button-hover: 2px 2px 0 rgba(var(--shadow-color), 0.12);
 
   --focus-ring-color: var(--blue);
@@ -336,7 +352,9 @@ html.dark {
   outline-offset: var(--focus-ring-offset);
 }
 @supports (selector(:focus-visible)) {
-  :focus:not(:focus-visible) { outline: none; }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 /* ── Skip Link ──────────────────────────────────────────────────── */
@@ -361,7 +379,9 @@ html.dark {
 
 /* ── Reduced Motion (WCAG 2.3.3) ────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

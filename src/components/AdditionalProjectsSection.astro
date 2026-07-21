@@ -31,13 +31,29 @@ const { additionalProjects } = Astro.props;
                 class="thread-icon"
               />
             )}
-            <span class="thread-accent-dot"></span>
+            <span class="thread-accent-dot" />
           </div>
           <div class="thread-copy">
             <h3>
               <a href={project.href} target="_blank" rel="noreferrer">
                 {project.name}
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="external-arrow"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  class="external-arrow"
+                >
+                  <>
+                    <line x1="7" y1="17" x2="17" y2="7" />
+                    <polyline points="7 7 17 7 17 17" />
+                  </>
+                </svg>
               </a>
             </h3>
             <p>{project.description}</p>

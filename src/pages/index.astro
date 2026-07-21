@@ -52,236 +52,344 @@ import {
 ---
 
 <Layout>
-<main class="site-wrap" id="main-content">
-  <header class="top-bar">
-    <div class="wordmark" aria-label="Ahmed Rehan — ARLabs">
-      <span class="wm-mono" aria-hidden="true">AR</span>
-      <div class="wm-text">
-        <span class="wm-name">Ahmed Rehan</span>
-        <span class="wm-studio"
-          >ARLabs <span
-            class="wm-avail"
-            title="Available for work"
-            role="img"
-            aria-label="Available for work">●</span
-          ></span
-        >
+  <main class="site-wrap" id="main-content">
+    <header class="top-bar">
+      <div class="wordmark" aria-label="Ahmed Rehan — ARLabs">
+        <span class="wm-mono" aria-hidden="true">AR</span>
+        <div class="wm-text">
+          <span class="wm-name">Ahmed Rehan</span>
+          <span class="wm-studio"
+            >ARLabs <span
+              class="wm-avail"
+              title="Available for work"
+              role="img"
+              aria-label="Available for work">●</span
+            ></span
+          >
+        </div>
       </div>
-    </div>
-    <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-    <nav class="anchor-rail" aria-label="Page sections">
-      <a href="#lab" data-spy="lab">
+      <button
+        class="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="anchor-rail" aria-label="Page sections">
+        <a href="#lab" data-spy="lab">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><polyline points="4 17 10 11 4 5"></polyline><line
+              x1="12"
+              y1="19"
+              x2="20"
+              y2="19"></line></svg
+          >
+          Lab
+        </a>
+        <a href="#projects" data-spy="projects">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><rect x="2" y="7" width="20" height="14" rx="2"></rect><path
+              d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path></svg
+          >
+          Work
+        </a>
+        <a href="#upwork" data-spy="upwork">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><polyline points="17 7 7 17"></polyline><polyline
+              points="7 7 17 7 17 17"></polyline></svg
+          >
+          Upwork
+        </a>
+        <a href="#proof" data-spy="proof">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+            ></path><polyline points="9 12 11 14 15 10"></polyline></svg
+          >
+          Proof
+        </a>
+        <a href="#testimonials" data-spy="testimonials">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+            ></path></svg
+          >
+          Testimonials
+        </a>
+        <a href="#feed" data-spy="feed">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path d="M4 11a9 9 0 019 9"></path><path d="M4 4a16 16 0 0116 16"
+            ></path><circle cx="5" cy="19" r="1"></circle></svg
+          >
+          Feed
+        </a>
+        <a href="#resume" data-spy="resume">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
+            ></path><polyline points="14 2 14 8 20 8"></polyline><line
+              x1="16"
+              y1="13"
+              x2="8"
+              y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg
+          >
+          Resume
+        </a>
+        <a href="#contact" data-spy="contact">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path
+              d="M2 7l10 7 10-7"></path></svg
+          >
+          Contact
+        </a>
+        <a
+          href="https://products.ar27111994.dev/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
+            ></path><polyline points="15 3 21 3 21 9"></polyline><line
+              x1="10"
+              y1="14"
+              x2="21"
+              y2="3"></line></svg
+          >
+          Products
+        </a>
+        <a href="/privacy">
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            ><rect x="3" y="11" width="18" height="11" rx="2"></rect><path
+              d="M7 11V7a5 5 0 0110 0v4"></path></svg
+          >
+          Privacy
+        </a>
+      </nav>
+      <button
+        class="theme-toggle"
+        aria-label="Toggle theme"
+        title="Toggle light / dark / auto theme"
+      >
         <svg
-          width="13"
-          height="13"
+          class="theme-icon theme-icon-sun"
+          width="14"
+          height="14"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2.5"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
           aria-hidden="true"
-          ><polyline points="4 17 10 11 4 5"></polyline><line
+          ><circle cx="12" cy="12" r="5"></circle><line
             x1="12"
-            y1="19"
-            x2="20"
-            y2="19"></line></svg
+            y1="1"
+            x2="12"
+            y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line
+            x1="4.22"
+            y1="4.22"
+            x2="5.64"
+            y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"
+          ></line><line x1="1" y1="12" x2="3" y2="12"></line><line
+            x1="21"
+            y1="12"
+            x2="23"
+            y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"
+          ></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg
         >
-        Lab
-      </a>
-      <a href="#projects" data-spy="projects">
         <svg
-          width="13"
-          height="13"
+          class="theme-icon theme-icon-moon"
+          width="14"
+          height="14"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2.5"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
           aria-hidden="true"
-          ><rect x="2" y="7" width="20" height="14" rx="2"></rect><path
-            d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path></svg
+          ><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg
         >
-        Work
-      </a>
-      <a href="#upwork" data-spy="upwork">
-        <svg
-          width="13"
-          height="13"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          ><polyline points="17 7 7 17"></polyline><polyline
-            points="7 7 17 7 17 17"></polyline></svg
-        >
-        Upwork
-      </a>
-      <a href="#proof" data-spy="proof">
-        <svg
-          width="13"
-          height="13"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          ><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-          ></path><polyline points="9 12 11 14 15 10"></polyline></svg
-        >
-        Proof
-      </a>
-      <a href="#testimonials" data-spy="testimonials">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        Testimonials
-      </a>
-      <a href="#feed" data-spy="feed">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
-        Feed
-      </a>
-      <a href="#resume" data-spy="resume">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-        Resume
-      </a>
-      <a href="#contact" data-spy="contact">
-        <svg
-          width="13"
-          height="13"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path
-            d="M2 7l10 7 10-7"></path></svg
-        >
-        Contact
-      </a>
-      <a
-        href="https://products.ar27111994.dev/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <svg
-          width="13"
-          height="13"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
-          ></path><polyline points="15 3 21 3 21 9"></polyline><line
-            x1="10"
-            y1="14"
-            x2="21"
-            y2="3"></line></svg
-        >
-        Products
-      </a>
-      <a href="/privacy">
-        <svg
-          width="13"
-          height="13"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          ><rect x="3" y="11" width="18" height="11" rx="2"></rect><path
-            d="M7 11V7a5 5 0 0110 0v4"></path></svg
-        >
-        Privacy
-      </a>
-    </nav>
-    <button class="theme-toggle" aria-label="Toggle theme" title="Toggle light / dark / auto theme">
-      <svg class="theme-icon theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      <svg class="theme-icon theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-    </button>
-  </header>
+      </button>
+    </header>
 
-  <HeroSection
-    heroPhoto={heroPhoto}
-    badges={badges}
-    proofStackMetrics={proofStackMetrics}
-    proofCategories={proofCategories}
-    credibilityFacts={credibilityFacts}
-    recentUpworkProofTitles={recentUpworkProofTitles}
-  />
-  <div class="reveal"><ServicesSection servicesOfferings={servicesOfferings} /></div>
-
-  <div class="reveal"><LabSection labNotes={labNotes} /></div>
-
-  <div class="reveal"><FeaturedProjectsSection featuredProjects={featuredProjects} /></div>
-
-  <div class="reveal"><CaseStudiesSection caseStudies={caseStudies} /></div>
-
-  <div class="reveal">
-    <AdditionalProjectsSection
-      additionalProjects={additionalProjects}
-      writingLinks={writingLinks}
-    />
-  </div>
-
-  <div class="reveal"><FeedSection feedSources={feedSources} writingLinks={writingLinks} /></div>
-
-  <div class="reveal">
-    <UpworkSection
-      upworkPortfolioItems={upworkPortfolioItems}
-      upworkPortfolioCountLabel={upworkPortfolioCountLabel}
+    <HeroSection
+      heroPhoto={heroPhoto}
+      badges={badges}
+      proofStackMetrics={proofStackMetrics}
+      proofCategories={proofCategories}
+      credibilityFacts={credibilityFacts}
       recentUpworkProofTitles={recentUpworkProofTitles}
-      upworkFitTags={upworkFitTags}
-      upworkProfileUrl={upworkProfileUrl}
-      upworkPortfolioCount={upworkPortfolioCount}
-      upworkProofCards={upworkProofCards}
     />
-  </div>
+    <div class="reveal">
+      <ServicesSection servicesOfferings={servicesOfferings} />
+    </div>
 
-  <div class="reveal"><TestimonialsSection testimonials={testimonials} /></div>
+    <div class="reveal"><LabSection labNotes={labNotes} /></div>
 
-  <div class="reveal">
-    <ProofSection
-      contactEmail={contactEmail}
-      certificationLinks={certificationLinks}
-      ventureProof={ventureProof}
-      openSourceFreemium={openSourceFreemium}
-    />
-  </div>
+    <div class="reveal">
+      <FeaturedProjectsSection featuredProjects={featuredProjects} />
+    </div>
 
-  <div class="reveal"><CapabilitiesSection capabilities={capabilities} /></div>
+    <div class="reveal"><CaseStudiesSection caseStudies={caseStudies} /></div>
 
-  <div class="reveal"><ProfileSection profileWidgets={profileWidgets} profileLinks={profileLinks} /></div>
+    <div class="reveal">
+      <AdditionalProjectsSection
+        additionalProjects={additionalProjects}
+        writingLinks={writingLinks}
+      />
+    </div>
 
-  <div class="reveal"><ResumeSection resumeWidgets={resumeWidgets} /></div>
+    <div class="reveal">
+      <FeedSection feedSources={feedSources} writingLinks={writingLinks} />
+    </div>
 
-  <div class="reveal"><ContactSection contactEmail={contactEmail} contactWidgets={contactWidgets} /></div>
+    <div class="reveal">
+      <UpworkSection
+        upworkPortfolioItems={upworkPortfolioItems}
+        upworkPortfolioCountLabel={upworkPortfolioCountLabel}
+        recentUpworkProofTitles={recentUpworkProofTitles}
+        upworkFitTags={upworkFitTags}
+        upworkProfileUrl={upworkProfileUrl}
+        upworkPortfolioCount={upworkPortfolioCount}
+        upworkProofCards={upworkProofCards}
+      />
+    </div>
 
-  <div class="reveal"><SponsorSection contactEmail={contactEmail} sponsorLinks={sponsorLinks} /></div>
-  <footer class="site-footer" role="contentinfo">
-    <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
-    <p>
-      <a href="/privacy">Privacy Policy</a> · <a
-        href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a
-      >
-    </p>
-  </footer>
-</main>
+    <div class="reveal">
+      <TestimonialsSection testimonials={testimonials} />
+    </div>
+
+    <div class="reveal">
+      <ProofSection
+        contactEmail={contactEmail}
+        certificationLinks={certificationLinks}
+        ventureProof={ventureProof}
+        openSourceFreemium={openSourceFreemium}
+      />
+    </div>
+
+    <div class="reveal">
+      <CapabilitiesSection capabilities={capabilities} />
+    </div>
+
+    <div class="reveal">
+      <ProfileSection
+        profileWidgets={profileWidgets}
+        profileLinks={profileLinks}
+      />
+    </div>
+
+    <div class="reveal"><ResumeSection resumeWidgets={resumeWidgets} /></div>
+
+    <div class="reveal">
+      <ContactSection
+        contactEmail={contactEmail}
+        contactWidgets={contactWidgets}
+      />
+    </div>
+
+    <div class="reveal">
+      <SponsorSection contactEmail={contactEmail} sponsorLinks={sponsorLinks} />
+    </div>
+    <footer class="site-footer" role="contentinfo">
+      <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
+      <p>
+        <a href="/privacy">Privacy Policy</a> · <a
+          href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a
+        >
+      </p>
+    </footer>
+  </main>
 </Layout>
 
 <script src="/scripts/page-init.js" defer></script>

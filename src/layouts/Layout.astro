@@ -115,9 +115,19 @@ const structuredData = {
   <head>
     <!-- No-flash: apply theme before any rendering -->
     <script is:inline>
-      (function(){var t=localStorage.getItem("portfolio-theme")||"auto";var d=t==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:t==="dark";document.documentElement.classList.add(d?"dark":"light")})();
+      (function () {
+        var t = localStorage.getItem("portfolio-theme") || "auto";
+        var d =
+          t === "auto"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+            : t === "dark";
+        document.documentElement.classList.add(d ? "dark" : "light");
+      })();
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
@@ -200,14 +210,28 @@ const structuredData = {
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
     <Analytics />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer></script>
     <!-- Image lightbox -->
     <div class="img-lightbox" id="img-lightbox" aria-hidden="true">
       <img src="" alt="" id="img-lightbox-img" />
     </div>
-    <button class="img-lightbox-close" id="img-lightbox-close" aria-label="Close image viewer">&times;</button>
-    <button class="img-lightbox-nav img-lightbox-prev" id="img-lightbox-prev" aria-label="Previous image">&lsaquo;</button>
-    <button class="img-lightbox-nav img-lightbox-next" id="img-lightbox-next" aria-label="Next image">&rsaquo;</button>
+    <button
+      class="img-lightbox-close"
+      id="img-lightbox-close"
+      aria-label="Close image viewer">&times;</button
+    >
+    <button
+      class="img-lightbox-nav img-lightbox-prev"
+      id="img-lightbox-prev"
+      aria-label="Previous image">&lsaquo;</button
+    >
+    <button
+      class="img-lightbox-nav img-lightbox-next"
+      id="img-lightbox-next"
+      aria-label="Next image">&rsaquo;</button
+    >
     <span class="img-lightbox-counter" id="img-lightbox-counter"></span>
   </body>
 </html>

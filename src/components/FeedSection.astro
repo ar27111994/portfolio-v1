@@ -20,15 +20,35 @@ const { feedSources } = Astro.props;
       class="button primary small icon-button"
       href="https://dev.to/ar27111994"
       target="_blank"
-      rel="noreferrer">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      rel="noreferrer"
+    >
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        style="flex-shrink:0"
+        ><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
+        ></path><polyline points="15 3 21 3 21 9"></polyline><line
+          x1="10"
+          y1="14"
+          x2="21"
+          y2="3"></line></svg
+      >
       Open Dev.to
     </a>
   </div>
 
   <!-- Fully dynamic live feed with infinite scroll -->
   <div class="feed-live-widget" data-feed-widget>
-    <div class="feed-live-status" data-feed-status>Loading public feed items…</div>
+    <div class="feed-live-status" data-feed-status>
+      Loading public feed items…
+    </div>
     <div class="feed-live-list" data-feed-list></div>
     <div id="feed-sentinel" class="feed-sentinel" aria-hidden="true"></div>
   </div>

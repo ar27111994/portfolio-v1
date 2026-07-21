@@ -5,7 +5,12 @@ interface Props {
 
 const { labNotes } = Astro.props;
 
-const accentColors = ["accent-blue", "accent-orange", "accent-green", "accent-violet"];
+const accentColors = [
+  "accent-blue",
+  "accent-orange",
+  "accent-green",
+  "accent-violet",
+];
 ---
 
 <section class="panel lab-panel" aria-labelledby="lab">
@@ -27,7 +32,7 @@ const accentColors = ["accent-blue", "accent-orange", "accent-green", "accent-vi
             <h3>{item.title}</h3>
             <p>{item.body}</p>
           </div>
-          <div class="lab-card-glow" aria-hidden="true"></div>
+          <div class="lab-card-glow" aria-hidden="true" />
         </article>
       ))
     }

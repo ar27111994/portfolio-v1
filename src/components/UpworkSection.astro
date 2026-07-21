@@ -81,7 +81,22 @@ const totalPages = Math.ceil(upworkPortfolioItems.length / PER_PAGE);
   <div class="pagination-toolbar" id="upwork-toolbar">
     <div class="toolbar-row">
       <div class="toolbar-search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          ><circle cx="11" cy="11" r="8"></circle><line
+            x1="21"
+            y1="21"
+            x2="16.65"
+            y2="16.65"></line></svg
+        >
         <input
           type="text"
           id="upwork-search"
@@ -89,7 +104,12 @@ const totalPages = Math.ceil(upworkPortfolioItems.length / PER_PAGE);
           aria-label="Search portfolio items"
           autocomplete="off"
         />
-        <button class="search-clear" id="upwork-search-clear" aria-label="Clear search" hidden>&times;</button>
+        <button
+          class="search-clear"
+          id="upwork-search-clear"
+          aria-label="Clear search"
+          hidden>&times;</button
+        >
       </div>
       <div class="toolbar-actions">
         <select id="upwork-sort" aria-label="Sort order">
@@ -113,7 +133,9 @@ const totalPages = Math.ceil(upworkPortfolioItems.length / PER_PAGE);
 
   <!-- Result count -->
   <p class="pagination-summary" id="upwork-summary">
-    Showing {Math.min(PER_PAGE, upworkPortfolioItems.length)} of {upworkPortfolioItems.length} items
+    Showing {Math.min(PER_PAGE, upworkPortfolioItems.length)} of {
+      upworkPortfolioItems.length
+    } items
   </p>
 
   <div class="upwork-grid" id="upwork-grid">
@@ -123,14 +145,39 @@ const totalPages = Math.ceil(upworkPortfolioItems.length / PER_PAGE);
   <!-- Pagination controls -->
   <div class="pagination-bar" id="upwork-pagination-bar">
     <div class="pagination-controls">
-      <button class="pagination-btn" id="upwork-prev" aria-label="Previous page" disabled>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      <button
+        class="pagination-btn"
+        id="upwork-prev"
+        aria-label="Previous page"
+        disabled
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
       </button>
       <div class="pagination-pages" id="upwork-page-numbers">
         <!-- Dynamically populated by JS -->
       </div>
       <button class="pagination-btn" id="upwork-next" aria-label="Next page">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="9 18 15 12 9 6"></polyline></svg
+        >
       </button>
     </div>
   </div>
