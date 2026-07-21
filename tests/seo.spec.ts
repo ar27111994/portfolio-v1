@@ -48,10 +48,16 @@ test.describe("SEO fundamentals", () => {
       const text = await ld.nth(i).textContent();
       if (!text) continue;
       const parsed = JSON.parse(text);
-      if (parsed["@type"] === "Person") { foundPerson = true; break; }
+      if (parsed["@type"] === "Person") {
+        foundPerson = true;
+        break;
+      }
       if (Array.isArray(parsed["@graph"])) {
         for (const item of parsed["@graph"]) {
-          if (item["@type"] === "Person") { foundPerson = true; break; }
+          if (item["@type"] === "Person") {
+            foundPerson = true;
+            break;
+          }
         }
       }
     }

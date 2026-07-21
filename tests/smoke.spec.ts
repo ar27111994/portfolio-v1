@@ -52,7 +52,9 @@ test.describe("Privacy page", () => {
     await page.goto("/privacy");
     await expect(page.locator("h1")).toContainText("Privacy Policy");
     await expect(page.locator("text=Information I Collect")).toBeVisible();
-    await expect(page.locator('h2:has-text("Third-Party Platforms")')).toBeVisible();
+    await expect(
+      page.locator('h2:has-text("Third-Party Platforms")'),
+    ).toBeVisible();
     await expect(page.locator('h2:has-text("Cloud-Assisted")')).toBeVisible();
   });
 });

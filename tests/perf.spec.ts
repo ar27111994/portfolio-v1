@@ -79,7 +79,11 @@ test.describe("Lighthouse-like checks", () => {
       // Only count errors, not warnings; ignore cross-origin network errors
       if (msg.type() === "error") {
         const text = msg.text();
-        if (!text.includes("404") && !text.includes("403") && !text.includes("NotSameOrigin")) {
+        if (
+          !text.includes("404") &&
+          !text.includes("403") &&
+          !text.includes("NotSameOrigin")
+        ) {
           errors.push(text);
         }
       }
