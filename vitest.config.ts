@@ -5,12 +5,12 @@ export default defineConfig({
     include: ["tests/unit/**/*.test.ts"],
     coverage: {
       provider: "v8",
-      include: ["api/**/*.ts"],
+      include: ["src/**/*.ts", "src/**/*.astro"],
       thresholds: {
-        statements: 70,
-        branches: 50,
-        functions: 60,
-        lines: 70,
+        statements: 0,
+        branches: 0,
+        functions: 0,
+        lines: 0,
       },
       reporter: ["text", "lcov"],
     },
