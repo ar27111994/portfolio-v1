@@ -88,12 +88,6 @@ function initPage() {
     const widget = document.querySelector("[data-feed-widget]");
     const status = document.querySelector("[data-feed-status]");
     const list = document.querySelector("[data-feed-list]");
-      .map((card) => ({
-        title: card.querySelector(".support-name")?.textContent?.trim(),
-        url: card.href,
-        source:
-          card.querySelector(".support-note")?.textContent?.trim() || "Curated",
-      }));
 
     // Show fallback immediately, then replace with live data when ready
     renderInitialFeed(
