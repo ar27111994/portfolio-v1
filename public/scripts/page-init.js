@@ -716,162 +716,157 @@ document.addEventListener("click", (e) => {
 
 // ── Image Gallery Lightbox ─────────────────────────────────────────
 (function initLightbox() {
-  const lb = document.getElementById("img-lightbox");
-  const img = document.getElementById("img-lightbox-img");
-  const close = document.getElementById("img-lightbox-close");
-  const prev = document.getElementById("img-lightbox-prev");
-  const next = document.getElementById("img-lightbox-next");
-  const counter = document.getElementById("img-lightbox-counter");
-  if (!lb || !img) return;
+  // Create lightbox elements dynamically, appended to document.body
+  // so they escape any stacking contexts from modals
+  var lb = document.createElement("div");
+  lb.className = "img-lightbox";
+  lb.id = "img-lightbox";
+  lb.setAttribute("aria-hidden", "true");
 
-  let images = [];
-  let current = 0;
-  let zoomed = false;
-  let scale = 1;
-  let panX = 0, panY = 0, startX = 0, startY = 0, dragging = false;
+  var lImg = document.createElement("img");
+  lImg.id = "img-lightbox-img";
+  lb.appendChild(lImg);
+
+  var lClose = document.createElement("button");
+  lClose.className = "img-lightbox-close";
+  lClose.id = "img-lightbox-close";
+  lClose.setAttribute("aria-label", "Close image viewer");
+  lClose.innerHTML = "&times;";
+
+  var lPrev = document.createElement("button");
+  lPrev.className = "img-lightbox-nav img-lightbox-prev";
+  lPrev.id = "img-lightbox-prev";
+  lPrev.setAttribute("aria-label", "Previous image");
+  lPrev.innerHTML = "&lsaquo;";
+
+  var lNext = document.createElement("button");
+  lNext.className = "img-lightbox-nav img-lightbox-next";
+  lNext.id = "img-lightbox-next";
+  lNext.setAttribute("aria-label", "Next image");
+  lNext.innerHTML = "&rsaquo;";
+
+  var lCounter = document.createElement("span");
+  lCounter.className = "img-lightbox-counter";
+  lCounter.id = "img-lightbox-counter";
+
+  document.body.appendChild(lb);
+  document.body.appendChild(lClose);
+  document.body.appendChild(lPrev);
+  document.body.appendChild(lNext);
+  document.body.appendChild(lCounter);
+
+  var images = [];
+  var current = 0;
+  var zoomed = false;
+  var scale = 1;
+  var panX = 0, panY = 0;
 
   function open(index, srcs) {
     images = srcs;
     current = index;
-    zoomed = false;
-    scale = 1;
-    panX = panY = 0;
-    img.style.transform = "";
-    img.src = images[current];
-    img.alt = "Screenshot " + (current + 1);
+    zoomed = false; scale = 1; panX = panY = 0;
+    lImg.style.transform = "";
+    lImg.src = images[current];
+    lImg.alt = "Screenshot " + (current + 1);
     lb.classList.add("is-open");
     lb.classList.remove("is-zoomed");
     lb.setAttribute("aria-hidden", "false");
-    updateCounter();
+    if (images.length > 1) {
+      lCounter.textContent = (current + 1) + " / " + images.length;
+    } else {
+      lCounter.textContent = "";
+    }
     document.body.style.overflow = "hidden";
   }
 
   function closeLightbox() {
     lb.classList.remove("is-open", "is-zoomed");
     lb.setAttribute("aria-hidden", "true");
-    img.src = "";
+    lImg.src = "";
     document.body.style.overflow = "";
-    zoomed = false;
-    scale = 1;
+    zoomed = false; scale = 1;
   }
 
   function goTo(idx) {
     if (idx < 0 || idx >= images.length) return;
     current = idx;
-    zoomed = false;
-    scale = 1;
-    panX = panY = 0;
-    img.style.transform = "";
+    zoomed = false; scale = 1; panX = panY = 0;
+    lImg.style.transform = "";
     lb.classList.remove("is-zoomed");
-    img.src = images[current];
-    img.alt = "Screenshot " + (current + 1);
-    updateCounter();
-  }
-
-  function updateCounter() {
+    lImg.src = images[current];
+    lImg.alt = "Screenshot " + (current + 1);
     if (images.length > 1) {
-      counter.textContent = (current + 1) + " / " + images.length;
-    } else {
-      counter.textContent = "";
+      lCounter.textContent = (current + 1) + " / " + images.length;
     }
   }
 
   function toggleZoom() {
-    if (zoomed) {
-      zoomed = false;
-      scale = 1;
-      panX = panY = 0;
-      img.style.transform = "";
-      lb.classList.remove("is-zoomed");
-    } else {
-      zoomed = true;
-      scale = 2;
-      img.style.transform = "scale(" + scale + ")";
-      lb.classList.add("is-zoomed");
-    }
+    zoomed = !zoomed;
+    scale = zoomed ? 2.5 : 1;
+    panX = panY = 0;
+    lImg.style.transform = zoomed ? "scale(" + scale + ")" : "";
+    lb.classList.toggle("is-zoomed", zoomed);
   }
 
-  // Click on any screenshot in the upwork modal
+  // Intercept clicks on upwork screenshots
   document.addEventListener("click", function(e) {
-    const tile = e.target.closest(".upwork-media-tile");
+    var tile = e.target.closest(".upwork-media-tile");
     if (!tile) return;
-    const tileImg = tile.querySelector("img");
+    var tileImg = tile.querySelector("img");
     if (!tileImg) return;
-
-    // Collect all sibling screenshots in this modal
-    const grid = tile.closest(".upwork-media-grid");
+    var grid = tile.closest(".upwork-media-grid");
     if (!grid) return;
-    const allImages = Array.from(grid.querySelectorAll("img")).map(function(i) {
+    var allImages = Array.from(grid.querySelectorAll("img")).map(function(i) {
       return i.currentSrc || i.src;
     }).filter(function(s) { return s && !s.includes("data:"); });
-
     if (allImages.length === 0) return;
-    const idx = allImages.indexOf(tileImg.currentSrc || tileImg.src);
+    var idx = allImages.indexOf(tileImg.currentSrc || tileImg.src);
     e.preventDefault();
     e.stopPropagation();
     open(Math.max(0, idx), allImages);
   });
 
-  // Close button
-  close.addEventListener("click", closeLightbox);
+  lClose.addEventListener("click", function(e) { e.stopPropagation(); closeLightbox(); });
+  lPrev.addEventListener("click", function(e) { e.stopPropagation(); goTo(current - 1); });
+  lNext.addEventListener("click", function(e) { e.stopPropagation(); goTo(current + 1); });
 
-  // Navigation
-  prev.addEventListener("click", function() { goTo(current - 1); });
-  next.addEventListener("click", function() { goTo(current + 1); });
-
-  // Click on lightbox background (not on image) to close or zoom
+  // Click on lightbox background
   lb.addEventListener("click", function(e) {
-    if (e.target === lb) {
-      if (zoomed) {
-        toggleZoom();
-      } else {
-        closeLightbox();
-      }
-    } else if (e.target === img) {
-      toggleZoom();
-    }
+    if (e.target === lb) { closeLightbox(); }
   });
+
+  // Click on image toggles zoom
+  lImg.addEventListener("click", function(e) {
+    e.stopPropagation();
+    toggleZoom();
+  });
+
+  // Pan only when zoomed — track start point, only pan after 8px move
+  var panStartX = 0, panStartY = 0, dragging = false;
+  lImg.addEventListener("mousedown", function(e) {
+    if (!zoomed) return;
+    dragging = true;
+    panStartX = e.clientX;
+    panStartY = e.clientY;
+    e.preventDefault();
+  });
+  document.addEventListener("mousemove", function(e) {
+    if (!dragging) return;
+    var dx = e.clientX - panStartX;
+    var dy = e.clientY - panStartY;
+    if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+    panX += dx; panY += dy;
+    panStartX = e.clientX;
+    panStartY = e.clientY;
+    lImg.style.transform = "scale(" + scale + ") translate(" + (panX / scale) + "px, " + (panY / scale) + "px)";
+  });
+  document.addEventListener("mouseup", function() { dragging = false; });
 
   // Keyboard
   document.addEventListener("keydown", function(e) {
     if (!lb.classList.contains("is-open")) return;
-    if (e.key === "Escape") { closeLightbox(); return; }
-    if (e.key === "ArrowLeft") { goTo(current - 1); return; }
-    if (e.key === "ArrowRight") { goTo(current + 1); return; }
-  });
-
-  // Zoomed panning — only pan after 5px threshold
-  let panStartX = 0, panStartY = 0, hasPanned = false;
-  img.addEventListener("mousedown", function(e) {
-    if (!zoomed) return;
-    dragging = true;
-    hasPanned = false;
-    panStartX = e.clientX;
-    panStartY = e.clientY;
-    startX = e.clientX - panX;
-    startY = e.clientY - panY;
-    img.style.cursor = "grabbing";
-  });
-  window.addEventListener("mousemove", function(e) {
-    if (!dragging) return;
-    var dx = e.clientX - panStartX;
-    var dy = e.clientY - panStartY;
-    if (!hasPanned && Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
-    hasPanned = true;
-    panX = e.clientX - startX;
-    panY = e.clientY - startY;
-    img.style.transform = "scale(" + scale + ") translate(" + (panX / scale) + "px, " + (panY / scale) + "px)";
-  });
-  window.addEventListener("mouseup", function() {
-    dragging = false;
-    img.style.cursor = zoomed ? "grab" : "";
-  });
-
-  // Prevent click-after-drag from toggling zoom
-  img.addEventListener("click", function(e) {
-    if (hasPanned) {
-      e.stopPropagation();
-      e.preventDefault();
-    }
+    if (e.key === "Escape") { closeLightbox(); }
+    if (e.key === "ArrowLeft") { goTo(current - 1); }
+    if (e.key === "ArrowRight") { goTo(current + 1); }
   });
 })();
