@@ -173,10 +173,10 @@ def header(photo: bool = False, role: str = "", badges_html: str = "", contact_c
 
     badges = badges_html or f"""<span class="badge ms">{icon('microsoft', 7)}Microsoft Partner</span>
       <span class="badge anth">{icon('anthropic', 7)}Anthropic Partner</span>
-      <span class="badge anth">{icon('nvidia', 7)}NVIDIA Developer</span>
-      <span class="badge anth">{icon('amd', 7)}AMD Developer</span>
-      <span class="badge anth">{icon('aws', 7)}AWS Developer</span>
-      <span class="badge anth">{icon('google', 7)}Google Cloud Developer</span>
+      <span class="badge anth">{icon('nvidia', 14)}NVIDIA Developer</span>
+      <span class="badge anth">{icon('amd', 14)}AMD Developer</span>
+      <span class="badge anth">{icon('aws', 14)}AWS Developer</span>
+      <span class="badge anth">{icon('google', 14)}Google Cloud Developer</span>
       <span class="badge oss">{icon('github', 7)}Open-source maintainer</span>
       <span class="badge">Devtools builder</span>
       <span class="badge">Webhook / API tooling</span>
