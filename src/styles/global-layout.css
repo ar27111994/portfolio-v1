@@ -2162,8 +2162,6 @@ html.dark .featured-card.accent-skills .featured-visual {
   flex-direction: column;
   gap: 0.92rem;
   
-  min-
-  overflow: hidden;
 }
 /* Reduce gap after cover/preview image */
 .upwork-portfolio-preview {
