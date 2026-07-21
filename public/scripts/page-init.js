@@ -832,6 +832,7 @@ document.addEventListener("click", (e) => {
   lb.setAttribute("aria-hidden", "true");
 
   var lImg = document.createElement("img");
+  lImg.alt = "";
   lImg.id = "img-lightbox-img";
   lb.appendChild(lImg);
 
