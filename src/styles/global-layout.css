@@ -3936,7 +3936,7 @@ code {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   background: rgba(0, 0, 0, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -3973,7 +3973,7 @@ code {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 10001;
+  z-index: 99999;
   width: 40px;
   height: 40px;
   border: 1px solid rgba(255,255,255,0.3);
@@ -3993,7 +3993,7 @@ code {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10001;
+  z-index: 99999;
   width: 48px;
   height: 48px;
   border: 1px solid rgba(255,255,255,0.25);
@@ -4016,7 +4016,7 @@ code {
   bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10001;
+  z-index: 99999;
   color: rgba(255,255,255,0.7);
   font-size: 0.85rem;
   display: none;

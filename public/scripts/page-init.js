@@ -840,16 +840,24 @@ document.addEventListener("click", (e) => {
     if (e.key === "ArrowRight") { goTo(current + 1); return; }
   });
 
-  // Zoomed panning
+  // Zoomed panning — only pan after 5px threshold
+  let panStartX = 0, panStartY = 0, hasPanned = false;
   img.addEventListener("mousedown", function(e) {
     if (!zoomed) return;
     dragging = true;
+    hasPanned = false;
+    panStartX = e.clientX;
+    panStartY = e.clientY;
     startX = e.clientX - panX;
     startY = e.clientY - panY;
     img.style.cursor = "grabbing";
   });
   window.addEventListener("mousemove", function(e) {
     if (!dragging) return;
+    var dx = e.clientX - panStartX;
+    var dy = e.clientY - panStartY;
+    if (!hasPanned && Math.abs(dx) < 5 && Math.abs(dy) < 5) return;
+    hasPanned = true;
     panX = e.clientX - startX;
     panY = e.clientY - startY;
     img.style.transform = "scale(" + scale + ") translate(" + (panX / scale) + "px, " + (panY / scale) + "px)";
@@ -857,5 +865,13 @@ document.addEventListener("click", (e) => {
   window.addEventListener("mouseup", function() {
     dragging = false;
     img.style.cursor = zoomed ? "grab" : "";
+  });
+
+  // Prevent click-after-drag from toggling zoom
+  img.addEventListener("click", function(e) {
+    if (hasPanned) {
+      e.stopPropagation();
+      e.preventDefault();
+    }
   });
 })();
