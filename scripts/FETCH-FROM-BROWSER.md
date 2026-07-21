@@ -1,100 +1,69 @@
-# Fetch Upwork Portfolio from Browser
+# Fetch Upwork Portfolio Data
 
-Cloudflare + OAuth scope limitations prevent automated portfolio fetching.  
-This manual process gets ALL attachments (including embedded links like Loom).
+Cloudflare + OAuth scope limitations prevent automated fetching via CI.
+This manual process uses `curl` with browser cookies to get ALL attachments
+(including embedded links like Loom, GitHub, X/Twitter).
 
-## Step 1 — Browser DevTools Console
+## Prerequisites
 
-1. Open Chrome and go to **<https://www.upwork.com>** — make sure you're logged in
-2. Press `F12` to open DevTools
-3. Go to the **Console** tab
-4. Paste the entire script below and press Enter:
+1. Log into **<https://www.upwork.com>** in Chrome
+2. Open DevTools (`F12`) → **Network** tab
+3. Go to your freelancer profile: `/freelancers/~0188baee67e8f543e7`
+4. Find the `getPortfolioProjects` GraphQL request in Network
+5. Right-click → **Copy** → **Copy as cURL**
 
-```javascript
-fetch("https://api.upwork.com/graphql", {
-  method: "POST",
-  credentials: "include",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    query: `
-      query($personId: ID!, $pageSize: Int!) {
-        talentPortfolioProjects(filter: {
-          personId: $personId,
-          published: true,
-          page: 0,
-          pageSize: $pageSize
-        }) {
-          projects {
-            id
-            title
-            description
-            projectUrl
-            rank
-            videoUrl
-            completionDateTime
-            createdDateTime
-            thumbnail
-            thumbnailOriginal
-            attachments {
-              id
-              type
-              title
-              description
-              link
-              originalAttachment
-              embeddedLinkUrl
-              videoUrl
-              fileName
-              fileSize
-              imageSmall
-              imageMiddle
-              imageLarge
-              creationDateTime
-              rank
-            }
-          }
-          totalProjects
-        }
-      }
-    `,
-    variables: { personId: "424245383220543488", pageSize: 999999 },
-  }),
-})
-  .then((r) => r.json())
-  .then((d) => {
-    // Save with {data: {talentPortfolioProjects: ...}} wrapper
-    // so transform-portfolio.mjs can read it directly
-    const count = d.data.talentPortfolioProjects.projects.length;
-    const blob = new Blob([JSON.stringify(d, null, 2)], {
-      type: "application/json",
-    });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "upwork-raw.json";
-    a.click();
-    console.log("✓ Downloaded " + count + " projects");
-  })
-  .catch((err) => console.error("Failed:", err));
-```
+This gives you a curl command with all the auth cookies needed.
 
-5. A file called **`upwork-raw.json`** will download to your Downloads folder
-
-## Step 2 — Process the raw data
+## Step 1 — Fetch from browser GraphQL API
 
 ```bash
-# Copy the downloaded file into the project
-cp ~/Downloads/upwork-raw.json src/data/upwork-raw.json
+# The browser-internal GraphQL (getPortfolioProjects) returns ALL attachments.
+# Use pageSize=50 (or higher) to get all projects in one request.
+# Replace the cookies below with fresh ones from DevTools.
 
-# Transform it to portfolio format
+curl 'https://www.upwork.com/api/graphql/v1?alias=getPortfolioProjects' \
+  -H 'content-type: application/json' \
+  -b '<paste-your-cookies-here>' \
+  --data-raw '{
+    "query": "... (see full query below)",
+    "variables": {
+      "personId": "424245383220543488",
+      "published": true,
+      "page": 0,
+      "pageSize": 50,
+      "sortDirection": "DESC",
+      "sortFields": ["rank"]
+    }
+  }' \
+  -o src/data/upwork-raw.json
+```
+
+> **Important**: The cookies expire. Re-copy the curl command from DevTools each time.
+> The full GraphQL query includes ALL attachment fields (`originalAttachment`, `creationTs`,
+> `imageLarge`, `videoUrl`, `embeddedLinkUrl`, etc.) — see the transform script for the exact
+> fields expected.
+
+## Step 2 — Transform the raw data
+
+```bash
+# Convert the raw GraphQL response to the portfolio format
 node scripts/transform-portfolio.mjs src/data/upwork-raw.json
 
 # Clean up
 rm src/data/upwork-raw.json
 ```
 
-The final `src/data/upwork-portfolio.json` will now contain ALL attachments for all projects.
+The result is an updated `src/data/upwork-portfolio.json` with ALL attachments for every project.
 
-## Step 3 — Build
+## Step 3 — Download thumbnail images
+
+```bash
+npm run download-thumbnails
+```
+
+This downloads screenshots and thumbnails to `public/upwork-covers/`.
+
+## Step 4 — Build
 
 ```bash
 npm run build
@@ -102,8 +71,11 @@ npm run build
 
 ## Notes
 
-- You must be logged into Upwork in the browser tab where you open DevTools
-- If the download doesn't start, check the DevTools Console for error messages
-- The `pageSize: 999999` ensures all projects are returned in one request
-- This fetches `talentPortfolioProjects` (browser-only query), which returns ALL attachment types including `embeddedLink` (Loom, GitHub, X/Twitter links)
-- The OAuth-based fetch script (`fetch-portfolio-build.mjs`) uses `talentProfile` which is capped at 3 attachments per project — it can't get embedded links
+- The `getPortfolioProjects` browser GraphQL returns **all** attachment types including
+  `embeddedLink` (Loom, GitHub, X/Twitter links) — unlike the developer GraphQL
+  (`talentProfile`) which caps at 3 attachments
+- Cookies last ~24 hours — re-copy from DevTools for each fetch
+- The `pageSize` field determines how many projects are returned per page.
+  Set it high enough to get all projects in one request
+- Always run `download-thumbnails` after fetching to ensure local screenshot files
+  are up to date
