@@ -175,8 +175,8 @@
   --code-bg: rgba(15, 13, 11, 0.05);
   --button-primary-text: #fff;
   --ink-on-dark: #fff;           /* text on always-dark surfaces */
-  --surface-inverse: #0f0d0b; --text-dim: #9a9082;    /* always-dark surface (buttons, footers) */
-  --text-dim: #9a9082;           /* dim/meta text on dark backgrounds */
+  --surface-inverse: #0f0d0b; --text-dim: #b0a595;    /* always-dark surface (buttons, footers) */
+  --text-dim: #b0a595;           /* dim/meta text on dark backgrounds */
 
   /* ── Component-scoped token aliases ──────────────────────────────── */
   --button-primary-bg: var(--blue);
@@ -285,7 +285,7 @@ html.dark {
   --badge-accent-bg: rgba(80, 65, 30, 0.25);
   --img-brightness: brightness(0.88); --brand-icon-filter: brightness(0) invert(1);
   --code-bg: rgba(237, 232, 224, 0.06);
-  --button-primary-text: #111; --surface-inverse: #0f0d0b; --text-dim: #9a9082; --ink-on-dark: #fff;
+  --button-primary-text: #111; --surface-inverse: #0f0d0b; --text-dim: #b0a595; --ink-on-dark: #fff;
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
 

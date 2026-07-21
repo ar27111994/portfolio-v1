@@ -476,7 +476,7 @@ h3 {
   padding: 0.06em 0.22em;
   border-radius: 0.12em;
   background: color-mix(in srgb, var(--brand-accent) 60%, transparent);
-  color: var(--surface-inverse);
+  color: var(--ink-on-dark);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -519,7 +519,7 @@ h3 {
   padding: 0.24rem 0.6rem;
   border: 1px solid color-mix(in srgb, var(--brand-accent) 50%, transparent);
   background: var(--brand-accent);
-  color: var(--surface-inverse);
+  color: var(--ink-on-dark);
   font-size: 0.72rem;
   line-height: 1;
   text-transform: uppercase;
@@ -950,7 +950,7 @@ h3 {
   align-items: center;
   height: 100%;
   padding-left: 0.58rem;
-  color: var(--surface-inverse);
+  color: var(--ink-on-dark);
   font-style: normal;
   font-weight: 800;
   font-size: 0.72rem;
@@ -972,7 +972,7 @@ h3 {
 }
 .signal-tags span:first-child {
   background: var(--brand-accent);
-  color: var(--surface-inverse);
+  color: var(--ink-on-dark);
 }
 .signal-icons {
   display: grid;
@@ -994,7 +994,7 @@ h3 {
 }
 .signal-note {
   margin: 0.48rem 0 0;
-  color: var(--muted);
+  color: var(--text-dim);
   font-size: 0.78rem;
   font-weight: 820;
   line-height: 1.35;
@@ -1073,7 +1073,7 @@ h3 {
   height: 1.8rem;
   border-radius: 12px;
   background: var(--brand-accent);
-  color: var(--surface-inverse);
+  color: var(--ink-on-dark);
   font-size: 0.82rem;
   font-weight: 900;
 }
@@ -2096,7 +2096,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   border-radius: 999px;
   background: var(--brand-accent);
   padding: 0.2rem 0.56rem;
-  color: var(--surface-inverse);
+  color: var(--ink-on-dark);
   font-size: var(--step--1);
   font-weight: 900;
   letter-spacing: 0.04em;
