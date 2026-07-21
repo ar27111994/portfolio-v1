@@ -20,7 +20,7 @@ export default defineConfig({
   },
   vite: {
     build: {
-      cssMinify: false,
+      cssMinify: "esbuild",
     },
   },
 });
