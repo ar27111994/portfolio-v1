@@ -1948,7 +1948,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 0.68rem;
-  min-height: 86px;
+  
 }
 .sponsor-card:last-child {
   grid-column: 1 / -1;
