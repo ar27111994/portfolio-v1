@@ -935,9 +935,14 @@ h3 {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
-  width: var(--w);
+  border-radius: 999px 0 0 999px;
   background: linear-gradient(90deg, var(--brand-accent), #7ee8ff);
 }
+.signal-bars span:nth-child(1):before { width: 84%; }
+.signal-bars span:nth-child(2):before { width: 78%; }
+.signal-bars span:nth-child(3):before { width: 70%; }
+.signal-bars span:nth-child(4):before { width: 64%; }
+.signal-bars span:nth-child(5):before { width: 58%; }
 .signal-bars em {
   position: relative;
   z-index: 1;
@@ -945,7 +950,7 @@ h3 {
   align-items: center;
   height: 100%;
   padding-left: 0.58rem;
-  color: var(--feed-twitter);
+  color: var(--surface-inverse);
   font-style: normal;
   font-weight: 800;
   font-size: 0.72rem;
