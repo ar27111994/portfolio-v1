@@ -202,7 +202,7 @@ html.dark { color-scheme: dark; }
   flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
+  
   background: var(--glass-nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

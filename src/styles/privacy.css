@@ -1,5 +1,5 @@
 /* ── Layout shell — fills viewport so Layout body never bleeds through ── */
-:global(body) {
+body {
   min-height: 100vh;
 }
 
