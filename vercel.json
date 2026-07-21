@@ -1,10 +1,4 @@
 {
-  "crons": [
-    {
-      "path": "/api/upwork-portfolio",
-      "schedule": "0 5 * * *"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
