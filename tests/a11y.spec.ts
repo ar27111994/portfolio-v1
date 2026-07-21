@@ -23,8 +23,9 @@ test.describe("Accessibility audit", () => {
   test("skip link is present and functional", async ({ page }) => {
     await page.goto(BASE);
     const skip = page.locator(".skip-link");
-    await expect(skip).toBeVisible();
     await expect(skip).toHaveAttribute("href", "#main-content");
+    // Skip link is off-screen until focused — focus then click
+    await skip.focus();
     await skip.click();
     await expect(page.locator("#main-content")).toBeFocused();
   });

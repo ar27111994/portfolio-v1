@@ -40,11 +40,22 @@ test.describe("SEO fundamentals", () => {
   test("has JSON-LD structured data", async ({ page }) => {
     await page.goto(BASE);
     const ld = page.locator('script[type="application/ld+json"]');
-    await expect(ld.first()).toBeAttached();
-    const text = await ld.first().textContent();
-    expect(text).toBeTruthy();
-    const parsed = JSON.parse(text!);
-    expect(parsed["@type"]).toBe("Person");
+    const count = await ld.count();
+    expect(count).toBeGreaterThanOrEqual(1);
+    // Check at least one JSON-LD block has @type Person (may be in @graph array)
+    let foundPerson = false;
+    for (let i = 0; i < count; i++) {
+      const text = await ld.nth(i).textContent();
+      if (!text) continue;
+      const parsed = JSON.parse(text);
+      if (parsed["@type"] === "Person") { foundPerson = true; break; }
+      if (Array.isArray(parsed["@graph"])) {
+        for (const item of parsed["@graph"]) {
+          if (item["@type"] === "Person") { foundPerson = true; break; }
+        }
+      }
+    }
+    expect(foundPerson).toBe(true);
   });
 
   test("has canonical URL", async ({ page }) => {

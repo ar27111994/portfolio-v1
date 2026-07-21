@@ -36,7 +36,8 @@ test.describe("Homepage smoke tests", () => {
   test("mobile viewport renders nav correctly", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto("/");
-    await expect(page.locator(".anchor-rail")).toBeVisible();
+    // At 375px, hamburger is visible and anchor-rail is hidden until toggled
+    await expect(page.locator(".hamburger")).toBeVisible();
   });
 });
 
@@ -51,8 +52,8 @@ test.describe("Privacy page", () => {
     await page.goto("/privacy");
     await expect(page.locator("h1")).toContainText("Privacy Policy");
     await expect(page.locator("text=Information I Collect")).toBeVisible();
-    await expect(page.locator("text=Third-Party Platforms")).toBeVisible();
-    await expect(page.locator("text=Cloud-Assisted")).toBeVisible();
+    await expect(page.locator('h2:has-text("Third-Party Platforms")')).toBeVisible();
+    await expect(page.locator('h2:has-text("Cloud-Assisted")')).toBeVisible();
   });
 });
 
