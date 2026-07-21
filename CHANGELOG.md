@@ -5,6 +5,18 @@ All notable changes to `ar27111994.dev` (portfolio-v1) are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Changed
+- **Astro 6.4.8** — upgraded from 6.4.6 with XSS advisory fix
+- **CSS minifier** — switched to esbuild for lightningcss compatibility
+
+### Fixed
+- **Missing CSS brace** in `global-components.css` — unclosed `img[alt*="Gleam"]` block
+- **`:global()` syntax** removed from `privacy.css` for Astro 7+ compatibility
+- **Case study headings** — `h4` → `strong.cs-label` for proper heading hierarchy (WCAG)
+- **Hero-aside artifact** — single-column layout at 861–950px prevents dark circle
+
 ## [0.1.0] — Initial Public Launch
 
 ### Added
