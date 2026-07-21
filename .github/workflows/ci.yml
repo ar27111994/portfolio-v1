@@ -53,3 +53,24 @@ jobs:
               console.log('Lines:', pct(c.lines), '%');
             "
           fi
+
+  e2e:
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.12"
+          cache: npm
+      - run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Build and start preview
+        run: npm run build && npx serve dist -p 4321 &
+      - name: Wait for server
+        run: npx wait-on http://localhost:4321
+      - name: Run E2E tests
+        run: npx playwright test
+        env:
+          TEST_URL: http://localhost:4321
