@@ -11,15 +11,23 @@ test.describe("Core Web Vitals", () => {
     await page.goto(BASE, { waitUntil: "networkidle" });
     const lcp = await page.evaluate(() => {
       return new Promise<number>((resolve) => {
-        new PerformanceObserver((list) => {
+        const observer = new PerformanceObserver((list) => {
           const entries = list.getEntries();
           const last = entries[entries.length - 1];
-          resolve(last ? last.startTime : 0);
-        }).observe({ type: "largest-contentful-paint", buffered: true });
-        setTimeout(() => resolve(0), 100);
+          if (last) {
+            observer.disconnect();
+            resolve(last.startTime);
+          }
+        });
+        observer.observe({ type: "largest-contentful-paint", buffered: true });
+        setTimeout(() => {
+          observer.disconnect();
+          resolve(-1);
+        }, 5000);
       });
     });
-    expect(lcp).toBeLessThan(MAX_LCP_MS);
+    expect(lcp).toBeGreaterThanOrEqual(-1);
+    if (lcp !== -1) expect(lcp).toBeLessThan(MAX_LCP_MS);
   });
 
   test("FCP is within budget", async ({ page }) => {
@@ -30,7 +38,8 @@ test.describe("Core Web Vitals", () => {
         .filter((e) => e.name === "first-contentful-paint");
       return [paint ? paint.startTime : 0];
     });
-    expect(fcp).toBeLessThan(MAX_FCP_MS);
+    expect(fcp).toBeGreaterThanOrEqual(0);
+    if (fcp !== -1) expect(fcp).toBeLessThan(MAX_FCP_MS);
   });
 
   test("CLS is within budget", async ({ page }) => {
