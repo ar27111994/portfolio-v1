@@ -7,7 +7,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 const LINKEDIN_API = "https://api.linkedin.com/v2";
 const LINKEDIN_AUTH = "https://www.linkedin.com/oauth/v2";
-const PERSON_URN = "urn:li:person:sN2bD0M7oN";
+const PERSON_URN = process.env.LINKEDIN_PERSON_URN || "urn:li:person:sN2bD0M7oN";
 
 let cachedToken: { access_token: string; expires_at: number } | null = null;
 
