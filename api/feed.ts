@@ -213,9 +213,13 @@ async function fetchTwitter(): Promise<FeedItem[]> {
 }
 
 async function fetchLinkedIn(): Promise<FeedItem[]> {
+  const accessToken = process.env.LINKEDIN_ACCESS_TOKEN;
   const clientId = process.env.LINKEDIN_CLIENT_ID;
   const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
-  if (!clientId || !clientSecret) return [];
+
+  let token = accessToken || null;
+  if (!token && (!clientId || !clientSecret)) return [];
+
   try {
     if (!token) {
       const authRes = await fetch(
@@ -276,7 +280,7 @@ export default async function handler(
   req: VercelRequest,
   res: VercelResponse,
 ): Promise<void> {
-  if (req.method === "OPTIONS") return new Response(null, { status: 204 });
+  if (req.method === "OPTIONS") { res.status(204).end(); return; }
   if (req.method !== "GET") {
     res.status(405).json({ error: "Method not allowed" });
     return;
