@@ -76,11 +76,11 @@ test.describe("Core Web Vitals", () => {
     expect(cls).toBeLessThan(MAX_CLS);
   });
 
-  test("first load under 3 seconds", async ({ page }) => {
+  test("first load under 8 seconds", async ({ page }) => {
     const start = Date.now();
     await page.goto(BASE, { waitUntil: "load" });
     const loadTime = Date.now() - start;
-    // On local dev with cold cache, 3s is reasonable
+    // CI runners are slow — 8s budget is reasonable
     expect(loadTime).toBeLessThan(8000);
   });
 });
