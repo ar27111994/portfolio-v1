@@ -116,10 +116,10 @@ const structuredData = {
     <!-- No-flash: apply theme before any rendering -->
     <script is:inline>
       (function () {
-        var t;
+        let t;
         try {
           t = localStorage.getItem("portfolio-theme");
-        } catch (e) {
+        } catch {
           t = "auto";
         }
         if (!t) t = "auto";
