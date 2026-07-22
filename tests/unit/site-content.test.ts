@@ -6,7 +6,7 @@ function readFile(path: string): string {
 }
 
 describe("site-content data module", () => {
-  it("site-content.ts is under 1000 lines", () => {
+  it("site-content.ts is under 1100 lines", () => {
     const lines = readFile("src/data/site-content.ts").split("\n").length;
     expect(lines).toBeLessThanOrEqual(1100);
   });

@@ -118,7 +118,6 @@ function initPage() {
 
     loadGitHubProofStats();
     loadFeed(widget, status, list);
-    loadUpworkPortfolio();
   }, 0);
 
   // ── TIER 3: idle — wire onerror on all 40+ Upwork imgs ───────────────────
@@ -313,34 +312,6 @@ function initPage() {
     const widget = document.querySelector("[data-feed-widget]");
     const status = document.querySelector("[data-feed-status]");
     if (widget && status) loadFeed(widget, status, list);
-  }
-  async function loadUpworkPortfolio() {
-    // Refresh the count badge from the live API — cards are already rendered
-    // at build time via the prebuild script, so this is a lightweight update only.
-    // The API returns data.total = max(liveApiCount, staticJsonCount) so it
-    // is always the full real count even though the live API is capped at 20.
-    try {
-      const res = await fetch("/api/upwork-portfolio");
-      if (!res.ok) return;
-      const data = await res.json();
-      // Prefer data.total (max of API + static JSON count) over items.length
-      const count =
-        typeof data.total === "number" && data.total > 0
-          ? data.total
-          : Array.isArray(data.items)
-            ? data.items.length
-            : null;
-      if (!count) return;
-      const badge = document.getElementById("upwork-count-badge");
-      if (!badge) return;
-      const staticCount = parseInt(badge.textContent ?? "0", 10);
-      if (count > staticCount) {
-        badge.textContent = `${count} projects`;
-      }
-      // If count <= staticCount, keep the static value — it's already correct.
-    } catch {
-      // API unreachable — static build count badge remains visible.
-    }
   }
 
   // ── TIER 3: Swiper carousels (idle) ──────────────────────────────────────

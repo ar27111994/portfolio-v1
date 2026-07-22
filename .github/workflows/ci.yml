@@ -44,7 +44,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:coverage
-      - name: Check coverage thresholds
+      - name: Print coverage summary
         run: |
           if [ -f coverage/coverage-summary.json ]; then
             node -e "
