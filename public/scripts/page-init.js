@@ -297,9 +297,10 @@ function initPage() {
       const sentinel = document.getElementById("feed-sentinel");
       if (sentinel) sentinel.style.display = feedHasMore ? "" : "none";
     } catch {
-      if (feedPage === 1)
+      if (feedPage === 1 && status) {
         status.textContent =
           "Live feed unavailable — APIs may be rate-limited or blocked.";
+      }
     }
   }
 
