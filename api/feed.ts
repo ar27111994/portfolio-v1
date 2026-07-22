@@ -45,6 +45,12 @@ async function fetchDevTo(): Promise<FeedItem[]> {
 async function fetchGitHubRepos(): Promise<FeedItem[]> {
   const res = await fetch(
     "https://api.github.com/users/ar27111994/repos?sort=updated&per_page=15",
+    {
+      headers: {
+        "User-Agent": "portfolio-v1/0.1.0",
+        Accept: "application/vnd.github+json",
+      },
+    },
   );
   if (!res.ok) return [];
   const data = (await res.json()) as Array<{
@@ -66,6 +72,12 @@ async function fetchGitHubRepos(): Promise<FeedItem[]> {
 async function fetchGitHubGists(): Promise<FeedItem[]> {
   const res = await fetch(
     "https://api.github.com/users/ar27111994/gists?per_page=10",
+    {
+      headers: {
+        "User-Agent": "portfolio-v1/0.1.0",
+        Accept: "application/vnd.github+json",
+      },
+    },
   );
   if (!res.ok) return [];
   const data = (await res.json()) as Array<{
