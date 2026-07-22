@@ -9,23 +9,26 @@
 if ("scrollRestoration" in history) history.scrollRestoration = "manual";
 //   Tier 2 — setTimeout(0):        API fetches (feed, GitHub, Upwork badge)
 //   Tier 3 — requestIdleCallback:  img onerror wiring (40+ elements, idle only)
+
+// ── Shared theme helper — resolves, applies class, toggles icons ─────
+function setDocumentTheme(theme) {
+  var d =
+    theme === "auto"
+      ? window.matchMedia("(prefers-color-scheme: dark)").matches
+      : theme === "dark";
+  document.documentElement.classList.remove("dark", "light");
+  document.documentElement.classList.add(d ? "dark" : "light");
+  var s = document.querySelector(".theme-icon-sun");
+  var m = document.querySelector(".theme-icon-moon");
+  if (s && m) {
+    s.style.display = theme === "auto" || !d ? "block" : "none";
+    m.style.display = theme === "auto" || d ? "block" : "none";
+  }
+}
+
 function initPage() {
-  // ── Re-apply theme after view-transition navigations ──────────────────
-  (function reapplyTheme() {
-    var t = localStorage.getItem("portfolio-theme") || "auto";
-    var d =
-      t === "auto"
-        ? window.matchMedia("(prefers-color-scheme: dark)").matches
-        : t === "dark";
-    document.documentElement.classList.remove("dark", "light");
-    document.documentElement.classList.add(d ? "dark" : "light");
-    var s = document.querySelector(".theme-icon-sun");
-    var m = document.querySelector(".theme-icon-moon");
-    if (s && m) {
-      s.style.display = t === "auto" || !d ? "block" : "none";
-      m.style.display = t === "auto" || d ? "block" : "none";
-    }
-  })();
+  // Re-apply saved theme after view-transition navigations
+  setDocumentTheme(localStorage.getItem("portfolio-theme") || "auto");
 
   // ── TIER 1: scrollspy — synchronous, must be ready on first paint ──────────
   (function setupScrollspy() {
@@ -748,22 +751,7 @@ function initPage() {
   let current = localStorage.getItem(STORAGE_KEY) || "auto";
 
   function applyTheme(theme) {
-    const resolved =
-      theme === "auto"
-        ? window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? "dark"
-          : "light"
-        : theme;
-    document.documentElement.classList.remove("dark", "light");
-    document.documentElement.classList.add(resolved);
-    const sun = document.querySelector(".theme-icon-sun");
-    const moon = document.querySelector(".theme-icon-moon");
-    if (sun && moon) {
-      sun.style.display =
-        theme === "auto" || resolved === "light" ? "block" : "none";
-      moon.style.display =
-        theme === "auto" || resolved === "dark" ? "block" : "none";
-    }
+    setDocumentTheme(theme);
     current = theme;
   }
 
@@ -795,13 +783,7 @@ document.addEventListener("astro:page-load", initPage);
 
 // Apply theme BEFORE view-transition swap — prevents flash
 document.addEventListener("astro:before-swap", () => {
-  var t = localStorage.getItem("portfolio-theme") || "auto";
-  var d =
-    t === "auto"
-      ? window.matchMedia("(prefers-color-scheme: dark)").matches
-      : t === "dark";
-  document.documentElement.classList.remove("dark", "light");
-  document.documentElement.classList.add(d ? "dark" : "light");
+  setDocumentTheme(localStorage.getItem("portfolio-theme") || "auto");
 });
 
 // ── Hamburger menu toggle ─────────────────────────────────────────
@@ -1002,19 +984,19 @@ document.addEventListener("click", (e) => {
     toggleZoom();
   });
 
-  // Pan only when zoomed — track start point, only pan after 8px move
   var panStartX = 0,
     panStartY = 0,
     dragging = false;
-  lImg.addEventListener("mousedown", function (e) {
+  lImg.addEventListener("pointerdown", function (e) {
     if (!zoomed) return;
     dragging = true;
     didPan = false;
     panStartX = e.clientX;
     panStartY = e.clientY;
+    lImg.setPointerCapture(e.pointerId);
     e.preventDefault();
   });
-  document.addEventListener("mousemove", function (e) {
+  lImg.addEventListener("pointermove", function (e) {
     if (!dragging) return;
     var dx = e.clientX - panStartX;
     var dy = e.clientY - panStartY;
@@ -1033,7 +1015,10 @@ document.addEventListener("click", (e) => {
       panY / scale +
       "px)";
   });
-  document.addEventListener("mouseup", function () {
+  lImg.addEventListener("pointerup", function () {
+    dragging = false;
+  });
+  lImg.addEventListener("pointercancel", function () {
     dragging = false;
   });
 
