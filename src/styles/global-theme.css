@@ -1,0 +1,393 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Theme System — Design Tokens for Light & Dark Modes
+   ═══════════════════════════════════════════════════════════════════════════
+   Two token blocks, single source of truth:
+     1. :root              — light mode defaults (warm paper)
+     2. html.dark — dark mode (dark cardstock)
+   
+   System dark (OS preference) is handled by the blocking <head> script
+   which applies html.dark before first paint — no duplicate @media block.
+   ═════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LIGHT MODE — Defaults on :root
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Typography Scale ──────────────────────────────────────────── */
+  --font-sans:
+    Inter, "Inter-fallback", "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+  --font-size-xs: clamp(0.7rem, 0.67rem + 0.12vw, 0.78rem);
+  --font-size-sm: clamp(0.82rem, 0.78rem + 0.16vw, 0.9rem);
+  --font-size-base: clamp(0.98rem, 0.93rem + 0.22vw, 1.08rem);
+  --font-size-md: clamp(1.16rem, 1.04rem + 0.48vw, 1.38rem);
+  --font-size-lg: clamp(1.38rem, 1.18rem + 0.8vw, 1.78rem);
+  --font-size-xl: clamp(1.68rem, 1.32rem + 1.4vw, 2.4rem);
+  --font-size-2xl: clamp(2.1rem, 1.55rem + 2.2vw, 3.4rem);
+  --font-size-3xl: clamp(2.8rem, 2rem + 3.5vw, 5.2rem);
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.7;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.04em;
+
+  /* Legacy aliases — reference canonical typography scale */
+  --step--1: var(--font-size-xs);
+  --step-0: var(--font-size-base);
+  --step-1: var(--font-size-md);
+  --step-2: var(--font-size-xl);
+  --step-3: var(--font-size-2xl);
+  --step-4: var(--font-size-3xl);
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size-base);
+  --text-lg: var(--font-size-md);
+  --text-xl: var(--font-size-lg);
+  --text-2xl: var(--font-size-xl);
+  --text-3xl: var(--font-size-2xl);
+  --text-display: var(--font-size-3xl);
+
+  /* ── Spacing Scale (4px base) ──────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ── Motion / Duration Tokens ──────────────────────────────────── */
+  --dur-instant: 0ms;
+  --dur-fast: 120ms;
+  --dur-normal: 220ms;
+  --dur-slow: 350ms;
+  --dur-base: var(--dur-slow); /* legacy alias */
+  --dur-glacial: 600ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-sharp: cubic-bezier(0.4, 0, 0.6, 1); /* crisp paper-cutout snap */
+
+  /* ── Radius Tokens ─────────────────────────────────────────────── */
+  --radius-none: 0;
+  --radius-sm: 6px;
+  --radius-xs: 4px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Core Palette — paper-like warm tones ───────────────────────── */
+  --ink: #0f0d0b;
+  --ink-soft: #2d2824;
+  --muted: #5c5248;
+  --paper: #faf7f2;
+  --paper-2: #fefcf8;
+  --card: #fefdfb;
+  --card-strong: #141210;
+  --line: #c8b898;
+  --line-dark: #3e3830;
+  --line-darker: rgba(15, 13, 11, 0.18);
+  --line-subtle: rgba(15, 13, 11, 0.07);
+  --line-divider: rgba(15, 13, 11, 0.09);
+  --line-on-dark: rgba(255, 255, 255, 0.16);
+
+  /* ── Paper texture — visible grain via denser SVG noise ──────────── */
+  --paper-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+
+  /* ── Surfaces ──────────────────────────────────────────────────── */
+  --surface: #fff;
+  --surface-raised: #fffdf8;
+  --surface-overlay: rgba(255, 255, 255, 0.92);
+
+  /* ── Tags & Pills ──────────────────────────────────────────────── */
+  --tag-bg: #fff7c9;
+  --tag-text: #514941;
+  --tag-border: rgba(17, 17, 17, 0.18);
+
+  /* ── Accent Colors ─────────────────────────────────────────────── */
+  --blue: #1a4dff;
+  --blue-glow: rgba(26, 77, 255, 0.12);
+  --blue-soft: #e8edff;
+  --green: #0b7a4a;
+  --green-glow: rgba(11, 122, 74, 0.1);
+  --green-soft: #e6f5ed;
+  --orange: #d44a1a;
+  --orange-glow: rgba(212, 74, 26, 0.1);
+  --orange-soft: #fef0e5;
+  --violet: #7c3aed;
+  --violet-glow: rgba(124, 58, 237, 0.18);
+  --violet-soft: #f4ebff;
+  --brand-accent: #caff80;
+  --brand-accent-soft: #eaffc0;
+  /* ── Paper-cutout Pills — explicit border + sharp offset shadow ──── */
+  --pill-border: 1px solid var(--line-dark);
+  --pill-shadow: var(--shadow-tight);
+  --heading-text-shadow: 0 1px 0 rgba(var(--shadow-color), 0.05);
+  --text-glow: 0 0 4px rgba(237, 232, 224, 0.6);
+
+  /* ── Platform feed colors ────────────────────────────────────────── */
+  --feed-devto: #7eb0ff;
+  --feed-github: #c0b8a8;
+  --feed-hn: #ffa366;
+  --feed-hashnode: #8dc4ff;
+  --feed-twitter: #e7e7e7;
+  --feed-linkedin: #6db8ff;
+  --feed-coderlegion: #c8a8ff;
+
+  /* ── Interactive effects ─────────────────────────────────────────── */
+  --link-underline: rgba(26, 77, 255, 0.22);
+  --link-underline-hover: rgba(26, 77, 255, 0.12);
+  --scrollbar-thumb: rgba(200, 190, 175, 0.3);
+  --scrollbar-thumb-hover: rgba(200, 190, 175, 0.5);
+
+  /* ── Frosted-paper Panels — warm, soft, organic ──────────────────── */
+  --glass-panel-bg: rgba(254, 252, 248, 0.88);
+  --glass-topbar-bg: rgba(250, 247, 242, 0.85);
+  --glass-nav-bg: rgba(254, 252, 248, 0.85);
+  --glass-nav-border: rgba(180, 168, 148, 0.45);
+  --glass-blur: 14px;
+  --glass-blur-topbar: 22px;
+
+  /* ── Body Background — paper grain with warm gradient ────────────── */
+  --body-glow-1: rgba(45, 30, 15, 0.04);
+  --body-glow-2: rgba(92, 75, 50, 0.05);
+  --body-glow-3: rgba(180, 150, 110, 0.03);
+  --body-grad-stop-1: #fcf9f3;
+  --body-grad-stop-2: #f7f0e4;
+  --body-grad-stop-3: #faf5ed;
+  --body-before-opacity: 0.04;
+
+  /* ── Misc ──────────────────────────────────────────────────────── */
+  --avail-strip-bg: rgba(254, 252, 248, 0.8);
+  --badge-accent-bg: rgba(26, 77, 255, 0.12);
+  --img-brightness: none;
+  --brand-icon-filter: none; /* brand icons stay native in light mode */
+  --code-bg: rgba(15, 13, 11, 0.05);
+  --button-primary-text: #fff;
+  --ink-on-dark: #fff; /* text on always-dark surfaces */
+  --surface-inverse: #0f0d0b;
+  --text-dim: #b0a595; /* always-dark surface (buttons, footers) */
+
+  /* ── Component-scoped token aliases ──────────────────────────────── */
+  --button-primary-bg: var(--blue);
+  --button-primary-color: var(--button-primary-text);
+  --button-primary-hover-bg: color-mix(in srgb, var(--blue) 85%, #000);
+  --button-accent-bg: var(--brand-accent);
+  --button-accent-color: var(--surface-inverse);
+  --button-inverse-bg: var(--surface-inverse);
+  --button-inverse-color: var(--ink-on-dark);
+  --card-bg: var(--card);
+  --card-border: var(--line);
+  --card-hover-border: var(--blue);
+  --tag-bg: #fff7c9;
+  --tag-text: #514941;
+  --tag-border: rgba(17, 17, 17, 0.18);
+  --pill-inverse-bg: var(--surface-inverse);
+  --pill-inverse-color: var(--ink-on-dark);
+  --nav-active-bg: var(--surface-inverse);
+  --nav-active-color: var(--ink-on-dark);
+  --nav-hover-bg: var(--surface-inverse);
+  --nav-hover-color: var(--ink-on-dark);
+
+  /* ── Gradients ─────────────────────────────────────────────────── */
+  --grad-hero: linear-gradient(165deg, #fefcf8 0%, #faf4e8 50%, #fefcf8 100%);
+  --grad-accent: linear-gradient(
+    135deg,
+    var(--blue) 0%,
+    var(--violet) 50%,
+    var(--orange) 100%
+  );
+  --grad-warm: linear-gradient(135deg, var(--orange) 0%, var(--blue) 100%);
+  --grad-card-hover: linear-gradient(
+    180deg,
+    rgba(26, 77, 255, 0.03) 0%,
+    transparent 60%
+  );
+
+  /* ── Shadows ───────────────────────────────────────────────────── */
+  /* ── Rigid paper-cutout shadows — sharp offset, no blur ──────────── */
+  --shadow-color: 45, 30, 15;
+  --shadow-xs: 2px 2px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-sm: 3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-md: 4px 4px 0 rgba(var(--shadow-color), 0.1);
+  --shadow-lg: 6px 6px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-xl: 8px 8px 0 rgba(var(--shadow-color), 0.14);
+  --shadow-card: 3px 3px 0 rgba(var(--shadow-color), 0.1);
+  --shadow-card-hover: 4px 4px 0 rgba(var(--shadow-color), 0.14);
+  --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
+  --shadow-tight: 2px 2px 0 rgba(var(--shadow-color), 0.07);
+  --shadow-button: 2px 2px 0 rgba(var(--shadow-color), 0.1);
+  --shadow-button-hover: 3px 3px 0 rgba(var(--shadow-color), 0.14);
+
+  /* ── Focus ─────────────────────────────────────────────────────── */
+  --focus-ring-color: var(--blue);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MANUAL DARK MODE — html.dark
+   ═══════════════════════════════════════════════════════════════════════════ */
+html.dark {
+  /* ── Core Palette — dark cardstock ───────────────────────────────── */
+  --ink: #ede8e0;
+  --ink-soft: #c8c0b4;
+  --muted: #a89d8e;
+  --paper: #14110d;
+  --paper-2: #1a1712;
+  --card: #1e1b16;
+  --card-strong: #ede8e0;
+  --line: #3e3830;
+  --line-dark: #5a544c;
+  --line-subtle: rgba(237, 232, 224, 0.1);
+  --line-divider: rgba(237, 232, 224, 0.08);
+
+  --surface: #1e1b16;
+  --surface-raised: #242018;
+  --surface-overlay: rgba(18, 16, 13, 0.92);
+
+  --tag-bg: rgba(80, 65, 30, 0.3);
+  --tag-text: #c8b88a;
+  --tag-border: rgba(237, 232, 224, 0.1);
+
+  --blue: #6b94ff;
+  --blue-glow: rgba(92, 138, 255, 0.15);
+  --blue-soft: #1a2238;
+  --green: #2dd48b;
+  --green-glow: rgba(45, 212, 139, 0.12);
+  --green-soft: #162a22;
+  --orange: #f08050;
+  --orange-glow: rgba(240, 128, 80, 0.12);
+  --orange-soft: #2a1e16;
+  --violet: #a78bfa;
+  --violet-soft: #201a30;
+  --brand-accent: #caff80;
+  --brand-accent-soft: #2a3618;
+
+  /* ── Frosted-cardstock Panels — warm dark translucency ───────────── */
+  --glass-panel-bg: rgba(24, 21, 16, 0.88);
+  --glass-topbar-bg: rgba(15, 13, 10, 0.92);
+  --glass-nav-bg: rgba(24, 21, 16, 0.85);
+  --glass-nav-border: rgba(72, 68, 60, 0.45);
+  --glass-blur: 16px;
+  --glass-blur-topbar: 22px;
+
+  --body-glow-1: rgba(92, 138, 255, 0.08);
+  --body-glow-2: rgba(240, 128, 80, 0.07);
+  --body-glow-3: rgba(124, 58, 237, 0.05);
+  --body-grad-stop-1: #181510;
+  --body-grad-stop-2: #14120d;
+  --body-grad-stop-3: #161410;
+  --body-before-opacity: 0.06;
+
+  --avail-strip-bg: rgba(24, 21, 16, 0.8);
+  --badge-accent-bg: rgba(80, 65, 30, 0.25);
+  --img-brightness: brightness(0.88);
+  --brand-icon-filter: brightness(0) invert(1);
+  --code-bg: rgba(237, 232, 224, 0.06);
+  --button-primary-text: #fff;
+  --surface-inverse: #0f0d0b;
+  --ink-on-dark: #fff;
+
+  --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
+
+  /* Rigid paper-cutout halos — sharp offset, no blur */
+  --shadow-color: 255, 255, 255;
+  --shadow-xs: 1px 1px 0 rgba(var(--shadow-color), 0.04);
+  --shadow-sm: 2px 2px 0 rgba(var(--shadow-color), 0.06);
+  --shadow-md: 3px 3px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-lg: 4px 4px 0 rgba(var(--shadow-color), 0.1);
+  --shadow-xl: 6px 6px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-card: 2px 2px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-card-hover: 3px 3px 0 rgba(var(--shadow-color), 0.12);
+  --shadow-inner: inset 0 1px 1px rgba(var(--shadow-color), 0.02);
+  --shadow-tight: 1px 1px 0 rgba(var(--shadow-color), 0.05);
+  --shadow-button: 1px 1px 0 rgba(var(--shadow-color), 0.08);
+  --shadow-button-hover: 2px 2px 0 rgba(var(--shadow-color), 0.12);
+
+  --focus-ring-color: var(--blue);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HIGH CONTRAST MODE — @media (prefers-contrast: more)
+   ═══════════════════════════════════════════════════════════════════════════ */
+@media (prefers-contrast: more) {
+  :root {
+    --muted: #3d3026;
+    --ink-soft: #0f0d0b;
+    --line: #8a7a64;
+    --line-divider: rgba(15, 13, 11, 0.18);
+  }
+  html.dark {
+    --muted: #c8c0b4;
+    --ink-soft: #ede8e0;
+    --line: #5a544c;
+    --line-divider: rgba(237, 232, 224, 0.15);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITY — Focus, Reduced Motion, Skip Link
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Focus Indicators (WCAG 2.4.11 + 2.4.13) ────────────────────── */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+@supports (selector(:focus-visible)) {
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* ── Skip Link ──────────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-120%);
+  z-index: 10000;
+  padding: var(--space-2) var(--space-4);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus-visible {
+  transform: translateX(-50%) translateY(var(--space-2));
+  outline-offset: 0;
+}
+
+/* ── Reduced Motion (WCAG 2.3.3) ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background: var(--blue);
+  color: #fff;
+}

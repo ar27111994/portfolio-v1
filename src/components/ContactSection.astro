@@ -1,0 +1,68 @@
+---
+interface Props {
+  contactEmail: string;
+  contactWidgets: import("../data/site-types").ContactWidget[];
+}
+
+const { contactEmail, contactWidgets } = Astro.props;
+---
+
+<section class="panel contact-panel" aria-labelledby="contact">
+  <div class="section-head">
+    <h2 id="contact">Start a project</h2>
+    <p>
+      Share a brief and I'll scope a thin first deliverable with a fixed
+      estimate — typically 1–2 weeks to a working proof. Direct hire, contract,
+      or milestone-based.
+    </p>
+  </div>
+  <div class="contact-cta-primary">
+    <a
+      href={`mailto:${contactEmail}?subject=Project%20Brief`}
+      class="hire-cta-btn"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path
+          d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+      >
+      Send a project brief → {contactEmail}
+    </a>
+  </div>
+  <div class="widget-grid contact-widget-grid">
+    {
+      contactWidgets.map((contact) => (
+        <a
+          class={`contact-widget ${contact.kind}`}
+          href={contact.href}
+          target={contact.kind === "whatsapp" ? "_blank" : undefined}
+          rel={contact.kind === "whatsapp" ? "noreferrer" : undefined}
+        >
+          <span class="widget-icon brand-icon">
+            <img
+              src={contact.icon}
+              alt=""
+              width="24"
+              height="24"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
+          <span>
+            <strong>{contact.label}</strong>
+            <em>{contact.value}</em>
+            <small>{contact.detail}</small>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>

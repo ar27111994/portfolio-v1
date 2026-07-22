@@ -122,6 +122,13 @@ function transformProject(p) {
           url: String(att.videoUrl),
           embeddedUrl: `https://www.youtube.com/embed/${ytId}`,
         });
+      } else {
+        // Direct video upload (Upwork-hosted, not YouTube)
+        attachments.push({
+          type: "video",
+          provider: "direct",
+          url: String(att.videoUrl),
+        });
       }
     } else if (att.originalAttachment) {
       const entry = {
@@ -141,6 +148,16 @@ function transformProject(p) {
         type: attType || "link",
         url: String(att.link),
         title: att.title ?? null,
+        description: att.description ?? null,
+      });
+    } else if (att.description || att.attachmentName) {
+      // Catch-all for text/document attachments with no URL (e.g. "text" type)
+      attachments.push({
+        type: attType || "file",
+        title: att.title ?? null,
+        description: att.description ?? null,
+        fileName: att.attachmentName ?? null,
+        fileSize: att.attachmentSize ?? null,
       });
     }
   }
@@ -161,8 +178,24 @@ function transformProject(p) {
     rank: p.rank,
   };
   if (attachments.length) item.attachments = attachments;
-  if (p.completionDate) item.completionDate = String(p.completionDate);
+  if (p.completionDateTime)
+    item.completionDate = String(p.completionDateTime).slice(0, 10);
+  else if (p.creationTs)
+    item.completionDate = String(p.creationTs).slice(0, 10);
+  else if (p.createdDateTime)
+    item.completionDate = String(p.createdDateTime).slice(0, 10);
+  else if (p.completionDate)
+    item.completionDate = String(p.completionDate).slice(0, 10);
+  // Project URL — explicit field first, then first embeddedLink/article/website
   if (p.projectUrl) item.url = String(p.projectUrl);
+  else {
+    const linkAtt = attachments.find((a) =>
+      ["embeddedlink", "website", "article"].includes(
+        String(a.type ?? "").toLowerCase(),
+      ),
+    );
+    if (linkAtt?.url) item.url = linkAtt.url;
+  }
 
   return item;
 }
@@ -170,6 +203,34 @@ function transformProject(p) {
 // Sort by rank (1 = top of profile)
 const sorted = [...projects].sort((a, b) => a.rank - b.rank);
 const items = sorted.map(transformProject);
+
+// Merge localImage/fileSize/videoId from existing portfolio JSON
+let existingById = new Map();
+try {
+  const existing = JSON.parse(readFileSync(OUTPUT_FILE, "utf-8"));
+  for (const prev of existing.items ?? []) {
+    existingById.set(prev.id, prev);
+  }
+} catch {
+  /* no existing file */
+}
+
+for (const item of items) {
+  const prev = existingById.get(item.id);
+  if (!prev?.attachments?.length || !item.attachments?.length) continue;
+  for (
+    let i = 0;
+    i < Math.min(item.attachments.length, prev.attachments.length);
+    i++
+  ) {
+    const pa = prev.attachments[i];
+    const ia = item.attachments[i];
+    if (pa.localImage) ia.localImage = pa.localImage;
+    if (pa.fileName && !ia.fileName) ia.fileName = pa.fileName;
+    if (pa.fileSize && !ia.fileSize) ia.fileSize = pa.fileSize;
+    if (pa.videoId && !ia.videoId) ia.videoId = pa.videoId;
+  }
+}
 
 // De-duplicate IDs (same title → append rank suffix)
 const seen = new Set();

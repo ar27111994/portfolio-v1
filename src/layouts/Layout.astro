@@ -1,7 +1,16 @@
 ---
-import "../styles/global.css";
+import "../styles/global-base.css";
+import "../styles/global-theme.css";
+import "../styles/global-layout.css";
+import "../styles/global-components.css";
 import ClientRouter from "astro/components/ClientRouter.astro";
 import Analytics from "@vercel/analytics/astro";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
+import "@fontsource/inter/900.css";
 
 interface Props {
   title?: string;
@@ -16,7 +25,8 @@ const {
 } = Astro.props;
 
 const siteBase = Astro.site ? new URL(Astro.site) : new URL(Astro.url.origin);
-const canonical = Astro.url.href;
+const canonical = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
+  .href;
 const socialImage = new URL(image, siteBase).toString();
 
 const structuredData = {
@@ -46,7 +56,6 @@ const structuredData = {
         "https://hashnode.com/@ar27111994",
         "https://medium.com/@arlabs",
         "https://coderlegion.com/user/ar27111994",
-        "https://discord.com/channels/@me",
       ],
       knowsAbout: [
         "Developer Tools",
@@ -62,8 +71,8 @@ const structuredData = {
         "Upwork Profile Optimization",
         "Client-Facing Engineering Delivery",
         "Performance Engineering",
-        "Microsoft Partner Ecosystem",
-        "Anthropic Partner Ecosystem",
+        "Microsoft Developer Ecosystem",
+        "Anthropic Developer Ecosystem",
       ],
       contactPoint: [
         {
@@ -105,6 +114,27 @@ const structuredData = {
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- No-flash: apply theme before any rendering -->
+    <script is:inline>
+      (function () {
+        let t;
+        try {
+          t = localStorage.getItem("portfolio-theme");
+        } catch {
+          t = "auto";
+        }
+        if (!t) t = "auto";
+        const d =
+          t === "auto"
+            ? window.matchMedia("(prefers-color-scheme: dark)").matches
+            : t === "dark";
+        document.documentElement.classList.add(d ? "dark" : "light");
+      })();
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
@@ -114,24 +144,18 @@ const structuredData = {
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
     <meta name="author" content="Ahmed Rehan" />
-    <meta
-      name="keywords"
-      content="Ahmed Rehan, ARLabs, Upwork freelancer, full-stack engineer, developer tools, webhook debugging, API integrations, productivity systems, enterprise automation, agent systems, AI agent tooling, MCP, design-to-code, freelance software developer"
-    />
     <meta name="theme-color" content="#f4efe7" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#1a1814"
+    />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- DNS prefetch for external image sources -->
     <link rel="dns-prefetch" href="https://www.upwork.com" />
@@ -168,7 +192,7 @@ const structuredData = {
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="en_PK" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ar27111994" />
@@ -193,5 +217,9 @@ const structuredData = {
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
     <Analytics />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js"
+      crossorigin="anonymous"
+      defer></script>
   </body>
 </html>

@@ -1,0 +1,187 @@
+---
+import UpworkPortfolioCard from "../components/UpworkPortfolioCard.astro";
+
+interface Props {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  upworkPortfolioItems: any[];
+  upworkPortfolioCountLabel: string;
+  recentUpworkProofTitles: string;
+  upworkFitTags: string[];
+  upworkProfileUrl: string;
+  upworkPortfolioCount: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  upworkProofCards: any[];
+}
+
+const {
+  upworkPortfolioItems,
+  upworkPortfolioCountLabel,
+  upworkFitTags,
+  upworkProofCards,
+} = Astro.props;
+
+const PER_PAGE = 8;
+---
+
+<section
+  id="upwork"
+  class="panel upwork-panel"
+  aria-labelledby="upwork-heading"
+>
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Freelance proof surface</p>
+      <h2 id="upwork-heading">
+        Upwork project trail{" "}
+        <span class="count-badge" id="upwork-count-badge"
+          >{upworkPortfolioCountLabel} items · 40+ jobs completed · 5★ rating</span
+        >
+      </h2>
+    </div>
+    <p class="section-sub">
+      Live public work history, split across recent featured projects and a
+      deeper portfolio grid.
+    </p>
+  </div>
+
+  <div class="upwork-panel-grid">
+    <div class="upwork-proof-strip">
+      <h3>Featured project cards</h3>
+      <div class="upwork-proof-cards">
+        {
+          upworkProofCards.map((card) => (
+            <div class="upwork-proof-card">
+              {card.thumbnail && (
+                <img
+                  src={card.thumbnail}
+                  alt={card.title}
+                  width="120"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              <div>
+                <small>{card.label}</small>
+                <strong>{card.value}</strong>
+                <p>{card.detail}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="upwork-fit">
+      <h3>Fit signals</h3>
+      <div class="upwork-fit-tags">
+        {upworkFitTags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar: search, sort, filters, per-page -->
+  <div class="pagination-toolbar" id="upwork-toolbar">
+    <div class="toolbar-row">
+      <div class="toolbar-search">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          ><circle cx="11" cy="11" r="8"></circle><line
+            x1="21"
+            y1="21"
+            x2="16.65"
+            y2="16.65"></line></svg
+        >
+        <input
+          type="text"
+          id="upwork-search"
+          placeholder="Search by title or description…"
+          aria-label="Search portfolio items"
+          autocomplete="off"
+        />
+        <button
+          class="search-clear"
+          id="upwork-search-clear"
+          aria-label="Clear search"
+          hidden>&times;</button
+        >
+      </div>
+      <div class="toolbar-actions">
+        <select id="upwork-sort" aria-label="Sort order">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+        <select id="upwork-per-page" aria-label="Items per page">
+          <option value="8">8 per page</option>
+          <option value="16">16 per page</option>
+          <option value="24">24 per page</option>
+          <option value="all">All items</option>
+        </select>
+      </div>
+    </div>
+    <div class="toolbar-tags" id="upwork-filter-tags">
+      <!-- Dynamically populated by JS -->
+    </div>
+  </div>
+
+  <!-- Result count -->
+  <p class="pagination-summary" id="upwork-summary">
+    Showing {Math.min(PER_PAGE, upworkPortfolioItems.length)} of {
+      upworkPortfolioItems.length
+    } items
+  </p>
+
+  <div class="upwork-grid" id="upwork-grid">
+    {upworkPortfolioItems.map((item) => <UpworkPortfolioCard item={item} />)}
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination-bar" id="upwork-pagination-bar">
+    <div class="pagination-controls">
+      <button
+        class="pagination-btn"
+        id="upwork-prev"
+        aria-label="Previous page"
+        disabled
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="15 18 9 12 15 6"></polyline></svg
+        >
+      </button>
+      <div class="pagination-pages" id="upwork-page-numbers">
+        <!-- Dynamically populated by JS -->
+      </div>
+      <button class="pagination-btn" id="upwork-next" aria-label="Next page">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><polyline points="9 18 15 12 9 6"></polyline></svg
+        >
+      </button>
+    </div>
+  </div>
+</section>

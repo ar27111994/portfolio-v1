@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import "../styles/privacy.css";
 
 const lastUpdated = "June 17, 2026";
 const email = "admin@ar27111994.dev";
-const siteUrl = "https://ar27111994.dev";
+const siteUrl = "https://www.ar27111994.dev";
 ---
 
 <Layout
@@ -35,6 +36,52 @@ const siteUrl = "https://ar27111994.dev";
       </svg>
       Portfolio
     </a>
+    <button
+      class="theme-toggle"
+      aria-label="Toggle theme"
+      title="Toggle light / dark / auto theme"
+    >
+      <svg
+        class="theme-icon theme-icon-sun"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        ><circle cx="12" cy="12" r="5"></circle><line
+          x1="12"
+          y1="1"
+          x2="12"
+          y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line
+          x1="4.22"
+          y1="4.22"
+          x2="5.64"
+          y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"
+        ></line><line x1="1" y1="12" x2="3" y2="12"></line><line
+          x1="21"
+          y1="12"
+          x2="23"
+          y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"
+        ></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg
+      >
+      <svg
+        class="theme-icon theme-icon-moon"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        ><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg
+      >
+    </button>
   </header>
 
   <main class="privacy-wrap" id="main-content">
@@ -70,6 +117,16 @@ const siteUrl = "https://ar27111994.dev";
             when you use these products.
           </p>
           <p>
+            <strong
+              >For certain AI agents or skills that require hosted API routing
+              to function</strong
+            >
+            (Cloud-Assisted products), your prompt and query data will transit through
+            my self-hosted API gateway (hosted on Microsoft Azure) to be processed.
+            I do not inspect, monetize, or permanently store the text of your conversations
+            or prompts on my servers.
+          </p>
+          <p>
             When you contact me directly (e.g. via support email), I receive
             only the information you choose to send.
           </p>
@@ -100,6 +157,14 @@ const siteUrl = "https://ar27111994.dev";
             during the transaction. I am not responsible for the privacy
             practices of third-party platforms.
           </p>
+          <p>
+            <strong
+              >To generate responses, my hosted API gateway securely forwards
+              your requests to third-party LLM inference providers</strong
+            > (including but not limited to Google Gemini, Groq, and OpenRouter).
+            These third parties process your input data in accordance with their own
+            respective developer privacy policies.
+          </p>
         </section>
 
         <section class="priv-section">
@@ -118,6 +183,15 @@ const siteUrl = "https://ar27111994.dev";
             I retain support correspondence only as long as necessary to resolve
             your request. You may request deletion of any personal information
             you have provided by emailing me.
+          </p>
+          <p>
+            <strong
+              >My self-hosted routing gateway logs anonymous, aggregate usage
+              metadata</strong
+            >
+            (such as the model queried, token usage, and transaction timestamps) solely
+            for performance monitoring, debugging, and quota management. No personal
+            conversation history or prompt text is retained in these logs.
           </p>
         </section>
 
@@ -170,233 +244,3 @@ const siteUrl = "https://ar27111994.dev";
     <a href="/">ar27111994.dev</a>
   </footer>
 </Layout>
-
-<style>
-  /* ── Layout shell — fills viewport so Layout body never bleeds through ── */
-  :global(body) {
-    min-height: 100vh;
-  }
-
-  /* Top bar — reuse the portfolio nav tokens */
-  .top-bar {
-    position: sticky;
-    top: 0;
-    z-index: 80;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem clamp(1.25rem, 4vw, 3rem);
-    background: rgba(244, 239, 231, 0.82);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .back-nav {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--ink-soft);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    transition: color 0.15s;
-  }
-  .back-nav:hover {
-    color: var(--blue);
-  }
-
-  /* ── Main content ─────────────────────────────────────────────────── */
-  .privacy-wrap {
-    min-height: calc(100vh - 60px);
-    padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
-  }
-
-  .privacy-container {
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  /* ── Header ───────────────────────────────────────────────────────── */
-  .priv-header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .priv-eyebrow {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--blue);
-    margin: 0 0 0.75rem;
-  }
-
-  .priv-header h1 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 800;
-    color: var(--ink);
-    margin: 0 0 0.5rem;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-  }
-
-  .priv-meta {
-    font-size: 0.825rem;
-    color: var(--muted);
-    margin: 0;
-  }
-
-  /* ── Intro block ──────────────────────────────────────────────────── */
-  .priv-intro {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .priv-intro p {
-    margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.75;
-    color: var(--ink-soft);
-  }
-
-  /* ── Sections ─────────────────────────────────────────────────────── */
-  .priv-body {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .priv-section {
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .priv-section:last-child {
-    border-bottom: none;
-  }
-
-  .priv-section h2 {
-    display: flex;
-    align-items: baseline;
-    gap: 0.75rem;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 0 0 0.875rem;
-    letter-spacing: -0.01em;
-  }
-
-  .priv-num {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    color: var(--blue);
-    background: color-mix(in srgb, var(--blue) 10%, transparent);
-    border: 1px solid color-mix(in srgb, var(--blue) 20%, transparent);
-    border-radius: 4px;
-    padding: 0.1em 0.4em;
-    flex-shrink: 0;
-    font-family: var(--font-sans);
-  }
-
-  .priv-section p {
-    font-size: 0.9375rem;
-    line-height: 1.75;
-    color: var(--ink-soft);
-    margin: 0 0 0.75rem;
-  }
-
-  .priv-section p:last-child {
-    margin-bottom: 0;
-  }
-
-  .priv-section ul {
-    padding-left: 1.25rem;
-    margin: 0.5rem 0 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-
-  .priv-section li {
-    font-size: 0.9375rem;
-    line-height: 1.7;
-    color: var(--ink-soft);
-  }
-
-  /* ── Contact section ──────────────────────────────────────────────── */
-  .priv-contact {
-    padding-bottom: 0;
-  }
-
-  .contact-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    padding: 0.65rem 1.1rem;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-md);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
-    transition:
-      border-color 0.15s,
-      color 0.15s,
-      background 0.15s;
-  }
-
-  .contact-link:hover {
-    border-color: var(--blue);
-    color: var(--blue);
-    background: color-mix(in srgb, var(--blue) 5%, var(--card));
-  }
-
-  /* ── Links ────────────────────────────────────────────────────────── */
-  .priv-section a {
-    color: var(--blue);
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .priv-section a:hover {
-    text-decoration: underline;
-  }
-
-  /* ── Footer ───────────────────────────────────────────────────────── */
-  .priv-footer {
-    border-top: 1px solid var(--line);
-    padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .priv-footer p {
-    margin: 0;
-    font-size: 0.8rem;
-    color: var(--muted);
-  }
-
-  .priv-footer a {
-    font-size: 0.8rem;
-    color: var(--muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.15s;
-  }
-
-  .priv-footer a:hover {
-    color: var(--blue);
-  }
-</style>

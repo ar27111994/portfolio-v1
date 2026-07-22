@@ -1,0 +1,192 @@
+---
+import { Picture } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  heroPhoto: ImageMetadata;
+  badges: { label: string; icon?: string; mark?: string }[];
+  proofStackMetrics: {
+    value: string;
+    label: string;
+    detail: string;
+    stat?: string;
+  }[];
+  proofCategories: { label: string }[];
+  credibilityFacts: { icon: string; text: string }[];
+  recentUpworkProofTitles: string;
+}
+
+const {
+  heroPhoto,
+  badges,
+  proofStackMetrics,
+  proofCategories,
+  credibilityFacts,
+  recentUpworkProofTitles,
+} = Astro.props;
+---
+
+<section class="hero panel">
+  <div class="hero-copy">
+    <div class="brand-lockup" aria-label="Ahmed Rehan profile brand">
+      <Picture
+        src={heroPhoto}
+        alt="Portrait of Ahmed Rehan"
+        widths={[112, 224, 336]}
+        sizes="112px"
+        formats={["avif", "webp"]}
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="brand-meta">
+        <p class="brand-title">ARLabs</p>
+        <p class="brand-subtitle">Devtools · Automation · Agent Systems</p>
+      </div>
+    </div>
+    <p class="eyebrow">ar27111994.dev · Rawalpindi, Pakistan</p>
+    <h1>
+      Developer tools, automation, and agent systems that stay useful after the
+      first launch.
+    </h1>
+    <p class="lede">
+      I'm Ahmed Rehan — a <strong>full-stack engineer</strong> and solo builder focused
+      on developer tools, integration reliability, productivity systems, enterprise-aware
+      automation, AI-agent workflows, and performance-conscious software.
+    </p>
+
+    <div class="proof-stack-metrics">
+      {
+        proofStackMetrics.map((metric) => (
+          <span title={metric.detail}>
+            <b data-proof-value={metric.stat}>{metric.value}</b>
+            <small>{metric.label}</small>
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="badge-row" aria-label="Key credentials and roles">
+      {
+        badges.map((badge) => (
+          <span>
+            {badge.icon ? (
+              <img
+                src={badge.icon}
+                alt={`${badge.label} icon`}
+                width="16"
+                height="16"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <b aria-hidden="true">{badge.mark}</b>
+            )}
+            {badge.label}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="mobile-proof-stack" aria-hidden="true">
+      <span class="signal-kicker">Live proof stack</span>
+      <strong>Devtools · Integrations · Automation · Agents</strong>
+      <div class="signal-metrics" aria-label="Live public proof metrics">
+        {
+          proofStackMetrics.map((metric) => (
+            <span title={metric.detail}>
+              <b data-proof-value={metric.stat}>{metric.value}</b>
+              <small>{metric.label}</small>
+            </span>
+          ))
+        }
+      </div>
+      <div class="signal-bars" aria-label="Current proof categories">
+        {
+          proofCategories.map((category) => (
+            <span>
+              <em>{category.label}</em>
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="availability-strip availability-command-strip"
+      aria-label="Current availability and proof points"
+    >
+      <span class="availability-card"
+        ><b>WORK</b><strong>Devtools / automation / AI-agent systems</strong
+        ><small
+          >Selective builds where reliability, UX, and shipping discipline
+          matter.</small
+        ></span
+      >
+      <span class="availability-card"
+        ><b>RECENT</b><strong>{recentUpworkProofTitles}</strong><small
+          >Latest portfolio items from the full Upwork profile; 5.0★ average
+          across 40+ jobs.</small
+        ></span
+      >
+      <span class="wide workflow-loop">
+        <b>Current loop</b>
+        <em>Diagnose</em><i role="presentation"></i><em>Build</em><i
+          role="presentation"></i><em>Document</em><i role="presentation"
+        ></i><em>Launch</em>
+      </span>
+    </div>
+
+    <div class="snapshot-block" aria-label="Credibility facts">
+      <h2>Snapshot</h2>
+      <ul class="bullet-clean snapshot-list">
+        {
+          credibilityFacts.map((item) => (
+            <li>
+              <span class="snapshot-icon" aria-hidden="true">
+                {item.icon}
+              </span>
+              <span>{item.text}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <aside class="hero-aside" aria-label="Quick profile facts">
+    <div class="signal-board">
+      <span class="signal-kicker">Live proof stack</span>
+      <strong>Devtools · Webhooks · Agents · Integrations</strong>
+      <div class="signal-metrics" aria-label="Live public proof metrics">
+        {
+          proofStackMetrics.map((metric) => (
+            <span title={metric.detail}>
+              <b data-proof-value={metric.stat}>{metric.value}</b>
+              <small>{metric.label}</small>
+            </span>
+          ))
+        }
+      </div>
+      <div class="signal-bars" aria-label="Current proof categories">
+        {
+          proofCategories.map((category) => (
+            <span>
+              <em>{category.label}</em>
+            </span>
+          ))
+        }
+      </div>
+      <div class="signal-tags">
+        <span>Productivity</span><span>APIs</span><span>Reliability</span><span
+          >OSS</span
+        ><span>Docs</span>
+      </div>
+      <div class="signal-icons">
+        <span>CLI</span><span>API</span><span>AI</span>
+      </div>
+      <p class="signal-note" data-proof-status>
+        Public GitHub metrics update in-browser when the API is available.
+      </p>
+    </div>
+  </aside>
+</section>

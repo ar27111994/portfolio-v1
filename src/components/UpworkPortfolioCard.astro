@@ -17,6 +17,7 @@ interface PortfolioAttachment {
   image?: PortfolioAttachmentImage;
   localImage?: string; // locally-downloaded copy of an auth-gated image
   videoId?: string; // YouTube video ID for video-type attachments
+  provider?: string; // e.g. "youtube", "vimeo"
 }
 
 interface PortfolioItem {
@@ -211,6 +212,8 @@ const isPreviewImageHref = (
   attachment: PortfolioAttachment,
 ) => {
   if (!href) return false;
+  // Skip relative Upwork CDN paths — they 404 on our domain
+  if (href.startsWith("/att/")) return false;
   const sourceHrefs = uniqueUrls([
     attachment.url,
     attachment.embeddedUrl,
@@ -243,6 +246,9 @@ const videoSrcFromAttachment = (
 ) => {
   const directSource = attachmentHref(attachment);
   if (directSource) return directSource;
+  // Handle Upwork CDN paths (relative URLs like /att/download/...)
+  const rawUrl = attachment.url?.trim();
+  if (rawUrl?.startsWith("/")) return `https://www.upwork.com${rawUrl}`;
   return index === 0 && item.mediaCounts?.video
     ? normalizeExternalUrl(item.thumbnailOriginal)
     : undefined;
@@ -647,18 +653,51 @@ const previewProofLine =
             <div class="upwork-media-grid">
               {videoPreviewAttachments.map(({ attachment, src }, index) => (
                 <div class="upwork-media-tile upwork-video-tile">
-                  <video
-                    src={src}
-                    controls
-                    preload="metadata"
-                    playsinline
-                    width="400"
-                    height="260"
-                    poster={previewImage}
-                  />
+                  {attachment.provider === "youtube" ||
+                  attachment.embeddedUrl?.includes("youtube") ? (
+                    <iframe
+                      src={attachment.embeddedUrl || src}
+                      width="400"
+                      height="260"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      title={attachment.title || `YouTube video ${index + 1}`}
+                      loading="lazy"
+                      style="border:none;border-radius:12px"
+                    />
+                  ) : attachment.embeddedUrl?.includes("vimeo") ? (
+                    <iframe
+                      src={attachment.embeddedUrl}
+                      width="400"
+                      height="260"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowfullscreen
+                      title={attachment.title || `Vimeo video ${index + 1}`}
+                      loading="lazy"
+                      style="border:none;border-radius:12px"
+                    />
+                  ) : (
+                    <video
+                      src={src}
+                      controls
+                      preload="metadata"
+                      playsinline
+                      width="400"
+                      height="260"
+                      poster={previewImage}
+                      muted
+                    />
+                  )}
                   <span>
                     {attachment.title || `Video preview ${index + 1}`}
-                    <em>Play attached video</em>
+                    <em>
+                      {attachment.provider === "youtube" ||
+                      attachment.embeddedUrl?.includes("youtube")
+                        ? "YouTube embed"
+                        : attachment.embeddedUrl?.includes("vimeo")
+                          ? "Vimeo embed"
+                          : "Play attached video"}
+                    </em>
                   </span>
                 </div>
               ))}

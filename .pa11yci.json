@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "timeout": 30000,
+    "wait": 2000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--headless"]
+    },
+    "standard": "WCAG2AA"
+  },
+  "urls": [
+    {
+      "url": "http://localhost:4321/",
+      "screenCapture": ".pa11y-screenshots/main.png",
+      "actions": ["wait for element .panel to be visible"]
+    },
+    {
+      "url": "http://localhost:4321/privacy/",
+      "screenCapture": ".pa11y-screenshots/privacy.png",
+      "actions": ["wait for element .privacy-wrap to be visible"]
+    }
+  ]
+}
