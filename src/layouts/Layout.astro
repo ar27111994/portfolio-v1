@@ -116,7 +116,13 @@ const structuredData = {
     <!-- No-flash: apply theme before any rendering -->
     <script is:inline>
       (function () {
-        const t = localStorage.getItem("portfolio-theme") || "auto";
+        var t;
+        try {
+          t = localStorage.getItem("portfolio-theme");
+        } catch (e) {
+          t = "auto";
+        }
+        if (!t) t = "auto";
         const d =
           t === "auto"
             ? window.matchMedia("(prefers-color-scheme: dark)").matches

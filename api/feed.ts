@@ -326,6 +326,10 @@ export default async function handler(
     const items = all.slice(start, start + perPage);
     const totalPages = Math.ceil(total / perPage);
 
+    res.setHeader(
+      "Cache-Control",
+      "public, s-maxage=300, stale-while-revalidate=600",
+    );
     res.status(200).json({
       status: "success",
       page,

@@ -74,6 +74,12 @@ export default async function handler(
   }
 
   try {
+    if (!process.env.LINKEDIN_ACCESS_TOKEN && !process.env.LINKEDIN_CLIENT_ID) {
+      return new Response(JSON.stringify({ posts: [], disabled: true }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
     const token = await getAccessToken();
 
     // Fetch posts — use the /posts endpoint with author filter
