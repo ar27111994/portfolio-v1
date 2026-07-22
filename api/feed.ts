@@ -229,8 +229,8 @@ async function fetchLinkedIn(): Promise<FeedItem[]> {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams({
             grant_type: "client_credentials",
-            client_id: clientId,
-            client_secret: clientSecret,
+            client_id: clientId!,
+            client_secret: clientSecret!,
             scope: "w_member_social openid profile",
           }),
         },
@@ -240,7 +240,7 @@ async function fetchLinkedIn(): Promise<FeedItem[]> {
       token = auth.access_token;
     }
     const postsRes = await fetch(
-      `https://api.linkedin.com/v2/posts?author=urn:li:person:sN2bD0M7oN&q=author&count=10&sortBy=LAST_MODIFIED`,
+      `https://api.linkedin.com/v2/posts?author=${encodeURIComponent(process.env.LINKEDIN_PERSON_URN || "urn:li:person:sN2bD0M7oN")}&q=author&count=10&sortBy=LAST_MODIFIED`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
