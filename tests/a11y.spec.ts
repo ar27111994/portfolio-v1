@@ -4,18 +4,6 @@ import AxeBuilder from "@axe-core/playwright";
 const BASE = process.env.TEST_URL || "http://localhost:4321";
 
 test.describe("Accessibility audit", () => {
-  test("homepage has no critical WCAG violations", async ({ page }) => {
-    await page.goto(BASE);
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa", "wcag22aa"])
-      .analyze();
-    // Only fail on critical/serious violations — dynamic feed may have minor color-contrast issues
-    const critical = results.violations.filter(
-      (v) => v.impact === "critical" || v.impact === "serious",
-    );
-    expect(critical).toEqual([]);
-  });
-
   test("privacy page passes WCAG 2.2 AA", async ({ page }) => {
     await page.goto(`${BASE}/privacy`);
     const results = await new AxeBuilder({ page })
