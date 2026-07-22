@@ -701,7 +701,9 @@ function initPage() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) loadMoreFeed(list);
+          if (entry.isIntersecting) if (_feedLoading) return;
+          _feedLoading = true;
+          loadMoreFeed(list);
         });
       },
       { rootMargin: "0px 0px 200px 0px" },
