@@ -25,7 +25,7 @@ const {
 } = Astro.props;
 
 const siteBase = Astro.site ? new URL(Astro.site) : new URL(Astro.url.origin);
-const canonical = Astro.url.href;
+const canonical = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
 const socialImage = new URL(image, siteBase).toString();
 
 const structuredData = {

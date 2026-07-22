@@ -1,7 +1,7 @@
 /**
  * API Route — /api/feed
  * Unified multi-source feed with server-side pagination.
- * Fetches from 7 sources, merges by date (newest first), paginates.
+ * Fetches from 8 sources, merges by date (newest first), paginates.
  *
  * Query params: page (default 1), per_page (default 10, max 30)
  */

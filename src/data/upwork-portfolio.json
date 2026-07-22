@@ -1,9 +1,9 @@
 {
   "profileUrl": "https://www.upwork.com/freelancers/~0188baee67e8f543e7",
-  "lastUpdated": "2026-07-21",
+  "lastUpdated": "2026-07-22",
   "source": "upwork-browser-graphql-api",
-  "sourceNote": "Fetched via Upwork talentPortfolioProjects GraphQL query (all items, paginated). Requires browser session curl \u2014 see script header for instructions.",
-  "extractedAt": "2026-07-21T14:12:12.090Z",
+  "sourceNote": "Fetched via Upwork talentPortfolioProjects GraphQL query (all items, paginated). Requires browser session curl — see script header for instructions.",
+  "extractedAt": "2026-07-22T18:19:31.006Z",
   "items": [
     {
       "id": "golden-point-print",
@@ -17,14 +17,13 @@
           "title": null,
           "description": "My client wanted a Website to Showcase the services provided by his Printing Shop . I created the website using WordPress. Moreover, he wanted to showcase his products with image sliders. Therefore, the task also involved making attractive banners with images provided by the owner and via stock images available on the internet. So, I created a page for each service with JavaScript image sliders in it. I also put his Contact Details on the left Sidebar of each page. Finally, I optimized the website by making it Fast (via 'Caching'),Responsive (Mobile Friendly) and Search Engine Friendly (Please Google \"golden point print\").",
           "fileName": null,
-          "fileSize": 0,
-          "localImage": "/upwork-covers/golden-point-print-0.jpg"
+          "fileSize": 0
         },
         {
           "type": "image",
           "url": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488018887127040",
           "thumbnail": "https://www.upwork.com/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/611488018887127040",
-          "localImage": ""
+          "localImage": "/upwork-covers/golden-point-print-0.jpg"
         }
       ],
       "completionDate": "2014-12-06",
@@ -467,7 +466,7 @@
         {
           "type": "text",
           "title": null,
-          "description": "The welcome message\n\nI had  to develop a WordPress Plugin that is a THANK YOU plugin that will work similar to this one: http://www.thanksforcaring.ca/. This will be added to an existing WordPress site.\n\nAdditional Project Description:-\n\n- Option to\n\no \u2018write a thank you\u2019\n\n\uf0a7 Agree to disclaimer\n\n\uf0a7 Fill in information\n\n\uf0a7 Customize the note\n\n\uf0a7 Option to add emoji\n\n\uf0a7 Option for the user to add photos to their post\n\n\uf0a7 Post\n\n\uf0b7 Note \u2013 all posts are held in moderation until approved by admin\n\no \u00a0\u2018view all posts\u2019\n\n\uf0a7 A \u2018wall\u2019 of sorts with all of the posts on it\n\n\uf0a7 Longer posts will have the option to be clicked on\n\n\uf0b7 We want ours to open a lightbox, not a new window\n\n\uf0a7 Newer posts load at the top\n\n- Back end settings area\n\no Pending Thank yous\n\n\uf0a7 This is where all thank you submissions will sit until manually approved by site\n\nadmin\n\n\uf0a7 Ability to remove or edit should be included\n\no Approved thank yous\n\n\uf0a7 A listing of all approved posts\n\n\uf0a7 Ability to remove or edit should be included\n\no Main Settings\n\n\uf0a7 Admin should be able to set the number of grid columns for display (2, 3, 4)\n\n\uf0a7 Admin should be able to set the maximum number of photos allowed for the user\n\nto upload with their post\n\n\uf0a7 Include a submission confirmation email spot\n\n\uf0b7 From Name\n\n\uf0b7 From Email\n\n\uf0b7 Subject line\n\n\uf0b7 Body text (needs full wysiwyg editor function with ability to add media files,\n\netc)\n\n- Social media shares\n\n- Lazy load\n\nWe must be able to adjust font size color alignment, background colors, etc. all without using\n\nprogramming or short codes. Basically we need a very easy to use \u2013 user friendly backend interface to\n\nbe able to manage the plugin.",
+          "description": "The welcome message\n\nI had  to develop a WordPress Plugin that is a THANK YOU plugin that will work similar to this one: http://www.thanksforcaring.ca/. This will be added to an existing WordPress site.\n\nAdditional Project Description:-\n\n- Option to\n\no ‘write a thank you’\n\n Agree to disclaimer\n\n Fill in information\n\n Customize the note\n\n Option to add emoji\n\n Option for the user to add photos to their post\n\n Post\n\n Note – all posts are held in moderation until approved by admin\n\no  ‘view all posts’\n\n A ‘wall’ of sorts with all of the posts on it\n\n Longer posts will have the option to be clicked on\n\n We want ours to open a lightbox, not a new window\n\n Newer posts load at the top\n\n- Back end settings area\n\no Pending Thank yous\n\n This is where all thank you submissions will sit until manually approved by site\n\nadmin\n\n Ability to remove or edit should be included\n\no Approved thank yous\n\n A listing of all approved posts\n\n Ability to remove or edit should be included\n\no Main Settings\n\n Admin should be able to set the number of grid columns for display (2, 3, 4)\n\n Admin should be able to set the maximum number of photos allowed for the user\n\nto upload with their post\n\n Include a submission confirmation email spot\n\n From Name\n\n From Email\n\n Subject line\n\n Body text (needs full wysiwyg editor function with ability to add media files,\n\netc)\n\n- Social media shares\n\n- Lazy load\n\nWe must be able to adjust font size color alignment, background colors, etc. all without using\n\nprogramming or short codes. Basically we need a very easy to use – user friendly backend interface to\n\nbe able to manage the plugin.",
           "fileName": null,
           "fileSize": 0
         }
@@ -828,7 +827,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532737182461952",
-          "localImage": ""
+          "localImage": "/upwork-covers/television-subscription-management-system-3.jpg"
         },
         {
           "type": "image",
@@ -838,7 +837,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532764168613888",
-          "localImage": ""
+          "localImage": "/upwork-covers/television-subscription-management-system-4.jpg"
         },
         {
           "type": "image",
@@ -848,7 +847,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532792043384832",
-          "localImage": ""
+          "localImage": "/upwork-covers/television-subscription-management-system-5.jpg"
         },
         {
           "type": "image",
@@ -858,7 +857,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532821865459712",
-          "localImage": "/upwork-covers/television-subscription-management-system-3.jpg"
+          "localImage": "/upwork-covers/television-subscription-management-system-6.jpg"
         },
         {
           "type": "image",
@@ -868,7 +867,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/897532841746460672",
-          "localImage": "/upwork-covers/television-subscription-management-system-4.jpg"
+          "localImage": "/upwork-covers/television-subscription-management-system-7.jpg"
         }
       ],
       "completionDate": "2017-08-15",
@@ -919,7 +918,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336081668108288",
-          "localImage": ""
+          "localImage": "/upwork-covers/neophar-website-3.jpg"
         },
         {
           "type": "image",
@@ -929,7 +928,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336108876558336",
-          "localImage": ""
+          "localImage": "/upwork-covers/neophar-website-4.jpg"
         },
         {
           "type": "image",
@@ -939,7 +938,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336139486588928",
-          "localImage": ""
+          "localImage": "/upwork-covers/neophar-website-5.jpg"
         },
         {
           "type": "image",
@@ -949,7 +948,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900336179491860480",
-          "localImage": "/upwork-covers/neophar-website-3.jpg"
+          "localImage": "/upwork-covers/neophar-website-6.jpg"
         }
       ],
       "completionDate": "2017-08-23",
@@ -1000,7 +999,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358294760239104",
-          "localImage": ""
+          "localImage": "/upwork-covers/goggle-hunt-3.jpg"
         },
         {
           "type": "image",
@@ -1010,7 +1009,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358359604752384",
-          "localImage": ""
+          "localImage": "/upwork-covers/goggle-hunt-4.jpg"
         },
         {
           "type": "image",
@@ -1020,7 +1019,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900358411441582080",
-          "localImage": ""
+          "localImage": "/upwork-covers/goggle-hunt-5.jpg"
         },
         {
           "type": "image",
@@ -1030,7 +1029,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359954131759104",
-          "localImage": "/upwork-covers/goggle-hunt-3.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-6.jpg"
         },
         {
           "type": "image",
@@ -1040,7 +1039,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900359989263249408",
-          "localImage": "/upwork-covers/goggle-hunt-4.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-7.jpg"
         },
         {
           "type": "image",
@@ -1050,7 +1049,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360013062303744",
-          "localImage": "/upwork-covers/goggle-hunt-5.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-8.jpg"
         },
         {
           "type": "image",
@@ -1060,7 +1059,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360066379722752",
-          "localImage": "/upwork-covers/goggle-hunt-6.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-9.jpg"
         },
         {
           "type": "image",
@@ -1070,7 +1069,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360123192143872",
-          "localImage": "/upwork-covers/goggle-hunt-7.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-10.jpg"
         },
         {
           "type": "image",
@@ -1080,7 +1079,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900360154418163712",
-          "localImage": "/upwork-covers/goggle-hunt-8.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-11.jpg"
         },
         {
           "type": "image",
@@ -1090,7 +1089,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363005181734912",
-          "localImage": "/upwork-covers/goggle-hunt-9.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-12.jpg"
         },
         {
           "type": "image",
@@ -1100,7 +1099,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900363054696067072",
-          "localImage": "/upwork-covers/goggle-hunt-10.jpg"
+          "localImage": "/upwork-covers/goggle-hunt-13.jpg"
         }
       ],
       "completionDate": "2017-08-23",
@@ -1109,7 +1108,7 @@
     {
       "id": "complete-controller-crm-system",
       "title": "Complete Controller CRM System",
-      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a \u2018Create New Client\u2019 button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms",
+      "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a ‘Create New Client’ button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms",
       "skills": [],
       "rank": 27,
       "attachments": [
@@ -1151,7 +1150,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377888581398528",
-          "localImage": ""
+          "localImage": "/upwork-covers/complete-controller-crm-system-3.jpg"
         },
         {
           "type": "image",
@@ -1161,7 +1160,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900377927076720640",
-          "localImage": ""
+          "localImage": "/upwork-covers/complete-controller-crm-system-4.jpg"
         },
         {
           "type": "image",
@@ -1171,7 +1170,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378145814441984",
-          "localImage": ""
+          "localImage": "/upwork-covers/complete-controller-crm-system-5.jpg"
         },
         {
           "type": "image",
@@ -1181,7 +1180,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378236012376064",
-          "localImage": "/upwork-covers/complete-controller-crm-system-3.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-6.jpg"
         },
         {
           "type": "image",
@@ -1191,7 +1190,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378311053242368",
-          "localImage": "/upwork-covers/complete-controller-crm-system-4.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-7.jpg"
         },
         {
           "type": "image",
@@ -1201,7 +1200,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378379335938048",
-          "localImage": "/upwork-covers/complete-controller-crm-system-5.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-8.jpg"
         },
         {
           "type": "image",
@@ -1211,7 +1210,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378405806764032",
-          "localImage": "/upwork-covers/complete-controller-crm-system-6.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-9.jpg"
         },
         {
           "type": "image",
@@ -1221,7 +1220,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378448316035072",
-          "localImage": "/upwork-covers/complete-controller-crm-system-7.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-10.jpg"
         },
         {
           "type": "image",
@@ -1231,7 +1230,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378501738311680",
-          "localImage": "/upwork-covers/complete-controller-crm-system-8.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-11.jpg"
         },
         {
           "type": "image",
@@ -1241,7 +1240,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378539227000832",
-          "localImage": "/upwork-covers/complete-controller-crm-system-9.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-12.jpg"
         },
         {
           "type": "image",
@@ -1251,7 +1250,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378569929306112",
-          "localImage": "/upwork-covers/complete-controller-crm-system-10.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-13.jpg"
         },
         {
           "type": "image",
@@ -1261,7 +1260,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378723126259712",
-          "localImage": "/upwork-covers/complete-controller-crm-system-11.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-14.jpg"
         },
         {
           "type": "image",
@@ -1271,7 +1270,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378783264190464",
-          "localImage": "/upwork-covers/complete-controller-crm-system-12.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-15.jpg"
         },
         {
           "type": "image",
@@ -1281,7 +1280,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378848146452480",
-          "localImage": "/upwork-covers/complete-controller-crm-system-13.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-16.jpg"
         },
         {
           "type": "image",
@@ -1291,7 +1290,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378888877338624",
-          "localImage": "/upwork-covers/complete-controller-crm-system-14.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-17.jpg"
         },
         {
           "type": "image",
@@ -1301,7 +1300,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378922540249088",
-          "localImage": "/upwork-covers/complete-controller-crm-system-15.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-18.jpg"
         },
         {
           "type": "image",
@@ -1311,12 +1310,12 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/900378967570296832",
-          "localImage": "/upwork-covers/complete-controller-crm-system-16.jpg"
+          "localImage": "/upwork-covers/complete-controller-crm-system-19.jpg"
         },
         {
           "type": "text",
           "title": null,
-          "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a \u2018Create New Client\u2019 button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms \u2013 can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
+          "description": "My job was to fix some bugs, modify some features and to add some new modules/features into CRM System. Following is the list of instructions that were given to me by the client:\n\n1. Give names to the icons in the upper right of the main admin section (there are three icons there)\n\n2. When we try to add a new company to our company list it prompts for Creator ID (can we make that auto populate based on who is logged in?)\n\n3. We need a ‘Create New Client’ button on the home screen that produces the 5 forms with the next Company ID in succession\n\n4. change Internal ID to Username on all the forms. \n\n5. Please fix the search function (it doesn't work)\n\n6. Please fix the horizontal scrolling in lists.\n\n7. We want to eliminate duplication of like fields meanwhile having but have some fields (spec. Client Legal Name) show up on all forms – can we assign a field to multiple forms? Can we make it editable only on one form and just make to viewable when it shows on the others?\n\n8. Make the Type field a drop-down. We don't know all the options, and a dropdown would be easier.\n\n9. We need to have the email function built in so we can send emails using multiple templates that merge data into the message before sending.\n\n10. We need a template manager so we can make email templates using a WYSIWYG editor, and assign templates to certain forms. I need this new template manager to be secured to only certain people.\n\n11. We will also need to have a naming convention for including data from the form in the email. I assume that we might be able to use the database name (i.e. the formname.itemname).\n\n12. We would like to test this using the Current Info form. At the bottom, we want to make a button that says email this form using Template XXX (and display the template name that was assigned to this form in Step 2 above).\n\n13. Finally, we need some additional security so that only certain people can use the email function. This is important because we can set certain fields to be hidden, read only, or changeable. I don't want a user with limited access being able to email the whole form out (it would defeat the purpose of hiding the fields). So, if we could control that email form button through security, I think that's ideal.\n\nIn addition, in order to create a WYSIWYG email template editor/builder for the CRM System, I integrated an Open Source Email template editor (Mosaico) into the CRM by building a custom PHP Codeigniter and Database Backend for the initially Client-side only Template Editor. This Codeigniter Integration of \"Mosaico\" is Open Source and Free for Commercial use. You can get it at :\nhttps://github.com/ar27111994/Mosaico-CodeIgniter-Ion-Auth\n\nOr\n\nyou can also check its live demo at:\nhttp://mosaicoci.ar27111994.com/",
           "fileName": null,
           "fileSize": 0
         }
@@ -1462,7 +1461,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711687523221504",
-          "localImage": ""
+          "localImage": "/upwork-covers/aljibouri-co-3.jpg"
         },
         {
           "type": "image",
@@ -1472,7 +1471,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912711703155392512",
-          "localImage": ""
+          "localImage": "/upwork-covers/aljibouri-co-4.jpg"
         }
       ],
       "completionDate": "2017-09-26",
@@ -1523,7 +1522,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/912717550027751424",
-          "localImage": ""
+          "localImage": "/upwork-covers/pdf-to-responsive-html-5-3.jpg"
         }
       ],
       "completionDate": "2017-09-26"
@@ -1604,7 +1603,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/947751786867093504",
-          "localImage": ""
+          "localImage": "/upwork-covers/ionic-3-chart-and-forms-with-validation-and-native-sqlite-storage-3.jpg"
         }
       ],
       "completionDate": "2018-01-01"
@@ -1710,7 +1709,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/a9285fb8-c6a4-4550-ba76-72290946c95c",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/28abbb25-7e29-4a63-8775-b29c622c2a81",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/25d72613-da5f-4b2f-a1c1-a1275a29863f",
-          "localImage": ""
+          "localImage": "/upwork-covers/eagle-6-3.jpg"
         },
         {
           "type": "image",
@@ -1720,7 +1719,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2df11eb4-6a71-47d2-ace1-d8bface7f2f5",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/aa6bd8f9-11d4-420b-835e-667f8589baec",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/abdc13ed-335c-4342-aac2-f81666977944",
-          "localImage": ""
+          "localImage": "/upwork-covers/eagle-6-4.jpg"
         },
         {
           "type": "image",
@@ -1730,7 +1729,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/c09826ac-1970-419e-9ed7-1a00b945f338",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/ca226ca9-80c5-4afc-a8c3-d1648380b740",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9acad925-fbe5-4885-bc25-ad2b719d8e54",
-          "localImage": ""
+          "localImage": "/upwork-covers/eagle-6-5.jpg"
         },
         {
           "type": "image",
@@ -1740,7 +1739,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4c41f27-c18a-4246-a53d-4e554972acdc",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/697fd366-f7c9-49e2-9ac9-49bbe6143a46",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e42eb3a9-518a-4903-89c5-e681501c1e63",
-          "localImage": "/upwork-covers/eagle-6-3.jpg"
+          "localImage": "/upwork-covers/eagle-6-6.jpg"
         },
         {
           "type": "image",
@@ -1750,7 +1749,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/f442ce95-8191-4b26-8468-3cc055ff22ec",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/6539aba9-8f30-4264-8dea-906848714921",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2a32729a-b62a-4a9d-901d-530968a5650c",
-          "localImage": "/upwork-covers/eagle-6-4.jpg"
+          "localImage": "/upwork-covers/eagle-6-7.jpg"
         },
         {
           "type": "image",
@@ -1760,7 +1759,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/261d4bdc-9822-4274-aff0-4fa411322106",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/0ddcf46a-e690-4a33-ac96-3ef75d521a07",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/21e249de-c36e-423d-9962-ab0123aa4ce9",
-          "localImage": "/upwork-covers/eagle-6-5.jpg"
+          "localImage": "/upwork-covers/eagle-6-8.jpg"
         },
         {
           "type": "image",
@@ -1770,7 +1769,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/62552f77-88a3-4983-8072-6415058ed7f2",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/024712b3-ebf1-47a8-8345-ee9e98bcbe0a",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9aa80507-a3d6-4239-9648-7d6c057d80ad",
-          "localImage": "/upwork-covers/eagle-6-6.jpg"
+          "localImage": "/upwork-covers/eagle-6-9.jpg"
         },
         {
           "type": "image",
@@ -1780,7 +1779,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/d705d281-f305-48d3-9fb7-b6c6005d6a75",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/7374baec-acf7-4661-9728-e7a12c61cbb9",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e4a54a8f-4af7-497a-8e17-c31b5b9cdde7",
-          "localImage": "/upwork-covers/eagle-6-7.jpg"
+          "localImage": "/upwork-covers/eagle-6-10.jpg"
         },
         {
           "type": "image",
@@ -1790,7 +1789,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/73f44c1c-805e-4e9d-a5f4-fd37ce435a8e",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/6c375167-c46e-4fef-bcda-1746c401bce2",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/fac16ec2-2615-440e-904d-5706fdd2c81a",
-          "localImage": "/upwork-covers/eagle-6-8.jpg"
+          "localImage": "/upwork-covers/eagle-6-11.jpg"
         },
         {
           "type": "image",
@@ -1800,7 +1799,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/96dd9c80-7195-436f-ba86-ec1abdff0ae1",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b9bbf801-6465-490e-91a1-e45181b41e19",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/66b045f2-8626-456a-8ea0-a0e7210e9db6",
-          "localImage": "/upwork-covers/eagle-6-9.jpg"
+          "localImage": "/upwork-covers/eagle-6-12.jpg"
         },
         {
           "type": "text",
@@ -1817,7 +1816,13 @@
       "id": "webhook-debugger-and-logger",
       "title": "Webhook Debugger and Logger",
       "description": "Open-source webhook testing and debugging suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic in real time.\n\nI designed and built the product surface, backend workflow, replay/debugging loop, and developer-facing documentation around practical integration reliability.\n\nRelevant for webhook receivers, API integrations, incident debugging, replay safety, and developer-tool UX.\n\nProof: https://github.com/ar27111994/webhook-debugger-logger",
-      "skills": ["JavaScript", "Node.js", "API", "Docker", "Jest"],
+      "skills": [
+        "JavaScript",
+        "Node.js",
+        "API",
+        "Docker",
+        "Jest"
+      ],
       "rank": 37,
       "attachments": [
         {
@@ -1871,7 +1876,11 @@
       "id": "penpot-mcp",
       "title": "penpot-mcp",
       "description": "Agent workflow support for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows.\n\nI packaged the workflow as reusable agent support for product-surface quality, design-system maintenance, and MCP-style design-to-code collaboration. The project is relevant for frontend implementation, design systems, prototype maintenance, and AI-assisted product workflows.\n\nProof: https://github.com/ar27111994/penpot-mcp",
-      "skills": ["Web Development", "JavaScript", "Prototyping"],
+      "skills": [
+        "Web Development",
+        "JavaScript",
+        "Prototyping"
+      ],
       "rank": 39,
       "attachments": [
         {
@@ -1892,7 +1901,11 @@
       "id": "ar27111994-dev",
       "title": "ar27111994.dev",
       "description": "Consolidated public portfolio, resume downloads, project proof links, public work feed, and client-facing contact surface for freelance/client acquisition.\n\nI built and refined the site as a developer-lab proof surface: fast static Astro deployment, responsive layout, SEO metadata, structured proof sections, live-enhanced public metrics, and polished resume/contact paths. The project is relevant for trust-building, proof packaging, technical portfolio design, performance-conscious frontend work, and accessibility-minded implementation.\n\nProof: https://www.ar27111994.dev",
-      "skills": ["Web Development", "Responsive Design", "JavaScript"],
+      "skills": [
+        "Web Development",
+        "Responsive Design",
+        "JavaScript"
+      ],
       "rank": 40,
       "attachments": [
         {
@@ -1926,8 +1939,14 @@
     {
       "id": "opencorporates-us-resolver",
       "title": "OpenCorporates US Resolver",
-      "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace \u2014 using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
-      "skills": ["FastAPI", "Web Scraping", "Selenium", "Python", "pytest"],
+      "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace — using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
+      "skills": [
+        "FastAPI",
+        "Web Scraping",
+        "Selenium",
+        "Python",
+        "pytest"
+      ],
       "rank": 41,
       "attachments": [
         {
@@ -1968,7 +1987,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/2d1f08ab-cf0c-417b-aac3-31b3149365c5",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/a03a11b2-cfa5-447e-b65c-e70a8bae937f",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/147dbf73-264a-42cf-8e73-4da579754401",
-          "localImage": ""
+          "localImage": "/upwork-covers/opencorporates-us-resolver-3.jpg"
         },
         {
           "type": "image",
@@ -1978,7 +1997,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/e9ae4af2-c55b-4415-a134-ece34d89d0b6",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/4471264b-ba18-4a7a-aa21-c09cce61ed6e",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/9519fe61-6d0c-4e4c-ab36-f704a7ea5f12",
-          "localImage": ""
+          "localImage": "/upwork-covers/opencorporates-us-resolver-4.jpg"
         },
         {
           "type": "image",
@@ -1988,7 +2007,7 @@
           "imageSmall": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/b4f7945a-c2f2-4785-82b2-4f5d0ab6a317",
           "imageMiddle": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/af4acea7-acfe-42c4-9bb3-3d293053412d",
           "imageLarge": "/att/download/portfolio/persons/uid/424245383220543488/profile/projects/files/52aac597-29a4-43a2-beb5-db0f5b7aedcd",
-          "localImage": ""
+          "localImage": "/upwork-covers/opencorporates-us-resolver-5.jpg"
         },
         {
           "type": "website",
@@ -2051,7 +2070,7 @@
     },
     {
       "id": "ai-development-suite-11-agent-skills-submissions-on-capafy",
-      "title": "AI Development Suite \u2014 11 Agent & Skills Submissions on Capafy",
+      "title": "AI Development Suite — 11 Agent & Skills Submissions on Capafy",
       "description": "Published 11 production-grade AI agent skills on Capafy marketplace, spanning design systems engineering, CLI tool QA, code quality standards, Astro optimization, LLM context modular docs, Penpot MCP, GSD spec-driven development, project documentation, release readiness audit, and startup AI playbook. Each skill is packaged as a .skill bundle with canonical SKILL.md, references, scripts, and assets. Includes Gumroad storefront listings and Capafy submission pipeline.",
       "skills": [
         "Documentation",
