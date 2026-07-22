@@ -152,7 +152,7 @@
   color: var(--ink-on-dark);
 }
 .feed-item small {
-  color: var(--text-dim);
+  color: var(--ink-soft);
 }
 .feed-widget {
   border: 1px solid rgba(237, 232, 224, 0.08);

@@ -1041,7 +1041,7 @@ h3 {
 }
 .signal-note {
   margin: 0.48rem 0 0;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   font-size: 0.78rem;
   font-weight: 820;
   line-height: 1.35;
@@ -1336,7 +1336,7 @@ h3 {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   position: relative;
   z-index: 1;
   text-align: center;
@@ -1874,7 +1874,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: none;
 }
 .proof-ledger small {
-  color: var(--text-dim);
+  color: var(--ink-soft);
   font-size: 0.66rem;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -3958,7 +3958,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   margin-bottom: 0.65rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(237, 232, 224, 0.06);
@@ -4102,7 +4102,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   filter: brightness(0) invert(1);
 }
 .feed-source-pill:hover small {
-  color: var(--text-dim);
+  color: var(--ink-soft);
 }
 .feed-sources-carousel .swiper-slide {
   width: auto;
