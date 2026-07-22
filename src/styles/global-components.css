@@ -853,7 +853,6 @@
   flex-shrink: 0;
   filter: var(--brand-icon-filter);
   opacity: 0.7;
-  filter: var(--brand-icon-filter);
 }
 .testimonial-source:hover {
   background: color-mix(in srgb, var(--blue) 10%, transparent);
@@ -955,7 +954,6 @@
   flex-shrink: 0;
   filter: var(--brand-icon-filter);
   opacity: 0.85;
-  filter: var(--brand-icon-filter);
 }
 
 .cs-context {

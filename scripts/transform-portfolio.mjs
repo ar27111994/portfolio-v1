@@ -178,7 +178,8 @@ function transformProject(p) {
     rank: p.rank,
   };
   if (attachments.length) item.attachments = attachments;
-  if (p.completionDateTime) item.completionDate = String(p.completionDateTime);
+  if (p.completionDateTime)
+    item.completionDate = String(p.completionDateTime).slice(0, 10);
   else if (p.creationTs)
     item.completionDate = String(p.creationTs).slice(0, 10);
   else if (p.createdDateTime)

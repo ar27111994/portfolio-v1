@@ -176,7 +176,7 @@ def header(photo: bool = False, role: str = "", badges_html: str = "", contact_c
       <span class="badge anth">{icon('nvidia', 14)}NVIDIA Developer</span>
       <span class="badge anth">{icon('amd', 14)}AMD Developer</span>
       <span class="badge anth">{icon('aws', 14)}AWS Developer</span>
-      <span class="badge anth">{icon('google', 14)}Google Cloud Developer</span>
+      <span class="badge anth">{icon('googlecloud', 14)}Google Cloud Developer</span>
       <span class="badge oss">{icon('github', 7)}Open-source maintainer</span>
       <span class="badge">Devtools builder</span>
       <span class="badge">Webhook / API tooling</span>
