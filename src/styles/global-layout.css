@@ -1257,7 +1257,7 @@ h3 {
 .profile-widget:hover small,
 .resume-widget:hover small,
 .contact-widget:hover small {
-  color: var(--text-dim);
+  color: var(--ink-soft);
 }
 .project-visual {
   border: 1px solid var(--line-subtle);
@@ -2071,7 +2071,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .upwork-summary-card p {
   margin: 0;
-  color: var(--text-dim);
+  color: var(--ink-soft);
 }
 .upwork-tags {
   display: flex;
@@ -4039,7 +4039,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .feed-item-body small {
   font-size: 0.67rem;
-  color: var(--text-dim);
+  color: var(--ink-soft);
   font-weight: 600;
 }
 .feed-sources-carousel {
