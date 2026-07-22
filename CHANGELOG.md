@@ -5,6 +5,11 @@ All notable changes to `ar27111994.dev` (portfolio-v1) are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] — 2026-07-22
+
+### Changed
+- **prefetchAll** enabled for instant privacy-page navigation
+
 ## [0.1.0] — 2026-07-21
 
 ### Added
