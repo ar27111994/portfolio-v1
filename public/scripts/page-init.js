@@ -72,7 +72,10 @@ function initPage() {
   })();
 
   // ── TIER 1c: nav scroll state — compact top-bar on scroll ──────────────────
+  var _navScrollInstalled = false;
   (function setupNavScrollState() {
+    if (_navScrollInstalled) return;
+    _navScrollInstalled = true;
     const topBar = document.querySelector(".top-bar");
     if (!topBar) return;
     let ticking = false;
@@ -716,24 +719,24 @@ function initPage() {
   }
 
   // ── TIER 4: Infinite scroll sentinel for feed ──────────────────────────
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(
-      function setupFeedSentinel() {
-        const sentinel = document.getElementById("feed-sentinel");
-        const list = document.querySelector("[data-feed-list]");
-        if (!sentinel || !list) return;
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) loadMoreFeed(list);
-            });
-          },
-          { rootMargin: "0px 0px 200px 0px" },
-        );
-        observer.observe(sentinel);
+  function setupFeedSentinel() {
+    const sentinel = document.getElementById("feed-sentinel");
+    const list = document.querySelector("[data-feed-list]");
+    if (!sentinel || !list) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) loadMoreFeed(list);
+        });
       },
-      { timeout: 4000 },
+      { rootMargin: "0px 0px 200px 0px" },
     );
+    observer.observe(sentinel);
+  }
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(setupFeedSentinel, { timeout: 4000 });
+  } else {
+    setTimeout(setupFeedSentinel, 100);
   }
 } // end initPage
 
@@ -889,8 +892,7 @@ document.addEventListener("click", (e) => {
       '.upwork-modal[open], .upwork-modal[aria-hidden="false"]',
     );
     if (openModal) {
-      var closeBtn = openModal.querySelector(".upwork-modal-close");
-      if (closeBtn) closeBtn.click();
+      openModal.close();
     }
 
     if (images.length > 1) {
