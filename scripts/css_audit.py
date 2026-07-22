@@ -1,6 +1,7 @@
 import re, os
+from pathlib import Path
 
-os.chdir("C:/Projects/portfolio-v1")
+os.chdir(str(Path(__file__).resolve().parent.parent))
 
 selectors = set()
 for css_file in ['src/styles/global-layout.css', 'src/styles/global-components.css']:

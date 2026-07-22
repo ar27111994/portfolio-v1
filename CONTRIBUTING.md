@@ -30,7 +30,7 @@ npm run dev        # http://localhost:4321
 
 - **TypeScript** for all logic files
 - **Astro** for pages and components
-- **CSS** in `src/styles/global.css` using design tokens from `:root`
+- **CSS** in `src/styles/global-theme.css + global-layout.css` using design tokens from `:root`
 - Run `npm run format` before committing (enforced by Husky pre-commit hook)
 
 ## Pull Request Checklist

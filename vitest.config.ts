@@ -12,7 +12,7 @@ export default defineConfig({
         functions: 0,
         lines: 0,
       },
-      reporter: ["text", "lcov"],
+      reporter: ["text", "lcov", "json-summary"],
     },
   },
 });

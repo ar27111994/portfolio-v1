@@ -102,7 +102,7 @@ Token refresh is fully automatic from that point on.
 
 - `src/pages/index.astro` — homepage sections
 - `src/pages/privacy.astro` — privacy policy
-- `src/styles/global.css` — styling
+- `src/styles/global-theme.css + global-layout.css` — styling
 - `src/layouts/Layout.astro` — metadata / SEO shell
 - `public/resume/*.pdf` — downloadable resumes
 
