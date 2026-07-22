@@ -306,6 +306,7 @@ function initPage() {
     }
   }
 
+  var _feedLoading = false;
   function loadMoreFeed(list) {
     if (!feedHasMore) return;
     feedPage++;
