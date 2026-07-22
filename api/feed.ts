@@ -217,26 +217,29 @@ async function fetchLinkedIn(): Promise<FeedItem[]> {
   const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
   if (!clientId || !clientSecret) return [];
   try {
-    const authRes = await fetch(
-      "https://www.linkedin.com/oauth/v2/accessToken",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          grant_type: "client_credentials",
-          client_id: clientId,
-          client_secret: clientSecret,
-          scope: "w_member_social openid profile",
-        }),
-      },
-    );
-    if (!authRes.ok) return [];
-    const auth = (await authRes.json()) as { access_token: string };
+    if (!token) {
+      const authRes = await fetch(
+        "https://www.linkedin.com/oauth/v2/accessToken",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            grant_type: "client_credentials",
+            client_id: clientId,
+            client_secret: clientSecret,
+            scope: "w_member_social openid profile",
+          }),
+        },
+      );
+      if (!authRes.ok) return [];
+      const auth = (await authRes.json()) as { access_token: string };
+      token = auth.access_token;
+    }
     const postsRes = await fetch(
       `https://api.linkedin.com/v2/posts?author=urn:li:person:ar27111994&q=author&count=10&sortBy=LAST_MODIFIED`,
       {
         headers: {
-          Authorization: `Bearer ${auth.access_token}`,
+          Authorization: `Bearer ${token}`,
           "LinkedIn-Version": "202405",
           "X-Restli-Protocol-Version": "2.0.0",
         },

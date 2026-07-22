@@ -19,6 +19,11 @@ async function getAccessToken(): Promise<string> {
 
   const clientId = process.env.LINKEDIN_CLIENT_ID;
   const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
+  const accessToken = process.env.LINKEDIN_ACCESS_TOKEN;
+
+  // Use direct access token if available (3-legged OAuth)
+  if (accessToken) return accessToken;
+
   if (!clientId || !clientSecret) {
     throw new Error(
       "LINKEDIN_CLIENT_ID or LINKEDIN_CLIENT_SECRET not configured",
