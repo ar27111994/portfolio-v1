@@ -43,7 +43,7 @@ describe("site-content data module", () => {
       "upworkFitTags",
     ];
     for (const name of requiredExports) {
-      expect(content).toMatch(new RegExp(`export const ${name}\b`));
+      expect(content).toContain(`export const ${name}`);
     }
   });
 
@@ -73,7 +73,7 @@ describe("site-content data module", () => {
       "ProfileLink",
     ];
     for (const name of requiredInterfaces) {
-      expect(content).toMatch(new RegExp(`export interface ${name}\b`));
+      expect(content).toContain(`export interface ${name}`);
     }
   });
 
