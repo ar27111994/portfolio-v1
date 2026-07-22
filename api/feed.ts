@@ -236,7 +236,7 @@ async function fetchLinkedIn(): Promise<FeedItem[]> {
       token = auth.access_token;
     }
     const postsRes = await fetch(
-      `https://api.linkedin.com/v2/posts?author=urn:li:person:ar27111994&q=author&count=10&sortBy=LAST_MODIFIED`,
+      `https://api.linkedin.com/v2/posts?author=urn:li:person:sN2bD0M7oN&q=author&count=10&sortBy=LAST_MODIFIED`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
