@@ -103,7 +103,9 @@ export default async function handler(
       url: p.id
         ? `https://www.linkedin.com/feed/update/${p.id}`
         : "https://linkedin.com/in/ar27111994",
-      date: p.createdAt ? new Date(p.createdAt).toISOString() : "",
+      date: p.createdAt
+        ? new Date(p.createdAt).toISOString()
+        : new Date().toISOString(),
       tag: "LinkedIn",
     }));
 

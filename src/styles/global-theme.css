@@ -59,7 +59,6 @@
   --space-2: 0.5rem;
   --space-3: 0.75rem;
   --space-4: 1rem;
-  --w: 3px;
   --space-5: 1.25rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
@@ -181,7 +180,6 @@
   --ink-on-dark: #fff; /* text on always-dark surfaces */
   --surface-inverse: #0f0d0b;
   --text-dim: #b0a595; /* always-dark surface (buttons, footers) */
-  --text-dim: #b0a595; /* dim/meta text on dark backgrounds */
 
   /* ── Component-scoped token aliases ──────────────────────────────── */
   --button-primary-bg: var(--blue);
@@ -302,7 +300,6 @@ html.dark {
   --code-bg: rgba(237, 232, 224, 0.06);
   --button-primary-text: #fff;
   --surface-inverse: #0f0d0b;
-  --text-dim: #b0a595;
   --ink-on-dark: #fff;
 
   --grad-hero: linear-gradient(165deg, #1a1712 0%, #1e1b14 50%, #181510 100%);
