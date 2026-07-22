@@ -8,7 +8,7 @@ export default defineConfig({
   integrations: [sitemap()],
   prefetch: {
     defaultStrategy: "hover",
-    prefetchAll: false,
+    prefetchAll: true,
   },
   image: {
     remotePatterns: [
