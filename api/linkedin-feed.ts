@@ -75,10 +75,8 @@ export default async function handler(
 
   try {
     if (!process.env.LINKEDIN_ACCESS_TOKEN && !process.env.LINKEDIN_CLIENT_ID) {
-      return new Response(JSON.stringify({ posts: [], disabled: true }), {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      });
+      res.status(200).json({ posts: [], disabled: true });
+      return;
     }
     const token = await getAccessToken();
 

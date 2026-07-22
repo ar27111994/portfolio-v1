@@ -54,7 +54,7 @@ test.describe("Core Web Vitals", () => {
       cls = await page.evaluate(() => {
         return new Promise<number>((resolve) => {
           let value = 0;
-          new PerformanceObserver((list) => {
+          const observer = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
               // eslint-disable-next-line @typescript-eslint/no-explicit-any
               if (!(entry as any).hadRecentInput) {
@@ -62,8 +62,12 @@ test.describe("Core Web Vitals", () => {
                 value += (entry as any).value;
               }
             }
-          }).observe({ type: "layout-shift", buffered: true });
-          setTimeout(() => resolve(value), 100);
+          });
+          observer.observe({ type: "layout-shift", buffered: true });
+          setTimeout(() => {
+            observer.disconnect();
+            resolve(value);
+          }, 100);
         });
       });
     } catch {
