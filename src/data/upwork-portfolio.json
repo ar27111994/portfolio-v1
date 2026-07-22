@@ -1816,13 +1816,7 @@
       "id": "webhook-debugger-and-logger",
       "title": "Webhook Debugger and Logger",
       "description": "Open-source webhook testing and debugging suite for capturing, inspecting, replaying, forwarding, validating, and mocking webhook traffic in real time.\n\nI designed and built the product surface, backend workflow, replay/debugging loop, and developer-facing documentation around practical integration reliability.\n\nRelevant for webhook receivers, API integrations, incident debugging, replay safety, and developer-tool UX.\n\nProof: https://github.com/ar27111994/webhook-debugger-logger",
-      "skills": [
-        "JavaScript",
-        "Node.js",
-        "API",
-        "Docker",
-        "Jest"
-      ],
+      "skills": ["JavaScript", "Node.js", "API", "Docker", "Jest"],
       "rank": 37,
       "attachments": [
         {
@@ -1876,11 +1870,7 @@
       "id": "penpot-mcp",
       "title": "penpot-mcp",
       "description": "Agent workflow support for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows.\n\nI packaged the workflow as reusable agent support for product-surface quality, design-system maintenance, and MCP-style design-to-code collaboration. The project is relevant for frontend implementation, design systems, prototype maintenance, and AI-assisted product workflows.\n\nProof: https://github.com/ar27111994/penpot-mcp",
-      "skills": [
-        "Web Development",
-        "JavaScript",
-        "Prototyping"
-      ],
+      "skills": ["Web Development", "JavaScript", "Prototyping"],
       "rank": 39,
       "attachments": [
         {
@@ -1901,11 +1891,7 @@
       "id": "ar27111994-dev",
       "title": "ar27111994.dev",
       "description": "Consolidated public portfolio, resume downloads, project proof links, public work feed, and client-facing contact surface for freelance/client acquisition.\n\nI built and refined the site as a developer-lab proof surface: fast static Astro deployment, responsive layout, SEO metadata, structured proof sections, live-enhanced public metrics, and polished resume/contact paths. The project is relevant for trust-building, proof packaging, technical portfolio design, performance-conscious frontend work, and accessibility-minded implementation.\n\nProof: https://www.ar27111994.dev",
-      "skills": [
-        "Web Development",
-        "Responsive Design",
-        "JavaScript"
-      ],
+      "skills": ["Web Development", "Responsive Design", "JavaScript"],
       "rank": 40,
       "attachments": [
         {
@@ -1940,13 +1926,7 @@
       "id": "opencorporates-us-resolver",
       "title": "OpenCorporates US Resolver",
       "description": "A public-website-backed resolver for US LLCs. Given an LLC name (with or without a state), it resolves the OpenCorporates company number, jurisdiction, status, registered agent, agent address, mailing/head-office address, source URL, deterministic confidence score, and full debug trace — using only the public OpenCorporates website HTML. No api.opencorporates.com. No accounts, logins, or shared cookies. 212 offline tests, CI/CD, Docker image, FastAPI, CLI, CSV batch runner. Built with Python, httpx, SeleniumBase UC/CDP, rapidfuzz deterministic scoring.",
-      "skills": [
-        "FastAPI",
-        "Web Scraping",
-        "Selenium",
-        "Python",
-        "pytest"
-      ],
+      "skills": ["FastAPI", "Web Scraping", "Selenium", "Python", "pytest"],
       "rank": 41,
       "attachments": [
         {
