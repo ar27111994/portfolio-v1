@@ -4,7 +4,7 @@ Personal portfolio for **Ahmed Rehan** — devtools, agent systems, webhooks & a
 
 ## Stack
 
-- Astro 6 (static output)
+- Astro 7 (static output)
 - `@astrojs/sitemap`
 - Vercel (hosting + serverless functions + cron)
 
