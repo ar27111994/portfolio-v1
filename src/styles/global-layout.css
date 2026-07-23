@@ -3958,7 +3958,7 @@ html.dark .featured-card.accent-skills .featured-visual {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: var(--ink-on-dark);
   margin-bottom: 0.65rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(237, 232, 224, 0.06);
@@ -4039,7 +4039,7 @@ html.dark .featured-card.accent-skills .featured-visual {
 }
 .feed-item-body small {
   font-size: 0.67rem;
-  color: var(--ink-soft);
+  color: var(--text-dim);
   font-weight: 600;
 }
 .feed-sources-carousel {
@@ -4588,4 +4588,10 @@ code {
 }
 .img-lightbox.is-open ~ .img-lightbox-counter {
   display: block;
+}
+
+/* WCAG touch target — 24px minimum for Swiper bullets */
+.swiper-pagination-bullet {
+  min-width: 24px;
+  min-height: 24px;
 }
