@@ -261,7 +261,7 @@ def build_full_html() -> str:
     body += """<div class="entry">
 <p class="entry-title">SupaHooks Sentinel</p>
 <p>Hermes Accelerated Business Hackathon submission: Supabase-native webhook monitoring, alerting, and audit-trail system with real-time event replay and structured incident management.</p>
-""" + f'<p class="small">{icon("x", 7)} <a href="https://x.com/ar27111994/status/2072177718893097449?s=20">https://x.com/ar27111994/status/2072177718893097449?s=20</a></p></div>'
+""" + f'<p class="small">{icon("x", 7)} <a href="https://x.com/ar27111994/status/2072177718893097449">x.com/ar27111994/status/2072177718893097449</a></p></div>'
     # AI Dev Suite
     body += """<div class="entry">
 <p class="entry-title">AI Development Suite</p>

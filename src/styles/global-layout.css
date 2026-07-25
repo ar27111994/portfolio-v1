@@ -4590,9 +4590,13 @@ code {
   display: block;
 }
 
-/* WCAG touch target — 24px hit area via padding without changing painted size.
+/* WCAG touch target — 24px hit area via ::before pseudo-element.
    The painted dot/pill is sized in global-components.css (8px inactive, 24px active). */
 .swiper-pagination-bullet {
-  padding: 8px;
-  background-clip: content-box;
+  position: relative;
+}
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
 }
