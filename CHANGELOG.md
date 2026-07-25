@@ -9,7 +9,7 @@ with [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
-- **prefetchAll** enabled for instant privacy-page navigation
+- **prefetchAll** enabled globally for instant navigation across all eligible links; load-time prefetching also applied to privacy links
 
 ## [0.1.0] — 2026-07-21
 

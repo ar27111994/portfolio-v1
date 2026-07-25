@@ -266,7 +266,7 @@ def build_full_html() -> str:
     body += """<div class="entry">
 <p class="entry-title">AI Development Suite</p>
 <p>Curated bundle of 11 production-grade agent skills and developer tools published on Capafy covering code review, release auditing, CLI QA, documentation generation, design systems, and workflow automation.</p>
-""" + f'<p class="small"><a href="https://capafy.ai/publisher/ar27111994">capafy.ai/publisher/ar27111994</a> — 11 agent & skill submissions</p></div>'
+""" + '<p class="small"><a href="https://capafy.ai/publisher/ar27111994">capafy.ai/publisher/ar27111994</a> — 11 agent & skill submissions</p></div>'
     # penpot-mcp
     body += """<div class="entry">
 <p class="entry-title">penpot-mcp</p>
