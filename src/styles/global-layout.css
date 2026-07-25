@@ -4590,8 +4590,13 @@ code {
   display: block;
 }
 
-/* WCAG touch target — 24px minimum for Swiper bullets */
+/* WCAG touch target — 24px hit area via ::before pseudo-element.
+   The painted dot/pill is sized in global-components.css (8px inactive, 24px active). */
 .swiper-pagination-bullet {
-  min-width: 24px;
-  min-height: 24px;
+  position: relative;
+}
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
 }
