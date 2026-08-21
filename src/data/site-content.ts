@@ -980,7 +980,7 @@ export const openSourceFreemium = [
 export const sponsorLinks = [
   {
     label: "Patreon",
-    href: "https://www.patreon.com/cw/ar27111994",
+    href: "https://www.patreon.com/cw/ARLabs",
     note: "Recurring support + roadmap voting",
     icon: "/brand-icons/patreon.svg",
   },
