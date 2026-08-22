@@ -123,6 +123,35 @@ async function main() {
   const full = await get("/llms-full.txt");
   check("5.3 llms-full.txt exists", full.status === 200);
 
+  // Sitemap. Built at deploy time; non-loopback targets must serve both
+  // files as XML. Loopback (astro dev, output: "server") has no dist in its
+  // pipeline and legitimately 404s — reported as n/a, not failure.
+  {
+    const index = await get("/sitemap-index.xml");
+    const pages = await get("/sitemap-0.xml");
+    const loopback = /^(localhost|127\.0\.0\.1)(:\d+)?$/.test(
+      new URL(BASE).host,
+    );
+    check(
+      "5.4 sitemap-index.xml serves",
+      loopback && index.status === 404
+        ? true
+        : index.status === 200 && index.contentType.includes("xml"),
+      loopback && index.status === 404
+        ? "n/a on dev (build-generated artifact not in dev pipeline)"
+        : `status=${index.status} content-type=${index.contentType}`,
+    );
+    check(
+      "5.5 sitemap-0.xml serves",
+      loopback && pages.status === 404
+        ? true
+        : pages.status === 200 && pages.contentType.includes("xml"),
+      loopback && pages.status === 404
+        ? "n/a on dev (build-generated artifact not in dev pipeline)"
+        : `status=${pages.status} content-type=${pages.contentType}`,
+    );
+  }
+
   // 6. Token budget (extracted text of the homepage HTML)
   {
     const html = await (await fetch(`${BASE}/`)).text();
