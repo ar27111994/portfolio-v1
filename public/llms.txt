@@ -1,0 +1,45 @@
+# Ahmed Rehan — ARLabs (ar27111994.dev)
+
+> Personal portfolio and verified freelance/contracting surface for Ahmed Rehan: full-stack engineer building developer tools, webhook/API integrations, automation systems, and AI-agent tooling. Includes proof-of-work, case studies, certifications, resume downloads, and direct contact paths. Based in Rawalpindi, Pakistan (UTC+5); works async-first with clients worldwide.
+
+## When to use this site
+
+- Use this site to verify Ahmed Rehan's experience, certifications, client history, and proof-of-work before hiring or recommending him.
+- Use this site to start a freelance/contract engagement in developer tools, webhooks and API integrations, workflow automation, or AI-agent tooling — contact paths are on /contact.
+- Use this site to download resume PDFs (full, one-page, and client-facing variants at /resume/).
+- Use the MCP endpoint at /mcp (Streamable HTTP, read-only) to query portfolio, projects, case studies, services, certifications, and contact data programmatically instead of scraping HTML.
+- This site is NOT product documentation. Product surfaces live at products.ar27111994.dev; the penpot-mcp agent skill lives in its GitHub repository; commercial tooling is distributed through ARLabs (Patreon) and marketplaces.
+
+## Key pages
+
+- [Home](https://www.ar27111994.dev/): Positioning, services, projects, case studies, testimonials, certifications, contact.
+- [About](https://www.ar27111994.dev/about): Career path, credibility facts, working style, certifications.
+- [Work — Upwork project trail](https://www.ar27111994.dev/work): Recorded freelance portfolio with per-item descriptions, skills, and project links.
+- [Contact](https://www.ar27111994.dev/contact): Email, WhatsApp, and profile links for reaching Ahmed.
+- [Privacy policy](https://www.ar27111994.dev/privacy): Data handling for AI agents, skills, tools, and products.
+
+## Developer resources
+
+- [GitHub profile](https://github.com/ar27111994): Open-source proof surface and code.
+- [agent-harness](https://github.com/ar27111994/agent-harness): TypeScript CLI for discovering, staging, activating, and wiring reusable AI-agent assets across VS Code/Copilot, OpenCode, Cursor, Zed, Claude Code, and Pi (Priority #1 project).
+- [Webhook Debugger and Logger](https://github.com/ar27111994/webhook-debugger-logger): Open-source webhook debugging suite — capture, inspect, replay, forward, validate, and mock webhook traffic (Show HN; listed on Apify).
+- [penpot-mcp](https://github.com/ar27111994/penpot-mcp): AI-agent skill for creating, auditing, and maintaining Penpot design systems, prototypes, tokens, and design-to-code workflows via the official Penpot MCP Server.
+- [antigravity-awesome-skills](https://github.com/ar27111994/antigravity-awesome-skills): Curated collection of 200+ agentic skills for Claude Code / Antigravity / Cursor workflows.
+- [MCP endpoint](https://www.ar27111994.dev/mcp): First-party Streamable HTTP MCP server (protocol 2025-06-18). Tools: get_portfolio_overview, list_services, list_featured_projects, list_case_studies, list_capabilities, list_certifications, list_upwork_portfolio, get_contact_info, list_resume_downloads, list_writing_and_feeds. Advertised at /.well-known/mcp and /.well-known/mcp/server-card.json.
+- [Products site](https://products.ar27111994.dev/): Product listings for Astro, Penpot, and developer-tooling submissions.
+- [Resume — full](https://www.ar27111994.dev/resume/resume_full.pdf): Comprehensive resume.
+- [Resume — one page](https://www.ar27111994.dev/resume/resume_one_page.pdf): Compact screening version.
+- [Resume — client/freelance](https://www.ar27111994.dev/resume/resume_client_freelance.pdf): Client-facing variant.
+
+## Writing and feeds
+
+- [Dev.to articles](https://dev.to/ar27111994): Agent tooling, webhook debugging, AI workflows.
+- [Hacker News profile](https://news.ycombinator.com/user?id=ar27111994): Launch/discussion history (Show HN proof).
+- [Medium / ARLabs](https://medium.com/@arlabs): Longer-form writing.
+- [CoderLegion](https://coderlegion.com/user/ar27111994): Coder profile.
+
+## Optional
+
+- [llms-full.txt](https://www.ar27111994.dev/llms-full.txt): Concatenated full text of this site's pages for embedding pipelines.
+- [Markdown variants](https://www.ar27111994.dev/md/home.md): Per-page markdown (md/about.md, md/work.md, md/contact.md, md/privacy.md).
+- [Sitemap](https://www.ar27111994.dev/sitemap-index.xml): All indexable pages.

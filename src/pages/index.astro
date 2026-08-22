@@ -10,7 +10,7 @@ import ProfileSection from "../components/ProfileSection.astro";
 import CapabilitiesSection from "../components/CapabilitiesSection.astro";
 import ProofSection from "../components/ProofSection.astro";
 import TestimonialsSection from "../components/TestimonialsSection.astro";
-import UpworkSection from "../components/UpworkSection.astro";
+import UpworkPreviewSection from "../components/UpworkPreviewSection.astro";
 import FeedSection from "../components/FeedSection.astro";
 import AdditionalProjectsSection from "../components/AdditionalProjectsSection.astro";
 import CaseStudiesSection from "../components/CaseStudiesSection.astro";
@@ -21,7 +21,6 @@ import ServicesSection from "../components/ServicesSection.astro";
 import {
   contactEmail,
   upworkProfileUrl,
-  upworkPortfolioItems,
   upworkPortfolioCount,
   upworkPortfolioCountLabel,
   recentUpworkProofTitles,
@@ -49,6 +48,9 @@ import {
   openSourceFreemium,
   sponsorLinks,
 } from "../data/site-content";
+
+// On-demand: Accept-negotiation (text/markdown) must run on the real request.
+export const prerender = false;
 ---
 
 <Layout>
@@ -331,14 +333,12 @@ import {
     </div>
 
     <div class="reveal">
-      <UpworkSection
-        upworkPortfolioItems={upworkPortfolioItems}
+      <UpworkPreviewSection
         upworkPortfolioCountLabel={upworkPortfolioCountLabel}
-        recentUpworkProofTitles={recentUpworkProofTitles}
-        upworkFitTags={upworkFitTags}
-        upworkProfileUrl={upworkProfileUrl}
         upworkPortfolioCount={upworkPortfolioCount}
         upworkProofCards={upworkProofCards}
+        upworkFitTags={upworkFitTags}
+        upworkProfileUrl={upworkProfileUrl}
       />
     </div>
 
@@ -381,9 +381,13 @@ import {
     <footer class="site-footer" role="contentinfo">
       <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
       <p>
-        <a href="/privacy" data-astro-prefetch="load">Privacy Policy</a> · <a
-          href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a
-        >
+        <a href="/about" data-astro-prefetch="load">About</a> · <a
+          href="/work"
+          data-astro-prefetch="load">Work</a
+        > · <a href="/contact" data-astro-prefetch="load">Contact</a> · <a
+          href="/privacy"
+          data-astro-prefetch="load">Privacy</a
+        > · <a href="mailto:admin@ar27111994.dev">admin@ar27111994.dev</a>
       </p>
     </footer>
   </main>

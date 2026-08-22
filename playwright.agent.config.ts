@@ -1,12 +1,19 @@
 import { defineConfig, devices } from "@playwright/test";
 
+/**
+ * Agent-readiness suite config.
+ *
+ * Runs against `astro dev` (NOT preview) because the markdown-negotiation
+ * middleware only executes at request time in dev / on Vercel's edge runtime;
+ * `astro preview` serves the static build without middleware.
+ */
 export default defineConfig({
   testDir: "./tests",
-  testMatch: "*.spec.ts",
+  testMatch: "agent-readiness.spec.ts",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 1,
   reporter: "html",
   use: {
     baseURL: process.env.TEST_URL || "http://localhost:4321",
@@ -16,18 +23,6 @@ export default defineConfig({
     {
       name: "chromium",
       use: { ...devices["Desktop Chrome"] },
-    },
-    {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
-    },
-    {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
-    },
-    {
-      name: "Mobile Chrome",
-      use: { ...devices["Pixel 5"] },
     },
   ],
   webServer: {

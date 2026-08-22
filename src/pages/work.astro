@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DocNav from "../components/DocNav.astro";
+import UpworkSection from "../components/UpworkSection.astro";
+import "../styles/doc-page.css";
+
+import {
+  upworkProfileUrl,
+  upworkPortfolioItems,
+  upworkPortfolioCount,
+  upworkPortfolioCountLabel,
+  recentUpworkProofTitles,
+  upworkFitTags,
+  upworkProofCards,
+} from "../data/site-content";
+
+// On-demand: Accept-negotiation (text/markdown) must run on the real request.
+export const prerender = false;
+---
+
+<Layout
+  title="Work — Ahmed Rehan | Projects and Upwork Portfolio"
+  description="Recorded Upwork project trail for Ahmed Rehan: searchable freelance portfolio with descriptions, skills, project links, and verification paths."
+>
+  <DocNav backLabel="Portfolio" />
+
+  <main class="doc-wrap" id="main-content">
+    <div class="doc-container">
+      <header class="doc-header">
+        <p class="doc-eyebrow">Freelance proof</p>
+        <h1>Work — Upwork project trail</h1>
+        <p class="doc-meta">
+          {upworkPortfolioCountLabel} recorded items · 40+ jobs completed · 5★ rating
+        </p>
+      </header>
+
+      <div class="doc-intro">
+        <p>
+          Every record below is captured from the live Upwork portfolio —
+          search, sort, and filter the grid, and open any card to inspect the
+          full dossier (description, attachments, and project links). The
+          compact proof strip stays on the homepage; the full trail lives here.
+        </p>
+      </div>
+
+      <UpworkSection
+        upworkPortfolioItems={upworkPortfolioItems}
+        upworkPortfolioCountLabel={upworkPortfolioCountLabel}
+        recentUpworkProofTitles={recentUpworkProofTitles}
+        upworkFitTags={upworkFitTags}
+        upworkProfileUrl={upworkProfileUrl}
+        upworkPortfolioCount={upworkPortfolioCount}
+        upworkProofCards={upworkProofCards}
+      />
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
+    <nav aria-label="Site pages">
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/">Home</a>
+    </nav>
+  </footer>
+</Layout>

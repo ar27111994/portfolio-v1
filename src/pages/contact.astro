@@ -1,0 +1,153 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DocNav from "../components/DocNav.astro";
+import "../styles/doc-page.css";
+
+import {
+  contactEmail,
+  secondaryEmail,
+  whatsappUrl,
+  contactWidgets,
+  profileLinks,
+  upworkProfileUrl,
+} from "../data/site-content";
+
+// On-demand: Accept-negotiation (text/markdown) must run on the real request.
+export const prerender = false;
+---
+
+<Layout
+  title="Contact — Ahmed Rehan | Email, WhatsApp, Upwork"
+  description="Contact Ahmed Rehan (ARLabs): email, WhatsApp, Upwork, and social profiles for freelance and contracting work in developer tools, webhooks, automation, and AI-agent tooling."
+>
+  <DocNav backLabel="Portfolio" />
+
+  <main class="doc-wrap" id="main-content">
+    <div class="doc-container">
+      <header class="doc-header">
+        <p class="doc-eyebrow">Reach</p>
+        <h1>Contact Ahmed Rehan</h1>
+        <p class="doc-meta">ARLabs · Rawalpindi, Pakistan (UTC+5)</p>
+      </header>
+
+      <div class="doc-intro">
+        <p>
+          Open to freelance, contract, collab, and partnership work in developer
+          tools, webhook/API integration debugging, automation systems, and
+          AI-agent tooling. Async-first: every channel below gets a reply,
+          usually within 1–2 business days.
+        </p>
+      </div>
+
+      <div class="doc-body">
+        <section class="doc-section">
+          <h2><span class="doc-num">01</span> Contact channels</h2>
+          <ul>
+            {
+              contactWidgets.map((c) => (
+                <li>
+                  <strong>{c.label}:</strong> {c.value} — {c.detail} —{" "}
+                  <a href={c.href}>Open</a>
+                </li>
+              ))
+            }
+          </ul>
+          <a href={`mailto:${contactEmail}`} class="doc-contact-link">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              ><rect x="2" y="4" width="20" height="16" rx="2"></rect><path
+                d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg
+            >
+            {contactEmail}
+          </a>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">02</span> Which channel to use</h2>
+          <ul>
+            <li>
+              <strong>Email ({contactEmail})</strong> — best for project briefs, partnerships,
+              and longer context. Also at {secondaryEmail}
+              .
+            </li>
+            <li>
+              <strong>WhatsApp (+92 331 588 7235)</strong> — fast async contact for
+              focused devtools and automation work.
+            </li>
+            <li>
+              <strong>Upwork</strong> — for contract engagements through Upwork's
+              platform: <a href={upworkProfileUrl}>profile</a>.
+            </li>
+            <li>
+              <strong>Social profiles</strong> — GitHub, LinkedIn, X, and others below
+              for public or professional context.
+            </li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>
+            <span class="doc-num">03</span> What to include in a project brief
+          </h2>
+          <ol>
+            <li>What you are building and the problem it solves.</li>
+            <li>The stack or platform constraints (if any).</li>
+            <li>Timeline and budget expectations.</li>
+            <li>How we will verify success.</li>
+          </ol>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">04</span> Profiles</h2>
+          <ul>
+            {
+              profileLinks.map((p) => (
+                <li>
+                  <a href={p.href} target="_blank" rel="noreferrer">
+                    {p.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+          <p>
+            WhatsApp direct: <a href={whatsappUrl}>wa.me/923315887235</a>
+          </p>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">05</span> Also available</h2>
+          <ul>
+            <li>
+              <a href="/about">About</a> · <a href="/work">Work</a> · <a
+                href="/privacy">Privacy</a
+              >
+            </li>
+            <li>
+              <a href="/llms.txt">llms.txt</a> for agent-facing guidance; MCP endpoint
+              at <a href="/mcp">/mcp</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
+    <nav aria-label="Site pages">
+      <a href="/about">About</a>
+      <a href="/work">Work</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/">Home</a>
+    </nav>
+  </footer>
+</Layout>
