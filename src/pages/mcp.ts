@@ -18,6 +18,7 @@ import {
   SUPPORTED_PROTOCOL_VERSIONS,
 } from "../lib/mcp/protocol";
 import type { McpDataProvider, McpTool } from "../lib/mcp/protocol";
+import { isAllowedMcpHost, isAllowedMcpOrigin } from "../lib/mcp/security";
 import {
   contactEmail,
   secondaryEmail,
@@ -44,35 +45,6 @@ import {
 export const prerender = false;
 
 const ERROR_PARSE = -32700;
-
-const ALLOWED_ORIGINS = new Set([
-  "https://ar27111994.dev",
-  "https://www.ar27111994.dev",
-  "http://localhost:4321",
-  "http://127.0.0.1:4321",
-]);
-
-const ALLOWED_HOSTS = [
-  "ar27111994.dev",
-  "www.ar27111994.dev",
-  "localhost",
-  "127.0.0.1",
-];
-
-function isAllowedOrigin(origin: string | null): boolean {
-  if (!origin) return true; // non-browser MCP clients send no Origin
-  if (origin === "null") return true; // sandboxed contexts
-  return ALLOWED_ORIGINS.has(origin);
-}
-
-function isAllowedHost(host: string | null): boolean {
-  if (!host) return false;
-  // Strip any explicit port before matching (dev servers run on :4321).
-  const hostname = host.replace(/:\d+$/, "");
-  return ALLOWED_HOSTS.some(
-    (allowed) => hostname === allowed || hostname.endsWith(`.${allowed}`),
-  );
-}
 
 function tool(
   name: string,
@@ -218,11 +190,11 @@ const provider: McpDataProvider = {
 export const POST: APIRoute = async ({ request }) => {
   // DNS-rebinding / host validation (Streamable HTTP security requirements).
   const hostHeader = request.headers.get("host");
-  if (!isAllowedHost(hostHeader)) {
+  if (!isAllowedMcpHost(hostHeader)) {
     return new Response("Forbidden", { status: 403 });
   }
   const origin = request.headers.get("origin");
-  if (!isAllowedOrigin(origin)) {
+  if (!isAllowedMcpOrigin(origin)) {
     return new Response("Forbidden: disallowed Origin", { status: 403 });
   }
 

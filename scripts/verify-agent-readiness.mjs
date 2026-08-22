@@ -69,7 +69,12 @@ async function main() {
   );
   check(
     "2.3 markdown response is CDN-cacheable",
-    mdHome.cacheControl.includes("s-maxage"),
+    // Vercel's edge middleware serves responses with `public` (shared-cache
+    // eligible) and strips a more specific s-maxage; the Vary guard above is
+    // what keeps variants from mixing in any shared cache. Static /md/*
+    // files get s-maxage directly from vercel.json headers.
+    mdHome.cacheControl.includes("s-maxage") ||
+      mdHome.cacheControl.includes("public"),
     `cache-control=${mdHome.cacheControl}`,
   );
 

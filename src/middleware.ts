@@ -44,6 +44,17 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const isHead = request.method === "HEAD";
   const isGet = request.method === "GET";
 
+  // MCP endpoint: Streamable HTTP is POST-only. Enforce 405 here, in the
+  // edge middleware, so Vercel's router can never fall through to a
+  // different page for GET/HEAD (observed on the preview deployment: a
+  // plain `Accept: */*` GET /mcp was served the homepage HTML).
+  if ((isGet || isHead) && normalized === "mcp") {
+    return new Response("Method Not Allowed: use POST", {
+      status: 405,
+      headers: { Allow: "POST" },
+    });
+  }
+
   // Serve the markdown variant directly for negotiated pages.
   if ((isGet || isHead) && acceptsMarkdown && isNegotiatedPath(normalized)) {
     const variant = mdVariantForPath(normalized);
