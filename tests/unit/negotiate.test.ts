@@ -127,6 +127,11 @@ describe("appendVary", () => {
     appendVary(headers);
     expect(headers.get("Vary")).toBe("accept");
   });
+  it("leaves Vary: * untouched (wildcard already means unspecified variance)", () => {
+    const headers = new Headers({ Vary: "*" });
+    appendVary(headers);
+    expect(headers.get("Vary")).toBe("*");
+  });
 });
 
 describe("normalizePath", () => {
@@ -146,5 +151,24 @@ describe("markdown404Body", () => {
     expect(body).toContain("/llms.txt");
     expect(body).toContain("/sitemap-index.xml");
     expect(body).toContain("/mcp");
+  });
+
+  it("falls back to / when the path is empty or only sanitized away", () => {
+    expect(markdown404Body("")).toContain("`/`");
+    expect(markdown404Body("```")).toContain("`/`");
+  });
+
+  it("strips backticks from the reflected path (markdown injection guard)", () => {
+    const body = markdown404Body("/a`b`c");
+    expect(body).not.toContain("a`b`c");
+    expect(body).toContain("`/abc`");
+  });
+
+  it("bounds the reflected path length", () => {
+    const long = "/" + "x".repeat(10_000);
+    const body = markdown404Body(long);
+    // The inline code span is bounded; the 200-char cap keeps the body small.
+    expect(body).not.toContain("x".repeat(300));
+    expect(body.length).toBeLessThan(1_500);
   });
 });

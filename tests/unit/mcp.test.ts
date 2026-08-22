@@ -35,7 +35,85 @@ async function dispatch(payload: unknown, version: string | null = null) {
 }
 
 describe("MCP JSON-RPC dispatch", () => {
-  it("answers initialize with the negotiated protocol version", async () => {
+  it("echoes a supported older protocol version offered in initialize params", async () => {
+    const out = await dispatch({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "initialize",
+      params: {
+        protocolVersion: "2025-03-26",
+        capabilities: {},
+        clientInfo: { name: "t", version: "1" },
+      },
+    });
+    expect(out.kind).toBe("response");
+    if (out.kind !== "response") return;
+    const res = out.message.result as {
+      protocolVersion: string;
+      capabilities: { tools: object };
+      serverInfo: { name: string };
+    };
+    expect(res.protocolVersion).toBe("2025-03-26");
+    expect(res.capabilities.tools).toBeDefined();
+    expect(res.serverInfo.name).toBe("ar27111994.dev");
+  });
+
+  it("echoes the HTTP header version when params omit protocolVersion", async () => {
+    const out = await dispatch(
+      {
+        jsonrpc: "2.0",
+        id: 1,
+        method: "initialize",
+        params: { capabilities: {}, clientInfo: { name: "t", version: "1" } },
+      },
+      "2025-03-26",
+    );
+    expect(out.kind).toBe("response");
+    if (out.kind !== "response") return;
+    const res = out.message.result as { protocolVersion: string };
+    expect(res.protocolVersion).toBe("2025-03-26");
+  });
+
+  it("lets initialize params protocolVersion take precedence over the header", async () => {
+    const out = await dispatch(
+      {
+        jsonrpc: "2.0",
+        id: 1,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-03-26",
+          capabilities: {},
+          clientInfo: { name: "t", version: "1" },
+        },
+      },
+      "2025-06-18",
+    );
+    expect(out.kind).toBe("response");
+    if (out.kind !== "response") return;
+    const res = out.message.result as { protocolVersion: string };
+    expect(res.protocolVersion).toBe("2025-03-26");
+  });
+
+  it("defaults to the server's latest supported version when none is offered", async () => {
+    const out = await dispatch({
+      jsonrpc: "2.0",
+      id: 1,
+      method: "initialize",
+      params: { capabilities: {}, clientInfo: { name: "t", version: "1" } },
+    });
+    expect(out.kind).toBe("response");
+    if (out.kind !== "response") return;
+    const res = out.message.result as {
+      protocolVersion: string;
+      capabilities: { tools: object };
+      serverInfo: { name: string };
+    };
+    expect(res.protocolVersion).toBe(MCP_PROTOCOL_VERSION);
+    expect(res.capabilities.tools).toBeDefined();
+    expect(res.serverInfo.name).toBe("ar27111994.dev");
+  });
+
+  it("rejects an unsupported protocol version offered in params", async () => {
     const out = await dispatch({
       jsonrpc: "2.0",
       id: 1,
@@ -48,14 +126,12 @@ describe("MCP JSON-RPC dispatch", () => {
     });
     expect(out.kind).toBe("response");
     if (out.kind !== "response") return;
-    const res = out.message.result as {
-      protocolVersion: string;
-      capabilities: { tools: object };
-      serverInfo: { name: string };
+    const message = out.message as {
+      error?: { code: number; message: string };
     };
-    expect(res.protocolVersion).toBe(MCP_PROTOCOL_VERSION);
-    expect(res.capabilities.tools).toBeDefined();
-    expect(res.serverInfo.name).toBe("ar27111994.dev");
+    expect(message.error).toBeDefined();
+    expect(message.error?.code).toBe(-32600);
+    expect(message.error?.message).toContain("2026-01-01");
   });
 
   it("rejects an unsupported MCP-Protocol-Version header value", async () => {
@@ -135,6 +211,33 @@ describe("MCP JSON-RPC dispatch", () => {
     expect(out.kind).toBe("invalid");
     if (out.kind !== "invalid") return;
     expect(out.message.error?.code).toBe(-32600);
+  });
+
+  it.each([
+    ["null id", { jsonrpc: "2.0", id: null, method: "ping" }],
+    ["boolean id", { jsonrpc: "2.0", id: true, method: "ping" }],
+    ["object id", { jsonrpc: "2.0", id: { n: 1 }, method: "ping" }],
+    ["array id", { jsonrpc: "2.0", id: [1], method: "ping" }],
+    ["fractional id", { jsonrpc: "2.0", id: 1.5, method: "ping" }],
+  ])("rejects %s as an Invalid Request", (_label, message) => {
+    const out = dispatch(message);
+    // Validation is synchronous for the id shape, but dispatch is async.
+    return out.then((res) => {
+      expect(res.kind).toBe("invalid");
+      if (res.kind !== "invalid") return;
+      expect(res.message.error?.code).toBe(-32600);
+      // The error reply must not echo the invalid id.
+      expect(res.message.id).toBeNull();
+    });
+  });
+
+  it("accepts string and integer ids (including zero)", async () => {
+    for (const id of ["req-1", 0, 42, -3]) {
+      const out = await dispatch({ jsonrpc: "2.0", id, method: "ping" });
+      expect(out.kind).toBe("response");
+      if (out.kind !== "response") continue;
+      expect(out.message.id).toBe(id);
+    }
   });
 
   it("returns invalid-params when the tool name is missing", async () => {

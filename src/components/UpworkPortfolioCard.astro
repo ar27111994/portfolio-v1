@@ -895,14 +895,16 @@ const previewProofLine =
     // modal payload) while the interactive modal behaves identically.
     const hydrateModal = (modal: HTMLDialogElement, id: string) => {
       if (modal.dataset.upworkHydrated === "true") return;
-      modal.dataset.upworkHydrated = "true";
       const template = document.querySelector<HTMLTemplateElement>(
         `template[data-upwork-dialog-template="${id}"]`,
       );
+      // Only mark hydrated when the template was found and cloned; if it is
+      // missing (e.g. DOM still settling), a later open retries the fill.
       if (template) {
         modal.append(template.content.cloneNode(true));
         wireResilientImages(modal);
         wireVideoFallbacks(modal);
+        modal.dataset.upworkHydrated = "true";
       }
     };
 
@@ -937,14 +939,21 @@ const previewProofLine =
         if (modal instanceof HTMLDialogElement) {
           modal.close();
         }
+        return;
       }
-    });
 
-    document.querySelectorAll("dialog[data-upwork-modal]").forEach((modal) => {
-      if (!(modal instanceof HTMLDialogElement)) return;
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) modal.close();
-      });
+      // Backdrop dismissal — delegated like open/close. Native <dialog>
+      // backdrop clicks surface as clicks on the dialog element itself.
+      // Per-element listeners (querySelectorAll at init) only attach to
+      // dialogs present at script run and silently miss dialogs rendered
+      // by later client-side navigation or DOM updates.
+      const dialogTarget = target.closest("dialog[data-upwork-modal]");
+      if (
+        dialogTarget instanceof HTMLDialogElement &&
+        target === dialogTarget
+      ) {
+        dialogTarget.close();
+      }
     });
   })();
 </script>

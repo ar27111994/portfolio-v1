@@ -6,6 +6,11 @@
  * JSON-RPC error codes, and version negotiation. Transport-agnostic: the
  * endpoint (src/pages/mcp.ts) maps HTTP <-> this layer.
  *
+ * Advertised protocol versions are 2025-06-18 and 2025-03-26 (both use the
+ * Streamable HTTP transport we implement). 2024-11-05 is intentionally NOT
+ * advertised: its transport is HTTP+SSE (a GET response stream), which this
+ * endpoint does not offer (GET /mcp returns 405).
+ *
  * Data access is injected via McpDataProvider so the protocol can be unit
  * tested without importing the site data layer.
  */
@@ -14,7 +19,6 @@ export const MCP_PROTOCOL_VERSION = "2025-06-18";
 export const SUPPORTED_PROTOCOL_VERSIONS = [
   "2025-06-18",
   "2025-03-26",
-  "2024-11-05",
 ] as const;
 
 export const SERVER_INFO = {
@@ -127,8 +131,20 @@ export async function dispatchMcpMessage(
     };
   }
 
+  // JSON-RPC/MCP id validation: a request carries a string or integer id; a
+  // notification carries none. null, booleans, objects, arrays, and
+  // fractional numbers are Invalid Request, answered with id null so the
+  // error itself never echoes an invalid id.
+  const rawId = (message as Record<string, unknown>).id;
+  const hasId = Object.prototype.hasOwnProperty.call(message, "id");
+  if (hasId && !(typeof rawId === "string" || Number.isInteger(rawId))) {
+    return {
+      kind: "invalid",
+      message: errorResult(null, ERROR.INVALID_REQUEST),
+    };
+  }
+  const isNotification = !hasId;
   const req = message as McpRequestMessage;
-  const isNotification = req.id === undefined;
 
   try {
     const handled = await handleMethod(req, provider, requestedVersion);
@@ -173,17 +189,30 @@ async function handleMethod(
   const id = req.id ?? null;
   switch (req.method) {
     case "initialize": {
+      // Negotiation channel is initialize.params.protocolVersion (spec);
+      // the MCP-Protocol-Version HTTP header (Streamable HTTP transport) is
+      // the fallback for clients that only send the header. A client that
+      // offers an older supported version must receive that version back,
+      // or it rejects the handshake.
+      const initParams = (req.params ?? {}) as {
+        protocolVersion?: unknown;
+      };
+      const offeredBodyVersion =
+        typeof initParams.protocolVersion === "string"
+          ? initParams.protocolVersion
+          : null;
+      const negotiatedVersion = offeredBodyVersion ?? requestedVersion;
       if (
-        requestedVersion &&
-        !SUPPORTED_PROTOCOL_VERSIONS.includes(requestedVersion as never)
+        negotiatedVersion &&
+        !SUPPORTED_PROTOCOL_VERSIONS.includes(negotiatedVersion as never)
       ) {
         throw new McpMethodError(
           ERROR.INVALID_REQUEST,
-          `Unsupported protocol version: ${requestedVersion}`,
+          `Unsupported protocol version: ${negotiatedVersion}`,
         );
       }
       return resultMessage(id ?? 0, {
-        protocolVersion: MCP_PROTOCOL_VERSION,
+        protocolVersion: negotiatedVersion ?? MCP_PROTOCOL_VERSION,
         capabilities: { tools: {} },
         serverInfo: SERVER_INFO,
       });

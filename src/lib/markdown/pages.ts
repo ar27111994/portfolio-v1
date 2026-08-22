@@ -32,6 +32,7 @@ import {
   proofStackMetrics,
   credibilityFacts,
 } from "../../data/site-content";
+import { privacyPolicyMarkdown } from "../privacy-policy";
 
 const SITE = "https://www.ar27111994.dev";
 
@@ -284,50 +285,10 @@ export function contactMarkdown(): string {
 /* ── Privacy ──────────────────────────────────────────────────────── */
 
 export function privacyMarkdown(): string {
-  return [
-    `# Privacy Policy — Ahmed Rehan`,
-    ``,
-    `Last updated: June 17, 2026. The authoritative policy is published at ${link(SITE + "/privacy", SITE + "/privacy")}; this markdown file is the machine-readable rendering of the same policy.`,
-    ``,
-    `## Scope`,
-    ``,
-    `This policy covers AI agents, skills, tools, and software products published by Ahmed Rehan on third-party marketplaces (including Capafy) and available at ${SITE}.`,
-    ``,
-    `## Information I collect`,
-    ``,
-    `1. **Download mode products** run entirely on your local machine or in your AI-agent environment. They do not transmit data to Ahmed's servers. No personal information, usage data, or conversation history is collected.`,
-    `2. **Cloud-assisted products** that require hosted API routing transit your prompt and query data through a self-hosted API gateway (hosted on Microsoft Azure) for processing. Ahmed does not inspect, monetize, or permanently store the text of your conversations or prompts.`,
-    `3. **Direct contact** (email, GitHub issues, marketplace messaging) provides only the information you choose to send.`,
-    ``,
-    `## How information is used`,
-    ``,
-    `Information you voluntarily provide is used solely to respond to support requests and improve product quality and documentation. Ahmed does not sell, rent, or share personal information with third parties.`,
-    ``,
-    `## Third-party platforms`,
-    ``,
-    `Products are distributed through third-party marketplaces whose own privacy policies apply to transaction data. For hosted API responses, the gateway securely forwards requests to third-party LLM inference providers (including but not limited to Google Gemini, Groq, and OpenRouter), which process data under their own policies.`,
-    ``,
-    `## Cookies and analytics`,
-    ``,
-    `This portfolio website uses Vercel Analytics for anonymous, aggregated traffic reporting. No personally identifiable data is collected and no tracking cookies are set.`,
-    ``,
-    `## Data retention`,
-    ``,
-    `Support correspondence is retained only as long as necessary to resolve your request; deletion is available on request by email. The routing gateway logs anonymous, aggregate usage metadata (model queried, token usage, timestamps) for performance monitoring, debugging, and quota management. No conversation history or prompt text is retained.`,
-    ``,
-    `## Children's privacy`,
-    ``,
-    `Products and services are not directed at children under 13; Ahmed does not knowingly collect personal information from children.`,
-    ``,
-    `## Changes`,
-    ``,
-    `The policy may be updated from time to time; the "Last updated" date reflects the most recent revision. Continued use after changes constitutes acceptance.`,
-    ``,
-    `## Contact`,
-    ``,
-    `Questions about this policy: ${link(contactEmail, `mailto:${contactEmail}`)}.`,
-    ``,
-  ].join("\n");
+  // The policy text lives in src/lib/privacy-policy.ts — one source shared
+  // with the /privacy HTML page (privacy.astro); this is its Markdown
+  // rendering for agents.
+  return privacyPolicyMarkdown();
 }
 
 /* ── Work ─────────────────────────────────────────────────────────── */

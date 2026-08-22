@@ -25,15 +25,17 @@ import {
 } from "./lib/negotiate";
 import { mdVariantForPath } from "./lib/markdown/pages";
 
-/** Only these page paths have markdown variants; everything else passes through. */
-const NEGOTIATED_PATHS = ["", "about", "contact", "privacy", "work"] as const;
-
-/** CDN caching for on-demand HTML pages (Vercel edge cache, keyed by Vary). */
+/** Only page paths with a markdown variant are negotiated; the variant map
+ * in lib/markdown/pages is the single source for which paths qualify. */
 const HTML_CACHE_CONTROL =
   "public, s-maxage=3600, stale-while-revalidate=86400";
 
-function isNegotiatedPath(normalized: string): boolean {
-  return (NEGOTIATED_PATHS as readonly string[]).includes(normalized);
+/** Bound the in-edge variant subrequest so a stalled fetch cannot hang the
+ * request; failures fall through to the normal pipeline (see below). */
+const VARIANT_FETCH_TIMEOUT_MS = 3_000;
+
+function hasMdVariant(normalized: string): boolean {
+  return mdVariantForPath(normalized) !== null;
 }
 
 export const onRequest = defineMiddleware(async (context, next) => {
@@ -56,14 +58,16 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   // Serve the markdown variant directly for negotiated pages.
-  if ((isGet || isHead) && acceptsMarkdown && isNegotiatedPath(normalized)) {
+  if ((isGet || isHead) && acceptsMarkdown && hasMdVariant(normalized)) {
     const variant = mdVariantForPath(normalized);
     if (variant) {
       let mdResponse: Response | null = null;
       try {
-        mdResponse = await fetch(new URL(`/md/${variant}.md`, url));
+        mdResponse = await fetch(new URL(`/md/${variant}.md`, url), {
+          signal: AbortSignal.timeout(VARIANT_FETCH_TIMEOUT_MS),
+        });
       } catch {
-        // Fall through to the normal pipeline on fetch failure.
+        // Fall through to the normal pipeline on timeout or fetch failure.
       }
       if (mdResponse && mdResponse.ok) {
         const headers = new Headers({
@@ -83,7 +87,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   appendVary(response.headers);
 
   // On-demand HTML pages are edge-cached per negotiated variant.
-  if (isGet && response.status === 200 && isNegotiatedPath(normalized)) {
+  if (isGet && response.status === 200 && hasMdVariant(normalized)) {
     response.headers.set("Cache-Control", HTML_CACHE_CONTROL);
   }
 

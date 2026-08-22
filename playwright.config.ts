@@ -30,10 +30,17 @@ export default defineConfig({
       use: { ...devices["Pixel 5"] },
     },
   ],
-  webServer: {
-    command: "npm run dev",
-    url: process.env.TEST_URL || "http://localhost:4321",
-    reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
-  },
+  // When TEST_URL points at a deployed target (preview/production), no local
+  // server exists to start; omit webServer entirely so remote runs don't try
+  // to launch `npm run dev` or wait on the local port.
+  ...(process.env.TEST_URL
+    ? {}
+    : {
+        webServer: {
+          command: "npm run dev",
+          url: "http://localhost:4321",
+          reuseExistingServer: !process.env.CI,
+          timeout: 120_000,
+        },
+      }),
 });

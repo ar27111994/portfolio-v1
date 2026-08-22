@@ -118,6 +118,9 @@ export function appendVary(headers: Headers, value: string = "Accept"): void {
     return;
   }
   const tokens = existing.split(",").map((s) => s.trim().toLowerCase());
+  // Vary: * means the response varies in unspecified ways — appending a
+  // named token would contradict it and is meaningless for caches.
+  if (tokens.includes("*")) return;
   if (!tokens.includes(value.toLowerCase())) {
     headers.set("Vary", `${existing}, ${value}`);
   }
@@ -136,22 +139,33 @@ export const MARKDOWN_CACHE_CONTROL =
  * Short markdown body for 404 responses so agents can recover (site map links,
  * where to look next). RFC-style: real 404 status, machine-readable body.
  */
+/** Bound the reflected request path so a hostile path cannot inject
+ * markdown (backticks) or bloat the 404 body. */
+const MAX_404_PATH_LENGTH = 200;
+
 export function markdown404Body(requestPath: string): string {
+  // Strip backticks (would break out of the inline code span) and any
+  // control characters, then bound the length.
+  const sanitized = requestPath
+    // eslint-disable-next-line no-control-regex -- intentional: control-char sanitization of a hostile reflected path
+    .replace(/[`\u0000-\u001f\u007f]/g, "")
+    .slice(0, MAX_404_PATH_LENGTH);
+  const shown = sanitized || "/";
   return [
     `# 404 — Not found`,
-    "",
-    `The path \`${requestPath || "/"}\` does not exist on ar27111994.dev.`,
-    "",
-    "## Where to look next",
-    "",
-    "- Home: https://www.ar27111994.dev/",
-    "- About: https://www.ar27111994.dev/about",
-    "- Work / Upwork portfolio: https://www.ar27111994.dev/work",
-    "- Contact: https://www.ar27111994.dev/contact",
-    "- Privacy: https://www.ar27111994.dev/privacy",
-    "- Machine-readable index: https://www.ar27111994.dev/llms.txt",
-    "- Sitemap: https://www.ar27111994.dev/sitemap-index.xml",
-    "- MCP endpoint: https://www.ar27111994.dev/mcp",
-    "",
+    ``,
+    `The path \`${shown}\` does not exist on ar27111994.dev.`,
+    ``,
+    `## Where to look next`,
+    ``,
+    `- Home: https://www.ar27111994.dev/`,
+    `- About: https://www.ar27111994.dev/about`,
+    `- Work / Upwork portfolio: https://www.ar27111994.dev/work`,
+    `- Contact: https://www.ar27111994.dev/contact`,
+    `- Privacy: https://www.ar27111994.dev/privacy`,
+    `- Machine-readable index: https://www.ar27111994.dev/llms.txt`,
+    `- Sitemap: https://www.ar27111994.dev/sitemap-index.xml`,
+    `- MCP endpoint: https://www.ar27111994.dev/mcp`,
+    ``,
   ].join("\n");
 }

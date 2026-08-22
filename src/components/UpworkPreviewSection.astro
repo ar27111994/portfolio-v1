@@ -7,11 +7,17 @@
  * token budget. This preview keeps the #upwork anchor, count badge, proof
  * cards, and fit tags, then links to the full trail.
  */
+/** One proof card in the homepage Upwork strip (label/value/detail trio). */
+export interface UpworkProofCard {
+  label: string;
+  value: string;
+  detail: string;
+}
+
 interface Props {
   upworkPortfolioCountLabel: string;
   upworkPortfolioCount: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  upworkProofCards: any[];
+  upworkProofCards: UpworkProofCard[];
   upworkFitTags: string[];
   upworkProfileUrl: string;
 }

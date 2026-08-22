@@ -1,5 +1,4 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
   "version": "1.0",
   "protocolVersion": "2025-06-18",
   "serverInfo": {

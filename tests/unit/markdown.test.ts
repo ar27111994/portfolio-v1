@@ -8,6 +8,7 @@ import {
   llmsFullText,
   MARKDOWN_VARIANTS,
 } from "../../src/lib/markdown/pages";
+import { upworkPortfolioItems } from "../../src/data/site-content";
 
 /** Approximate agent-extraction budget: 100K chars (~25K tokens) per page. */
 const MAX_VARIANT_CHARS = 100_000;
@@ -73,17 +74,23 @@ describe("markdown variants (agent-readable page text)", () => {
   it("privacy variant mirrors the policy's substantive sections", () => {
     const body = privacyMarkdown();
     expect(body).toContain("# Privacy Policy");
-    expect(body).toContain("## Information I collect");
-    expect(body).toContain("## Cookies and analytics");
+    expect(body).toContain("## Information I Collect");
+    expect(body).toContain("## Cookies and Analytics");
     expect(body).toContain("Vercel Analytics");
+    // Canonical terms survive both renderings (single source of truth).
+    expect(body).toContain("I do not sell, rent, or share");
+    expect(body).toContain("not responsible for the privacy practices");
+    expect(body).toContain("under the age of 13");
   });
 
-  it("work variant lists every recorded portfolio item", () => {
+  it("work variant lists every recorded portfolio item exactly once", () => {
     const body = workMarkdown();
     expect(body).toContain("# Work — Upwork project trail");
     expect(body).toContain("## Featured portfolio records");
     const itemHeadings = body.match(/^### /gm)?.length ?? 0;
-    expect(itemHeadings).toBeGreaterThanOrEqual(30); // 40-item portfolio, no truncation
+    // The generator emits exactly one heading per recorded item — no more,
+    // no fewer (a count drop would mean silent truncation for agents).
+    expect(itemHeadings).toBe(upworkPortfolioItems.length);
   });
 
   it("llms-full.txt aggregates all variants without duplication loss", () => {

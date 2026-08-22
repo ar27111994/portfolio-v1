@@ -12,13 +12,14 @@
  */
 import { test, expect } from "@playwright/test";
 
-const BASE = process.env.TEST_URL || "http://localhost:4321";
+// Relative URLs below resolve against use.baseURL (TEST_URL or the local
+// dev server), configured in playwright.agent.config.ts / playwright.config.ts.
 
 test.describe("Agent readiness — 404 handling", () => {
   test("nonexistent paths return a real 404 with a markdown recovery body", async ({
     request,
   }) => {
-    const res = await request.get(`${BASE}/some-path-that-does-not-exist`, {
+    const res = await request.get(`/some-path-that-does-not-exist`, {
       headers: { Accept: "text/markdown" },
     });
     expect(res.status()).toBe(404);
@@ -34,7 +35,7 @@ test.describe("Agent readiness — 404 handling", () => {
   test("nonexistent paths keep 404 for plain browser requests too", async ({
     request,
   }) => {
-    const res = await request.get(`${BASE}/some-other-path-that-is-missing`);
+    const res = await request.get(`/some-other-path-that-is-missing`);
     expect(res.status()).toBe(404);
   });
 });
@@ -43,7 +44,7 @@ test.describe("Agent readiness — markdown content negotiation", () => {
   test("homepage serves markdown when Accept: text/markdown", async ({
     request,
   }) => {
-    const res = await request.get(`${BASE}/`, {
+    const res = await request.get(`/`, {
       headers: { Accept: "text/markdown" },
     });
     expect(res.status()).toBe(200);
@@ -60,7 +61,7 @@ test.describe("Agent readiness — markdown content negotiation", () => {
     request,
   }) => {
     for (const path of ["/about", "/contact", "/privacy", "/work"]) {
-      const res = await request.get(`${BASE}${path}`, {
+      const res = await request.get(`${path}`, {
         headers: { Accept: "text/markdown" },
       });
       expect(res.status(), path).toBe(200);
@@ -76,7 +77,7 @@ test.describe("Agent readiness — markdown content negotiation", () => {
   test("browser requests still get HTML with Vary: Accept", async ({
     request,
   }) => {
-    const res = await request.get(`${BASE}/`, {
+    const res = await request.get(`/`, {
       headers: {
         Accept:
           "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -94,7 +95,7 @@ test.describe("Agent readiness — llms.txt", () => {
   test("llms.txt exists with when-to-use and developer resources", async ({
     request,
   }) => {
-    const res = await request.get(`${BASE}/llms.txt`);
+    const res = await request.get(`/llms.txt`);
     expect(res.status()).toBe(200);
     const body = await res.text();
     expect(body).toContain("## When to use this site");
@@ -105,7 +106,7 @@ test.describe("Agent readiness — llms.txt", () => {
   });
 
   test("llms-full.txt aggregates page text", async ({ request }) => {
-    const res = await request.get(`${BASE}/llms-full.txt`);
+    const res = await request.get(`/llms-full.txt`);
     expect(res.status()).toBe(200);
     const body = await res.text();
     expect(body).toContain("# Ahmed Rehan — ARLabs");
@@ -117,7 +118,7 @@ test.describe("Agent readiness — MCP discovery and handshake", () => {
   test("live Streamable HTTP handshake: initialize + tools/list + tools/call", async ({
     request,
   }) => {
-    const init = await request.post(`${BASE}/mcp`, {
+    const init = await request.post(`/mcp`, {
       headers: {
         Accept: "application/json, text/event-stream",
         "Content-Type": "application/json",
@@ -148,7 +149,7 @@ test.describe("Agent readiness — MCP discovery and handshake", () => {
     expect(initBody.result?.capabilities?.tools).toBeDefined();
     expect(initBody.result?.serverInfo?.name).toBe("ar27111994.dev");
 
-    const list = await request.post(`${BASE}/mcp`, {
+    const list = await request.post(`/mcp`, {
       headers: { "Content-Type": "application/json" },
       data: { jsonrpc: "2.0", id: 2, method: "tools/list" },
     });
@@ -161,7 +162,7 @@ test.describe("Agent readiness — MCP discovery and handshake", () => {
     expect(names).toContain("list_upwork_portfolio");
     expect(names).toContain("get_contact_info");
 
-    const call = await request.post(`${BASE}/mcp`, {
+    const call = await request.post(`/mcp`, {
       headers: { "Content-Type": "application/json" },
       data: {
         jsonrpc: "2.0",
@@ -179,10 +180,67 @@ test.describe("Agent readiness — MCP discovery and handshake", () => {
     expect(text).toContain("admin@ar27111994.dev");
   });
 
+  test("initialize negotiates a supported older protocol version from params", async ({
+    request,
+  }) => {
+    // No MCP-Protocol-Version header: negotiation must come from the body.
+    const init = await request.post("/mcp", {
+      headers: {
+        Accept: "application/json, text/event-stream",
+        "Content-Type": "application/json",
+      },
+      data: {
+        jsonrpc: "2.0",
+        id: 1,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-03-26",
+          capabilities: {},
+          clientInfo: { name: "agent-readiness-test", version: "1.0.0" },
+        },
+      },
+    });
+    expect(init.status()).toBe(200);
+    const initBody = (await init.json()) as {
+      result?: { protocolVersion?: string };
+    };
+    expect(initBody.result?.protocolVersion).toBe("2025-03-26");
+  });
+
+  test("initialize rejects an unsupported protocol version from params", async ({
+    request,
+  }) => {
+    const init = await request.post(`/mcp`, {
+      headers: {
+        Accept: "application/json, text/event-stream",
+        "Content-Type": "application/json",
+      },
+      data: {
+        jsonrpc: "2.0",
+        id: 1,
+        method: "initialize",
+        params: {
+          protocolVersion: "1999-01-01",
+          capabilities: {},
+          clientInfo: { name: "agent-readiness-test", version: "1.0.0" },
+        },
+      },
+    });
+    // Valid JSON-RPC is answered with HTTP 200; the rejection is carried in
+    // the JSON-RPC error object (HTTP 400 is reserved for transport-level
+    // parse/invalid-request failures).
+    expect(init.status()).toBe(200);
+    const body = (await init.json()) as {
+      error?: { code: number; message: string };
+    };
+    expect(body.error?.code).toBe(-32600);
+    expect(body.error?.message).toContain("1999-01-01");
+  });
+
   test("GET /mcp returns 405 with Allow: POST (no SSE offered)", async ({
     request,
   }) => {
-    const res = await request.get(`${BASE}/mcp`);
+    const res = await request.get(`/mcp`);
     expect(res.status()).toBe(405);
     expect(res.headers()["allow"] ?? "").toContain("POST");
   });
@@ -190,14 +248,14 @@ test.describe("Agent readiness — MCP discovery and handshake", () => {
   test("well-known manifests are valid JSON with a streamable_http endpoint", async ({
     request,
   }) => {
-    const manifest = await request.get(`${BASE}/.well-known/mcp`);
+    const manifest = await request.get(`/.well-known/mcp`);
     expect(manifest.status()).toBe(200);
     const mcpBody = (await manifest.json()) as {
       endpoints?: { streamable_http?: string };
     };
     expect(mcpBody.endpoints?.streamable_http).toBeTruthy();
 
-    const card = await request.get(`${BASE}/.well-known/mcp/server-card.json`);
+    const card = await request.get(`/.well-known/mcp/server-card.json`);
     expect(card.status()).toBe(200);
     const cardBody = (await card.json()) as {
       serverInfo?: { name?: string };
@@ -221,7 +279,7 @@ test.describe("Agent readiness — trust anchor pages", () => {
     test(`${path} loads with ${title.source} title and substantive content`, async ({
       page,
     }) => {
-      const res = await page.goto(`${BASE}${path}`);
+      const res = await page.goto(`${path}`);
       expect(res?.status()).toBe(200);
       await expect(page).toHaveTitle(title);
       const text = await page.evaluate(
@@ -234,7 +292,7 @@ test.describe("Agent readiness — trust anchor pages", () => {
   test("/work modal dossier hydrates on open (lazy templates)", async ({
     page,
   }) => {
-    await page.goto(`${BASE}/work`);
+    await page.goto(`/work`);
     const openButton = page.locator("[data-upwork-open]").first();
     await expect(openButton).toBeVisible();
     await openButton.click();
@@ -243,13 +301,42 @@ test.describe("Agent readiness — trust anchor pages", () => {
     const body = (await dialog.textContent()) ?? "";
     expect(body.length).toBeGreaterThan(100);
   });
+
+  test("/work backdrop click closes the dossier modal (delegated)", async ({
+    page,
+  }) => {
+    await page.goto(`/work`);
+    const openButton = page.locator("[data-upwork-open]").first();
+    await expect(openButton).toBeVisible();
+    await openButton.click();
+    const dialog = page.locator("dialog[data-upwork-modal][open]");
+    await expect(dialog).toBeVisible();
+
+    // Native <dialog> backdrop clicks surface as clicks on the dialog
+    // element itself, so click a point outside the dialog box (on the
+    // backdrop). Pick a margin with room; the dossier is centered and
+    // narrower than the viewport (width: min(980px, 100vw - 1.5rem)).
+    const box = (await dialog.boundingBox()) ?? {
+      x: 0,
+      y: 0,
+      width: 0,
+      height: 0,
+    };
+    const viewport = page.viewportSize() ?? { width: 1280, height: 720 };
+    const x =
+      box.x > 8 ? 3 : Math.min(viewport.width - 3, box.x + box.width + 3);
+    const y = box.y + box.height / 2;
+    await page.mouse.click(x, y);
+
+    await expect(dialog).not.toBeVisible();
+  });
 });
 
 test.describe("Agent readiness — structured identity", () => {
   test("JSON-LD Person/WebSite carry name and description", async ({
     page,
   }) => {
-    await page.goto(`${BASE}/`);
+    await page.goto(`/`);
     const blocks = page.locator('script[type="application/ld+json"]');
     const count = await blocks.count();
     let foundPerson = false;
@@ -284,7 +371,7 @@ test.describe("Agent readiness — structured identity", () => {
   test("homepage stays inside the agent token budget (extracted text)", async ({
     page,
   }) => {
-    await page.goto(`${BASE}/`);
+    await page.goto(`/`);
     const text = await page.evaluate(() => {
       const clone = document.body.cloneNode(true) as HTMLElement;
       clone

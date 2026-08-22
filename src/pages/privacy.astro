@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/privacy.css";
-
-const lastUpdated = "June 17, 2026";
-const email = "admin@ar27111994.dev";
-const siteUrl = "https://www.ar27111994.dev";
+import {
+  PRIVACY_INTRO,
+  PRIVACY_SECTIONS,
+  PRIVACY_LAST_UPDATED,
+  renderPrivacyInlineMarkdown,
+  privacyMailtoParagraph,
+} from "../lib/privacy-policy";
 
 // On-demand: Accept-negotiation (text/markdown) must run on the real request.
 export const prerender = false;
@@ -93,151 +96,64 @@ export const prerender = false;
         <p class="priv-eyebrow">Legal</p>
         <h1>Privacy Policy</h1>
         <p class="priv-meta">
-          Last updated: <time datetime="2026-06-17">{lastUpdated}</time>
+          Last updated: <time datetime="2026-06-17">{PRIVACY_LAST_UPDATED}</time
+          >
         </p>
       </header>
 
       <div class="priv-intro">
-        <p>
-          This Privacy Policy describes how Ahmed Rehan (<strong>me</strong>)
-          collects, uses, and handles information in connection with AI agents,
-          skills, tools, and software products published on third-party
-          marketplaces (including but not limited to Capafy) and available at <a
-            href={siteUrl}>{siteUrl}</a
-          >.
-        </p>
+        <p set:html={renderPrivacyInlineMarkdown(PRIVACY_INTRO)} />
       </div>
 
       <div class="priv-body">
-        <section class="priv-section">
-          <h2><span class="priv-num">01</span> Information I Collect</h2>
-          <p>
-            My downloadable AI agents and skill packages (<strong
-              >Download mode products</strong
-            >) run entirely on your local machine or within your own AI agent
-            environment. They do not transmit data to my servers. No personal
-            information, usage data, or conversation history is collected by me
-            when you use these products.
-          </p>
-          <p>
-            <strong
-              >For certain AI agents or skills that require hosted API routing
-              to function</strong
+        {
+          PRIVACY_SECTIONS.map((section) => (
+            <section
+              class:list={[
+                "priv-section",
+                section.id === "contact" && "priv-contact",
+              ]}
             >
-            (Cloud-Assisted products), your prompt and query data will transit through
-            my self-hosted API gateway (hosted on Microsoft Azure) to be processed.
-            I do not inspect, monetize, or permanently store the text of your conversations
-            or prompts on my servers.
-          </p>
-          <p>
-            When you contact me directly (e.g. via support email), I receive
-            only the information you choose to send.
-          </p>
-        </section>
-
-        <section class="priv-section">
-          <h2><span class="priv-num">02</span> How I Use Information</h2>
-          <p>
-            Any information you voluntarily provide through direct contact
-            (email, GitHub issues, marketplace messaging) is used solely to:
-          </p>
-          <ul>
-            <li>Respond to your support requests or questions</li>
-            <li>Improve product quality and documentation</li>
-          </ul>
-          <p>
-            I do not sell, rent, or share your personal information with third
-            parties.
-          </p>
-        </section>
-
-        <section class="priv-section">
-          <h2><span class="priv-num">03</span> Third-Party Platforms</h2>
-          <p>
-            My products are distributed through third-party marketplaces (e.g.
-            Capafy). When you purchase or download a product through these
-            platforms, their own privacy policies apply to any data they collect
-            during the transaction. I am not responsible for the privacy
-            practices of third-party platforms.
-          </p>
-          <p>
-            <strong
-              >To generate responses, my hosted API gateway securely forwards
-              your requests to third-party LLM inference providers</strong
-            > (including but not limited to Google Gemini, Groq, and OpenRouter).
-            These third parties process your input data in accordance with their own
-            respective developer privacy policies.
-          </p>
-        </section>
-
-        <section class="priv-section">
-          <h2><span class="priv-num">04</span> Cookies and Analytics</h2>
-          <p>
-            This portfolio website (<a href={siteUrl}>{siteUrl}</a>) uses Vercel
-            Analytics for anonymous, aggregated traffic reporting. No personally
-            identifiable data is collected. No tracking cookies are set on your
-            device when you visit this site.
-          </p>
-        </section>
-
-        <section class="priv-section">
-          <h2><span class="priv-num">05</span> Data Retention</h2>
-          <p>
-            I retain support correspondence only as long as necessary to resolve
-            your request. You may request deletion of any personal information
-            you have provided by emailing me.
-          </p>
-          <p>
-            <strong
-              >My self-hosted routing gateway logs anonymous, aggregate usage
-              metadata</strong
-            >
-            (such as the model queried, token usage, and transaction timestamps) solely
-            for performance monitoring, debugging, and quota management. No personal
-            conversation history or prompt text is retained in these logs.
-          </p>
-        </section>
-
-        <section class="priv-section">
-          <h2><span class="priv-num">06</span> Children's Privacy</h2>
-          <p>
-            My products and services are not directed at children under the age
-            of 13. I do not knowingly collect personal information from
-            children.
-          </p>
-        </section>
-
-        <section class="priv-section">
-          <h2><span class="priv-num">07</span> Changes to This Policy</h2>
-          <p>
-            I may update this Privacy Policy from time to time. The "Last
-            updated" date at the top of this page reflects the most recent
-            revision. Continued use of my products after changes are posted
-            constitutes your acceptance of the updated policy.
-          </p>
-        </section>
-
-        <section class="priv-section priv-contact">
-          <h2><span class="priv-num">08</span> Contact</h2>
-          <p>Questions about this Privacy Policy? Reach me at:</p>
-          <a href={`mailto:${email}`} class="contact-link">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-            </svg>
-            {email}
-          </a>
-        </section>
+              <h2>
+                <span class="priv-num">{section.number}</span>
+                {section.title}
+              </h2>
+              {section.blocks.map((block) => {
+                if (block.kind === "list") {
+                  return (
+                    <ul>
+                      {block.items?.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  );
+                }
+                const mailto = privacyMailtoParagraph(block.text ?? "");
+                return mailto ? (
+                  <a href={`mailto:${mailto.email}`} class="contact-link">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                    {mailto.label}
+                  </a>
+                ) : (
+                  <p set:html={renderPrivacyInlineMarkdown(block.text ?? "")} />
+                );
+              })}
+            </section>
+          ))
+        }
       </div>
     </div>
   </main>

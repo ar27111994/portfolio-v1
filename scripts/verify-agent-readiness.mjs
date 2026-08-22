@@ -127,9 +127,9 @@ async function main() {
   {
     const html = await (await fetch(`${BASE}/`)).text();
     const extracted = html
-      .replace(/<script[\s\S]*?<\/script>/gi, " ")
-      .replace(/<style[\s\S]*?<\/style>/gi, " ")
-      .replace(/<dialog[\s\S]*?<\/dialog>/gi, " ")
+      .replace(/<script[\s\S]*?<\/script\s*>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style\s*>/gi, " ")
+      .replace(/<dialog[\s\S]*?<\/dialog\s*>/gi, " ")
       .replace(/<[^>]+>/g, " ")
       .replace(/&amp;/g, "&")
       .replace(/\s+/g, " ")
@@ -142,11 +142,11 @@ async function main() {
     );
     const workHtml = await (await fetch(`${BASE}/work`)).text();
     const workExtracted = workHtml
-      .replace(/<script[\s\S]*?<\/script>/gi, " ")
-      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<script[\s\S]*?<\/script\s*>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style\s*>/gi, " ")
       // <template> content is inert until cloned (lazy modal dossiers) — it
       // never enters parseable text, matching DOM textContent extraction.
-      .replace(/<template[\s\S]*?<\/template>/gi, " ")
+      .replace(/<template[\s\S]*?<\/template\s*>/gi, " ")
       .replace(/<[^>]+>/g, " ")
       .replace(/&amp;/g, "&")
       .replace(/\s+/g, " ")
@@ -179,11 +179,13 @@ async function main() {
     let website = false;
     for (const block of ld) {
       for (const item of block["@graph"] ?? []) {
-        if (item["@type"] === "Person") {
-          person = Boolean(item.name && item.description);
+        // Accumulate: a later incomplete node must never erase an earlier
+        // valid match.
+        if (item["@type"] === "Person" && item.name && item.description) {
+          person = true;
         }
-        if (item["@type"] === "WebSite") {
-          website = Boolean(item.name && item.description);
+        if (item["@type"] === "WebSite" && item.name && item.description) {
+          website = true;
         }
       }
     }
@@ -196,8 +198,8 @@ async function main() {
     const res = await fetch(`${BASE}${path}`);
     const text = await res.text();
     const main = text
-      .replace(/<script[\s\S]*?<\/script>/gi, " ")
-      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<script[\s\S]*?<\/script\s*>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style\s*>/gi, " ")
       .replace(/<[^>]+>/g, " ")
       .replace(/\s+/g, " ")
       .trim();
@@ -211,17 +213,28 @@ async function main() {
   // 9. MCP discovery + handshake
   {
     const manifest = await get("/.well-known/mcp");
+    let manifestJson = null;
+    try {
+      manifestJson = JSON.parse(manifest.text);
+    } catch {
+      // Malformed body -> normal failed check below, later checks still run.
+    }
     check(
       "9.1 /.well-known/mcp manifest",
       manifest.status === 200 &&
         manifest.contentType.includes("application/json") &&
-        JSON.parse(manifest.text).endpoints?.streamable_http,
+        manifestJson?.endpoints?.streamable_http,
     );
     const card = await get("/.well-known/mcp/server-card.json");
+    let cardJson = null;
+    try {
+      cardJson = JSON.parse(card.text);
+    } catch {
+      // Malformed body -> normal failed check below, later checks still run.
+    }
     check(
       "9.2 server-card.json",
-      card.status === 200 &&
-        JSON.parse(card.text).serverInfo?.name === "ar27111994.dev",
+      card.status === 200 && cardJson?.serverInfo?.name === "ar27111994.dev",
     );
 
     const init = await post(
