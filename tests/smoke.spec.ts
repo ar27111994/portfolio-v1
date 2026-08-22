@@ -22,7 +22,9 @@ test.describe("Homepage smoke tests", () => {
 
   test("hero section renders key content", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator("h1")).toBeVisible();
+    // Scoped to the page content: the dev toolbar adds its own h1s to the
+    // document body in dev (see a11y.spec.ts note).
+    await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator(".proof-stack-metrics")).toHaveCount(1);
   });
 

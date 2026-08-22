@@ -78,8 +78,16 @@ test.describe("SEO fundamentals", () => {
   });
 
   test("sitemap.xml is valid XML", async ({ request }) => {
+    // The sitemap is a build-generated file; astro dev serves it through a
+    // Vite route that can lag under load, so poll briefly — a persistent 404
+    // still fails the check.
+    await expect
+      .poll(
+        async () => (await request.get(`${BASE}/sitemap-index.xml`)).status(),
+        { timeout: 10_000 },
+      )
+      .toBe(200);
     const resp = await request.get(`${BASE}/sitemap-index.xml`);
-    expect(resp.status()).toBe(200);
     expect(resp.headers()["content-type"]).toMatch(/xml/);
   });
 
