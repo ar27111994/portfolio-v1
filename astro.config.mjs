@@ -29,12 +29,15 @@ export default defineConfig({
     ],
   },
   // Markdown content negotiation + Vary: Accept must run at request time for
-  // prerendered pages too. The Vercel adapter's edge middleware runs for all
-  // requests (static assets, prerendered pages, and on-demand routes), which
-  // is what makes /lib/negotiate work on the static homepage.
-  adapter: vercel({
-    middlewareMode: "edge",
-  }),
+  // every page with real request headers. With output "server" the Astro
+  // middleware runs INSIDE the Vercel server function (no edge split), so
+  // Astro's own router dispatches pages correctly and the middleware still
+  // sees the true Accept header. The edge-middleware split
+  // (middlewareMode: "edge") was abandoned because Vercel's router served a
+  // single fixed page for every path after middleware next() (verified on
+  // live preview deployments).
+  output: "server",
+  adapter: vercel(),
   vite: {
     build: {
       cssMinify: "esbuild",

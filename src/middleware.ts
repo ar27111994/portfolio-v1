@@ -1,19 +1,21 @@
 /**
- * Middleware — runs at request time on Vercel (middlewareMode: "edge") and in
- * `astro dev`, for every request including on-demand pages, static assets,
- * and unmatched paths.
+ * Middleware — runs at request time inside the Vercel server function (and
+ * in `astro dev`) for every request, including on-demand pages, static
+ * assets, and unmatched paths.
  *
  * Responsibilities:
  * 1. Content negotiation: `Accept: text/markdown` on known pages returns the
- *    generated markdown variant (/md/*.md) with `Vary: Accept` so CDNs cache
- *    HTML and markdown variants separately (acceptmarkdown.com compliance).
+ *    generated markdown variant with `Vary: Accept` so CDNs cache HTML and
+ *    markdown variants separately (acceptmarkdown.com compliance).
  * 2. `Vary: Accept` on every response (agents must never get a cached HTML
  *    variant when asking for markdown, or vice versa).
  * 3. Agent-friendly 404s: a nonexistent path that prefers markdown receives a
  *    short markdown body with recovery links (sitemap, llms.txt, key pages).
+ * 4. MCP endpoint: Streamable HTTP is POST-only, so GET/HEAD /mcp is answered
+ *    with 405 at the middleware (before any router fall-through).
  *
- * Edge-safe by design: no Node APIs, no project data imports (variants are
- * fetched as static files), so the edge bundle stays tiny.
+ * Runs in the Node runtime (output: "server"), so it can import the markdown
+ * builders directly from src/lib/markdown/pages — no subrequests.
  */
 import { defineMiddleware } from "astro:middleware";
 import {
@@ -23,16 +25,11 @@ import {
   normalizePath,
   prefersMarkdown,
 } from "./lib/negotiate";
-import { mdVariantForPath } from "./lib/markdown/pages";
+import { buildMarkdownVariant, mdVariantForPath } from "./lib/markdown/pages";
 
-/** Only page paths with a markdown variant are negotiated; the variant map
- * in lib/markdown/pages is the single source for which paths qualify. */
+/** CDN caching for on-demand HTML pages (Vercel edge cache, keyed by Vary). */
 const HTML_CACHE_CONTROL =
   "public, s-maxage=3600, stale-while-revalidate=86400";
-
-/** Bound the in-edge variant subrequest so a stalled fetch cannot hang the
- * request; failures fall through to the normal pipeline (see below). */
-const VARIANT_FETCH_TIMEOUT_MS = 3_000;
 
 function hasMdVariant(normalized: string): boolean {
   return mdVariantForPath(normalized) !== null;
@@ -60,26 +57,24 @@ export const onRequest = defineMiddleware(async (context, next) => {
   // Serve the markdown variant directly for negotiated pages.
   if ((isGet || isHead) && acceptsMarkdown && hasMdVariant(normalized)) {
     const variant = mdVariantForPath(normalized);
+    let body: string | null = null;
     if (variant) {
-      let mdResponse: Response | null = null;
       try {
-        mdResponse = await fetch(new URL(`/md/${variant}.md`, url), {
-          signal: AbortSignal.timeout(VARIANT_FETCH_TIMEOUT_MS),
-        });
+        body = buildMarkdownVariant(variant);
       } catch {
-        // Fall through to the normal pipeline on timeout or fetch failure.
+        // Builders are pure string functions over static data; on any future
+        // failure, fall through to the normal pipeline instead of 500ing.
       }
-      if (mdResponse && mdResponse.ok) {
-        const headers = new Headers({
+    }
+    if (body !== null) {
+      return new Response(isHead ? null : body, {
+        status: 200,
+        headers: {
           "Content-Type": "text/markdown; charset=utf-8",
           Vary: "Accept, Accept-Encoding",
           "Cache-Control": MARKDOWN_CACHE_CONTROL,
-        });
-        return new Response(isHead ? null : await mdResponse.text(), {
-          status: 200,
-          headers,
-        });
-      }
+        },
+      });
     }
   }
 

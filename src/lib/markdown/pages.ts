@@ -49,6 +49,24 @@ export function mdVariantForPath(normalizedPath: string): string | null {
   return MARKDOWN_VARIANTS[normalizedPath] ?? null;
 }
 
+/** Build a variant's markdown body by variant name (roots of MARKDOWN_VARIANTS). */
+export function buildMarkdownVariant(name: string): string | null {
+  switch (name) {
+    case "home":
+      return homeMarkdown();
+    case "about":
+      return aboutMarkdown();
+    case "contact":
+      return contactMarkdown();
+    case "privacy":
+      return privacyMarkdown();
+    case "work":
+      return workMarkdown();
+    default:
+      return null;
+  }
+}
+
 function link(text: string, url: string): string {
   return `[${text}](${url})`;
 }
