@@ -480,6 +480,12 @@ const previewProofLine =
   </div>
 </article>
 
+{
+  /* Dossier is lazy-hydrated from a template on first open: keeps the static
+     HTML (and agent-extracted text) light — modal content stays out of the
+     DOM until a visitor opens the record. */
+}
+
 <dialog
   id={modalId}
   class="upwork-modal"
@@ -487,301 +493,303 @@ const previewProofLine =
   aria-labelledby={modalTitleId}
   aria-describedby={modalDescriptionId}
 >
-  <article class="upwork-modal-shell">
-    <header class="upwork-modal-head">
-      <div>
-        <p class="upwork-modal-kicker">Captured Upwork record</p>
-        <h3 id={modalTitleId}>{item.title}</h3>
-        <p id={modalDescriptionId}>
-          Project description, link, metadata, screenshots, attachments, and raw
-          synced payload in one inspectable dossier.
-        </p>
-      </div>
-      <button type="button" class="upwork-modal-close" data-upwork-close>
-        Close
-      </button>
-    </header>
-
-    <div class="upwork-modal-content">
-      {
-        modalScrollHint && (
-          <p class="upwork-scroll-hint">
-            Scroll for screenshots, attachments, and raw synced payload.
+  <template data-upwork-dialog-template={modalId}>
+    <article class="upwork-modal-shell">
+      <header class="upwork-modal-head">
+        <div>
+          <p class="upwork-modal-kicker">Captured Upwork record</p>
+          <h3 id={modalTitleId}>{item.title}</h3>
+          <p id={modalDescriptionId}>
+            Project description, link, metadata, screenshots, attachments, and
+            raw synced payload in one inspectable dossier.
           </p>
-        )
-      }
-      <div class="upwork-detail-block">
-        <small>Description</small>
+        </div>
+        <button type="button" class="upwork-modal-close" data-upwork-close>
+          Close
+        </button>
+      </header>
+
+      <div class="upwork-modal-content">
         {
-          descriptionBlocks.length ? (
-            descriptionBlocks.map((block) =>
-              block.kind === "list" ? (
-                <ul class="upwork-desc-list">
-                  {block.items.map((item) => (
-                    <li>
-                      {splitLinks(item).map((segment) =>
-                        segment.type === "url" && segment.href ? (
-                          <a
-                            href={segment.href}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            {segment.value}
-                          </a>
-                        ) : (
-                          segment.value
-                        ),
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p>
-                  {splitLinks(block.text).map((segment) =>
-                    segment.type === "url" && segment.href ? (
-                      <a href={segment.href} target="_blank" rel="noreferrer">
-                        {segment.value}
-                      </a>
-                    ) : (
-                      segment.value
-                    ),
-                  )}
-                </p>
-              ),
-            )
-          ) : (
-            <p>No description was captured for this item.</p>
+          modalScrollHint && (
+            <p class="upwork-scroll-hint">
+              Scroll for screenshots, attachments, and raw synced payload.
+            </p>
           )
         }
-      </div>
-
-      {
-        item.projectGoal && (
-          <div class="upwork-detail-block">
-            <small>Project goal</small>
-            <p>{item.projectGoal}</p>
-          </div>
-        )
-      }
-
-      {
-        item.solution && (
-          <div class="upwork-detail-block">
-            <small>Solution</small>
-            <p>{item.solution}</p>
-          </div>
-        )
-      }
-
-      <dl class="upwork-fact-grid">
-        <div>
-          <dt>Completion</dt>
-          <dd>{completionFallback}</dd>
-        </div>
-        <div>
-          <dt>Featured</dt>
-          <dd>{item.featured ? "Yes" : "No"}</dd>
-        </div>
-        <div>
-          <dt>Source page</dt>
-          <dd>{item.sourcePage ?? "Not specified"}</dd>
-        </div>
-        <div>
-          <dt>Attachment types</dt>
-          <dd>{attachmentTypeSummary || "No attachment counters"}</dd>
-        </div>
-        <div class="wide-fact">
-          <dt>Primary URL</dt>
-          <dd>
-            {
-              projectHref ? (
-                <a href={projectHref} target="_blank" rel="noreferrer">
-                  {projectDisplayUrl || projectHref}
-                </a>
-              ) : (
-                "Not listed"
+        <div class="upwork-detail-block">
+          <small>Description</small>
+          {
+            descriptionBlocks.length ? (
+              descriptionBlocks.map((block) =>
+                block.kind === "list" ? (
+                  <ul class="upwork-desc-list">
+                    {block.items.map((item) => (
+                      <li>
+                        {splitLinks(item).map((segment) =>
+                          segment.type === "url" && segment.href ? (
+                            <a
+                              href={segment.href}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {segment.value}
+                            </a>
+                          ) : (
+                            segment.value
+                          ),
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>
+                    {splitLinks(block.text).map((segment) =>
+                      segment.type === "url" && segment.href ? (
+                        <a href={segment.href} target="_blank" rel="noreferrer">
+                          {segment.value}
+                        </a>
+                      ) : (
+                        segment.value
+                      ),
+                    )}
+                  </p>
+                ),
               )
-            }
-          </dd>
+            ) : (
+              <p>No description was captured for this item.</p>
+            )
+          }
         </div>
-      </dl>
 
-      {
-        linkPreviewAttachments.length ? (
-          <div class="upwork-detail-block">
-            <small>Embedded link previews</small>
-            <div class="upwork-media-grid">
-              {linkPreviewAttachments.map((attachment, index) => {
-                const href = attachmentHref(attachment);
-                const previewSrc = previewImageFromAttachment(attachment);
-                const label = attachment.title || item.title;
-                return (
+        {
+          item.projectGoal && (
+            <div class="upwork-detail-block">
+              <small>Project goal</small>
+              <p>{item.projectGoal}</p>
+            </div>
+          )
+        }
+
+        {
+          item.solution && (
+            <div class="upwork-detail-block">
+              <small>Solution</small>
+              <p>{item.solution}</p>
+            </div>
+          )
+        }
+
+        <dl class="upwork-fact-grid">
+          <div>
+            <dt>Completion</dt>
+            <dd>{completionFallback}</dd>
+          </div>
+          <div>
+            <dt>Featured</dt>
+            <dd>{item.featured ? "Yes" : "No"}</dd>
+          </div>
+          <div>
+            <dt>Source page</dt>
+            <dd>{item.sourcePage ?? "Not specified"}</dd>
+          </div>
+          <div>
+            <dt>Attachment types</dt>
+            <dd>{attachmentTypeSummary || "No attachment counters"}</dd>
+          </div>
+          <div class="wide-fact">
+            <dt>Primary URL</dt>
+            <dd>
+              {
+                projectHref ? (
+                  <a href={projectHref} target="_blank" rel="noreferrer">
+                    {projectDisplayUrl || projectHref}
+                  </a>
+                ) : (
+                  "Not listed"
+                )
+              }
+            </dd>
+          </div>
+        </dl>
+
+        {
+          linkPreviewAttachments.length ? (
+            <div class="upwork-detail-block">
+              <small>Embedded link previews</small>
+              <div class="upwork-media-grid">
+                {linkPreviewAttachments.map((attachment, index) => {
+                  const href = attachmentHref(attachment);
+                  const previewSrc = previewImageFromAttachment(attachment);
+                  const label = attachment.title || item.title;
+                  return (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer"
+                      class="upwork-media-tile upwork-link-preview"
+                    >
+                      <img
+                        data-upwork-lazy-src={previewSrc}
+                        data-upwork-image-fallbacks={JSON.stringify(
+                          imageFallbacks(attachment),
+                        )}
+                        data-upwork-image-index="0"
+                        alt={`${label} preview`}
+                        width="400"
+                        height="260"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span>
+                        {label || `Link preview ${index + 1}`}
+                        <em>Open source project</em>
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ) : null
+        }
+
+        {
+          videoPreviewAttachments.length ? (
+            <div class="upwork-detail-block">
+              <small>Video previews</small>
+              <div class="upwork-media-grid">
+                {videoPreviewAttachments.map(({ attachment, src }, index) => (
+                  <div class="upwork-media-tile upwork-video-tile">
+                    {attachment.provider === "youtube" ||
+                    attachment.embeddedUrl?.includes("youtube") ? (
+                      <iframe
+                        src={attachment.embeddedUrl || src}
+                        width="400"
+                        height="260"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        title={attachment.title || `YouTube video ${index + 1}`}
+                        loading="lazy"
+                        style="border:none;border-radius:12px"
+                      />
+                    ) : attachment.embeddedUrl?.includes("vimeo") ? (
+                      <iframe
+                        src={attachment.embeddedUrl}
+                        width="400"
+                        height="260"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowfullscreen
+                        title={attachment.title || `Vimeo video ${index + 1}`}
+                        loading="lazy"
+                        style="border:none;border-radius:12px"
+                      />
+                    ) : (
+                      <video
+                        src={src}
+                        controls
+                        preload="metadata"
+                        playsinline
+                        width="400"
+                        height="260"
+                        poster={previewImage}
+                        muted
+                      />
+                    )}
+                    <span>
+                      {attachment.title || `Video preview ${index + 1}`}
+                      <em>
+                        {attachment.provider === "youtube" ||
+                        attachment.embeddedUrl?.includes("youtube")
+                          ? "YouTube embed"
+                          : attachment.embeddedUrl?.includes("vimeo")
+                            ? "Vimeo embed"
+                            : "Play attached video"}
+                      </em>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null
+        }
+
+        {
+          imageAttachments.length ? (
+            <div class="upwork-detail-block">
+              <small>Screenshots</small>
+              <div class="upwork-media-grid">
+                {imageAttachments.map((attachment, index) => (
                   <a
-                    href={href}
+                    href={fullImageHref(attachment)}
                     target="_blank"
                     rel="noreferrer"
-                    class="upwork-media-tile upwork-link-preview"
+                    class="upwork-media-tile pending-media"
                   >
                     <img
-                      data-upwork-lazy-src={previewSrc}
+                      data-upwork-lazy-src={imageSrc(attachment)}
                       data-upwork-image-fallbacks={JSON.stringify(
                         imageFallbacks(attachment),
                       )}
                       data-upwork-image-index="0"
-                      alt={`${label} preview`}
+                      alt={`${item.title} screenshot ${index + 1}`}
                       width="400"
                       height="260"
                       loading="lazy"
                       decoding="async"
                     />
                     <span>
-                      {label || `Link preview ${index + 1}`}
-                      <em>Open source project</em>
+                      Screenshot {index + 1}
+                      <em>Open full asset</em>
                     </span>
                   </a>
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
-        ) : null
-      }
+          ) : null
+        }
 
-      {
-        videoPreviewAttachments.length ? (
-          <div class="upwork-detail-block">
-            <small>Video previews</small>
-            <div class="upwork-media-grid">
-              {videoPreviewAttachments.map(({ attachment, src }, index) => (
-                <div class="upwork-media-tile upwork-video-tile">
-                  {attachment.provider === "youtube" ||
-                  attachment.embeddedUrl?.includes("youtube") ? (
-                    <iframe
-                      src={attachment.embeddedUrl || src}
-                      width="400"
-                      height="260"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                      title={attachment.title || `YouTube video ${index + 1}`}
-                      loading="lazy"
-                      style="border:none;border-radius:12px"
-                    />
-                  ) : attachment.embeddedUrl?.includes("vimeo") ? (
-                    <iframe
-                      src={attachment.embeddedUrl}
-                      width="400"
-                      height="260"
-                      allow="autoplay; fullscreen; picture-in-picture"
-                      allowfullscreen
-                      title={attachment.title || `Vimeo video ${index + 1}`}
-                      loading="lazy"
-                      style="border:none;border-radius:12px"
-                    />
+        {
+          attachments.length ? (
+            <div class="upwork-detail-block">
+              <small>Source attachment links</small>
+              <div class="upwork-attachment-list">
+                {attachments.map((attachment, index) => {
+                  const href = attachmentHref(attachment);
+                  const label =
+                    attachment.title ||
+                    attachment.description?.slice(0, 90) ||
+                    attachment.type ||
+                    `Attachment ${index + 1}`;
+                  return href ? (
+                    <a href={href} target="_blank" rel="noreferrer">
+                      {label}
+                      <em>
+                        {(attachment.type || "attachment").toUpperCase()}
+                        {attachment.rank ? ` · rank ${attachment.rank}` : ""}
+                      </em>
+                    </a>
                   ) : (
-                    <video
-                      src={src}
-                      controls
-                      preload="metadata"
-                      playsinline
-                      width="400"
-                      height="260"
-                      poster={previewImage}
-                      muted
-                    />
-                  )}
-                  <span>
-                    {attachment.title || `Video preview ${index + 1}`}
-                    <em>
-                      {attachment.provider === "youtube" ||
-                      attachment.embeddedUrl?.includes("youtube")
-                        ? "YouTube embed"
-                        : attachment.embeddedUrl?.includes("vimeo")
-                          ? "Vimeo embed"
-                          : "Play attached video"}
-                    </em>
-                  </span>
-                </div>
-              ))}
+                    <span>
+                      {label}
+                      <em>
+                        {(attachment.type || "attachment").toUpperCase()}
+                        {attachment.rank ? ` · rank ${attachment.rank}` : ""}
+                      </em>
+                    </span>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ) : null
-      }
+          ) : null
+        }
 
-      {
-        imageAttachments.length ? (
-          <div class="upwork-detail-block">
-            <small>Screenshots</small>
-            <div class="upwork-media-grid">
-              {imageAttachments.map((attachment, index) => (
-                <a
-                  href={fullImageHref(attachment)}
-                  target="_blank"
-                  rel="noreferrer"
-                  class="upwork-media-tile pending-media"
-                >
-                  <img
-                    data-upwork-lazy-src={imageSrc(attachment)}
-                    data-upwork-image-fallbacks={JSON.stringify(
-                      imageFallbacks(attachment),
-                    )}
-                    data-upwork-image-index="0"
-                    alt={`${item.title} screenshot ${index + 1}`}
-                    width="400"
-                    height="260"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span>
-                    Screenshot {index + 1}
-                    <em>Open full asset</em>
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        ) : null
-      }
-
-      {
-        attachments.length ? (
-          <div class="upwork-detail-block">
-            <small>Source attachment links</small>
-            <div class="upwork-attachment-list">
-              {attachments.map((attachment, index) => {
-                const href = attachmentHref(attachment);
-                const label =
-                  attachment.title ||
-                  attachment.description?.slice(0, 90) ||
-                  attachment.type ||
-                  `Attachment ${index + 1}`;
-                return href ? (
-                  <a href={href} target="_blank" rel="noreferrer">
-                    {label}
-                    <em>
-                      {(attachment.type || "attachment").toUpperCase()}
-                      {attachment.rank ? ` · rank ${attachment.rank}` : ""}
-                    </em>
-                  </a>
-                ) : (
-                  <span>
-                    {label}
-                    <em>
-                      {(attachment.type || "attachment").toUpperCase()}
-                      {attachment.rank ? ` · rank ${attachment.rank}` : ""}
-                    </em>
-                  </span>
-                );
-              })}
-            </div>
-          </div>
-        ) : null
-      }
-
-      <details class="upwork-raw-data">
-        <summary>Raw captured payload</summary>
-        <pre>{JSON.stringify(item, null, 2)}</pre>
-      </details>
-    </div>
-  </article>
+        <details class="upwork-raw-data">
+          <summary>Raw captured payload</summary>
+          <pre>{JSON.stringify(item, null, 2)}</pre>
+        </details>
+      </div>
+    </article>
+  </template>
 </dialog>
 
 <script>
@@ -882,6 +890,24 @@ const previewProofLine =
       return modal instanceof HTMLDialogElement ? modal : null;
     };
 
+    // Lazy-hydrate the dossier from its template on first open so the static
+    // HTML stays small (agents can extract the card text without the full
+    // modal payload) while the interactive modal behaves identically.
+    const hydrateModal = (modal: HTMLDialogElement, id: string) => {
+      if (modal.dataset.upworkHydrated === "true") return;
+      const template = document.querySelector<HTMLTemplateElement>(
+        `template[data-upwork-dialog-template="${id}"]`,
+      );
+      // Only mark hydrated when the template was found and cloned; if it is
+      // missing (e.g. DOM still settling), a later open retries the fill.
+      if (template) {
+        modal.append(template.content.cloneNode(true));
+        wireResilientImages(modal);
+        wireVideoFallbacks(modal);
+        modal.dataset.upworkHydrated = "true";
+      }
+    };
+
     document.addEventListener("click", (event) => {
       const target = event.target;
       if (!(target instanceof HTMLElement)) return;
@@ -891,6 +917,9 @@ const previewProofLine =
         const modalId = openTrigger.dataset.upworkOpen;
         const modal = findModal(modalId);
         if (!modal) return;
+
+        // Fill the dialog from its template before opening it.
+        if (modalId) hydrateModal(modal, modalId);
 
         if (!modal.open) {
           if (typeof modal.showModal === "function") {
@@ -910,14 +939,21 @@ const previewProofLine =
         if (modal instanceof HTMLDialogElement) {
           modal.close();
         }
+        return;
       }
-    });
 
-    document.querySelectorAll("dialog[data-upwork-modal]").forEach((modal) => {
-      if (!(modal instanceof HTMLDialogElement)) return;
-      modal.addEventListener("click", (event) => {
-        if (event.target === modal) modal.close();
-      });
+      // Backdrop dismissal — delegated like open/close. Native <dialog>
+      // backdrop clicks surface as clicks on the dialog element itself.
+      // Per-element listeners (querySelectorAll at init) only attach to
+      // dialogs present at script run and silently miss dialogs rendered
+      // by later client-side navigation or DOM updates.
+      const dialogTarget = target.closest("dialog[data-upwork-modal]");
+      if (
+        dialogTarget instanceof HTMLDialogElement &&
+        target === dialogTarget
+      ) {
+        dialogTarget.close();
+      }
     });
   })();
 </script>

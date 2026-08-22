@@ -27,15 +27,17 @@ test.describe("Accessibility audit", () => {
 
   test("heading hierarchy is valid", async ({ page }) => {
     await page.goto(BASE);
-    // Check exactly one h1
-    await expect(page.locator("h1")).toHaveCount(1);
+    // Scoped to the page content: Astro's dev toolbar appends its own
+    // headings ("No islands detected.", "Audit", "Settings") to the document
+    // body in dev, so unscoped tag counts are not stable there.
+    await expect(page.locator("main h1")).toHaveCount(1);
     // No h4 or deeper without h3 in between (checking for skips)
-    const h2s = await page.locator("h2").count();
-    const h3s = await page.locator("h3").count();
+    const h2s = await page.locator("main h2").count();
+    const h3s = await page.locator("main h3").count();
     expect(h2s).toBeGreaterThan(0);
     expect(h3s).toBeGreaterThan(0);
     // No h4s (case study headings are now <strong>)
-    const h4s = await page.locator("h4").count();
+    const h4s = await page.locator("main h4").count();
     expect(h4s).toBe(0);
   });
 

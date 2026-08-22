@@ -37,6 +37,10 @@ debug-screenshot.png
 # agent-harness local activation artifacts (external tool)
 .agent-harness/
 
+# Playwright output
+test-results/
+playwright-report/
+
 # GSD planning artifacts
 .planning/
 

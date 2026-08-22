@@ -1,0 +1,158 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DocNav from "../components/DocNav.astro";
+import "../styles/doc-page.css";
+
+import {
+  yearsLabel,
+  credibilityFacts,
+  caseStudies,
+  certificationLinks,
+  writingLinks,
+  profileLinks,
+} from "../data/site-content";
+
+// On-demand: Accept-negotiation (text/markdown) must run on the real request.
+export const prerender = false;
+---
+
+<Layout
+  title="About — Ahmed Rehan | Full-Stack Engineer and Solo Builder"
+  description="About Ahmed Rehan: career path, credibility facts, certifications, working style, and open-source work."
+>
+  <DocNav backLabel="Portfolio" />
+
+  <main class="doc-wrap" id="main-content">
+    <div class="doc-container">
+      <header class="doc-header">
+        <p class="doc-eyebrow">Bio</p>
+        <h1>About Ahmed Rehan</h1>
+        <p class="doc-meta">ARLabs · Rawalpindi, Pakistan (UTC+5)</p>
+      </header>
+
+      <div class="doc-intro">
+        <p>
+          Ahmed Rehan is a full-stack engineer and solo builder with {
+            yearsLabel
+          }{" "}
+          years of experience across enterprise teams, freelance engagements, founder
+          work, and open-source projects. He started in web development in 2014, spent
+          four years as a Senior Frontend Engineer at Eagle 6 (a US cybersecurity
+          firm), built a freelance delivery practice, and is now focused on developer
+          tools, webhook reliability, automation systems, and AI-agent tooling.
+        </p>
+      </div>
+
+      <div class="doc-body">
+        <section class="doc-section">
+          <h2><span class="doc-num">01</span> Credibility facts</h2>
+          <ul>
+            {credibilityFacts.map((fact) => <li>{fact.text}</li>)}
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2>
+            <span class="doc-num">02</span> Selected roles and engagements
+          </h2>
+          <ul>
+            {
+              caseStudies.map((c) => (
+                <li>
+                  <strong>{c.title}</strong> — {c.context}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">03</span> Working style</h2>
+          <ul>
+            <li>
+              Async-friendly delivery with clear written updates, artifacts, and
+              demos instead of vague progress reports.
+            </li>
+            <li>
+              Reliability-first: documented, tested, and boring in the places
+              that must not break.
+            </li>
+            <li>
+              Solo-founder discipline: ships complete work, not partial
+              promises.
+            </li>
+            <li>
+              Security-sensitive defaults for anything that touches user
+              traffic.
+            </li>
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">04</span> Certifications</h2>
+          <ul>
+            {
+              certificationLinks.map((c) => (
+                <li>
+                  {c.label} — <a href={c.href}>Verify</a>
+                  {c.pdf ? (
+                    <>
+                      {" "}
+                      · <a href={c.pdf}>PDF certificate</a>
+                    </>
+                  ) : null}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">05</span> Open source and writing</h2>
+          <p>
+            Maintains agent-harness, Webhook Debugger and Logger, penpot-mcp,
+            and curated agent-skill collections on <a
+              href="https://github.com/ar27111994"
+              target="_blank"
+              rel="noreferrer">GitHub</a
+            >. Writes on Dev.to and launches on Hacker News.
+          </p>
+          <ul>
+            {
+              writingLinks.map((w) => (
+                <li>
+                  {w.label} — <a href={w.href}>{w.source}</a> ({w.date})
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section class="doc-section">
+          <h2><span class="doc-num">06</span> Profiles</h2>
+          <ul>
+            {
+              profileLinks.map((p) => (
+                <li>
+                  <a href={p.href} target="_blank" rel="noreferrer">
+                    {p.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p>© {new Date().getFullYear()} Ahmed Rehan · ARLabs</p>
+    <nav aria-label="Site pages">
+      <a href="/work">Work</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/">Home</a>
+    </nav>
+  </footer>
+</Layout>

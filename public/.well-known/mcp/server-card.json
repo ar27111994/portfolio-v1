@@ -1,0 +1,74 @@
+{
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "ar27111994.dev",
+    "title": "Ahmed Rehan — ARLabs portfolio data",
+    "version": "1.0.0"
+  },
+  "description": "First-party MCP server exposing Ahmed Rehan's portfolio, projects, case studies, services, certifications, and contact data as read-only tools.",
+  "documentationUrl": "https://www.ar27111994.dev/llms.txt",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": {}
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "instructions": "Read-only portfolio data queries. All tools return JSON. Use get_portfolio_overview for a summary, list_upwork_portfolio for the recorded freelance work trail, get_contact_info for reach channels.",
+  "tools": [
+    {
+      "name": "get_portfolio_overview",
+      "description": "High-level summary of Ahmed Rehan: role, experience, focus areas, portfolio size, and availability surface."
+    },
+    {
+      "name": "list_services",
+      "description": "List the services Ahmed offers (developer tools, webhook debugging/automation, agentic systems and tooling)."
+    },
+    {
+      "name": "list_featured_projects",
+      "description": "List featured and additional open-source projects with descriptions, highlights, and repository links."
+    },
+    {
+      "name": "list_case_studies",
+      "description": "List detailed case studies (context, problem, approach, outcome, tech stack, metrics)."
+    },
+    {
+      "name": "list_capabilities",
+      "description": "List professional capabilities and specialization areas."
+    },
+    {
+      "name": "list_certifications",
+      "description": "List verifiable certifications with verification links."
+    },
+    {
+      "name": "list_upwork_portfolio",
+      "description": "List recorded Upwork portfolio items (title, completion date, skills, description, project link).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number",
+            "description": "Maximum items to return (default 100)"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_contact_info",
+      "description": "Get contact channels (email, WhatsApp) and profile links for reaching Ahmed."
+    },
+    {
+      "name": "list_resume_downloads",
+      "description": "List downloadable resume PDFs with their labels and paths."
+    },
+    {
+      "name": "list_writing_and_feeds",
+      "description": "List published articles and content feed sources."
+    }
+  ]
+}

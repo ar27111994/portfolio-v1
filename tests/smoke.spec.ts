@@ -22,7 +22,9 @@ test.describe("Homepage smoke tests", () => {
 
   test("hero section renders key content", async ({ page }) => {
     await page.goto("/");
-    await expect(page.locator("h1")).toBeVisible();
+    // Scoped to the page content: the dev toolbar adds its own h1s to the
+    // document body in dev (see a11y.spec.ts note).
+    await expect(page.locator("main h1")).toBeVisible();
     await expect(page.locator(".proof-stack-metrics")).toHaveCount(1);
   });
 
@@ -50,12 +52,17 @@ test.describe("Privacy page", () => {
 
   test("contains key privacy sections", async ({ page }) => {
     await page.goto("/privacy");
-    await expect(page.locator("h1")).toContainText("Privacy Policy");
+    // Role-based queries: Astro's dev toolbar injects its own headings
+    // ("No islands detected.", "Audit", "Settings") into the document tree
+    // in dev, so unscoped tag selectors are not stable here.
     await expect(
-      page.locator('h2:has-text("Information I Collect")'),
+      page.getByRole("heading", { level: 1, name: "Privacy Policy" }),
     ).toBeVisible();
     await expect(
-      page.locator('h2:has-text("Third-Party Platforms")'),
+      page.getByRole("heading", { level: 2, name: "Information I Collect" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 2, name: "Third-Party Platforms" }),
     ).toBeVisible();
   });
 });

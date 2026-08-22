@@ -1,0 +1,132 @@
+---
+/**
+ * Compact Upwork proof strip for the homepage.
+ *
+ * The full interactive portfolio (search/sort/filter + per-item detail
+ * dialogs) lives on /work so the homepage stays inside the agent-readiness
+ * token budget. This preview keeps the #upwork anchor, count badge, proof
+ * cards, and fit tags, then links to the full trail.
+ */
+/** One proof card in the homepage Upwork strip (label/value/detail trio). */
+export interface UpworkProofCard {
+  label: string;
+  value: string;
+  detail: string;
+}
+
+interface Props {
+  upworkPortfolioCountLabel: string;
+  upworkPortfolioCount: number;
+  upworkProofCards: UpworkProofCard[];
+  upworkFitTags: string[];
+  upworkProfileUrl: string;
+}
+
+const {
+  upworkPortfolioCountLabel,
+  upworkPortfolioCount,
+  upworkProofCards,
+  upworkFitTags,
+  upworkProfileUrl,
+} = Astro.props;
+---
+
+<section
+  id="upwork"
+  class="panel upwork-panel"
+  aria-labelledby="upwork-heading"
+>
+  <div class="section-head split-head">
+    <div>
+      <p class="section-kicker">Freelance proof surface</p>
+      <h2 id="upwork-heading">
+        Upwork project trail{" "}
+        <span class="count-badge"
+          >{upworkPortfolioCountLabel} items · 40+ jobs completed · 5★ rating</span
+        >
+      </h2>
+    </div>
+    <p class="section-sub">
+      A long, verifiable freelance work history. The full searchable record
+      lives on its own page.
+    </p>
+  </div>
+
+  <div class="upwork-panel-grid">
+    <div class="upwork-proof-strip">
+      <h3>Proof at a glance</h3>
+      <div class="upwork-proof-cards">
+        {
+          upworkProofCards.map((card) => (
+            <div class="upwork-proof-card">
+              <div>
+                <small>{card.label}</small>
+                <strong>{card.value}</strong>
+                <p>{card.detail}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="upwork-fit">
+      <h3>Fit signals</h3>
+      <div class="upwork-fit-tags">
+        {upworkFitTags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </div>
+  </div>
+
+  <div class="upwork-toolbar-cta">
+    <a class="button primary" href="/work" data-astro-prefetch="load">
+      Browse all {upworkPortfolioCount} records
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg
+      >
+    </a>
+    <a
+      class="text-link"
+      href={upworkProfileUrl}
+      target="_blank"
+      rel="noreferrer"
+    >
+      Open Upwork profile
+    </a>
+  </div>
+</section>
+
+<style>
+  .upwork-toolbar-cta {
+    margin-top: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .upwork-toolbar-cta .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .text-link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+  }
+
+  .text-link:hover {
+    text-decoration: underline;
+  }
+</style>

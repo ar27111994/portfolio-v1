@@ -24,6 +24,7 @@
     "test:ui": "playwright test --ui",
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "test:agents": "playwright test -c playwright.agent.config.ts",
     "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs"
   },
   "lint-staged": {
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@astrojs/vercel": "^11.0.7",
     "@axe-core/playwright": "^4.12.1",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
