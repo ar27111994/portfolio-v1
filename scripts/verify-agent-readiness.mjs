@@ -320,6 +320,48 @@ async function main() {
     );
   }
 
+  // 10. ARD (Agentic Resource Discovery) v0.91 catalog discovery
+  {
+    const ard = await get("/.well-known/ard.json");
+    let ardJson = null;
+    try {
+      ardJson = JSON.parse(ard.text);
+    } catch {
+      // Malformed body -> normal failed check below, later checks still run.
+    }
+    check(
+      "10.1 /.well-known/ard.json serves JSON (ArdManifest)",
+      ard.status === 200 &&
+        ard.contentType.includes("application/json") &&
+        Array.isArray(ardJson?.entries) &&
+        ardJson.entries.length > 0,
+      `status=${ard.status} entries=${ardJson?.entries?.length ?? 0}`,
+    );
+
+    const legacy = await get("/.well-known/ai-catalog.json");
+    let legacyJson = null;
+    try {
+      legacyJson = JSON.parse(legacy.text);
+    } catch {
+      // Malformed body -> normal failed check below, later checks still run.
+    }
+    check(
+      "10.2 /.well-known/ai-catalog.json serves JSON (legacy AiCatalogManifest)",
+      legacy.status === 200 &&
+        legacy.contentType.includes("application/json") &&
+        legacyJson?.specVersion === "1.0" &&
+        Array.isArray(legacyJson?.entries) &&
+        legacyJson.entries.length > 0,
+      `status=${legacy.status} specVersion=${legacyJson?.specVersion} entries=${legacyJson?.entries?.length ?? 0}`,
+    );
+
+    const homeHtml = await (await fetch(`${BASE}/`)).text();
+    check(
+      "10.3 home page advertises rel=ard link",
+      /<link[^>]+rel="ard"[^>]+href=/.test(homeHtml),
+    );
+  }
+
   const failed = results.filter((r) => !r.ok).length;
   console.log(`\n${results.length - failed}/${results.length} checks passed`);
   process.exit(failed ? 1 : 0);

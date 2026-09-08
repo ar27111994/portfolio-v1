@@ -162,6 +162,9 @@ const structuredData = {
 
     <link rel="canonical" href={canonical} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- ARD (Agentic Resource Discovery) v0.91 §5.1: advertise the publisher
+         well-known ard.json manifest via the rel="ard" link relation. -->
+    <link rel="ard" href="/.well-known/ard.json" />
 
     <!-- DNS prefetch for external image sources -->
     <link rel="dns-prefetch" href="https://www.upwork.com" />
