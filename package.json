@@ -25,7 +25,9 @@
     "test:unit": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:agents": "playwright test -c playwright.agent.config.ts",
-    "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs"
+    "download-thumbnails": "node scripts/download-upwork-thumbnails.mjs",
+    "sync:ard": "node scripts/sync-ard-manifests.mjs",
+    "sync:ard:check": "node scripts/sync-ard-manifests.mjs --check"
   },
   "lint-staged": {
     "*.{astro,ts,js,mjs,cjs,json,css,md}": [
