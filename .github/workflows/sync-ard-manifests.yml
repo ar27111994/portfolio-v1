@@ -37,20 +37,24 @@ jobs:
       # Primary checkout at the workspace root. Keeps default persist-credentials
       # (true) so the git-auto-commit step below can push with GITHUB_TOKEN.
       - name: Checkout portfolio-v1
-        uses: actions/checkout@v4
+        # Pin to immutable SHA (actions/checkout@v4) — the write-credential
+        # checkout must never track a mutable tag.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
       # Cross-repo, read-only checkout into an IN-WORKSPACE path (never ../).
       # persist-credentials: false so the GITHUB_TOKEN is not stored against the
       # agent-harness remote.
       - name: Checkout agent-harness (read-only source)
-        uses: actions/checkout@v4
+        # Pin to immutable SHA (actions/checkout@v4). Cross-repo, read-only.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: ar27111994/agent-harness
           path: .agent-harness-src
           persist-credentials: false
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        # Pin to immutable SHA (actions/setup-node@v4).
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: "22.12"
           cache: npm
@@ -67,7 +71,9 @@ jobs:
       # Commits public/.well-known/*.json ONLY if the sync step produced a real
       # change; skips commit+push entirely when the working tree is clean.
       - name: Commit and push changed manifests
-        uses: stefanzweifel/git-auto-commit-action@v5
+        # Pin to immutable SHA (stefanzweifel/git-auto-commit-action@v5) — this
+        # step pushes with `contents: write`, so it must never track a mutable tag.
+        uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403
         with:
           commit_message: "chore(well-known): sync ARD manifest catalog from agent-harness"
           file_pattern: public/.well-known/
