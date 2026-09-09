@@ -28,6 +28,15 @@ const buf = (s) => Buffer.from(s, "utf8");
 const bufLF = (s) => Buffer.from(lf(s), "utf8");
 const bufCRLF = (s) => Buffer.from(crlf(s), "utf8");
 
+// A manifest entry that satisfies the minimal ARD contract: a non-empty string
+// `identifier`, a `type`, and one of `url`/`data`.
+const validEntry = (id = "id-1", extra = {}) => ({
+  identifier: id,
+  type: "tool",
+  url: `https://example.com/.well-known/${id}`,
+  ...extra,
+});
+
 function run(args) {
   return spawnSync(process.execPath, [SCRIPT, ...args], {
     encoding: "utf8",
@@ -39,7 +48,9 @@ function makeHarness(entries) {
   const root = mkdtempSync(path.join(tmpdir(), "ard-harness-"));
   const wk = path.join(root, ".well-known");
   mkdirSync(wk, { recursive: true });
-  const manifest = (specVersion) =>
+  // `specVersion` is optional: `manifest()` (no arg) deliberately emits the
+  // variant without specVersion/host, so the parameter must not be required.
+  const manifest = (specVersion?: string) =>
     lf(
       JSON.stringify(
         specVersion
@@ -98,15 +109,50 @@ describe("readValidatedManifest guard (mirrors agent-harness #484)", () => {
   });
 
   it("returns entry count + specVersion for a valid manifest", () => {
-    root = makeHarness([{ id: "x" }, { id: "y" }]);
+    root = makeHarness([validEntry("x"), validEntry("y")]);
     const ok = readValidatedManifest(
       path.join(root, ".well-known", "ai-catalog.json"),
     );
     expect(ok).toMatchObject({ entries: 2, specVersion: "1.0" });
   });
 
+  it("returns null when an entry is null", () => {
+    root = makeHarness([null]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
+  it("returns null when an entry is an object literal missing required fields", () => {
+    root = makeHarness([{}]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
+  it("returns null when an entry is missing a type", () => {
+    root = makeHarness([{ identifier: "x", url: "https://example.com/x" }]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
+  it("returns null when an entry has neither url nor data", () => {
+    root = makeHarness([{ identifier: "x", type: "tool" }]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
+  it("returns null when an entry has an empty identifier", () => {
+    root = makeHarness([{ identifier: "", type: "tool", url: "u" }]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
   it("returns null for invalid JSON", () => {
-    root = makeHarness([{ id: "x" }]);
+    root = makeHarness([validEntry("x")]);
     writeFileSync(path.join(root, ".well-known", "ard.json"), "{ not json");
     expect(
       readValidatedManifest(path.join(root, ".well-known", "ard.json")),
@@ -146,5 +192,22 @@ describe("CLI guard contract", () => {
     const res = run(["--agent-harness-path", root]);
     expect(res.status).toBe(1);
     expect(res.stderr).toMatch(/not valid json/i);
+  });
+
+  it("refuses to sync a manifest with a malformed entry (exit 1, nothing copied)", () => {
+    root = makeHarness([null, validEntry("a")]);
+    const res = run(["--agent-harness-path", root]);
+    expect(res.status).toBe(1);
+    expect(res.stderr).toMatch(/invalid/i);
+  });
+
+  it("refuses to sync a manifest with an entry missing type (exit 1, nothing copied)", () => {
+    root = makeHarness([
+      { identifier: "x", url: "https://example.com/x" },
+      validEntry("a"),
+    ]);
+    const res = run(["--agent-harness-path", root]);
+    expect(res.status).toBe(1);
+    expect(res.stderr).toMatch(/missing a non-empty string "type"/i);
   });
 });

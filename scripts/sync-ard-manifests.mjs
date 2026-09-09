@@ -11,8 +11,8 @@
  * Usage:
  *   node scripts/sync-ard-manifests.mjs                  # sync (copy) into public/.well-known
  *   node scripts/sync-ard-manifests.mjs --check          # verify parity only (no writes)
- *   node scripts/sync-ard-manifests.mjs --agent-harness-path C:/Projects/agent-harness
- *   AGENT_HARNESS_REPO=C:/Projects/agent-harness node scripts/sync-ard-manifests.mjs
+ *   node scripts/sync-ard-manifests.mjs --agent-harness-path /path/to/agent-harness
+ *   AGENT_HARNESS_REPO=/path/to/agent-harness node scripts/sync-ard-manifests.mjs
  *
  * Exit codes: 0 = success (in --check mode: all targets in sync); 1 = any
  * source manifest invalid/empty, OR (in --check mode) any target out of sync.
@@ -81,10 +81,37 @@ function resolveAgentHarnessPath(cliValue) {
 }
 
 /**
- * Validate a manifest: must parse as JSON and expose a non-empty `entries`
- * array. Returns { entries, specVersion?, host? } on success, or null if the
- * manifest is invalid/empty. Never allow a plausible-but-empty manifest to be
- * copied forward (mirrors agent-harness #484's publish-gate contract).
+ * Validate a single ARD catalog entry against the minimal contract: every
+ * entry must be an object carrying a non-empty string `identifier`, a `type`,
+ * and one of `url`/`data`. Returns null (or a reason string) when invalid, so
+ * a manifest containing a malformed entry ([null], [{}], a missing `type`,
+ * etc.) is never copied forward — same fail-closed spirit as the empty-array
+ * guard that already mirrors agent-harness #484.
+ */
+function entryError(entry, index) {
+  const label = `  [invalid] entries[${index}]: `;
+  if (entry === null || typeof entry !== "object" || Array.isArray(entry)) {
+    return `${label}must be an object, got ${entry === null ? "null" : Array.isArray(entry) ? "array" : typeof entry}`;
+  }
+  if (typeof entry.identifier !== "string" || entry.identifier.length === 0) {
+    return `${label}missing a non-empty string "identifier"`;
+  }
+  if (typeof entry.type !== "string" || entry.type.length === 0) {
+    return `${label}missing a non-empty string "type"`;
+  }
+  if (typeof entry.url !== "string" && typeof entry.data !== "string") {
+    return `${label}missing a "url" or "data" field`;
+  }
+  return null;
+}
+
+/**
+ * Validate a manifest: must parse as JSON, expose a non-empty `entries`
+ * array, and every entry must satisfy the minimal ARD contract. Returns
+ * { entries, specVersion?, host? } on success, or null if the manifest is
+ * invalid/empty/has a malformed entry. Never allow a plausible-but-empty (or
+ * malformed) manifest to be copied forward (mirrors agent-harness #484's
+ * publish-gate contract).
  */
 function readValidatedManifest(filePath) {
   let raw;
@@ -114,6 +141,13 @@ function readValidatedManifest(filePath) {
       `  [invalid] ${filePath}: "entries" array is empty — refusing to sync`,
     );
     return null;
+  }
+  for (let i = 0; i < data.entries.length; i += 1) {
+    const err = entryError(data.entries[i], i);
+    if (err) {
+      console.error(`  [invalid] ${filePath}: ${err} — refusing to sync`);
+      return null;
+    }
   }
   return {
     entries: data.entries.length,
