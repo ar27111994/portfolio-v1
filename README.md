@@ -27,6 +27,31 @@ npm run preview   # preview dist/ locally
 
 Production deploys happen automatically via Vercel on push.
 
+## ARD well-known manifests (sync)
+
+The agent-readiness catalogs — `/.well-known/ard.json` and `/.well-known/ai-catalog.json` — are
+generated + committed by the agent-harness repo (`.well-known/{ard,ai-catalog}.json`) but served
+by this site from `public/.well-known/` (via the `rel="ard"` link in `src/layouts/Layout.astro`).
+They are kept in lockstep by an explicit sync step:
+
+```bash
+npm run sync:ard          # copy agent-harness manifests into public/.well-known/
+npm run sync:ard:check    # verify parity only (no writes); exit 1 if out of sync
+node scripts/sync-ard-manifests.mjs --agent-harness-path /path/to/agent-harness
+```
+
+> **Note on `--agent-harness-path`:** replace `/path/to/agent-harness` with the path to your
+> local agent-harness checkout (e.g. `C:/Projects/agent-harness` on Windows, `/home/you/agent-harness`
+> on Linux/macOS). The script also falls back to a sibling `../agent-harness` directory or the
+> `AGENT_HARNESS_REPO` env var when the flag is omitted.
+
+**Runbook:** after an agent-harness release, run `npm run sync:ard`, review the diff, commit,
+push to `main`, and Vercel auto-deploys. Use `npm run sync:ard:check` as a CI/release gate: it
+exits nonzero if `public/.well-known/` drifts from the committed source. The sync refuses to
+copy a manifest that is not valid JSON, that has an empty `entries` array, or that contains a
+malformed entry (missing `identifier`/`type`, or neither `url` nor `data`) — so a plausible-but-
+empty or malformed catalog can never be published.
+
 ## Project structure
 
 ```
