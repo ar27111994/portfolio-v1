@@ -27,6 +27,25 @@ npm run preview   # preview dist/ locally
 
 Production deploys happen automatically via Vercel on push.
 
+## ARD well-known manifests (sync)
+
+The agent-readiness catalogs — `/.well-known/ard.json` and `/.well-known/ai-catalog.json` — are
+generated + committed by the agent-harness repo (`.well-known/{ard,ai-catalog}.json`) but served
+by this site from `public/.well-known/` (via the `rel="ard"` link in `src/layouts/Layout.astro`).
+They are kept in lockstep by an explicit sync step:
+
+```bash
+npm run sync:ard          # copy agent-harness manifests into public/.well-known/
+npm run sync:ard:check    # verify parity only (no writes); exit 1 if out of sync
+node scripts/sync-ard-manifests.mjs --agent-harness-path C:/Projects/agent-harness
+```
+
+**Runbook:** after an agent-harness release, run `npm run sync:ard`, review the diff, commit,
+push to `main`, and Vercel auto-deploys. Use `npm run sync:ard:check` as a CI/release gate: it
+exits nonzero if `public/.well-known/` drifts from the committed source. The sync refuses to
+copy a manifest that is not valid JSON or that has an empty `entries` array (so a plausible-but-
+empty catalog can never be published).
+
 ## Project structure
 
 ```

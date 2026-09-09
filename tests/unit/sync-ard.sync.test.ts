@@ -1,0 +1,150 @@
+import { describe, it, expect, afterAll } from "vitest";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+import {
+  contentBuf,
+  contentsEqual,
+  lineEndingOnlyDiff,
+  readValidatedManifest,
+  parseArgs,
+} from "../../scripts/sync-ard-manifests.mjs";
+
+const REPO_ROOT = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
+const SCRIPT = path.join(REPO_ROOT, "scripts", "sync-ard-manifests.mjs");
+
+const CR = String.fromCharCode(13);
+const LF = String.fromCharCode(10);
+const CRLF = CR + LF;
+
+const lf = (s) => s.split("\n").join(LF);
+const crlf = (s) => s.split("\n").join(CRLF);
+const buf = (s) => Buffer.from(s, "utf8");
+const bufLF = (s) => Buffer.from(lf(s), "utf8");
+const bufCRLF = (s) => Buffer.from(crlf(s), "utf8");
+
+function run(args) {
+  return spawnSync(process.execPath, [SCRIPT, ...args], {
+    encoding: "utf8",
+    cwd: REPO_ROOT,
+  });
+}
+
+function makeHarness(entries) {
+  const root = mkdtempSync(path.join(tmpdir(), "ard-harness-"));
+  const wk = path.join(root, ".well-known");
+  mkdirSync(wk, { recursive: true });
+  const manifest = (specVersion) =>
+    lf(
+      JSON.stringify(
+        specVersion
+          ? { specVersion, host: "harness.local", entries }
+          : { entries },
+      ),
+    );
+  writeFileSync(path.join(wk, "ard.json"), manifest());
+  writeFileSync(path.join(wk, "ai-catalog.json"), manifest("1.0"));
+  return root;
+}
+
+describe("line-ending-insensitive content comparison", () => {
+  it("contentBuf normalizes CRLF and lone CR to LF", () => {
+    const input = crlf('{"a":1}\n{"b":2}\n');
+    expect(contentBuf(buf(input)).toString()).toBe(lf('{"a":1}\n{"b":2}\n'));
+  });
+
+  it("contentsEqual treats LF and CRLF of the same content as equal", () => {
+    expect(contentsEqual(bufLF('{"a":1}\n'), bufCRLF('{"a":1}\n'))).toBe(true);
+  });
+
+  it("contentsEqual distinguishes different content", () => {
+    expect(contentsEqual(bufLF('{"a":1}\n'), bufLF('{"a":2}\n'))).toBe(false);
+  });
+
+  it("contentsEqual reports same raw bytes as equal", () => {
+    const same = bufLF('{"a":1}\n');
+    expect(contentsEqual(same, Buffer.from(same))).toBe(true);
+  });
+
+  it("lineEndingOnlyDiff is true only for a CRLF/LF-only difference", () => {
+    expect(lineEndingOnlyDiff(bufLF('{"a":1}\n'), bufCRLF('{"a":1}\n'))).toBe(
+      true,
+    );
+    expect(lineEndingOnlyDiff(bufLF('{"a":1}\n'), bufLF('{"a":1}\n'))).toBe(
+      false,
+    );
+    expect(lineEndingOnlyDiff(bufLF('{"a":1}\n'), bufLF('{"a":2}\n'))).toBe(
+      false,
+    );
+  });
+});
+
+describe("readValidatedManifest guard (mirrors agent-harness #484)", () => {
+  let root;
+  afterAll(() => {
+    if (root) rmSync(root, { recursive: true, force: true });
+  });
+
+  it("returns null for an empty entries array", () => {
+    root = makeHarness([]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
+  it("returns entry count + specVersion for a valid manifest", () => {
+    root = makeHarness([{ id: "x" }, { id: "y" }]);
+    const ok = readValidatedManifest(
+      path.join(root, ".well-known", "ai-catalog.json"),
+    );
+    expect(ok).toMatchObject({ entries: 2, specVersion: "1.0" });
+  });
+
+  it("returns null for invalid JSON", () => {
+    root = makeHarness([{ id: "x" }]);
+    writeFileSync(path.join(root, ".well-known", "ard.json"), "{ not json");
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+});
+
+describe("parseArgs", () => {
+  it("parses --check and --agent-harness-path <p>", () => {
+    expect(parseArgs(["--check", "--agent-harness-path", "C:/x"])).toEqual({
+      check: true,
+      agentHarnessPath: "C:/x",
+    });
+  });
+
+  it("throws on unknown argument", () => {
+    expect(() => parseArgs(["--bogus"])).toThrow(/unknown argument/);
+  });
+});
+
+describe("CLI guard contract", () => {
+  let root;
+  afterAll(() => {
+    if (root) rmSync(root, { recursive: true, force: true });
+  });
+
+  it("refuses to sync an empty entries array (exit 1, nothing copied)", () => {
+    root = makeHarness([]);
+    const res = run(["--agent-harness-path", root]);
+    expect(res.status).toBe(1);
+    expect(res.stderr).toMatch(/empty/i);
+  });
+
+  it("refuses to sync invalid JSON (exit 1, nothing copied)", () => {
+    root = makeHarness([]);
+    writeFileSync(path.join(root, ".well-known", "ard.json"), "{ not json");
+    const res = run(["--agent-harness-path", root]);
+    expect(res.status).toBe(1);
+    expect(res.stderr).toMatch(/not valid json/i);
+  });
+});
