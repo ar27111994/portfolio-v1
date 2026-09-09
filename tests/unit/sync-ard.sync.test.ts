@@ -144,6 +144,32 @@ describe("readValidatedManifest guard (mirrors agent-harness #484)", () => {
     ).toBeNull();
   });
 
+  it("accepts a valid inline entry whose data is an object", () => {
+    root = makeHarness([
+      validEntry("inline-1", { url: undefined, data: { foo: "bar" } }),
+    ]);
+    const ok = readValidatedManifest(
+      path.join(root, ".well-known", "ai-catalog.json"),
+    );
+    expect(ok).toMatchObject({ entries: 1 });
+  });
+
+  it("returns null when an entry has BOTH url and data", () => {
+    root = makeHarness([validEntry("both-1", { data: { foo: "bar" } })]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
+  it("returns null when data is a string instead of an object", () => {
+    root = makeHarness([
+      validEntry("str-data", { url: undefined, data: "https://example.com/x" }),
+    ]);
+    expect(
+      readValidatedManifest(path.join(root, ".well-known", "ard.json")),
+    ).toBeNull();
+  });
+
   it("returns null when an entry has an empty identifier", () => {
     root = makeHarness([{ identifier: "", type: "tool", url: "u" }]);
     expect(

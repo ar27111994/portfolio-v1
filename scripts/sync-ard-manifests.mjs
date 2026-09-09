@@ -82,11 +82,13 @@ function resolveAgentHarnessPath(cliValue) {
 
 /**
  * Validate a single ARD catalog entry against the minimal contract: every
- * entry must be an object carrying a non-empty string `identifier`, a `type`,
- * and one of `url`/`data`. Returns null (or a reason string) when invalid, so
- * a manifest containing a malformed entry ([null], [{}], a missing `type`,
- * etc.) is never copied forward — same fail-closed spirit as the empty-array
- * guard that already mirrors agent-harness #484.
+ * entry must be an object carrying a non-empty string `identifier`, a non-empty
+ * string `type`, and exactly ONE locator — either a non-empty string `url` or
+ * an object-valued `data` (never both, never neither). Returns a reason string
+ * when invalid, or null for a valid entry, so a manifest containing a malformed
+ * entry ([null], [{}], a missing `type`, both url+data, neither, etc.) is never
+ * copied forward — same fail-closed spirit as the empty-array guard that
+ * already mirrors agent-harness #484.
  */
 function entryError(entry, index) {
   const label = `  [invalid] entries[${index}]: `;
@@ -99,8 +101,24 @@ function entryError(entry, index) {
   if (typeof entry.type !== "string" || entry.type.length === 0) {
     return `${label}missing a non-empty string "type"`;
   }
-  if (typeof entry.url !== "string" && typeof entry.data !== "string") {
-    return `${label}missing a "url" or "data" field`;
+  const urlPresent = entry.url !== undefined;
+  const dataPresent = entry.data !== undefined;
+  if (urlPresent && dataPresent) {
+    return `${label}must not specify both "url" and "data"`;
+  }
+  if (!urlPresent && !dataPresent) {
+    return `${label}must specify exactly one of "url" or "data"`;
+  }
+  if (urlPresent) {
+    if (typeof entry.url !== "string" || entry.url.length === 0) {
+      return `${label}"url" must be a non-empty string`;
+    }
+  } else if (
+    entry.data === null ||
+    typeof entry.data !== "object" ||
+    Array.isArray(entry.data)
+  ) {
+    return `${label}"data" must be an object (not a string/array/null)`;
   }
   return null;
 }
