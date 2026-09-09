@@ -1,0 +1,74 @@
+name: Sync ARD Manifests
+
+# Keeps the ARD / AI-catalog manifests served at ar27111994.dev/.well-known in
+# lockstep with the copies generated + committed by agent-harness.
+#
+# The canonical ARD manifests live in agent-harness/.well-known/*.json but are
+# actually SERVED by this Astro/Vercel site from public/.well-known/*.json.
+# This workflow pulls the agent-harness copies into the site's static dir and,
+# on change, commits + pushes to main so Vercel auto-deploys.
+#
+# Triggered by:
+#   - schedule           daily (03:00 UTC) health/catch-up sweep
+#   - repository_dispatch type "ard-manifest-sync"  (cross-repo ingest contract
+#       with agent-harness: it fires this after regenerating its manifests)
+#   - workflow_dispatch  manual backfill / recovery
+#
+# Idempotency: the sync script (scripts/sync-ard-manifests.mjs) only rewrites a
+# target when its byte content actually differs; a no-change run writes nothing,
+# and git-auto-commit-action auto-skips the commit/push when the tree is clean.
+# So a no-change run is a true no-op (no empty commit, no push, no redeploy).
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  repository_dispatch:
+    types: [ard-manifest-sync]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Sync ARD manifests from agent-harness
+    runs-on: ubuntu-latest
+    steps:
+      # Primary checkout at the workspace root. Keeps default persist-credentials
+      # (true) so the git-auto-commit step below can push with GITHUB_TOKEN.
+      - name: Checkout portfolio-v1
+        uses: actions/checkout@v4
+
+      # Cross-repo, read-only checkout into an IN-WORKSPACE path (never ../).
+      # persist-credentials: false so the GITHUB_TOKEN is not stored against the
+      # agent-harness remote.
+      - name: Checkout agent-harness (read-only source)
+        uses: actions/checkout@v4
+        with:
+          repository: ar27111994/agent-harness
+          path: .agent-harness-src
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.12"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # --agent-harness-path is relative; the script resolves it against the
+      # portfolio repo root, which is the actions/checkout workspace root, so
+      # ".agent-harness-src" maps exactly to the cross-repo checkout above.
+      - name: Sync ARD manifests into public/.well-known
+        run: npm run sync:ard -- --agent-harness-path .agent-harness-src
+
+      # Commits public/.well-known/*.json ONLY if the sync step produced a real
+      # change; skips commit+push entirely when the working tree is clean.
+      - name: Commit and push changed manifests
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(well-known): sync ARD manifest catalog from agent-harness"
+          file_pattern: public/.well-known/
+          skip_fetch: true
