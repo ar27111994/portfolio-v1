@@ -37,7 +37,7 @@ jobs:
       # Primary checkout at the workspace root. Keeps default persist-credentials
       # (true) so the git-auto-commit step below can push with GITHUB_TOKEN.
       - name: Checkout portfolio-v1
-        # Pin to immutable SHA (actions/checkout@v4) — the write-credential
+        # Pin to immutable SHA (actions/checkout@v7) — the write-credential
         # checkout must never track a mutable tag.
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
 
@@ -45,7 +45,7 @@ jobs:
       # persist-credentials: false so the GITHUB_TOKEN is not stored against the
       # agent-harness remote.
       - name: Checkout agent-harness (read-only source)
-        # Pin to immutable SHA (actions/checkout@v4). Cross-repo, read-only.
+        # Pin to immutable SHA (actions/checkout@v7). Cross-repo, read-only.
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: ar27111994/agent-harness
@@ -53,7 +53,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup Node
-        # Pin to immutable SHA (actions/setup-node@v4).
+        # Pin to immutable SHA (actions/setup-node@v7).
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
         with:
           node-version: "22.12"
