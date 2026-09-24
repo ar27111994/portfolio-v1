@@ -255,8 +255,8 @@ def build_full_html() -> str:
     # OpenCorporates
     body += """<div class="entry">
 <p class="entry-title">OpenCorporates US Resolver</p>
-<p>Enterprise data-resolution service normalizing and enriching company records against the OpenCorporates US registry for compliance, KYC, and B2B data-quality pipelines.</p>
-""" + f'<p class="small">{icon("github", 7)} <a href="https://github.com/ar27111994/open-corporates-us-resolver">github.com/ar27111994/open-corporates-us-resolver</a></p></div>'
+<p>Enterprise data-resolution service normalizing and enriching company records against the OpenCorporates US registry for compliance, KYC, and B2B data-quality pipelines. Private repository — public video walkthrough: <a href="https://www.loom.com/share/d32301d740f04795afe531a817c71319">loom.com/share/d32301d740f04795afe531a817c71319</a></p>
+</div>"""
     # SupaHooks Sentinel
     body += """<div class="entry">
 <p class="entry-title">SupaHooks Sentinel</p>
@@ -428,17 +428,17 @@ def build_ats_html() -> str:
     body += section("Selected Products", "🛠")
     body += f"""<div class="entry">
 <p class="entry-title">Webhook Debugger and Logger</p>
-<p>Enterprise webhook testing suite: capture, replay, forward, validate (JSON Schema), mock, SSE streaming. Show HN launch. 25★.</p>
+<p>Enterprise webhook testing suite: capture, replay, forward, validate (JSON Schema), mock, SSE streaming. Launched on Show HN. 27★.</p>
 <p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/webhook-debugger-logger">github.com/ar27111994/webhook-debugger-logger</a></p>
 </div>
 <div class="entry">
 <p class="entry-title">agent-harness</p>
-<p>TypeScript CLI for discovering, staging, and wiring reusable AI-agent assets across 6 coding hosts. 3★.</p>
+<p>TypeScript CLI for discovering, staging, and wiring reusable AI-agent assets across 6 coding hosts. 8★.</p>
 <p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/agent-harness">github.com/ar27111994/agent-harness</a></p>
 </div>
 <div class="entry">
 <p class="entry-title">penpot-mcp</p>
-<p>Agent skill for creating, auditing, and maintaining Penpot design systems and design-to-code workflows via MCP. 9★.</p>
+<p>Agent skill for creating, auditing, and maintaining Penpot design systems and design-to-code workflows via MCP. 27★.</p>
 <p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/penpot-mcp">github.com/ar27111994/penpot-mcp</a></p>
 </div>"""
 
@@ -539,12 +539,12 @@ def build_client_html() -> str:
     body += section("Selected Products", "🛠")
     body += f"""<div class="entry">
 <p class="entry-title">Webhook Debugger and Logger</p>
-<p>Open-source webhook testing suite: capture, replay, forward, validate, mock, SSE streaming. Show HN front page. 25★.</p>
+<p>Open-source webhook testing suite: capture, replay, forward, validate, mock, SSE streaming. Launched on Show HN. 27★.</p>
 <p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/webhook-debugger-logger">github.com/ar27111994/webhook-debugger-logger</a></p>
 </div>
 <div class="entry">
 <p class="entry-title">agent-harness</p>
-<p>TypeScript CLI for discovering, staging, and wiring reusable AI-agent assets across 6 coding hosts. 3★.</p>
+<p>TypeScript CLI for discovering, staging, and wiring reusable AI-agent assets across 6 coding hosts. 8★.</p>
 <p class="small">{icon('github', 7)} <a href="https://github.com/ar27111994/agent-harness">github.com/ar27111994/agent-harness</a></p>
 </div>"""
 

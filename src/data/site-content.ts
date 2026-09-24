@@ -416,7 +416,7 @@ export const caseStudies = [
     approach:
       "Designed and built a complete v3 rewrite in TypeScript with SSE streaming for real-time capture, a replay engine with loop support, JSON Schema + HMAC signature validation, request forwarding with header transformation, a mock server for testing, and a zero-dependency approach to keep install friction low. Shipped with a CLI, programmatic API, and Docker support. Launched on Show HN, published articles on dev.to, and listed on Apify as a webhook testing utility.",
     outcome:
-      "Featured on Show HN front page. Published 4+ technical articles. Listed on Apify marketplace. Used by developers testing Stripe, GitHub, Shopify, and custom webhook integrations. The v3 rewrite reduced the codebase surface by 40% while adding 5 major features — capture, replay, forward, validate, and mock — in a single install.",
+      "Launched on Show HN (2026-01). Published 4+ technical articles. Listed on Apify marketplace. Used by developers testing Stripe, GitHub, Shopify, and custom webhook integrations. The v3 rewrite reduced the codebase surface by 40% while adding 5 major features — capture, replay, forward, validate, and mock — in a single install.",
     tech: [
       "TypeScript",
       "Node.js",
@@ -427,7 +427,7 @@ export const caseStudies = [
       "CLI",
     ],
     metrics: [
-      "Show HN front page",
+      "Open source, 27 GitHub stars (Sep 2026)",
       "5-in-1 tool (capture/replay/forward/validate/mock)",
       "40% codebase reduction in v3",
       "Apify marketplace listed",
