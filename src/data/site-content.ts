@@ -427,7 +427,7 @@ export const caseStudies = [
       "CLI",
     ],
     metrics: [
-      "Open source, 27 GitHub stars",
+      "Open source, 27 GitHub stars (Sep 2026)",
       "5-in-1 tool (capture/replay/forward/validate/mock)",
       "40% codebase reduction in v3",
       "Apify marketplace listed",
